@@ -1,0 +1,1229 @@
+﻿<UserControl x:Class="CobimExplorer.Views.Pages.ExplorerV"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:converters="clr-namespace:CobimExplorer.Converters"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+             xmlns:local="clr-namespace:CobimExplorer.Views.Pages"
+             xmlns:models="clr-namespace:CobimExplorer.Models.Explorer"
+             xmlns:container="clr-namespace:CobimExplorer.Rest.Api.CobimBase.Explorer;assembly=CobimExplorer.Rest.Api" 
+             xmlns:vm="clr-namespace:CobimExplorer.ViewModels.Pages"
+             xmlns:t="clr-namespace:CobimExplorer.Test"
+             xmlns:s="https://github.com/canton7/Stylet"
+             s:View.ActionTarget="{Binding ExplorerVM}"
+             d:DataContext="{d:DesignInstance Type=vm:ExplorerVM}" 
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <!-- s:View.ActionTarget="{Binding ExplorerVM}" -->
+    <!-- d:DataContext="{d:DesignInstance vm:ExplorerVM}" -->
+    
+    <!--  TODO : 탐색기 화면 뷰(ExplorerV)에서 마우스 우클릭시 ContextMenu "체크인", "체크아웃" 출력 되도록 구현 (필요시 사용 예정) (2023.11.02 jbh)  -->
+    <!--  참고 URL - https://wpfstory.tistory.com/8  -->
+    <!--<UserControl.ContextMenu>
+        <ContextMenu>
+            <MenuItem Header="체크인"  />
+            <MenuItem Header="체크아웃"  />
+        </ContextMenu>
+    </UserControl.ContextMenu>-->
+
+    <UserControl.DataContext>
+        <Binding Path="ExplorerVM" />
+    </UserControl.DataContext>
+
+    <UserControl.Resources>
+        <converters:ExplorerConverter x:Key="ExplorerConverter" />
+    </UserControl.Resources>
+
+    <UserControl.CommandBindings>
+        
+    </UserControl.CommandBindings>
+
+    <Grid>
+        <Border BorderBrush="#C07237" BorderThickness="5">
+            <DockPanel>
+                <!-- 화면 상단 Border 영역 -->
+                <Border Background="#C07237" Height="60" DockPanel.Dock="Top">
+                    <Border Height="40">
+                        <TextBlock Text="COBIM 전용 탐색기" Margin="10,0,10,0" VerticalAlignment="Center" FontSize="20" Foreground="White" FontWeight="Bold"/>
+                    </Border>
+                    <!--<StackPanel Height="40" Orientation="Horizontal">
+                    <TextBlock Text="COBIM 전용 탐색기" Margin="10,0,10,0" VerticalAlignment="Center" FontSize="20" Foreground="White" FontWeight="Bold"/>
+                    -->
+                    <!--  TODO : 다운로드 기능 필요시 구현 예정 (2023.10.19 jbh)  -->
+                    <!--  Command="{s:Action DownlLoadAsync, ActionNotFound=Disable}"  -->
+                    <!--  <Button Content="다운로드" Command="{Binding DownlLoadCommand}" Margin="0,0,10,0" Width="100"/>  -->
+                    <!--  Command="{s:Action CheckOutAsync, ActionNotFound=Disable}"  -->
+                    <!--  <Button Content="체크아웃" Command="{Binding CheckOutCommand}" Margin="0,5,10,5" VerticalAlignment="Center" Width="100" Height="30"  />  -->
+                    <!--  Command="{s:Action CheckInAsync, ActionNotFound=Disable}"  -->
+                    <!--  <Button Content="체크인" Command="{Binding CheckInCommand}" Margin="0,5,0,5"  VerticalAlignment="Center" Width="100" Height="30"  />  -->
+                    <!--
+                </StackPanel>-->
+                </Border>
+
+                
+                <!--  화면 하단 Border 영역  -->
+                <Border DockPanel.Dock="Bottom">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <!-- TODO : <ColumnDefinition>영역에서 Width 가중치 (0.5 대 2 비율) 구현 (2023.08.24 jbh) -->
+                            <!-- 참고 URL - https://benstagram.tistory.com/33 -->
+                            <!-- Width 가중치 1 -->
+                            <ColumnDefinition Width="0.5*"    />
+
+                            <ColumnDefinition Width="Auto" />
+
+                            <!-- Width 가중치 1 -->
+                            <ColumnDefinition Width="2*"   />
+
+                            <!-- 참고 : Width 가중치 2 설정 방법 -->
+                            <!-- <ColumnDefinition Width="2*" /> -->
+                        </Grid.ColumnDefinitions>
+
+                        <Grid Grid.Row="0" Grid.Column="0">
+                            <Grid.RowDefinitions>
+                                <!-- TODO : <RowDefinition>영역에서 Height 가중치 (1 대 2 비율) 구현 (2023.08.24 jbh) -->
+                                <!-- 참고 URL - https://benstagram.tistory.com/33 -->
+                                <!-- Height 가중치 1 -->
+                                <!--<RowDefinition Height="*" />
+
+                            <RowDefinition Height="Auto" />-->
+                                <!-- Height 가중치 2   -->
+                                <!--<RowDefinition Height="2*" />-->
+
+                            </Grid.RowDefinitions>
+
+                            <!--<Border Grid.Row="0" Grid.Column="0" BorderBrush="Red" BorderThickness="10">
+                            -->
+                            <!-- TODO : 테스트 코드 <ListBox> 영역 구현 (2023.08.24 jbh) -->
+                            <!-- 참고 URL - https://kaki104.tistory.com/804 -->
+                            <!--
+                            <ListBox ItemsSource="{Binding ProjectTypeCollection}">
+                                <ListBox.ItemTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <TextBlock Text="{Binding ProjectName}"/>
+                                        </Grid>
+                                    </DataTemplate>
+                                </ListBox.ItemTemplate>
+                            </ListBox>
+                        </Border>-->
+
+                            <Border BorderBrush="NavajoWhite" 
+                                    BorderThickness="10">
+                                <!-- TODO : 테스트 코드 <ListBox> 영역 구현 (2023.08.24 jbh) -->
+                                <!-- 참고 URL - https://kaki104.tistory.com/804 -->
+                                <!--<ListBox ItemsSource="{Binding ProjectTypeCollection}">
+                                <ListBox.ItemTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <TextBlock Text="{Binding ProjectName}"/>
+                                        </Grid>
+                                    </DataTemplate>
+                                </ListBox.ItemTemplate>
+                            </ListBox>-->
+
+                                <!-- 화면 좌측 상단 TreeView(트리뷰) 영역 -->
+                                <TreeView x:Name="TreeView" ItemsSource="{Binding LevelDatas}" BorderBrush="White">
+                                    <TreeView.ItemContainerStyle>
+                                        <Style TargetType="TreeViewItem">
+                                            <Setter Property="IsExpanded" Value="False" />
+                                        </Style>
+                                    </TreeView.ItemContainerStyle>
+                                    <TreeView.Resources>
+                                        <!--  프로젝트  -->
+                                        <HierarchicalDataTemplate DataType="{x:Type vm:ProjectView}" ItemsSource="{Binding ChildNodes}">
+                                            <!--  TODO : <StackPanel> 영역 <Image> 파일 Project.png 추가 (2023.09.18 jbh) 
+                                                     참고 URL - https://drbeeeye.tistory.com/45  -->
+                                            <StackPanel Orientation="Horizontal">
+                                                <Image x:Name="ProjectImg" Source="/Resources/Project.png"/>
+                                                <TextBlock Margin="3" Text="{Binding exp_TreeName}"/>
+                                            </StackPanel>
+                                        </HierarchicalDataTemplate>
+
+                                        <!--  팀  -->
+                                        <HierarchicalDataTemplate DataType="{x:Type vm:TeamView}" ItemsSource="{Binding ChildNodes}">
+                                            <StackPanel Orientation="Horizontal">
+                                                <Image x:Name="TeamImg" Source="/Resources/Team.png"/>
+                                                <TextBlock Margin="3" Text="{Binding exp_TreeName}"/>
+                                            </StackPanel>
+                                        </HierarchicalDataTemplate>
+
+                                        <!--  폴더  -->
+                                        <!--  TODO : 폴더명 클릭시 비동기 메서드 "FileSearchAsync" 실행 되도록 구현 예정 (2023.09.19 jbh) -->
+                                        <HierarchicalDataTemplate DataType="{x:Type vm:FolderView}" ItemsSource="{Binding ChildNodes}">
+                                            <!--<StackPanel Orientation="Horizontal" s:View.ActionTarget="{Binding ExplorerVM}">-->
+                                            <StackPanel Orientation="Horizontal">
+                                                <!--  TODO : 버튼 기본 스타일(테두리, 배경 등등...) 제거 구현 (2023.09.18 jbh)  -->
+                                                <!--  참고 URL - https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&blogId=skelentom&logNo=10166053623  -->
+
+                                                <!--  TODO : <HierarchicalDataTemplate> 영역 안 버튼 Command 바인딩 구현 (2023.09.18 jbh) -->
+                                                <!--  참고 URL - https://korsa.tistory.com/95 -->
+                                                <Button Command="{Binding DataContext.FileCommand, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type UserControl}}}"
+                                                    Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}">
+                                                    <Button.Content>
+                                                        <StackPanel Orientation="Horizontal">
+                                                            <Image x:Name="FolderImg" Source="/Resources/Folder.png"/>
+                                                            <TextBlock Margin="3" Text="{Binding exp_TreeName}"/>
+                                                        </StackPanel>
+                                                    </Button.Content>
+                                                    <!--<StackPanel Orientation="Horizontal">
+                                                    <Image x:Name="FolderImg" Source="/Resources/Folder.png"/>
+                                                    <TextBlock Margin="3" Text="{Binding exp_TreeName}"/>
+                                                </StackPanel>-->
+                                                    <!--  TODO : 버튼 멀티 바인딩 구현 (2023.09.19 jbh) -->
+                                                    <!--  참고 URL - https://nonstop-antoine.tistory.com/40  -->
+                                                    <!--  참고 2 URL - https://chashtag.tistory.com/43  -->
+                                                    <!--  참고 3 URL - https://stackoverflow.com/questions/1350598/passing-two-command-parameters-using-a-wpf-binding -->
+                                                    <!--  참고 4 URL - https://stackoverflow.com/questions/23499671/wpf-multibinding-button-isenabled-with-textboxes  -->
+                                                    <!--  참고 5 URL - https://stackoverflow.com/questions/22084611/wpf-how-to-bind-together-two-properties-bound-to-two-different-controls -->
+                                                    <Button.CommandParameter>
+                                                        <!--  TODO : 버튼 멀티 바인딩 시 프로퍼티 Path 사용 (2023.09.19 jbh) -->
+                                                        <!--  참고 URL - https://icodebroker.tistory.com/entry/CWPF-MultiBinding-%EC%97%98%EB%A6%AC%EB%A8%BC%ED%8A%B8-Converter-%EC%86%8D%EC%84%B1%EC%97%90%EC%84%9C-IMultiValueConverter-%EC%9D%B8%ED%84%B0%ED%8E%98%EC%9D%B4%EC%8A%A4-%EA%B5%AC%ED%98%84-%EA%B0%9D%EC%B2%B4%EB%A5%BC-%EC%82%AC%EC%9A%A9%ED%95%B4-%EB%B0%94%EC%9D%B8%EB%94%A9%ED%95%98%EA%B8%B0-2  -->
+                                                        <MultiBinding Converter="{StaticResource ExplorerConverter}">
+                                                            <Binding Path="exp_ProjectId" />
+                                                            <Binding Path="exp_TeamId"    />
+                                                            <Binding Path="exp_TreeFolderId"  />
+                                                        </MultiBinding>
+                                                    </Button.CommandParameter>
+                                                    <!--<Button.CommandParameter>
+                                                    <MultiBinding Converter="{x:Static converters}">
+                                                        <Binding Path="exp_ProjectId" ElementName="FolderInfo" />
+                                                        <Binding Path="exp_TeamId" ElementName="FolderInfo" />
+                                                        <Binding Path="exp_TreeFolderId" ElementName="FolderInfo" />
+                                                    </MultiBinding>
+                                                </Button.CommandParameter>-->
+                                                </Button>
+                                            </StackPanel>
+                                        </HierarchicalDataTemplate>
+                                    </TreeView.Resources>
+                                </TreeView>
+
+                                <!-- TODO : 테스트 코드 <ListView> 영역 ItemsSource Collection 바인딩 구현 (2023.08.24 jbh) -->
+                                <!-- 참고 URL - https://stackoverflow.com/questions/5896198/c-sharp-wpf-listview-binding-not-working -->
+                                <!--<ListView ItemsSource="{Binding ProjectTypeCollection}">
+                                <ListView.View>
+                                    <GridView>
+                                        <GridViewColumn Header="ProjectName" DisplayMemberBinding="{Binding ProjectName}"/>
+                                    </GridView>
+                                </ListView.View>
+                            </ListView>-->
+                            </Border>
+
+                            <!-- <GridSplitter> 사용해서 그리드 가로 분할 -->
+                            <!--<GridSplitter Grid.Row="1" Grid.Column="0"
+                                      HorizontalAlignment="Stretch"
+                                      VerticalAlignment="Center"
+                                      Height="10"
+                                      ShowsPreview="True" />
+
+                        <Border Grid.Row="2" Grid.Column="0" BorderBrush="Gold" BorderThickness="10"/>-->
+
+                        </Grid>
+
+
+
+                        <!--<Border Grid.Row="0" Grid.Column="0" BorderBrush="Green" BorderThickness="10"/>
+
+                    -->
+                        <!-- <GridSplitter> 사용해서 그리드 가로 분할 -->
+                        <!--
+                    <GridSplitter Grid.Row="1" Grid.Column="0"
+                                  HorizontalAlignment="Stretch"
+                                  VerticalAlignment="Center"
+                                  Height="10"
+                                  ShowsPreview="True" />
+
+                    <Border Grid.Row="1" Grid.Column="0" BorderBrush="Chocolate" BorderThickness="10"/>-->
+
+                        <!-- <GridSplitter> 사용해서 그리드 세로 분할 -->
+                        <GridSplitter Grid.Row="0" Grid.Column="1"
+                                      HorizontalAlignment="Center"
+                                      VerticalAlignment="Stretch"
+                                      Width="5"
+                                      Background="#C07237"
+                                      ShowsPreview="True" />
+
+                        <Grid Grid.Row="0" Grid.Column="2">
+                            <Grid.RowDefinitions>
+                                <!-- TODO : <RowDefinition>영역에서 Height 가중치 (1 대 2.1 비율) 구현 (2023.08.24 jbh) -->
+                                <!-- 참고 URL - https://benstagram.tistory.com/33 -->
+                                <!-- Height 가중치 1 -->
+                                <RowDefinition Height="*" />
+
+                                <RowDefinition Height="Auto" />
+
+                                <!-- Height 가중치 1   -->
+                                <RowDefinition Height="2.1*"    />
+                            </Grid.RowDefinitions>
+
+                            <!--  ListView 영역  -->
+                            <Border Grid.Row="0" Grid.Column="0" BorderBrush="NavajoWhite" BorderThickness="10">
+                                <DockPanel Background="White">
+                                    <Border DockPanel.Dock="Top"
+                                            Background="White"
+                                            Height="20"
+                                            Margin="5,5,5,0">
+                                        <!--  TODO : ItemsControl 사용해서 화면 우측 상단에 팀이름(exp_TreeName) 출력되도록 구현 (2023.10.23 jbh)  -->
+                                        <!--  참고 URL - https://blog.naver.com/jjid0247/222111885157  -->
+                                        <!--  참고 2 URL - https://nonstop-antoine.tistory.com/33  -->
+                                        <ItemsControl ItemsSource="{Binding TeamList}">
+                                            <ItemsControl.ItemTemplate>
+                                                <DataTemplate>
+                                                    <StackPanel Orientation="Horizontal">
+                                                        <TextBlock Text=">" Margin="5,5,0,5"/>
+
+                                                        <TextBlock Text="{Binding exp_TreeName}" Margin="5,5,5,5"/>
+
+                                                        <!--  TODO : 파일(컨테이너) 신규 등록의 경우 COBIM 웹 사이트(인재 INC)에서만 사용하는 기능이고 CDE 탐색기 응용 프로그램에서는 사용 안 하는 걸로 소통 완료.
+                                                         하여 해당 파일(컨테이너) 신규 등록 메서드는 주석 처리하고 사용 안 함. (2023.10.19 jbh)  -->
+                                                        <!--<Button Content="신규등록" 
+                                                        Margin="0,5,5,0"
+                                                        HorizontalAlignment="Right"
+                                                        Command="{Binding CreateCommand}"/>-->
+                                                    </StackPanel>
+                                                </DataTemplate>
+                                            </ItemsControl.ItemTemplate>
+                                        </ItemsControl>
+                                    </Border>
+
+                                    <Border DockPanel.Dock="Bottom" Margin="5,5,5,5">
+                                        <!--  GridView 구현 예시 -->
+                                        <!--  TODO: GridView 영역 구현시 <Grid> 또는 <DataGrid> 둘 중에 하나로 구현하기 (2023.09.18 jbh)  -->
+                                        <!--  TODO: 아래 <DataGrid> 영역 테스트 코드 추후 삭제 예정 (2023.07.14 jbh)  -->
+                                        <!--  <DataGrid ItemsSource="{Binding ElementName=folderTreeView, Path=SelectedItem.SubFolderCollection, Mode=OneWay}"/>  -->
+                                        <!--  <DataGrid ItemsSource="{Binding FileDatas}">
+                                    </DataGrid>-->
+
+                                        <!--  ListView - GridView 구현 예시  -->
+                                        <!--  참고 URL - https://stackoverflow.com/questions/3539199/wpf-how-to-bind-gridview  -->
+                                        <!--  TODO : ListView에 출력되는 특정 데이터 로우 클릭시 해당 데이터 로우에 속하는 데이터 담는 리스트 객체 "SelectedFileData" 필요시 사용 예정(2023.10.5 jbh) -->
+                                        <!--  <ListView x:Name="FileListView" 
+                                                    ItemsSource="{Binding FileDatas}"
+                                                    SelectedItem="{Binding SelectedFileData}"
+                                                    SelectionMode="Extended">  -->
+                                        <!--  TODO : ListView 영역안 여백(Padding) 설정 (2023.10.05 jbh) -->
+                                        <!--  참고 URL - https://forum.dotnetdev.kr/t/listview/5423/2  -->
+                                        <ListView x:Name="FileListView" 
+                                                  ItemsSource="{Binding FileDatas}"
+                                                  Padding="-1"
+                                                  DockPanel.Dock="Bottom"
+                                                  BorderBrush="#C07237"
+                                                  BorderThickness="2">
+                                            <!--<ListView.DataContext>
+                                            <Binding Path="FileView" />
+                                            </ListView.DataContext>-->
+                                            <ListView.Resources>
+                                                <Style TargetType="ListViewItem">
+                                                    <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                                                </Style>
+                                                <!--  TODO : GridView 속성 "GridViewColumnHeader" 사용해서 스타일 구현 (Width = "Auto") (2023.09.22 jbh) -->
+                                                <!--  참고 URL - https://icodebroker.tistory.com/entry/CWPF-GridView-%EC%97%98%EB%A6%AC%EB%A8%BC%ED%8A%B8-ColumnHeaderContainerStyleColumnHeaderTemplate-%EC%86%8D%EC%84%B1-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0  -->
+                                                <Style x:Key="ColumnHeaderContainerStyleKey" TargetType="{x:Type GridViewColumnHeader}">
+                                                    <Setter Property="Width" Value="Auto" />
+                                                </Style>
+                                            </ListView.Resources>
+                                            <i:Interaction.Triggers>
+                                                <!--  TODO : <i:EventTrigger>영역에서 구현한 <i:InvokeCommandAction> 필요시 사용 예정 (2023.10.4 jbh) -->
+                                                <!--  ItemsSource에서 어떤 Row든 선택하면 SelectionChanged 이벤트가 발생되니 해당 이벤트를 트리거 삼는다.  -->
+                                                <!--  <i:EventTrigger EventName="FileDetailSearchAsync"> -->
+                                                <!--  CommandParameter에 해당 Element에 직접 접근하여 Selecteditems를 파라미터로 땡겨온다.  -->
+                                                <!--  <i:InvokeCommandAction Command="{Binding FileDetailCommand}" CommandParameter="{Binding Path=SelectedFileData}"/>  -->
+                                                <!--  </i:EventTrigger>  -->
+                                            </i:Interaction.Triggers>
+
+                                            <!--  ListView - GridView 영역  -->
+                                            <ListView.View>
+                                                <GridView ColumnHeaderContainerStyle="{StaticResource ColumnHeaderContainerStyleKey}">
+                                                    <GridView.Columns>
+                                                        <!--  TODO : 컬럼 "파일 이름" 필요시 사용 예정(2023.10.5 jbh)  -->
+                                                        <!--<GridViewColumn Header="파일 이름" DisplayMemberBinding="{Binding exp_FileName}"/>-->
+
+                                                        <!--<GridViewColumn Header="컨테이너 ID" DisplayMemberBinding="{Binding exp_ContainerId}"/>-->
+                                                        <GridViewColumn Header="컨테이너 ID">
+                                                            <GridViewColumn.CellTemplate>
+                                                                <!--  TODO : GridView -> GridViewColumn -> DataTemplate 영역 안에 StackPanel 구현 (하나의 셀 안에 데이터 멀티 바인딩) (2023.09.21 jbh)  -->
+                                                                <!--  참고 URL - https://icodebroker.tistory.com/entry/CWPF-GridViewColumn-%EC%97%98%EB%A6%AC%EB%A8%BC%ED%8A%B8-HeaderTemplateCellTemplate-%EC%86%8D%EC%84%B1-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0  -->
+
+                                                                <!--  TODO : GridView -> GridViewColumn -> DataTemplate 영역 속성 "DataType" 바인딩 대상 FileView 설정 필요시 사용 예정 (2023.10.5 jbh) -->
+                                                                <!--  참고 URL - https://yeko90.tistory.com/entry/c-wpf-DataTemplate  -->
+                                                                <!--  <DataTemplate DataType="{x:Type vm:FileView}">  -->
+                                                                <DataTemplate>
+                                                                    <!--  DataTemplate 영역에 DataType 대상 FileView 설정 -> DataTemplate 영역 안에 작성된 형태대로 데이터 출력  -->
+                                                                    <StackPanel Orientation="Vertical" Width="250" HorizontalAlignment="Left">
+                                                                        <!--  TODO : 버튼 기본 스타일(테두리, 배경 등등...) 제거 구현 (2023.10.30 jbh)  -->
+                                                                        <!--  참고 URL - https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&blogId=skelentom&logNo=10166053623  -->
+                                                                        <!--  MouseRightButtonDown="Btn_MouseRightButtonDown"  -->
+                                                                        <Button Command="{Binding DataContext.ContainerDetailCommand, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type UserControl}}}"
+                                                                                Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}"
+                                                                                HorizontalAlignment="Left">
+                                                                            <!--  TODO : Button 영역안 마우스 우클릭시 ContextMenu "체크인", "체크아웃" 출력 되도록 구현 (2023.11.06 jbh)  -->
+                                                                            <!--  참고 URL - https://onlab94.tistory.com/360  -->
+                                                                            <Button.ContextMenu>
+                                                                                <!--  TODO : <ContextMenu> 영역 안 버튼 Command 바인딩 구현 (2023.11.06 jbh) -->
+                                                                                <!--  참고 URL - https://korsa.tistory.com/95 -->
+                                                                                <ContextMenu>
+                                                                                    <MenuItem Header="테스트" Command="{Binding DataContext.TestCommand, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type UserControl}}}" />
+
+                                                                                    <MenuItem Header="체크인" Command="{Binding DataContext.CheckInCommand, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type UserControl}}}" />
+
+                                                                                    <MenuItem Header="체크아웃" Command="{Binding DataContext.CheckOutCommand, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type UserControl}}}" />
+                                                                                    
+                                                                                    <!--<MenuItem Header="체크인">
+                                                                                        <Button Command="{Binding DataContext.CheckInCommand, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type UserControl}}}"  />
+                                                                                    </MenuItem>
+                                                                                    <MenuItem Header="체크아웃">
+                                                                                        <Button Command="{Binding DataContext.CheckOutCommand, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type UserControl}}}" />
+                                                                                    </MenuItem>-->
+                                                                                </ContextMenu>
+                                                                            </Button.ContextMenu>
+                                                                            <Button.Content>
+                                                                                <!--  TODO : 아래 DockPanel 영역에 속한 TextBlock("exp_Title")과 간격을 맞추기 위해 StackPanel 영역 Margin 속성 값 음수 설정(역마진 - Negative Margin) (2023.10.5 jbh)-->
+                                                                                <!--  참고 URL -  https://gold-dragon.tistory.com/41 -->
+                                                                                <!--  StackPanel 영역 왼쪽으로 4px 이동 (Margin="-4") -->
+                                                                                <StackPanel Orientation="Horizontal" Margin="-4">
+                                                                                    <Image x:Name="ClickImg" Source="/Resources/Click.png" Width="16" Height="16" />
+                                                                                    <!--  프로퍼티 "exp_UpperContainerId" 용도 - 탐색기 화면 뷰(ExplorerV.xaml) "ListView" 영역에 바인딩할 컬럼 용도  -->
+                                                                                    <TextBlock Margin="3,0,0,0" Text="{Binding exp_UpperContainerId}"/>
+                                                                                </StackPanel>
+                                                                            </Button.Content>
+
+                                                                            <Button.CommandParameter>
+                                                                                <!--  TODO : 버튼 멀티 바인딩 시 프로퍼티 Path 사용 (2023.10.4 jbh) -->
+                                                                                <!--  참고 URL - https://icodebroker.tistory.com/entry/CWPF-MultiBinding-%EC%97%98%EB%A6%AC%EB%A8%BC%ED%8A%B8-Converter-%EC%86%8D%EC%84%B1%EC%97%90%EC%84%9C-IMultiValueConverter-%EC%9D%B8%ED%84%B0%ED%8E%98%EC%9D%B4%EC%8A%A4-%EA%B5%AC%ED%98%84-%EA%B0%9D%EC%B2%B4%EB%A5%BC-%EC%82%AC%EC%9A%A9%ED%95%B4-%EB%B0%94%EC%9D%B8%EB%94%A9%ED%95%98%EA%B8%B0-2  -->
+                                                                                <MultiBinding Converter="{StaticResource ExplorerConverter}">
+                                                                                    <Binding Path="exp_ProjectId" />
+                                                                                    <Binding Path="exp_TeamId"    />
+                                                                                    <!--  프로퍼티 "exp_ContainerId" 용도  -->
+                                                                                    <!--  Rest API 메서드 "ExplorerRestServer.GetContainerDetailListAsync" 파라미터 "ContainerPack"에 속하는  -->
+                                                                                    <!--  컨테이너 아이디(containerId)에 영어 소문자로 넘겨줘야 인재 INC 서버 로부터 응답 결과 JSON 데이터를 정상적으로 넘겨 받을 수 있음.  -->
+                                                                                    <Binding Path="exp_ContainerId"   />
+                                                                                </MultiBinding>
+                                                                            </Button.CommandParameter>
+                                                                        </Button>
+                                                                        <!--  TODO : GridViewColumn.CellTemplate 영역 -> DataTemplate 영역 -> 작성자 + " | " + 등록일시 프로퍼티 "CreateUserIdAndTime" 우측 정렬 구현 (2023.09.21 jbh) -->
+                                                                        <!--  참고 URL - https://icodebroker.tistory.com/8229  -->
+                                                                        <DockPanel>
+                                                                            <!--<TextBlock TextAlignment="Right" Text="{Binding exp_Title}" />-->
+                                                                            <TextBlock TextAlignment="Left" Text="{Binding exp_Title}" />
+                                                                            <TextBlock TextAlignment="Right" Text="{Binding CreateUserIdAndTime}" />
+                                                                        </DockPanel>
+                                                                        <!--  TODO :DataTemplate 영역 -> TextBlock 영역 안 MultiBinding XAML 코드 필요시 사용 예정 (2023.09.21 jbh) -->
+                                                                        <!--  <TextBlock>
+                                                                              <TextBlock.Text>
+                                                                                  <MultiBinding StringFormat="{}{0} {1}">
+                                                                                      <Binding Path="exp_ContainerId"/>
+                                                                                      <Binding Path="exp_StepCodeName"/>
+                                                                                  </MultiBinding>
+                                                                              </TextBlock.Text>
+                                                                          </TextBlock>  -->
+                                                                    </StackPanel>
+                                                                </DataTemplate>
+                                                            </GridViewColumn.CellTemplate>
+                                                        </GridViewColumn>
+                                                        <GridViewColumn Header="유형" DisplayMemberBinding="{Binding exp_TypeCodeName}" />
+                                                        <GridViewColumn Header="단계" DisplayMemberBinding="{Binding exp_StepCodeName}" />
+                                                        <GridViewColumn Header="상태" DisplayMemberBinding="{Binding exp_StatusCodeName}" />
+                                                        <GridViewColumn Header="버전" DisplayMemberBinding="{Binding exp_RevsnVal}" />
+                                                        <!--  TODO : ListView 영역 컬럼 "추가", "보기" "김명환 소장님"과 소통 후 필요 시 구현 예정 (2023.09.20 jbh) -->
+                                                        <GridViewColumn Header="추가">
+                                                            <GridViewColumn.CellTemplate>
+                                                                <!--  TODO : <DataTemplate> 영역 안 버튼 Command 바인딩 구현 (2023.09.21 jbh) -->
+                                                                <!--  참고 URL - https://korsa.tistory.com/95 -->
+                                                                <DataTemplate>
+                                                                    <!--  TODO : 버튼 기본 스타일(테두리, 배경 등등...) 제거 구현 (2023.09.18 jbh)  -->
+                                                                    <!--  참고 URL - https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&blogId=skelentom&logNo=10166053623  -->
+                                                                    <Button Command="{Binding DataContext.FileAddCommand, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type UserControl}}}"
+                                                                        Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}">
+                                                                        <Button.Content>
+                                                                            <Image x:Name="FileAddImg" Source="/Resources/FileAdd.png"/>
+                                                                        </Button.Content>
+                                                                    </Button>
+                                                                </DataTemplate>
+                                                            </GridViewColumn.CellTemplate>
+                                                        </GridViewColumn>
+                                                        <GridViewColumn Header="보기">
+                                                            <GridViewColumn.CellTemplate>
+                                                                <!--  TODO : <DataTemplate> 영역 안 버튼 Command 바인딩 구현 (2023.09.21 jbh) -->
+                                                                <!--  참고 URL - https://korsa.tistory.com/95 -->
+                                                                <DataTemplate>
+                                                                    <!--  TODO : 버튼 기본 스타일(테두리, 배경 등등...) 제거 구현 (2023.09.18 jbh)  -->
+                                                                    <!--  참고 URL - https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&blogId=skelentom&logNo=10166053623  -->
+                                                                    <Button Command="{Binding DataContext.CloserLookCommand, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type UserControl}}}"
+                                                                        Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}">
+                                                                        <Button.Content>
+                                                                            <Image x:Name="CloserLookImg" Source="/Resources/CloserLook.png"/>
+                                                                        </Button.Content>
+                                                                    </Button>
+                                                                </DataTemplate>
+                                                            </GridViewColumn.CellTemplate>
+                                                        </GridViewColumn>
+                                                    </GridView.Columns>
+                                                </GridView>
+                                            </ListView.View>
+                                        </ListView>
+                                    </Border>
+                                </DockPanel>
+                            </Border>
+
+                            <!-- <GridSplitter> 사용해서 그리드 가로 분할 -->
+                            <GridSplitter Grid.Row="1" Grid.Column="0"
+                                          HorizontalAlignment="Stretch"
+                                          VerticalAlignment="Center"
+                                          Height="5"
+                                          Background="#C07237"
+                                          ShowsPreview="True" />
+
+                            <!-- 화면 우측 하단 영역 -->
+                            <Border Grid.Row="2" Grid.Column="0" BorderBrush="NavajoWhite" BorderThickness="10">
+                                <DockPanel Background="White">
+                                    <Border DockPanel.Dock="Top" 
+                                            Margin="5,0,5,0"
+                                            Height="30" 
+                                            Background="White" 
+                                            Visibility="{Binding visibleRequest}">
+
+                                        <DockPanel Margin="5,0,0,0">
+                                            <!--  TODO : 프로퍼티 SelectedContainerId 에 UpdateSourceTrigger=PropertyChanged 기능 필요시 사용 예정 (2023.10.23 jbh)  -->
+                                            <!--  Text="{Binding SelectedContainerId, UpdateSourceTrigger=PropertyChanged}"  -->
+                                            <!--  TODO : 프로퍼티 "SelectedContainerId" 사용해서 컨테이너 아이디(영어 대문자) TextBlock 출력 구현 (2023.11.01 jbh) -->
+                                            <TextBlock VerticalAlignment="Center" 
+                                                       Text="{Binding SelectedContainerId}" />
+
+
+                                            <StackPanel Orientation="Horizontal" Width="90" HorizontalAlignment="Right" VerticalAlignment="Center">
+                                                <!--TODO : 추후 버튼 "검토요청" 옆에 체크 이미지 파일 (.png) 리소스 추가 예정 (2023.10.18 jbh)-->
+                                                <Image Width="30"/>
+                                                <Button Content="검토요청" Command="{Binding RequestCommand}"/>
+                                            </StackPanel>
+                                        </DockPanel>
+                                    </Border>
+
+                                    <!--  TabControl 영역  -->
+                                    <!--  TabControl 참고 URL - https://wpf-tutorial.com/ko/68/the-tabcontrol/using-the-wpf-tabcontrol/ -->
+                                    <!--  TODO : <Grid> 영역 Margin 간격 좌상우하 모두 5로 설정 (Margin="5") (2023.11.07 jbh)  -->
+                                    <Border DockPanel.Dock="Bottom" Margin="5">
+                                        <!--  TODO : 탐색기 화면(ExplorerV.xaml) 탭 "기본정보" 제외한 다른 TabItem 선택 후 
+                                                 화면 종료 또는 다른 화면 이동 후 해당 탐색기 화면 재실행 시 
+                                                 TabControl의 첫 번째 TabItem="기본정보"로 실행(Default로 지정)하도록 
+                                                 SelectedIndex="0" 추가 (2023.11.01 jbh) -->
+                                        <!--  참고 URL - https://stackoverflow.com/questions/20356239/tab-control-selecting-first-tab-by-default -->
+                                        <!--  참고 2 URL - https://dotnetpattern.com/wpf-tab-control-selection  -->
+                                        <TabControl SelectedIndex="{Binding SelectedTabIndex}" 
+                                                    Style="{DynamicResource App.TabControl.ExplorerV}">
+                                            <TabItem Header="기본정보">
+                                                <Grid>
+                                                    <Grid.ColumnDefinitions>
+                                                        <!-- TODO : <ColumnDefinition>영역에서 Width 가중치 (1 대 0.05 대 1 비율) 구현 (2023.08.24 jbh) -->
+                                                        <!-- 참고 URL - https://benstagram.tistory.com/33 -->
+                                                        <!-- Width 가중치 1 -->
+                                                        <ColumnDefinition Width="*" />
+
+                                                        <!-- Width 가중치 - 0.05 GridSplitter 영역 -->
+                                                        <ColumnDefinition Width="0.05*" />
+
+                                                        <!-- Width 가중치 1 -->
+                                                        <ColumnDefinition Width="*" />
+                                                    </Grid.ColumnDefinitions>
+
+                                                    <!--  TODO : 컨테이너 정보 <Border> 영역 - CornerRadius ="4" 사용해서 꼭지점 둥글게 구현 (2023.11.10 jbh)  -->
+                                                    <!--  참고 URL - https://insurang.tistory.com/entry/WPF-C-RoundButton-%EB%91%A5%EA%B7%BC%EB%B2%84%ED%8A%BC-%EB%A7%8C%EB%93%A4%EA%B8%B0-CornerRadius-Style  -->
+                                                    <!--  컨테이너 정보  -->
+                                                    <Border Grid.Column="0" 
+                                                            BorderBrush="NavajoWhite" 
+                                                            BorderThickness="5" 
+                                                            Margin="10,10,5,10"
+                                                            CornerRadius ="4">
+                                                        <DockPanel Visibility="{Binding visibleContainerInfo}">
+                                                            <Border DockPanel.Dock="Top" Margin="5,3,5,3">
+                                                                <DockPanel>
+                                                                    <TextBlock Text=">컨테이너 정보" VerticalAlignment="Center" Margin="5,0,0,0"/>
+                                                                    <Button Content="수정" 
+                                                                            HorizontalAlignment="Right" 
+                                                                            Margin="0,0,5,0"
+                                                                            Command="{Binding UpdateCommand}"
+                                                                            CommandParameter="{Binding ContainerDatas}"/>
+                                                                </DockPanel>
+                                                            </Border>
+
+                                                            <!--  TODO : <Border> 영역 Margin 간격 좌상우하 모두 5로 설정 (Margin="5") (2023.11.07 jbh)  -->
+                                                            <Border DockPanel.Dock="Bottom" Margin="5,0,5,0">
+                                                                <!--  TODO : ItemsControl 사용해서 "컨테이너 정보" 테이블 표 구현 (2023.10.19 jbh) -->
+                                                                <!--  참고 URL - https://blog.naver.com/jjid0247/222111885157  -->
+                                                                <!--  참고 2 URL - https://nonstop-antoine.tistory.com/33  -->
+                                                                <ItemsControl ItemsSource="{Binding ContainerDatas}">
+                                                                    <ItemsControl.ItemTemplate>
+                                                                        <DataTemplate>
+                                                                            <DockPanel>
+                                                                                <!--  2행 * 9열 데이터 테이블 표 구현  -->
+                                                                                <Grid>
+                                                                                    <Grid.ColumnDefinitions>
+                                                                                        <ColumnDefinition Width="*" />
+                                                                                        <ColumnDefinition Width="1" />
+                                                                                        <ColumnDefinition Width="3*" />
+                                                                                    </Grid.ColumnDefinitions>
+                                                                                    <Grid.RowDefinitions>
+                                                                                        <RowDefinition Height="*" />
+                                                                                        <RowDefinition Height="1" />
+                                                                                        <RowDefinition Height="*" />
+                                                                                        <RowDefinition Height="1" />
+                                                                                        <RowDefinition Height="*" />
+                                                                                        <RowDefinition Height="1" />
+                                                                                        <RowDefinition Height="*" />
+                                                                                        <RowDefinition Height="1" />
+                                                                                        <RowDefinition Height="*" />
+                                                                                        <RowDefinition Height="1" />
+                                                                                        <RowDefinition Height="*" />
+                                                                                        <RowDefinition Height="1" />
+                                                                                        <RowDefinition Height="*" />
+                                                                                        <RowDefinition Height="1" />
+                                                                                        <RowDefinition Height="*" />
+                                                                                        <RowDefinition Height="1" />
+                                                                                        <RowDefinition Height="*" />
+                                                                                    </Grid.RowDefinitions>
+
+                                                                                    <!--  구분  -->
+                                                                                    <Border Grid.Row="0" 
+                                                                                        Grid.Column="0" 
+                                                                                        BorderBrush="Black"
+                                                                                        BorderThickness="1"
+                                                                                        Background="LightBlue"
+                                                                                        Margin="5,0,0,0">
+                                                                                        <Border Margin="2,0,0,0">
+                                                                                            <TextBlock Text="{Binding exp_DivLabel}"/>
+                                                                                        </Border>
+                                                                                    </Border>
+
+                                                                                    <!--  내용  -->
+                                                                                    <Border Grid.Row="0" 
+                                                                                        Grid.Column="2"
+                                                                                        BorderBrush="Black"
+                                                                                        BorderThickness="1"
+                                                                                        Background="LightBlue"
+                                                                                        Margin="0,0,5,0">
+                                                                                        <Border Margin="2,0,0,0">
+                                                                                            <TextBlock Text="{Binding exp_ContentsLabel}"/>
+                                                                                        </Border>
+                                                                                    </Border>
+
+                                                                                    <!--  구분 - 작성자  -->
+                                                                                    <Border Grid.Row="2" 
+                                                                                        Grid.Column="0"
+                                                                                        BorderBrush="Black"
+                                                                                        BorderThickness="1"
+                                                                                        Margin="5,0,0,0">
+                                                                                        <Border Margin="2,0,0,0">
+                                                                                            <TextBlock Text="{Binding exp_CreateUserLabel}"/>
+                                                                                        </Border>
+                                                                                    </Border>
+
+                                                                                    <!--  내용 - 작성자  -->
+                                                                                    <Border Grid.Row="2" 
+                                                                                        Grid.Column="2"
+                                                                                        BorderBrush="Black"
+                                                                                        BorderThickness="1"
+                                                                                        Margin="0,0,5,0">
+                                                                                        <Border Margin="2,0,0,0">
+                                                                                            <TextBlock Text="{Binding exp_CreateUserId}"/>
+                                                                                        </Border>
+                                                                                    </Border>
+
+                                                                                    <!--  구분 - 버전  -->
+                                                                                    <Border Grid.Row="4" 
+                                                                                        Grid.Column="0"
+                                                                                        BorderBrush="Black"
+                                                                                        BorderThickness="1"
+                                                                                        Margin="5,0,0,0">
+                                                                                        <Border Margin="2,0,0,0">
+                                                                                            <TextBlock Text="{Binding exp_VersionLabel}"/>
+                                                                                        </Border>
+                                                                                    </Border>
+
+                                                                                    <!--  내용 - 버전  -->
+                                                                                    <Border Grid.Row="4" 
+                                                                                        Grid.Column="2"
+                                                                                        BorderBrush="Black"
+                                                                                        BorderThickness="1"
+                                                                                        Margin="0,0,5,0">
+                                                                                        <Border Margin="2,0,0,0">
+                                                                                            <TextBlock Text="{Binding exp_RevsnVal}"/>
+                                                                                        </Border>
+                                                                                    </Border>
+
+                                                                                    <!--  구분 - 제목  -->
+                                                                                    <Border Grid.Row="6" 
+                                                                                        Grid.Column="0"
+                                                                                        BorderBrush="Black"
+                                                                                        BorderThickness="1"
+                                                                                        Margin="5,0,0,0">
+                                                                                        <Border Margin="2,0,0,0">
+                                                                                            <TextBlock Text="{Binding exp_TitleLabel}" VerticalAlignment="Center"/>
+                                                                                        </Border>
+                                                                                    </Border>
+
+                                                                                    <!--  내용 - 제목  -->
+                                                                                    <Border Grid.Row="6" 
+                                                                                        Grid.Column="2"
+                                                                                        BorderBrush="Black"
+                                                                                        BorderThickness="1"
+                                                                                        Margin="0,0,5,0">
+                                                                                        <!--  TODO : <Border> 영역 Margin 간격 좌상우하 모두 2로 설정 (Margin="2") (2023.11.07 jbh)  -->
+                                                                                        <Border Margin="2" 
+                                                                                            BorderBrush="Gray">
+                                                                                            <TextBox Text="{Binding exp_Title}"/>
+                                                                                        </Border>
+                                                                                    </Border>
+
+                                                                                    <!--  구분 - 소프트웨어  -->
+                                                                                    <Border Grid.Row="8" 
+                                                                                        Grid.Column="0"
+                                                                                        BorderBrush="Black"
+                                                                                        BorderThickness="1"
+                                                                                        Margin="5,0,0,0">
+                                                                                        <Border Margin="2,0,0,0">
+                                                                                            <TextBlock Text="{Binding exp_SoftLabel}" VerticalAlignment="Center"/>
+                                                                                        </Border>
+                                                                                    </Border>
+
+                                                                                    <!--  내용 - 소프트웨어  -->
+                                                                                    <Border Grid.Row="8" 
+                                                                                        Grid.Column="2"
+                                                                                        BorderBrush="Black"
+                                                                                        BorderThickness="1"
+                                                                                        Margin="0,0,5,0">
+                                                                                        <!--  TODO : <Border> 영역 Margin 간격 좌상우하 모두 2로 설정 (Margin="2") (2023.11.07 jbh)  -->
+                                                                                        <Border Margin="2" 
+                                                                                                BorderBrush="Gray">
+                                                                                            <TextBox Text="{Binding exp_SoftName}"/>
+                                                                                        </Border>
+                                                                                    </Border>
+
+                                                                                    <!--  구분 - 소프트웨어버전  -->
+                                                                                    <Border Grid.Row="10" 
+                                                                                        Grid.Column="0"
+                                                                                        BorderBrush="Black"
+                                                                                        BorderThickness="1"
+                                                                                        Margin="5,0,0,0">
+                                                                                        <Border Margin="2,0,0,0">
+                                                                                            <TextBlock Text="{Binding exp_SoftVerLabel}" VerticalAlignment="Center"/>
+                                                                                        </Border>
+                                                                                    </Border>
+
+                                                                                    <!--  내용 - 소프트웨어버전  -->
+                                                                                    <Border Grid.Row="10" 
+                                                                                        Grid.Column="2"
+                                                                                        BorderBrush="Black"
+                                                                                        BorderThickness="1"
+                                                                                        Margin="0,0,5,0">
+                                                                                        <!--  TODO : <Border> 영역 Margin 간격 좌상우하 모두 2로 설정 (Margin="2") (2023.11.07 jbh)  -->
+                                                                                        <Border Margin="2" 
+                                                                                            BorderBrush="Gray">
+                                                                                            <TextBox Text="{Binding exp_SoftVer}"/>
+                                                                                        </Border>
+                                                                                    </Border>
+
+                                                                                    <!--  구분 - 키워드/태그  -->
+                                                                                    <Border Grid.Row="12" 
+                                                                                            Grid.Column="0"
+                                                                                            BorderBrush="Black"
+                                                                                            BorderThickness="1"
+                                                                                            Margin="5,0,0,0">
+                                                                                        <Border Margin="2,0,0,0">
+                                                                                            <TextBlock Text="{Binding exp_KeywordTagLabel}" VerticalAlignment="Center"/>
+                                                                                        </Border>
+                                                                                    </Border>
+
+                                                                                    <!--  내용 - 키워드/태그  -->
+                                                                                    <Border Grid.Row="12" 
+                                                                                            Grid.Column="2"
+                                                                                            BorderBrush="Black"
+                                                                                            BorderThickness="1"
+                                                                                            Margin="0,0,5,0">
+                                                                                        <!--  TODO : <Border> 영역 Margin 간격 좌상우하 모두 2로 설정 (Margin="2") (2023.11.07 jbh)  -->
+                                                                                        <Border Margin="2" 
+                                                                                                BorderBrush="Gray">
+                                                                                            <TextBox Text="{Binding exp_KeywordTag}"/>
+                                                                                        </Border>
+                                                                                    </Border>
+
+                                                                                    <!--  구분 - 파일유형  -->
+                                                                                    <Border Grid.Row="14" 
+                                                                                            Grid.Column="0"
+                                                                                            BorderBrush="Black"
+                                                                                            BorderThickness="1"
+                                                                                            Margin="5,0,0,0">
+                                                                                        <Border Margin="2,0,0,0">
+                                                                                            <TextBlock Text="{Binding exp_FileTypeCodeLabel}" VerticalAlignment="Center"/>
+                                                                                        </Border>
+                                                                                    </Border>
+
+                                                                                    <!--  내용 - 파일유형  -->
+                                                                                    <Border Grid.Row="14" 
+                                                                                        Grid.Column="2"
+                                                                                        BorderBrush="Black"
+                                                                                        BorderThickness="1"
+                                                                                        Margin="0,0,5,0">
+                                                                                        <!--  TODO : <Border> 영역 Margin 간격 좌상우하 모두 0으로 설정 (Margin="0") (2023.11.07 jbh)  -->
+                                                                                        <Border Margin="0" 
+                                                                                                BorderBrush="Gray">
+                                                                                            <!--  TODO : 파일유형 ComboBox 구현 예정 (2023.10.19 jbh) -->
+                                                                                            <!--  SelectedItem="{Binding }"  -->
+                                                                                            <!--  ComboBox 구현시 참고 자료 -->
+                                                                                            <!--  참고 URL - https://kaki104.tistory.com/749  -->
+                                                                                            <!--  참고 2 URL - https://devbong.tistory.com/39  -->
+                                                                                            <!--  참고 3 URL - https://chashtag.tistory.com/m/79  -->
+
+                                                                                            <!-- TODO : <ItemsControl> - <ItemsControl.ItemTemplate> - <DataTemplate> - <DockPanel> - <Grid>
+		                                                                                             - <Border> - <Border> 영역 안 <ComboBox> SelectedItem 바인딩 구현 (2023.10.23 jbh) -->
+                                                                                            <!--  참고 URL - https://korsa.tistory.com/95 -->
+                                                                                            <ComboBox x:Name="FileType" 
+                                                                                                  ItemsSource="{Binding FileTypeList}"
+                                                                                                  DisplayMemberPath="exp_codeName"
+                                                                                                  SelectedItem="{Binding SelectParam.FileTypeCodeInfo, Mode=TwoWay}">
+                                                                                                <!--SelectedItem="{Binding Param.FileTypeCodeInfo, Mode=TwoWay}"-->
+                                                                                                <!--<TextBlock Text="{Binding exp_FileTypeCodeName}"/>-->
+                                                                                            </ComboBox>
+                                                                                        </Border>
+                                                                                    </Border>
+
+                                                                                    <!--  구분 - 마일스톤  -->
+                                                                                    <Border Grid.Row="16" 
+                                                                                            Grid.Column="0"
+                                                                                            BorderBrush="Black"
+                                                                                            BorderThickness="1"
+                                                                                            Margin="5,0,0,3">
+                                                                                        <Border Margin="2,0,0,0">
+                                                                                            <TextBlock Text="{Binding exp_TaskDetailLabel}" VerticalAlignment="Center"/>
+                                                                                        </Border>
+                                                                                    </Border>
+
+                                                                                    <!--  내용 - 마일스톤  -->
+                                                                                    <Border Grid.Row="16" 
+                                                                                            Grid.Column="2"
+                                                                                            BorderBrush="Black"
+                                                                                            BorderThickness="1"
+                                                                                            Margin="0,0,5,3">
+                                                                                        <!--  TODO : <Border> 영역 Margin 간격 좌상우하 모두 0으로 설정 (Margin="0") (2023.11.07 jbh)  -->
+                                                                                        <Border Margin="0" 
+                                                                                                BorderBrush="Gray">
+                                                                                            <!--  TODO : 마일스톤 ComboBox 인재 INC 측으로 부터 Rest API 공유 받으면 구현 예정 (2023.10.19 jbh) -->
+                                                                                            <!--  TODO : <ItemsControl> - <ItemsControl.ItemTemplate> - <DataTemplate> - <DockPanel> - <Grid>
+		                                                                                             - <Border> - <Border> 영역 안 <ComboBox> SelectedItem 바인딩 구현 (2023.10.24 jbh) -->
+                                                                                            <!--  참고 URL - https://korsa.tistory.com/95 -->
+                                                                                            <ComboBox x:Name="TaskDetailType"
+                                                                                                      ItemsSource="{Binding TaskDetailList}"
+                                                                                                      DisplayMemberPath="exp_title"
+                                                                                                      SelectedItem="{Binding SelectParam.TaskDetail, Mode=TwoWay}">
+                                                                                                <!--<TextBlock Text="{Binding exp_TaskDetailType}"/>-->
+                                                                                            </ComboBox>
+                                                                                        </Border>
+                                                                                    </Border>
+                                                                                </Grid>
+                                                                            </DockPanel>
+                                                                        </DataTemplate>
+                                                                    </ItemsControl.ItemTemplate>
+                                                                </ItemsControl>
+                                                            </Border>
+                                                        </DockPanel>
+                                                    </Border>
+
+                                                    <!-- <GridSplitter> 사용해서 그리드 세로 분할 -->
+                                                    <GridSplitter Grid.Column="1"
+                                                                  HorizontalAlignment="Center"
+                                                                  VerticalAlignment="Stretch"
+                                                                  Width="5"
+                                                                  Margin="0,10,0,10"
+                                                                  Background="#C07237"
+                                                                  ShowsPreview="True" />
+
+                                                    <!--  TODO : 파일 정보 <Border> 영역 - CornerRadius ="4" 사용해서 꼭지점 둥글게 구현 (2023.11.10 jbh)  -->
+                                                    <!--  참고 URL - https://insurang.tistory.com/entry/WPF-C-RoundButton-%EB%91%A5%EA%B7%BC%EB%B2%84%ED%8A%BC-%EB%A7%8C%EB%93%A4%EA%B8%B0-CornerRadius-Style  -->
+                                                    <!--  파일 정보  -->
+                                                    <Border Grid.Column="2" 
+                                                            BorderBrush="NavajoWhite" 
+                                                            BorderThickness="5" 
+                                                            CornerRadius ="4"
+                                                            Margin="5,10,10,10">
+                                                        <DockPanel Visibility="{Binding visibleFileInfo}">
+                                                            <Border DockPanel.Dock="Top" Margin="5,5,5,3">
+                                                                <DockPanel>
+                                                                    <TextBlock Text=">파일정보" VerticalAlignment="Center" Margin="5,0,0,0"/>
+                                                                </DockPanel>
+                                                            </Border>
+
+                                                            <Border DockPanel.Dock="Bottom" Margin="5,0,5,0">
+                                                                <ItemsControl ItemsSource="{Binding ContainerDatas}">
+                                                                    <ItemsControl.ItemTemplate>
+                                                                        <DataTemplate>
+                                                                            <DockPanel>
+                                                                                <!--  2행 * 2열 데이터 테이블 표 구현  -->
+                                                                                <Grid>
+                                                                                    <Grid.ColumnDefinitions>
+                                                                                        <ColumnDefinition Width="*" />
+                                                                                        <ColumnDefinition Width="1" />
+                                                                                        <ColumnDefinition Width="3*" />
+                                                                                    </Grid.ColumnDefinitions>
+                                                                                    <Grid.RowDefinitions>
+                                                                                        <RowDefinition Height="*" />
+                                                                                        <RowDefinition Height="1" />
+                                                                                        <RowDefinition Height="*" />
+                                                                                    </Grid.RowDefinitions>
+
+                                                                                    <!--  구분  -->
+                                                                                    <Border Grid.Row="0" 
+                                                                                        Grid.Column="0" 
+                                                                                        BorderBrush="Black"
+                                                                                        BorderThickness="1"
+                                                                                        Background="LightBlue"
+                                                                                        Margin="5,0,0,0">
+                                                                                        <Grid Margin="2,0,0,0">
+                                                                                            <TextBlock Text="{Binding exp_DivLabel}"/>
+                                                                                        </Grid>
+                                                                                    </Border>
+
+                                                                                    <!--  내용  -->
+                                                                                    <Border Grid.Row="0" 
+                                                                                        Grid.Column="2"
+                                                                                        BorderBrush="Black"
+                                                                                        BorderThickness="1"
+                                                                                        Background="LightBlue"
+                                                                                        Margin="0,0,5,0">
+                                                                                        <Grid Margin="2,0,0,0">
+                                                                                            <TextBlock Text="{Binding exp_ContentsLabel}" />
+                                                                                        </Grid>
+                                                                                    </Border>
+
+                                                                                    <!--  구분 - 파일명  -->
+                                                                                    <Border Grid.Row="2" 
+                                                                                        Grid.Column="0"
+                                                                                        BorderBrush="Black"
+                                                                                        BorderThickness="1"
+                                                                                        Margin="5,0,0,0">
+                                                                                        <Grid Margin="2,0,0,0">
+                                                                                            <TextBlock Text="{Binding exp_FileNameLabel}" VerticalAlignment="Center" />
+                                                                                        </Grid>
+                                                                                    </Border>
+
+                                                                                    <!--  내용 - 파일명  -->
+                                                                                    <Border Grid.Row="2" 
+                                                                                        Grid.Column="2"
+                                                                                        BorderBrush="Black"
+                                                                                        BorderThickness="1"
+                                                                                        Margin="0,0,5,0">
+                                                                                        <Grid Margin="2,0,0,0">
+                                                                                            <DockPanel>
+                                                                                                <TextBlock Text="{Binding exp_FileName}" VerticalAlignment="Center"  />
+                                                                                                <StackPanel Orientation="Horizontal" Margin="10,0,0,0">
+                                                                                                    <!--  TODO : 다운로드 이미지 파일 추가 예정 (2023.10.19 jbh) -->
+                                                                                                    <Image Width="10"/>
+                                                                                                    <!--  TODO : <ItemsControl> 영역 -> 내용 - 파일명 "Border" 영역 안 버튼 Command 바인딩 구현 (2023.10.19 jbh) -->
+                                                                                                    <!--  참고 URL - https://korsa.tistory.com/95 -->
+                                                                                                    <Button Content="다운로드" 
+                                                                                                        HorizontalAlignment="Right" 
+                                                                                                        Margin="0,2,2,2"
+                                                                                                        Command="{Binding DataContext.DownlLoadCommand, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type UserControl}}}">
+                                                                                                        <!--  TODO : 버튼 멀티 바인딩 구현 (2023.10.24 jbh) -->
+                                                                                                        <!--  참고 URL - https://nonstop-antoine.tistory.com/40  -->
+                                                                                                        <!--  참고 2 URL - https://chashtag.tistory.com/43  -->
+                                                                                                        <!--  참고 3 URL - https://stackoverflow.com/questions/1350598/passing-two-command-parameters-using-a-wpf-binding -->
+                                                                                                        <!--  참고 4 URL - https://stackoverflow.com/questions/23499671/wpf-multibinding-button-isenabled-with-textboxes  -->
+                                                                                                        <!--  참고 5 URL - https://stackoverflow.com/questions/22084611/wpf-how-to-bind-together-two-properties-bound-to-two-different-controls -->
+                                                                                                        <Button.CommandParameter>
+                                                                                                            <!--  TODO : 버튼 멀티 바인딩 시 프로퍼티 Path 사용 (2023.10.24 jbh)  -->
+                                                                                                            <!--  참고 URL - https://icodebroker.tistory.com/entry/CWPF-MultiBinding-%EC%97%98%EB%A6%AC%EB%A8%BC%ED%8A%B8-Converter-%EC%86%8D%EC%84%B1%EC%97%90%EC%84%9C-IMultiValueConverter-%EC%9D%B8%ED%84%B0%ED%8E%98%EC%9D%B4%EC%8A%A4-%EA%B5%AC%ED%98%84-%EA%B0%9D%EC%B2%B4%EB%A5%BC-%EC%82%AC%EC%9A%A9%ED%95%B4-%EB%B0%94%EC%9D%B8%EB%94%A9%ED%95%98%EA%B8%B0-2  -->
+                                                                                                            <MultiBinding Converter="{StaticResource ExplorerConverter}">
+                                                                                                                <Binding Path="exp_ProjectId"    />
+                                                                                                                <Binding Path="exp_TeamId"       />
+                                                                                                                <Binding Path="exp_ContainerId"  />
+                                                                                                                <Binding Path="exp_FileId"       />
+                                                                                                                <Binding Path="exp_FileName"     />
+                                                                                                            </MultiBinding>
+                                                                                                        </Button.CommandParameter>
+                                                                                                    </Button>
+                                                                                                </StackPanel>
+                                                                                            </DockPanel>
+                                                                                        </Grid>
+                                                                                    </Border>
+                                                                                </Grid>
+                                                                            </DockPanel>
+                                                                        </DataTemplate>
+                                                                    </ItemsControl.ItemTemplate>
+                                                                </ItemsControl>
+                                                            </Border>
+                                                        </DockPanel>
+                                                    </Border>
+                                                </Grid>
+                                            </TabItem>
+
+                                            <TabItem Header="미리보기">
+                                                <Grid>
+                                                    <Grid.RowDefinitions>
+                                                        <!-- TODO : <RowDefinition>영역에서 Height 가중치 (0.3 대 0.05 대 1 비율) 구현 (2023.10.30 jbh) -->
+                                                        <!-- 참고 URL - https://chashtag.tistory.com/11 -->
+                                                        <!-- Height 가중치 1 -->
+                                                        <RowDefinition Height="0.3*" />
+
+                                                        <!-- Height 가중치 - 0.05 GridSplitter 영역 -->
+                                                        <RowDefinition Height="0.05*" />
+
+                                                        <!-- Height 가중치 1 -->
+                                                        <RowDefinition Height="*" />
+                                                    </Grid.RowDefinitions>
+
+                                                    <!--  TODO : 웹뷰어 이미지 <Border> 영역 - CornerRadius ="4" 사용해서 꼭지점 둥글게 구현 (2023.11.10 jbh)  -->
+                                                    <!--  참고 URL - https://insurang.tistory.com/entry/WPF-C-RoundButton-%EB%91%A5%EA%B7%BC%EB%B2%84%ED%8A%BC-%EB%A7%8C%EB%93%A4%EA%B8%B0-CornerRadius-Style  -->
+                                                    <!--  웹뷰어 이미지 영역 -->
+                                                    <!--  TODO : <Border> 영역 Margin 간격 좌상우하 모두 10으로 설정 (Margin="10") (2023.11.07 jbh)  -->
+                                                    <Border Grid.Row="0" 
+                                                            BorderBrush="NavajoWhite" 
+                                                            CornerRadius ="4"
+                                                            BorderThickness="5" 
+                                                            Margin="10">
+                                                        <DockPanel>
+                                                            <StackPanel Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center">
+                                                                <!--  TODO : 웹뷰어 기능 개발 대상 제외(COBIM 웹사이트에서만 사용) (2023.10.26 jbh)  -->
+                                                                <!--<Image Source="{Binding}"/>-->
+                                                                <TextBlock Text="CDE 탐색기 프로그램 웹뷰어 기능 개발 대상 제외" FontSize="16" FontWeight="Bold" Foreground="Red"/>
+                                                            </StackPanel>
+                                                        </DockPanel>
+                                                    </Border>
+
+                                                    <!-- <GridSplitter> 사용해서 그리드 가로 분할 -->
+                                                    <GridSplitter Grid.Row="1" 
+                                                                  HorizontalAlignment="Stretch"
+                                                                  VerticalAlignment="Center"
+                                                                  Height="5"
+                                                                  Margin="10,0,10,0"
+                                                                  Background="#C07237"
+                                                                  ShowsPreview="True" />
+
+                                                    <!--  TODO : 연관 컨테이너 <Border> 영역 - CornerRadius ="4" 사용해서 꼭지점 둥글게 구현 (2023.11.10 jbh)  -->
+                                                    <!--  참고 URL - https://insurang.tistory.com/entry/WPF-C-RoundButton-%EB%91%A5%EA%B7%BC%EB%B2%84%ED%8A%BC-%EB%A7%8C%EB%93%A4%EA%B8%B0-CornerRadius-Style  -->
+                                                    <!--  연관 컨테이너 (참조 관계 - 부모/자식 컨테이너) 영역  -->
+                                                    <!--  TODO : <Border> 영역 Margin 간격 좌상우하 모두 10으로 설정 (Margin="10") (2023.11.07 jbh)  -->
+                                                    <Border Grid.Row="2" 
+                                                            BorderBrush="NavajoWhite" 
+                                                            CornerRadius ="4"
+                                                            BorderThickness="5" 
+                                                            Margin="10">
+                                                        <DockPanel HorizontalAlignment="Center" 
+                                                                   VerticalAlignment="Center">
+
+                                                            <!--  TODO : TreeView 트리뷰 수평 방향으로 구현하기 (2023.10.26 jbh) -->
+                                                            <!--  참고 URL - https://stackoverflow.com/questions/364083/wpf-treeview-with-horizontal-orientation  -->
+                                                            <!--  참고 2 URL - https://www.codeproject.com/Articles/17025/Custom-TreeView-Layout-in-WPF  -->
+                                                            <!--  참고 3 URL - https://www.generacodice.com/ko/articolo/169565/%EC%88%98%ED%8F%89-%EB%B0%A9%ED%96%A5%EC%9D%B4%EC%9E%88%EB%8A%94-wpf-%ED%8A%B8%EB%A6%AC-%EB%B7%B0  -->
+
+                                                            <!--  탭 "미리보기" 우측 TreeView(트리뷰) 영역  -->
+                                                            <!--<TreeView x:Name="linkedNodeInfoTreeView"
+                                                                  ItemsSource="{Binding LinkedNodeInfoDatas}">-->
+                                                            <!--  TODO : TreeView -> TreeViewItem 전용 스타일 속성 바인딩 구현(ItemContainerStyle="{DynamicResource App.TreeViewItem.Horizontality}") (2023.10.30 jbh)  -->
+                                                            <!--  참고 URL - https://www.codeproject.com/Questions/1280454/Treeviewitem-togglebutton-style-working-only-for-p  -->
+
+                                                            <!--  TODO : <TreeView> 영역 Margin 간격 좌상우하 모두 10으로 설정 (Margin="10") (2023.11.07 jbh)  -->
+                                                            <TreeView x:Name="linkedNodeInfoTreeView"
+                                                                  ItemsSource="{Binding LinkedNodeInfoDatas}"
+                                                                  ItemContainerStyle="{DynamicResource App.TreeViewItem.Horizontality}"
+                                                                  Margin="5">
+                                                                <!--<TreeView.ItemContainerStyle>
+                                                                <Style TargetType="{x:Type TreeViewItem}">
+                                                                    <Setter Property="IsExpanded" Value="False" />
+                                                                    <Setter Property="ItemsPanel">
+                                                                        <Setter.Value>
+                                                                            <ItemsPanelTemplate>
+                                                                                <StackPanel HorizontalAlignment="Center" 
+                                                                                            IsItemsHost="True" 
+                                                                                            Margin="4,6" 
+                                                                                            Orientation="Horizontal" />
+                                                                            </ItemsPanelTemplate>
+                                                                        </Setter.Value>
+                                                                    </Setter>
+                                                                </Style>
+                                                            </TreeView.ItemContainerStyle>-->
+                                                                <TreeView.Resources>
+                                                                    <!--  This template explains how to render 
+                                                                      a Node object and its child nodes.  -->
+                                                                    <!--  연관 컨테이너(참조관계 - 부모/자식 컨테이너) TreeView 형식 데이터 바인딩  -->
+                                                                    <!--x:Key="linkedNodeInfoTreeHorizontalItems"-->
+                                                                    <HierarchicalDataTemplate DataType="{x:Type vm:LinkedNodeView}"
+                                                                                          ItemsSource="{Binding ChildNodes}">
+                                                                        <!--  TODO : <TreeView> 영역 -> <HierarchicalDataTemplate> 영역 -> <StackPanel> 영역 안 버튼 Command 바인딩 구현 (2023.10.30 jbh)  -->
+                                                                        <!--  참고 URL - https://korsa.tistory.com/95  -->
+                                                                        <StackPanel Orientation="Horizontal">
+                                                                            <!--  TODO : 버튼 기본 스타일(테두리, 배경 등등...) 제거 구현 (2023.10.30 jbh)  -->
+                                                                            <!--  참고 URL - https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&blogId=skelentom&logNo=10166053623  -->
+                                                                            <Button Command="{Binding DataContext.LinkedNodeInfoCommand, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type UserControl}}}"
+                                                                                Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}">
+                                                                                <Button.Content>
+                                                                                    <TextBlock Text="{Binding exp_TreeName}" Foreground="{DynamicResource {x:Static SystemColors.HighlightTextBrushKey}}"/>
+                                                                                </Button.Content>
+                                                                            </Button>
+                                                                        </StackPanel>
+                                                                    </HierarchicalDataTemplate>
+                                                                </TreeView.Resources>
+
+                                                                <!--  Put the root item(s) in a centered Grid so that 
+                                                                  they will be centered and retain their width.  -->
+                                                                <!--  TreeView 루트 항목을 중앙 그리드에 배치하여
+                                                                  중앙에 위치하며 너비를 유지합니다. -->
+                                                                <TreeView.ItemsPanel>
+                                                                    <ItemsPanelTemplate>
+                                                                        <Grid HorizontalAlignment="Center"
+                                                                          IsItemsHost="True" />
+                                                                    </ItemsPanelTemplate>
+                                                                </TreeView.ItemsPanel>
+                                                                <!--Content="{Binding}"-->
+                                                                <!--<ContentControl 
+                                                                            ContentTemplate="{StaticResource linkedNodeInfoTreeHorizontalItems}"/>-->
+                                                            </TreeView>
+                                                        </DockPanel>
+                                                    </Border>
+                                                </Grid>
+                                            </TabItem>
+                                            <TabItem Header="변경">
+
+                                            </TabItem>
+                                            <TabItem Header="이슈">
+
+                                            </TabItem>
+                                            <TabItem Header="검토">
+
+                                            </TabItem>
+                                        </TabControl>
+                                    </Border>
+                                </DockPanel>
+                            </Border>
+                        </Grid>
+                    </Grid>
+                </Border>
+            </DockPanel>
+        </Border>
+    </Grid>
+    <!-- TODO : C# WPF 팁 - Xaml 안에서 ViewModel속성을 자동완성 되도록 만들기(d:DataContext="{d:DesignInstance Type=vm:MainVM}") (2023.07.17 jbh) -->
+    <!-- 유튜브 참고 URL - https://youtu.be/A8t5ktSAgdA -->
+
+    <!--TODO : LazyTreeView 구현 (2023.07.17 jbh)
+               유튜브 참고 URL
+               WPF TreeView - LazyTreeNode(지연로드 트리뷰) 만들기 - 1
+               참고 URL - https://youtu.be/8mCzmlGRU4Y
+               
+               WPF TreeView - LazyTreeNode(지연로드 트리뷰) 만들기 - 2(완)
+               참고 URL - https://youtu.be/IId6XmwlqlQ-->
+    <!--<Grid>
+        --><!-- TODO : 화면 내 그리드 3분할 할 수 있도록 <GridSplitter> 사용해서 구현 (2023.07.13 jbh) -->
+        <!-- 참고 URL - https://icodebroker.tistory.com/8114 -->
+        <!-- 화면 영역 --><!--
+        <Grid>
+            <Grid.ColumnDefinitions>
+                --><!-- TODO : <ColumnDefinition>영역에서 Width 가중치 (1 대 2 비율) 구현 (2023.07.14 jbh) -->
+                <!-- 참고 URL - https://benstagram.tistory.com/33 --><!--
+                <ColumnDefinition Width="*"    />
+                --><!-- Width 가중치 1 --><!--
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="2*"   />
+                --><!-- Width 가중치 2 --><!--
+            </Grid.ColumnDefinitions>
+
+            --><!-- Border 속성 "BorderBrush", "BorderThickness" 사용법 
+             참고 URL - https://talkingaboutme.tistory.com/entry/WP7-%EA%B0%9C%EB%B0%9C-%EA%B8%B0%EC%B4%88-border-%EC%86%8D%EC%84%B1 -->
+            <!-- 화면 좌측 TreeView 영역 -->
+            <!-- 참고 URL - http://inasie.tistory.com/19 -->
+            <!-- 참고 2 URL - https://insurang.tistory.com/383 --><!--
+            <Border Grid.Row="0" Grid.Column="0" BorderBrush="Black" BorderThickness="10">
+                --><!-- TODO : TreeView 테스트 코드 추후 삭제 예정 (2023.07.14 jbh) -->
+                <!-- TODO : TreeView DataType, ItemsSource 관련 클래스 Folder 구현 (2023.07.14 jbh)
+                        참고 URL - https://icodebroker.tistory.com/entry/CWPF-TreeViewItem-%ED%81%B4%EB%9E%98%EC%8A%A4-ItemsSource-%EC%86%8D%EC%84%B1%EC%9D%84-%EC%82%AC%EC%9A%A9%ED%95%B4-%ED%8A%B8%EB%A6%AC-%EB%B7%B0-%EB%A7%8C%EB%93%A4%EA%B8%B0#google_vignette-->
+                <!--<TreeView Name="folderTreeView">
+                    <TreeViewItem Header="폴더"
+                              ItemsSource="{Binding Source={StaticResource ObjectDataProviderKey}, Path=SubFolderCollection}" />
+                </TreeView>-->
+                <!-- ItemsSource에 바인딩 된 PathNodes는 LazyTreeNode의 Collection이 될 바인딩 객체이다. --><!--
+                <TreeView ItemsSource="{Binding PathNodes}" Name="folderTreeView">
+                    <TreeView.Resources>
+                        --><!--LazyTreeNode의 Collection인 PathNodes에 속하는 아이템 TreeViewItem--><!--
+                        <Style TargetType="{x:Type TreeViewItem}">
+                            --><!--아이템 TreeViewItem에는 LazyTreeNode.cs의 IsExpanded 속성을 바인딩 처리 
+                     <TreeView> 영역의 아이템(<Style TargetType="{x:Type TreeViewItem}">) 영역에서
+                         IsExpanded 속성((예)Property="IsExpanded")에 LazyTreeNode.cs -> 속성(프로퍼티) IsExpanded 를 바인딩 처리.(Mode는 양방향으로 처리)
+                         (<Setter Property="IsExpanded" Value="{Binding IsExpanded, Mode=TwoWay}"/>)--><!--
+                            <Setter Property="IsExpanded" Value="{Binding IsExpanded, Mode=TwoWay}"/>
+                        </Style>
+                    </TreeView.Resources>
+
+                    --><!--TreeView에 계층 추가--><!--
+                    <TreeView.ItemTemplate>
+                        --><!--DataType(models:LazyTreeNode) 지정 및 ItemsSource에 Children 바인딩 
+                 TreeView에 추가될 하위 노드로는 DataType은 "models:LazyTreeNode" ItemsSource로는 Children Collection 이다.--><!--
+                        <HierarchicalDataTemplate DataType="{x:Type models:LazyTreeNode}" ItemsSource="{Binding Children}">
+                            <StackPanel Orientation="Horizontal">
+                                --><!--드라이브, 디렉토리, 파일 비트맵 이미지 추가 (Opened, Closed)--><!--
+                                <Image x:Name="treeImage" Width="24" Height="24" Source="{Binding ClosedImage}"/>
+
+                                --><!--TreeView에 추가될 하위 노드 디자인 수정-->
+                                <!--<TextBlock>영역의 Text 속성에 Children Collection 안에 존재하는 LazyTreeNode 클래스 타입에 포함된 속성(프로퍼티) FileName로 바인딩 처리--><!--
+                                <TextBlock Text="{Binding FileName}" FontSize="20"/>
+                            </StackPanel>
+
+                            --><!--Trigger 영역-->
+                            <!--더미노드가 펼쳐졌을 경우 실행되는 Trigger--><!--
+                            <HierarchicalDataTemplate.Triggers>
+                                --><!--더미노드가 펼쳐졌을 경우 프로퍼티 IsExpanded의 값(Value)이 True를 의미--><!--
+                                <DataTrigger Binding="{Binding IsExpanded}" Value="True">
+                                    --><!--더미노드가 펼쳐졌을 경우 x:Name="treeImage"인 <Image> 영역의 Source 프로퍼티가 바인딩하는 객체(Value)가 OpenedImage로 변경--><!--
+                                    <Setter TargetName="treeImage"
+                                        Property="Source"
+                                        Value="{Binding OpenedImage}"/>
+                                </DataTrigger>
+                            </HierarchicalDataTemplate.Triggers>
+                        </HierarchicalDataTemplate>
+                    </TreeView.ItemTemplate>
+                </TreeView>
+            </Border>
+
+            --><!-- <GridSplitter> 사용해서 그리드 세로 분할 --><!--
+            <GridSplitter Grid.Row="0" Grid.Column="1"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Stretch"
+            Width="10"
+            ShowsPreview="True" />
+
+            <Grid Grid.Row="0" Grid.Column="2">
+                <Grid.RowDefinitions>
+                    --><!-- TODO : <RowDefinition>영역에서 Height 가중치 (1.5 대 1 비율) 구현 (2023.07.14 jbh) -->
+                    <!-- 참고 URL - https://benstagram.tistory.com/33 --><!--
+                    <RowDefinition Height="1.5*" />
+                    --><!-- Height 가중치 1.5 --><!--
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*"    />
+                    --><!-- Height 가중치 1   --><!--
+                </Grid.RowDefinitions>
+
+                --><!-- 화면 우측 상단 GridView 영역 --><!--
+                <Border Grid.Row="0" Grid.Column="0" BorderBrush="OrangeRed" BorderThickness="10">
+                    --><!-- GridView 영역 -->
+                    <!-- TODO: GridView 영역 구현시 <Grid> 또는 <DataGrid> 둘 중에 하나로 구현하기 (2023.07.13 jbh) -->
+                    <!-- TODO: 아래 <DataGrid> 영역 테스트 코드 추후 삭제 예정 (2023.07.14 jbh) -->
+                    <!--<DataGrid ItemsSource="{Binding ElementName=folderTreeView, Path=SelectedItem.SubFolderCollection, Mode=OneWay}"/>--><!--
+                    <DataGrid ItemsSource="{Binding SubFolderCollection}">
+                    </DataGrid>
+                </Border>
+
+                --><!-- <GridSplitter> 사용해서 그리드 가로 분할 --><!--
+                <GridSplitter Grid.Row="1" Grid.Column="0"
+                HorizontalAlignment="Stretch"
+                VerticalAlignment="Center"
+                Height="10"
+                ShowsPreview="True" />
+
+                --><!-- 화면 우측 하단 ListView 영역 --><!--
+                <Border Grid.Row="2" Grid.Column="0" BorderBrush="SaddleBrown" BorderThickness="10">
+                    --><!-- ListView 영역 -->
+                    <!-- TODO: 아래 <ListView> 영역 테스트 코드 추후 삭제 예정 (2023.07.14 jbh) -->
+                    <!-- <ListView ItemsSource="{Binding ElementName=folderTreeView, Path=SelectedItem.FileInfoCollection, Mode=OneWay}"/> -->
+                    <!--<DataGrid ItemsSource="{Binding ElementName=folderTreeView, Path=SelectedItem.FileInfoCollection, Mode=OneWay}"/>--><!--
+                    <DataGrid ItemsSource="{Binding FileInfoCollection}"/>
+                </Border>
+            </Grid>
+        </Grid>
+    </Grid>-->
+</UserControl>

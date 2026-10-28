@@ -1,0 +1,36 @@
+﻿using System;
+using System.ComponentModel;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Reflection;
+using System.Threading.Tasks;
+using System.Diagnostics;
+using Serilog;
+
+namespace CobimUtil.Helper
+{
+    public static class StrHelper
+    {
+        /// <summary>
+        /// Enum 열거형 구조체 멤버 변수의 Description 문자열 리턴
+        /// </summary>
+        /// <param name="source"></param>
+        /// <returns></returns>
+        public static string ToDescription(this Enum source)
+        {
+            try
+            {
+                // TODO : if 조건절에 != null 보다 빠른 is not null 연산자 사용 (2023.11.24 jbh)
+                // 참고 URL - https://husk321.tistory.com/405
+                DescriptionAttribute[] customAttributes = (DescriptionAttribute[])source.GetType().GetField(source.ToString()).GetCustomAttributes(typeof(DescriptionAttribute), false);
+                return customAttributes is not null && customAttributes.Length != 0 ? customAttributes[0].Description : source.ToString();
+            }
+            catch (Exception ex)
+            {
+                Log.Debug("-----------------------------------\n 메소드 : " + MethodBase.GetCurrentMethod().ReflectedType.Name + "==>" + MethodBase.GetCurrentMethod().Name + "\n" + string.Format(" LINE : {0} 행\n", (object)new StackFrame(0, true).GetFileLineNumber()) + "-----------------------------------\n 내용 : " + ex.Message + "\n-----------------------------------\n");
+            }
+            return source.ToString();
+        }
+    }
+}

@@ -1,0 +1,31 @@
+﻿<!--  TODO : TabItem으로 출력된[2]번 HubBox 웹사이트 관리자 화면 종료시
+             구글 크롬 전용<CefSharp>화면
+             뷰(TestCefSharpV.xaml)
+             뷰모델(TestCefSharpVM.cs)에서
+             사용하고 있는 메모리를 정리하는 로직 구현하기 (2024.08.21 jbh)  -->
+
+<!--  참고 URL - https://stackoverflow.com/questions/48398628/c-sharp-cefsharp-memory-management  -->
+<!--  참고 2 URL - https://blog.naver.com/iconms1/222033637762  -->
+<!--  참고 3 URL - https://github.com/cefsharp/CefSharp/blob/master/CefSharp.WinForms.Example/BrowserForm.cs#L137  -->
+
+<!--  TODO : 구글 크롬 기반 웹브라우저 화면을 WPF에서 출력할 수 있도록 CefSharp (구글 크롬 웹브라우저 컨트롤) 구현 (2024.08.07 jbh)  -->
+<!--  참고 URL - https://blog.naver.com/codeknight2/222210163649  -->
+<!--  참고 2 URL - https://github.com/cefsharp/CefSharp/wiki/Quick-Start  -->
+<!--  유튜브 참고 URL - https://youtu.be/si8wemHOMYA?si=FiL-r-_5MoF1EwU_  -->
+<UserControl x:Class="CobimExplorer.Views.Page.Test.TestCefSharpV"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:CobimExplorer.Views.Page.Test"
+             xmlns:cef="clr-namespace:CefSharp.Wpf;assembly=CefSharp.Wpf"
+             xmlns:vm="clr-namespace:CobimExplorer.ViewModels.Page.Test"
+             xmlns:s="https://github.com/canton7/Stylet"
+             s:View.ActionTarget="{Binding TestCefSharpVM}"
+             d:DataContext="{d:DesignInstance vm:TestCefSharpVM}"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid Background="{StaticResource App.Brush.Themes.Common.White}">
+        <cef:ChromiumWebBrowser x:Name="Browser" Address="https://www.google.com/"/>
+    </Grid>
+</UserControl>

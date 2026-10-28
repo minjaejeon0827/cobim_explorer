@@ -1,0 +1,161 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!-- {StackResource } {DynamicResource }의 차이는 {StackResource }는 컴파일 실행할 때, 해당 솔루션의 존재하는 다른 로직(소스파일)에서  -->
+    <!-- 구현된 Resources(자원)들을 가져오는 기능이고, {DynamicResource }는 컴파일 실행 후, 프로그램이 정상 실행되는 런타임 동안에  -->
+    <!-- 실시간으로 데이터가 바뀌거나 화면이 새로 랜더링 되는(화면 변환) 동안에 동적으로 그때마다 필요한 Resource(자원)들을 가져오는 기능이다. -->
+    
+    <!--  TODO : ButtonBase 스타일 정의 필요시 구현 예정 (2023.11.10 jbh)  -->
+    <Style x:Key="App.Button" TargetType="{x:Type ButtonBase}">
+
+    </Style>
+
+    <!--  TODO : 필요시 아래 주석 친 CobimExplorer 응용 프로그램 화면 상단 타이틀 바에 사용할 버튼("최소화", "최대화", "닫기") 스타일 참고 (2023.11.09 jbh)  -->
+    <!--  유튜브 참고 URL - https://youtu.be/Q6VxSPlkcCg?si=dkC2ujAX3reUjQPk  -->
+    <!--  참고 URL - https://gigong.tistory.com/99  -->
+    <!--  TODO : 스타일 TargetType "ButtonBase" 필요시 구현 예정 (2023.11.08 jbh)  -->
+    <!--  <Style x:Key="App.Button.System" BasedOn="{StaticResource App.Button}" TargetType="{x:Type Button}">
+        <Setter Property="Padding" Value="0"/>
+        <Setter Property="Width" Value="35"/>
+        <Setter Property="Height" Value="25"/>
+        <Setter Property="HorizontalAlignment" Value="Right"/>
+        <Setter Property="VerticalAlignment" Value="Top"/>
+        <Setter Property="Background" Value="{StaticResource App.Brush.Themes.Common.Transparent}"/>
+        --><!--  TODO : 타이틀 바에 속한 버튼 ("최소화", "최대화", "닫기")이 정상적으로 동작하도록 프로퍼티  Property="WindowChrome.IsHitTestVisibleInChrome" 스타일 추가 (2023.11.13 jbh)  -->  
+        <!--  참고 URL - https://stackoverflow.com/questions/41905412/windowchrome-cant-click-buttons-in-titlebar  --><!--  
+        <Setter Property="WindowChrome.IsHitTestVisibleInChrome" Value="True" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border Background="{TemplateBinding Background}"  BorderThickness="0">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>  -->
+
+    <!--  TODO : CobimExplorer 응용 프로그램 화면 상단 타이틀 바에 사용할 버튼("최소화", "최대화", "축소", "닫기") 스타일 구현 (2023.12.11 jbh)  -->
+    <!--  유튜브 참고 URL - https://youtu.be/Q6VxSPlkcCg?si=dkC2ujAX3reUjQPk  -->
+    <!--  참고 URL - https://stackoverflow.com/questions/1283006/changing-wpf-title-bar-background-color  -->
+    <!--  참고 2 URL - https://www.codeproject.com/Articles/5255192/Use-WindowChrome-to-Customize-the-Title-Bar-in-WPF  -->
+    <!--  TODO : 스타일 TargetType "ButtonBase" 필요시 구현 예정 (2023.11.08 jbh)  -->
+    <Style x:Key="App.Button.System" BasedOn="{StaticResource App.Button}" TargetType="{x:Type Button}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Grid x:Name="LayoutRoot" Background="{DynamicResource App.Brush.Themes.Common.Transparent}" Width="44" Height="30">
+                        <!--  MainV.xaml - 시스템 버튼 (최소화), (최대화), (축소), (종료) 버튼 모양 (-, ㅁ, x 등등...) 도형 모양(TextBlock) 스타일 정의 -->
+                        <TextBlock x:Name="Text" Text="{TemplateBinding Content}" 
+                                   FontFamily="Segoe MDL2 Assets" 
+                                   FontSize="10" 
+                                   Foreground="{DynamicResource App.Brush.Themes.Common.White}" 
+                                   HorizontalAlignment="Center" 
+                                   VerticalAlignment="Center"
+                                   FontWeight="Bold"
+                                   RenderOptions.ClearTypeHint="Auto" 
+                                   TextOptions.TextRenderingMode="Aliased"  
+                                   TextOptions.TextFormattingMode="Display"/>
+                    </Grid>
+
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <!--<Setter TargetName="LayoutRoot" Property="Background" Value="#E5E5E5"/>
+                            <Setter TargetName="txt" Property="Foreground" Value="#000000"/>-->
+                            <Setter TargetName="LayoutRoot" Property="Background" Value="{DynamicResource App.Brush.Themes.Common.Red}"/>
+                            <!--<Setter TargetName="Text" Property="Foreground" Value="#000000"/>-->
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!--  TODO : 시스템 버튼 (최소화) 스타일 Trigger "IsMouseOver"의 속성 "Background"가 Green으로 바뀌지 않는 오류 원인 파악하기 (2023.12.11 jbh) -->
+    <!--  MainV.xaml - 시스템 버튼 (최소화) 스타일 정의  -->
+    <!--  참고 URL - https://stackoverflow.com/questions/1283006/changing-wpf-title-bar-background-color  -->
+    <!--  참고 2 URL - https://www.codeproject.com/Articles/5255192/Use-WindowChrome-to-Customize-the-Title-Bar-in-WPF  -->
+    <Style x:Key="App.Button.System.Min" BasedOn="{StaticResource App.Button.System}" TargetType="{x:Type Button}">
+        <Setter Property="Content" Value="&#xE949;"/>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="{DynamicResource App.Brush.Green}" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <!--  TODO : 시스템 버튼 (최대화) 스타일 Trigger "IsMouseOver"의 속성 "Background"가 Blue로 바뀌지 않는 오류 원인 파악하기 (2023.12.11 jbh) -->
+    <!--  MainV.xaml - 시스템 버튼 (최대화) 스타일 정의  -->
+    <!--  참고 URL - https://stackoverflow.com/questions/1283006/changing-wpf-title-bar-background-color  -->
+    <!--  참고 2 URL - https://www.codeproject.com/Articles/5255192/Use-WindowChrome-to-Customize-the-Title-Bar-in-WPF  -->
+    <Style x:Key="App.Button.System.Max" BasedOn="{StaticResource App.Button.System}" TargetType="{x:Type Button}">
+        <Setter Property="Content" Value="&#xE739;"/>
+
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver"  Value="True">
+                <Setter Property="Background" Value="{DynamicResource App.Brush.Blue}" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <!--  TODO : 시스템 버튼 (축소) 스타일 Trigger "IsMouseOver"의 속성 "Background"가 DarkGray로 바뀌지 않는 오류 원인 파악하기 (2023.12.11 jbh) -->
+    <!--  MainV.xaml - 시스템 버튼 (축소) 스타일 정의  -->
+    <!--  참고 URL - https://stackoverflow.com/questions/1283006/changing-wpf-title-bar-background-color  -->
+    <!--  참고 2 URL - https://www.codeproject.com/Articles/5255192/Use-WindowChrome-to-Customize-the-Title-Bar-in-WPF  -->
+    <Style x:Key="App.Button.System.Restore" BasedOn="{StaticResource App.Button.System}" TargetType="{x:Type Button}">
+        <Setter Property="Content" Value="&#xE923;"/>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="{DynamicResource App.Color.Themes.Common.DarkGray}" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <!--  TODO : 시스템 버튼 (닫기) 스타일 Trigger "IsMouseOver"의 속성 "Background"가 Red로 바뀌지 않는 오류 원인 파악하기 (2023.12.11 jbh) -->
+    <!--  MainV.xaml - 시스템 버튼 (닫기) 스타일 정의  -->
+    <!--  참고 URL - https://stackoverflow.com/questions/1283006/changing-wpf-title-bar-background-color  -->
+    <!--  참고 2 URL - https://www.codeproject.com/Articles/5255192/Use-WindowChrome-to-Customize-the-Title-Bar-in-WPF  -->
+    <Style x:Key="App.Button.System.Close" BasedOn="{StaticResource App.Button.System}" TargetType="{x:Type Button}">
+        <Setter Property="Content" Value="&#xE106;"/>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="{DynamicResource App.Brush.Themes.Common.Red}" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <!--  TODO : CobimExplorer 응용 프로그램 체크인 팝업 화면 상단 타이틀 바에 사용할 버튼 스타일 구현 (2023.11.09 jbh)  -->
+    <!--  유튜브 참고 URL - https://youtu.be/Q6VxSPlkcCg?si=dkC2ujAX3reUjQPk  -->
+    <!--  참고 URL - https://gigong.tistory.com/99  -->
+    <!--  TODO : 스타일 TargetType "ButtonBase" 필요시 구현 예정 (2023.11.08 jbh)  -->
+    <Style x:Key="App.Button.CheckIn" BasedOn="{StaticResource App.Button}" TargetType="{x:Type Button}">
+        <Setter Property="Padding" Value="0"/>
+        <Setter Property="Width" Value="35"/>
+        <Setter Property="Height" Value="32"/>
+        <Setter Property="HorizontalAlignment" Value="Right"/>
+        <Setter Property="VerticalAlignment" Value="Top"/>
+        <Setter Property="Background" Value="{DynamicResource App.Brush.Themes.Common.Transparent}"/>
+        <!--  TODO : 타이틀 바에 속한 버튼 ("최소화", "최대화", "닫기")이 정상적으로 동작하도록 프로퍼티  Property="WindowChrome.IsHitTestVisibleInChrome" 스타일 추가 (2023.11.13 jbh)  -->
+        <!--  참고 URL - https://stackoverflow.com/questions/41905412/windowchrome-cant-click-buttons-in-titlebar  -->
+        <Setter Property="WindowChrome.IsHitTestVisibleInChrome" Value="True" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border Background="{TemplateBinding Background}"  BorderThickness="0">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+    <!--  CheckInPartV.xaml - 체크인 팝업 화면 버튼 (닫기) 스타일 정의  -->
+    <Style x:Key="App.Button.CheckInPartV.Exit" BasedOn="{StaticResource App.Button.CheckIn}" TargetType="{x:Type Button}">
+        <Style.Triggers>
+            <Trigger Property="Button.IsMouseOver" Value="True">
+                <Setter Property="Button.Background" Value="{DynamicResource App.Brush.Themes.Common.Red}" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+</ResourceDictionary>

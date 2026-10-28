@@ -1,0 +1,275 @@
+﻿<!--  TODO : TestMainV.xaml 윈도우 상단 타이틀 바 배경(Background color) 및 최소(MinBtn), 최대(MaxBtn), 축소(RestoreBtn), 종료(ExitBtn) 버튼 작동 오류 해결할 수 있도록 아래 참고 URL 보고 수정 예정 (2023.12.11 jbh)  -->
+<!--  참고 URL - https://stackoverflow.com/questions/1283006/changing-wpf-title-bar-background-color  -->
+<!--  참고 2 URL - https://www.codeproject.com/Articles/5255192/Use-WindowChrome-to-Customize-the-Title-Bar-in-WPF  -->
+<Window x:Class="CobimExplorer.Views.Windows.Test.TestMainV"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:behaviors="clr-namespace:CobimExplorer.Behaviors"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+        xmlns:s="https://github.com/canton7/Stylet"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:ribbon="clr-namespace:System.Windows.Controls.Ribbon;assembly=System.Windows.Controls.Ribbon"
+        xmlns:vm="clr-namespace:CobimExplorer.ViewModels.Windows.Test"
+        xmlns:pvm="clr-namespace:CobimExplorer.ViewModels.Page.Test"
+        xmlns:v="clr-namespace:CobimExplorer.Views.Page.Test"
+        xmlns:c="clr-namespace:CobimExplorer.Controls"
+        xmlns:local="clr-namespace:CobimExplorer.Views.Windows.Test" 
+        Title="{Binding CDE_Title}"
+        mc:Ignorable="d"
+        x:Name="root"
+        s:View.ActionTarget="{Binding TestMainVM}"
+        d:DataContext="{d:DesignInstance Type=vm:TestMainVM}"
+        d:DesignHeight="450"
+        d:DesignWidth="800">
+
+    <!--  TODO : 스크롤바 색상 변경 및 스타일 속성 구현 하기 (2023.12.11 jbh)  -->
+    <!--  참고 URL - https://www.codeproject.com/Articles/37366/Styling-A-ScrollViewer-Scrollbar-In-WPF -->
+    
+    <!--  WindowStyle="None"
+          AllowsTransparency="True"
+          ResizeMode="CanResize"  -->
+    <!--  StateChanged="Window_StateChanged" 
+          LocationChanged="Window_LocationChanged"  -->
+    <!--  StateChanged="Window_StateChanged"  -->
+    <!--  ResizeMode="CanMinimize"  -->
+    
+    <!--  TODO : 윈도우 타이틀 바(Window chrome) <WindowChrome.WindowChrome> 영역 구현 (2023.12.11 jbh)  -->
+    <!--  참고 URL - https://stackoverflow.com/questions/1283006/changing-wpf-title-bar-background-color  -->
+    <!--  참고 2 URL - https://www.codeproject.com/Articles/5255192/Use-WindowChrome-to-Customize-the-Title-Bar-in-WPF  -->
+    <WindowChrome.WindowChrome>
+        <!--  <WindowChrome CaptionHeight="25" 
+                            ResizeBorderThickness="2"/>  -->
+        <WindowChrome CaptionHeight="34" />
+    </WindowChrome.WindowChrome>
+
+    <!--  TODO : 윈도우 타이틀 바(Window chrome) CommandBindings 구현 (2023.12.11 jbh)  -->
+    <!--  참고 URL - https://stackoverflow.com/questions/1283006/changing-wpf-title-bar-background-color  -->
+    <!--  참고 2 URL - https://www.codeproject.com/Articles/5255192/Use-WindowChrome-to-Customize-the-Title-Bar-in-WPF  -->
+    <Window.CommandBindings>
+        <CommandBinding Command="{x:Static SystemCommands.MinimizeWindowCommand}" CanExecute="CanExecute" Executed="MinimizeApp" />
+        <CommandBinding Command="{x:Static SystemCommands.MaximizeWindowCommand}" CanExecute="CanExecute" Executed="MaximizeApp" />
+        <CommandBinding Command="{x:Static SystemCommands.RestoreWindowCommand}"  CanExecute="CanExecute" Executed="RestoreApp" />
+        <CommandBinding Command="{x:Static SystemCommands.CloseWindowCommand}"    CanExecute="CanExecute" Executed="CloseApp" />
+    </Window.CommandBindings>
+
+    <!--  TODO : C# WPF 팁 - Xaml 안에서 ViewModel속성을 자동완성 되도록 만들기(d:DataContext="{d:DesignInstance Type=vm:MainVM}") (2023.07.17 jbh)  -->
+    <!--  유튜브 참고 URL - https://youtu.be/A8t5ktSAgdA  -->
+          
+    <!--  TODO : BoolToVisibilityConverter 필요시 추후 사용 예정 (2023.07.17 jbh)  -->
+    <!--  참고 URL - https://github.com/canton7/Stylet/wiki/BoolToVisibilityConverter  -->
+    <Window.Resources>
+        <s:BoolToVisibilityConverter x:Key="boolToVisConverter" TrueVisibility="Visible" FalseVisibility="Hidden"/>
+        <!--  <TextBlock Visibility="{Binding SomeBoolProperty, Converter={StaticResource boolToVisConverter}}"/>  -->
+    </Window.Resources>
+    
+    <!--  TODO : Microsoft.Xaml.Behaviors.Wpf nuget package 추가 (2024.09.06 jbh)  -->
+    <!--  참고 URL - https://kaki104.tistory.com/870  -->
+    <!--  TODO : 테스트 메인 화면 뷰(TestMainV.xaml) XAML 코드에 Behavior 구현 (2024.09.06 jbh)  -->
+    <!--  참고 URL - https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&blogId=vactorman&logNo=221176866353  -->
+    <!--  TODO : 추후 Button 컨트롤러 구현시 Behavior ButtonClickBehavior 구현하기  -->
+    <i:Interaction.Behaviors>
+        <!--  <c:ButtonClickBehavior TargetListBox="{Binding ElementName=PluList}" />  -->
+        <!--  <c:ButtonClickBehavior />  -->
+    </i:Interaction.Behaviors>
+
+    <!--  TODO : 아래 이벤트 처리를 위한 코드는 오류가 발생하므로 주석 처리 진행 (2023.11.08 jbh)  -->
+    <!--         아래 코드 대신 MainVM.cs -> 기본 메소드 "OnInitialActivate" 실행시 이벤트 메서드 "Window_StateChanged", "Window_LocationChanged" 등록 처리 로직 추가 (2023.11.08 jbh)  -->
+    <!--  이벤트 처리를 위한 코드  -->
+    <!--  <i:Interaction.Triggers>
+            <i:EventTrigger EventName="StateChanged">
+                <i:CallMethodAction TargetObject="{Binding}" MethodName="Window_StateChanged" />
+            </i:EventTrigger>
+    
+            <i:EventTrigger EventName="LocationChanged">
+                <i:CallMethodAction TargetObject="{Binding}" MethodName="Window_LocationChanged" />
+            </i:EventTrigger>
+          </i:Interaction.Triggers>  -->
+
+    <Border x:Name="mainBorder">
+        <Grid x:Name="parentContainer">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="*"    />
+            </Grid.RowDefinitions>
+
+            <!--  TODO : 윈도우 타이틀 바(Window chrome) 영역 구현 (2023.12.11 jbh)  -->
+            <!--  참고 URL - https://stackoverflow.com/questions/1283006/changing-wpf-title-bar-background-color  -->
+            <!--  참고 2 URL - https://www.codeproject.com/Articles/5255192/Use-WindowChrome-to-Customize-the-Title-Bar-in-WPF  -->
+            <!--  윈도우 타이틀 바 (Window chrome) 영역  -->
+            <!--  TODO : 아래 주석친 직접 구현한 타이틀 바 (c:TitleBarControl) 필요시 사용 예정 (2023.12.11 jbh)  -->
+            <!--  <c:TitleBarControl Grid.Row="0" />  -->
+            <Grid x:Name="TitleBar" Grid.Row="0" Height="30" Background="{StaticResource App.Brush.Themes.Fall.Brown}">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center">
+                    <!--  App icon  -->
+                    <!--  <Image Source="/Resources/watermelon.ico" Width="18" Margin="2" HorizontalAlignment="Left" VerticalAlignment="Center" />  -->
+                    <TextBlock Text="{Binding MainTitle}" FontFamily="Arial" Margin="4,3,0,0" Foreground="{StaticResource App.Brush.Themes.Common.NavajoWhite}" FontWeight="Bold" />
+                </StackPanel>
+
+                <!--  Caption buttons  -->
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" >
+                    <!--  버튼 - 최소화(-) -->
+                    <Button Style="{StaticResource App.Button.System.Min}" 
+                            WindowChrome.IsHitTestVisibleInChrome="True" 
+                            ToolTip="Minimize"
+                            Command="{x:Static SystemCommands.MinimizeWindowCommand}"/>
+
+                    <!--  버튼 - 화면 원래 크기로 변환  -->
+                    <Button x:Name="RestoreButton" 
+                            Visibility="Collapsed" 
+                            Style="{StaticResource App.Button.System.Restore}" 
+                            Command="{x:Static SystemCommands.RestoreWindowCommand}" 
+                            WindowChrome.IsHitTestVisibleInChrome="True" 
+                            ToolTip="Restore" />
+
+                    <!--  버튼 - 최대화(□) -->
+                    <Button x:Name="MaximizeButton" 
+                            Visibility="Visible" 
+                            Style="{StaticResource App.Button.System.Max}" 
+                            Command="{x:Static SystemCommands.MaximizeWindowCommand}" 
+                            WindowChrome.IsHitTestVisibleInChrome="True" 
+                            ToolTip="Maximize" />
+
+                    <!--  버튼 - 닫기(X) -->
+                    <Button Style="{StaticResource App.Button.System.Close}" 
+                            WindowChrome.IsHitTestVisibleInChrome="True" 
+                            ToolTip="Close"
+                            Command="{x:Static SystemCommands.CloseWindowCommand}" />
+                </StackPanel>
+            </Grid>
+
+            <!--  리본 컨트롤 영역  -->
+            <Grid x:Name="RibbonControl" Grid.Row="1">
+                <c:RibbonControl />
+            </Grid>
+
+            <!--  탐색기 화면 영역  -->
+            <!--  TODO : ContentControl 사용해서 리본 탭의 버튼 클릭시 -->
+            <!--         해당 버튼과 연동된 화면(UserControl View - ExplorerV) 출력 및 뷰모델(ExplorerVM) 연동 구현 (2023.11.07 jbh)  -->
+            <!--  참고 URL - https://github.com/canton7/Stylet/wiki/ViewModel-First  -->
+            <Grid x:Name="PageArea" Grid.Row="2">
+                <!--  TODO : 필요시 <ContentControl> 영역에 Content="{Binding Page.Content}" 추가 예정 (2023.12.22 jbh)  -->
+                <!--  <ContentControl Content="{Binding Page.Content}" s:View.Model="{Binding Page.DataContext}" />  -->
+                <ContentControl s:View.Model="{Binding Page.DataContext}" />
+            </Grid>
+        </Grid>
+    </Border>
+
+    <!--  TODO : 아래 주석친 테스트 코드 필요시 참고 (2024.09.06 jbh)  -->
+    <!--  <Border x:Name="mainBorder" BorderThickness="1" BorderBrush="{StaticResource App.Brush.Themes.Fall.Brown}" Margin="0">
+        <DockPanel>
+            <Border Background="{StaticResource App.Brush.Themes.Fall.Brown}"
+                    DockPanel.Dock="Top"
+                    Margin="0"
+                    Height="30">
+                <Grid>
+                    <ContentControl x:Name="expTitleBar" Content="{Binding TitleBar.Content}" />
+                </Grid>
+                
+                <c:TitleBarControl x:Name="expTitleBar" />
+
+                <Grid>
+                      --><!--  TODO : 탐색기 응용 프로그램 화면 상단 윈도우 타이틀 바 직접 구현 (2023.11.07 jbh)  -->  
+                      <!--  참고 URL - https://gigong.tistory.com/99  -->  
+                      <!--  참고 2 URL - https://itpro.tistory.com/88  -->  
+                      <!--  타이틀 바 영역  -->  
+                      <!--  PreviewMouseDown="System_MouseDown" PreviewMouseMove="System_MouseMove"  -->  
+                      <!--  MouseMove="System_MouseMove" MouseLeftButtonDown="System_MouseDown"  --><!--  
+                    <Label VerticalContentAlignment="Center" 
+                           Margin="10,0,105,0"
+                           PreviewMouseMove="System_MouseMove"
+                           PreviewMouseDown="System_MouseDown">
+                        --><!--  TODO : 아래 TextBlock에 바인딩 된 Title은 MainV.xaml 상단 <Window> 태그 안에 사용되는 속성 Title="{Binding CDE_Title}"을 의미함. (2023.11.09 jbh)  --><!--  
+                        <TextBlock Text="{Binding Title, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}}" 
+                                   Foreground="{StaticResource App.Brush.Themes.Common.NavajoWhite}"
+                                   FontWeight="Bold" />
+                        <TextBlock Text="{Binding CDE_Title}" 
+                                   Foreground="{StaticResource App.Brush.Themes.Common.NavajoWhite}"
+                                   FontWeight="Bold" />
+                    </Label>
+
+                    --><!--  시스템 버튼 영역  --><!--  
+                    <StackPanel Orientation="Horizontal" 
+                                HorizontalAlignment="Right" 
+                                Background="{StaticResource App.Brush.Themes.Fall.Brown}">
+                        --><!--  최소화 버튼  --><!--  
+                        <Button Style="{DynamicResource App.Button.System.Min}"
+                                Name="MinBtn"
+                                Click="MinimizeApp">
+                            <Rectangle Name="lineMin"
+                                       Width="11"
+                                       Stroke="{StaticResource App.Brush.Themes.Common.NavajoWhite}"
+                                       StrokeThickness="2"  />
+                        </Button>
+
+                        --><!--  최대화 버튼  --><!--  
+                        <Button Style="{DynamicResource App.Button.System.Max}"
+                                Name="MaxBtn"
+                                Click="MaximizeApp">
+                            <Grid>
+                                --><!--  최대화 시키기 전 버튼 모양 (Rectangle 사각형 1개)  --><!--  
+                                <Rectangle Name="rectMax" 
+                                           Width="11" 
+                                           Height="11"
+                                           Stroke="{StaticResource App.Brush.Themes.Common.NavajoWhite}"
+                                           StrokeThickness="2"  />
+
+                                --><!--  최대화 시키고 난 후 버튼 모양 (Rectangle 사각형 2개 중첩)  --><!--  
+                                <Canvas Name="rectMin" Visibility="Hidden">
+                                    <Polyline  Points="2.375,2 2.375,0.375 10.625,0.375 10.625,8.625 9,8.625"
+                                               StrokeThickness="2" 
+                                               Stroke="{StaticResource App.Brush.Themes.Common.NavajoWhite}" />
+                                    <Rectangle Width="9" 
+                                               Height="9"
+                                               Stroke="{StaticResource App.Brush.Themes.Common.NavajoWhite}"
+                                               StrokeThickness="2" Margin="0,2,2,0" />
+                                </Canvas>
+                            </Grid>
+                        </Button>
+
+                        --><!--  닫기 버튼  --><!--  
+                        <Button Style="{DynamicResource App.Button.System.Exit}"
+                                Name="ExitBtn"
+                                Click="ExitApp">
+                            <Canvas Height="25" Width="35">
+                                <Line X1="12" Y1="8" 
+                                      X2="22" Y2="18"    
+                                      Stroke="{StaticResource App.Brush.Themes.Common.NavajoWhite}" 
+                                      StrokeThickness="2" />
+                                <Line X1="12" Y1="18"    
+                                      X2="22" Y2="8"  
+                                      Stroke="{StaticResource App.Brush.Themes.Common.NavajoWhite}" 
+                                      StrokeThickness="2" />
+                            </Canvas>
+                        </Button>
+                    </StackPanel>
+                </Grid>
+            </Border>
+
+            --><!--  리본 컨트롤 영역  --><!--  
+            <Border DockPanel.Dock="Top">
+                <Grid>
+                    <ContentControl Content="{Binding Ribbon.Content}" />
+                </Grid>
+                <c:RibbonControl/>
+            </Border>
+
+            --><!--  탐색기 화면 영역  --><!--  
+            <Border DockPanel.Dock="Bottom">
+                <Grid>
+                    <ContentControl s:View.Model="{Binding TestVM}"/>
+                    <ContentControl s:View.Model="{Binding StartVM}"/>
+                    <ContentControl s:View.Model="{Binding CobimExplorerVM}"/>
+                    <ContentControl s:View.Model="{Binding ExplorerVM}"/>
+                    <ContentControl s:View.Model="{Binding TestLazyTreeVM}"/>
+
+                    --><!--  TODO : ContentControl 사용해서 리본 탭의 버튼 클릭시  --> 
+                    <!--         해당 버튼과 연동된 화면(UserControl View - ExplorerV) 출력 및 뷰모델(ExplorerVM) 연동 구현 (2023.11.07 jbh)  -->  
+                    <!--  참고 URL - https://github.com/canton7/Stylet/wiki/ViewModel-First  --><!--  
+                    <ContentControl Content="{Binding Page.Content}" s:View.Model="{Binding Page.DataContext}"/>
+                </Grid>
+            </Border>
+        </DockPanel>
+    </Border>  -->
+</Window>

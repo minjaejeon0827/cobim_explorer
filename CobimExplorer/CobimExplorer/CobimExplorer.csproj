@@ -1,0 +1,659 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\CefSharp.Common.126.2.180\build\CefSharp.Common.props" Condition="Exists('..\packages\CefSharp.Common.126.2.180\build\CefSharp.Common.props')" />
+  <Import Project="..\packages\chromiumembeddedframework.runtime.win-x86.126.2.18\build\chromiumembeddedframework.runtime.win-x86.props" Condition="Exists('..\packages\chromiumembeddedframework.runtime.win-x86.126.2.18\build\chromiumembeddedframework.runtime.win-x86.props')" />
+  <Import Project="..\packages\chromiumembeddedframework.runtime.win-x64.126.2.18\build\chromiumembeddedframework.runtime.win-x64.props" Condition="Exists('..\packages\chromiumembeddedframework.runtime.win-x64.126.2.18\build\chromiumembeddedframework.runtime.win-x64.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{427DD79F-7A6F-496C-91A0-BFABB2BD4B68}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>CobimExplorer</RootNamespace>
+    <AssemblyName>CobimExplorer</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <LangVersion>9.0</LangVersion>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+    <PublishUrl>게시\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <InstallUrl>http://211.253.9.86:8888/</InstallUrl>
+    <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
+    <WebPage>publish.htm</WebPage>
+    <ApplicationRevision>8</ApplicationRevision>
+    <ApplicationVersion>1.0.1.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <CreateDesktopShortcut>true</CreateDesktopShortcut>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>
+    </StartupObject>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>CobimIcon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>316C17936F7A7BAC0A4F6C947101BD32735C8A04</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>CobimExplorer_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CefSharp, Version=126.2.180.0, Culture=neutral, PublicKeyToken=40c4b6fc221f4138, processorArchitecture=MSIL">
+      <HintPath>..\packages\CefSharp.Common.126.2.180\lib\net462\CefSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="CefSharp.Core, Version=126.2.180.0, Culture=neutral, PublicKeyToken=40c4b6fc221f4138, processorArchitecture=MSIL">
+      <HintPath>..\packages\CefSharp.Common.126.2.180\lib\net462\CefSharp.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="CefSharp.Wpf, Version=126.2.180.0, Culture=neutral, PublicKeyToken=40c4b6fc221f4138, processorArchitecture=MSIL">
+      <HintPath>..\packages\CefSharp.Wpf.126.2.180\lib\net462\CefSharp.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="ControlzEx, Version=4.0.0.0, Culture=neutral, PublicKeyToken=69f1c32f803d307e, processorArchitecture=MSIL">
+      <HintPath>..\packages\ControlzEx.4.4.0\lib\net462\ControlzEx.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AppCenter, Version=0.0.0.0, Culture=neutral, PublicKeyToken=8a600e2fee7ba272, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AppCenter.5.0.2\lib\net472\Microsoft.AppCenter.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AppCenter.Analytics, Version=0.0.0.0, Culture=neutral, PublicKeyToken=8a600e2fee7ba272, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AppCenter.Analytics.5.0.2\lib\net472\Microsoft.AppCenter.Analytics.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AppCenter.Crashes, Version=0.0.0.0, Culture=neutral, PublicKeyToken=8a600e2fee7ba272, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AppCenter.Crashes.5.0.2\lib\net472\Microsoft.AppCenter.Crashes.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.7.0.0\lib\net462\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Xaml.Behaviors, Version=1.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Xaml.Behaviors.Wpf.1.1.39\lib\net45\Microsoft.Xaml.Behaviors.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="Serilog, Version=2.0.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
+      <HintPath>..\packages\Serilog.3.0.1\lib\net471\Serilog.dll</HintPath>
+    </Reference>
+    <Reference Include="Serilog.Sinks.Console, Version=4.1.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
+      <HintPath>..\packages\Serilog.Sinks.Console.4.1.0\lib\net45\Serilog.Sinks.Console.dll</HintPath>
+    </Reference>
+    <Reference Include="Serilog.Sinks.Debug, Version=2.0.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
+      <HintPath>..\packages\Serilog.Sinks.Debug.2.0.0\lib\net46\Serilog.Sinks.Debug.dll</HintPath>
+    </Reference>
+    <Reference Include="Serilog.Sinks.File, Version=5.0.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
+      <HintPath>..\packages\Serilog.Sinks.File.5.0.0\lib\net45\Serilog.Sinks.File.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLitePCLRaw.batteries_v2, Version=2.1.0.1603, Culture=neutral, PublicKeyToken=8226ea5df37bcae9, processorArchitecture=MSIL">
+      <HintPath>..\packages\SQLitePCLRaw.bundle_green.2.1.0\lib\net461\SQLitePCLRaw.batteries_v2.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLitePCLRaw.core, Version=2.1.0.1603, Culture=neutral, PublicKeyToken=1488e028ca7ab535, processorArchitecture=MSIL">
+      <HintPath>..\packages\SQLitePCLRaw.core.2.1.0\lib\netstandard2.0\SQLitePCLRaw.core.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLitePCLRaw.provider.dynamic_cdecl, Version=2.1.0.1603, Culture=neutral, PublicKeyToken=b68184102cba0b3b, processorArchitecture=MSIL">
+      <HintPath>..\packages\SQLitePCLRaw.provider.dynamic_cdecl.2.1.0\lib\netstandard2.0\SQLitePCLRaw.provider.dynamic_cdecl.dll</HintPath>
+    </Reference>
+    <Reference Include="Stylet, Version=1.3.6.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Stylet.1.3.6\lib\net45\Stylet.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Collections.Immutable, Version=1.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Collections.Immutable.1.3.1\lib\portable-net45+win8+wp8+wpa81\System.Collections.Immutable.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Encodings.Web, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encodings.Web.7.0.0\lib\net462\System.Text.Encodings.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Json, Version=7.0.0.3, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Json.7.0.3\lib\net462\System.Text.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows" />
+    <Reference Include="System.Windows.Controls.Ribbon" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="WpfAnimatedGif, Version=2.0.0.0, Culture=neutral, PublicKeyToken=9e7cd3b544a090dc, processorArchitecture=MSIL">
+      <HintPath>..\packages\WpfAnimatedGif.2.0.2\lib\net40\WpfAnimatedGif.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Behaviors\AttachableForStyleBehavior.cs" />
+    <Compile Include="Behaviors\ButtonClickBehavior.cs" />
+    <Compile Include="Behaviors\TitleBarButtonBehavior.cs" />
+    <Compile Include="Behaviors\TitleBarButtonTestBehavior.cs" />
+    <Compile Include="Commands\Command.cs" />
+    <Compile Include="Commands\ButtonCommand.cs" />
+    <Compile Include="Commands\RibbonCommand.cs" />
+    <Compile Include="Common\BindingProxy\BindingProxy.cs" />
+    <Compile Include="Common\CobimBase\CobimHelper.cs" />
+    <Compile Include="Common\Extensions\DictionaryExtensions.cs" />
+    <Compile Include="Common\Extensions\FindParentExtension.cs" />
+    <Compile Include="Common\Extensions\VMNameExtensions.cs" />
+    <Compile Include="Common\LogManager\Logger.cs" />
+    <Compile Include="Controls\NavigationBarControl.xaml.cs">
+      <DependentUpon>NavigationBarControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\TestNavBarControl.xaml.cs">
+      <DependentUpon>TestNavBarControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\RibbonControl.xaml.cs">
+      <DependentUpon>RibbonControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\TestTitleBarControl.xaml.cs">
+      <DependentUpon>TestTitleBarControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\TitleBarControl.xaml.cs">
+      <DependentUpon>TitleBarControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Converters\ExplorerConverter.cs" />
+    <Compile Include="Converters\InvertBooleanConverter.cs" />
+    <Compile Include="Converters\WindowStateIconConverter.cs" />
+    <Compile Include="Converters\WindowStateMarginConverter.cs" />
+    <Compile Include="Interface\CbConductorOne.cs" />
+    <Compile Include="Interface\ICbVM.cs" />
+    <Compile Include="Interface\Page\IPage.cs" />
+    <Compile Include="Interface\Tab\ITab.cs" />
+    <Compile Include="Message\ChangeViewModelMsg.cs" />
+    <Compile Include="Models\Explorer\LazyTreeNode.cs" />
+    <Compile Include="Models\Explorer\ProjectTypeView.cs" />
+    <Compile Include="Models\User\UserInfoView.cs" />
+    <Compile Include="Services\CobimScreen.cs" />
+    <Compile Include="Services\HiddenVmAttribute.cs" />
+    <Compile Include="Services\Messenger\Messenger.cs" />
+    <Compile Include="Services\Page\IPageParent.cs" />
+    <Compile Include="Services\Page\PageBase.cs" />
+    <Compile Include="Services\Page\ParentOnePageBase.cs" />
+    <Compile Include="Services\Part\PartBase.cs" />
+    <Compile Include="Settings\AppSetting.cs" />
+    <Compile Include="Settings\DirectorySetting.cs" />
+    <Compile Include="Settings\LoginSetting.cs" />
+    <Compile Include="Settings\SettingPartBase.cs" />
+    <Compile Include="Settings\ProjectSetting.cs" />
+    <Compile Include="TestStatic\CommonButtonTarget.cs" />
+    <Compile Include="Test\Folder.cs" />
+    <Compile Include="Utils\DirectoryUtils.cs" />
+    <Compile Include="Utils\ListView\ListViewColumnsHelper.cs" />
+    <Compile Include="Utils\Password\PasswordBoxHelper.cs" />
+    <Compile Include="Utils\String\StrHelper.cs" />
+    <Compile Include="Utils\Text\TextBoxHelper.cs" />
+    <Compile Include="Utils\ToggleImageUtils.cs" />
+    <Compile Include="Utils\TreeDepth\CreateDepthHelper.cs" />
+    <Compile Include="ViewModels\Box\CommonMsgBoxVM.cs" />
+    <Compile Include="ViewModels\MainVM.cs" />
+    <Compile Include="ViewModels\Message\MsgBase.cs" />
+    <Compile Include="ViewModels\Message\OpenedPageMsg.cs" />
+    <Compile Include="ViewModels\Message\OpenPageMsg.cs" />
+    <Compile Include="ViewModels\Page\Parents\TabParentPageVM.cs" />
+    <Compile Include="ViewModels\Page\Project\BIM360\HubBox\HubBoxVM.cs" />
+    <Compile Include="ViewModels\Page\Project\CDE\Explorer\ExplorerVM.cs" />
+    <Compile Include="ViewModels\Page\Test\TestCefSharpVM.cs" />
+    <Compile Include="ViewModels\Page\Test\TestExplorerVM.cs" />
+    <Compile Include="ViewModels\Page\Test\TestLazyTreeVM.cs" />
+    <Compile Include="ViewModels\Page\Test\TestVM.cs" />
+    <Compile Include="ViewModels\Part\Project\CDE\Explorer\CheckInPartVM.cs" />
+    <Compile Include="ViewModels\Tab\Child\ChildTabVM.cs" />
+    <Compile Include="ViewModels\Windows\LoadingWork\CommonLoadingWorkVM.cs" />
+    <Compile Include="ViewModels\Windows\Login\LoginVM.cs" />
+    <Compile Include="ViewModels\Page\Test\TestWebBrowserVM.cs" />
+    <Compile Include="ViewModels\Windows\Test\TestWindowVM.cs" />
+    <Compile Include="Views\Box\CommonMsgBoxV.xaml.cs">
+      <DependentUpon>CommonMsgBoxV.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MainV.xaml.cs">
+      <DependentUpon>MainV.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Page\Parents\TabParentPageV.xaml.cs">
+      <DependentUpon>TabParentPageV.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Page\Project\BIM360\HubBox\HubBoxV.xaml.cs">
+      <DependentUpon>HubBoxV.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Page\Project\CDE\Explorer\ExplorerV.xaml.cs">
+      <DependentUpon>ExplorerV.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Page\Test\TestCefSharpV.xaml.cs">
+      <DependentUpon>TestCefSharpV.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Page\Test\TestExplorerV.xaml.cs">
+      <DependentUpon>TestExplorerV.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Page\Start\StartV.xaml.cs">
+      <DependentUpon>StartV.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\Page\Start\StartVM.cs" />
+    <Compile Include="StyletBootstrapper.cs" />
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ViewModels\Windows\Test\TestMainVM.cs" />
+    <Compile Include="Views\Page\Test\TestWebBrowserV.xaml.cs">
+      <DependentUpon>TestWebBrowserV.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Tab\Child\ChildTabV.xaml.cs">
+      <DependentUpon>ChildTabV.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Windows\Test\TestMainV.xaml.cs">
+      <DependentUpon>TestMainV.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Page\Test\TestLazyTreeV.xaml.cs">
+      <DependentUpon>TestLazyTreeV.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Page\Test\TestV.xaml.cs">
+      <DependentUpon>TestV.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Part\Project\CDE\Explorer\CheckInPartV.xaml.cs">
+      <DependentUpon>CheckInPartV.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Windows\LoadingWork\CommonLoadingWorkV.xaml.cs">
+      <DependentUpon>CommonLoadingWorkV.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Windows\Login\LoginV.xaml.cs">
+      <DependentUpon>LoginV.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Windows\Test\TestWindowV.xaml.cs">
+      <DependentUpon>TestWindowV.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="ClassDiagram1.cd" />
+    <None Include="CobimExplorer_TemporaryKey.pfx" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Styles\Board\" />
+    <Folder Include="Styles\Page\" />
+    <Folder Include="Styles\Part\" />
+    <Folder Include="ViewModels\Board\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Controls\NavigationBarControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\TestNavBarControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\RibbonControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\TestTitleBarControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\TitleBarControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\All.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\Base.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\Brush\All.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\Color\All.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\Controls\All.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\Controls\Button.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\Controls\ScrollBar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\Controls\TabControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\Controls\TreeView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\Format.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\Test\Color\All.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\Test\Control\All.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\Test\Control\TestScrollBar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\Themes\All.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\Themes\Fall\All.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\Themes\Spring\All.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\Themes\Summer\All.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\Themes\Winter\All.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Box\CommonMsgBoxV.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MainV.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Page\Parents\TabParentPageV.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Page\Project\BIM360\HubBox\HubBoxV.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Page\Project\CDE\Explorer\ExplorerV.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Page\Test\TestCefSharpV.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Page\Test\TestExplorerV.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Page\Start\StartV.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Page\Test\TestWebBrowserV.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Tab\Child\ChildTabV.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Windows\Test\TestMainV.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Page\Test\TestLazyTreeV.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Page\Test\TestV.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Part\Project\CDE\Explorer\CheckInPartV.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Windows\LoadingWork\CommonLoadingWorkV.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Windows\Login\LoginV.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Windows\Test\TestWindowV.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\closed-drive.png" />
+    <Resource Include="Images\closed-folder.png" />
+    <Resource Include="Images\file.png" />
+    <Resource Include="Images\opened-drive.png" />
+    <Resource Include="Images\opened-folder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ExitBtn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\CobimLogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Folder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Team.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Project.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\FileAdd.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Click.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\CommonProgress.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.8">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.8%28x86 및 x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Translate.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Failure.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\NotExistTranslate.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Error.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\WebViewer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\HubBox.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\CDE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\HideNavBar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ShowNavBar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\CorporateLogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\CobimIcon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="CobimIcon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CobimExplorer.Data.Models\CobimExplorer.Data.Models.csproj">
+      <Project>{4b10f724-5bf0-4e95-8d14-d9d16a6a1e03}</Project>
+      <Name>CobimExplorer.Data.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CobimExplorer.Rest.Api\CobimExplorer.Rest.Api.csproj">
+      <Project>{7f08fde7-805e-43e8-a5ad-01c95ae20eb5}</Project>
+      <Name>CobimExplorer.Rest.Api</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CobimNet\CobimNet.csproj">
+      <Project>{107173f9-9b56-4b91-bb35-269066765eac}</Project>
+      <Name>CobimNet</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>이 프로젝트는 이 컴퓨터에 없는 NuGet 패키지를 참조합니다. 해당 패키지를 다운로드하려면 NuGet 패키지 복원을 사용하십시오. 자세한 내용은 http://go.microsoft.com/fwlink/?LinkID=322105를 참조하십시오. 누락된 파일은 {0}입니다.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\chromiumembeddedframework.runtime.win-x64.126.2.18\build\chromiumembeddedframework.runtime.win-x64.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\chromiumembeddedframework.runtime.win-x64.126.2.18\build\chromiumembeddedframework.runtime.win-x64.props'))" />
+    <Error Condition="!Exists('..\packages\chromiumembeddedframework.runtime.win-x86.126.2.18\build\chromiumembeddedframework.runtime.win-x86.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\chromiumembeddedframework.runtime.win-x86.126.2.18\build\chromiumembeddedframework.runtime.win-x86.props'))" />
+    <Error Condition="!Exists('..\packages\CefSharp.Common.126.2.180\build\CefSharp.Common.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\CefSharp.Common.126.2.180\build\CefSharp.Common.props'))" />
+    <Error Condition="!Exists('..\packages\CefSharp.Common.126.2.180\build\CefSharp.Common.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\CefSharp.Common.126.2.180\build\CefSharp.Common.targets'))" />
+  </Target>
+  <Import Project="..\packages\CefSharp.Common.126.2.180\build\CefSharp.Common.targets" Condition="Exists('..\packages\CefSharp.Common.126.2.180\build\CefSharp.Common.targets')" />
+</Project>

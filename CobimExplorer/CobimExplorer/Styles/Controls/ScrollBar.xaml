@@ -1,0 +1,94 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!--  TODO : 스크롤 바 스타일 구현 하기 (2023.12.19 jbh)  -->
+    <!--  유튜브 참고 URL - https://youtu.be/Je5XBtAUNXY?si=Ub2urenU6ZbbE1KT  -->
+    <!--  Chat GPT 참고 URL - https://chat.openai.com/c/760cca04-5569-406f-8ef8-fb44c0153e4b  -->
+    <Style x:Key="App.ScrollBar.ThumbVertical" TargetType="{x:Type Thumb}">
+        <Setter Property="OverridesDefaultStyle" Value="true"/>
+        <Setter Property="IsTabStop" Value="false"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Thumb}">
+                    <Border x:Name="border" Background="{StaticResource App.Brush.LightPink}" CornerRadius="8" Height="{TemplateBinding Height}" SnapsToDevicePixels="True" Width="{TemplateBinding Width}"/>
+                    
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="true">
+                            <Setter Property="Background" TargetName="border" Value="{DynamicResource App.Brush.HotPink}" />
+                        </Trigger>
+                        <Trigger Property="IsDragging" Value="true">
+                            <Setter Property="Background" TargetName="border" Value="{DynamicResource App.Brush.HotPink}" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="App.ScrollBar.TransparentRepeatButtonStyle" TargetType="{x:Type RepeatButton}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type RepeatButton}">
+                    <Border x:Name="border" BorderBrush="{StaticResource App.Brush.Blue}" BorderThickness="1" Background="{StaticResource App.Brush.Themes.Common.Transparent}" SnapsToDevicePixels="true">
+                        <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
+    <Style x:Key="App.ScrollBar.ExplorerV" TargetType="{x:Type ScrollBar}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ScrollBar}">
+                    <Grid x:Name="Bg" SnapsToDevicePixels="true">
+                        <Grid.RowDefinitions>
+                            <!--  스크롤 위로 가기 버튼(^) 영역  -->
+                            <RowDefinition MaxHeight="{DynamicResource {x:Static SystemParameters.VerticalScrollBarButtonHeightKey}}"/>
+
+                            <!--  스크롤 바 영역  -->
+                            <RowDefinition Height="0.00001*"/>
+
+                            <!--  스크롤 내려 가기 버튼(v) 영역  -->
+                            <RowDefinition MaxHeight="{DynamicResource {x:Static SystemParameters.VerticalScrollBarButtonHeightKey}}"/>
+                        </Grid.RowDefinitions>
+
+                        <!--  Grid.Row="0"  -->
+                        <!--<Border BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" Grid.Row="1"/>-->
+                        <RepeatButton x:Name="PART_LineUpButton" 
+                                      Command="{x:Static ScrollBar.LineUpCommand}" 
+                                      IsEnabled="{TemplateBinding IsMouseOver}" 
+                                      Style="{StaticResource App.ScrollBar.TransparentRepeatButtonStyle}" 
+                                      Grid.Row="0">
+                            <Path x:Name="ArrowTop" Data="M 0,4 C0,4 0,6 0,6 0,6 3.5,2.5 3.5,2.5 3.5,2.5 7,6 7,6 7,6 7,4 7,4 7,4 3.5,0.5 3.5,0.5 3.5,0.5 0,4 0,4 z" Fill="{StaticResource App.Brush.LightPink}" Margin="3,4,3,3" Stretch="Uniform"/>
+                        </RepeatButton>
+
+                        <!--  Grid.Row="1"  -->
+                        <Border Grid.Row="1" Background="{StaticResource App.Brush.ScrollBar.Border.Background}" CornerRadius="8" />
+                        <Track x:Name="PART_Track" IsDirectionReversed="true" IsEnabled="{TemplateBinding IsMouseOver}">
+                            <Track.DecreaseRepeatButton>
+                                <RepeatButton Command="{x:Static ScrollBar.PageUpCommand}" Style="{StaticResource App.ScrollBar.TransparentRepeatButtonStyle}"/>
+                            </Track.DecreaseRepeatButton>
+                            <Track.IncreaseRepeatButton>
+                                <RepeatButton Command="{x:Static ScrollBar.PageDownCommand}" Style="{StaticResource App.ScrollBar.TransparentRepeatButtonStyle}"/>
+                            </Track.IncreaseRepeatButton>
+                            <Track.Thumb>
+                                <Thumb Style="{StaticResource App.ScrollBar.ThumbVertical}"/>
+                            </Track.Thumb>
+                        </Track>
+
+                        <!--  Grid.Row="2"  -->
+                        <RepeatButton x:Name="PART_LineDownButton" 
+                                      Command="{x:Static ScrollBar.LineDownCommand}" 
+                                      IsEnabled="{TemplateBinding IsMouseOver}" 
+                                      Grid.Row="2" 
+                                      Style="{StaticResource App.ScrollBar.TransparentRepeatButtonStyle}">
+                            <Path x:Name="ArrowBottom" Data="M 0,2.5 C0,2.5 0,0.5 0,0.5 0,0.5 3.5,4 3.5,4 3.5,4 7,0.5 7,0.5 7,0.5 7,2.5 7,2.5 7,2.5 3.5,6 3.5,6 3.5,6 0,2.5 0,2.5 z" Fill="{StaticResource App.Brush.LightPink}" Margin="3,4,3,3" Stretch="Uniform"/>
+                        </RepeatButton>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

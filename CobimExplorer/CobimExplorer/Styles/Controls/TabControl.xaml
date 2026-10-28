@@ -1,0 +1,89 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
+
+    <!-- {StackResource } {DynamicResource }의 차이는 {StackResource }는 컴파일 실행할 때, 해당 솔루션의 존재하는 다른 로직(소스파일)에서  -->
+    <!-- 구현된 Resources(자원)들을 가져오는 기능이고, {DynamicResource }는 컴파일 실행 후, 프로그램이 정상 실행되는 런타임 동안에  -->
+    <!-- 실시간으로 데이터가 바뀌거나 화면이 새로 랜더링 되는(화면 변환) 동안에 동적으로 그때마다 필요한 Resource(자원)들을 가져오는 기능이다. -->
+
+    <!--  TODO : TabControl 스타일 필요시 구현 예정 (2023.11.10 jbh)  -->
+    <!--  참고 URL - https://wpf-tutorial.com/sl/70/the-tabcontrol/wpf-tabcontrol-styling-the-tabitems/  -->
+    <Style x:Key="App.TabControl" TargetType="{x:Type TabControl}">
+        
+    </Style>
+
+    <!--  TODO : ExplorerV.xaml 전용 부모 TabControl 스타일 구현 (2023.11.10 jbh)  -->
+    <Style x:Key="App.TabControl.ExplorerV" TargetType="{x:Type TabControl}">
+        <!--  TODO : TabControl 스타일 속성 정의 (2023.11.10 jbh)  -->
+        <Setter Property="BorderBrush" Value="{DynamicResource App.Brush.Themes.Winter.Black.20}" />
+        <Setter Property="BorderThickness" Value="2" />
+
+        <Style.Resources>
+            <!--  TODO : 부모 TabControl 하위 자식 컨트롤 TabItem Trigger 스타일 구현 (2023.11.10 jbh)  -->
+            <Style TargetType="{x:Type TabItem}">
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type TabItem}">
+                            <Border x:Name="Border"    
+                                    BorderThickness="2,2,2,0"
+                                    CornerRadius ="5,5,0,0"
+                                    Margin="2,0">
+                                <ContentPresenter x:Name="ContentSite"
+                                                  VerticalAlignment="Center"
+                                                  HorizontalAlignment="Center"
+                                                  ContentSource="Header"
+                                                  Margin="10,2" />
+                            </Border>
+                            <ControlTemplate.Triggers>
+                                <!--  클릭(선택)한 특정 탭(TabItem) Trigger 실행  -->
+                                <Trigger Property="IsSelected" Value="True">
+                                    <Setter TargetName="Border" Property="BorderBrush" Value="{DynamicResource App.Brush.Themes.Winter.Black.20}" />
+                                </Trigger>
+                                <!--  클릭(선택)한 특정 탭(TabItem)을 제외한 나머지 탭 Trigger 실행  -->
+                                <Trigger Property="IsSelected" Value="False">
+                                    <Setter TargetName="Border" Property="BorderBrush" Value="{DynamicResource App.Brush.Themes.Common.LightGray}"/>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+        </Style.Resources>
+    </Style>
+
+    <!--  TODO : TabControl 하위 TabItem Trigger 스타일 구현 (필요시 사용 예정) (2023.11.10 jbh)  -->
+    <Style x:Key="App.TabItem.Trigger" TargetType="{x:Type TabItem}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type TabItem}">
+                    <Border x:Name="Border" 
+                            BorderBrush ="{StaticResource App.Brush.Themes.Fall.Brown}"
+                            BorderThickness="1,1,1,0"
+                            CornerRadius ="4,4,0,0"
+                            Margin="2,0">
+                        <ContentPresenter x:Name="ContentSite"
+                                          VerticalAlignment="Center"
+                                          HorizontalAlignment="Center"
+                                          ContentSource="Header"
+                                          Margin="10,2" />
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <!--  클릭(선택)한 특정 탭(TabItem)  -->
+                        <Trigger Property="IsSelected" Value="True">
+                            <Setter TargetName="Border" Property="BorderBrush" Value="{DynamicResource App.Brush.Themes.Common.Red}" />
+                        </Trigger>
+                        <!--  클릭(선택)한 특정 탭(TabItem)을 제외한 나머지 탭  -->
+                        <Trigger Property="IsSelected" Value="False">
+                            <Setter TargetName="Border" Property="BorderBrush" Value="{DynamicResource App.Brush.Blue}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!--  TODO : TabControl 하위 TabItem NoTrigger 스타일 필요시 구현 예정 (2023.11.10 jbh)  -->
+    <Style x:Key="App.TabItem.NoTrigger" TargetType="{x:Type TabItem}">
+
+    </Style>
+</ResourceDictionary>

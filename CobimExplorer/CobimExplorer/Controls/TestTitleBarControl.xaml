@@ -1,0 +1,78 @@
+﻿<UserControl x:Class="CobimExplorer.Controls.TestTitleBarControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:CobimExplorer.Controls"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" 
+             d:DesignWidth="800">
+    <Grid>
+        <!--  TODO : 탐색기 응용 프로그램 화면 상단 윈도우 타이틀 바 직접 구현 (2023.11.07 jbh)  -->
+        <!--  참고 URL - https://gigong.tistory.com/99  -->
+        <!--  타이틀 바 영역  -->
+        <!--  PreviewMouseDown="System_MouseDown" PreviewMouseMove="System_MouseMove"  -->
+        <Label VerticalContentAlignment="Center" 
+               Margin="10,0,105,0">
+            <TextBlock Text="{Binding Title, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}}" 
+                       Foreground="{StaticResource App.Brush.Themes.Common.NavajoWhite}"
+                       FontWeight="Bold" />
+        </Label>
+
+        <!--  시스템 버튼 영역  -->
+        <StackPanel Orientation="Horizontal" 
+                    HorizontalAlignment="Right" 
+                    Background="{StaticResource App.Brush.Themes.Fall.Brown}">
+            <!--  최소화 버튼  -->
+            <Button Style="{DynamicResource App.Button.System}"
+                    Name="MinBtn"
+                    Command="{Binding MimimizeCommand}">
+                <Rectangle Name="lineMin"
+                           Width="11"
+                           Stroke="{StaticResource App.Brush.Themes.Common.NavajoWhite}"
+                           StrokeThickness="2" />
+            </Button>
+
+            <!--  최대화 버튼  -->
+            <Button Style="{DynamicResource App.Button.System}"
+                    Name="MaxBtn"
+                    Command="{Binding MaximizeCommand}">
+                <Grid>
+                    <!--  최대화 시키기 전 버튼 모양 (Rectangle 사각형 1개)  -->
+                    <Rectangle Name="rectMax" 
+                               Width="11" 
+                               Height="11"
+                               Stroke="{StaticResource App.Brush.Themes.Common.NavajoWhite}"
+                               StrokeThickness="2"/>
+
+                    <!--  최대화 시키고 난 후 버튼 모양 (Rectangle 사각형 2개 중첩)  -->
+                    <Canvas Name="rectMin" Visibility="Hidden">
+                        <Polyline  Points="2.375,2 2.375,0.375 10.625,0.375 10.625,8.625 9,8.625"
+                                   StrokeThickness="2" 
+                                   Stroke="{StaticResource App.Brush.Themes.Common.NavajoWhite}" />
+                        <Rectangle Width="9" 
+                                   Height="9"
+                                   Stroke="{StaticResource App.Brush.Themes.Common.NavajoWhite}"
+                                   StrokeThickness="2" Margin="0,2,2,0" />
+                    </Canvas>
+                </Grid>
+            </Button>
+
+            <!--  닫기 버튼  -->
+            <Button Style="{DynamicResource App.Button.System.Exit}"
+                    Name="ExitBtn"
+                    Command="{Binding ExitCommand}">
+                <Canvas Height="25" Width="35">
+                    <Line X1="12" Y1="8" 
+                          X2="22" Y2="18"    
+                          Stroke="{StaticResource App.Brush.Themes.Common.NavajoWhite}" 
+                          StrokeThickness="2" />
+                    <Line X1="12" Y1="18"    
+                          X2="22" Y2="8"  
+                          Stroke="{StaticResource App.Brush.Themes.Common.NavajoWhite}" 
+                          StrokeThickness="2" />
+                </Canvas>
+            </Button>
+        </StackPanel>
+    </Grid>
+</UserControl>

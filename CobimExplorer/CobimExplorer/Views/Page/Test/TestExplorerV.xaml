@@ -1,0 +1,207 @@
+﻿<UserControl x:Class="CobimExplorer.Views.Page.Test.TestExplorerV"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:CobimExplorer.Views.Page.Test"
+             xmlns:model="clr-namespace:CobimExplorer.Models.Explorer"
+             xmlns:vm="clr-namespace:CobimExplorer.ViewModels.Page.Test"
+             xmlns:t="clr-namespace:CobimExplorer.Test"
+             xmlns:s="https://github.com/canton7/Stylet"
+             s:View.ActionTarget="{Binding TestExplorerVM}"
+             mc:Ignorable="d" 
+             d:DataContext="{d:DesignInstance vm:TestExplorerVM}"
+             d:DesignHeight="450" d:DesignWidth="800">
+
+    <!-- TODO : C# WPF 팁 - Xaml 안에서 ViewModel속성을 자동완성 되도록 만들기(d:DataContext="{d:DesignInstance Type=vm:MainVM}") (2023.07.17 jbh) -->
+    <!--        유튜브 참고 URL - https://youtu.be/A8t5ktSAgdA -->
+
+    <!-- TODO : TreeView 테스트 코드 추후 삭제 예정 (2023.07.14 jbh) -->
+    <!-- TODO : TreeView DataType, ItemsSource 관련 클래스 Folder 구현 (2023.07.14 jbh)  -->
+    <!--        참고 URL - https://icodebroker.tistory.com/entry/CWPF-TreeViewItem-%ED%81%B4%EB%9E%98%EC%8A%A4-ItemsSource-%EC%86%8D%EC%84%B1%EC%9D%84-%EC%82%AC%EC%9A%A9%ED%95%B4-%ED%8A%B8%EB%A6%AC-%EB%B7%B0-%EB%A7%8C%EB%93%A4%EA%B8%B0#google_vignette  -->
+    <UserControl.Resources>
+        <ObjectDataProvider x:Key="ObjectDataProviderKey">
+            <ObjectDataProvider.ObjectInstance>
+                <t:Folder FullPath="c:\" />
+            </ObjectDataProvider.ObjectInstance>
+        </ObjectDataProvider>
+        <HierarchicalDataTemplate
+            DataType="{x:Type t:Folder}"
+            ItemsSource="{Binding Path=SubFolderCollection}">
+            <TextBlock Text="{Binding Path=Name}" />
+        </HierarchicalDataTemplate>
+        <DataTemplate x:Key="TestDataTemplate">
+            <Grid/>
+        </DataTemplate>
+    </UserControl.Resources>
+    
+    <!-- TODO : 화면 내 그리드 3분할 할 수 있도록 <GridSplitter> 사용해서 구현 (2023.07.13 jbh) -->
+    <!-- 참고 URL - https://icodebroker.tistory.com/8114 -->
+    <!-- 화면 영역 -->
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <!-- TODO : <ColumnDefinition>영역에서 Width 가중치 (1 대 2 비율) 구현 (2023.07.14 jbh) -->
+            <!-- 참고 URL - https://benstagram.tistory.com/33 -->
+            <ColumnDefinition Width="*"    />  <!-- Width 가중치 1 -->
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="2*"   />  <!-- Width 가중치 2 --> 
+        </Grid.ColumnDefinitions>
+
+        <!-- Border 속성 "BorderBrush", "BorderThickness" 사용법 
+             참고 URL - https://talkingaboutme.tistory.com/entry/WP7-%EA%B0%9C%EB%B0%9C-%EA%B8%B0%EC%B4%88-border-%EC%86%8D%EC%84%B1 -->
+        <!-- 화면 좌측 TreeView 영역 -->
+        <!-- 참고 URL - http://inasie.tistory.com/19 -->
+        <!-- 참고 2 URL - https://insurang.tistory.com/383 -->
+        <Border Grid.Row="0" Grid.Column="0" BorderBrush="{StaticResource App.Brush.Blue}" BorderThickness="10">
+            <!-- TODO : TreeView 테스트 코드 추후 삭제 예정 (2023.07.14 jbh) -->
+            <!-- TODO : TreeView DataType, ItemsSource 관련 클래스 Folder 구현 (2023.07.14 jbh)
+                        참고 URL - https://icodebroker.tistory.com/entry/CWPF-TreeViewItem-%ED%81%B4%EB%9E%98%EC%8A%A4-ItemsSource-%EC%86%8D%EC%84%B1%EC%9D%84-%EC%82%AC%EC%9A%A9%ED%95%B4-%ED%8A%B8%EB%A6%AC-%EB%B7%B0-%EB%A7%8C%EB%93%A4%EA%B8%B0#google_vignette-->
+            <TreeView Name="folderTreeView">
+                <TreeViewItem Header="폴더"
+                              ItemsSource="{Binding Source={StaticResource ObjectDataProviderKey}, Path=SubFolderCollection}" />
+            </TreeView>
+
+
+            <!-- TODO : CDE Explorer 전용 Rest API 연동시 아래 XAML 코드(<HierarchicalDataTemplate>) 주석 해제 후 구현하기 (2023.07.13 jbh) -->
+            <!-- TreeView 영역 -->
+            <!--<TreeView Name="GroupView" ItemsSource="{Binding DepthDatas}">
+                <TreeView.ItemContainerStyle>
+                    <Style TargetType="TreeViewItem">
+                        <Setter Property="IsExpanded" Value="False"/>
+                    </Style>
+                </TreeView.ItemContainerStyle>
+                --><!-- Tree --><!--
+                <TreeView.Resources>
+                    --><!-- TODO : CDE Explorer 전용 Rest API 연동시 아래 XAML 코드(<HierarchicalDataTemplate>) 구현하기 (2023.07.13 jbh) -->
+                    <!-- 루트 디렉토리 영역 : exp_TreeName --><!--
+                    <HierarchicalDataTemplate DataType="{x:Type vm:ExplorerDepth}" ItemsSource="{Binding Items}">
+                        <Button s:View.ActionTarget="{Binding ExplorerViewModel}" Command="{s:Action BtnClick}" CommandParameter="RootDirectory">
+                            <TextBlock Text="{Binding exp_TreeName}" />
+                        </Button>
+                    </HierarchicalDataTemplate>
+
+                    --><!-- TODO : CDE Explorer 전용 Rest API 연동시 아래 XAML 코드(<HierarchicalDataTemplate>) 구현하기 (2023.07.13 jbh) -->
+                    <!-- 하위 디렉토리 영역 : exp_TreeNameDesc --><!--
+                    <HierarchicalDataTemplate DataType="{x:Type model:ExplorerView}">
+                        <TextBlock Text="{Binding exp_TreeNameDesc}"/>
+                    </HierarchicalDataTemplate>
+                </TreeView.Resources>
+            </TreeView>-->
+        </Border>
+
+        <!--  <GridSplitter> 사용해서 그리드 세로 분할  -->
+        <GridSplitter Grid.Row="0" 
+                      Grid.Column="1"
+                      HorizontalAlignment="Center"
+                      VerticalAlignment="Stretch"
+                      Width="10"
+                      ShowsPreview="True" />
+
+        <Grid Grid.Row="0" Grid.Column="2">
+            <Grid.RowDefinitions>
+                <!-- TODO : <RowDefinition> 영역에서 Height 가중치 (1.5 대 1 비율) 구현 (2023.07.14 jbh) -->
+                <!-- 참고 URL - https://benstagram.tistory.com/33 -->
+                <RowDefinition Height="1.5*" />
+                <!-- Height 가중치 1.5 -->
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*"    />
+                <!-- Height 가중치 1   -->
+            </Grid.RowDefinitions>
+
+            <!-- 화면 우측 상단 DataGrid 영역 -->
+            <Border Grid.Row="0" Grid.Column="0" BorderBrush="{StaticResource App.Brush.Themes.Common.Red}" BorderThickness="10">
+                <!-- GridView 영역 -->
+                <!-- TODO: GridView 영역 구현시 <Grid> 또는 <DataGrid> 둘 중에 하나로 구현하기 (2023.07.13 jbh) -->
+                <!-- TODO: 아래 <DataGrid> 영역 테스트 코드 추후 삭제 예정 (2023.07.14 jbh) -->
+                <DataGrid ItemsSource="{Binding ElementName=folderTreeView, Path=SelectedItem.SubFolderCollection, Mode=OneWay}"
+                          HeadersVisibility="Column" />
+            </Border>
+
+            <!-- <GridSplitter> 사용해서 그리드 가로 분할 -->
+            <GridSplitter Grid.Row="1" 
+                          Grid.Column="0"
+                          HorizontalAlignment="Stretch"
+                          VerticalAlignment="Center"
+                          Height="10"
+                          ShowsPreview="True" />
+
+            <!-- 화면 우측 하단 DataGrid 영역 -->
+            <Border Grid.Row="2" Grid.Column="0" BorderBrush="{StaticResource App.Brush.Green}" BorderThickness="10">
+                <!--  ListView 영역  -->
+                <!--  TODO: 아래 <ListView> 영역 테스트 코드 추후 삭제 예정 (2023.07.14 jbh)  -->
+                <!--  <ListView ItemsSource="{Binding ElementName=folderTreeView, Path=SelectedItem.FileInfoCollection, Mode=OneWay}"/>  -->
+                <!--  TODO : <DataGrid> 영역 중 공백 컬럼 숨기기 처리 및 추후 탐색기 화면 뷰(ExplorerV.xaml) 우측 상단 컨테이너 정보 영역 "ListView"를 DataGrid로 변환시 아래 XAML 코드 참고 예정  (2023.12.28 jbh)  -->
+                <!--  TODO : 탐색기 화면 뷰(ExplorerV.xaml) 우측 상단 컨테이너 정보 영역을 <DataGrid>로 구현 및 컨테이너 정보에 속하는 컬럼을 <DataGridTextColumn>로 구현하기 (2023.12.28 jbh)  -->
+                <!--  참고 URL - https://stackoverflow.com/questions/2865505/how-do-i-hide-wpf-datagrid-row-selector  -->
+                <!--  참고 URL - https://bumukisbest.tistory.com/7  -->
+                <DataGrid ItemsSource="{Binding ElementName=folderTreeView, Path=SelectedItem.FileInfoCollection, Mode=OneWay}"
+                          HeadersVisibility="Column" />
+            </Border>
+            <!-- 화면 우측 하단 ListBox 영역 -->
+            <!-- 참고 URL - https://whyprogrammer.tistory.com/395 -->
+            <!-- 참고 2 URKL - https://kaki104.tistory.com/749 -->
+            <!--<ListBox Grid.Row="2" Grid.Column="0" BorderBrush="{StaticResource App.Brush.Green}" BorderThickness="10" 
+                     ItemsSource="{Binding ElementName=folderTreeView, Path=SelectedItem.FileInfoCollection, Mode=OneWay}"
+                     ItemTemplate="{DynamicResource TestDataTemplate}">
+                 --><!--  파일 이름 (Name) string  --><!-- 
+                 <TextBox Text="{Binding SelectedItem.FileInfoCollection.Name, Mode=OneWay}"/> 
+                 --><!--  파일 경로 (DirectoryName) string  --> 
+                 
+                 <!--  파일 생성 시간 (CreationTime) DateTime  --><!-- 
+            </ListBox>--> 
+        </Grid>
+    </Grid>
+
+    <!-- TODO : 아래 XAML 코드 필요 없을 시 삭제 예정 (2023.07.13 jbh) -->
+    <!--<Grid>
+        --><!--  화면 영역  --><!-- 
+        <Border>
+            <DockPanel>
+                <Border>
+                    <DockPanel LastChildFill="True">
+                        --><!--  Border 속성 "BorderBrush", "BorderThickness" 사용법  --> 
+                        <!--  참고 URL - https://talkingaboutme.tistory.com/entry/WP7-%EA%B0%9C%EB%B0%9C-%EA%B8%B0%EC%B4%88-border-%EC%86%8D%EC%84%B1  --> 
+                        <!--  화면 좌측 TreeView 영역  --><!--
+                        <Border Width="260" DockPanel.Dock="Left" BorderBrush="{StaticResource App.Brush.Blue}" BorderThickness="10">
+                            --><!--  TreeView 영역  --><!-- 
+                            <TreeView>
+
+                            </TreeView>
+                        </Border>
+                        --><!--  화면 우측 상단 GridView 영역  --><!--
+                        <Border Height="300" DockPanel.Dock="Top" BorderBrush="{StaticResource App.Brush.Themes.Common.Red}" BorderThickness="10">
+                            --><!--  GridView 영역  --> 
+                            <!--  TODO: GridView 영역 구현시 <Grid> 또는 <DataGrid> 둘 중에 하나로 구현하기 (2023.07.13 jbh)  --><!-- 
+                            <DataGrid>
+
+                            </DataGrid>
+                        </Border>
+                        --><!--  화면 우측 하단 ListView 영역 --><!--
+                        <Border DockPanel.Dock="Bottom" BorderBrush="{StaticResource App.Brush.Green}" BorderThickness="10">
+                            --><!--  ListView 영역  --><!-- 
+                            <ListView>
+
+                            </ListView>
+                        </Border>
+                    </DockPanel>
+                </Border>
+
+                --><!--  화면 우측 상단 Grid View 영역  --><!-- 
+                <Grid Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        --><!--  * : 고정길이를 제외하고 나머지 공간에서 비율적으로 채움  --><!-- 
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="auto" />
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock Grid.Column="0" Text="View Reservations" Style="{StaticResource Header}"/>
+
+                    <Button Grid.Column="1" Margin="10 0 0 0" Content="Make Reservation" />
+                </Grid>
+
+                --><!--  화면 우측 하단 ListView 영역  --> 
+                <!--  TODO : ListView 구현 시 참고 유튜브 영상 (동영상 11분 부터 시청) 참고 URL - https://youtu.be/UQOi48H_84s  --><!-- 
+            </DockPanel>
+        </Border>
+    </Grid>-->
+</UserControl>

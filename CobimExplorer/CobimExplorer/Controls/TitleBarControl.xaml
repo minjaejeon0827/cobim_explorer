@@ -1,0 +1,160 @@
+﻿<UserControl x:Class="CobimExplorer.Controls.TitleBarControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:behavior="clr-namespace:CobimExplorer.Behaviors"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:converters="clr-namespace:CobimExplorer.Converters"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+             xmlns:local="clr-namespace:CobimExplorer.Controls" xmlns:viewmodels="clr-namespace:CobimExplorer.ViewModels" 
+             mc:Ignorable="d" 
+             d:DesignHeight="25" 
+             d:DesignWidth="800"
+             Name="root">
+
+    <UserControl.Resources>
+        <converters:WindowStateMarginConverter x:Key="WindowStateMarginConverter" />
+        <converters:WindowStateIconConverter x:Key="WindowStateIconConverter" />
+
+        <!--  TODO : 오류 코드 "XLS0511" 오류 메시지 "IDictionary 형식 속성에 포함된 태그에서만 Key 특성을 사용할 수 있습니다."	 -->
+        <!--  참고 URL - https://stackoverflow.com/questions/14907524/the-key-attribute-can-only-be-used-on-an-element-that-is-contained-in-idictio  -->
+        <!--  참고 2 URL - https://kaki104.tistory.com/841  -->
+        <!--<Style x:Key="AttachedTitleBarButtonStyle" TargetType="Button">
+            <Setter Property="behavior:TitleBarButtonBehabior." Value="True" />
+        </Style>-->
+    </UserControl.Resources>
+
+    <!--  TODO : CobimExplorer 응용 프로그램 화면 상단 타이틀 바 구현 (2023.11.09 jbh)  -->
+    <!--  참고 URL - https://youtu.be/Q6VxSPlkcCg?si=dkC2ujAX3reUjQPk  -->
+    <Border x:Name="mainTitle"
+            Background="{StaticResource App.Brush.Themes.Winter.Black.30}">
+        <Grid>
+            <!--  TODO : 탐색기 응용 프로그램 화면 상단 윈도우 타이틀 바 직접 구현 (2023.11.07 jbh)  -->
+            <!--  참고 URL - https://gigong.tistory.com/99  -->
+            <!--  참고 2 URL - https://itpro.tistory.com/88  -->
+            <!--  타이틀 바 영역  -->
+            <!--  PreviewMouseDown="System_MouseDown" PreviewMouseMove="System_MouseMove"  -->
+            <!--  MouseMove="System_MouseMove" MouseLeftButtonDown="System_MouseDown"  -->
+            <Label VerticalContentAlignment="Center" 
+                   Margin="10,0,105,0"
+                   x:Name="TitleLabel">
+                <!--  TODO : 아래 TextBlock에 바인딩 된 Title은 MainV.xaml 상단 <Window> 태그 안에 사용되는 속성 Title="{Binding CDE_Title}"을 의미함. (2023.11.09 jbh)  -->     
+                <TextBlock Text="{Binding Title, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}}" 
+                           Foreground="{StaticResource App.Brush.Themes.Common.White}"
+                           FontWeight="Bold" />
+                <!--<TextBlock Text="{Binding CDE_Title}" 
+                           Foreground="{StaticResource App.Brush.Themes.Common.NavajoWhite}"
+                           FontWeight="Bold" />-->
+            </Label>
+
+            <!--  시스템 버튼 영역  -->
+            <StackPanel Orientation="Horizontal" 
+                        HorizontalAlignment="Right" 
+                        Background="{StaticResource App.Brush.Themes.Winter.Black.30}">
+                <!--  최소화 버튼  -->
+                <!--  최소화 버튼에서 사용하는 속성 "Margin"은 ElementName=root에 있는 WinState를 찾는다.  -->
+                <Button Style="{DynamicResource App.Button.System.Min}"
+                        x:Name="MinBtn"
+                        CommandParameter="Min"
+                        Margin="{Binding WinState, ElementName=root, Converter={StaticResource WindowStateMarginConverter}}">
+                    <!--  타이틀바 버튼 전용 Behaviors  -->
+                    <i:Interaction.Behaviors>
+                        <!--<behavior:TitleBarButtonBehavior MinCommand="{Binding MinCommand}"/>-->
+                    </i:Interaction.Behaviors>
+
+                    <!--  TODO : 최소화 버튼 Behavior 구현 (InvokeCommandAction 사용) (2023.11.16 jbh)  -->
+                    <!--  참고 URL - https://velog.io/@yu_oolong/C-WPF-Behavior-InvokeCommandAction  -->
+                    <!--  참고 2 URL - https://blog.naver.com/vactorman/221064433289  -->
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="Click">
+                            <i:InvokeCommandAction Command="{Binding MinCommand}" />
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                    
+                    <Rectangle Name="lineMin"
+                               Width="11"
+                               Stroke="{StaticResource App.Brush.Themes.Common.NavajoWhite}"
+                               StrokeThickness="2" />
+                </Button>
+
+                <!--  최대화 버튼  -->
+                <!--  최대화 버튼에서 사용하는 속성 "Margin"은 ElementName=root에 있는 WinState를 찾는다.  -->
+                <Button Style="{DynamicResource App.Button.System.Max}"
+                        x:Name="MaxBtn"
+                        CommandParameter="Max"
+                        Margin="{Binding WinState, ElementName=root, Converter={StaticResource WindowStateMarginConverter}}">
+                    <!--  타이틀바 버튼 전용 Behaviors  -->
+                    <i:Interaction.Behaviors>
+                        <!--<behavior:TitleBarButtonBehavior MaxCommand="{Binding MaxCommand}"/>-->
+                    </i:Interaction.Behaviors>
+
+                    <!--  TODO : 최대화 버튼 Behavior 구현 (InvokeCommandAction 사용) (2023.11.16 jbh)  -->
+                    <!--  참고 URL - https://velog.io/@yu_oolong/C-WPF-Behavior-InvokeCommandAction  -->
+                    <!--  참고 2 URL - https://blog.naver.com/vactorman/221064433289  -->
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="Click">
+                            <i:InvokeCommandAction Command="{Binding MaxCommand}" />
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+
+                    <Grid>
+                        <!--  최대화 시키기 전 버튼 모양 (Rectangle 사각형 1개)  -->  
+                        <Rectangle Name="rectMax" 
+                                   Width="11" 
+                                   Height="11"
+                                   Stroke="{StaticResource App.Brush.Themes.Common.NavajoWhite}"
+                                   StrokeThickness="2"/>
+
+                        <!--  최대화 시키고 난 후 버튼 모양 (Rectangle 사각형 2개 중첩)  -->
+                        <Canvas Name="rectMin" 
+                                Visibility="Hidden">
+                            <Polyline  Points="2.375,2 2.375,0.375 10.625,0.375 10.625,8.625 9,8.625"
+                                       StrokeThickness="2" 
+                                       Stroke="{StaticResource App.Brush.Themes.Common.NavajoWhite}" />
+                            <Rectangle Width="9" 
+                                       Height="9"
+                                       Stroke="{StaticResource App.Brush.Themes.Common.NavajoWhite}"
+                                       StrokeThickness="2" Margin="0,2,2,0" />
+                        </Canvas>
+                    </Grid>
+                </Button>
+
+                <!--  닫기 버튼  -->
+                <!--  닫기 버튼에서 사용하는 속성 "Margin"은 ElementName=root에 있는 WinState를 찾는다.  -->
+                <Button Style="{DynamicResource App.Button.System.Close}"
+                        x:Name="ExitBtn"
+                        CommandParameter="Exit"
+                        Margin="{Binding WinState, 
+                                         ElementName=root, 
+                                         Converter={StaticResource WindowStateMarginConverter}, 
+                                         ConverterParameter=Exit}">
+                    <!--  타이틀바 버튼 전용 Behaviors  -->
+                    <i:Interaction.Behaviors>
+                        <!--<behavior:TitleBarButtonBehavior ExitCommand="{Binding ExitCommand}"/>-->
+                    </i:Interaction.Behaviors>
+
+                    <!--  TODO : 종료 버튼 Behavior 구현 (InvokeCommandAction 사용) (2023.11.16 jbh)  -->
+                    <!--  참고 URL - https://velog.io/@yu_oolong/C-WPF-Behavior-InvokeCommandAction  -->
+                    <!--  참고 2 URL - https://blog.naver.com/vactorman/221064433289  -->
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="Click">
+                            <i:InvokeCommandAction Command="{Binding ExitCommand}" />
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+
+                    <Canvas Height="25" Width="35">
+                        <Line X1="12" Y1="8" 
+                              X2="22" Y2="18"    
+                              Stroke="{StaticResource App.Brush.Themes.Common.NavajoWhite}"
+                              StrokeThickness="2" />
+                        
+                        <Line X1="12" Y1="18"    
+                              X2="22" Y2="8"  
+                              Stroke="{StaticResource App.Brush.Themes.Common.NavajoWhite}"
+                              StrokeThickness="2" />
+                    </Canvas>
+                </Button>
+            </StackPanel>
+        </Grid>
+    </Border>
+</UserControl>

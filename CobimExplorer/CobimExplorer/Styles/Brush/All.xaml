@@ -1,0 +1,22 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <!--  { StackResource } {DynamicResource }의 차이는 {StackResource }는 컴파일 실행할 때, 해당 솔루션의 존재하는 다른 로직(소스파일)에서  -->
+    <!--  구현된 Resources(자원)들을 가져오는 기능이고, {DynamicResource }는 컴파일 실행 후, 프로그램이 정상 실행되는 런타임 동안에  -->
+    <!--  실시간으로 데이터가 바뀌거나 화면이 새로 랜더링 되는(화면 변환) 동안에 동적으로 그때마다 필요한 Resource(자원)들을 가져오는 기능이다. -->
+
+    <!--  색상 상수화 선언  -->
+    <!--  BorderBrush, Background, Foreground  전용 색상 상수화(SolidColorBrush) 선언  -->
+    <SolidColorBrush x:Key="App.Brush.Green" Color="Green"   />
+    <SolidColorBrush x:Key="App.Brush.Blue" Color="Blue"   />
+    <SolidColorBrush x:Key="App.Brush.Chocolate" Color="Chocolate"  />
+
+    <SolidColorBrush x:Key="App.Brush.LightPink" Color="LightPink" />
+    <SolidColorBrush x:Key="App.Brush.Hotpink" Color="Hotpink"   />
+
+    <SolidColorBrush x:Key="App.Brush.Gold" Color="Gold" />
+    <SolidColorBrush x:Key="App.Brush.GreenYellow" Color="GreenYellow" />
+    <SolidColorBrush x:Key="App.Brush.Yellow" Color="Yellow" />
+
+    <SolidColorBrush x:Key="App.Brush.ScrollBar.Border.Background" Color="#FFFFF6F7"   />
+    <SolidColorBrush x:Key="App.Brush.Login.BorderBrush" Color="#CED4DA"   />
+</ResourceDictionary>
