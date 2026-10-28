@@ -1,5 +1,11 @@
 # CobimExplorer
 
+## 데모 (프로그램 실행 화면)
+
+**파일 다운로드**
+
+![탐색기 프로그램 실행 화면](cobim_explorer.png)
+
 ## 개요
 
 `CobimExplorer`는 국토교통부 COBIM 연구과제에서 개발한 **Windows WPF 데스크톱 탐색기 프로그램**이다. 
