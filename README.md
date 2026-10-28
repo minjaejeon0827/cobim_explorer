@@ -1,8 +1,8 @@
-# COBIM 탐색기 (CobimExplorer)
+# CobimExplorer
 
 ## 개요
 
-`CobimExplorer`는 국토교통부 COBIM 연구과제에서 개발한 **Windows WPF 데스크톱 프로그램**이다. 
+`CobimExplorer`는 국토교통부 COBIM 연구과제에서 개발한 **Windows WPF 데스크톱 탐색기 프로그램**이다. 
 .NET Framework 4.8과 C# 9로 개발 되었고, Java Spring 웹 서비스(`https://cobim.io/api/...`)로 구현된 Rest API를 연동한다.
 
 주요 기능은 다음과 같다.
