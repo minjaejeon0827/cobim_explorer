@@ -119,3 +119,6 @@ msbuild CobimExplorer.sln /p:Configuration=Debug /p:Platform="Any CPU"
 - `App.xaml`에서 `Styles/All.xaml`을 합쳐(merge) 불러온다. 이 파일은 색상, 브러시, 컨트롤 템플릿, 계절별 테마(`Styles/Themes/{Spring,Summer,Fall,Winter}`)를 한데 모은다.
 - 직접 만든 창 테두리 UI(제목 표시줄, 리본, 내비게이션 바)는 `Controls/`에 있다.
 - 이 UI들의 동작은 `Behaviors/`에 있으며, Microsoft.Xaml.Behaviors를 사용한다.
+
+### 참고
+- [COBIM BIM 기반 인프라 발주-설계 프로세스 디지털 협업 체계 개발](https://scienceon.kisti.re.kr/srch/selectPORSrchReport.do?cn=TRKO202500010351)
