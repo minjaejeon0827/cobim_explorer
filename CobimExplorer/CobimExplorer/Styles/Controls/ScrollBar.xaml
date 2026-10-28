@@ -1,7 +1,7 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
-    <!--  TODO : 스크롤 바 스타일 구현 하기 (2023.12.19 jbh)  -->
+    <!--  TODO : 스크롤 바 스타일 구현 하기 (2023.12.19 minjae)  -->
     <!--  유튜브 참고 URL - https://youtu.be/Je5XBtAUNXY?si=Ub2urenU6ZbbE1KT  -->
     <!--  Chat GPT 참고 URL - https://chat.openai.com/c/760cca04-5569-406f-8ef8-fb44c0153e4b  -->
     <Style x:Key="App.ScrollBar.ThumbVertical" TargetType="{x:Type Thumb}">

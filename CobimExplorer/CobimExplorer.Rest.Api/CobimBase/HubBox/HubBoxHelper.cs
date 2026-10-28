@@ -64,7 +64,7 @@ namespace CobimExplorer.Rest.Api.CobimBase.HubBox
 
         #region Rest API 요청 URL
 
-        // TODO : 로컬 서버, 개발 서버, 운영 서버 용어 정의 참고 (2024.08.26 jbh)
+        // TODO : 로컬 서버, 개발 서버, 운영 서버 용어 정의 참고 (2024.08.26 minjae)
         // 참고 URL - https://velog.io/@ryucherry/Server-%EB%A1%9C%EC%BB%AC%EC%84%9C%EB%B2%84-%EA%B0%9C%EB%B0%9C%EC%84%9C%EB%B2%84-%EC%8A%A4%ED%85%8C%EC%9D%B4%EC%A7%95%EC%84%9C%EB%B2%84-%EC%9A%B4%EC%98%81%EC%84%9C%EB%B2%84-%EB%9E%80
 
         /// <summary>
@@ -73,7 +73,7 @@ namespace CobimExplorer.Rest.Api.CobimBase.HubBox
         // public const string localBaseURL = "http://localhost:";
 
         // TODO : AutoCAD 애드인 프로그램(CobimPalette.dll)에서 Rest API 요청시 (HTTP GET / POST)
-        //        HTTP URL 주소에 문자열 "/cad" 추가해서 보낼 수 있도록 아래처럼 코드 "(appName.Equals(cobimPalette) ? "/cad" : string.Empty)" 추가 (2024.11.13 jbh)
+        //        HTTP URL 주소에 문자열 "/cad" 추가해서 보낼 수 있도록 아래처럼 코드 "(appName.Equals(cobimPalette) ? "/cad" : string.Empty)" 추가 (2024.11.13 minjae)
         /// <summary>
         /// HubBox 개발 서버 Base URL
         /// </summary>
@@ -81,12 +81,12 @@ namespace CobimExplorer.Rest.Api.CobimBase.HubBox
         // public const string devBaseURL = "http://explorer.cobim.kr:";
         public static string devBaseURL = "http://explorer.cobim.kr:" + (appName.Equals(cobimExplorer) ? translatorPort : web_explorerPort) + (appName.Equals(cobimPalette) ? "/cad" : string.Empty);
 
-        // TODO : 아래 주석친 코드 public static string devBaseURL = "http://convert.cobim.kr:" + (appName.Equals(cobimExplorer) ? translatorPort : web_explorerPort); 필요시 참고 (2024.10.14 jbh)
+        // TODO : 아래 주석친 코드 public static string devBaseURL = "http://convert.cobim.kr:" + (appName.Equals(cobimExplorer) ? translatorPort : web_explorerPort); 필요시 참고 (2024.10.14 minjae)
         // public static string devBaseURL = "http://convert.cobim.kr:" + (appName.Equals(cobimExplorer) ? translatorPort : web_explorerPort);
 
 
         // TODO : AutoCAD 애드인 프로그램(CobimPalette.dll)에서 Rest API 요청시 (HTTP GET / POST)
-        //        HTTP URL 주소에 문자열 "/cad" 추가해서 보낼 수 있도록 아래처럼 코드 "(appName.Equals(cobimPalette) ? "/cad" : string.Empty)" 추가 (2024.11.13 jbh)
+        //        HTTP URL 주소에 문자열 "/cad" 추가해서 보낼 수 있도록 아래처럼 코드 "(appName.Equals(cobimPalette) ? "/cad" : string.Empty)" 추가 (2024.11.13 minjae)
         // TODO : 아래 3가지 프로그램은 Port 번호가 서로 다르지만 (translatorPort, web_explorerPort)
         //        체크인 처리 후 POST - 3. 컨테이너에 속한 특정 파일 변환 API 요청시에는
         //        Port 번호는 탐색기 응용 프로그램(CobimExplorer.exe)인 translatorPort = 8100 으로 통일해야
@@ -101,7 +101,7 @@ namespace CobimExplorer.Rest.Api.CobimBase.HubBox
         public static string devTranslateBaseURL = "http://explorer.cobim.kr:" + translatorPort + (appName.Equals(cobimPalette) ? "/cad" : string.Empty);
 
 
-        // TODO : 필요시 HubBox 운영 서버 Base URL const string 객체 requestProBaseURL 구현 예정 (2024.08.26 jbh)
+        // TODO : 필요시 HubBox 운영 서버 Base URL const string 객체 requestProBaseURL 구현 예정 (2024.08.26 minjae)
         /// <summary>
         /// HubBox 운영 서버 Base URL
         /// </summary>
@@ -268,7 +268,7 @@ namespace CobimExplorer.Rest.Api.CobimBase.HubBox
 
             try
             {
-                // TODO : 실행 중인 응용 프로그램 이름 구하기 위해 아래 방법으로 구현 (2024.09.26 jbh)
+                // TODO : 실행 중인 응용 프로그램 이름 구하기 위해 아래 방법으로 구현 (2024.09.26 minjae)
                 // 참고 URL - https://gent.tistory.com/502
                 //        1. Split 메서드를 사용하여 문자열 "assemblyName"을 특정 구분자('.')로 나눠서 배열로 변환
                 //        2. 특정 구분자('.') 기준으로 나눈 문자열 배열에서 인덱스 appNameIdx(0 번지)에 존재하는

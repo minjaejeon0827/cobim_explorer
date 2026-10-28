@@ -6,7 +6,7 @@
         <ResourceDictionary Source="TreeView.xaml"   />
         <ResourceDictionary Source="TabControl.xaml" />
         <ResourceDictionary Source="ScrollBar.xaml"  />
-        <!--  TODO : 아래 스타일 속성들 필요시 구현 예정 (2023.10.30 jbh)  -->
+        <!--  TODO : 아래 스타일 속성들 필요시 구현 예정 (2023.10.30 minjae)  -->
         <!--<ResourceDictionary Source="Border.xaml"/>
         <ResourceDictionary Source="Button.xaml"/>
         <ResourceDictionary Source="CheckBox.xaml"/>

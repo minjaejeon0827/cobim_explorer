@@ -28,7 +28,7 @@ using CobimExplorer.Settings;
 
 namespace CobimExplorer.ViewModels.Pages
 {
-    // TODO : TreeView Multi Level (프로젝트 - 팀 - 폴더 - 서브폴더 / 파일) 구현 (2023.09.18 jbh)
+    // TODO : TreeView Multi Level (프로젝트 - 팀 - 폴더 - 서브폴더 / 파일) 구현 (2023.09.18 minjae)
     // 참고 URL - https://stackoverflow.com/questions/50760316/wpf-treeview-with-three-levels-in
     public interface ITreeNode
     {
@@ -122,7 +122,7 @@ namespace CobimExplorer.ViewModels.Pages
         public string exp_TeamId { get; set; }
 
 
-        // TODO : 프로퍼티 "exp_TeamName" 필요시 사용 예정 (2023.10.23 jbh)
+        // TODO : 프로퍼티 "exp_TeamName" 필요시 사용 예정 (2023.10.23 minjae)
         /// <summary>
         /// 화면 우측 상단 팀 이름 출력할 때 사용할 바인딩 객체 "exp_TeamName"
         /// </summary>
@@ -139,7 +139,7 @@ namespace CobimExplorer.ViewModels.Pages
         //public Dictionary<string, object> TeamDataInfo { get; set; } = new Dictionary<string, object>();
         public Dictionary<string, object> TeamDataInfo { get; set; }
 
-        // TODO : 소속된 팀의 사용자 리스트 필요시 사용 예정 (2023.09.18 jbh)
+        // TODO : 소속된 팀의 사용자 리스트 필요시 사용 예정 (2023.09.18 minjae)
         /// <summary>
         /// 소속된 팀의 사용자 리스트 
         /// </summary>
@@ -226,7 +226,7 @@ namespace CobimExplorer.ViewModels.Pages
         /// </summary>
         public string exp_FileName { get; set; }
 
-        // TODO : 파일 하위 자식 "ChildNodes" 필요시 사용 예정 (2023.09.18 jbh)
+        // TODO : 파일 하위 자식 "ChildNodes" 필요시 사용 예정 (2023.09.18 minjae)
         /// <summary>
         /// 파일 하위 자식 노드
         /// </summary>
@@ -250,7 +250,7 @@ namespace CobimExplorer.ViewModels.Pages
         /// </summary>
         public List<Dictionary<string, object>> FileItems { get; set; }
 
-        // TODO : 공유 컨테이너 리스트 "SharedContainerList" 추후 필요시 사용 예정 (2023.09.22 jbh)
+        // TODO : 공유 컨테이너 리스트 "SharedContainerList" 추후 필요시 사용 예정 (2023.09.22 minjae)
         /// <summary>
         /// 공유 컨테이너 리스트
         /// </summary>
@@ -422,7 +422,7 @@ namespace CobimExplorer.ViewModels.Pages
         /// </summary>
         public string exp_FileTypeCodeName { get; set; }
 
-        // TODO : 프로퍼티 "exp_SoftMetaName" 필요시 사용 예정 (2023.10.23 jbh)
+        // TODO : 프로퍼티 "exp_SoftMetaName" 필요시 사용 예정 (2023.10.23 minjae)
         /// <summary>
         /// 소프트웨어 - metaName
         /// </summary>
@@ -433,7 +433,7 @@ namespace CobimExplorer.ViewModels.Pages
         /// </summary>
         public string exp_SoftName { get; set; }
 
-        // TODO : 프로퍼티 "exp_SoftVerMetaName" 필요시 사용 예정 (2023.10.23 jbh)
+        // TODO : 프로퍼티 "exp_SoftVerMetaName" 필요시 사용 예정 (2023.10.23 minjae)
         /// <summary>
         /// 소프트웨어버전 - metaName
         /// </summary>
@@ -444,7 +444,7 @@ namespace CobimExplorer.ViewModels.Pages
         /// </summary>
         public string exp_SoftVer { get; set; }
 
-        // TODO : 프로퍼티 "exp_KeywordTagMetaName" 필요시 사용 예정 (2023.10.23 jbh)
+        // TODO : 프로퍼티 "exp_KeywordTagMetaName" 필요시 사용 예정 (2023.10.23 minjae)
         /// <summary>
         /// 키워드/태그 - metaName
         /// </summary>
@@ -540,13 +540,13 @@ namespace CobimExplorer.ViewModels.Pages
         /// </summary>
         public List<Dictionary<string, object>> LinkedNodeInfoList { get; set; }
 
-        // TODO : 연관된 컨테이너 메타 데이터 리스트 객체 "LinkedNodeMetaDataList" 필요시 사용 예정 (2023.11.01 jbh)
+        // TODO : 연관된 컨테이너 메타 데이터 리스트 객체 "LinkedNodeMetaDataList" 필요시 사용 예정 (2023.11.01 minjae)
         /// <summary>
         /// 연관된 컨테이너 메타 데이터 리스트 
         /// </summary>
         public List<Dictionary<string, object>> LinkedNodeMetaDataList { get; set; }
 
-        // TODO : 추후 필요시 "컨테이너 정보, 파일정보" 리스트 객체 containerDetailList 구현 예정 (2023.10.17 jbh)
+        // TODO : 추후 필요시 "컨테이너 정보, 파일정보" 리스트 객체 containerDetailList 구현 예정 (2023.10.17 minjae)
         /// <summary>
         /// 컨테이너 정보, 파일정보 리스트
         /// </summary>
@@ -567,7 +567,7 @@ namespace CobimExplorer.ViewModels.Pages
         /// </summary>
         public List<Dictionary<string, object>> MetaDataList { get; set; }
 
-        // TODO : 추후 필요시 "마일스톤 업무" 리스트 객체 TaskDetailList 구현 예정 (2023.10.17 jbh)
+        // TODO : 추후 필요시 "마일스톤 업무" 리스트 객체 TaskDetailList 구현 예정 (2023.10.17 minjae)
         /// <summary>
         /// 마일스톤 업무 리스트
         /// </summary>
@@ -594,7 +594,7 @@ namespace CobimExplorer.ViewModels.Pages
         /// </summary>
         public List<TaskDetailView> TaskDetailList { get; set; }
 
-        // TODO : 컨테이너 정보 영역 "파일유형" ComboBox 구현시 바인딩할 BindableCollection 객체 FileType 필요시 사용 예정 (2023.10.20 jbh)
+        // TODO : 컨테이너 정보 영역 "파일유형" ComboBox 구현시 바인딩할 BindableCollection 객체 FileType 필요시 사용 예정 (2023.10.20 minjae)
         // 참고 URL - https://www.reddit.com/r/csharp/comments/126sdo6/wpf_binding_a_dictionary_value_to_a_combobox/
         // 참고 2 URL - https://www.codeproject.com/Questions/536820/WPFplusBindplusandpluspopulateplusapluscombobox
         /// <summary>
@@ -602,7 +602,7 @@ namespace CobimExplorer.ViewModels.Pages
         /// </summary>
         // public BindableCollection<FileTypeView> FileType { get; set; }
 
-        // TODO : 컨테이너 정보 영역 "마일스톤" ComboBox 구현시 바인딩할 BindableCollection 객체 TaskDetailType 필요시 사용 예정 (2023.10.20 jbh)
+        // TODO : 컨테이너 정보 영역 "마일스톤" ComboBox 구현시 바인딩할 BindableCollection 객체 TaskDetailType 필요시 사용 예정 (2023.10.20 minjae)
         // 참고 URL - https://www.reddit.com/r/csharp/comments/126sdo6/wpf_binding_a_dictionary_value_to_a_combobox/
         // 참고 2 URL - https://www.codeproject.com/Questions/536820/WPFplusBindplusandpluspopulateplusapluscombobox
         /// <summary>
@@ -626,7 +626,7 @@ namespace CobimExplorer.ViewModels.Pages
         /// </summary>
         public string exp_TreeName { get; set; }
 
-        // TODO : 파일 하위 자식 "ChildNodes" 필요시 사용 예정 (2023.09.18 jbh)
+        // TODO : 파일 하위 자식 "ChildNodes" 필요시 사용 예정 (2023.09.18 minjae)
         /// <summary>
         /// 파일 하위 자식 노드
         /// </summary>
@@ -655,14 +655,14 @@ namespace CobimExplorer.ViewModels.Pages
     // TODO : 뷰(ExplorerV.xaml)에 구현된 ComboBox 파일유형, 마일스톤에서 사용하는 속성 SelectedItem에 바인딩되는
     //        바인딩되는 UpdateParam클래스 객체 Param의 바인딩 객체(FileTypeCodeInfo, taskDetail)에 저장된 값 변경시 
     //        뷰모델 (ExplorerVM.cs)에 해당 바인딩 객체(FileTypeCodeInfo, taskDetail)의 값이 변경되었다는 프로퍼티 체인지 이벤트(NotifyOfPropertyChange();)를
-    //        실행하기 위해서 UpdateParam 클래스는 부모 클래스로 ValidatingModelBase를 상속 받도록 구현 (2023.10.23 jbh)
+    //        실행하기 위해서 UpdateParam 클래스는 부모 클래스로 ValidatingModelBase를 상속 받도록 구현 (2023.10.23 minjae)
     // 참고 URL - https://kaki104.tistory.com/749
     /// <summary>
     /// ComboBox "파일유형" List 생성 메서드 ContainerInfoTypeListCreate 실행시 ComboBox에 할당될 데이터 목록
     /// </summary>
     public class Param : ValidatingModelBase
     {
-        // TODO : 수정 메서드 "UpdateAsync" 실행시 전달할 수정된 메서드 파라미터 필요시 추가 예정 (2023.10.23 jbh)
+        // TODO : 수정 메서드 "UpdateAsync" 실행시 전달할 수정된 메서드 파라미터 필요시 추가 예정 (2023.10.23 minjae)
 
         /// <summary>
         /// 파일유형
@@ -670,7 +670,7 @@ namespace CobimExplorer.ViewModels.Pages
         public FileTypeView FileTypeCodeInfo { get => _FileTypeCodeInfo; set { _FileTypeCodeInfo = value; NotifyOfPropertyChange(); } }
         private FileTypeView _FileTypeCodeInfo;
 
-        // TODO : ComboxBox - 마일스톤의 경우 추후 인재 INC 측에서 마일스톤 RestAPI 공유 받은 후 개발 진행 (2023.10.23 jbh)
+        // TODO : ComboxBox - 마일스톤의 경우 추후 인재 INC 측에서 마일스톤 RestAPI 공유 받은 후 개발 진행 (2023.10.23 minjae)
         /// <summary>
         /// 마일스톤
         /// </summary>
@@ -694,7 +694,7 @@ namespace CobimExplorer.ViewModels.Pages
         public string exp_codeName { get; set; }
     }
 
-    // TODO : ComboxBox - 마일스톤의 경우 추후 인재 INC 측에서 마일스톤 RestAPI 공유 받은 후 개발 진행 (2023.10.23 jbh)
+    // TODO : ComboxBox - 마일스톤의 경우 추후 인재 INC 측에서 마일스톤 RestAPI 공유 받은 후 개발 진행 (2023.10.23 minjae)
     /// <summary>
     /// ComboBox - 마일스톤
     /// </summary>
@@ -747,7 +747,7 @@ namespace CobimExplorer.ViewModels.Pages
         public ICommand FolderCommand { get; set; }
 
         // TODO : CreateCommand - 파일(컨테이너) 신규 등록의 경우 COBIM 웹 사이트(인재 INC)에서만 사용하는 기능이고 CDE 탐색기 응용 프로그램에서는 사용 안 하는 걸로 소통 완료.
-        //        하여 해당 파일(컨테이너) 신규 등록 메서드는 주석 처리하고 사용 안 함. (2023.10.19 jbh)
+        //        하여 해당 파일(컨테이너) 신규 등록 메서드는 주석 처리하고 사용 안 함. (2023.10.19 minjae)
         /// <summary>
         /// 신규등록 Command
         /// </summary>
@@ -758,13 +758,13 @@ namespace CobimExplorer.ViewModels.Pages
         /// </summary>
         public ICommand FileCommand { get; set; }
 
-        // TODO : 인터페이스 ICommand 객체 "FileAddCommand" 필요 없을 시 삭제 예정 (2023.09.21 jbh) 
+        // TODO : 인터페이스 ICommand 객체 "FileAddCommand" 필요 없을 시 삭제 예정 (2023.09.21 minjae) 
         /// <summary>
         /// 추가 (파일 등록) Command
         /// </summary>
         public ICommand FileAddCommand { get; set; }
 
-        // TODO : 인터페이스 ICommand 객체 "CloserLookCommand" 필요 없을 시 삭제 예정 (2023.09.21 jbh)
+        // TODO : 인터페이스 ICommand 객체 "CloserLookCommand" 필요 없을 시 삭제 예정 (2023.09.21 minjae)
         /// <summary>
         /// 보기 (파일 정보 자세히 보기) Command
         /// </summary>
@@ -843,7 +843,7 @@ namespace CobimExplorer.ViewModels.Pages
         public Visibility visibleFileInfo { get => _visibleFileInfo; set { _visibleFileInfo = value; NotifyOfPropertyChange(); } }
         private Visibility _visibleFileInfo = Visibility.Collapsed;
 
-        // TODO : Visibilty 프로퍼티 "visibleLinkedNodeInfo" 필요시 사용 예정 (2023.11.01 jbh)
+        // TODO : Visibilty 프로퍼티 "visibleLinkedNodeInfo" 필요시 사용 예정 (2023.11.01 minjae)
         /// <summary>
         /// Visibilty - 연관 컨테이너 정보 (참조관계 - 부모/자식 컨테이너)
         /// </summary>
@@ -876,7 +876,7 @@ namespace CobimExplorer.ViewModels.Pages
         /// </summary>
         public FileHelper.FilePack FilePack { get; set; }
 
-        // TODO : 사용자 정보 프로퍼티 "UserInfo" 필요시 사용 예정 (2023.08.30 jbh)
+        // TODO : 사용자 정보 프로퍼티 "UserInfo" 필요시 사용 예정 (2023.08.30 minjae)
         /// <sumary>
         /// 사용자 정보
         /// </sumary>
@@ -894,8 +894,8 @@ namespace CobimExplorer.ViewModels.Pages
         /// </summary>
         // public LoginVM loginVM { get; set; }
 
-        // TODO : 프로젝트 목록 ObservableCollection "ProjectTypeCollection" 추후 자료형 타입 ProjectName -> ProjectTypeView(사용자 정의 클래스) 필요시 사용 예정 (2023.08.30 jbh)
-        // TODO : 프로젝트 목록 사용자 정의 클래스 "ProjectTypeView" 구현 예정 (2023.08.24 jbh)
+        // TODO : 프로젝트 목록 ObservableCollection "ProjectTypeCollection" 추후 자료형 타입 ProjectName -> ProjectTypeView(사용자 정의 클래스) 필요시 사용 예정 (2023.08.30 minjae)
+        // TODO : 프로젝트 목록 사용자 정의 클래스 "ProjectTypeView" 구현 예정 (2023.08.24 minjae)
         /// <summary>
         /// 프로젝트 목록 ObservableCollection 
         /// </summary>
@@ -916,7 +916,7 @@ namespace CobimExplorer.ViewModels.Pages
         //}
         //private ObservableCollection<ProjectTypeView> _ProjectTypeCollection = new ObservableCollection<ProjectTypeView>();
 
-        // TODO : 컨테이너 ID (영어 대문자) 프로퍼티 exp_UpperContainerId 필요시 사용 예정(2023.10.23 jbh) 
+        // TODO : 컨테이너 ID (영어 대문자) 프로퍼티 exp_UpperContainerId 필요시 사용 예정(2023.10.23 minjae) 
         /// <summary>
         /// 컨테이너 ID (영어 대문자)
         /// </summary>
@@ -953,7 +953,7 @@ namespace CobimExplorer.ViewModels.Pages
         private BindableCollection<LinkedNodeView> _LinkedNodeInfoDatas = new BindableCollection<LinkedNodeView>();
 
 
-        // TODO : 프로젝트 리스트 필요시 수정 예정 (2023.09.18 jbh)
+        // TODO : 프로젝트 리스트 필요시 수정 예정 (2023.09.18 minjae)
         /// <summary>
         /// 프로젝트 리스트 
         /// </summary>
@@ -1004,7 +1004,7 @@ namespace CobimExplorer.ViewModels.Pages
         {
             Container = container;
 
-            // TODO : this.EventAggregator = events; 코드 추가 (2023.07.24 jbh)
+            // TODO : this.EventAggregator = events; 코드 추가 (2023.07.24 minjae)
             // 참고 URL - https://github.com/canton7/Stylet/wiki/3.-The-Taskbar
             this.EventAggregator = events;
 
@@ -1013,7 +1013,7 @@ namespace CobimExplorer.ViewModels.Pages
             CheckInCommand          = new ButtonCommand(ExplorerHelper.AsyncMethodType, CheckInAsync, CanExecuteMethod);
 
             // TODO : CreateCommand - 파일(컨테이너) 신규 등록의 경우 COBIM 웹 사이트(인재 INC)에서만 사용하는 기능이고 CDE 탐색기 응용 프로그램에서는 사용 안 하는 걸로 소통 완료.
-            //        하여 해당 파일(컨테이너) 신규 등록 메서드는 주석 처리하고 사용 안 함. (2023.10.19 jbh)
+            //        하여 해당 파일(컨테이너) 신규 등록 메서드는 주석 처리하고 사용 안 함. (2023.10.19 minjae)
             // CreateCommand = new ButtonCommand(FileCreateAsync, CanExecuteMethod);
             // FolderListCommand    = new ButtonCommand(FolderListAsync, CanExecuteMethod);
             // FolderCommand        = new ButtonCommand(FolderListAsync, CanExecuteMethod);
@@ -1044,7 +1044,7 @@ namespace CobimExplorer.ViewModels.Pages
             // DisplaySetting(DisplayType);
         }
 
-        // TODO : 이벤트 메서드 "OnActivate" 비동기(async)로 구현 (2023.09.18 jbh)
+        // TODO : 이벤트 메서드 "OnActivate" 비동기(async)로 구현 (2023.09.18 minjae)
         // 참고 URL - https://vmpo.tistory.com/89
         protected async override void OnActivate()
         {
@@ -1057,7 +1057,7 @@ namespace CobimExplorer.ViewModels.Pages
             DisplaySetting(DisplayType);   
             
 
-            // TODO : TreeView 데이터 출력 테스트 코드 추후 삭제 예정 (2023.07.14 jbh)
+            // TODO : TreeView 데이터 출력 테스트 코드 추후 삭제 예정 (2023.07.14 minjae)
             // InitTreeViewText();
 
             await ExplorerListCreateAsync();
@@ -1093,7 +1093,7 @@ namespace CobimExplorer.ViewModels.Pages
         /// <param name="pIsVisibie">Visibility 프로퍼티 화면 표시 여부</param>
         private void DisplaySetting(string pDisplayType)
         {
-            // TODO : 로그 기록시 현재 실행 중인 메서드 위치 기록하기 (2023.10.10 jbh)
+            // TODO : 로그 기록시 현재 실행 중인 메서드 위치 기록하기 (2023.10.10 minjae)
             // 참고 URL - https://slaner.tistory.com/73
             // 참고 2 URL - https://stackoverflow.com/questions/4132810/how-can-i-get-a-method-name-with-the-namespace-class-name
             // 참고 3 URL - https://stackoverflow.com/questions/44153/can-you-use-reflection-to-find-the-name-of-the-currently-executing-method
@@ -1110,7 +1110,7 @@ namespace CobimExplorer.ViewModels.Pages
                         // TODO : 탐색기 화면(ExplorerV.xaml) 탭 "기본정보" 제외한 다른 TabItem 선택 후
                         //        화면 종료 또는 다른 화면 이동 후 해당 탐색기 화면 재실행 시
                         //        TabControl의 첫 번째 TabItem="기본정보"로 실행(Default로 지정)하도록
-                        //        SelectedIndex = "0" 추가(2023.11.01 jbh) 
+                        //        SelectedIndex = "0" 추가(2023.11.01 minjae) 
                         // 참고 URL - https://stackoverflow.com/questions/20356239/tab-control-selecting-first-tab-by-default 
                         // 참고 2 URL - https://dotnetpattern.com/wpf-tab-control-selection  
                         // 화면 재실행시 첫 번째 탭 "기본정보" Default 출력 하도록 인덱스 값 0으로 설정
@@ -1136,7 +1136,7 @@ namespace CobimExplorer.ViewModels.Pages
                         LinkedNodeInfoList.Clear();          // 연관 컨테이너 정보 리스트 초기화
                         LinkedNodeInfoDatas.Clear();         // 연관 컨테이너 정보 Collection 초기화
 
-                        // TODO : 컨테이너 ID (영어 대문자) 프로퍼티 exp_UpperContainerId 필요시 사용 예정 (2023.10.23 jbh) 
+                        // TODO : 컨테이너 ID (영어 대문자) 프로퍼티 exp_UpperContainerId 필요시 사용 예정 (2023.10.23 minjae) 
                         // exp_UpperContainerId = string.Empty;
                         // visibleFirstTabItem = Visibility.Visible;              // 화면 활성화될 때 마다 탭 "기본정보" Default 출력
                         visibleRequest = Visibility.Collapsed;            // 화면 활성화될 때 마다 버튼 "검토요청" 숨김 처리 
@@ -1156,7 +1156,7 @@ namespace CobimExplorer.ViewModels.Pages
                         // TODO : 탐색기 화면(ExplorerV.xaml) 탭 "기본정보" 제외한 다른 TabItem 선택 후
                         //        컨테이너 ID 클릭 후 메서드 "ContainerInfoSearchAsync" 실행시 
                         //        TabControl의 첫 번째 TabItem="기본정보"로 실행(Default로 지정)하도록
-                        //        SelectedIndex = "0" 추가(2023.11.01 jbh) 
+                        //        SelectedIndex = "0" 추가(2023.11.01 minjae) 
                         // 참고 URL - https://stackoverflow.com/questions/20356239/tab-control-selecting-first-tab-by-default 
                         // 참고 2 URL - https://dotnetpattern.com/wpf-tab-control-selection  
                         // 화면 재실행시 첫 번째 탭 "기본정보" Default 출력 하도록 인덱스 값 0으로 설정
@@ -1180,7 +1180,7 @@ namespace CobimExplorer.ViewModels.Pages
                         break;
                 }
 
-                // TODO : 아래 테스트 코드 필요시 참고 (2023.11.01 jbh)
+                // TODO : 아래 테스트 코드 필요시 참고 (2023.11.01 minjae)
                 //if (!pIsVisibie)
                 //{
                 //    // InitSetting();              // 화면 초기 셋팅  
@@ -1188,7 +1188,7 @@ namespace CobimExplorer.ViewModels.Pages
                 //    // TODO : 탐색기 화면(ExplorerV.xaml) 탭 "기본정보" 제외한 다른 TabItem 선택 후
                 //    //        화면 종료 또는 다른 화면 이동 후 해당 탐색기 화면 재실행 시
                 //    //        TabControl의 첫 번째 TabItem="기본정보"로 실행(Default로 지정)하도록
-                //    //        SelectedIndex = "0" 추가(2023.11.01 jbh) 
+                //    //        SelectedIndex = "0" 추가(2023.11.01 minjae) 
                 //    // 참고 URL - https://stackoverflow.com/questions/20356239/tab-control-selecting-first-tab-by-default 
                 //    // 참고 2 URL - https://dotnetpattern.com/wpf-tab-control-selection  
                 //    // 화면 재실행시 첫 번째 탭 "기본정보" Default 출력 하도록 인덱스 값 0으로 설정
@@ -1214,7 +1214,7 @@ namespace CobimExplorer.ViewModels.Pages
                 //    LinkedNodeInfoList.Clear();          // 연관 컨테이너 정보 리스트 초기화
                 //    LinkedNodeInfoDatas.Clear();         // 연관 컨테이너 정보 Collection 초기화
 
-                //    // TODO : 컨테이너 ID (영어 대문자) 프로퍼티 exp_UpperContainerId 필요시 사용 예정 (2023.10.23 jbh) 
+                //    // TODO : 컨테이너 ID (영어 대문자) 프로퍼티 exp_UpperContainerId 필요시 사용 예정 (2023.10.23 minjae) 
                 //    // exp_UpperContainerId = string.Empty;
                 //    // visibleFirstTabItem = Visibility.Visible;              // 화면 활성화될 때 마다 탭 "기본정보" Default 출력
                 //    visibleRequest        = Visibility.Collapsed;            // 화면 활성화될 때 마다 버튼 "검토요청" 숨김 처리 
@@ -1236,7 +1236,7 @@ namespace CobimExplorer.ViewModels.Pages
                 //    // TODO : 탐색기 화면(ExplorerV.xaml) 탭 "기본정보" 제외한 다른 TabItem 선택 후
                 //    //        컨테이너 ID 클릭 후 메서드 "ContainerInfoSearchAsync" 실행시 
                 //    //        TabControl의 첫 번째 TabItem="기본정보"로 실행(Default로 지정)하도록
-                //    //        SelectedIndex = "0" 추가(2023.11.01 jbh) 
+                //    //        SelectedIndex = "0" 추가(2023.11.01 minjae) 
                 //    // 참고 URL - https://stackoverflow.com/questions/20356239/tab-control-selecting-first-tab-by-default 
                 //    // 참고 2 URL - https://dotnetpattern.com/wpf-tab-control-selection  
                 //    // 화면 재실행시 첫 번째 탭 "기본정보" Default 출력 하도록 인덱스 값 0으로 설정
@@ -1261,7 +1261,7 @@ namespace CobimExplorer.ViewModels.Pages
 
         //private void InitSetting()
         //{
-        //    // TODO : 로그 기록시 현재 실행 중인 메서드 위치 기록하기 (2023.11.01 jbh)
+        //    // TODO : 로그 기록시 현재 실행 중인 메서드 위치 기록하기 (2023.11.01 minjae)
         //    var currentMethod = MethodBase.GetCurrentMethod();
 
         //    try
@@ -1269,7 +1269,7 @@ namespace CobimExplorer.ViewModels.Pages
         //        // TODO : 탐색기 화면(ExplorerV.xaml) 탭 "기본정보" 제외한 다른 TabItem 선택 후
         //        //        화면 종료 또는 다른 화면 이동 후 해당 탐색기 화면 재실행 시
         //        //        TabControl의 첫 번째 TabItem="기본정보"로 실행(Default로 지정)하도록
-        //        //        SelectedIndex = "0" 추가(2023.11.01 jbh) 
+        //        //        SelectedIndex = "0" 추가(2023.11.01 minjae) 
         //        // 참고 URL - https://stackoverflow.com/questions/20356239/tab-control-selecting-first-tab-by-default 
         //        // 참고 2 URL - https://dotnetpattern.com/wpf-tab-control-selection  
         //        // 화면 재실행시 첫 번째 탭 "기본정보" Default 출력 하도록 인덱스 값 0으로 설정
@@ -1306,7 +1306,7 @@ namespace CobimExplorer.ViewModels.Pages
 
         #region ExplorerListCreate
 
-        // TODO : 프로젝트 - 팀 - 폴더 - 서브폴더 생성 해주는 메서드 "ExplorerListCreate" 구현 (2023.09.18 jbh)
+        // TODO : 프로젝트 - 팀 - 폴더 - 서브폴더 생성 해주는 메서드 "ExplorerListCreate" 구현 (2023.09.18 minjae)
         /// <summary>
         /// 프로젝트 - 팀 - 폴더 - 서브폴더 리스트 생성 및 초기화 / 파일 메타 데이터 Collection 초기화 
         /// 메서드 파라미터 List<ITreeNode> pSubFolderFileList 추가 여부 확인 
@@ -1325,7 +1325,7 @@ namespace CobimExplorer.ViewModels.Pages
             string teamId = string.Empty;                                      // JSON 팀 아이디
             string teamName = string.Empty;                                    // JSON 팀 이름
                                                                                
-            // TODO : 로그 기록시 현재 실행 중인 메서드 위치 기록하기 (2023.10.10 jbh)
+            // TODO : 로그 기록시 현재 실행 중인 메서드 위치 기록하기 (2023.10.10 minjae)
             // 참고 URL - https://slaner.tistory.com/73
             // 참고 2 URL - https://stackoverflow.com/questions/4132810/how-can-i-get-a-method-name-with-the-namespace-class-name
             // 참고 3 URL - https://stackoverflow.com/questions/44153/can-you-use-reflection-to-find-the-name-of-the-currently-executing-method
@@ -1340,7 +1340,7 @@ namespace CobimExplorer.ViewModels.Pages
                 // FileDatas.Clear();         // 파일 메타 데이터 Collection 초기화
 
                 // TODO : ProjectHelper.cs -> ProjectPack 클래스 프로퍼티 "ProjectPack" 구현 및
-                //        테스트 프로젝트 아이디(testProjectId), 테스트 팀 아이디(testTeamId) 값 할당 추후 필요시 수정 예정 (2023.09.04 jbh)     
+                //        테스트 프로젝트 아이디(testProjectId), 테스트 팀 아이디(testTeamId) 값 할당 추후 필요시 수정 예정 (2023.09.04 minjae)     
                 ProjectPack = new ProjectHelper.ProjectPack
                 {
                     projectId = testProjectId,
@@ -1356,7 +1356,7 @@ namespace CobimExplorer.ViewModels.Pages
                 foreach (var data in datas)
                 {
                     var projectDic = (data[ProjectHelper.projectEntity]).ToDictionary();      // 프로젝트 메타 데이터 Dictionary
-                    // Dictionary 객체 projectDic 특정 키(Key) "projectId"에 속하는 값(Value) 문자열로 변환 (2023.09.11 jbh)
+                    // Dictionary 객체 projectDic 특정 키(Key) "projectId"에 속하는 값(Value) 문자열로 변환 (2023.09.11 minjae)
                     // 참고 URL - https://developer-talk.tistory.com/694
                     projectId = projectDic[ProjectHelper.projectId].ToString();               // 해당 프로젝트 아이디 
                     projectName = projectDic[ProjectHelper.projectName].ToString();           // 해당 프로젝트 이름 
@@ -1372,7 +1372,7 @@ namespace CobimExplorer.ViewModels.Pages
                     {
                         FolderDataInfo = folder,
                         FolderItems = new List<Dictionary<string, object>> { folder },
-                        // TODO : NULL 예외처리 연산자 ?. 사용시 오류 발생으로 인하여 NULL 예외처리 삼항 연산자 사용하는 로직으로 수정 (2023.09.11 jbh)
+                        // TODO : NULL 예외처리 연산자 ?. 사용시 오류 발생으로 인하여 NULL 예외처리 삼항 연산자 사용하는 로직으로 수정 (2023.09.11 minjae)
                         // 참고 URL - https://jellyho.com/blog/54/
                         exp_TreeParentFolderId = (folder[FolderHelper.parentFolderId] == null) ? (string.Empty) : (folder[FolderHelper.parentFolderId].ToString()),
                         exp_TreeFolderGroupId = folder[FolderHelper.folderGroupId].ToString(),
@@ -1381,7 +1381,7 @@ namespace CobimExplorer.ViewModels.Pages
                         exp_TreeFolderLevelNo = folder[FolderHelper.levelNo].ToString(),
                         exp_ProjectId = projectId,
                         exp_TeamId = teamId,
-                        // TODO : 파일 리스트 추가 작업시 ChildNodes 사용 예정 (2023.09.18 jbh)
+                        // TODO : 파일 리스트 추가 작업시 ChildNodes 사용 예정 (2023.09.18 minjae)
                         // ChildNodes = subNodes
                     });
 
@@ -1396,7 +1396,7 @@ namespace CobimExplorer.ViewModels.Pages
                     }
 
                     // 프로젝트 하위 디렉토리 (팀) 존재하지 않을 경우 새로 생성
-                    // TODO : bool 변수 "hasTeamInfo" 구현 (2023.09.18 jbh)
+                    // TODO : bool 변수 "hasTeamInfo" 구현 (2023.09.18 minjae)
                     // 참고 URL - https://frogand.tistory.com/211
                     bool hasTeamInfo =       !string.IsNullOrWhiteSpace(teamProjectId)
                                           && !string.IsNullOrWhiteSpace(teamId)
@@ -1409,13 +1409,13 @@ namespace CobimExplorer.ViewModels.Pages
                         var teamInfo = new TeamView()
                         {
                             TeamDataInfo = teamDic,
-                            // TODO : TeamItems값이 NULL인 원인 파악 후 해결하기(2023.09.11 jbh) 
+                            // TODO : TeamItems값이 NULL인 원인 파악 후 해결하기(2023.09.11 minjae) 
                             // TeamItems = teamArray.Where(key => key["teamId"].Equals(teamIdValue)).Select(x => JsonSerializer.Deserialize<Dictionary<string, object>>(x)).ToList(),
                             TeamItems = new List<Dictionary<string, object>> { teamDic },
-                            // TODO : 팀에 소속된 사용자 리스트 JSON 데이터 인재 INC 로부터 REST API 공유 받으면 구현 진행 예정 (2023.09.12 jbh)
+                            // TODO : 팀에 소속된 사용자 리스트 JSON 데이터 인재 INC 로부터 REST API 공유 받으면 구현 진행 예정 (2023.09.12 minjae)
                             // TeamUserList = new List<Dictionary<string, object>> { teamUserDic },
                             exp_TeamId = teamId,
-                            // TODO : 프로퍼티 "exp_TeamName" 필요시 사용 예정(2023.10.23 jbh)
+                            // TODO : 프로퍼티 "exp_TeamName" 필요시 사용 예정(2023.10.23 minjae)
                             // exp_TeamName = teamName,   // 화면 우측 상단 팀 이름 출력할 때 사용할 바인딩 객체 "exp_TeamName"
                             exp_TreeName = teamName,
                             // TestChildNodes = pFolderList
@@ -1428,7 +1428,7 @@ namespace CobimExplorer.ViewModels.Pages
                     }
 
                     // 루트 디렉토리 (프로젝트) 존재하지 않을 경우 새로 생성
-                    // TODO : bool 변수 ""hasProjectInfo" 구현 (2023.09.18 jbh)
+                    // TODO : bool 변수 ""hasProjectInfo" 구현 (2023.09.18 minjae)
                     // 참고 URL - https://frogand.tistory.com/211
                     bool hasProjectInfo =    !string.IsNullOrWhiteSpace(projectId)
                                           && !string.IsNullOrWhiteSpace(projectName)
@@ -1439,7 +1439,7 @@ namespace CobimExplorer.ViewModels.Pages
                         var projectInfo = new ProjectView()
                          {
                              ProjectDataInfo = projectDic,
-                             // TODO : ProjectItems값이 NULL인 원인 파악 후 해결하기(2023.09.11 jbh)
+                             // TODO : ProjectItems값이 NULL인 원인 파악 후 해결하기(2023.09.11 minjae)
                              ProjectItems = new List<Dictionary<string, object>> { projectDic },
                              exp_ProjectId = projectId,
                              exp_TreeName = projectName,
@@ -1473,7 +1473,7 @@ namespace CobimExplorer.ViewModels.Pages
         /// <param name="pFolderList">(루트 + 서브)폴더 리스트</param>
         private async Task FillFolders(FolderView parentFolder, List<Dictionary<string, object>> pFolderList)
         {
-            // TODO : 로그 기록시 현재 실행 중인 메서드 위치 기록하기 (2023.10.10 jbh)
+            // TODO : 로그 기록시 현재 실행 중인 메서드 위치 기록하기 (2023.10.10 minjae)
             // 참고 URL - https://slaner.tistory.com/73
             // 참고 2 URL - https://stackoverflow.com/questions/4132810/how-can-i-get-a-method-name-with-the-namespace-class-name
             // 참고 3 URL - https://stackoverflow.com/questions/44153/can-you-use-reflection-to-find-the-name-of-the-currently-executing-method
@@ -1488,7 +1488,7 @@ namespace CobimExplorer.ViewModels.Pages
 
                 foreach (var childNode in childNodes)
                 {
-                    // TODO : Dictionary 특정 키(Key)에 해당하는 값(Value) 구해서 FolderView 클래스에 존재하는 프로퍼티에 값 할당 (2023.09.15 jbh)
+                    // TODO : Dictionary 특정 키(Key)에 해당하는 값(Value) 구해서 FolderView 클래스에 존재하는 프로퍼티에 값 할당 (2023.09.15 minjae)
                     // 참고 URL - https://developer-talk.tistory.com/694
                     var subFolder = new FolderView {
                                             FolderDataInfo = childNode,
@@ -1513,7 +1513,7 @@ namespace CobimExplorer.ViewModels.Pages
             {
                 MessageBox.Show(ex.Message);
                 Log.Error(Logger.GetMethodPath(currentMethod) + Logger.errorMessage + ex.Message);
-                // TODO : 오류 발생시 예외처리 throw 구현 (2023.10.6 jbh)
+                // TODO : 오류 발생시 예외처리 throw 구현 (2023.10.6 minjae)
                 // 참고 URL - https://devlog.jwgo.kr/2009/11/27/thrownthrowex/
                 throw;
             }
@@ -1523,7 +1523,7 @@ namespace CobimExplorer.ViewModels.Pages
 
         #region Set 
 
-        // TODO : 추후 필요시 사용 예정 (2023.08.30 jbh)
+        // TODO : 추후 필요시 사용 예정 (2023.08.30 minjae)
         //public static void Set(UserInfoView userInfoView)
         //{
         //    try
@@ -1541,7 +1541,7 @@ namespace CobimExplorer.ViewModels.Pages
         #region FileCreateAsync
 
         // TODO : 파일(컨테이너) 신규 등록의 경우 COBIM 웹 사이트(인재 INC)에서만 사용하는 기능이고 CDE 탐색기 응용 프로그램에서는 사용 안 하는 걸로 소통 완료.
-        //        하여 해당 파일(컨테이너) 신규 등록 메서드는 주석 처리하고 사용 안 함. (2023.10.19 jbh)
+        //        하여 해당 파일(컨테이너) 신규 등록 메서드는 주석 처리하고 사용 안 함. (2023.10.19 minjae)
         /// <summary>
         /// 파일(컨테이너) 신규 등록 
         /// </summary>
@@ -1549,7 +1549,7 @@ namespace CobimExplorer.ViewModels.Pages
         /// <returns></returns>
         //private async Task FileCreateAsync(object obj)
         //{
-        //    // TODO : 로그 기록시 현재 실행 중인 메서드 위치 기록하기 (2023.10.10 jbh)
+        //    // TODO : 로그 기록시 현재 실행 중인 메서드 위치 기록하기 (2023.10.10 minjae)
         //    // 참고 URL - https://slaner.tistory.com/73
         //    // 참고 2 URL - https://stackoverflow.com/questions/4132810/how-can-i-get-a-method-name-with-the-namespace-class-name
         //    // 참고 3 URL - https://stackoverflow.com/questions/44153/can-you-use-reflection-to-find-the-name-of-the-currently-executing-method
@@ -1578,7 +1578,7 @@ namespace CobimExplorer.ViewModels.Pages
         {
             string tokenKey = AppSetting.Default.Login.Token.resultData;       // 로그인 토큰 키 
 
-            // TODO : Object 배열 객체 obj 리스트로 변환 (2023.09.19 jbh)
+            // TODO : Object 배열 객체 obj 리스트로 변환 (2023.09.19 minjae)
             // 참고 URL - https://nonstop-antoine.tistory.com/36
             var fileDatas    = obj as IEnumerable;                             // 버튼으로 부터 받은 파일 정보(CommandParameter "exp_ProjectId", "exp_TeamId", "exp_TreeFolderId") (Object Array -> IEnumerable 형변환) 
             var fileInfos    = new List<string>();                             // fileData 를 리스트로 변환할 때 사용하는 리스트 객체 "fileInfos"
@@ -1588,7 +1588,7 @@ namespace CobimExplorer.ViewModels.Pages
             string createUserId   = string.Empty;                              // 작성자 
             string createDateTime = string.Empty;                              // 등록일시
 
-            // TODO : 로그 기록시 현재 실행 중인 메서드 위치 기록하기 (2023.10.10 jbh)
+            // TODO : 로그 기록시 현재 실행 중인 메서드 위치 기록하기 (2023.10.10 minjae)
             // 참고 URL - https://slaner.tistory.com/73
             // 참고 2 URL - https://stackoverflow.com/questions/4132810/how-can-i-get-a-method-name-with-the-namespace-class-name
             // 참고 3 URL - https://stackoverflow.com/questions/44153/can-you-use-reflection-to-find-the-name-of-the-currently-executing-method
@@ -1614,7 +1614,7 @@ namespace CobimExplorer.ViewModels.Pages
                 folderId = fileDataDic[FolderHelper.folderId];
 
                 // TODO : ProjectHelper.cs -> ProjectPack 클래스 프로퍼티 "ProjectPack" 구현 및
-                //        테스트 프로젝트 아이디(testProjectId), 테스트 팀 아이디(testTeamId) 값 할당 추후 필요시 수정 예정 (2023.09.04 jbh)     
+                //        테스트 프로젝트 아이디(testProjectId), 테스트 팀 아이디(testTeamId) 값 할당 추후 필요시 수정 예정 (2023.09.04 minjae)     
                 ProjectPack = new ProjectHelper.ProjectPack
                 {
                     projectId = fileDataDic[ProjectHelper.projectId],
@@ -1622,7 +1622,7 @@ namespace CobimExplorer.ViewModels.Pages
                 };
 
                 // TODO : 오류 메시지 "Id = 3455, Status = WaitingForActivation, Method = "{null}", Result = "{Not yet computed}"
-                //        해결하기 위해 비동기 메서드 호출시 키워드 "await" 추가 (2023.09.20 jbh)
+                //        해결하기 위해 비동기 메서드 호출시 키워드 "await" 추가 (2023.09.20 minjae)
                 // 참고 URL - https://www.codeproject.com/Questions/1156449/How-to-call-async-methods-Csharp
                 var fileList = await ExplorerRestServer.GetFileListAsync(client, ProjectPack, folderId, tokenKey);
 
@@ -1635,7 +1635,7 @@ namespace CobimExplorer.ViewModels.Pages
 
                     createUserId = file[FileHelper.createUserId].ToString();       // 작성자 
 
-                    // TODO : 특정 문자 'T'를 포함한 등록일시 문자열 (예) "2023-07-25T10:44:45.988+00:00" 을 DateTime 객체 dt로 변환 (2023.09.21 jbh)
+                    // TODO : 특정 문자 'T'를 포함한 등록일시 문자열 (예) "2023-07-25T10:44:45.988+00:00" 을 DateTime 객체 dt로 변환 (2023.09.21 minjae)
                     // 참고 URL - https://stackoverflow.com/questions/14252312/how-to-convert-date-with-t-to-from-string-in-c-sharp
                     var createDT = file[FileHelper.createDateTime].ToString();   // 등록일시
 
@@ -1643,7 +1643,7 @@ namespace CobimExplorer.ViewModels.Pages
                     // 참고 URL - https://afsdzvcx123.tistory.com/entry/C-%EB%AC%B8%EB%B2%95-C-NET%EC%9D%98-DataTime-%EB%AA%A8%EB%B2%94-%EC%82%AC%EB%A1%80
                     //var dto = DateTimeOffset.Parse(createDT);
 
-                    // TODO : UTC 협정 세계시로 변환할 필요 없이 대한민국 시간(로컬 타임)으로 변환하기 위해 DateTime 클래스 객체 dt 선언 및 초기화(2023.09.26 jbh)
+                    // TODO : UTC 협정 세계시로 변환할 필요 없이 대한민국 시간(로컬 타임)으로 변환하기 위해 DateTime 클래스 객체 dt 선언 및 초기화(2023.09.26 minjae)
                     // DataTime VS DateTimeOffset 비교 문서
                     // 참고 URL - https://afsdzvcx123.tistory.com/entry/C-%EB%AC%B8%EB%B2%95-C-%EC%97%90%EC%84%9C-IronPython-%EC%9D%B4%EC%9A%A9%ED%95%98%EC%97%AC-Python-%EC%97%B0%EB%8F%99
                     // 문자열 ->  DateTime 객체 dt로 형변환
@@ -1690,17 +1690,17 @@ namespace CobimExplorer.ViewModels.Pages
                         StatusCodeInfo = file[FileHelper.statusCodeInfo].ToDictionary(),
                         CheckCodeInfo = file[FileHelper.checkCodeInfo].ToDictionary(),
 
-                        // TODO : "SharedContainerList" 필요시 구현 예정 (2023.09.22 jbh)
+                        // TODO : "SharedContainerList" 필요시 구현 예정 (2023.09.22 minjae)
                         SharedContainerList = new List<Dictionary<string, object>>(),
 
                         CreateUserIdAndTime = createUserId + " | " + createDateTime,
                         exp_FileName = file[FileHelper.fileNm].ToString(),
                         exp_ContainerGroup = file[FileHelper.containerGroup].ToString(),
-                        // TODO : 컨테이너 ID(영어 대문자) 프로퍼티 "exp_UpperContainerId" 영어 대문자로 구현(2023.09.22 jbh)
+                        // TODO : 컨테이너 ID(영어 대문자) 프로퍼티 "exp_UpperContainerId" 영어 대문자로 구현(2023.09.22 minjae)
                         //        프로퍼티 "exp_UpperContainerId" 용도 - 탐색기 화면 뷰(ExplorerV.xaml) "ListView" 영역에 바인딩할 컬럼 용도
                         // 참고 URL - https://developer-talk.tistory.com/669
                         exp_UpperContainerId = file[FileHelper.containerId].ToString().ToUpper(),
-                        // TODO : 컨테이너 ID(영어 소문자) 프로퍼티 "exp_ContainerId" 영어 대문자로 구현(2023.10.12 jbh)
+                        // TODO : 컨테이너 ID(영어 소문자) 프로퍼티 "exp_ContainerId" 영어 대문자로 구현(2023.10.12 minjae)
                         //        프로퍼티 "exp_ContainerId" 용도
                         //        - Rest API 메서드 "ExplorerRestServer.GetContainerDetailListAsync" 파라미터 "ContainerPack"에 속하는
                         //          컨테이너 아이디(containerId)에 영어 소문자로 넘겨줘야 인재 INC 서버 로부터 응답 결과 JSON 데이터를 정상적으로 넘겨 받을 수 있음. 
@@ -1724,7 +1724,7 @@ namespace CobimExplorer.ViewModels.Pages
                     FileList.Add(fileInfo);
                 }
 
-                // TODO : 추후 필요시 파일리스트에 저장된 컨테이너 아이디 오름차순 정렬 구현하기 (2023.10.27 jbh)
+                // TODO : 추후 필요시 파일리스트에 저장된 컨테이너 아이디 오름차순 정렬 구현하기 (2023.10.27 minjae)
                 // FileList.Sort();   
 
                 FileDatas.Clear();
@@ -1754,7 +1754,7 @@ namespace CobimExplorer.ViewModels.Pages
         /// <returns></returns>
         private async Task FileAddAsync(object obj)
         {
-            // TODO : 로그 기록시 현재 실행 중인 메서드 위치 기록하기 (2023.10.10 jbh)
+            // TODO : 로그 기록시 현재 실행 중인 메서드 위치 기록하기 (2023.10.10 minjae)
             // 참고 URL - https://slaner.tistory.com/73
             // 참고 2 URL - https://stackoverflow.com/questions/4132810/how-can-i-get-a-method-name-with-the-namespace-class-name
             // 참고 3 URL - https://stackoverflow.com/questions/44153/can-you-use-reflection-to-find-the-name-of-the-currently-executing-method
@@ -1784,7 +1784,7 @@ namespace CobimExplorer.ViewModels.Pages
         /// <returns></returns>
         private async Task CloserLookAsync(object obj)
         {
-            // TODO : 로그 기록시 현재 실행 중인 메서드 위치 기록하기 (2023.10.10 jbh)
+            // TODO : 로그 기록시 현재 실행 중인 메서드 위치 기록하기 (2023.10.10 minjae)
             // 참고 URL - https://slaner.tistory.com/73
             // 참고 2 URL - https://stackoverflow.com/questions/4132810/how-can-i-get-a-method-name-with-the-namespace-class-name
             // 참고 3 URL - https://stackoverflow.com/questions/44153/can-you-use-reflection-to-find-the-name-of-the-currently-executing-method
@@ -1817,11 +1817,11 @@ namespace CobimExplorer.ViewModels.Pages
             string tokenKey         = AppSetting.Default.Login.Token.resultData;  // 로그인 토큰 키 
             string inputTenantId    = LoginHelper.inputTenantId;                  // 테넌트 아이디
 
-            // TODO : 컨테이너 정보, 파일정보 리스트 객체 "containerDetailList" 필요시 사용 예정 (2023.10.17 jbh)
+            // TODO : 컨테이너 정보, 파일정보 리스트 객체 "containerDetailList" 필요시 사용 예정 (2023.10.17 minjae)
             // List<Dictionary<string, object>> containerDetailList = new List<Dictionary<string, object>>();  
             List<Dictionary<string, object>> linkedNodeInfoList  = new List<Dictionary<string, object>>();  // 연관된 부모 컨테이너 정보 리스트
 
-            // TODO : 연관 컨테이너 정보(메타 데이터) 리스트 객체 "linkedNodeMetaDataList" 필요시 사용 예정 (2023.10.17 jbh)
+            // TODO : 연관 컨테이너 정보(메타 데이터) 리스트 객체 "linkedNodeMetaDataList" 필요시 사용 예정 (2023.10.17 minjae)
             List<Dictionary<string, object>> linkedNodeMetaDataList = new List<Dictionary<string, object>>();  // 연관 컨테이너 정보(메타 데이터) 리스트
 
             Dictionary<string, object> detailDic                 = null;          // 컨테이너 정보, 파일정보 Dictionary
@@ -1830,7 +1830,7 @@ namespace CobimExplorer.ViewModels.Pages
 
             Dictionary<string, object> fileTypeCodeInfoDic       = null;          // 파일유형 Dictionary
 
-            // TODO : 마일스톤 업무 리스트 객체 "taskDetailList" 필요시 사용 예정 (2023.10.17 jbh)
+            // TODO : 마일스톤 업무 리스트 객체 "taskDetailList" 필요시 사용 예정 (2023.10.17 minjae)
             // List<Dictionary<string, object>> taskDetailList   = null;          // 마일스톤 업무 리스트
             Dictionary<string, object> taskDetailDic             = null;          // 마일스톤 업무 Dictionary
             Dictionary<string, object> milestoneTaskInfoDic      = null;          // 특정 마일스톤 업무 정보 Dictionary
@@ -1862,13 +1862,13 @@ namespace CobimExplorer.ViewModels.Pages
             string fileNm             = string.Empty;                               // 파일명
             string fileId             = string.Empty;                               // 파일 아이디
 
-            // TODO : Object 배열 객체 obj 리스트로 변환 (2023.09.19 jbh)
+            // TODO : Object 배열 객체 obj 리스트로 변환 (2023.09.19 minjae)
             // 참고 URL - https://nonstop-antoine.tistory.com/36
             var containerDatas = obj as IEnumerable;                                // 버튼으로 부터 받은 파일 정보(CommandParameter "exp_ProjectId", "exp_TeamId", "exp_ContainerId") (Object Array -> IEnumerable 형변환) 
             var containerInfos = new List<string>();                                // containerData 를 리스트로 변환할 때 사용하는 리스트 객체 "containerInfos"
             var containerDataDic = new Dictionary<string, string>();                // 컨테이너 정보 데이터를 담는 Dictionary 객체 containerDataDic 생성
 
-            // TODO : 로그 기록시 현재 실행 중인 메서드 위치 기록하기 (2023.10.10 jbh)
+            // TODO : 로그 기록시 현재 실행 중인 메서드 위치 기록하기 (2023.10.10 minjae)
             // 참고 URL - https://slaner.tistory.com/73
             // 참고 2 URL - https://stackoverflow.com/questions/4132810/how-can-i-get-a-method-name-with-the-namespace-class-name
             // 참고 3 URL - https://stackoverflow.com/questions/44153/can-you-use-reflection-to-find-the-name-of-the-currently-executing-method
@@ -1878,7 +1878,7 @@ namespace CobimExplorer.ViewModels.Pages
             {
                 // ContainerList.Clear();            // 파일 컨테이너 정보 + 메타데이터 리스트 초기화
 
-                // TODO : 리스트 객체 "ContainerDetailList", "ContainerDetailList", "TaskDetailList" 필요시 구현 예정(2023.10.12 jbh)
+                // TODO : 리스트 객체 "ContainerDetailList", "ContainerDetailList", "TaskDetailList" 필요시 구현 예정(2023.10.12 minjae)
                 // ContainerDetailList.Clear();   // 컨테이너 정보, 파일정보 리스트 초기화
                 // MetaDataList.Clear();          // 메타데이터 정보 리스트 초기화
                 // TaskDetailList.Clear();        // 마일스톤 업무 리스트 초기화
@@ -1893,7 +1893,7 @@ namespace CobimExplorer.ViewModels.Pages
                 containerDataDic.Add(TeamHelper.teamId, containerInfos[1]);
                 containerDataDic.Add(ContainerHelper.containerId, containerInfos[2]);
 
-                // TODO : ContainerHelper.cs -> ContainerPack 클래스 프로퍼티 "ContainerPack" 구현 (2023.10.12 jbh)  
+                // TODO : ContainerHelper.cs -> ContainerPack 클래스 프로퍼티 "ContainerPack" 구현 (2023.10.12 minjae)  
                 ContainerPack = new ContainerHelper.ContainerPack
                 {
                     projectId = containerDataDic[ProjectHelper.projectId],
@@ -1909,7 +1909,7 @@ namespace CobimExplorer.ViewModels.Pages
 
                 // TODO : 아래 Rest API 메서드 "ExplorerRestServer.GetLinkedNodeInfoListAsync"(Rest API 8. 연관 컨테이너 목록 조회)는
                 //        현재 사용 중인 기능이 아님. 추후에 API 사용하거나 혹은 API 기능이 삭제될 시에 인재 INC측으로 부터
-                //        문서 정리하여 공유 받고 추가 구현 예정 (2023.11.01 jbh)
+                //        문서 정리하여 공유 받고 추가 구현 예정 (2023.11.01 minjae)
                 // 연관 컨테이너 리스트(메타데이터) Rest API로 통신해서 받아오기 (Rest API 메서드 파라미터 rootContainerId로 전달)
                 // var MetaDataList = await ExplorerRestServer.GetLinkedNodeInfoListAsync(client, ContainerPack, tokenKey, inputTenantId);
 
@@ -1919,14 +1919,14 @@ namespace CobimExplorer.ViewModels.Pages
 
                 foreach (var infoDic in total_Info_List)
                 {
-                    // TODO : Dictionary 객체 "infoDic"에 존재하는 value 값 가져와서 리스트로 구현 (2023.10.18 jbh)
+                    // TODO : Dictionary 객체 "infoDic"에 존재하는 value 값 가져와서 리스트로 구현 (2023.10.18 minjae)
                     var containerList = infoDic.SelectMany(container => container.Value).ToList();
 
-                    // TODO : Dictionary<string, List<Dictionary<string, object>>> 클래스 객체 "infoDic"에 존재하는 Key 값 가져와서 리스트로 변환 (2023.10.18 jbh)
+                    // TODO : Dictionary<string, List<Dictionary<string, object>>> 클래스 객체 "infoDic"에 존재하는 Key 값 가져와서 리스트로 변환 (2023.10.18 minjae)
                     // 참고 URL - https://www.techiedelight.com/ko/get-list-of-keys-and-values-in-a-dictionary-in-csharp/
                     var infoTypeList = new List<string>(infoDic.Keys);
 
-                    // TODO : 리스트 객체 "infoTypeList"의 첫 번째 요소 값을 반환 하도록 메서드 "FirstOfDefault" 사용 (2023.10.18 jbh)
+                    // TODO : 리스트 객체 "infoTypeList"의 첫 번째 요소 값을 반환 하도록 메서드 "FirstOfDefault" 사용 (2023.10.18 minjae)
                     // 참고 URL - https://developer-talk.tistory.com/294
                     var infoType = infoTypeList.FirstOrDefault();
 
@@ -1940,13 +1940,13 @@ namespace CobimExplorer.ViewModels.Pages
                                 // TODO : 아래 프로퍼티 "linkedNodeMetaDataList"에 할당 해야할 메타 데이터 리스트 "MetaDataList"의 경우 
                                 //        Rest API 메서드 "ExplorerRestServer.GetLinkedNodeInfoListAsync"(Rest API 8. 연관 컨테이너 목록 조회)의 결과값이긴 하나
                                 //        현재 사용 중인 기능이 아님. 추후에 API 사용하거나 혹은 API 기능이 삭제될 시에 인재 INC측으로 부터
-                                //        문서 정리하여 공유 받고 구현 예정 (2023.11.01 jbh)
+                                //        문서 정리하여 공유 받고 구현 예정 (2023.11.01 minjae)
                                 // linkedNodeMetaDataList = MetaDataList;
                                 break;
 
                             // 컨테이너 정보, 파일정보
                             case ContainerHelper.detail:
-                                // TODO : 추후 필요시 "컨테이너 정보, 파일정보" 객체 containerDetailList 구현 예정 (2023.10.17 jbh)
+                                // TODO : 추후 필요시 "컨테이너 정보, 파일정보" 객체 containerDetailList 구현 예정 (2023.10.17 minjae)
                                 // containerDetailList = infoList;
                                 detailDic = data;
                                 createUserId = data[ContainerHelper.createUserId].ToString();                   // 작성자 
@@ -2009,9 +2009,9 @@ namespace CobimExplorer.ViewModels.Pages
 
                                 taskDetailIdx = milestoneTaskInfoDic == null ? ContainerHelper.taskIdxNone : milestoneTaskInfoDic[ContainerHelper.idx].ToString();
 
-                                // TODO : 마일스톤 업무 리스트 객체 "taskDetailList" 필요시 사용 예정 (2023.10.17 jbh)
+                                // TODO : 마일스톤 업무 리스트 객체 "taskDetailList" 필요시 사용 예정 (2023.10.17 minjae)
                                 // taskDetailList = infoDic[key];
-                                // 마일스톤 - 업무 유형 데이터 마일스톤 관련 Rest API를 통해 데이터를 받아와야 하는 경우 아래 소스코드 수정 예정(2023.10.17 jbh)
+                                // 마일스톤 - 업무 유형 데이터 마일스톤 관련 Rest API를 통해 데이터를 받아와야 하는 경우 아래 소스코드 수정 예정(2023.10.17 minjae)
                                 // taskDetailType = taskDetailDic == null ? ContainerHelper.taskDetailTypeNone : taskDetailDic.Values.ToString();
                                 taskDetailType = milestoneTaskInfoDic == null ? ContainerHelper.taskTypeNone : milestoneTaskInfoDic[ContainerHelper.title].ToString();
                                 // taskDetailType = milestoneTaskInfoDic[ContainerHelper.title].ToString();
@@ -2028,10 +2028,10 @@ namespace CobimExplorer.ViewModels.Pages
                     // TODO : 아래 프로퍼티 "LinkedNodeMetaDataList"에 할당 해야할 메타 데이터 리스트 "linkedNodeMetaDataList"의 경우 
                     //        Rest API 메서드 "ExplorerRestServer.GetLinkedNodeInfoListAsync"(Rest API 8. 연관 컨테이너 목록 조회)의 결과값이긴 하나
                     //        현재 사용 중인 기능이 아님. 추후에 API 사용하거나 혹은 API 기능이 삭제될 시에 인재 INC측으로 부터
-                    //        문서 정리하여 공유 받고 구현 예정 (2023.11.01 jbh)
+                    //        문서 정리하여 공유 받고 구현 예정 (2023.11.01 minjae)
                     // LinkedNodeMetaDataList = linkedNodeMetaDataList,
 
-                    // TODO : 추후 필요시 "컨테이너 정보, 파일정보" 객체 containerDetailList 구현 예정 (2023.10.17 jbh)
+                    // TODO : 추후 필요시 "컨테이너 정보, 파일정보" 객체 containerDetailList 구현 예정 (2023.10.17 minjae)
                     // ContainerDetailList = containerDetailList,
                     DetailDic = detailDic,
 
@@ -2039,7 +2039,7 @@ namespace CobimExplorer.ViewModels.Pages
 
                     MetaDataList = metaDataList,
 
-                    // TODO : 추후 필요시 "마일스톤 업무" 리스트 객체 "TaskDetailList" 필요시 사용 예정 (2023.10.17 jbh)
+                    // TODO : 추후 필요시 "마일스톤 업무" 리스트 객체 "TaskDetailList" 필요시 사용 예정 (2023.10.17 minjae)
                     // TaskDetailList = taskDetailList,
                     TaskDetailDic = taskDetailDic,
                     MilestoneTaskInfoDic = milestoneTaskInfoDic,
@@ -2059,15 +2059,15 @@ namespace CobimExplorer.ViewModels.Pages
                     exp_FileTypeCodeName = fileTypeCodeNm,
 
                     // 메타 데이터 
-                    // TODO : 프로퍼티 "exp_SoftMetaName" 필요시 사용 예정 (2023.10.23 jbh)
+                    // TODO : 프로퍼티 "exp_SoftMetaName" 필요시 사용 예정 (2023.10.23 minjae)
                     // exp_SoftMetaName = softMetaNm,
                     exp_SoftName = softNm,
 
-                    // TODO : 프로퍼티 "exp_SoftVerMetaName" 필요시 사용 예정 (2023.10.23 jbh)
+                    // TODO : 프로퍼티 "exp_SoftVerMetaName" 필요시 사용 예정 (2023.10.23 minjae)
                     // exp_SoftVerMetaName = softVerMetaNm,
                     exp_SoftVer  = softVer,
 
-                    // TODO : 프로퍼티 "exp_KeywordTagMetaName" 필요시 사용 예정 (2023.10.23 jbh)
+                    // TODO : 프로퍼티 "exp_KeywordTagMetaName" 필요시 사용 예정 (2023.10.23 minjae)
                     //exp_KeywordTagMetaName = keywordMetaNm,
                     exp_KeywordTag = keyword,
 
@@ -2099,7 +2099,7 @@ namespace CobimExplorer.ViewModels.Pages
 
 
                 // TODO : 메서드 "ContainerInfoTypeListCreate" 호출시 전달 인자로 containerInfo 설정할 때
-                //        ref(기존 변수 containerInfo안에 들어있는 값을 메서드 "ContainerInfoTypeListCreate" 실행시 수정)로 구현 (2023.10.23 jbh)
+                //        ref(기존 변수 containerInfo안에 들어있는 값을 메서드 "ContainerInfoTypeListCreate" 실행시 수정)로 구현 (2023.10.23 minjae)
                 // 참고 URL - https://yeko90.tistory.com/entry/c-%EA%B8%B0%EC%B4%88-ref-vs-out-%EC%B0%A8%EC%9D%B4
                 // 참고 2 URL - https://kdsoft-zeros.tistory.com/142
                 // 참고 3 URL - https://codingcoding.tistory.com/56
@@ -2108,11 +2108,11 @@ namespace CobimExplorer.ViewModels.Pages
                 // TODO : 아래 비동기 메서드 "LinkedNodeInfoCreate"에 전달할 메서드 파라미터 메타 데이터 리스트 "MetaDataList"의 경우 
                 //        Rest API 메서드 "ExplorerRestServer.GetLinkedNodeInfoListAsync"(Rest API 8. 연관 컨테이너 목록 조회)의 결과값이긴 하나
                 //        현재 사용 중인 기능이 아님. 추후에 API 사용하거나 혹은 API 기능이 삭제될 시에 인재 INC측으로 부터
-                //        문서 정리하여 공유 받고 필요시 메서드 파라미터로 구현 예정 (2023.11.01 jbh)
+                //        문서 정리하여 공유 받고 필요시 메서드 파라미터로 구현 예정 (2023.11.01 minjae)
                 // await LinkedNodeInfoCreate(linkedNodeInfoList, linkedNodeMetaDataList); // 연관 컨테이너 정보 Tree 생성 
                 await LinkedNodeInfoCreate(linkedNodeInfoList); // 연관 컨테이너 정보 Tree 생성 
 
-                // TODO : ComboxBox - 마일스톤의 경우 추후 인재 INC 측으로 마일스톤 목록 조회 RestAPI 요청 후 개발 진행 (2023.10.20 jbh)
+                // TODO : ComboxBox - 마일스톤의 경우 추후 인재 INC 측으로 마일스톤 목록 조회 RestAPI 요청 후 개발 진행 (2023.10.20 minjae)
                 // "마일스톤" List 생성 
                 // var taskDetailList = await ExplorerRestServer.GetTaskDetailListAsync();
                 // containerInfo.TaskDetailType = await ExplorerRestServer.GetTaskDetailListAsync();
@@ -2127,7 +2127,7 @@ namespace CobimExplorer.ViewModels.Pages
                 // IsVisible = true;            // 화면에 필요한 컨트롤러 (DockPanel, Button 등등...) 화면에 보이도록 활성화
                 DisplaySetting(DisplayType);
 
-                // TODO : 테스트 코드 - 강제로 오류 발생하도록 Exception 생성 코드 필요시 사용 예정 (2023.10.24 jbh)
+                // TODO : 테스트 코드 - 강제로 오류 발생하도록 Exception 생성 코드 필요시 사용 예정 (2023.10.24 minjae)
                 // 참고 URL - https://morm.tistory.com/187
                 // 참고 2 URL - https://learn.microsoft.com/ko-kr/dotnet/csharp/fundamentals/exceptions/creating-and-throwing-exceptions
                 // throw new Exception("테스트 오류 코드");
@@ -2135,12 +2135,12 @@ namespace CobimExplorer.ViewModels.Pages
                 MessageBox.Show("파일 기본정보 - 컨테이너 정보 테스트");
                 return;
 
-                // TODO : 아래 테스트 코드 필요시 참고 (2023.10.18 jbh)
+                // TODO : 아래 테스트 코드 필요시 참고 (2023.10.18 minjae)
                 // foreach (var infoDic in total_Info_List)
                 // {                  
                 // 
-                //     // TODO : infoDic.Keys의 값이 하나가 아니라 여러개일 경우 아래 리스트 객체 "keyList"와 foreach문 사용 예정 (2023.10.17 jbh)
-                //     // TODO : Dictionary<string, List<Dictionary<string, object>>> 클래스 객체 "infoDic"에 존재하는 Key 값 가져와서 리스트로 변환 (2023.10.16 jbh)
+                //     // TODO : infoDic.Keys의 값이 하나가 아니라 여러개일 경우 아래 리스트 객체 "keyList"와 foreach문 사용 예정 (2023.10.17 minjae)
+                //     // TODO : Dictionary<string, List<Dictionary<string, object>>> 클래스 객체 "infoDic"에 존재하는 Key 값 가져와서 리스트로 변환 (2023.10.16 minjae)
                 //     // 참고 URL - https://www.techiedelight.com/ko/get-list-of-keys-and-values-in-a-dictionary-in-csharp/
                 //     var keyList = new List<string>(infoDic.Keys);
                 // 
@@ -2205,7 +2205,7 @@ namespace CobimExplorer.ViewModels.Pages
                 //                 // var  = new List<string>(infoDic.Keys);
                 //                 var taskDetailDic = infoDic[key].Select(value => value).ToDictionary();
                 //                 taskDetailList = infoDic[key];
-                //                 // 마일스톤 - 업무 유형 데이터 마일스톤 관련 Rest API를 통해 데이터를 받아와야 하는 경우 아래 소스코드 수정 예정(2023.10.17 jbh) 
+                //                 // 마일스톤 - 업무 유형 데이터 마일스톤 관련 Rest API를 통해 데이터를 받아와야 하는 경우 아래 소스코드 수정 예정(2023.10.17 minjae) 
                 //                 taskDetailType = taskDetailDic == null ? ContainerHelper.taskDetailTypeNone : taskDetailDic.Values.ToString();
                 // 
                 //                 break;
@@ -2254,13 +2254,13 @@ namespace CobimExplorer.ViewModels.Pages
                 MessageBox.Show(ex.Message);
                 Log.Error(Logger.GetMethodPath(currentMethod) + Logger.errorMessage + ex.Message);
 
-                // TODO : 오류 메시지 로그로 작성하는 다른 방법(e.StackTrace - 오류 발생한 파일 경로 포함) 구현 (2023.10.19 jbh) 
+                // TODO : 오류 메시지 로그로 작성하는 다른 방법(e.StackTrace - 오류 발생한 파일 경로 포함) 구현 (2023.10.19 minjae) 
                 // 참고 URL - https://morm.tistory.com/187
                 // 참고 2 URL - https://learn.microsoft.com/ko-kr/dotnet/csharp/fundamentals/exceptions/creating-and-throwing-exceptions
                 // 참고 3 URL - https://learn.microsoft.com/ko-kr/dotnet/api/system.exception.stacktrace?view=net-7.0
                 Log.Error(ex.StackTrace);
 
-                // TODO : 오류 메시지 로그로 작성하는 다른 방법(e.ToString() - 오류 발생한 파일 경로 포함) 구현 (2023.10.19 jbh) 
+                // TODO : 오류 메시지 로그로 작성하는 다른 방법(e.ToString() - 오류 발생한 파일 경로 포함) 구현 (2023.10.19 minjae) 
                 // 참고 URL - https://morm.tistory.com/187
                 // 참고 2 URL - https://learn.microsoft.com/ko-kr/dotnet/csharp/fundamentals/exceptions/creating-and-throwing-exceptions
                 // 참고 3 URL - https://learn.microsoft.com/ko-kr/dotnet/api/system.exception.stacktrace?view=net-7.0
@@ -2274,7 +2274,7 @@ namespace CobimExplorer.ViewModels.Pages
         #region ContainerInfoTypeListCreate
 
         // TODO : 메서드 "ContainerInfoTypeListCreate" 호출시 메서드 파라미터로 pContainerInfo 설정할 때
-        //        ref(기존 변수 pContainerInfo안에 들어있는 값을 메서드 "ContainerInfoTypeListCreate" 실행시 수정)로 구현 (2023.10.23 jbh)
+        //        ref(기존 변수 pContainerInfo안에 들어있는 값을 메서드 "ContainerInfoTypeListCreate" 실행시 수정)로 구현 (2023.10.23 minjae)
         // 참고 URL - https://yeko90.tistory.com/entry/c-%EA%B8%B0%EC%B4%88-ref-vs-out-%EC%B0%A8%EC%9D%B4
         // 참고 2 URL - https://kdsoft-zeros.tistory.com/142
         // 참고 3 URL - https://codingcoding.tistory.com/56
@@ -2292,7 +2292,7 @@ namespace CobimExplorer.ViewModels.Pages
             string taskIdx            = string.Empty;   // 마일스톤 - 업무 인덱스                             
             string taskType           = string.Empty;   // 마일스톤 - 업무 유형
 
-            // TODO : 로그 기록시 현재 실행 중인 메서드 위치 기록하기 (2023.10.10 jbh)
+            // TODO : 로그 기록시 현재 실행 중인 메서드 위치 기록하기 (2023.10.10 minjae)
             // 참고 URL - https://slaner.tistory.com/73
             // 참고 2 URL - https://stackoverflow.com/questions/4132810/how-can-i-get-a-method-name-with-the-namespace-class-name
             // 참고 3 URL - https://stackoverflow.com/questions/44153/can-you-use-reflection-to-find-the-name-of-the-currently-executing-method
@@ -2308,17 +2308,17 @@ namespace CobimExplorer.ViewModels.Pages
                 taskIdx            = pContainerInfo.exp_TaskDetailIdx;        // 마일스톤 - 업무 인덱스
                 taskType           = pContainerInfo.exp_TaskDetailType;       // 마일스톤 - 업무 유형
 
-                // TODO : pContainerInfo.FileTypeList.Clear(); 소스코드 실행시 FileTypeList 값이 null이므로 null Exception 발생해서 사용 안함.(2023.10.23 jbh)
+                // TODO : pContainerInfo.FileTypeList.Clear(); 소스코드 실행시 FileTypeList 값이 null이므로 null Exception 발생해서 사용 안함.(2023.10.23 minjae)
                 // pContainerInfo.FileTypeList.Clear();    // ComboBox - 파일유형 리스트 초기화
 
-                // TODO : ComboBox "파일유형" 리스트 생성 구현 (2023.10.24 jbh)
+                // TODO : ComboBox "파일유형" 리스트 생성 구현 (2023.10.24 minjae)
                 pContainerInfo.FileTypeList = new List<FileTypeView>
                 {
                     new FileTypeView { exp_systemCode = ContainerHelper.systemCodeModel, exp_codeName = ContainerHelper.codeNameModel},
                     new FileTypeView { exp_systemCode = ContainerHelper.systemCodeReprt, exp_codeName = ContainerHelper.codeNameReprt}
                 };
 
-                // TODO : ComboBox "마일스톤" 리스트 생성 구현 (2023.10.24 jbh)
+                // TODO : ComboBox "마일스톤" 리스트 생성 구현 (2023.10.24 minjae)
                 pContainerInfo.TaskDetailList = new List<TaskDetailView>
                 {
                     new TaskDetailView { exp_idx = ContainerHelper.taskIdxNone,     exp_title = ContainerHelper.taskTypeNone },       // 관련업무선택
@@ -2329,9 +2329,9 @@ namespace CobimExplorer.ViewModels.Pages
                 };
 
 
-                // TODO : 리스트 객체 "pContainerInfo.FileTypeList"의 조건을 만족하는 첫 번째 요소 값을 반환 하도록 메서드 "FirstOfDefault" 사용 (2023.10.18 jbh)
+                // TODO : 리스트 객체 "pContainerInfo.FileTypeList"의 조건을 만족하는 첫 번째 요소 값을 반환 하도록 메서드 "FirstOfDefault" 사용 (2023.10.18 minjae)
                 // 참고 URL - https://developer-talk.tistory.com/294
-                // TODO : 리스트 객체 "pContainerInfo.FileTypeList"의 FirstOrDefault 메서드 사용할 때, Contains 메서드 사용해서 조건 1, 조건 2 만족하는 데이터 있는지 찾기 (2023.10.23 jbh) 
+                // TODO : 리스트 객체 "pContainerInfo.FileTypeList"의 FirstOrDefault 메서드 사용할 때, Contains 메서드 사용해서 조건 1, 조건 2 만족하는 데이터 있는지 찾기 (2023.10.23 minjae) 
                 // 참고 URL - https://developer-talk.tistory.com/585 
                 // FirstOrDefault (where 조건절과 하는 역할 비슷하고 조건을 만족하는 요소가 존재하는지 체크 기능)
                 // 조건 1 - pContainerInfo.FileTypeList에 할당된 (파일유형 - systemCode - fileType.exp_systemCode) 값과 fileTypeSystemCode에 할당된 (컨테이너 정보 파일유형 - systemCode) 가 동일해야 한다.
@@ -2339,7 +2339,7 @@ namespace CobimExplorer.ViewModels.Pages
                 pContainerInfo.SelectParam.FileTypeCodeInfo = pContainerInfo.FileTypeList.FirstOrDefault(fileType => fileType.exp_systemCode.Contains(fileTypeSystemCode)
                                                                                                                   && fileType.exp_codeName.Contains(fileTypeCodeNm));
 
-                // TODO : 리스트 객체 "pContainerInfo.TaskDetailList"의 조건을 만족하는 첫 번째 요소 값을 반환 하도록 메서드 "FirstOfDefault" 사용 (2023.10.24 jbh)
+                // TODO : 리스트 객체 "pContainerInfo.TaskDetailList"의 조건을 만족하는 첫 번째 요소 값을 반환 하도록 메서드 "FirstOfDefault" 사용 (2023.10.24 minjae)
                 pContainerInfo.SelectParam.TaskDetail = pContainerInfo.TaskDetailList.FirstOrDefault(taskDetailType => taskDetailType.exp_idx.Contains(taskIdx)
                                                                                                                     && taskDetailType.exp_title.Contains(taskType));
 
@@ -2348,20 +2348,20 @@ namespace CobimExplorer.ViewModels.Pages
                 // Param.FileTypeCodeInfo = 
 
                 // TODO : ComboxBox - 파일유형에 바인딩할 BindableCollection에 값 할당 및 서버로부터 받은 값을 화면에 출력 할 수 있도록
-                //        메서드 파라미터 "pContainerInfo", "pFileTypeCodeInfoDic" 활용하기 (2023.10.20 jbh)
+                //        메서드 파라미터 "pContainerInfo", "pFileTypeCodeInfoDic" 활용하기 (2023.10.20 minjae)
                 // pContainerInfo.FileType
                 // exp_systemCode 
                 // exp_codeName 
 
-                // TODO : ComboxBox - 마일스톤의 경우 추후 인재 INC 측에서 마일스톤 RestAPI 공유 받은 후 개발 진행 (2023.10.23 jbh)
+                // TODO : ComboxBox - 마일스톤의 경우 추후 인재 INC 측에서 마일스톤 RestAPI 공유 받은 후 개발 진행 (2023.10.23 minjae)
                 //pContainerInfo.TaskDetailType = pMilestoneTaskInfoDic.Where().Select()).
                 //pContainerInfo.TaskDetailType.Title
                 // var result = await ExplorerRestServer.GetTaskDetailListAsync();
 
 
                 // TODO : ComboxBox - 파일유형에 바인딩할 BindableCollection에 값 할당 및 서버로부터 받은 값을 화면에 출력 할 수 있도록
-                //        메서드 파라미터 "pContainerInfo", "pFileTypeCodeInfoDic" 활용하기 (2023.10.20 jbh)
-                //        컨테이너 정보 영역 "마일스톤" ComboBox 구현시 바인딩할 BindableCollection 객체 TaskDetailType 구현(2023.10.20 jbh)
+                //        메서드 파라미터 "pContainerInfo", "pFileTypeCodeInfoDic" 활용하기 (2023.10.20 minjae)
+                //        컨테이너 정보 영역 "마일스톤" ComboBox 구현시 바인딩할 BindableCollection 객체 TaskDetailType 구현(2023.10.20 minjae)
                 // pContainerInfo.FileType
                 // exp_systemCode 
                 // exp_codeName 
@@ -2371,13 +2371,13 @@ namespace CobimExplorer.ViewModels.Pages
                 MessageBox.Show(ex.Message);
                 Log.Error(Logger.GetMethodPath(currentMethod) + Logger.errorMessage + ex.Message);
 
-                // TODO : 오류 메시지 로그로 작성하는 다른 방법(e.StackTrace - 오류 발생한 파일 경로 포함) 구현 (2023.10.19 jbh) 
+                // TODO : 오류 메시지 로그로 작성하는 다른 방법(e.StackTrace - 오류 발생한 파일 경로 포함) 구현 (2023.10.19 minjae) 
                 // 참고 URL - https://morm.tistory.com/187
                 // 참고 2 URL - https://learn.microsoft.com/ko-kr/dotnet/csharp/fundamentals/exceptions/creating-and-throwing-exceptions
                 // 참고 3 URL - https://learn.microsoft.com/ko-kr/dotnet/api/system.exception.stacktrace?view=net-7.0
                 Log.Error(ex.StackTrace);
 
-                // TODO : 오류 메시지 로그로 작성하는 다른 방법(e.ToString() - 오류 발생한 파일 경로 포함) 구현 (2023.10.19 jbh) 
+                // TODO : 오류 메시지 로그로 작성하는 다른 방법(e.ToString() - 오류 발생한 파일 경로 포함) 구현 (2023.10.19 minjae) 
                 // 참고 URL - https://morm.tistory.com/187
                 // 참고 2 URL - https://learn.microsoft.com/ko-kr/dotnet/csharp/fundamentals/exceptions/creating-and-throwing-exceptions
                 // 참고 3 URL - https://learn.microsoft.com/ko-kr/dotnet/api/system.exception.stacktrace?view=net-7.0
@@ -2393,7 +2393,7 @@ namespace CobimExplorer.ViewModels.Pages
         // TODO : 아래 비동기 메서드 "LinkedNodeInfoCreate"에 전달할 메서드 파라미터 메타 데이터 리스트 "pLinkedNodeMetaDataList"의 경우 
         //        Rest API 메서드 "ExplorerRestServer.GetLinkedNodeInfoListAsync"(Rest API 8. 연관 컨테이너 목록 조회)의 결과값이긴 하나
         //        현재 사용 중인 기능이 아님. 추후에 API 사용하거나 혹은 API 기능이 삭제될 시에 인재 INC측으로 부터
-        //        문서 정리하여 공유 받고 필요시 메서드 파라미터로 구현 예정 (2023.11.01 jbh)
+        //        문서 정리하여 공유 받고 필요시 메서드 파라미터로 구현 예정 (2023.11.01 minjae)
         /// <summary>
         /// 연관 컨테이너 정보 Tree 생성 
         /// </summary>
@@ -2403,7 +2403,7 @@ namespace CobimExplorer.ViewModels.Pages
         {
             string rootContainerId = string.Empty;                                  // 루트 컨테이너 아이디
 
-            // TODO : 로그 기록시 현재 실행 중인 메서드 위치 기록하기 (2023.10.27 jbh)
+            // TODO : 로그 기록시 현재 실행 중인 메서드 위치 기록하기 (2023.10.27 minjae)
             var currentMethod = MethodBase.GetCurrentMethod();
 
             try
@@ -2428,7 +2428,7 @@ namespace CobimExplorer.ViewModels.Pages
                                                                               && node[ContainerHelper.sourceId] != null)
                                                                   .Select(node => new LinkedNodeView
                                                                                       {
-                                                                                          // TreeView 영역 루트 노드 이름 프로퍼티 "exp_TreeName" 영어 대문자로 출력 (2023.11.01 jbh)
+                                                                                          // TreeView 영역 루트 노드 이름 프로퍼티 "exp_TreeName" 영어 대문자로 출력 (2023.11.01 minjae)
                                                                                           exp_TreeName = node[ContainerHelper.sourceId].ToString().ToUpper()
                                                                                           // LinkedNodeInfoDic = linkedNodeInfoList.Where(node => node.Values.Equals())
                                                                                       })
@@ -2439,9 +2439,9 @@ namespace CobimExplorer.ViewModels.Pages
                 // TODO : 메서드 파라미터 메타 데이터 리스트 "pLinkedNodeMetaDataList"의 경우
                 //        Rest API 메서드 "ExplorerRestServer.GetLinkedNodeInfoListAsync"(Rest API 8. 연관 컨테이너 목록 조회)의 결과값이긴 하나
                 //        현재 사용 중인 기능이 아님. 추후에 API 사용하거나 혹은 API 기능이 삭제될 시에 인재 INC측으로 부터
-                //        문서 정리하여 공유 받고 필요시 메서드 파라미터로 구현 예정 (2023.11.01 jbh)
+                //        문서 정리하여 공유 받고 필요시 메서드 파라미터로 구현 예정 (2023.11.01 minjae)
                 // TODO : 루트 컨테이너 "rootContainer"에 루트 컨테이너 아이디 "rootContainerId"에 속하는 메타데이터를
-                //        메타데이터 리스트 객체 "pLinkedNodeMetaDataList"에서 Linq로 찾아서 "new LinkedNodeView" 프로퍼티 "LinkedNodeInfoDic"에 할당하기 (2023.11.01 jbh)
+                //        메타데이터 리스트 객체 "pLinkedNodeMetaDataList"에서 Linq로 찾아서 "new LinkedNodeView" 프로퍼티 "LinkedNodeInfoDic"에 할당하기 (2023.11.01 minjae)
                 // LinkedNodeView rootContainer = pLinkedNodeMetaDataList.Where(meta => meta[ContainerHelper.containerId].ToString().Equals(rootContainerId))
                 //                                                       .Select(meta => new LinkedNodeView
                 //                                                                           {
@@ -2458,7 +2458,7 @@ namespace CobimExplorer.ViewModels.Pages
                 // TODO : 비동기 메서드 "FillLinkedNodes"에 속하는 메서드 파라미터 메타 데이터 리스트 "pLinkedNodeMetaDataList"의 경우
                 //        Rest API 메서드 "ExplorerRestServer.GetLinkedNodeInfoListAsync"(Rest API 8. 연관 컨테이너 목록 조회)의 결과값이긴 하나
                 //        현재 사용 중인 기능이 아님. 추후에 API 사용하거나 혹은 API 기능이 삭제될 시에 인재 INC측으로 부터
-                //        문서 정리하여 공유 받고 필요시 메서드 파라미터로 구현 예정 (2023.11.01 jbh)
+                //        문서 정리하여 공유 받고 필요시 메서드 파라미터로 구현 예정 (2023.11.01 minjae)
                 // 루트 컨테이너(노드) 하위 참조관계에 속한 자식 컨테이너(노드) 추가
                 // await FillLinkedNodes(rootContainer, pLinkedNodeInfoList, pLinkedNodeMetaDataList);
                 await FillLinkedNodes(rootContainer, pLinkedNodeInfoList);
@@ -2470,10 +2470,10 @@ namespace CobimExplorer.ViewModels.Pages
             {
                 Log.Error(Logger.GetMethodPath(currentMethod) + Logger.errorMessage + ex.Message);
 
-                // TODO : 오류 메시지 로그로 작성하는 다른 방법(e.StackTrace - 오류 발생한 파일 경로 포함) 구현 (2023.10.27 jbh) 
+                // TODO : 오류 메시지 로그로 작성하는 다른 방법(e.StackTrace - 오류 발생한 파일 경로 포함) 구현 (2023.10.27 minjae) 
                 Log.Error(ex.StackTrace);
 
-                // TODO : 오류 메시지 로그로 작성하는 다른 방법(e.ToString() - 오류 발생한 파일 경로 포함) 구현 (2023.10.27 jbh) 
+                // TODO : 오류 메시지 로그로 작성하는 다른 방법(e.ToString() - 오류 발생한 파일 경로 포함) 구현 (2023.10.27 minjae) 
                 Log.Error(ex.ToString());
                 throw;
             }
@@ -2487,7 +2487,7 @@ namespace CobimExplorer.ViewModels.Pages
         // TODO : 비동기 메서드 "FillLinkedNodes"에 속하는 메서드 파라미터 메타 데이터 리스트 "pLinkedNodeMetaDataList"의 경우
         //        Rest API 메서드 "ExplorerRestServer.GetLinkedNodeInfoListAsync"(Rest API 8. 연관 컨테이너 목록 조회)의 결과값이긴 하나
         //        현재 사용 중인 기능이 아님. 추후에 API 사용하거나 혹은 API 기능이 삭제될 시에 인재 INC측으로 부터
-        //        문서 정리하여 공유 받고 필요시 메서드 파라미터로 구현 예정 (2023.11.01 jbh)
+        //        문서 정리하여 공유 받고 필요시 메서드 파라미터로 구현 예정 (2023.11.01 minjae)
         /// <summary>
         /// 루트 컨테이너(노드) 하위 참조관계에 속한 자식 컨테이너(노드) 추가
         /// </summary>
@@ -2499,13 +2499,13 @@ namespace CobimExplorer.ViewModels.Pages
         {
             string subContainerId = string.Empty;   // 서브 컨테이너 아이디
 
-            // TODO : 로그 기록시 현재 실행 중인 메서드 위치 기록하기 (2023.10.27 jbh)
+            // TODO : 로그 기록시 현재 실행 중인 메서드 위치 기록하기 (2023.10.27 minjae)
             var currentMethod = MethodBase.GetCurrentMethod();
 
             try
             {
                 // TODO : pLinkedNodeInfoList의 WHERE 조건절 -> TreeView 영역 부모 노드 이름 프로퍼티 " parentContainer.exp_TreeName" 영어 대문자 -> 소문자로 변환(ToLower()) 후
-                //        node[ContainerHelper.targetId]?.ToString() 문자열(영어 소문자) 값과 비교하여 같은 값만 추출하기 (2023.11.01 jbh)
+                //        node[ContainerHelper.targetId]?.ToString() 문자열(영어 소문자) 값과 비교하여 같은 값만 추출하기 (2023.11.01 minjae)
                 // 부모 컨테이너(루트 또는 서브)에 하위 참조관계에 속한 자식 컨테이너 데이터 추출 
                 var childNodes = pLinkedNodeInfoList.Where(node => parentContainer.exp_TreeName.ToLower() == node[ContainerHelper.targetId]?.ToString());
 
@@ -2513,10 +2513,10 @@ namespace CobimExplorer.ViewModels.Pages
 
                 foreach (var childNode in childNodes)
                 {
-                    // TODO : TreeView 영역 부모 노드 하위 자식 노드(childNode) 이름 프로퍼티 "exp_TreeName" 영어 대문자로 출력 (2023.11.01 jbh)
+                    // TODO : TreeView 영역 부모 노드 하위 자식 노드(childNode) 이름 프로퍼티 "exp_TreeName" 영어 대문자로 출력 (2023.11.01 minjae)
                     subContainerId = childNode[ContainerHelper.sourceId].ToString().ToUpper();
 
-                    // TODO : 참조 컨테이너 "subContainer"에 참조 컨테이너 아이디 "subContainer"에 속하는 메타데이터를 "new LinkedNodeView" 프로퍼티 "LinkedNodeInfoDic"에 할당하기 (2023.10.30 jbh)
+                    // TODO : 참조 컨테이너 "subContainer"에 참조 컨테이너 아이디 "subContainer"에 속하는 메타데이터를 "new LinkedNodeView" 프로퍼티 "LinkedNodeInfoDic"에 할당하기 (2023.10.30 minjae)
                     // 참조관계에 속한 자식 컨테이너(subContainer) 생성 및 아이디 값 할당 
                     var subContainer = new LinkedNodeView
                                            {
@@ -2527,7 +2527,7 @@ namespace CobimExplorer.ViewModels.Pages
                     // TODO : 메서드 파라미터 메타 데이터 리스트 "pLinkedNodeMetaDataList"의 경우
                     //        Rest API 메서드 "ExplorerRestServer.GetLinkedNodeInfoListAsync"(Rest API 8. 연관 컨테이너 목록 조회)의 결과값이긴 하나
                     //        현재 사용 중인 기능이 아님. 추후에 API 사용하거나 혹은 API 기능이 삭제될 시에 인재 INC측으로 부터
-                    //        문서 정리하여 공유 받고 필요시 메서드 파라미터로 구현 예정 (2023.11.01 jbh)
+                    //        문서 정리하여 공유 받고 필요시 메서드 파라미터로 구현 예정 (2023.11.01 minjae)
                     // var subContainer = pLinkedNodeMetaDataList.Where(meta => meta[ContainerHelper.containerId].ToString().Equals(subContainerId))
                     //                                           .Select(meta => new LinkedNodeView 
                     //                                                               { 
@@ -2542,7 +2542,7 @@ namespace CobimExplorer.ViewModels.Pages
                     // TODO : 비동기 메서드 "FillLinkedNodes"에 속하는 파라미터 메타 데이터 리스트 "pLinkedNodeMetaDataList"의 경우
                     //        Rest API 메서드 "ExplorerRestServer.GetLinkedNodeInfoListAsync"(Rest API 8. 연관 컨테이너 목록 조회)의 결과값이긴 하나
                     //        현재 사용 중인 기능이 아님. 추후에 API 사용하거나 혹은 API 기능이 삭제될 시에 인재 INC측으로 부터
-                    //        문서 정리하여 공유 받고 필요시 메서드 파라미터로 구현 예정 (2023.11.01 jbh)
+                    //        문서 정리하여 공유 받고 필요시 메서드 파라미터로 구현 예정 (2023.11.01 minjae)
                     // 서브 컨테이너의 자식 노드로 또 다른 서브 컨테이너 추가 
                     // await FillLinkedNodes(subContainer, pLinkedNodeInfoList, pLinkedNodeMetaDataList);
                     await FillLinkedNodes(subContainer, pLinkedNodeInfoList);
@@ -2553,10 +2553,10 @@ namespace CobimExplorer.ViewModels.Pages
             {
                 Log.Error(Logger.GetMethodPath(currentMethod) + Logger.errorMessage + ex.Message);
 
-                // TODO : 오류 메시지 로그로 작성하는 다른 방법(e.StackTrace - 오류 발생한 파일 경로 포함) 구현 (2023.10.27 jbh) 
+                // TODO : 오류 메시지 로그로 작성하는 다른 방법(e.StackTrace - 오류 발생한 파일 경로 포함) 구현 (2023.10.27 minjae) 
                 Log.Error(ex.StackTrace);
 
-                // TODO : 오류 메시지 로그로 작성하는 다른 방법(e.ToString() - 오류 발생한 파일 경로 포함) 구현 (2023.10.27 jbh) 
+                // TODO : 오류 메시지 로그로 작성하는 다른 방법(e.ToString() - 오류 발생한 파일 경로 포함) 구현 (2023.10.27 minjae) 
                 Log.Error(ex.ToString());
                 throw;
             }
@@ -2568,7 +2568,7 @@ namespace CobimExplorer.ViewModels.Pages
 
         private async Task LinkedNodeInfoSearchAsync(object obj)
         {
-            // TODO : 로그 기록시 현재 실행 중인 메서드 위치 기록하기 (2023.10.27 jbh)
+            // TODO : 로그 기록시 현재 실행 중인 메서드 위치 기록하기 (2023.10.27 minjae)
             var currentMethod = MethodBase.GetCurrentMethod();
 
             try
@@ -2579,10 +2579,10 @@ namespace CobimExplorer.ViewModels.Pages
             {
                 Log.Error(Logger.GetMethodPath(currentMethod) + Logger.errorMessage + ex.Message);
 
-                // TODO : 오류 메시지 로그로 작성하는 다른 방법(e.StackTrace - 오류 발생한 파일 경로 포함) 구현 (2023.10.27 jbh) 
+                // TODO : 오류 메시지 로그로 작성하는 다른 방법(e.StackTrace - 오류 발생한 파일 경로 포함) 구현 (2023.10.27 minjae) 
                 // Log.Error(e.StackTrace);
 
-                // TODO : 오류 메시지 로그로 작성하는 다른 방법(e.ToString() - 오류 발생한 파일 경로 포함) 구현 (2023.10.27 jbh) 
+                // TODO : 오류 메시지 로그로 작성하는 다른 방법(e.ToString() - 오류 발생한 파일 경로 포함) 구현 (2023.10.27 minjae) 
                 // Log.Error(e.ToString());
                 // throw;
             }
@@ -2600,7 +2600,7 @@ namespace CobimExplorer.ViewModels.Pages
         /// <returns></returns>
         private async Task RequestAsync(object obj)
         {
-            // TODO : 로그 기록시 현재 실행 중인 메서드 위치 기록하기 (2023.10.18 jbh)
+            // TODO : 로그 기록시 현재 실행 중인 메서드 위치 기록하기 (2023.10.18 minjae)
             var currentMethod = MethodBase.GetCurrentMethod();
 
             try
@@ -2625,7 +2625,7 @@ namespace CobimExplorer.ViewModels.Pages
         /// <returns></returns>
         private async Task UpdateAsync(object obj)
         {
-            // TODO : 로그 기록시 현재 실행 중인 메서드 위치 기록하기 (2023.10.18 jbh)
+            // TODO : 로그 기록시 현재 실행 중인 메서드 위치 기록하기 (2023.10.18 minjae)
             var currentMethod = MethodBase.GetCurrentMethod();
 
             var upContainerDatas = obj as IEnumerable;
@@ -2638,8 +2638,8 @@ namespace CobimExplorer.ViewModels.Pages
             {
                 foreach (ContainerView data in upContainerDatas)
                 {
-                    // TODO : 아래 소스코드에 들어갈 데이터가 추가로 필요할 시 소스코드 수정 예정 (2023.10.23 jbh)
-                    //        UpdateParam 프로퍼티 필요 없어도 변경된 데이터(data.SelectParam)들이 정상적으로 서버로 넘어갈 수 있으면 UpdateParam 삭제 예정 (2023.10.23 jbh)
+                    // TODO : 아래 소스코드에 들어갈 데이터가 추가로 필요할 시 소스코드 수정 예정 (2023.10.23 minjae)
+                    //        UpdateParam 프로퍼티 필요 없어도 변경된 데이터(data.SelectParam)들이 정상적으로 서버로 넘어갈 수 있으면 UpdateParam 삭제 예정 (2023.10.23 minjae)
                     UpdateParam = new Param();
                     UpdateParam = data.SelectParam;
                 }
@@ -2647,7 +2647,7 @@ namespace CobimExplorer.ViewModels.Pages
                 // var test = ContainerDatas.(containerInfo => containerInfo.SelectParam).Object;
                 // UpdateParam = obj as IEnumerable; // .Select(s => s.SelectParam.FileTypeCodeInfo);
 
-                // UpdateAsync 메서드 실행시 ComboBox 파일유형에서 변경된 값을 가져오도록 Linq 식으로 구현하기 (2023.10.23 jbh) 
+                // UpdateAsync 메서드 실행시 ComboBox 파일유형에서 변경된 값을 가져오도록 Linq 식으로 구현하기 (2023.10.23 minjae) 
                 // var obj = null;
                 // FileTypeView fileTypeCodeInfo = ContainerDatas.Select(x => x.Param.FileTypeCodeInfo);
 
@@ -2677,7 +2677,7 @@ namespace CobimExplorer.ViewModels.Pages
             string inputTenantId = LoginHelper.inputTenantId;                  // 테넌트 아이디
             string tokenKey      = AppSetting.Default.Login.Token.resultData;  // 로그인 토큰 키 
 
-            // TODO : Object 배열 객체 obj 리스트로 변환 (2023.09.19 jbh)
+            // TODO : Object 배열 객체 obj 리스트로 변환 (2023.09.19 minjae)
             // 참고 URL - https://nonstop-antoine.tistory.com/36
             var FileDatas        = obj as IEnumerable;                         // 버튼으로 부터 받은 파일 정보(CommandParameter "exp_ProjectId", "exp_TeamId", "exp_ContainerId") (Object Array -> IEnumerable 형변환) 
             var FileInfos        = new List<string>();                         // FileDatas 를 리스트로 변환할 때 사용하는 리스트 객체 "FileInfos"
@@ -2686,7 +2686,7 @@ namespace CobimExplorer.ViewModels.Pages
             string fileId        = string.Empty;                               // 파일 아이디
             string fileName      = string.Empty;                               // 파일명(이름)
 
-            // TODO : 로그 기록시 현재 실행 중인 메서드 위치 기록하기 (2023.10.10 jbh)
+            // TODO : 로그 기록시 현재 실행 중인 메서드 위치 기록하기 (2023.10.10 minjae)
             var currentMethod = MethodBase.GetCurrentMethod();
 
             try
@@ -2705,7 +2705,7 @@ namespace CobimExplorer.ViewModels.Pages
                 FileDataDic.Add(ContainerHelper.fileId, FileInfos[3]);
                 FileDataDic.Add(ContainerHelper.fileNm, FileInfos[4]);
 
-                // TODO : ProjectHelper.cs -> ProjectPack 클래스 프로퍼티 "ProjectPack" 구현 및 테스트 프로젝트 아이디(testProjectId), 테스트 팀 아이디(testTeamId) 값 할당 (2023.09.04 jbh)
+                // TODO : ProjectHelper.cs -> ProjectPack 클래스 프로퍼티 "ProjectPack" 구현 및 테스트 프로젝트 아이디(testProjectId), 테스트 팀 아이디(testTeamId) 값 할당 (2023.09.04 minjae)
                 //        추후 필요시 수정 예정
                 ContainerPack = new ContainerHelper.ContainerPack
                 {
@@ -2730,7 +2730,7 @@ namespace CobimExplorer.ViewModels.Pages
             }
             finally
             {
-                // TODO : 추후 필요 시 finally문에 코드 추가 예정 (2023.08.24 jbh)
+                // TODO : 추후 필요 시 finally문에 코드 추가 예정 (2023.08.24 minjae)
             }
             // return;
         }
@@ -2746,7 +2746,7 @@ namespace CobimExplorer.ViewModels.Pages
         /// <returns></returns>
         private async Task UploadAsync(object obj)
         {
-            // TODO : 로그 기록시 현재 실행 중인 메서드 위치 기록하기 (2023.10.10 jbh)
+            // TODO : 로그 기록시 현재 실행 중인 메서드 위치 기록하기 (2023.10.10 minjae)
             // 참고 URL - https://slaner.tistory.com/73
             // 참고 2 URL - https://stackoverflow.com/questions/4132810/how-can-i-get-a-method-name-with-the-namespace-class-name
             // 참고 3 URL - https://stackoverflow.com/questions/44153/can-you-use-reflection-to-find-the-name-of-the-currently-executing-method
@@ -2766,10 +2766,10 @@ namespace CobimExplorer.ViewModels.Pages
 
         #endregion UploadAsync
 
-        // TODO : 마우스 오른쪽 클릭 이벤트 메서드 "Btn_MouseRightButtonDown" 필요시 뷰모델에 구현 예정 (2023.11.02 jbh)
+        // TODO : 마우스 오른쪽 클릭 이벤트 메서드 "Btn_MouseRightButtonDown" 필요시 뷰모델에 구현 예정 (2023.11.02 minjae)
         // #region Btn_MouseRightButtonDown
 
-        // TODO : 마우스 오른쪽 클릭 이벤트 메서드 "Btn_MouseRightButtonDown" 구현 (2023.11.02 jbh)
+        // TODO : 마우스 오른쪽 클릭 이벤트 메서드 "Btn_MouseRightButtonDown" 구현 (2023.11.02 minjae)
         // 참고 URL - https://yeko90.tistory.com/entry/c-wpf-%EB%A7%88%EC%9A%B0%EC%8A%A4-%EC%9D%B4%EB%B2%A4%ED%8A%B8%EB%8D%94%EB%B8%94%ED%81%B4%EB%A6%AD-%EC%98%A4%EB%A5%B8%EC%AA%BD%ED%81%B4%EB%A6%AD-%EC%99%BC%EC%AA%BD-%ED%81%B4%EB%A6%AD
         // 참고 2 URL - https://poorman.tistory.com/263
         // private void Btn_MouseRightButtonDown(object sender, MouseButtonEventArgs e)
@@ -2788,7 +2788,7 @@ namespace CobimExplorer.ViewModels.Pages
         /// <returns></returns>
         private async Task TestAsync(object obj)
         {
-            // TODO : 로그 기록시 현재 실행 중인 메서드 위치 기록하기 (2023.10.10 jbh)
+            // TODO : 로그 기록시 현재 실행 중인 메서드 위치 기록하기 (2023.10.10 minjae)
             // 참고 URL - https://slaner.tistory.com/73
             // 참고 2 URL - https://stackoverflow.com/questions/4132810/how-can-i-get-a-method-name-with-the-namespace-class-name
             // 참고 3 URL - https://stackoverflow.com/questions/44153/can-you-use-reflection-to-find-the-name-of-the-currently-executing-method
@@ -2807,7 +2807,7 @@ namespace CobimExplorer.ViewModels.Pages
             }
             finally
             {
-                // TODO : 추후 필요 시 finally문에 코드 추가 예정 (2023.08.24 jbh)
+                // TODO : 추후 필요 시 finally문에 코드 추가 예정 (2023.08.24 minjae)
             }
             return;
         }
@@ -2823,7 +2823,7 @@ namespace CobimExplorer.ViewModels.Pages
         /// <returns></returns>
         private async Task CheckOutAsync(object obj)
         {
-            // TODO : 로그 기록시 현재 실행 중인 메서드 위치 기록하기 (2023.10.10 jbh)
+            // TODO : 로그 기록시 현재 실행 중인 메서드 위치 기록하기 (2023.10.10 minjae)
             // 참고 URL - https://slaner.tistory.com/73
             // 참고 2 URL - https://stackoverflow.com/questions/4132810/how-can-i-get-a-method-name-with-the-namespace-class-name
             // 참고 3 URL - https://stackoverflow.com/questions/44153/can-you-use-reflection-to-find-the-name-of-the-currently-executing-method
@@ -2842,7 +2842,7 @@ namespace CobimExplorer.ViewModels.Pages
             }
             finally
             {
-                // TODO : 추후 필요 시 finally문에 코드 추가 예정 (2023.08.24 jbh)
+                // TODO : 추후 필요 시 finally문에 코드 추가 예정 (2023.08.24 minjae)
             }
             return;
         }
@@ -2858,7 +2858,7 @@ namespace CobimExplorer.ViewModels.Pages
         /// <returns></returns>
         private async Task CheckInAsync(object obj)
         {
-            // TODO : 로그 기록시 현재 실행 중인 메서드 위치 기록하기 (2023.10.10 jbh)
+            // TODO : 로그 기록시 현재 실행 중인 메서드 위치 기록하기 (2023.10.10 minjae)
             // 참고 URL - https://slaner.tistory.com/73
             // 참고 2 URL - https://stackoverflow.com/questions/4132810/how-can-i-get-a-method-name-with-the-namespace-class-name
             // 참고 3 URL - https://stackoverflow.com/questions/44153/can-you-use-reflection-to-find-the-name-of-the-currently-executing-method
@@ -2876,7 +2876,7 @@ namespace CobimExplorer.ViewModels.Pages
             }
             finally
             {
-                // TODO : 추후 필요 시 finally문에 코드 추가 예정 (2023.08.24 jbh)
+                // TODO : 추후 필요 시 finally문에 코드 추가 예정 (2023.08.24 minjae)
             }
             return;
         }
@@ -2885,13 +2885,13 @@ namespace CobimExplorer.ViewModels.Pages
 
         #region FolderListAsync
 
-        // TODO : 폴더 리스트 데이터 받아오기 메서드 "FolderListAsync" 필요 시 구현 예정 (2023.09.19 jbh)
+        // TODO : 폴더 리스트 데이터 받아오기 메서드 "FolderListAsync" 필요 시 구현 예정 (2023.09.19 minjae)
         //private async Task FolderListAsync(object obj)
         //{
         //    string projectId = ProjectHelper.testProjectId;   // 프로젝트 아이디 
         //    string teamId    = ProjectHelper.testTeamId;      // 팀 아이디
         //    string tokenKey = AppSetting.Default.Login.Token.resultData;   // 로그인 토큰 키 
-        //    // TODO : 로그 기록시 현재 실행 중인 메서드 위치 기록하기 (2023.10.10 jbh)
+        //    // TODO : 로그 기록시 현재 실행 중인 메서드 위치 기록하기 (2023.10.10 minjae)
         //    // 참고 URL - https://slaner.tistory.com/73
         //    // 참고 2 URL - https://stackoverflow.com/questions/4132810/how-can-i-get-a-method-name-with-the-namespace-class-name
         //    // 참고 3 URL - https://stackoverflow.com/questions/44153/can-you-use-reflection-to-find-the-name-of-the-currently-executing-method

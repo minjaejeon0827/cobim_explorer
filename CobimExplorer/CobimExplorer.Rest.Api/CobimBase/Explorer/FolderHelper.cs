@@ -46,7 +46,7 @@ namespace CobimExplorer.Rest.Api.CobimBase.Explorer
         /// </summary>
         public const string level1SubFolder = "1";
 
-        // TODO : 4. 폴더 목록 조회 const string 변수 "requestFolderURL" 필요시 수정 예정 (2023.09.20 jbh)
+        // TODO : 4. 폴더 목록 조회 const string 변수 "requestFolderURL" 필요시 수정 예정 (2023.09.20 minjae)
         /// <summary>
         /// 4. 폴더 목록 조회 
         /// 요청 URL
@@ -54,7 +54,7 @@ namespace CobimExplorer.Rest.Api.CobimBase.Explorer
         // public const string requestFolderURL = "https://cobim.io/api/folder/list/jc-constrct/inc-001-jc-constrct-t001";
         public const string requestFolderURL = "https://cobim.io/api/explorer/folder/list/";
 
-        // TODO : 필요시 ExplorerVM.cs -> 비동기 메서드 FillFolders 위치를 FolderHelper.cs 로 변경 예정 (2023.11.30 jbh)
+        // TODO : 필요시 ExplorerVM.cs -> 비동기 메서드 FillFolders 위치를 FolderHelper.cs 로 변경 예정 (2023.11.30 minjae)
         /// <summary>
         /// 루트 폴더 밑의 서브 폴더 추가 메서드 
         /// </summary>

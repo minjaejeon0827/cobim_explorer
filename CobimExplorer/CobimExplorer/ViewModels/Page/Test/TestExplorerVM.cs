@@ -21,24 +21,24 @@ namespace CobimExplorer.ViewModels.Page.Test
     {
         #region 프로퍼티 
 
-        // TODO : 테스트 코드 추후 삭제 예정 (2023.07.14 jbh)
+        // TODO : 테스트 코드 추후 삭제 예정 (2023.07.14 minjae)
         //public TreeView GroupView = new TreeView();
 
-        // TODO : 필요시 프로퍼티 "Container" 사용 예정 (2024.01.04 jbh) 
+        // TODO : 필요시 프로퍼티 "Container" 사용 예정 (2024.01.04 minjae) 
         //public IContainer Container { get; set; }
 
-        // TODO : 필요시 프로퍼티 "EventAggregator" 사용 예정 (2024.01.04 jbh) 
+        // TODO : 필요시 프로퍼티 "EventAggregator" 사용 예정 (2024.01.04 minjae) 
         //[Inject]
         //public IEventAggregator EventAggregator { get; set; }
 
         //public BindableCollection<TreeViewItem> DepthDatas { get; } = new BindableCollection<TreeViewItem>();
 
-        //TODO : 아래 BindableCollection 구현 예시 참고해서 추후 BindableCollection 구현 예정 (2023.07.26 jbh)
+        //TODO : 아래 BindableCollection 구현 예시 참고해서 추후 BindableCollection 구현 예정 (2023.07.26 minjae)
         //public BindableCollection<ProgMenuView> DepthDatas { get; } = new BindableCollection<ProgMenuView>();
 
         #region OnActivate
 
-        // TODO : 아래 프로퍼티 "Sender" 필요시 참고 (2024.08.07 jbh)
+        // TODO : 아래 프로퍼티 "Sender" 필요시 참고 (2024.08.07 minjae)
         /// <summary>
         /// 이벤트 OnActivate 실행시 
         /// OpenPageMsg 클래스 객체에 전달할 객체 Sender 
@@ -55,10 +55,10 @@ namespace CobimExplorer.ViewModels.Page.Test
         {
             Container = container;
 
-            // TODO : EventAggregator = events; 코드 추가 (2023.07.24 jbh)
+            // TODO : EventAggregator = events; 코드 추가 (2023.07.24 minjae)
             // 참고 URL - https://github.com/canton7/Stylet/wiki/3.-The-Taskbar
             EventAggregator = events;
-            // TODO : 테스트 코드 추후 삭제 예정 (2023.07.14 jbh)
+            // TODO : 테스트 코드 추후 삭제 예정 (2023.07.14 minjae)
             //InitTreeViewText();
         }
 
@@ -76,16 +76,16 @@ namespace CobimExplorer.ViewModels.Page.Test
         {
             base.OnActivate();
 
-            // TODO : 아래 테스트 코드 필요시 참고 (2024.08.07 jbh)
+            // TODO : 아래 테스트 코드 필요시 참고 (2024.08.07 minjae)
             // Sender = this;
 
-            // TODO : TreeView 데이터 출력 테스트 코드 추후 삭제 예정 (2023.07.14 jbh)
+            // TODO : TreeView 데이터 출력 테스트 코드 추후 삭제 예정 (2023.07.14 minjae)
             // InitTreeViewText();
 
             //var vm = Container.Get<TestExplorerVM>();
             //string VMName = vm.GetViewModelName();
 
-            // TODO : 필요시 var msg = new ChangeViewModelMsg(this, VMName); 사용 예정 (2024.08.06 jbh)
+            // TODO : 필요시 var msg = new ChangeViewModelMsg(this, VMName); 사용 예정 (2024.08.06 minjae)
             //var msg = new ChangeViewModelMsg(this, VMName);
             //var msg = new OpenPageMsg((ICbVM)Sender, VMName);
             //EventAggregator.PublishOnUIThread(msg);
@@ -100,7 +100,7 @@ namespace CobimExplorer.ViewModels.Page.Test
 
         #region InitTreeViewText
 
-        // TODO : TreeView 데이터 출력 테스트 코드 추후 삭제 예정 (2023.07.14 jbh)
+        // TODO : TreeView 데이터 출력 테스트 코드 추후 삭제 예정 (2023.07.14 minjae)
         // TreeView 참고 URL - http://inasie.tistory.com/19 
         // TreeView 참고 2 URL - https://insurang.tistory.com/383 
         /// <summary>
@@ -139,14 +139,14 @@ namespace CobimExplorer.ViewModels.Page.Test
 
         #region GetSubDirectories (서브 디렉토리)
 
-        // TODO : TreeView 데이터 출력 테스트 코드 추후 삭제 예정 (2023.07.14 jbh)
+        // TODO : TreeView 데이터 출력 테스트 코드 추후 삭제 예정 (2023.07.14 minjae)
         /// <summary>
         /// 서브 디렉토리
         /// </summary>
         /// <param name="itemParent"></param>
         //private void GetSubDirectories(TreeViewItem itemParent)
         //{
-        // TODO : if 조건절에 == null 보다 빠른 is null 연산자 사용 (2023.11.24 jbh)
+        // TODO : if 조건절에 == null 보다 빠른 is null 연산자 사용 (2023.11.24 minjae)
         // 참고 URL - https://husk321.tistory.com/405
         //    if (itemParent is null) return;
         //    if (itemParent.Items.Count != 0) return;
@@ -183,7 +183,7 @@ namespace CobimExplorer.ViewModels.Page.Test
         //void item_Expanded(object sender, RoutedEventArgs e)
         //{
         //    TreeViewItem itemParent = sender as TreeViewItem;
-              // TODO : if 조건절에 == null 보다 빠른 is null 연산자 사용 (2023.11.24 jbh)
+              // TODO : if 조건절에 == null 보다 빠른 is null 연산자 사용 (2023.11.24 minjae)
               // 참고 URL - https://husk321.tistory.com/405
         //    if (itemParent is null) return;
         //    if (itemParent.Items.Count == 0) return;

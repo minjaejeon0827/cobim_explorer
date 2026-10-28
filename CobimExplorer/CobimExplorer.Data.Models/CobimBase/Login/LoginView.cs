@@ -19,7 +19,7 @@ namespace CobimExplorer.Data.Models.CobimBase.Login
         /// </summary>
         private HttpClient _Client { get; set; }
 
-        // TODO : Http 웹서버 통신 요청 Header 프로퍼티 "RequestHeaders" 필요시 사용/수정 예정 (2023.12.22 jbh)
+        // TODO : Http 웹서버 통신 요청 Header 프로퍼티 "RequestHeaders" 필요시 사용/수정 예정 (2023.12.22 minjae)
         /// <summary>
         /// Http 웹서버 통신 요청 Header
         /// </summary>
@@ -255,13 +255,13 @@ namespace CobimExplorer.Data.Models.CobimBase.Login
         #region 프로퍼티 
 
         // TODO : 로그인 정보 클래스 "LoginPack"안에 속하는 프로퍼티 "inputTenantId", "id", "password" 의 접근 제한자를 
-        //        private로 설정하면 오류 발생하여 접근 제한자를 public으로 수정함. (2024.03.18 jbh)
+        //        private로 설정하면 오류 발생하여 접근 제한자를 public으로 수정함. (2024.03.18 minjae)
         //        오류 발생 위치 - LoginRestServer.cs -> 비동기 메서드 "PostLoginAsync" 
         //        -> 메서드 "JsonSerializer.Serialize" 호출하여 json 문자열(content)을 제대로 리턴 받지 못하고 오류 발생함. 
 
         // TODO : 로그인 정보 클래스 "LoginPack"안에 속하는 
         //        프로퍼티 "inputTenantId", "id", "password" 프로퍼티 이름 
-        //        변경하면 오류 발생하여 수정 안 하고 그대로 유지함.(2024.11.04 jbh)
+        //        변경하면 오류 발생하여 수정 안 하고 그대로 유지함.(2024.11.04 minjae)
         //        오류 발생 위치 - LoginRestServer.cs -> 비동기 메서드 "PostLoginAsync" 
         //        서버로 부터 제대로 리턴 받지 못하고 오류 발생함. 
 
@@ -352,7 +352,7 @@ namespace CobimExplorer.Data.Models.CobimBase.Login
 
         #region 생성자
 
-        // TODO : 필요시 생성자 LoginResponseData 구현 예정 (2024.11.14 jbh)
+        // TODO : 필요시 생성자 LoginResponseData 구현 예정 (2024.11.14 minjae)
         public LoginResponseData()
         {
 

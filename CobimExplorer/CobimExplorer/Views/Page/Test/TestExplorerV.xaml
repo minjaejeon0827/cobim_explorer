@@ -13,11 +13,11 @@
              d:DataContext="{d:DesignInstance vm:TestExplorerVM}"
              d:DesignHeight="450" d:DesignWidth="800">
 
-    <!-- TODO : C# WPF 팁 - Xaml 안에서 ViewModel속성을 자동완성 되도록 만들기(d:DataContext="{d:DesignInstance Type=vm:MainVM}") (2023.07.17 jbh) -->
+    <!-- TODO : C# WPF 팁 - Xaml 안에서 ViewModel속성을 자동완성 되도록 만들기(d:DataContext="{d:DesignInstance Type=vm:MainVM}") (2023.07.17 minjae) -->
     <!--        유튜브 참고 URL - https://youtu.be/A8t5ktSAgdA -->
 
-    <!-- TODO : TreeView 테스트 코드 추후 삭제 예정 (2023.07.14 jbh) -->
-    <!-- TODO : TreeView DataType, ItemsSource 관련 클래스 Folder 구현 (2023.07.14 jbh)  -->
+    <!-- TODO : TreeView 테스트 코드 추후 삭제 예정 (2023.07.14 minjae) -->
+    <!-- TODO : TreeView DataType, ItemsSource 관련 클래스 Folder 구현 (2023.07.14 minjae)  -->
     <!--        참고 URL - https://icodebroker.tistory.com/entry/CWPF-TreeViewItem-%ED%81%B4%EB%9E%98%EC%8A%A4-ItemsSource-%EC%86%8D%EC%84%B1%EC%9D%84-%EC%82%AC%EC%9A%A9%ED%95%B4-%ED%8A%B8%EB%A6%AC-%EB%B7%B0-%EB%A7%8C%EB%93%A4%EA%B8%B0#google_vignette  -->
     <UserControl.Resources>
         <ObjectDataProvider x:Key="ObjectDataProviderKey">
@@ -35,12 +35,12 @@
         </DataTemplate>
     </UserControl.Resources>
     
-    <!-- TODO : 화면 내 그리드 3분할 할 수 있도록 <GridSplitter> 사용해서 구현 (2023.07.13 jbh) -->
+    <!-- TODO : 화면 내 그리드 3분할 할 수 있도록 <GridSplitter> 사용해서 구현 (2023.07.13 minjae) -->
     <!-- 참고 URL - https://icodebroker.tistory.com/8114 -->
     <!-- 화면 영역 -->
     <Grid>
         <Grid.ColumnDefinitions>
-            <!-- TODO : <ColumnDefinition>영역에서 Width 가중치 (1 대 2 비율) 구현 (2023.07.14 jbh) -->
+            <!-- TODO : <ColumnDefinition>영역에서 Width 가중치 (1 대 2 비율) 구현 (2023.07.14 minjae) -->
             <!-- 참고 URL - https://benstagram.tistory.com/33 -->
             <ColumnDefinition Width="*"    />  <!-- Width 가중치 1 -->
             <ColumnDefinition Width="Auto" />
@@ -53,8 +53,8 @@
         <!-- 참고 URL - http://inasie.tistory.com/19 -->
         <!-- 참고 2 URL - https://insurang.tistory.com/383 -->
         <Border Grid.Row="0" Grid.Column="0" BorderBrush="{StaticResource App.Brush.Blue}" BorderThickness="10">
-            <!-- TODO : TreeView 테스트 코드 추후 삭제 예정 (2023.07.14 jbh) -->
-            <!-- TODO : TreeView DataType, ItemsSource 관련 클래스 Folder 구현 (2023.07.14 jbh)
+            <!-- TODO : TreeView 테스트 코드 추후 삭제 예정 (2023.07.14 minjae) -->
+            <!-- TODO : TreeView DataType, ItemsSource 관련 클래스 Folder 구현 (2023.07.14 minjae)
                         참고 URL - https://icodebroker.tistory.com/entry/CWPF-TreeViewItem-%ED%81%B4%EB%9E%98%EC%8A%A4-ItemsSource-%EC%86%8D%EC%84%B1%EC%9D%84-%EC%82%AC%EC%9A%A9%ED%95%B4-%ED%8A%B8%EB%A6%AC-%EB%B7%B0-%EB%A7%8C%EB%93%A4%EA%B8%B0#google_vignette-->
             <TreeView Name="folderTreeView">
                 <TreeViewItem Header="폴더"
@@ -62,7 +62,7 @@
             </TreeView>
 
 
-            <!-- TODO : CDE Explorer 전용 Rest API 연동시 아래 XAML 코드(<HierarchicalDataTemplate>) 주석 해제 후 구현하기 (2023.07.13 jbh) -->
+            <!-- TODO : CDE Explorer 전용 Rest API 연동시 아래 XAML 코드(<HierarchicalDataTemplate>) 주석 해제 후 구현하기 (2023.07.13 minjae) -->
             <!-- TreeView 영역 -->
             <!--<TreeView Name="GroupView" ItemsSource="{Binding DepthDatas}">
                 <TreeView.ItemContainerStyle>
@@ -72,7 +72,7 @@
                 </TreeView.ItemContainerStyle>
                 --><!-- Tree --><!--
                 <TreeView.Resources>
-                    --><!-- TODO : CDE Explorer 전용 Rest API 연동시 아래 XAML 코드(<HierarchicalDataTemplate>) 구현하기 (2023.07.13 jbh) -->
+                    --><!-- TODO : CDE Explorer 전용 Rest API 연동시 아래 XAML 코드(<HierarchicalDataTemplate>) 구현하기 (2023.07.13 minjae) -->
                     <!-- 루트 디렉토리 영역 : exp_TreeName --><!--
                     <HierarchicalDataTemplate DataType="{x:Type vm:ExplorerDepth}" ItemsSource="{Binding Items}">
                         <Button s:View.ActionTarget="{Binding ExplorerViewModel}" Command="{s:Action BtnClick}" CommandParameter="RootDirectory">
@@ -80,7 +80,7 @@
                         </Button>
                     </HierarchicalDataTemplate>
 
-                    --><!-- TODO : CDE Explorer 전용 Rest API 연동시 아래 XAML 코드(<HierarchicalDataTemplate>) 구현하기 (2023.07.13 jbh) -->
+                    --><!-- TODO : CDE Explorer 전용 Rest API 연동시 아래 XAML 코드(<HierarchicalDataTemplate>) 구현하기 (2023.07.13 minjae) -->
                     <!-- 하위 디렉토리 영역 : exp_TreeNameDesc --><!--
                     <HierarchicalDataTemplate DataType="{x:Type model:ExplorerView}">
                         <TextBlock Text="{Binding exp_TreeNameDesc}"/>
@@ -99,7 +99,7 @@
 
         <Grid Grid.Row="0" Grid.Column="2">
             <Grid.RowDefinitions>
-                <!-- TODO : <RowDefinition> 영역에서 Height 가중치 (1.5 대 1 비율) 구현 (2023.07.14 jbh) -->
+                <!-- TODO : <RowDefinition> 영역에서 Height 가중치 (1.5 대 1 비율) 구현 (2023.07.14 minjae) -->
                 <!-- 참고 URL - https://benstagram.tistory.com/33 -->
                 <RowDefinition Height="1.5*" />
                 <!-- Height 가중치 1.5 -->
@@ -111,8 +111,8 @@
             <!-- 화면 우측 상단 DataGrid 영역 -->
             <Border Grid.Row="0" Grid.Column="0" BorderBrush="{StaticResource App.Brush.Themes.Common.Red}" BorderThickness="10">
                 <!-- GridView 영역 -->
-                <!-- TODO: GridView 영역 구현시 <Grid> 또는 <DataGrid> 둘 중에 하나로 구현하기 (2023.07.13 jbh) -->
-                <!-- TODO: 아래 <DataGrid> 영역 테스트 코드 추후 삭제 예정 (2023.07.14 jbh) -->
+                <!-- TODO: GridView 영역 구현시 <Grid> 또는 <DataGrid> 둘 중에 하나로 구현하기 (2023.07.13 minjae) -->
+                <!-- TODO: 아래 <DataGrid> 영역 테스트 코드 추후 삭제 예정 (2023.07.14 minjae) -->
                 <DataGrid ItemsSource="{Binding ElementName=folderTreeView, Path=SelectedItem.SubFolderCollection, Mode=OneWay}"
                           HeadersVisibility="Column" />
             </Border>
@@ -128,10 +128,10 @@
             <!-- 화면 우측 하단 DataGrid 영역 -->
             <Border Grid.Row="2" Grid.Column="0" BorderBrush="{StaticResource App.Brush.Green}" BorderThickness="10">
                 <!--  ListView 영역  -->
-                <!--  TODO: 아래 <ListView> 영역 테스트 코드 추후 삭제 예정 (2023.07.14 jbh)  -->
+                <!--  TODO: 아래 <ListView> 영역 테스트 코드 추후 삭제 예정 (2023.07.14 minjae)  -->
                 <!--  <ListView ItemsSource="{Binding ElementName=folderTreeView, Path=SelectedItem.FileInfoCollection, Mode=OneWay}"/>  -->
-                <!--  TODO : <DataGrid> 영역 중 공백 컬럼 숨기기 처리 및 추후 탐색기 화면 뷰(ExplorerV.xaml) 우측 상단 컨테이너 정보 영역 "ListView"를 DataGrid로 변환시 아래 XAML 코드 참고 예정  (2023.12.28 jbh)  -->
-                <!--  TODO : 탐색기 화면 뷰(ExplorerV.xaml) 우측 상단 컨테이너 정보 영역을 <DataGrid>로 구현 및 컨테이너 정보에 속하는 컬럼을 <DataGridTextColumn>로 구현하기 (2023.12.28 jbh)  -->
+                <!--  TODO : <DataGrid> 영역 중 공백 컬럼 숨기기 처리 및 추후 탐색기 화면 뷰(ExplorerV.xaml) 우측 상단 컨테이너 정보 영역 "ListView"를 DataGrid로 변환시 아래 XAML 코드 참고 예정  (2023.12.28 minjae)  -->
+                <!--  TODO : 탐색기 화면 뷰(ExplorerV.xaml) 우측 상단 컨테이너 정보 영역을 <DataGrid>로 구현 및 컨테이너 정보에 속하는 컬럼을 <DataGridTextColumn>로 구현하기 (2023.12.28 minjae)  -->
                 <!--  참고 URL - https://stackoverflow.com/questions/2865505/how-do-i-hide-wpf-datagrid-row-selector  -->
                 <!--  참고 URL - https://bumukisbest.tistory.com/7  -->
                 <DataGrid ItemsSource="{Binding ElementName=folderTreeView, Path=SelectedItem.FileInfoCollection, Mode=OneWay}"
@@ -152,7 +152,7 @@
         </Grid>
     </Grid>
 
-    <!-- TODO : 아래 XAML 코드 필요 없을 시 삭제 예정 (2023.07.13 jbh) -->
+    <!-- TODO : 아래 XAML 코드 필요 없을 시 삭제 예정 (2023.07.13 minjae) -->
     <!--<Grid>
         --><!--  화면 영역  --><!-- 
         <Border>
@@ -171,7 +171,7 @@
                         --><!--  화면 우측 상단 GridView 영역  --><!--
                         <Border Height="300" DockPanel.Dock="Top" BorderBrush="{StaticResource App.Brush.Themes.Common.Red}" BorderThickness="10">
                             --><!--  GridView 영역  --> 
-                            <!--  TODO: GridView 영역 구현시 <Grid> 또는 <DataGrid> 둘 중에 하나로 구현하기 (2023.07.13 jbh)  --><!-- 
+                            <!--  TODO: GridView 영역 구현시 <Grid> 또는 <DataGrid> 둘 중에 하나로 구현하기 (2023.07.13 minjae)  --><!-- 
                             <DataGrid>
 
                             </DataGrid>

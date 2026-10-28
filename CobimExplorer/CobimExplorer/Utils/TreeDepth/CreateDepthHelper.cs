@@ -8,7 +8,7 @@ namespace CobimExplorer.Utils.TreeDepth
 {
     public static class CreateDepthHelper
     {
-        // TODO : 확장 메서드 "CreateProjectDepth" 필요시 구현 예정 (2023.08.30 jbh)
+        // TODO : 확장 메서드 "CreateProjectDepth" 필요시 구현 예정 (2023.08.30 minjae)
         /// <summary>
         /// static 확장메서드 GetViewModelName 정의
         /// 첫번째 파라미터 - Dictionary<string, object> 사용하도록 지정

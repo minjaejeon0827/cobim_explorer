@@ -7,7 +7,7 @@ using CobimNet;
 
 namespace CobimExplorer.Interface.Tab
 {
-    // TODO : 리본 버튼 클릭시 출력되는 화면을 탭 페이지로 출력 + 버튼 "닫기" 클릭시 탭 페이지 화면 종료 되도록 구현 (2024.01.10 jbh)  
+    // TODO : 리본 버튼 클릭시 출력되는 화면을 탭 페이지로 출력 + 버튼 "닫기" 클릭시 탭 페이지 화면 종료 되도록 구현 (2024.01.10 minjae)  
     // 참고 URL - https://youtu.be/rFhmTccRUpQ?si=dNYuEcN6487nTeYt
     public interface ITab
     {

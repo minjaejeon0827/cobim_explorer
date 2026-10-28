@@ -1,4 +1,4 @@
-﻿<!--  TODO : 추후 로그인 뷰(LoginV.xaml) 소스파일 명칭 (LogInV.xaml)로 변경 예정 (2023.11.30 jbh)  -->
+﻿<!--  TODO : 추후 로그인 뷰(LoginV.xaml) 소스파일 명칭 (LogInV.xaml)로 변경 예정 (2023.11.30 minjae)  -->
 <Window x:Class="CobimExplorer.Views.Windows.Login.LoginV"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
@@ -19,13 +19,13 @@
         WindowStyle="None"
         AllowsTransparency="True"
         ResizeMode="NoResize">
-    <!--  TODO : 아래 주석친 로그인 뷰모델(LoginVM.cs) 바인딩 하는 XAML 코드 필요시 참고 (2024.09.03 jbh)  -->
+    <!--  TODO : 아래 주석친 로그인 뷰모델(LoginVM.cs) 바인딩 하는 XAML 코드 필요시 참고 (2024.09.03 minjae)  -->
     <!--  <Window.DataContext>
         <Binding Path="LoginVM" />
     </Window.DataContext>  -->
     
-    <!--  TODO : 로그인 뷰 (LoginV.xaml) XAML 코드 <PasswordBox> 영역 Hint(PlaceHolder와 같은 기능 - 반 투명 회색글자 "비밀번호를 입력하세요") 구현 (2023.08.23 jbh)  -->
-    <!--  TODO : PasswordBoxHelper.cs 에 의존 프로퍼티 IsMonitoring, PasswordLength 구현 (2023.08.23 jbh)  -->
+    <!--  TODO : 로그인 뷰 (LoginV.xaml) XAML 코드 <PasswordBox> 영역 Hint(PlaceHolder와 같은 기능 - 반 투명 회색글자 "비밀번호를 입력하세요") 구현 (2023.08.23 minjae)  -->
+    <!--  TODO : PasswordBoxHelper.cs 에 의존 프로퍼티 IsMonitoring, PasswordLength 구현 (2023.08.23 minjae)  -->
     <!--  참고 URL - https://yimjang.tistory.com/entry/WPF-Textbox-Watermark-Passwordbox-%ED%8C%A8%EC%8A%A4%EC%9B%8C%EB%93%9C%EB%B0%95%EC%8A%A4%EC%97%90-%ED%9E%8C%ED%8A%B8-%EB%84%A3%EA%B8%B0  -->
     <!--  참고 2 URL - https://stackoverflow.com/questions/1607066/wpf-watermark-passwordbox-from-watermark-textbox  -->
     <Window.Resources>
@@ -70,7 +70,7 @@
         <!--  정수 값과 문자열 값을 받는 MultiValueConverter 클래스 "ExplorerConverter"  -->
         <converters:ExplorerConverter x:Key="ExplorerConverter"   />
 
-        <!--  TODO : 바인딩한 객체(프로퍼티)에 할당된 값이 True면 False, False면 True로 반대의 값으로 리턴되는 Converter 클래스 "InvertBooleanConverter.cs" 구현 (2024.09.03 jbh)  -->
+        <!--  TODO : 바인딩한 객체(프로퍼티)에 할당된 값이 True면 False, False면 True로 반대의 값으로 리턴되는 Converter 클래스 "InvertBooleanConverter.cs" 구현 (2024.09.03 minjae)  -->
         <!--  참고 URL - https://codekiller.tistory.com/581 -->
         <!--  참고 2 URL - https://devbong.tistory.com/41   -->
         <!--  참고 3 URL - https://benstagram.tistory.com/203  -->
@@ -98,15 +98,15 @@
                               Stroke="{StaticResource App.Brush.Themes.Common.Black}"
                               StrokeThickness="2" />
                 </Canvas>
-                <!--  TODO : 아래 주석친 코드 필요시 참고 (2024.08.26 jbh)  -->
-                <!--  TODO : <Button> 영역 <Image> 파일 ExitBtn.png 추가 (2023.08.17 jbh)  -->
+                <!--  TODO : 아래 주석친 코드 필요시 참고 (2024.08.26 minjae)  -->
+                <!--  TODO : <Button> 영역 <Image> 파일 ExitBtn.png 추가 (2023.08.17 minjae)  -->
                 <!--  참고 URL - https://drbeeeye.tistory.com/45  -->
                 <!--  <Button.Content>
                           <Image x:Name="ExitBtnImg" Source="/Resources/ExitBtn.png"/>
                       </Button.Content>  -->
             </Button>
 
-            <!--  TODO : 아래 주석친 코드 필요시 참고 (2024.08.26 jbh)  -->
+            <!--  TODO : 아래 주석친 코드 필요시 참고 (2024.08.26 minjae)  -->
             <!--  <StackPanel Width="30" HorizontalAlignment="Right">
                 --><!--<StackPanel Margin="16,10,0,6" Orientation="Horizontal" HorizontalAlignment="Center">
                 <TextBlock VerticalAlignment="Center" Text="Dark Mode" />
@@ -127,7 +127,7 @@
                 <!--  Command="{s:Action ExitApp, ActionNotFound=Disable}"--><!--
                 <Button x:Name="ExitBtn" 
                         Command="{Binding ExitCommand}">
-                    --><!--  TODO : <Button> 영역 <Image> 파일 ExitBtn.png 추가 (2023.08.17 jbh)  -->
+                    --><!--  TODO : <Button> 영역 <Image> 파일 ExitBtn.png 추가 (2023.08.17 minjae)  -->
                     <!--  참고 URL - https://drbeeeye.tistory.com/45  --><!--
                     <Button.Content>
                         <Image x:Name="ExitBtnImg" Source="/Resources/ExitBtn.png"/>
@@ -155,14 +155,14 @@
                              HorizontalAlignment="Center"
                              Text="Log in to your existing account" />  -->
 
-            <!--  TODO : <TextBox> 영역에 PlaceHolder(Watermark) "그룹 아이디를 입력하세요" 구현 (2023.12.01 jbh)  -->
+            <!--  TODO : <TextBox> 영역에 PlaceHolder(Watermark) "그룹 아이디를 입력하세요" 구현 (2023.12.01 minjae)  -->
             <!--  참고 URL - https://blissfuljoon.tistory.com/374  -->
             <!--  참고 2 URL - https://kjun.kr/1127  -->
-            <!--  TODO : <TextBox>에 적힌 텍스트 <TextBox> 영역 중앙 정렬 구현 VerticalContentAlignment="Center" (2023.12.01 jbh)  -->
+            <!--  TODO : <TextBox>에 적힌 텍스트 <TextBox> 영역 중앙 정렬 구현 VerticalContentAlignment="Center" (2023.12.01 minjae)  -->
             <!--  참고 URL - https://drbeeeye.tistory.com/9  -->
             <StackPanel Margin="0,20,0,0" Width="300">
                 <TextBlock Text="그룹 아이디*" FontWeight="Bold" />
-                <!--  TODO : <Border> 태그 모서리 둥글게 하기 위해 속성 "CornerRadius" 사용 (2024.09.05 jbh)  -->
+                <!--  TODO : <Border> 태그 모서리 둥글게 하기 위해 속성 "CornerRadius" 사용 (2024.09.05 minjae)  -->
                 <Border Margin="0,5,0,0" 
                         BorderThickness="2" 
                         BorderBrush="{StaticResource App.Brush.Login.BorderBrush}" 
@@ -203,23 +203,23 @@
                 </Border>
             </StackPanel>
 
-            <!--  TODO : <TextBox> 영역에 PlaceHolder(Watermark) "Enter Username" 구현 (2023.08.17 jbh)  -->
+            <!--  TODO : <TextBox> 영역에 PlaceHolder(Watermark) "Enter Username" 구현 (2023.08.17 minjae)  -->
             <!--  참고 URL - https://blissfuljoon.tistory.com/374  -->
             <!--  참고 2 URL - https://kjun.kr/1127  -->
-            <!--  TODO : <TextBox>에 적힌 텍스트 <TextBox> 영역 중앙 정렬 구현 VerticalContentAlignment="Center" (2023.08.17 jbh)  -->
+            <!--  TODO : <TextBox>에 적힌 텍스트 <TextBox> 영역 중앙 정렬 구현 VerticalContentAlignment="Center" (2023.08.17 minjae)  -->
             <!--  참고 URL - https://drbeeeye.tistory.com/9  -->
             <StackPanel Margin="0,20,0,0" Width="300">
                 <TextBlock Text="사용자 아이디*" FontWeight="Bold" />
-                <!--  TODO : <Border> 태그 모서리 둥글게 하기 위해 속성 "CornerRadius" 사용 (2024.09.05 jbh)  -->
+                <!--  TODO : <Border> 태그 모서리 둥글게 하기 위해 속성 "CornerRadius" 사용 (2024.09.05 minjae)  -->
                 <Border Margin="0,5,0,0" 
                         BorderThickness="2" 
                         BorderBrush="{StaticResource App.Brush.Login.BorderBrush}" 
                         Height="40"
                         CornerRadius="5">
                     <Grid Margin="0,2,0,2">
-                        <!--  TODO : <TextBox> 영역 UpdateSourceTrigger 필요시 추가 예정 (2023.08.23 jbh)  -->
+                        <!--  TODO : <TextBox> 영역 UpdateSourceTrigger 필요시 추가 예정 (2023.08.23 minjae)  -->
                         <!--  참고 URL - https://afsdzvcx123.tistory.com/entry/C-WPF-WPF-MVVM-%ED%8C%A8%ED%84%B4-%EC%9D%B4%EC%9A%A9%ED%95%98%EC%97%AC-TextBox-%EC%BB%A8%ED%8A%B8%EB%A1%A4-%EB%AC%B8%EC%9E%90-%EC%9E%85%EB%A0%A5-%EA%B0%90%EC%A7%80%ED%95%98%EA%B8%B0  -->
-                        <!--  TODO : Attached Property 기능 "TextBoxHelper.cs" 구현 (2023.08.23 jbh)  -->
+                        <!--  TODO : Attached Property 기능 "TextBoxHelper.cs" 구현 (2023.08.23 minjae)  -->
                         <!--  유튜브 참고 URL - https://youtu.be/An7kwDYt3OQ  -->
                         <!--  사용자 아이디 입력  -->
                         <TextBox x:Name="txtLoginId" 
@@ -257,17 +257,17 @@
 
             <StackPanel Margin="0,20,0,0" Width="300">
                 <TextBlock Text="비밀번호*" FontWeight="Bold" />
-                <!--  TODO : <Border> 태그 모서리 둥글게 하기 위해 속성 "CornerRadius" 사용 (2024.09.05 jbh)  -->
+                <!--  TODO : <Border> 태그 모서리 둥글게 하기 위해 속성 "CornerRadius" 사용 (2024.09.05 minjae)  -->
                 <Border Margin="0,5,0,0" 
                         BorderThickness="2" 
                         BorderBrush="{StaticResource App.Brush.Login.BorderBrush}" 
                         Height="40"
                         CornerRadius="5">
                     <Grid Margin="0,2,0,2">
-                        <!--  TODO : Attached Property 기능 "PasswordBoxHelper.cs" 구현 (2023.08.23 jbh)  -->
+                        <!--  TODO : Attached Property 기능 "PasswordBoxHelper.cs" 구현 (2023.08.23 minjae)  -->
                         <!--  유튜브 참고 URL - https://youtu.be/An7kwDYt3OQ  -->
                         <!--  TODO : <PasswordBox> 영역에 비밀번호 보안 문제로 인하여 프로퍼티 "Password"가 바인딩이 안 되므로  -->
-                        <!--         PasswordBoxHelper.cs 소스파일 -> 의존 프로퍼티 "BoundPassword" 구현 완료 (2023.08.24 jbh)  -->
+                        <!--         PasswordBoxHelper.cs 소스파일 -> 의존 프로퍼티 "BoundPassword" 구현 완료 (2023.08.24 minjae)  -->
                         <!--  비밀번호 입력  -->
                         <PasswordBox PasswordChar="*"
                                      utilsPassword:PasswordBoxHelper.BoundPassword="{Binding Password, Mode=TwoWay}"
@@ -279,7 +279,7 @@
                                      VerticalContentAlignment="Center" />
 
 
-                        <!--  TODO : <TextBox> 영역 UpdateSourceTrigger 추가 (2023.08.21 jbh)  -->
+                        <!--  TODO : <TextBox> 영역 UpdateSourceTrigger 추가 (2023.08.21 minjae)  -->
                         <!--  참고 URL - https://afsdzvcx123.tistory.com/entry/C-WPF-WPF-MVVM-%ED%8C%A8%ED%84%B4-%EC%9D%B4%EC%9A%A9%ED%95%98%EC%97%AC-TextBox-%EC%BB%A8%ED%8A%B8%EB%A1%A4-%EB%AC%B8%EC%9E%90-%EC%9E%85%EB%A0%A5-%EA%B0%90%EC%A7%80%ED%95%98%EA%B8%B0  -->
                         <!--  <TextBox Name="txtPassword" 
                                        Text="{Binding PassWord, UpdateSourceTrigger=PropertyChanged}" 
@@ -313,12 +313,12 @@
                 </Border>
             </StackPanel>
 
-            <!--  TODO : 바인딩한 객체(프로퍼티)에 할당된 값이 True면 False, False면 True로 반대의 값으로 리턴되는 Converter 클래스 "InvertBooleanConverter.cs" 구현 (2024.09.03 jbh)  -->
+            <!--  TODO : 바인딩한 객체(프로퍼티)에 할당된 값이 True면 False, False면 True로 반대의 값으로 리턴되는 Converter 클래스 "InvertBooleanConverter.cs" 구현 (2024.09.03 minjae)  -->
             <!--  참고 URL - https://codekiller.tistory.com/581    -->
             <!--  참고 2 URL - https://devbong.tistory.com/41      -->
             <!--  참고 3 URL - https://benstagram.tistory.com/203  -->
 
-            <!--  TODO : "로그인 버튼"에 속하는 속성 "IsEnabled"에 BindingMode(바인딩 모드) 속성 Mode=OneWay 로 설정하여 뷰모델에 구현한 프로퍼티 "IsLoginWorking" 값이 바뀌면 뷰로 변경된 값이 출력되도록 구현 (2024.09.04 jbh)  -->
+            <!--  TODO : "로그인 버튼"에 속하는 속성 "IsEnabled"에 BindingMode(바인딩 모드) 속성 Mode=OneWay 로 설정하여 뷰모델에 구현한 프로퍼티 "IsLoginWorking" 값이 바뀌면 뷰로 변경된 값이 출력되도록 구현 (2024.09.04 minjae)  -->
             <!--  참고 URL - https://hihaoun.tistory.com/entry/C-%EB%B0%94%EC%9D%B8%EB%94%A9-onetime-oneway-twoway-onewaytosource  -->
             
             <!--  로그인 버튼  -->
@@ -333,7 +333,7 @@
                     Foreground="{StaticResource App.Brush.Themes.Common.White}"
                     Background="{StaticResource App.Brush.Themes.Common.Blue}"
                     IsEnabled="{Binding IsLoginWorking, Mode=OneWay, Converter={StaticResource InvertBooleanConverter}}">
-                <!--  TODO : 버튼 "로그인" 모서리 둥글게 설정하기 위해 아래처럼 속성 "CornerRadius" 사용해서 스타일 구현 (2024.09.05 jbh)  -->
+                <!--  TODO : 버튼 "로그인" 모서리 둥글게 설정하기 위해 아래처럼 속성 "CornerRadius" 사용해서 스타일 구현 (2024.09.05 minjae)  -->
                 <!--  참고 URL - https://ghostweb.tistory.com/1160  -->
                 <Button.Resources>
                     <Style TargetType="{x:Type Border}">
@@ -341,10 +341,10 @@
                     </Style>
                 </Button.Resources>
                 <Button.CommandParameter>
-                    <!--  TODO : 버튼 멀티 바인딩 시 프로퍼티 Path 사용 (2024.03.18 jbh) -->
+                    <!--  TODO : 버튼 멀티 바인딩 시 프로퍼티 Path 사용 (2024.03.18 minjae) -->
                     <!--  참고 URL - https://icodebroker.tistory.com/entry/CWPF-MultiBinding-%EC%97%98%EB%A6%AC%EB%A8%BC%ED%8A%B8-Converter-%EC%86%8D%EC%84%B1%EC%97%90%EC%84%9C-IMultiValueConverter-%EC%9D%B8%ED%84%B0%ED%8E%98%EC%9D%B4%EC%8A%A4-%EA%B5%AC%ED%98%84-%EA%B0%9D%EC%B2%B4%EB%A5%BC-%EC%82%AC%EC%9A%A9%ED%95%B4-%EB%B0%94%EC%9D%B8%EB%94%A9%ED%95%98%EA%B8%B0-2  -->
                     <MultiBinding Converter="{StaticResource ExplorerConverter}">
-                        <!--  TODO : 버튼 멀티 바인딩 구현(2024.03.18 jbh)  -->
+                        <!--  TODO : 버튼 멀티 바인딩 구현(2024.03.18 minjae)  -->
                         <!--  참고 URL - https://chat.openai.com/c/d50bfec5-a101-4fc2-bf83-360d19f725ac  -->
 
                         <!--  멀티 바인딩할 값들  -->
@@ -357,13 +357,13 @@
                         <!--  로그인 패스워드  -->
                         <!--  TODO : 추후 로그인 버튼에 멀티 바인딩된 속성 중 로그인 패스워드 의존 프로퍼티 "BoundPasswordProperty"에  -->
                         <!--         바인딩된 패스워드 문자열을 로그인 뷰모델(LoginVM.cs)에 속한  -->
-                        <!--         비동기 메서드 "LoginAsync"의 메서드 파라미터 "object obj"로 가져올 수 있도록 구현 예정 (2024.03.18 jbh)  -->
+                        <!--         비동기 메서드 "LoginAsync"의 메서드 파라미터 "object obj"로 가져올 수 있도록 구현 예정 (2024.03.18 minjae)  -->
                         <Binding Source="{x:Static utilsPassword:PasswordBoxHelper.BoundPasswordProperty}" />
                     </MultiBinding>
                 </Button.CommandParameter>
             </Button>
 
-            <!--  TODO : 버튼 "테스트" 필요시 구현 예정 (2023.08.17 jbh)  -->
+            <!--  TODO : 버튼 "테스트" 필요시 구현 예정 (2023.08.17 minjae)  -->
             <!--  테스트 버튼  -->
             <!--  Command="{s:Action TestAsync, ActionNotFound=Disable}" -->
             <!--  <Button x:Name="TestBtn"

@@ -12,7 +12,7 @@ using CobimExplorer.Models.Explorer;
 
 using static CobimExplorer.Utils.ToggleImageUtils;
 
-// TODO : LazyTreeView 구현 (2023.07.17 jbh)
+// TODO : LazyTreeView 구현 (2023.07.17 minjae)
 // 유튜브 참고 URL
 // WPF TreeView - LazyTreeNode(지연로드 트리뷰) 만들기 - 1
 // 참고 URL - https://youtu.be/8mCzmlGRU4Y
@@ -29,9 +29,9 @@ namespace CobimExplorer.ViewModels.Page.Test
     {
         #region 프로퍼티 
 
-        // TODO: 오류 코드 "CS8370" 오류 메시지 "'nullable 참조 형식' 기능은 C# 7.3에서 사용할 수 없습니다. 8.0 이상의 언어 버전을 사용하세요." .Net 8.0 이상 언어 버전 설치 (2023.07.17 jbh)
+        // TODO: 오류 코드 "CS8370" 오류 메시지 "'nullable 참조 형식' 기능은 C# 7.3에서 사용할 수 없습니다. 8.0 이상의 언어 버전을 사용하세요." .Net 8.0 이상 언어 버전 설치 (2023.07.17 minjae)
         // 참고 URL - https://drehzr.tistory.com/872
-        // TODO : 경고 메시지 코드 "CS8632" 경고 메시지 "c# 경고 CS8632 nullable 참조 형식에 대한 주석은 코드에서 '#nullable' 주석 컨텍스트 내에만 사용되어야 합니다." 로직 보완 (2023.07.17 jbh)
+        // TODO : 경고 메시지 코드 "CS8632" 경고 메시지 "c# 경고 CS8632 nullable 참조 형식에 대한 주석은 코드에서 '#nullable' 주석 컨텍스트 내에만 사용되어야 합니다." 로직 보완 (2023.07.17 minjae)
         // 참고 URL - https://kukuta.tistory.com/359
         // C# Nullable 타입 참고 URL - https://www.csharpstudy.com/CSharp/CSharp-nullable.aspx
         // C# Nullable 타입 예제 코드
@@ -41,16 +41,16 @@ namespace CobimExplorer.ViewModels.Page.Test
 
 #nullable disable  // nullable 전처리 비활성화
 
-        // TODO : 필요시 프로퍼티 "Container" 사용 예정 (2024.01.04 jbh) 
+        // TODO : 필요시 프로퍼티 "Container" 사용 예정 (2024.01.04 minjae) 
         // public IContainer Container { get; set; }
 
-        // TODO : 필요시 프로퍼티 "EventAggregator" 사용 예정 (2024.01.04 jbh) 
+        // TODO : 필요시 프로퍼티 "EventAggregator" 사용 예정 (2024.01.04 minjae) 
         //[Inject]
         //public IEventAggregator EventAggregator { get; set; }
 
         #region OnActivate
 
-        // TODO : 아래 프로퍼티 "Sender" 필요시 참고 (2024.08.07 jbh)
+        // TODO : 아래 프로퍼티 "Sender" 필요시 참고 (2024.08.07 minjae)
         /// <summary>
         /// 이벤트 OnActivate 실행시 
         /// OpenPageMsg 클래스 객체에 전달할 객체 Sender 
@@ -63,7 +63,7 @@ namespace CobimExplorer.ViewModels.Page.Test
         { 
             get
             {
-                // TODO : if 조건절에 == null 보다 빠른 is null 연산자 사용 (2023.11.24 jbh)
+                // TODO : if 조건절에 == null 보다 빠른 is null 연산자 사용 (2023.11.24 minjae)
                 // 참고 URL - https://husk321.tistory.com/405
                 // 싱글톤 패턴 
                 if (_pathNodes is null)
@@ -84,7 +84,7 @@ namespace CobimExplorer.ViewModels.Page.Test
         {
             get
             {
-                // TODO : if 조건절에 == null 보다 빠른 is null 연산자 사용 (2023.11.24 jbh)
+                // TODO : if 조건절에 == null 보다 빠른 is null 연산자 사용 (2023.11.24 minjae)
                 // 참고 URL - https://husk321.tistory.com/405
                 // 싱글톤 패턴 
                 if (_subFolderCollection is null)
@@ -109,7 +109,7 @@ namespace CobimExplorer.ViewModels.Page.Test
         {
             get
             {
-                // TODO : if 조건절에 == null 보다 빠른 is null 연산자 사용 (2023.11.24 jbh)
+                // TODO : if 조건절에 == null 보다 빠른 is null 연산자 사용 (2023.11.24 minjae)
                 // 참고 URL - https://husk321.tistory.com/405
                 // 싱글톤 패턴 
                 if (_fileInfoCollection is null)
@@ -134,7 +134,7 @@ namespace CobimExplorer.ViewModels.Page.Test
         {
             Container = container;
 
-            // TODO : EventAggregator = events; 코드 추가 (2023.07.24 jbh)
+            // TODO : EventAggregator = events; 코드 추가 (2023.07.24 minjae)
             // 참고 URL - https://github.com/canton7/Stylet/wiki/3.-The-Taskbar
             EventAggregator = events;
         }
@@ -156,14 +156,14 @@ namespace CobimExplorer.ViewModels.Page.Test
             //    { ""Key"": ""2"", ""Text"": ""김이박"" },
             // ]";
 
-            // TODO : Json 데이터 -> ObservableCollection Convert 처리 구현 (2023.07.18 jbh)
+            // TODO : Json 데이터 -> ObservableCollection Convert 처리 구현 (2023.07.18 minjae)
             //string Json = @"[
             //    {""Key"": ""1"", ""Text"": ""홍길동"" },
             //    {""Key"": ""2"", ""Text"": ""김이박"" },
             // ]";
 
 
-            // TODO : JObject.Parse 실행시 오류 메시지 ": 'Error reading JObject from JsonReader. Current JsonReader item is not an object: StartArray. Path '', line 1, position 1.'" 해결 (2023.07.17 jbh)
+            // TODO : JObject.Parse 실행시 오류 메시지 ": 'Error reading JObject from JsonReader. Current JsonReader item is not an object: StartArray. Path '', line 1, position 1.'" 해결 (2023.07.17 minjae)
             // 참고 URL - https://blog.naver.com/chandong83/222771357703
             // JObject jsonObject = JObject.Parse(strJson);
             //JArray jarray = JArray.Parse(Json);
@@ -187,7 +187,7 @@ namespace CobimExplorer.ViewModels.Page.Test
             //    PathNodes.Add(CreateNode(TestPathNode.Key, TestPathNode.Text));
             //}
 
-            // TODO : TreeView 데이터 출력 테스트 코드 추후 삭제 예정 (2023.07.14 jbh)
+            // TODO : TreeView 데이터 출력 테스트 코드 추후 삭제 예정 (2023.07.14 minjae)
             // InitTreeViewText();
         }
 
@@ -195,7 +195,7 @@ namespace CobimExplorer.ViewModels.Page.Test
         {
             base.OnActivate();
 
-            // TODO : 싱글톤 패턴 사용해서 프로퍼티 PathNodes Collection에서 객체 생성하도록 로직 보완 (2023.07.26 jbh)
+            // TODO : 싱글톤 패턴 사용해서 프로퍼티 PathNodes Collection에서 객체 생성하도록 로직 보완 (2023.07.26 minjae)
             // Collection PathNodes 객체 생성 
             // PathNodes = new ObservableCollection<LazyTreeNode>();
 
@@ -203,13 +203,13 @@ namespace CobimExplorer.ViewModels.Page.Test
 
             AddDriveNodes();  // 드라이브 노드 생성 (탐색기 기능)
 
-            // TODO : 아래 테스트 코드 필요시 참고 (2024.08.07 jbh)
+            // TODO : 아래 테스트 코드 필요시 참고 (2024.08.07 minjae)
             //Sender = this;
 
             //var vm = Container.Get<TestLazyTreeVM>();
             //string VMName = vm.GetViewModelName();
 
-            // TODO : 필요시 var msg = new ChangeViewModelMsg(this, VMName); 사용 예정 (2024.08.06 jbh)
+            // TODO : 필요시 var msg = new ChangeViewModelMsg(this, VMName); 사용 예정 (2024.08.06 minjae)
             //var msg = new ChangeViewModelMsg(this, VMName);
             //var msg = new OpenPageMsg((ICbVM)Sender, VMName);
             //EventAggregator.PublishOnUIThread(msg);
@@ -274,7 +274,7 @@ namespace CobimExplorer.ViewModels.Page.Test
         /// <param name="obj"></param>
         private void Node_OnExpanded(LazyTreeNode node)
         {
-            // TODO : 오류 메시지 "'C:\PerfLogs\Admin' 경로에 대한 액세스가 거부되었습니다." 로직 보완 (2023.07.26 jbh)
+            // TODO : 오류 메시지 "'C:\PerfLogs\Admin' 경로에 대한 액세스가 거부되었습니다." 로직 보완 (2023.07.26 minjae)
             // try ~ catch ~ finally
             // 참고 URL - https://hello-bryan.tistory.com/21
             try
@@ -288,7 +288,7 @@ namespace CobimExplorer.ViewModels.Page.Test
                 // 생성한 더미노드(node)의 전체 경로(node.Key)의 하위 폴더(di)들을 반복문으로 돌려서 방문 
                 foreach (var di in DirectoryUtils.GetDirectories(node.Path))
                 {
-                    // TODO : 오류 메시지 "System.UnauthorizedAccessException: ''C:\PerfLogs\Admin' 경로에 대한 액세스가 거부되었습니다.'" 추후 보완 예정 (2023.07.19 jbh)
+                    // TODO : 오류 메시지 "System.UnauthorizedAccessException: ''C:\PerfLogs\Admin' 경로에 대한 액세스가 거부되었습니다.'" 추후 보완 예정 (2023.07.19 minjae)
 
 
                     // 생성한 더미노드(node)의 자식 디렉토리(Children) 경로, 이름, 이미지 추가 - CreateNode(di.FullName, di.Name, ExplorerType.Directory)
@@ -307,7 +307,7 @@ namespace CobimExplorer.ViewModels.Page.Test
 
 
 
-                // TODO: 테스트 코드 부모 노드(parent) 밑에 자식 노드(Children) "가나다" 추가 구현 (2023.07.18 jbh)
+                // TODO: 테스트 코드 부모 노드(parent) 밑에 자식 노드(Children) "가나다" 추가 구현 (2023.07.18 minjae)
                 // Collection Children Nullable(물음표 ?) 삭제 (경고 메시지가 출력되기 때문)
                 // 어차피 _children 값이 null 이여도 싱글톤 패턴으로 인해 _children 값은 null이다.
                 // node.Children.Add(CreateNode("3", "가나다"));
@@ -336,7 +336,7 @@ namespace CobimExplorer.ViewModels.Page.Test
             }
             finally
             {
-                // TODO : 필요시 추가 예정 (2023.07.26 jbh)
+                // TODO : 필요시 추가 예정 (2023.07.26 minjae)
             }
         }
 

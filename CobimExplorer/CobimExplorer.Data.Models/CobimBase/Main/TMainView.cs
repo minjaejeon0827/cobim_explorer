@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CobimExplorer.Data.Models.CobimBase.Main
 {
-    // TODO : 필요시 TMainView.cs 클래스 파일 구현 예정 (2023.11.21 jbh)
+    // TODO : 필요시 TMainView.cs 클래스 파일 구현 예정 (2023.11.21 minjae)
     // 제네릭 타입 제약 문법 where T 
     // 참고 URL - http://www.csharpstudy.com/CSharp/CSharp-generics.aspx
     public class TMainView<TData> : TMainView where TData : TMainView<TData> { }

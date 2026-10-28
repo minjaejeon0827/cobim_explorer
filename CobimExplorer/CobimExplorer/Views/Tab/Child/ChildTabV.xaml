@@ -12,7 +12,7 @@
              d:DesignHeight="450" 
              d:DesignWidth="800">
     <Grid Background="{StaticResource App.Brush.Themes.Common.White}">
-        <!--  TODO : 주의사항 - TabControl (TabParentPageV.xaml) 화면 뷰 안에 존재하는 <TabControl> 영역에 속성 SelectedItem="{Binding ActiveItem}" 사용 안 함 (2024.09.12 jbh)  -->
+        <!--  TODO : 주의사항 - TabControl (TabParentPageV.xaml) 화면 뷰 안에 존재하는 <TabControl> 영역에 속성 SelectedItem="{Binding ActiveItem}" 사용 안 함 (2024.09.12 minjae)  -->
         <!--         왜냐하면 Dynamic TabItem ("ExplorerVM", "HubBoxVM") 클릭시 TabControl (TabParentPageV.xaml) 화면 뷰 BorderBrush 색상이 Red로 바뀌는 오류가 발생하기 때문이다.  -->
         <!--         SelectedItem="{Binding ActiveItem}" 사용 안 하는 대신 ChildTabV.xaml 에서 아래처럼 <ContentControl> 영역에서 ActiveItem 바인딩 처리 하고  -->
         <!--         <ContentControl s:View.Model="{Binding ActiveItem}" />  ChildTabVM.cs 생성자 호출시 아래처럼 ActiveItem 값이 null일 때, 새로 값 할당 해줌  -->

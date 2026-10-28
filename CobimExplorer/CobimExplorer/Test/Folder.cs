@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace CobimExplorer.Test
 {
-    // TODO : TreeView DataType, ItemsSource 관련 클래스 Folder 구현 (2023.07.14 jbh)
+    // TODO : TreeView DataType, ItemsSource 관련 클래스 Folder 구현 (2023.07.14 minjae)
     // 참고 URL - https://icodebroker.tistory.com/entry/CWPF-TreeViewItem-%ED%81%B4%EB%9E%98%EC%8A%A4-ItemsSource-%EC%86%8D%EC%84%B1%EC%9D%84-%EC%82%AC%EC%9A%A9%ED%95%B4-%ED%8A%B8%EB%A6%AC-%EB%B7%B0-%EB%A7%8C%EB%93%A4%EA%B8%B0#google_vignette
 
     /// <summary>
@@ -92,13 +92,13 @@ namespace CobimExplorer.Test
         {
             get
             {
-                // TODO : if 조건절에 == null 보다 빠른 is null 연산자 사용 (2023.11.24 jbh)
+                // TODO : if 조건절에 == null 보다 빠른 is null 연산자 사용 (2023.11.24 minjae)
                 // 참고 URL - https://husk321.tistory.com/405
                 if (this.subFolderCollection is null)
                 {
                     this.subFolderCollection = new ObservableCollection<Folder>();
 
-                    // TODO : 오류 메시지 'c:\Documents and Settings' 경로에 대한 액세스가 거부되었습니다' 추후 확인 필요 (2023.07.26 jbh)
+                    // TODO : 오류 메시지 'c:\Documents and Settings' 경로에 대한 액세스가 거부되었습니다' 추후 확인 필요 (2023.07.26 minjae)
                     // 참고 URL - https://oracle.tistory.com/394
                     DirectoryInfo[] directoryInfoArray = this.directoryInfo.GetDirectories();
 
@@ -127,7 +127,7 @@ namespace CobimExplorer.Test
         {
             get
             {
-                // TODO : if 조건절에 == null 보다 빠른 is null 연산자 사용 (2023.11.24 jbh)
+                // TODO : if 조건절에 == null 보다 빠른 is null 연산자 사용 (2023.11.24 minjae)
                 // 참고 URL - https://husk321.tistory.com/405
                 if (this.fileInfoCollection is null)
                 {

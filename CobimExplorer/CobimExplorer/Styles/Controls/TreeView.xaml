@@ -4,7 +4,7 @@
     <!-- 구현된 Resources(자원)들을 가져오는 기능이고, {DynamicResource }는 컴파일 실행 후, 프로그램이 정상 실행되는 런타임 동안에  -->
     <!-- 실시간으로 데이터가 바뀌거나 화면이 새로 랜더링 되는(화면 변환) 동안에 동적으로 그때마다 필요한 Resource(자원)들을 가져오는 기능이다. -->
     
-    <!--  TODO : TreeView 수평방향으로 스타일 구현 (2023.10.30 jbh)  -->
+    <!--  TODO : TreeView 수평방향으로 스타일 구현 (2023.10.30 minjae)  -->
     <!--  참고 URL   - https://stackoverflow.com/questions/364083/wpf-treeview-with-horizontal-orientation  -->  
     <!--  참고 2 URL - https://www.codeproject.com/Articles/17025/Custom-TreeView-Layout-in-WPF  --> 
     <!--  참고 3 URL - https://www.generacodice.com/ko/articolo/169565/%EC%88%98%ED%8F%89-%EB%B0%A9%ED%96%A5%EC%9D%B4%EC%9E%88%EB%8A%94-wpf-%ED%8A%B8%EB%A6%AC-%EB%B7%B0  -->
@@ -16,10 +16,10 @@
     <Style x:Key="App.TreeViewItem.Horizontality" BasedOn="{StaticResource {x:Type TreeViewItem}}" TargetType="{x:Type TreeViewItem}">
         <!--  Resources 영역  -->
         <Style.Resources>
-            <!--  TODO : TreeViewItem에 속하는 각각의 데이터가 출력되는 컨트롤(TextBlock)을 Background 속성에 그라데이션 적용 (2023.10.30 jbh)  -->
+            <!--  TODO : TreeViewItem에 속하는 각각의 데이터가 출력되는 컨트롤(TextBlock)을 Background 속성에 그라데이션 적용 (2023.10.30 minjae)  -->
             <!--  참고 URL - https://wpfstory.tistory.com/15  -->
             <LinearGradientBrush x:Key="ItemAreaBrush" StartPoint="0.5, 0" EndPoint="0.5, 1">
-                <!--  TODO : 아래 주석친 <GradientStop> 소스 코드 필요시 사용 예정 (2023.12.12 jbh)  -->
+                <!--  TODO : 아래 주석친 <GradientStop> 소스 코드 필요시 사용 예정 (2023.12.12 minjae)  -->
                 <!--  <GradientStop Color="{DynamicResource App.Color.ItemAreaBrush.30}" Offset="0" />  -->  
                 <!--  <GradientStop Color="{DynamicResource App.Color.ItemAreaBrush.10}" Offset="1" />  -->  
                 <GradientStop Color="{DynamicResource App.Color.Themes.Fall.Brown}" Offset="0"   />
@@ -29,7 +29,7 @@
                 <GradientStop Color="{DynamicResource App.Color.GreenYellow}" Offset="1" />
             </LinearGradientBrush>
             <LinearGradientBrush x:Key="ItemBorderBrush" StartPoint="0.5, 0" EndPoint="0.5, 1">
-                <!--  TODO : 아래 주석친 <GradientStop> 소스 코드 필요시 사용 예정 (2023.12.12 jbh)  -->
+                <!--  TODO : 아래 주석친 <GradientStop> 소스 코드 필요시 사용 예정 (2023.12.12 minjae)  -->
                 <!--  <GradientStop Color="{DynamicResource App.Color.LightGray}" Offset="0" />  -->
                 <!--  <GradientStop Color="{DynamicResource App.Color.Themes.Common.Gray}" Offset="1"      />  -->
                 <GradientStop Color="{DynamicResource App.Color.Themes.Common.NavajoWhite}" Offset="0" />
@@ -41,7 +41,7 @@
             <DropShadowBitmapEffect x:Key="DropShadowEffect" />
         </Style.Resources>
 
-        <!--  TODO : 각각의 TreeViewItem 사이의 Margin 설정 (2023.11.01 jbh)  -->
+        <!--  TODO : 각각의 TreeViewItem 사이의 Margin 설정 (2023.11.01 minjae)  -->
         <!--  참고 URL - https://stackoverflow.com/questions/2552814/increase-the-spacing-between-treeviewitems-in-a-treeview  -->
         <Setter Property="Margin" Value="5 5 5 5"/>
 
@@ -64,7 +64,7 @@
                 <ControlTemplate TargetType="{x:Type TreeViewItem}">
                     <Grid Margin="2">
                         <Grid.RowDefinitions>
-                            <!-- TODO : <RowDefinition>영역에서 Height 가중치 구현 (2023.10.30 jbh) -->
+                            <!-- TODO : <RowDefinition>영역에서 Height 가중치 구현 (2023.10.30 minjae) -->
                             <!-- 참고 URL - https://benstagram.tistory.com/33 -->
 
                             <!--  The top row contains the item's content.  -->
@@ -78,7 +78,7 @@
 
                         <!--  This Border and ContentPresenter displays the content of the TreeViewItem.  -->
                         <!--  이 Border 및 ContentPresenter는 TreeViewItem의 콘텐츠 표시  -->
-                        <!--  TODO : TreeViewItem 선택하였을 때, BorderThickness (Border 테두리 두께) Value="3" 설정 (2023.10.30 jbh)  -->
+                        <!--  TODO : TreeViewItem 선택하였을 때, BorderThickness (Border 테두리 두께) Value="3" 설정 (2023.10.30 minjae)  -->
                         <Border Name="TreeViewItemBorder" 
                                 Background="{StaticResource ItemAreaBrush}"
                                 BorderBrush="{StaticResource ItemBorderBrush}" 
@@ -103,27 +103,27 @@
                               use the "selected" colors and give it a drop shadow.  -->
                         <!--  TreeView에서 항목 선택시 "선택한" 색상 사용 및 그림자 처리  -->
                         <Trigger Property="IsSelected" Value="True">
-                            <!--  TreeViewItem 선택하였을 때, Background 색상 (Green - GreenYellow 계열) 변경 (2023.10.30 jbh)  -->
+                            <!--  TreeViewItem 선택하였을 때, Background 색상 (Green - GreenYellow 계열) 변경 (2023.10.30 minjae)  -->
                             <Setter TargetName="TreeViewItemBorder"
                                     Property="Panel.Background"                     
                                     Value="{DynamicResource SelectedItemAreaBrush}" />
 
-                            <!--  TreeViewItem 선택하였을 때, BorderBrush (Border 테두리) 색상(Yellow - Black 계열) 변경 (2023.10.30 jbh)  -->
+                            <!--  TreeViewItem 선택하였을 때, BorderBrush (Border 테두리) 색상(Yellow - Black 계열) 변경 (2023.10.30 minjae)  -->
                             <Setter TargetName="TreeViewItemBorder"
                                     Property="Border.BorderBrush"                     
                                     Value="{DynamicResource SelectedItemBorderBrush}" />
 
-                            <!--  TreeViewItem 선택하였을 때, BorderThickness (Border 테두리 두께) Value="3" 변경 (2023.10.30 jbh)  -->
+                            <!--  TreeViewItem 선택하였을 때, BorderThickness (Border 테두리 두께) Value="3" 변경 (2023.10.30 minjae)  -->
                             <!--<Setter TargetName="TreeViewItemBorder"
                                     Property="Border.BorderThickness"                     
                                     Value="3"  />-->
 
-                            <!--  TreeViewItem 선택하였을 때, 데이터 출력하는 TextBlock ("Foreground" - 글자 색상) 하얀색(SystemColors.HighlightTextBrushKey) 변경 (2023.10.30 jbh)  -->
+                            <!--  TreeViewItem 선택하였을 때, 데이터 출력하는 TextBlock ("Foreground" - 글자 색상) 하얀색(SystemColors.HighlightTextBrushKey) 변경 (2023.10.30 minjae)  -->
                             <Setter TargetName="TreeViewItemBorder"
                                     Property="TextElement.Foreground"                   
                                     Value="{DynamicResource {x:Static SystemColors.HighlightTextBrushKey}}" />
 
-                            <!--  TODO : TreeViewItem 선택하였을 때, 그림자 처리(Border.BitmapEffect) 필요시 구현 예정 (2023.10.30 jbh) -->
+                            <!--  TODO : TreeViewItem 선택하였을 때, 그림자 처리(Border.BitmapEffect) 필요시 구현 예정 (2023.10.30 minjae) -->
                             <!--  <Setter TargetName="TreeViewItemBorder"
                                           Property="Border.BitmapEffect"                  
                                           Value="{StaticResource DropShadowEffect}" />  -->

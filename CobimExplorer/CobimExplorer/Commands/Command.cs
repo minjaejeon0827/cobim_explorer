@@ -8,7 +8,7 @@ using System.Windows.Input;
 
 namespace CobimExplorer.Commands
 {
-    // TODO : Command 클래스 구현시 참고 URL - https://blog.naver.com/PostView.naver?blogId=goldrushing&logNo=221243250136 (2023.07.12 jbh)
+    // TODO : Command 클래스 구현시 참고 URL - https://blog.naver.com/PostView.naver?blogId=goldrushing&logNo=221243250136 (2023.07.12 minjae)
     public abstract class Command : ICommand
     {
         #region 프로퍼티 

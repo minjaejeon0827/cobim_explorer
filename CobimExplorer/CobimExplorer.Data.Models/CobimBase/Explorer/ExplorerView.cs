@@ -78,7 +78,7 @@ namespace CobimExplorer.Data.Models.CobimBase.Explorer
 
         #region 생성자
 
-        // TODO : 생성자 "ExplorerView()" 탐색기 화면 뷰모델(ExplorerVM.cs)에서 필요시 호출해서 ExplorerView 클래스 객체 생성 예정 (2023.11.21 jbh)
+        // TODO : 생성자 "ExplorerView()" 탐색기 화면 뷰모델(ExplorerVM.cs)에서 필요시 호출해서 ExplorerView 클래스 객체 생성 예정 (2023.11.21 minjae)
         public ExplorerView() : base() { }
 
         #endregion 생성자
@@ -87,7 +87,7 @@ namespace CobimExplorer.Data.Models.CobimBase.Explorer
 
 #nullable enable   // 참조 타입 변수라도 null을 대입하면 경고
 
-        // TODO : 아래 주석친 메서드 "SetData" 필요시 참고 (2024.10.31 jbh)
+        // TODO : 아래 주석친 메서드 "SetData" 필요시 참고 (2024.10.31 minjae)
         /// <summary>
         /// 데이터 모델 클래스 CefSharpExplorerView.cs에 속하는
         /// 데이터 프로퍼티에 값 셋팅 (또는 값 복제)
@@ -306,7 +306,7 @@ namespace CobimExplorer.Data.Models.CobimBase.Explorer
 
         #region 컨테이너에 속한 파일(확장자 .rvt) Revit 응용 프로그램 열기 작업시 필수 정보 
 
-        // TODO : 필요시 메서드 "SetOpenFilePack" 사용 예정 (2024.10.29 jbh)
+        // TODO : 필요시 메서드 "SetOpenFilePack" 사용 예정 (2024.10.29 minjae)
         /// <summary>
         /// 컨테이너에 속한 파일(확장자 .rvt) Revit 응용 프로그램 열기 작업시 필수 정보 값 셋팅
         /// </summary>
@@ -315,7 +315,7 @@ namespace CobimExplorer.Data.Models.CobimBase.Explorer
         //     _OpenFilePack = openFilePack;
         // }
 
-        // TODO : 필요시 메서드 "GetOpenFilePack" 사용 예정 (2024.10.29 jbh)
+        // TODO : 필요시 메서드 "GetOpenFilePack" 사용 예정 (2024.10.29 minjae)
         /// <summary>
         /// 컨테이너에 속한 파일(확장자 .rvt) Revit 응용 프로그램 열기 작업시 필수 정보 가져오기 
         /// </summary>
@@ -399,7 +399,7 @@ namespace CobimExplorer.Data.Models.CobimBase.Explorer
 
     #region EnumLinkedRelation
 
-    // TODO : enum 열거형 구조체 "EnumLinkedRelation" 변수 "EXISTENCE" 필요시 사용 예정 (2023.11.29 jbh)
+    // TODO : enum 열거형 구조체 "EnumLinkedRelation" 변수 "EXISTENCE" 필요시 사용 예정 (2023.11.29 minjae)
     /// <summary>
     /// 참조/연관 컨테이너 관계 표현 
     /// </summary>
@@ -427,8 +427,8 @@ namespace CobimExplorer.Data.Models.CobimBase.Explorer
 
         // TODO : 탐색기 화면 뷰(ExplorerV.xaml) -> 컨텍스트 메뉴 "체크아웃" 클릭시 멀티 바인딩 대상 중 "exp_FolderId" 제외함.
         //        제외한 사유는 "exp_FolderId" 설정시 탐색기 뷰모델(ExplorerVM.cs) -> 컨테이너 리스트 생성 비동기 메서드 "ContainerListCreateAsync"
-        //        실행 결과 데이터 정보가 변경되어 컨테이너 리스트 화면이 바뀌므로 해당 프로퍼티는 멀티 바인딩 대상에서 제외 처리함. (2023.12.13 jbh) 
-        //        하여 아래 enum 열거형 구조체 EnumCheckOut 멤버 변수 FOLDERID 또한 사용 제외 (2023.12.13 jbh)
+        //        실행 결과 데이터 정보가 변경되어 컨테이너 리스트 화면이 바뀌므로 해당 프로퍼티는 멀티 바인딩 대상에서 제외 처리함. (2023.12.13 minjae) 
+        //        하여 아래 enum 열거형 구조체 EnumCheckOut 멤버 변수 FOLDERID 또한 사용 제외 (2023.12.13 minjae)
         // [Description("folderId")]   // 폴더_아이디
         // FOLDERID = 3,
         [Description("fileId")]   // 파일_아이디
@@ -474,17 +474,17 @@ namespace CobimExplorer.Data.Models.CobimBase.Explorer
         CONTAINERID = 2,
         [Description("folderId")]    // 폴더_아이디
         FOLDERID = 3,
-        // TODO : enum 열거형 구조체 EnumCheckIn 멤버 변수 "UPLOADFILES" 필요시 사용 예정 (2023.12.05 jbh)
+        // TODO : enum 열거형 구조체 EnumCheckIn 멤버 변수 "UPLOADFILES" 필요시 사용 예정 (2023.12.05 minjae)
         // [Description("uploadFiles")]  // 업로드_파일
         // UPLOADFILES = 4,
         [Description("fileId")]      // 파일_아이디
         FILEID = 4,
         // TODO : 추후 체크인 구현시 업로드 하려는 파일명(UPLOAD_FILENAME)과 기존 체크인 된 파일명(FILENAME)이 다를 경우
-        //        enum 열거형 구조체 EnumCheckIn 멤버 변수 "FILENAME" 사용 예정 (2023.12.05 jbh)
+        //        enum 열거형 구조체 EnumCheckIn 멤버 변수 "FILENAME" 사용 예정 (2023.12.05 minjae)
         [Description("fileNm")]      // 파일명
         FILENAME = 5,
 
-        // TODO : enum 열거형 구조체 EnumCheckIn 멤버 변수 "FILESIZE" 필요시 사용 예정 (2023.12.05 jbh)
+        // TODO : enum 열거형 구조체 EnumCheckIn 멤버 변수 "FILESIZE" 필요시 사용 예정 (2023.12.05 minjae)
         // [Description("fileSize")]     // 파일_사이즈
         // FILESIZE = 6                  
         [Description("revsnVal")]        // 업로드_전_파일_버전
@@ -517,7 +517,7 @@ namespace CobimExplorer.Data.Models.CobimBase.Explorer
         CONTAINERID = 2,
         [Description("fileNm")]   // 파일명
         FILENAME = 3,
-        // TODO : enum 열거형 구조체 EnumCancelWork 멤버 변수 "WORKUSERID" 필요시 사용 예정 (2023.12.20 jbh)
+        // TODO : enum 열거형 구조체 EnumCancelWork 멤버 변수 "WORKUSERID" 필요시 사용 예정 (2023.12.20 minjae)
         // [Description("작업중인_사용자_아이디")]
         // WORKUSERID = 3,
         [Description("Tenant")]   // 테넌트 아이디
@@ -548,7 +548,7 @@ namespace CobimExplorer.Data.Models.CobimBase.Explorer
 
     #endregion EnumOpenFile
 
-    // TODO : TreeView Multi Level (프로젝트 - 팀 - 폴더 - 서브폴더 / 파일) 구현 (2023.09.18 jbh)
+    // TODO : TreeView Multi Level (프로젝트 - 팀 - 폴더 - 서브폴더 / 파일) 구현 (2023.09.18 minjae)
     // 참고 URL - https://stackoverflow.com/questions/50760316/wpf-treeview-with-three-levels-in
     /// <summary>
     /// 프로젝트, 팀, 폴더, 연관 컨테이너 정보 Tree interface
@@ -660,7 +660,7 @@ namespace CobimExplorer.Data.Models.CobimBase.Explorer
         public string exp_TeamId { get; set; }
 
 
-        // TODO : 프로퍼티 "exp_TeamName" 필요시 사용 예정 (2023.10.23 jbh)
+        // TODO : 프로퍼티 "exp_TeamName" 필요시 사용 예정 (2023.10.23 minjae)
         /// <summary>
         /// 화면 우측 상단 팀 이름 출력할 때 사용할 바인딩 객체 "exp_TeamName"
         /// </summary>
@@ -677,7 +677,7 @@ namespace CobimExplorer.Data.Models.CobimBase.Explorer
         //public Dictionary<string, object> TeamDataInfo { get; set; } = new Dictionary<string, object>();
         public Dictionary<string, object> TeamDataInfo { get; set; }
 
-        // TODO : 소속된 팀의 사용자 리스트 필요시 사용 예정 (2023.09.18 jbh)
+        // TODO : 소속된 팀의 사용자 리스트 필요시 사용 예정 (2023.09.18 minjae)
         /// <summary>
         /// 소속된 팀의 사용자 리스트 
         /// </summary>
@@ -791,7 +791,7 @@ namespace CobimExplorer.Data.Models.CobimBase.Explorer
         /// </summary>
         public string exp_FileName { get; set; }
 
-        // TODO : 파일 하위 자식 "ChildNodes" 필요시 사용 예정 (2023.09.18 jbh)
+        // TODO : 파일 하위 자식 "ChildNodes" 필요시 사용 예정 (2023.09.18 minjae)
         /// <summary>
         /// 파일 하위 자식 노드
         /// </summary>
@@ -799,7 +799,7 @@ namespace CobimExplorer.Data.Models.CobimBase.Explorer
         //{
         //    get
         //    {
-        // TODO : if 조건절에 == null 보다 빠른 is null 연산자 사용(2023.11.24 jbh)
+        // TODO : if 조건절에 == null 보다 빠른 is null 연산자 사용(2023.11.24 minjae)
         //        참고 URL - https://husk321.tistory.com/405
         //        // 싱글톤 패턴 
         //        if (_ChildNodes is null)
@@ -817,7 +817,7 @@ namespace CobimExplorer.Data.Models.CobimBase.Explorer
         /// </summary>
         public List<Dictionary<string, object>> FileItems { get; set; }
 
-        // TODO : 공유 컨테이너 리스트 "SharedContainerList" 추후 필요시 사용 예정 (2023.09.22 jbh)
+        // TODO : 공유 컨테이너 리스트 "SharedContainerList" 추후 필요시 사용 예정 (2023.09.22 minjae)
         /// <summary>
         /// 공유 컨테이너 리스트
         /// </summary>
@@ -1063,7 +1063,7 @@ namespace CobimExplorer.Data.Models.CobimBase.Explorer
         /// </summary>
         public string exp_FileTypeCodeName { get; set; }
 
-        // TODO : 프로퍼티 "exp_SoftMetaName" 필요시 사용 예정 (2023.10.23 jbh)
+        // TODO : 프로퍼티 "exp_SoftMetaName" 필요시 사용 예정 (2023.10.23 minjae)
         /// <summary>
         /// 소프트웨어 - metaName
         /// </summary>
@@ -1074,7 +1074,7 @@ namespace CobimExplorer.Data.Models.CobimBase.Explorer
         /// </summary>
         public string exp_SoftName { get; set; }
 
-        // TODO : 프로퍼티 "exp_SoftVerMetaName" 필요시 사용 예정 (2023.10.23 jbh)
+        // TODO : 프로퍼티 "exp_SoftVerMetaName" 필요시 사용 예정 (2023.10.23 minjae)
         /// <summary>
         /// 소프트웨어버전 - metaName
         /// </summary>
@@ -1085,7 +1085,7 @@ namespace CobimExplorer.Data.Models.CobimBase.Explorer
         /// </summary>
         public string exp_SoftVer { get; set; }
 
-        // TODO : 프로퍼티 "exp_KeywordTagMetaName" 필요시 사용 예정 (2023.10.23 jbh)
+        // TODO : 프로퍼티 "exp_KeywordTagMetaName" 필요시 사용 예정 (2023.10.23 minjae)
         /// <summary>
         /// 키워드/태그 - metaName
         /// </summary>
@@ -1181,13 +1181,13 @@ namespace CobimExplorer.Data.Models.CobimBase.Explorer
         /// </summary>
         public List<Dictionary<string, object>> LinkedNodeInfoList { get; set; }
 
-        // TODO : 연관된 컨테이너 메타 데이터 리스트 객체 "LinkedNodeMetaDataList" 필요시 사용 예정 (2023.11.01 jbh)
+        // TODO : 연관된 컨테이너 메타 데이터 리스트 객체 "LinkedNodeMetaDataList" 필요시 사용 예정 (2023.11.01 minjae)
         /// <summary>
         /// 연관된 컨테이너 메타 데이터 리스트 
         /// </summary>
         public List<Dictionary<string, object>> LinkedNodeMetaDataList { get; set; }
 
-        // TODO : 추후 필요시 "컨테이너 정보, 파일정보" 리스트 객체 containerDetailList 구현 예정 (2023.10.17 jbh)
+        // TODO : 추후 필요시 "컨테이너 정보, 파일정보" 리스트 객체 containerDetailList 구현 예정 (2023.10.17 minjae)
         /// <summary>
         /// 컨테이너 정보, 파일정보 리스트
         /// </summary>
@@ -1208,7 +1208,7 @@ namespace CobimExplorer.Data.Models.CobimBase.Explorer
         /// </summary>
         public List<Dictionary<string, object>> MetaDataList { get; set; }
 
-        // TODO : 추후 필요시 "마일스톤 업무" 리스트 객체 TaskDetailList 구현 예정 (2023.10.17 jbh)
+        // TODO : 추후 필요시 "마일스톤 업무" 리스트 객체 TaskDetailList 구현 예정 (2023.10.17 minjae)
         /// <summary>
         /// 마일스톤 업무 리스트
         /// </summary>
@@ -1235,7 +1235,7 @@ namespace CobimExplorer.Data.Models.CobimBase.Explorer
         /// </summary>
         public List<TaskDetailView> TaskDetailList { get; set; }
 
-        // TODO : 컨테이너 정보 영역 "파일유형" ComboBox 구현시 바인딩할 BindableCollection 객체 FileType 필요시 사용 예정 (2023.10.20 jbh)
+        // TODO : 컨테이너 정보 영역 "파일유형" ComboBox 구현시 바인딩할 BindableCollection 객체 FileType 필요시 사용 예정 (2023.10.20 minjae)
         // 참고 URL - https://www.reddit.com/r/csharp/comments/126sdo6/wpf_binding_a_dictionary_value_to_a_combobox/
         // 참고 2 URL - https://www.codeproject.com/Questions/536820/WPFplusBindplusandpluspopulateplusapluscombobox
         /// <summary>
@@ -1243,7 +1243,7 @@ namespace CobimExplorer.Data.Models.CobimBase.Explorer
         /// </summary>
         // public BindableCollection<FileTypeView> FileType { get; set; }
 
-        // TODO : 컨테이너 정보 영역 "마일스톤" ComboBox 구현시 바인딩할 BindableCollection 객체 TaskDetailType 필요시 사용 예정 (2023.10.20 jbh)
+        // TODO : 컨테이너 정보 영역 "마일스톤" ComboBox 구현시 바인딩할 BindableCollection 객체 TaskDetailType 필요시 사용 예정 (2023.10.20 minjae)
         // 참고 URL - https://www.reddit.com/r/csharp/comments/126sdo6/wpf_binding_a_dictionary_value_to_a_combobox/
         // 참고 2 URL - https://www.codeproject.com/Questions/536820/WPFplusBindplusandpluspopulateplusapluscombobox
         /// <summary>
@@ -1273,14 +1273,14 @@ namespace CobimExplorer.Data.Models.CobimBase.Explorer
     // TODO : 뷰(ExplorerV.xaml)에 구현된 ComboBox 파일유형, 마일스톤에서 사용하는 속성 SelectedItem에 바인딩되는
     //        바인딩되는 UpdateParam클래스 객체 Param의 바인딩 객체(FileTypeCodeInfo, taskDetail)에 저장된 값 변경시 
     //        뷰모델 (ExplorerVM.cs)에 해당 바인딩 객체(FileTypeCodeInfo, taskDetail)의 값이 변경되었다는 프로퍼티 체인지 이벤트(NotifyOfPropertyChange();)를
-    //        실행하기 위해서 UpdateParam 클래스는 부모 클래스로 ValidatingModelBase를 상속 받도록 구현 (2023.10.23 jbh)
+    //        실행하기 위해서 UpdateParam 클래스는 부모 클래스로 ValidatingModelBase를 상속 받도록 구현 (2023.10.23 minjae)
     // 참고 URL - https://kaki104.tistory.com/749
     /// <summary>
     /// ComboBox "파일유형" List 생성 메서드 ContainerInfoTypeListCreate 실행시 ComboBox에 할당될 데이터 목록
     /// </summary>
     public class Param : BindableBase
     {
-        // TODO : 수정 메서드 "UpdateAsync" 실행시 전달할 수정된 메서드 파라미터 필요시 추가 예정 (2023.10.23 jbh)
+        // TODO : 수정 메서드 "UpdateAsync" 실행시 전달할 수정된 메서드 파라미터 필요시 추가 예정 (2023.10.23 minjae)
 
         /// <summary>
         /// 파일유형
@@ -1288,7 +1288,7 @@ namespace CobimExplorer.Data.Models.CobimBase.Explorer
         public FileTypeView FileTypeCodeInfo { get => _FileTypeCodeInfo; set { _FileTypeCodeInfo = value; NotifyOfPropertyChange(); } }
         private FileTypeView _FileTypeCodeInfo;
 
-        // TODO : ComboxBox - 마일스톤의 경우 추후 인재 INC 측에서 마일스톤 RestAPI 공유 받은 후 개발 진행 (2023.10.23 jbh)
+        // TODO : ComboxBox - 마일스톤의 경우 추후 인재 INC 측에서 마일스톤 RestAPI 공유 받은 후 개발 진행 (2023.10.23 minjae)
         /// <summary>
         /// 마일스톤
         /// </summary>
@@ -1339,7 +1339,7 @@ namespace CobimExplorer.Data.Models.CobimBase.Explorer
         #endregion Sample
     }
 
-    // TODO : ComboxBox - 마일스톤의 경우 추후 인재 INC 측에서 마일스톤 RestAPI 공유 받은 후 개발 진행 (2023.10.23 jbh)
+    // TODO : ComboxBox - 마일스톤의 경우 추후 인재 INC 측에서 마일스톤 RestAPI 공유 받은 후 개발 진행 (2023.10.23 minjae)
     /// <summary>
     /// ComboBox - 마일스톤
     /// </summary>
@@ -1382,7 +1382,7 @@ namespace CobimExplorer.Data.Models.CobimBase.Explorer
         /// </summary>
         public string exp_TreeName { get; set; }
 
-        // TODO : 파일 하위 자식 "ChildNodes" 필요시 사용 예정 (2023.09.18 jbh)
+        // TODO : 파일 하위 자식 "ChildNodes" 필요시 사용 예정 (2023.09.18 minjae)
         /// <summary>
         /// 파일 하위 자식 노드
         /// </summary>
@@ -1391,7 +1391,7 @@ namespace CobimExplorer.Data.Models.CobimBase.Explorer
         //{
         //    get
         //    {
-        //        // TODO : if 조건절에 == null 보다 빠른 is null 연산자 사용 (2023.11.24 jbh)
+        //        // TODO : if 조건절에 == null 보다 빠른 is null 연산자 사용 (2023.11.24 minjae)
         //        // 참고 URL - https://husk321.tistory.com/405
         //        // 싱글톤 패턴 
         //        if (_ChildNodes is null)
@@ -1404,7 +1404,7 @@ namespace CobimExplorer.Data.Models.CobimBase.Explorer
         //}
         //private List<ITreeNode> _ChildNodes;
 
-        // TODO : 필요시 프로퍼티 LinkedNodeInfoDic 사용 예정 (2024.08.21 jbh)
+        // TODO : 필요시 프로퍼티 LinkedNodeInfoDic 사용 예정 (2024.08.21 minjae)
         /// <summary>
         /// 연관 컨테이너 정보(참조관계 - 부모/자식 컨테이너) Dictionary
         /// </summary>
@@ -1425,7 +1425,7 @@ namespace CobimExplorer.Data.Models.CobimBase.Explorer
         #endregion Sample
     }
 
-    // TODO : 컨텍스트 메뉴(ContextMenu) 정보 클래스 "ContextMenuView" 필요시 구현 예정 (2023.12.13 jbh)
+    // TODO : 컨텍스트 메뉴(ContextMenu) 정보 클래스 "ContextMenuView" 필요시 구현 예정 (2023.12.13 minjae)
     /// <summary>
     /// 컨텍스트 메뉴(ContextMenu) 정보 
     /// </summary>
@@ -1661,7 +1661,7 @@ namespace CobimExplorer.Data.Models.CobimBase.Explorer
         /// </summary>
         private string _FileName { get; set; }
 
-        // TODO : 파일 사이즈 프로퍼티 "_FileSize" 필요시 사용 예정 (2024.10.11 jbh)
+        // TODO : 파일 사이즈 프로퍼티 "_FileSize" 필요시 사용 예정 (2024.10.11 minjae)
         /// <summary>
         /// 파일 사이즈
         /// </summary>
@@ -1788,7 +1788,7 @@ namespace CobimExplorer.Data.Models.CobimBase.Explorer
         /// </summary>
         private string _Comment { get; set; }
 
-        // TODO : 파일 정보 프로퍼티 "_FilePack" 필요시 사용 예정 (2024.10.14 jbh)
+        // TODO : 파일 정보 프로퍼티 "_FilePack" 필요시 사용 예정 (2024.10.14 minjae)
         /// <summary>
         /// 파일 정보
         /// </summary>
@@ -1848,7 +1848,7 @@ namespace CobimExplorer.Data.Models.CobimBase.Explorer
 
         #region 파일 정보
 
-        // TODO : 파일 정보 값 셋팅 메서드 "SetFilePack" 필요시 사용 예정 (2024.10.14 jbh)
+        // TODO : 파일 정보 값 셋팅 메서드 "SetFilePack" 필요시 사용 예정 (2024.10.14 minjae)
         /// <summary>
         /// 파일 정보 값 셋팅 
         /// </summary>
@@ -1857,7 +1857,7 @@ namespace CobimExplorer.Data.Models.CobimBase.Explorer
         //     _FilePack = filePack;
         // }
 
-        // TODO : 파일 정보 가져오기 메서드 "GetFilePack" 필요시 사용 예정 (2024.10.14 jbh)
+        // TODO : 파일 정보 가져오기 메서드 "GetFilePack" 필요시 사용 예정 (2024.10.14 minjae)
         /// <summary>
         /// 파일 정보 가져오기
         /// </summary>
@@ -1884,13 +1884,13 @@ namespace CobimExplorer.Data.Models.CobimBase.Explorer
     {
         // TODO : ExplorerView.cs 소스파일에 속한
         //        컨테이너 작업 취소 정보 클래스 "CancelWorkPack"안에 속하는 프로퍼티 "projectId", "teamId", "containerId" 의 접근 제한자를 
-        //        private로 설정하면 오류 발생하여 접근 제한자를 public으로 수정함. (2024.11.04 jbh)
+        //        private로 설정하면 오류 발생하여 접근 제한자를 public으로 수정함. (2024.11.04 minjae)
         //        오류 발생 위치 - ExplorerRestServer.cs -> 비동기 메서드 "PostCancelWorkAsync" 
         //        -> 메서드 "JsonSerializer.Serialize" 호출하여 json 문자열(content)을 제대로 리턴 받지 못하고 오류 발생함. 
 
         // TODO : ExplorerView.cs 소스파일에 속한
         //        컨테이너 작업 취소 정보 클래스 "CancelWorkPack"안에 속하는 프로퍼티 "projectId", "teamId", "containerId" 프로퍼티 이름 
-        //        변경하면 오류 발생하여 수정 안 하고 그대로 유지함.(2024.11.04 jbh)
+        //        변경하면 오류 발생하여 수정 안 하고 그대로 유지함.(2024.11.04 minjae)
         //        오류 발생 위치 - ExplorerRestServer.cs -> 비동기 메서드 "PostCancelWorkAsync" 
         //        서버로 부터 제대로 리턴 받지 못하고 오류 발생함. 
 
@@ -2190,7 +2190,7 @@ namespace CobimExplorer.Data.Models.CobimBase.Explorer
 
     #region Sample
 
-    // TODO : 필요시 클래스 "CheckInPack" 참고 (2024.10.29 jbh)
+    // TODO : 필요시 클래스 "CheckInPack" 참고 (2024.10.29 minjae)
     /// <summary>
     /// 컨테이너 체크인 + 업로드
     /// </summary>
@@ -2207,7 +2207,7 @@ namespace CobimExplorer.Data.Models.CobimBase.Explorer
     //    // public string uploadFiles { get; set; }
     //    public FileStream uploadFiles { get; set; }
 
-    //    // TODO : 필요시 파일 아이디 프로퍼티 "fileId" 사용 예정 (2024.10.14 jbh)
+    //    // TODO : 필요시 파일 아이디 프로퍼티 "fileId" 사용 예정 (2024.10.14 minjae)
     //    /// <summary>
     //    /// 파일 아이디
     //    /// </summary>
@@ -2218,13 +2218,13 @@ namespace CobimExplorer.Data.Models.CobimBase.Explorer
     //    /// </summary>
     //    public string fileName { get; set; }
 
-    //    // TODO : 파일사이즈 프로퍼티 "fileSize" 필요시 사용 예정 (2023.12.05 jbh)
+    //    // TODO : 파일사이즈 프로퍼티 "fileSize" 필요시 사용 예정 (2023.12.05 minjae)
     //    /// <summary>
     //    /// 파일사이즈
     //    /// </summary>
     //    public string fileSize { get; set; }
 
-    //    // TODO : comment - Description 프로퍼티 "comment" 인재 INC와 소통 후 사용 예정 (2023.12.05 jbh)
+    //    // TODO : comment - Description 프로퍼티 "comment" 인재 INC와 소통 후 사용 예정 (2023.12.05 minjae)
     //    /// <summary>
     //    /// comment - Description
     //    /// </summary>
@@ -2244,7 +2244,7 @@ namespace CobimExplorer.Data.Models.CobimBase.Explorer
     //    #endregion Sample
     //}
 
-    // TODO : 필요시 클래스 "ContainerPack" 참고 (2024.10.29 jbh)
+    // TODO : 필요시 클래스 "ContainerPack" 참고 (2024.10.29 minjae)
     /// <summary>
     /// 컨테이너 정보
     /// </summary>
@@ -2287,7 +2287,7 @@ namespace CobimExplorer.Data.Models.CobimBase.Explorer
     //    #endregion Sample
     //}
 
-    // TODO : 필요시 클래스 "FilePack" 참고 (2024.10.29 jbh)
+    // TODO : 필요시 클래스 "FilePack" 참고 (2024.10.29 minjae)
     /// <summary>
     /// 파일 정보
     /// </summary>
@@ -2345,7 +2345,7 @@ namespace CobimExplorer.Data.Models.CobimBase.Explorer
     //    #endregion Sample
     //}
 
-    // TODO : 필요시 클래스 "CheckOut" 참고 (2024.10.29 jbh)
+    // TODO : 필요시 클래스 "CheckOut" 참고 (2024.10.29 minjae)
     /// <summary>
     /// 컨테이너 체크아웃
     /// </summary>
@@ -2396,7 +2396,7 @@ namespace CobimExplorer.Data.Models.CobimBase.Explorer
     //    #endregion Sample
     //}
 
-    // TODO : 필요시 클래스 ExplorerView 참고 (2024.10.29 jbh)
+    // TODO : 필요시 클래스 ExplorerView 참고 (2024.10.29 minjae)
     /// <summary>
     /// CobimExplorer
     /// 탐색기 화면 뷰모델(ExplorerVM.cs) 데이터 모델
@@ -2424,7 +2424,7 @@ namespace CobimExplorer.Data.Models.CobimBase.Explorer
     //    /// </summary>
     //    public string exp_Comment { get; set; }
 
-    //    // TODO : 체크인 업로드 요청 데이터 프로퍼티 "CheckIn" 필요시 사용 예정 (2023.12.05 jbh)
+    //    // TODO : 체크인 업로드 요청 데이터 프로퍼티 "CheckIn" 필요시 사용 예정 (2023.12.05 minjae)
     //    /// <summary>
     //    /// 체크인 업로드 요청 데이터
     //    /// </summary>
@@ -2443,7 +2443,7 @@ namespace CobimExplorer.Data.Models.CobimBase.Explorer
 
     //    #region 생성자
 
-    //    // TODO : 생성자 "ExplorerView()" 탐색기 화면 뷰모델(ExplorerVM.cs)에서 필요시 호출해서 ExplorerView 클래스 객체 생성 예정 (2023.11.21 jbh)
+    //    // TODO : 생성자 "ExplorerView()" 탐색기 화면 뷰모델(ExplorerVM.cs)에서 필요시 호출해서 ExplorerView 클래스 객체 생성 예정 (2023.11.21 minjae)
     //    public ExplorerView() : base() { }
 
 
@@ -2468,7 +2468,7 @@ namespace CobimExplorer.Data.Models.CobimBase.Explorer
     //    // public string uploadFiles { get; set; }
     //    public FileStream uploadFiles { get; set; }
 
-    //    // TODO : 필요시 파일 아이디 프로퍼티 "fileId" 사용 예정 (2024.10.14 jbh)
+    //    // TODO : 필요시 파일 아이디 프로퍼티 "fileId" 사용 예정 (2024.10.14 minjae)
     //    /// <summary>
     //    /// 파일 아이디
     //    /// </summary>
@@ -2479,13 +2479,13 @@ namespace CobimExplorer.Data.Models.CobimBase.Explorer
     //    /// </summary>
     //    public string fileName { get; set; }
 
-    //    // TODO : 파일사이즈 프로퍼티 "fileSize" 필요시 사용 예정 (2023.12.05 jbh)
+    //    // TODO : 파일사이즈 프로퍼티 "fileSize" 필요시 사용 예정 (2023.12.05 minjae)
     //    /// <summary>
     //    /// 파일사이즈
     //    /// </summary>
     //    public string fileSize { get; set; }
 
-    //    // TODO : comment - Description 프로퍼티 "comment" 인재 INC와 소통 후 사용 예정 (2023.12.05 jbh)
+    //    // TODO : comment - Description 프로퍼티 "comment" 인재 INC와 소통 후 사용 예정 (2023.12.05 minjae)
     //    /// <summary>
     //    /// comment - Description
     //    /// </summary>
@@ -2571,7 +2571,7 @@ namespace CobimExplorer.Data.Models.CobimBase.Explorer
 
     //#region EnumLinkedRelation
 
-    //// TODO : enum 열거형 구조체 "EnumLinkedRelation" 변수 "EXISTENCE" 필요시 사용 예정 (2023.11.29 jbh)
+    //// TODO : enum 열거형 구조체 "EnumLinkedRelation" 변수 "EXISTENCE" 필요시 사용 예정 (2023.11.29 minjae)
     ///// <summary>
     ///// 참조/연관 컨테이너 관계 표현 
     ///// </summary>
@@ -2588,7 +2588,7 @@ namespace CobimExplorer.Data.Models.CobimBase.Explorer
 
     //#region EnumCheckOut
 
-    //// TODO : Enum 열거형 구조체 멤버변수 "FILEID", "FILENAME" 필요시 사용 예정 (2023.11.28 jbh)
+    //// TODO : Enum 열거형 구조체 멤버변수 "FILEID", "FILENAME" 필요시 사용 예정 (2023.11.28 minjae)
     //public enum EnumCheckOut : int
     //{
     //    [Description("프로젝트_아이디")]
@@ -2600,8 +2600,8 @@ namespace CobimExplorer.Data.Models.CobimBase.Explorer
 
     //    // TODO : 탐색기 화면 뷰(ExplorerV.xaml) -> 컨텍스트 메뉴 "체크아웃" 클릭시 멀티 바인딩 대상 중 "exp_FolderId" 제외함.
     //    //        제외한 사유는 "exp_FolderId" 설정시 탐색기 뷰모델(ExplorerVM.cs) -> 컨테이너 리스트 생성 비동기 메서드 "ContainerListCreateAsync"
-    //    //        실행 결과 데이터 정보가 변경되어 컨테이너 리스트 화면이 바뀌므로 해당 프로퍼티는 멀티 바인딩 대상에서 제외 처리함. (2023.12.13 jbh) 
-    //    //        하여 아래 enum 열거형 구조체 EnumCheckOut 멤버 변수 FOLDERID 또한 사용 제외 (2023.12.13 jbh)
+    //    //        실행 결과 데이터 정보가 변경되어 컨테이너 리스트 화면이 바뀌므로 해당 프로퍼티는 멀티 바인딩 대상에서 제외 처리함. (2023.12.13 minjae) 
+    //    //        하여 아래 enum 열거형 구조체 EnumCheckOut 멤버 변수 FOLDERID 또한 사용 제외 (2023.12.13 minjae)
     //    //[Description("폴더_아이디")]
     //    //FOLDERID = 3,
     //    [Description("파일_아이디")]
@@ -2640,18 +2640,18 @@ namespace CobimExplorer.Data.Models.CobimBase.Explorer
     //    CONTAINERID = 2,
     //    [Description("폴더_아이디")]
     //    FOLDERID = 3,
-    //    // TODO : enum 열거형 구조체 EnumCheckIn 멤버 변수 "UPLOADFILES" 필요시 사용 예정 (2023.12.05 jbh)
+    //    // TODO : enum 열거형 구조체 EnumCheckIn 멤버 변수 "UPLOADFILES" 필요시 사용 예정 (2023.12.05 minjae)
     //    //[Description("업로드_파일")]
     //    //UPLOADFILES = 4,
     //    [Description("파일_아이디")]
     //    FILEID = 4,
     //    // TODO : 추후 체크인 구현시 업로드 하려는 파일명(UPLOAD_FILENAME)과 기존 체크인 된 파일명(FILENAME)이 다를 경우
-    //    //        enum 열거형 구조체 EnumCheckIn 멤버 변수 "FILENAME" 사용 예정 (2023.12.05 jbh)
+    //    //        enum 열거형 구조체 EnumCheckIn 멤버 변수 "FILENAME" 사용 예정 (2023.12.05 minjae)
     //    // [Description("파일명")]
     //    // FILENAME = 5,
     //    [Description("업로드_파일명")]
     //    UPLOAD_FILENAME = 5,
-    //    // TODO : enum 열거형 구조체 EnumCheckIn 멤버 변수 "FILESIZE" 필요시 사용 예정 (2023.12.05 jbh)
+    //    // TODO : enum 열거형 구조체 EnumCheckIn 멤버 변수 "FILESIZE" 필요시 사용 예정 (2023.12.05 minjae)
     //    // [Description("파일_사이즈")]
     //    // FILESIZE    = 6
     //    [Description("업로드_전_파일_버전")]
@@ -2672,14 +2672,14 @@ namespace CobimExplorer.Data.Models.CobimBase.Explorer
     //    TEAMID = 1,
     //    [Description("작업취소_컨테이너_아이디")]
     //    CANCELWORK_CONTAINERID = 2,
-    //    // TODO : enum 열거형 구조체 EnumCancelWork 멤버 변수 "WORKUSERID" 필요시 사용 예정 (2023.12.20 jbh)
+    //    // TODO : enum 열거형 구조체 EnumCancelWork 멤버 변수 "WORKUSERID" 필요시 사용 예정 (2023.12.20 minjae)
     //    //[Description("작업중인_사용자_아이디")]
     //    //WORKUSERID = 3
     //}
 
     //#endregion EnumCancelWork
 
-    //// TODO : TreeView Multi Level (프로젝트 - 팀 - 폴더 - 서브폴더 / 파일) 구현 (2023.09.18 jbh)
+    //// TODO : TreeView Multi Level (프로젝트 - 팀 - 폴더 - 서브폴더 / 파일) 구현 (2023.09.18 minjae)
     //// 참고 URL - https://stackoverflow.com/questions/50760316/wpf-treeview-with-three-levels-in
     ///// <summary>
     ///// 프로젝트, 팀, 폴더, 연관 컨테이너 정보 Tree interface
@@ -2791,7 +2791,7 @@ namespace CobimExplorer.Data.Models.CobimBase.Explorer
     //    public string exp_TeamId { get; set; }
 
 
-    //    // TODO : 프로퍼티 "exp_TeamName" 필요시 사용 예정 (2023.10.23 jbh)
+    //    // TODO : 프로퍼티 "exp_TeamName" 필요시 사용 예정 (2023.10.23 minjae)
     //    /// <summary>
     //    /// 화면 우측 상단 팀 이름 출력할 때 사용할 바인딩 객체 "exp_TeamName"
     //    /// </summary>
@@ -2808,7 +2808,7 @@ namespace CobimExplorer.Data.Models.CobimBase.Explorer
     //    //public Dictionary<string, object> TeamDataInfo { get; set; } = new Dictionary<string, object>();
     //    public Dictionary<string, object> TeamDataInfo { get; set; }
 
-    //    // TODO : 소속된 팀의 사용자 리스트 필요시 사용 예정 (2023.09.18 jbh)
+    //    // TODO : 소속된 팀의 사용자 리스트 필요시 사용 예정 (2023.09.18 minjae)
     //    /// <summary>
     //    /// 소속된 팀의 사용자 리스트 
     //    /// </summary>
@@ -2922,7 +2922,7 @@ namespace CobimExplorer.Data.Models.CobimBase.Explorer
     //    /// </summary>
     //    public string exp_FileName { get; set; }
 
-    //    // TODO : 파일 하위 자식 "ChildNodes" 필요시 사용 예정 (2023.09.18 jbh)
+    //    // TODO : 파일 하위 자식 "ChildNodes" 필요시 사용 예정 (2023.09.18 minjae)
     //    /// <summary>
     //    /// 파일 하위 자식 노드
     //    /// </summary>
@@ -2930,7 +2930,7 @@ namespace CobimExplorer.Data.Models.CobimBase.Explorer
     //    //{
     //    //    get
     //    //    {
-    //    // TODO : if 조건절에 == null 보다 빠른 is null 연산자 사용(2023.11.24 jbh)
+    //    // TODO : if 조건절에 == null 보다 빠른 is null 연산자 사용(2023.11.24 minjae)
     //    //        참고 URL - https://husk321.tistory.com/405
     //    //        // 싱글톤 패턴 
     //    //        if (_ChildNodes is null)
@@ -2948,7 +2948,7 @@ namespace CobimExplorer.Data.Models.CobimBase.Explorer
     //    /// </summary>
     //    public List<Dictionary<string, object>> FileItems { get; set; }
 
-    //    // TODO : 공유 컨테이너 리스트 "SharedContainerList" 추후 필요시 사용 예정 (2023.09.22 jbh)
+    //    // TODO : 공유 컨테이너 리스트 "SharedContainerList" 추후 필요시 사용 예정 (2023.09.22 minjae)
     //    /// <summary>
     //    /// 공유 컨테이너 리스트
     //    /// </summary>
@@ -3194,7 +3194,7 @@ namespace CobimExplorer.Data.Models.CobimBase.Explorer
     //    /// </summary>
     //    public string exp_FileTypeCodeName { get; set; }
 
-    //    // TODO : 프로퍼티 "exp_SoftMetaName" 필요시 사용 예정 (2023.10.23 jbh)
+    //    // TODO : 프로퍼티 "exp_SoftMetaName" 필요시 사용 예정 (2023.10.23 minjae)
     //    /// <summary>
     //    /// 소프트웨어 - metaName
     //    /// </summary>
@@ -3205,7 +3205,7 @@ namespace CobimExplorer.Data.Models.CobimBase.Explorer
     //    /// </summary>
     //    public string exp_SoftName { get; set; }
 
-    //    // TODO : 프로퍼티 "exp_SoftVerMetaName" 필요시 사용 예정 (2023.10.23 jbh)
+    //    // TODO : 프로퍼티 "exp_SoftVerMetaName" 필요시 사용 예정 (2023.10.23 minjae)
     //    /// <summary>
     //    /// 소프트웨어버전 - metaName
     //    /// </summary>
@@ -3216,7 +3216,7 @@ namespace CobimExplorer.Data.Models.CobimBase.Explorer
     //    /// </summary>
     //    public string exp_SoftVer { get; set; }
 
-    //    // TODO : 프로퍼티 "exp_KeywordTagMetaName" 필요시 사용 예정 (2023.10.23 jbh)
+    //    // TODO : 프로퍼티 "exp_KeywordTagMetaName" 필요시 사용 예정 (2023.10.23 minjae)
     //    /// <summary>
     //    /// 키워드/태그 - metaName
     //    /// </summary>
@@ -3312,13 +3312,13 @@ namespace CobimExplorer.Data.Models.CobimBase.Explorer
     //    /// </summary>
     //    public List<Dictionary<string, object>> LinkedNodeInfoList { get; set; }
 
-    //    // TODO : 연관된 컨테이너 메타 데이터 리스트 객체 "LinkedNodeMetaDataList" 필요시 사용 예정 (2023.11.01 jbh)
+    //    // TODO : 연관된 컨테이너 메타 데이터 리스트 객체 "LinkedNodeMetaDataList" 필요시 사용 예정 (2023.11.01 minjae)
     //    /// <summary>
     //    /// 연관된 컨테이너 메타 데이터 리스트 
     //    /// </summary>
     //    public List<Dictionary<string, object>> LinkedNodeMetaDataList { get; set; }
 
-    //    // TODO : 추후 필요시 "컨테이너 정보, 파일정보" 리스트 객체 containerDetailList 구현 예정 (2023.10.17 jbh)
+    //    // TODO : 추후 필요시 "컨테이너 정보, 파일정보" 리스트 객체 containerDetailList 구현 예정 (2023.10.17 minjae)
     //    /// <summary>
     //    /// 컨테이너 정보, 파일정보 리스트
     //    /// </summary>
@@ -3339,7 +3339,7 @@ namespace CobimExplorer.Data.Models.CobimBase.Explorer
     //    /// </summary>
     //    public List<Dictionary<string, object>> MetaDataList { get; set; }
 
-    //    // TODO : 추후 필요시 "마일스톤 업무" 리스트 객체 TaskDetailList 구현 예정 (2023.10.17 jbh)
+    //    // TODO : 추후 필요시 "마일스톤 업무" 리스트 객체 TaskDetailList 구현 예정 (2023.10.17 minjae)
     //    /// <summary>
     //    /// 마일스톤 업무 리스트
     //    /// </summary>
@@ -3366,7 +3366,7 @@ namespace CobimExplorer.Data.Models.CobimBase.Explorer
     //    /// </summary>
     //    public List<TaskDetailView> TaskDetailList { get; set; }
 
-    //    // TODO : 컨테이너 정보 영역 "파일유형" ComboBox 구현시 바인딩할 BindableCollection 객체 FileType 필요시 사용 예정 (2023.10.20 jbh)
+    //    // TODO : 컨테이너 정보 영역 "파일유형" ComboBox 구현시 바인딩할 BindableCollection 객체 FileType 필요시 사용 예정 (2023.10.20 minjae)
     //    // 참고 URL - https://www.reddit.com/r/csharp/comments/126sdo6/wpf_binding_a_dictionary_value_to_a_combobox/
     //    // 참고 2 URL - https://www.codeproject.com/Questions/536820/WPFplusBindplusandpluspopulateplusapluscombobox
     //    /// <summary>
@@ -3374,7 +3374,7 @@ namespace CobimExplorer.Data.Models.CobimBase.Explorer
     //    /// </summary>
     //    // public BindableCollection<FileTypeView> FileType { get; set; }
 
-    //    // TODO : 컨테이너 정보 영역 "마일스톤" ComboBox 구현시 바인딩할 BindableCollection 객체 TaskDetailType 필요시 사용 예정 (2023.10.20 jbh)
+    //    // TODO : 컨테이너 정보 영역 "마일스톤" ComboBox 구현시 바인딩할 BindableCollection 객체 TaskDetailType 필요시 사용 예정 (2023.10.20 minjae)
     //    // 참고 URL - https://www.reddit.com/r/csharp/comments/126sdo6/wpf_binding_a_dictionary_value_to_a_combobox/
     //    // 참고 2 URL - https://www.codeproject.com/Questions/536820/WPFplusBindplusandpluspopulateplusapluscombobox
     //    /// <summary>
@@ -3404,14 +3404,14 @@ namespace CobimExplorer.Data.Models.CobimBase.Explorer
     //// TODO : 뷰(ExplorerV.xaml)에 구현된 ComboBox 파일유형, 마일스톤에서 사용하는 속성 SelectedItem에 바인딩되는
     ////        바인딩되는 UpdateParam클래스 객체 Param의 바인딩 객체(FileTypeCodeInfo, taskDetail)에 저장된 값 변경시 
     ////        뷰모델 (ExplorerVM.cs)에 해당 바인딩 객체(FileTypeCodeInfo, taskDetail)의 값이 변경되었다는 프로퍼티 체인지 이벤트(NotifyOfPropertyChange();)를
-    ////        실행하기 위해서 UpdateParam 클래스는 부모 클래스로 ValidatingModelBase를 상속 받도록 구현 (2023.10.23 jbh)
+    ////        실행하기 위해서 UpdateParam 클래스는 부모 클래스로 ValidatingModelBase를 상속 받도록 구현 (2023.10.23 minjae)
     //// 참고 URL - https://kaki104.tistory.com/749
     ///// <summary>
     ///// ComboBox "파일유형" List 생성 메서드 ContainerInfoTypeListCreate 실행시 ComboBox에 할당될 데이터 목록
     ///// </summary>
     //public class Param : BindableBase
     //{
-    //    // TODO : 수정 메서드 "UpdateAsync" 실행시 전달할 수정된 메서드 파라미터 필요시 추가 예정 (2023.10.23 jbh)
+    //    // TODO : 수정 메서드 "UpdateAsync" 실행시 전달할 수정된 메서드 파라미터 필요시 추가 예정 (2023.10.23 minjae)
 
     //    /// <summary>
     //    /// 파일유형
@@ -3419,7 +3419,7 @@ namespace CobimExplorer.Data.Models.CobimBase.Explorer
     //    public FileTypeView FileTypeCodeInfo { get => _FileTypeCodeInfo; set { _FileTypeCodeInfo = value; NotifyOfPropertyChange(); } }
     //    private FileTypeView _FileTypeCodeInfo;
 
-    //    // TODO : ComboxBox - 마일스톤의 경우 추후 인재 INC 측에서 마일스톤 RestAPI 공유 받은 후 개발 진행 (2023.10.23 jbh)
+    //    // TODO : ComboxBox - 마일스톤의 경우 추후 인재 INC 측에서 마일스톤 RestAPI 공유 받은 후 개발 진행 (2023.10.23 minjae)
     //    /// <summary>
     //    /// 마일스톤
     //    /// </summary>
@@ -3470,7 +3470,7 @@ namespace CobimExplorer.Data.Models.CobimBase.Explorer
     //    #endregion Sample
     //}
 
-    //// TODO : ComboxBox - 마일스톤의 경우 추후 인재 INC 측에서 마일스톤 RestAPI 공유 받은 후 개발 진행 (2023.10.23 jbh)
+    //// TODO : ComboxBox - 마일스톤의 경우 추후 인재 INC 측에서 마일스톤 RestAPI 공유 받은 후 개발 진행 (2023.10.23 minjae)
     ///// <summary>
     ///// ComboBox - 마일스톤
     ///// </summary>
@@ -3513,7 +3513,7 @@ namespace CobimExplorer.Data.Models.CobimBase.Explorer
     //    /// </summary>
     //    public string exp_TreeName { get; set; }
 
-    //    // TODO : 파일 하위 자식 "ChildNodes" 필요시 사용 예정 (2023.09.18 jbh)
+    //    // TODO : 파일 하위 자식 "ChildNodes" 필요시 사용 예정 (2023.09.18 minjae)
     //    /// <summary>
     //    /// 파일 하위 자식 노드
     //    /// </summary>
@@ -3522,7 +3522,7 @@ namespace CobimExplorer.Data.Models.CobimBase.Explorer
     //    //{
     //    //    get
     //    //    {
-    //    //        // TODO : if 조건절에 == null 보다 빠른 is null 연산자 사용 (2023.11.24 jbh)
+    //    //        // TODO : if 조건절에 == null 보다 빠른 is null 연산자 사용 (2023.11.24 minjae)
     //    //        // 참고 URL - https://husk321.tistory.com/405
     //    //        // 싱글톤 패턴 
     //    //        if (_ChildNodes is null)
@@ -3535,7 +3535,7 @@ namespace CobimExplorer.Data.Models.CobimBase.Explorer
     //    //}
     //    //private List<ITreeNode> _ChildNodes;
 
-    //    // TODO : 필요시 프로퍼티 LinkedNodeInfoDic 사용 예정 (2024.08.21 jbh)
+    //    // TODO : 필요시 프로퍼티 LinkedNodeInfoDic 사용 예정 (2024.08.21 minjae)
     //    /// <summary>
     //    /// 연관 컨테이너 정보(참조관계 - 부모/자식 컨테이너) Dictionary
     //    /// </summary>
@@ -3556,7 +3556,7 @@ namespace CobimExplorer.Data.Models.CobimBase.Explorer
     //    #endregion Sample
     //}
 
-    //// TODO : 컨텍스트 메뉴(ContextMenu) 정보 클래스 "ContextMenuView" 필요시 구현 예정 (2023.12.13 jbh)
+    //// TODO : 컨텍스트 메뉴(ContextMenu) 정보 클래스 "ContextMenuView" 필요시 구현 예정 (2023.12.13 minjae)
     ///// <summary>
     ///// 컨텍스트 메뉴(ContextMenu) 정보 
     ///// </summary>

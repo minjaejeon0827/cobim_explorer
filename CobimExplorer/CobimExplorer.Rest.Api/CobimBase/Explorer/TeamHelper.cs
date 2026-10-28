@@ -32,7 +32,7 @@ namespace CobimExplorer.Rest.Api.CobimBase.Explorer
         /// </summary>
         public const string teamName = "teamName";
 
-        // TODO : 테스트 팀 아이디 "inc-001-bmcb-t005" 변경 (2023.09.12 jbh)
+        // TODO : 테스트 팀 아이디 "inc-001-bmcb-t005" 변경 (2023.09.12 minjae)
         /// <summary>
         /// 4. 폴더 목록 조회 
         /// 요청 파라미터 - 팀 아이디

@@ -8,7 +8,7 @@ using static CobimExplorer.Core.Rest.Api.CobimBase.User.LoginHelper;
 
 namespace CobimExplorer.Core.Rest.Api.CobimBase.User
 {
-    // TODO : ASP.NET Core 로드맵 보면서 공부 및 구현하기 (2023.08.29 jbh)
+    // TODO : ASP.NET Core 로드맵 보면서 공부 및 구현하기 (2023.08.29 minjae)
     // 참고 URL - https://github.com/Elfocrash/.NET-Backend-Developer-Roadmap
     public class UserRestServer
     {
@@ -75,7 +75,7 @@ namespace CobimExplorer.Core.Rest.Api.CobimBase.User
                     inputTenantId = LoginHelper.inputTenantId,
                 };
 
-                // TODO : LogInPack 클래스 객체 "LogInPack" string 클래스 json 문자열(content) 구현 (2023.08.21 jbh)
+                // TODO : LogInPack 클래스 객체 "LogInPack" string 클래스 json 문자열(content) 구현 (2023.08.21 minjae)
                 // 참고 URL - https://learn.microsoft.com/ko-kr/dotnet/standard/serialization/system-text-json/how-to?pivots=dotnet-8-0
                 // json 문자열(하드코딩) 생성 코드 예시 -> (예) string content = "{\"id\":\"dvl001\",\"password\":\"qwer1234!\",\"inputTenantId\":\"inc-001\"}";
                 string content = JsonSerializer.Serialize(LoginPack);

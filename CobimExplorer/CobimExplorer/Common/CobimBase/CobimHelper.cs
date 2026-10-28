@@ -42,7 +42,7 @@ namespace CobimExplorer.Common.CobimBase
         /// </summary>
         public const string AsyncMethodType = "async";
 
-        // TODO : 이벤트 메소드 타입 const string 객체 "EventMethodType" 필요시 사용 예정 (2023.12.12 jbh)
+        // TODO : 이벤트 메소드 타입 const string 객체 "EventMethodType" 필요시 사용 예정 (2023.12.12 minjae)
         /// <summary>
         /// 이벤트 메소드 타입
         /// </summary>
@@ -98,7 +98,7 @@ namespace CobimExplorer.Common.CobimBase
 
         #region TitleBarButtonBehavior
 
-        // TODO : 아래 주석친 코드 필요시 참고 (2024.08.06 jbh) 
+        // TODO : 아래 주석친 코드 필요시 참고 (2024.08.06 minjae) 
         /// <summary>
         /// Title Button - 최소화(Min)
         /// </summary>
@@ -149,7 +149,7 @@ namespace CobimExplorer.Common.CobimBase
         /// </summary>
         public static string Cobim_AssemblyName = $"{Assembly.GetEntryAssembly().GetName().Name}";
 
-        // TODO : CobimExplorer 응용 프로그램 상단 타이틀 바에 적용할 Title Text 문자열에 필요한 어셈블리 버전 string 객체 "CDE_AssemblyVersion" 구현 (2023.11.09 jbh)
+        // TODO : CobimExplorer 응용 프로그램 상단 타이틀 바에 적용할 Title Text 문자열에 필요한 어셈블리 버전 string 객체 "CDE_AssemblyVersion" 구현 (2023.11.09 minjae)
         // 참고 URL - https://afsdzvcx123.tistory.com/entry/C-%EB%AC%B8%EB%B2%95-C-%EC%96%B4%EC%85%88%EB%B8%94%EB%A6%AC-%EB%B2%84%EC%A0%84-%EA%B5%AC%ED%95%98%EB%8A%94-%EB%B0%A9%EB%B2%95
         /// <summary>
         /// 어셈블리 버전(프로젝트 파일 버전) - CobimExplorer
@@ -289,7 +289,7 @@ namespace CobimExplorer.Common.CobimBase
 
         #endregion NavigationBar
 
-        // TODO : 화면 셋팅 - OnInitialActivate const string 객체 "TypeOfOnInitialActivate" 필요시 사용 예정 (2023.11.09 jbh)
+        // TODO : 화면 셋팅 - OnInitialActivate const string 객체 "TypeOfOnInitialActivate" 필요시 사용 예정 (2023.11.09 minjae)
         /// <summary>
         /// 화면 셋팅 - OnInitialActivate
         /// </summary>
@@ -436,25 +436,25 @@ namespace CobimExplorer.Common.CobimBase
 
         #region 컨텍스트(ContextMenu) 메뉴 Header
 
-        // TODO : 컨텍스트(ContextMenu) 메뉴 Header const string 객체 "TestHeader" 필요시 사용 예정 (2023.12.13 jbh)
+        // TODO : 컨텍스트(ContextMenu) 메뉴 Header const string 객체 "TestHeader" 필요시 사용 예정 (2023.12.13 minjae)
         /// <summary>
         /// 테스트
         /// </summary> 
         // public const string TestHeader = "테스트";
 
-        // TODO : 컨텍스트(ContextMenu) 메뉴 Header const string 객체 "CheckOutHeader" 필요시 사용 예정 (2023.12.13 jbh)
+        // TODO : 컨텍스트(ContextMenu) 메뉴 Header const string 객체 "CheckOutHeader" 필요시 사용 예정 (2023.12.13 minjae)
         /// <summary>
         /// 체크아웃
         /// </summary> 
         // public const string CheckOutHeader = "체크아웃";
 
-        // TODO : 컨텍스트(ContextMenu) 메뉴 Header const string 객체 "CheckInHeader" 필요시 사용 예정 (2023.12.13 jbh)
+        // TODO : 컨텍스트(ContextMenu) 메뉴 Header const string 객체 "CheckInHeader" 필요시 사용 예정 (2023.12.13 minjae)
         /// <summary>
         /// 체크인
         /// </summary> 
         // public const string CheckInHeader = "체크인";
 
-        // TODO : 컨텍스트(ContextMenu) 메뉴 Header const string 객체 "CancelWorkHeader" 필요시 사용 예정 (2023.12.13 jbh)
+        // TODO : 컨텍스트(ContextMenu) 메뉴 Header const string 객체 "CancelWorkHeader" 필요시 사용 예정 (2023.12.13 minjae)
         /// <summary>
         /// 작업취소
         /// </summary> 

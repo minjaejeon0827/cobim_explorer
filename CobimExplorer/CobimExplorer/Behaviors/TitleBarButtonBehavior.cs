@@ -12,10 +12,10 @@ using Microsoft.Xaml.Behaviors;
 namespace CobimExplorer.Behaviors
 {
     // TODO :  메인 뷰(MainV.xaml) -> 화면 상단 타이틀 바 버튼("최소화", "최대화", "종료") 3가지
-    //         각각의 Command 속성에 바인딩할 의존 프로퍼티 Behavior 클래스 "TitleBarButtonBehavior.cs"에 구현하기 (2023.11.15 jbh)
+    //         각각의 Command 속성에 바인딩할 의존 프로퍼티 Behavior 클래스 "TitleBarButtonBehavior.cs"에 구현하기 (2023.11.15 minjae)
     // 참고 URL - https://kaki104.tistory.com/841
 
-    // TODO : 메인 뷰(MainV.xaml) -> 화면 상단 타이틀 바 버튼 Click 이벤트 Behavior 클래스 "TitleBarButtonBehavior.cs"로 구현 예정 (2023.11.10 jbh)
+    // TODO : 메인 뷰(MainV.xaml) -> 화면 상단 타이틀 바 버튼 Click 이벤트 Behavior 클래스 "TitleBarButtonBehavior.cs"로 구현 예정 (2023.11.10 minjae)
     // 참고 URL - https://gapal.tistory.com/34
     public class TitleBarButtonBehavior : Behavior<Button>, INotifyPropertyChanged // AttachableForStyleBehavior<Button, TitleBarButtonBehavior>
     {
@@ -85,7 +85,7 @@ namespace CobimExplorer.Behaviors
 
             ParentWindow.WindowState = WinState;
 
-            // TODO : if 조건절에 != null 보다 빠른 is not null 연산자 사용 (2023.11.24 jbh)
+            // TODO : if 조건절에 != null 보다 빠른 is not null 연산자 사용 (2023.11.24 minjae)
             // 참고 URL - https://husk321.tistory.com/405
             if (MinCommand is not null)
             {
@@ -103,7 +103,7 @@ namespace CobimExplorer.Behaviors
             // MaxBtn.FindParent<Window>()!.WindowState = WindowState.Maximized;
             // var window = MaxBtn.FindParent<Window>()!;
 
-            // TODO : 삼항 연산자 사용해서 부모 최대화 버튼 상태(window.WindowState) 갱신 구현 (2023.11.13 jbh)
+            // TODO : 삼항 연산자 사용해서 부모 최대화 버튼 상태(window.WindowState) 갱신 구현 (2023.11.13 minjae)
             // window.WindowState = window.WindowState == WindowState.Normal ? WindowState.Maximized : WindowState.Normal;
 
             WinState = ParentWindow.WindowState == WindowState.Normal ? WindowState.Maximized : WindowState.Normal;
@@ -143,7 +143,7 @@ namespace CobimExplorer.Behaviors
                 //this.rectMin.Visibility = Visibility.Hidden;
             }
 
-            // TODO : if 조건절에 != null 보다 빠른 is not null 연산자 사용 (2023.11.24 jbh)
+            // TODO : if 조건절에 != null 보다 빠른 is not null 연산자 사용 (2023.11.24 minjae)
             // 참고 URL - https://husk321.tistory.com/405
             if (MaxCommand is not null)
             {
@@ -161,7 +161,7 @@ namespace CobimExplorer.Behaviors
             // ExitBtn.FindParent<Window>()!.Close();
             ParentWindow.Close();
 
-            // TODO : if 조건절에 != null 보다 빠른 is not null 연산자 사용 (2023.11.24 jbh)
+            // TODO : if 조건절에 != null 보다 빠른 is not null 연산자 사용 (2023.11.24 minjae)
             // 참고 URL - https://husk321.tistory.com/405
             if (ExitCommand is not null)
             {
@@ -177,12 +177,12 @@ namespace CobimExplorer.Behaviors
 
         // TODO : DLL 파일 추가시 "System.Windows.dll" "System.Windows.Forms.dll" 2가지 dll 파일은 이름은 비슷하지만 서로 하는 기능이 다르고, 
         //        2가지 dll 파일을 모두 설치하면 충돌이 발생하여 아래의 소스코드가 오류가 발생하므로
-        //        "System.Windows.dll" 파일은 프로젝트 파일 "CobimExplorer"에서 참조 제거 후 "System.Windows.Forms.dll" 파일만 참조 추가 진행 (2023.11.08 jbh)
+        //        "System.Windows.dll" 파일은 프로젝트 파일 "CobimExplorer"에서 참조 제거 후 "System.Windows.Forms.dll" 파일만 참조 추가 진행 (2023.11.08 minjae)
         System.Windows.Forms.Screen[] screens = System.Windows.Forms.Screen.AllScreens;
 
-        // TODO: 오류 코드 "CS8370" 오류 메시지 "'nullable 참조 형식' 기능은 C# 7.3에서 사용할 수 없습니다. 8.0 이상의 언어 버전을 사용하세요." .Net 8.0 이상 언어 버전 설치 (2023.07.17 jbh)
+        // TODO: 오류 코드 "CS8370" 오류 메시지 "'nullable 참조 형식' 기능은 C# 7.3에서 사용할 수 없습니다. 8.0 이상의 언어 버전을 사용하세요." .Net 8.0 이상 언어 버전 설치 (2023.07.17 minjae)
         // 참고 URL - https://drehzr.tistory.com/872
-        // TODO : 경고 메시지 코드 "CS8632" 경고 메시지 "c# 경고 CS8632 nullable 참조 형식에 대한 주석은 코드에서 '#nullable' 주석 컨텍스트 내에만 사용되어야 합니다." 로직 보완 (2023.07.17 jbh)
+        // TODO : 경고 메시지 코드 "CS8632" 경고 메시지 "c# 경고 CS8632 nullable 참조 형식에 대한 주석은 코드에서 '#nullable' 주석 컨텍스트 내에만 사용되어야 합니다." 로직 보완 (2023.07.17 minjae)
         // 참고 URL - https://kukuta.tistory.com/359
         // C# Nullable 타입 참고 URL - https://www.csharpstudy.com/CSharp/CSharp-nullable.aspx
         // C# Nullable 타입 예제 코드
@@ -196,7 +196,7 @@ namespace CobimExplorer.Behaviors
         {
             get
             {
-                // TODO : if 조건절에 == null 보다 빠른 is null 연산자 사용 (2023.11.24 jbh)
+                // TODO : if 조건절에 == null 보다 빠른 is null 연산자 사용 (2023.11.24 minjae)
                 // 참고 URL - https://husk321.tistory.com/405
                 if (_ParentWindow is null)
                 {
@@ -217,7 +217,7 @@ namespace CobimExplorer.Behaviors
         {
             get
             {
-                // TODO : if 조건절에 == null 보다 빠른 is null 연산자 사용 (2023.11.24 jbh)
+                // TODO : if 조건절에 == null 보다 빠른 is null 연산자 사용 (2023.11.24 minjae)
                 // 참고 URL - https://husk321.tistory.com/405
                 if (_ChildControl is null)
                 {
@@ -234,7 +234,7 @@ namespace CobimExplorer.Behaviors
         {
             get
             {
-                // TODO : if 조건절에 == null 보다 빠른 is null 연산자 사용 (2023.11.24 jbh)
+                // TODO : if 조건절에 == null 보다 빠른 is null 연산자 사용 (2023.11.24 minjae)
                 // 참고 URL - https://husk321.tistory.com/405
                 if (_TestControl is null)
                 {
@@ -250,7 +250,7 @@ namespace CobimExplorer.Behaviors
 
         // TODO : [ObservableObject] 사용 시 필요한 dll "CommunityToolkit.Mvvm" 설치 시 오류 발생
         //        또한 아래 프로퍼티 "ParentWindow"에 "SetProperty" 추가시 인식되지 않는 오류 추가 발생해서 
-        //        INotifyPropertyChanged 인터페이스 상속 후 -> 아래처럼 "OnPropertyChanged" 이벤트 핸들러 사용 (2023.11.13 jbh)
+        //        INotifyPropertyChanged 인터페이스 상속 후 -> 아래처럼 "OnPropertyChanged" 이벤트 핸들러 사용 (2023.11.13 minjae)
         public WindowState WinState
         {
             get => _WinState;
@@ -294,18 +294,18 @@ namespace CobimExplorer.Behaviors
         //       typeof(PasswordBoxHelper), new PropertyMetadata("<Default>", OnBoundPasswordChanged));
 
 
-        // TODO : 버튼 "최소화" 의존 프로퍼티 Behavior 클래스 "TitleBarButtonBehavior.cs"에 구현하기 (2023.11.15 jbh)
+        // TODO : 버튼 "최소화" 의존 프로퍼티 Behavior 클래스 "TitleBarButtonBehavior.cs"에 구현하기 (2023.11.15 minjae)
         // 참고 URL - https://kaki104.tistory.com/841
         public static readonly DependencyProperty MinCommandProperty =
             DependencyProperty.Register(nameof(MinCommand), typeof(ICommand), typeof(TitleBarButtonBehavior), new PropertyMetadata(null));
 
-        // TODO : 버튼 "최대화" 의존 프로퍼티 Behavior 클래스 "TitleBarButtonBehavior.cs"에 구현하기 (2023.11.15 jbh)
+        // TODO : 버튼 "최대화" 의존 프로퍼티 Behavior 클래스 "TitleBarButtonBehavior.cs"에 구현하기 (2023.11.15 minjae)
         // 참고 URL - https://kaki104.tistory.com/841
         public static readonly DependencyProperty MaxCommandProperty =
             DependencyProperty.Register(nameof(MaxCommand), typeof(ICommand), typeof(TitleBarButtonBehavior), new PropertyMetadata(null));
 
 
-        // TODO : 버튼 "종료" 의존 프로퍼티 Behavior 클래스 "TitleBarButtonBehavior.cs"에 구현하기 (2023.11.15 jbh)
+        // TODO : 버튼 "종료" 의존 프로퍼티 Behavior 클래스 "TitleBarButtonBehavior.cs"에 구현하기 (2023.11.15 minjae)
         // 참고 URL - https://kaki104.tistory.com/841
         public static readonly DependencyProperty ExitCommandProperty =
             DependencyProperty.Register(nameof(ExitCommand), typeof(ICommand), typeof(TitleBarButtonBehavior), new PropertyMetadata(null));

@@ -19,7 +19,7 @@
         <!--  TODO : 컨트롤 <WebBrowser> 사용하여 탐색기 응용 프로그램 TabItem Content 영역 안에 
                      웹브라우저 화면 출력 후 검색어 입력 및 엔터키 또는 그 외 버튼 클릭시 스크립트 오류 발생
                      해당 스크립트 오류를 해결하기 위해 
-                     아래처럼 Navigated 이벤트 메서드 "TestWebBrowser_Navigated" 구현 및 static 메서드 "SetSilent" 구현 (2024.08.07 jbh)  -->
+                     아래처럼 Navigated 이벤트 메서드 "TestWebBrowser_Navigated" 구현 및 static 메서드 "SetSilent" 구현 (2024.08.07 minjae)  -->
         <!--  참고 URL - https://stackoverflow.com/questions/6138199/wpf-webbrowser-control-how-to-suppress-script-errors  -->
         <WebBrowser x:Name="TestWebBrowser" Source="https://www.google.com/" Navigated="{s:Action TestWebBrowser_Navigated}"/>
     </Grid>

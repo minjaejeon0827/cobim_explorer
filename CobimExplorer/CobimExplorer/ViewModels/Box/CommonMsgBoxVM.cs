@@ -11,7 +11,7 @@ using CobimExplorer.Interface.Page;
 
 namespace CobimExplorer.ViewModels.Box
 {
-    // TODO : MessageBox 필요시 구현 예정(2023.07.26 jbh)
+    // TODO : MessageBox 필요시 구현 예정(2023.07.26 minjae)
     public class CommonMsgBoxVM : PageBase, IPage
     {
         #region 프로퍼티 
@@ -22,10 +22,10 @@ namespace CobimExplorer.ViewModels.Box
 
         public CommonMsgBoxVM(IEventAggregator events, IContainer container) : base(container)
         {
-            // TODO : 아래 주석친 코드 필요시 사용 예정 (2024.01.03 jbh)
+            // TODO : 아래 주석친 코드 필요시 사용 예정 (2024.01.03 minjae)
             Container = container;
 
-            // TODO : EventAggregator = events; 코드 추가 (2023.07.24 jbh)
+            // TODO : EventAggregator = events; 코드 추가 (2023.07.24 minjae)
             // 참고 URL - https://github.com/canton7/Stylet/wiki/3.-The-Taskbar
             EventAggregator = events;
         }
@@ -38,14 +38,14 @@ namespace CobimExplorer.ViewModels.Box
         {
             base.OnActivate();
             EventAggregator.Subscribe(this);
-            // TODO : 필요시 "CommonProgressStateMsg.cs" 클래스 구현 및 아래 주석친 코드 사용 예정 (2024.01.03 jbh)
+            // TODO : 필요시 "CommonProgressStateMsg.cs" 클래스 구현 및 아래 주석친 코드 사용 예정 (2024.01.03 minjae)
             // EventAggregator.PublishOnUIThread(new CommonProgressStateMsg(this, CommonProgressState.Open));
         }
 
         protected override void OnDeactivate()
         {
             EventAggregator.Unsubscribe(this);
-            // TODO : 필요시 "CommonProgressStateMsg.cs" 클래스 구현 및 아래 주석친 코드 사용 예정 (2024.01.03 jbh)
+            // TODO : 필요시 "CommonProgressStateMsg.cs" 클래스 구현 및 아래 주석친 코드 사용 예정 (2024.01.03 minjae)
             // EventAggregator.PublishOnUIThread(new CommonProgressStateMsg(this, CommonProgressState.Close));
             base.OnDeactivate();
         }

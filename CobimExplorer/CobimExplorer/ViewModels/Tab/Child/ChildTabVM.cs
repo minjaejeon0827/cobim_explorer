@@ -9,7 +9,7 @@ using CobimExplorer.Services.Page;
 
 namespace CobimExplorer.ViewModels.Tab.Child
 {
-    // TODO : 리본 버튼 클릭시 출력되는 화면을 탭 페이지로 출력 + 버튼 "닫기" 클릭시 탭 페이지 화면 종료 되도록 구현 (2024.01.10 jbh)  
+    // TODO : 리본 버튼 클릭시 출력되는 화면을 탭 페이지로 출력 + 버튼 "닫기" 클릭시 탭 페이지 화면 종료 되도록 구현 (2024.01.10 minjae)  
     // 참고 URL - https://youtu.be/rFhmTccRUpQ?si=dNYuEcN6487nTeYt
     public class ChildTabVM : PageBase   // , IPage
     {
@@ -18,7 +18,7 @@ namespace CobimExplorer.ViewModels.Tab.Child
         #region UserControl
 
         // TODO : UserControl 클래스 프로퍼티 "Page"의 경우 프로퍼티 안에 속한 값을
-        //        변경할 수 있는 필드(Content, DataContext)가 존재하므로 싱글톤 구현 대상 제외 (2023.11.08 jbh)
+        //        변경할 수 있는 필드(Content, DataContext)가 존재하므로 싱글톤 구현 대상 제외 (2023.11.08 minjae)
         // 참고 URL - https://minchul-son.tistory.com/317
         /// <summary>
         /// 탐색기 화면에서 출력하는 화면 뷰 + 뷰모델
@@ -28,7 +28,7 @@ namespace CobimExplorer.ViewModels.Tab.Child
 
         #endregion UserControl
 
-        // TODO : 프로퍼티 "TestExplorerV" 필요시 참고 (2024.08.05 jbh) 
+        // TODO : 프로퍼티 "TestExplorerV" 필요시 참고 (2024.08.05 minjae) 
         /// <summary>
         /// UserControl 뷰 TestExplorerV (싱글톤 객체)
         /// </summary>
@@ -40,7 +40,7 @@ namespace CobimExplorer.ViewModels.Tab.Child
 
         #region 생성자 
 
-        // TODO : 주의사항 - TabControl(TabParentPageV.xaml) 화면 뷰 안에 존재하는<TabControl> 영역에 속성 SelectedItem= "{Binding ActiveItem}" 사용 안 함 (2024.09.12 jbh)  
+        // TODO : 주의사항 - TabControl(TabParentPageV.xaml) 화면 뷰 안에 존재하는<TabControl> 영역에 속성 SelectedItem= "{Binding ActiveItem}" 사용 안 함 (2024.09.12 minjae)  
         //                   왜냐하면 Dynamic TabItem("ExplorerVM", "HubBoxVM") 클릭시 TabControl(TabParentPageV.xaml) 화면 뷰 BorderBrush 색상이 Red로 바뀌는 오류가 발생하기 때문이다.  
         //                   SelectedItem="{Binding ActiveItem}" 사용 안 하는 대신 ChildTabV.xaml 에서 아래처럼<ContentControl> 영역에서 ActiveItem 바인딩 처리 하고  
         //                   <ContentControl s:View.Model="{Binding ActiveItem}" />  ChildTabVM.cs 생성자 호출시 아래처럼 ActiveItem 값이 null일 때, 새로 값 할당 해줌  
@@ -51,7 +51,7 @@ namespace CobimExplorer.ViewModels.Tab.Child
         {
             Container = container;
 
-            // TODO : EventAggregator = events; 코드 추가 (2023.07.24 jbh)
+            // TODO : EventAggregator = events; 코드 추가 (2023.07.24 minjae)
             // 참고 URL - https://github.com/canton7/Stylet/wiki/3.-The-Taskbar
             EventAggregator = events;
 
@@ -94,7 +94,7 @@ namespace CobimExplorer.ViewModels.Tab.Child
         {
             base.OnActivate();
 
-            // TODO : TreeView 데이터 출력 테스트 코드 추후 삭제 예정 (2023.07.14 jbh)
+            // TODO : TreeView 데이터 출력 테스트 코드 추후 삭제 예정 (2023.07.14 minjae)
             // InitTreeViewText();
 
             // var vm = Container.Get<DateTabVM>();

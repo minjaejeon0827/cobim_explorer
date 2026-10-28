@@ -12,7 +12,7 @@
 
         <!--  <ResourceDictionary Source="Theme/Winter/All.xaml" />  -->
 
-        <!--  TODO : "Base.xaml", "Format.xaml", "Board/All.xaml", "Button/All.xaml", "ScrollBar/All.xaml", "Page/All.xaml", "Part/All.xaml" 필요시 구현 예정 (2023.10.30 jbh)  -->
+        <!--  TODO : "Base.xaml", "Format.xaml", "Board/All.xaml", "Button/All.xaml", "ScrollBar/All.xaml", "Page/All.xaml", "Part/All.xaml" 필요시 구현 예정 (2023.10.30 minjae)  -->
         <!--  <ResourceDictionary Source="Base.xaml"/>  -->
         <!--  <ResourceDictionary Source="Format.xaml"/>  -->
         <!--  <ResourceDictionary Source="Board/All.xaml" />  -->

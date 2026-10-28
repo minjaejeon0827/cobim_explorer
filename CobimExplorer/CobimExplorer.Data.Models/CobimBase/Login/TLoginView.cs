@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CobimExplorer.Data.Models.CobimBase.Login
 {
-    // TODO : 필요시 TLoginView.cs 클래스 파일 구현 예정 (2023.12.22 jbh)
+    // TODO : 필요시 TLoginView.cs 클래스 파일 구현 예정 (2023.12.22 minjae)
     // 제네릭 타입 제약 문법 where T 
     // 참고 URL - http://www.csharpstudy.com/CSharp/CSharp-generics.aspx
     public class TLoginView<TData> : TLoginView where TData : TLoginView<TData> { }

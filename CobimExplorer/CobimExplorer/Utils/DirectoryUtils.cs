@@ -8,7 +8,7 @@ using System.Collections.ObjectModel;
 
 namespace CobimExplorer.Utils
 {
-    // TODO : 드라이브 노드 하위에 폴더나 파일이 존재하는지를 체크하기 위해 유틸리티 구현 (2023.07.18 jbh)
+    // TODO : 드라이브 노드 하위에 폴더나 파일이 존재하는지를 체크하기 위해 유틸리티 구현 (2023.07.18 minjae)
     // 참고 URL - https://youtu.be/IId6XmwlqlQ
     public static class DirectoryUtils
     {

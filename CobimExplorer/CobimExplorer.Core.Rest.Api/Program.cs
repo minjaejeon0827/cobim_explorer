@@ -9,19 +9,19 @@ using System.Threading.Tasks;
 
 namespace CobimExplorer.Core.Rest.Api
 {
-    // TODO : ¿À·ù ÄÚµå "CS1705" ¿À·ù ¸Þ½ÃÁö - ID°¡ 'CobimExplorer.Core.Rest.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'ÀÎ 'CobimExplorer.Core.Rest.Api' ¾î¼Àºí¸®´Â ID°¡ 'System.Runtime, Version=4.1.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'ÀÎ ÂüÁ¶µÈ ¾î¼Àºí¸® 'System.Runtime' ÀÌÈÄ ¹öÀüÀÎ 'System.Runtime, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'À»(¸¦) »ç¿ëÇÕ´Ï´Ù. (2023.08.29 jbh)
-    // ÇØ´ç ¿À·ù ÇØ°áÇÏ±â À§ÇØ -> ASP .Net Core ÇÁ·ÎÁ§Æ® ÆÄÀÏ "CobimExplorer.Core.Rest.Api" ¼Ó¼º È­¸é -> ¹öÀü .NET 5.0 -> .NET Core 3.1·Î º¯°æ 
+    // TODO : ï¿½ï¿½ï¿½ï¿½ ï¿½Úµï¿½ "CS1705" ï¿½ï¿½ï¿½ï¿½ ï¿½Þ½ï¿½ï¿½ï¿½ - IDï¿½ï¿½ 'CobimExplorer.Core.Rest.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'ï¿½ï¿½ 'CobimExplorer.Core.Rest.Api' ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ IDï¿½ï¿½ 'System.Runtime, Version=4.1.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 'System.Runtime' ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 'System.minjaetime, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'ï¿½ï¿½(ï¿½ï¿½) ï¿½ï¿½ï¿½ï¿½Õ´Ï´ï¿½. (2023.08.29 jbh)
+    // ï¿½Ø´ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ø°ï¿½ï¿½Ï±ï¿½ ï¿½ï¿½ï¿½ï¿½ -> ASP .Net Core ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ® ï¿½ï¿½ï¿½ï¿½ "CobimExplorer.Core.Rest.Api" ï¿½Ó¼ï¿½ È­ï¿½ï¿½ -> ï¿½ï¿½ï¿½ï¿½ .NET 5.0 -> .NET Core 3.1ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ 
     public class Program
     {
-        // TODO : ÀÎÅÍÆäÀÌ½º "IHttpClientFactory" »ç¿ëÇØ¼­ Http Åë½Å GET ¹æ½Ä Å×½ºÆ® ÄÚµå ·ÎÁ÷ ±¸Çö (2023.08.28 jbh)
-        // Âü°í URL - https://youtu.be/1rw9eDFTTlY?si=fvj2tHTzwfLubYUc
-        // Âü°í2 URL - https://youtu.be/1rw9eDFTTlY?si=REwdCYp-ofDY2egH
+        // TODO : ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì½ï¿½ "IHttpClientFactory" ï¿½ï¿½ï¿½ï¿½Ø¼ï¿½ Http ï¿½ï¿½ï¿½ GET ï¿½ï¿½ï¿½minjaeï¿½Æ® ï¿½Úµï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ (2023.08.28 jbh)
+        // ï¿½ï¿½ï¿½ï¿½ URL - https://youtu.be/1rw9eDFTTlY?si=fvj2tHTzwfLubYUc
+        // ï¿½ï¿½ï¿½ï¿½2 URL - https://youtu.be/1rw9eDFTTlY?si=REwdCYp-ofDY2egH
         public static void Main(string[] args)
         {
             CreateHostBuilder(args).Build().Run();
 
             // Bad idea for mid-size or big projects 
-            // Å« ±Ô¸ðÀÇ ÇÁ·ÎÁ§Æ® °³¹ß½Ã ¾Æ·¡¿Í °°ÀÌ using¹® ¾È¿¡ "HttpClient" Å¬·¡½º °´Ã¼ "httpClient"¸¦ »ý¼ºÇÏ´Â °ÍÀº ÁÁÁö ¾Ê´Ù.
+            // Å« ï¿½Ô¸ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ® ï¿½ï¿½ï¿½ß½ï¿½ ï¿½Æ·ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ usingï¿½ï¿½ ï¿½È¿ï¿½ "HttpClient" Å¬ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã¼ "httpClient"ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ê´ï¿½.
             //using (var httpClient = new HttpClient())
             //{
 

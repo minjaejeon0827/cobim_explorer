@@ -8,7 +8,7 @@ using CobimExplorer.Rest.Api.CobimBase.Login;
 
 namespace CobimExplorer.Models.User
 {
-    // TODO : UserInfoView 클래스 추후 필요시 사용 예정(2023.08.30 jbh)
+    // TODO : UserInfoView 클래스 추후 필요시 사용 예정(2023.08.30 minjae)
     public class UserInfoView
     {
         /// <summary>

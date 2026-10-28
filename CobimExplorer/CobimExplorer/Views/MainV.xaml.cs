@@ -4,11 +4,11 @@ using System.Windows.Input;
 
 namespace CobimExplorer.Views
 {
-    // TODO : 탐색기 응용 프로그램 메인 화면 뷰(MainV.xaml) 상단 윈도우 타이틀 바에 연동되는 이벤트 메서드들을 Behind Code(MainV.xaml.cs) 소스파일에 직접 구현 (2023.11.09 jbh) 
+    // TODO : 탐색기 응용 프로그램 메인 화면 뷰(MainV.xaml) 상단 윈도우 타이틀 바에 연동되는 이벤트 메서드들을 Behind Code(MainV.xaml.cs) 소스파일에 직접 구현 (2023.11.09 minjae) 
     // 참고 URL - https://gigong.tistory.com/99  
     // 참고 2 URL - https://itpro.tistory.com/88
 
-    // TODO : 아래 Behind Code(MainV.xaml.cs) 소스파일에 직접 구현된 이벤트 메서드들을 Behavior 클래스로 만들어서 MainV.xaml에 연동할 수 있도록 구현하기 (2023.11.09 jbh)
+    // TODO : 아래 Behind Code(MainV.xaml.cs) 소스파일에 직접 구현된 이벤트 메서드들을 Behavior 클래스로 만들어서 MainV.xaml에 연동할 수 있도록 구현하기 (2023.11.09 minjae)
 
     /// <summary>
     /// MainV.xaml에 대한 상호 작용 논리
@@ -23,7 +23,7 @@ namespace CobimExplorer.Views
 
         public MainV()
         {
-            // TODO : 오류 코드 "cs0103" 오류 메시지 'initializecomponent' 이름이 현재 컨텍스트에 없습니다. 해결 (2023.11.14 jbh)
+            // TODO : 오류 코드 "cs0103" 오류 메시지 'initializecomponent' 이름이 현재 컨텍스트에 없습니다. 해결 (2023.11.14 minjae)
             // 참고 URL - https://blog.naver.com/rtrue/220882338518
             InitializeComponent();
 
@@ -42,7 +42,7 @@ namespace CobimExplorer.Views
             // this.LocationChanged -= Window_LocationChanged;
             // this.LocationChanged += Window_LocationChanged;
 
-            // TODO : 타이틀 바 이벤트 메서드 구현(2023.12.11 jbh) 
+            // TODO : 타이틀 바 이벤트 메서드 구현(2023.12.11 minjae) 
             // 참고 URL - https://stackoverflow.com/questions/1283006/changing-wpf-title-bar-background-color  
             // 참고 2 URL - https://www.codeproject.com/Articles/5255192/Use-WindowChrome-to-Customize-the-Title-Bar-in-WPF  
             StateChanged -= Window_StateChanged;
@@ -53,7 +53,7 @@ namespace CobimExplorer.Views
 
         #region Window_StateChanged
 
-        // TODO : 타이틀 바 이벤트 메서드 구현(2023.12.11 jbh) 
+        // TODO : 타이틀 바 이벤트 메서드 구현(2023.12.11 minjae) 
         // 참고 URL - https://stackoverflow.com/questions/1283006/changing-wpf-title-bar-background-color  
         // 참고 2 URL - https://www.codeproject.com/Articles/5255192/Use-WindowChrome-to-Customize-the-Title-Bar-in-WPF  
         /// <summary>
@@ -69,7 +69,7 @@ namespace CobimExplorer.Views
                     RestoreButton.Visibility = Visibility.Visible;
                     MaximizeButton.Visibility = Visibility.Collapsed;
 
-                    // TODO : 아래 if 조건절 윈도우 작업 표시줄 하단 CobimExplorer 아이콘을 클릭한 경우 오류 발생시 추후 로직 수정 예정 (2023.12.14 jbh)
+                    // TODO : 아래 if 조건절 윈도우 작업 표시줄 하단 CobimExplorer 아이콘을 클릭한 경우 오류 발생시 추후 로직 수정 예정 (2023.12.14 minjae)
                     // 윈도우 작업 표시줄 하단 CobimExplorer 아이콘을 클릭한 경우 
                     // MainView.CommonData.BtnClickType = string.Empty;
                     // MainView.CommonData.BtnClickType = CobimHelper.IconBtnType;
@@ -82,7 +82,7 @@ namespace CobimExplorer.Views
                     RestoreButton.Visibility = Visibility.Collapsed;
                     MaximizeButton.Visibility = Visibility.Visible;
 
-                    // TODO : 아래 if 조건절 윈도우 작업 표시줄 하단 CobimExplorer 아이콘을 클릭한 경우 오류 발생시 추후 로직 수정 예정 (2023.12.14 jbh)
+                    // TODO : 아래 if 조건절 윈도우 작업 표시줄 하단 CobimExplorer 아이콘을 클릭한 경우 오류 발생시 추후 로직 수정 예정 (2023.12.14 minjae)
                     // 윈도우 작업 표시줄 하단 CobimExplorer 아이콘을 클릭한 경우 
                     // MainView.CommonData.BtnClickType = string.Empty;
                     // MainView.CommonData.BtnClickType = CobimHelper.IconBtnType;
@@ -103,7 +103,7 @@ namespace CobimExplorer.Views
 
         #region CanExecute
 
-        // TODO : 타이틀 바 이벤트 메서드 구현(2023.12.11 jbh) 
+        // TODO : 타이틀 바 이벤트 메서드 구현(2023.12.11 minjae) 
         // 참고 URL - https://stackoverflow.com/questions/1283006/changing-wpf-title-bar-background-color  
         // 참고 2 URL - https://www.codeproject.com/Articles/5255192/Use-WindowChrome-to-Customize-the-Title-Bar-in-WPF  
         private void CanExecute(object sender, CanExecuteRoutedEventArgs e)
@@ -115,7 +115,7 @@ namespace CobimExplorer.Views
 
         #region MinimizeApp
 
-        // TODO : 타이틀 바 이벤트 메서드 구현(2023.12.11 jbh) 
+        // TODO : 타이틀 바 이벤트 메서드 구현(2023.12.11 minjae) 
         // 참고 URL - https://stackoverflow.com/questions/1283006/changing-wpf-title-bar-background-color  
         // 참고 2 URL - https://www.codeproject.com/Articles/5255192/Use-WindowChrome-to-Customize-the-Title-Bar-in-WPF  
         /// <summary>
@@ -130,7 +130,7 @@ namespace CobimExplorer.Views
 
         #region RestoreApp
 
-        // TODO : 타이틀 바 이벤트 메서드 구현(2023.12.11 jbh) 
+        // TODO : 타이틀 바 이벤트 메서드 구현(2023.12.11 minjae) 
         // 참고 URL - https://stackoverflow.com/questions/1283006/changing-wpf-title-bar-background-color  
         // 참고 2 URL - https://www.codeproject.com/Articles/5255192/Use-WindowChrome-to-Customize-the-Title-Bar-in-WPF  
         /// <summary>
@@ -146,7 +146,7 @@ namespace CobimExplorer.Views
 
         #region MaximizeApp
 
-        // TODO : 타이틀 바 이벤트 메서드 구현(2023.12.11 jbh) 
+        // TODO : 타이틀 바 이벤트 메서드 구현(2023.12.11 minjae) 
         // 참고 URL - https://stackoverflow.com/questions/1283006/changing-wpf-title-bar-background-color  
         // 참고 2 URL - https://www.codeproject.com/Articles/5255192/Use-WindowChrome-to-Customize-the-Title-Bar-in-WPF  
         /// <summary>
@@ -161,7 +161,7 @@ namespace CobimExplorer.Views
 
         #region CloseApp
 
-        // TODO : 타이틀 바 이벤트 메서드 구현(2023.12.11 jbh) 
+        // TODO : 타이틀 바 이벤트 메서드 구현(2023.12.11 minjae) 
         // 참고 URL - https://stackoverflow.com/questions/1283006/changing-wpf-title-bar-background-color  
         // 참고 2 URL - https://www.codeproject.com/Articles/5255192/Use-WindowChrome-to-Customize-the-Title-Bar-in-WPF  
         /// <summary>

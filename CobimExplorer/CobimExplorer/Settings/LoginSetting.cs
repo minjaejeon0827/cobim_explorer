@@ -2,7 +2,7 @@
 
 namespace CobimExplorer.Settings
 {
-    // TODO : 로그인 기본 설정 클래스 LoginSetting 필요시 추가 구현 예정 (2024.09.24 jbh)
+    // TODO : 로그인 기본 설정 클래스 LoginSetting 필요시 추가 구현 예정 (2024.09.24 minjae)
     /// <summary>
     /// 로그인 기본 설정 
     /// </summary>
@@ -15,7 +15,7 @@ namespace CobimExplorer.Settings
         /// </summary>
         // private LoginV _LoginV { get; set; }
 
-        // TODO : 로그인 서버 주소 프로퍼티 "_LoginServerPath" 필요시 사용 예정 (2024.09.23 jbh)
+        // TODO : 로그인 서버 주소 프로퍼티 "_LoginServerPath" 필요시 사용 예정 (2024.09.23 minjae)
         /// <summary>
         /// 로그인 서버 주소 
         /// </summary>
@@ -85,7 +85,7 @@ namespace CobimExplorer.Settings
 
         #region SetLoginServerPath
 
-        // TODO : 필요시 메서드 SetLoginServerPath 사용 예정 (2024.09.23 jbh)
+        // TODO : 필요시 메서드 SetLoginServerPath 사용 예정 (2024.09.23 minjae)
         /// <summary>
         /// 로그인 서버 URL 주소 값 셋팅
         /// </summary>
@@ -98,7 +98,7 @@ namespace CobimExplorer.Settings
 
         #region GetLoginServerPath
 
-        // TODO : 필요시 메서드 GetLoginServerPath 사용 예정 (2024.09.23 jbh)
+        // TODO : 필요시 메서드 GetLoginServerPath 사용 예정 (2024.09.23 minjae)
         /// <summary>
         /// 로그인 서버 URL 주소 값 가져오기
         /// </summary>
@@ -238,7 +238,7 @@ namespace CobimExplorer.Settings
 
     #region Sample
 
-    // TODO : 아래 주석친 로그인 기본 설정 클래스 LoginSetting 필요시 참고 (2024.10.29 jbh)
+    // TODO : 아래 주석친 로그인 기본 설정 클래스 LoginSetting 필요시 참고 (2024.10.29 minjae)
     /// <summary>
     /// 로그인 기본 설정 
     /// </summary>
@@ -258,7 +258,7 @@ namespace CobimExplorer.Settings
     //    }
     //    private string _ServerPath = LoginHelper.requestLoginURL;
 
-    //    // TODO : _SiteViewCode 필요시 구현 예정(2023.08.30 jbh)
+    //    // TODO : _SiteViewCode 필요시 구현 예정(2023.08.30 minjae)
     //    //public string SiteViewCode
     //    //{
     //    //    get => this._SiteViewCode;
@@ -282,7 +282,7 @@ namespace CobimExplorer.Settings
     //            this.Changed(nameof(LoginId));
     //        }
     //    }
-    //    // TODO : "LoginHelper.testId" 필요시 사용 예정 (2023.08.30 jbh)
+    //    // TODO : "LoginHelper.testId" 필요시 사용 예정 (2023.08.30 minjae)
     //    //private string _LoginId = LoginHelper.testId;
     //    private string _LoginId;
 
@@ -298,7 +298,7 @@ namespace CobimExplorer.Settings
     //            this.Changed(nameof(Password));
     //        }
     //    }
-    //    // TODO : "LoginHelper.testPassword" 필요시 사용 예정 (2023.08.30 jbh)
+    //    // TODO : "LoginHelper.testPassword" 필요시 사용 예정 (2023.08.30 minjae)
     //    //private string _Password = LoginHelper.testPassword;
     //    private string _Password;
 
@@ -319,7 +319,7 @@ namespace CobimExplorer.Settings
     //    }
     //    private RequestHeader _RequestHeaders;
 
-    //    // TODO : 테넌트 아이디 프로퍼티 "Tenant" 사용 예정 (2023.12.22 jbh)
+    //    // TODO : 테넌트 아이디 프로퍼티 "Tenant" 사용 예정 (2023.12.22 minjae)
     //    /// <summary>
     //    /// 테넌트 아이디 
     //    /// </summary>
@@ -351,7 +351,7 @@ namespace CobimExplorer.Settings
     //        LoginHelper.requestLoginURL
     //    };
 
-    //    // TODO : 로그인 토큰 값 프로퍼티 "Authorization" 필요시 사용 예정 (2023.12.22 jbh)
+    //    // TODO : 로그인 토큰 값 프로퍼티 "Authorization" 필요시 사용 예정 (2023.12.22 minjae)
     //    /// <summary>
     //    /// 로그인 토큰 값
     //    /// </summary>
@@ -367,7 +367,7 @@ namespace CobimExplorer.Settings
     //    //private Login_Access_Token _Authorization = new Login_Access_Token();
 
 
-    //    // TODO : 마지막 로그인 시점 "_DtLastLogIn" 필요시 추후 구현 예정 (2023.08.30 jbh)
+    //    // TODO : 마지막 로그인 시점 "_DtLastLogIn" 필요시 추후 구현 예정 (2023.08.30 minjae)
     //    //public DateTime? DtLastLogIn
     //    //{
     //    //    get => this._DtLastLogIn;

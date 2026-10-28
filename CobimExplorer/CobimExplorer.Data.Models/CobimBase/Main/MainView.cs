@@ -7,7 +7,7 @@ using CobimNet;
 
 namespace CobimExplorer.Data.Models.CobimBase.Main
 {
-    // TODO : 필요시 MainView.cs 소스파일 수정 예정 (2023.12.14 jbh)
+    // TODO : 필요시 MainView.cs 소스파일 수정 예정 (2023.12.14 minjae)
     // 제네릭 타입 제약 문법 where T 
     // 참고 URL - http://www.csharpstudy.com/CSharp/CSharp-generics.aspx
     public class MainView<TData> : MainView where TData : MainView<TData> { }
@@ -34,7 +34,7 @@ namespace CobimExplorer.Data.Models.CobimBase.Main
         }
         private static MainView _CommonData;
 
-        // TODO : 필요시 리본 버튼 클릭 여부 프로퍼티 "IsRibbonBtnClick" 수정 예정 (2023.12.14 jbh)
+        // TODO : 필요시 리본 버튼 클릭 여부 프로퍼티 "IsRibbonBtnClick" 수정 예정 (2023.12.14 minjae)
         /// <summary>
         /// 리본 버튼 클릭 여부 
         /// </summary>

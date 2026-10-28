@@ -16,11 +16,11 @@
              d:DataContext="{d:DesignInstance vm:ExplorerVM}"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <!-- TODO : 아래 주석친 탐색기 뷰모델(ExplorerVM.cs) 바인딩 하는 XAML 코드 필요시 참고 (2024.09.03 jbh)  -->
+    <!-- TODO : 아래 주석친 탐색기 뷰모델(ExplorerVM.cs) 바인딩 하는 XAML 코드 필요시 참고 (2024.09.03 minjae)  -->
     <!-- s:View.ActionTarget="{Binding ExplorerVM}" -->
     <!-- d:DataContext="{d:DesignInstance vm:ExplorerVM}" -->
 
-    <!--  TODO : 탐색기 화면 뷰(ExplorerV)에서 마우스 우클릭시 ContextMenu "체크인", "체크아웃" 출력 되도록 구현 (필요시 사용 예정) (2023.11.02 jbh)  -->
+    <!--  TODO : 탐색기 화면 뷰(ExplorerV)에서 마우스 우클릭시 ContextMenu "체크인", "체크아웃" 출력 되도록 구현 (필요시 사용 예정) (2023.11.02 minjae)  -->
     <!--  참고 URL - https://wpfstory.tistory.com/8  -->
     <!--  <UserControl.ContextMenu>
         <ContextMenu>
@@ -29,13 +29,13 @@
         </ContextMenu>
     </UserControl.ContextMenu>  -->
     
-    <!--  TODO : 아래 주석친 탐색기 뷰모델(ExplorerVM.cs) 바인딩 하는 XAML 코드 필요시 참고 (2024.09.03 jbh)  -->
+    <!--  TODO : 아래 주석친 탐색기 뷰모델(ExplorerVM.cs) 바인딩 하는 XAML 코드 필요시 참고 (2024.09.03 minjae)  -->
     <!--  <UserControl.DataContext>
         <Binding Path="ExplorerVM" />
     </UserControl.DataContext>  -->
 
     <UserControl.Resources>
-        <!--  TODO : 화면 우측 상단 <DataGrid> 영역 <StackPanel> 영역 안 컨텍스트 메뉴 "테스트", "체크아웃", "체크인", "작업취소" 체크시 뷰모델에 구현한 이벤트 메서드가 실행할 수 있도록 BindingProxy 구현 (2023.11.14 jbh)  -->
+        <!--  TODO : 화면 우측 상단 <DataGrid> 영역 <StackPanel> 영역 안 컨텍스트 메뉴 "테스트", "체크아웃", "체크인", "작업취소" 체크시 뷰모델에 구현한 이벤트 메서드가 실행할 수 있도록 BindingProxy 구현 (2023.11.14 minjae)  -->
         <!--  참고 URL - https://stackoverflow.com/questions/3583507/wpf-binding-a-contextmenu-to-an-mvvm-command  -->
         <!--  참고 2 URL - https://thomaslevesque.com/2011/03/21/wpf-how-to-bind-to-data-when-the-datacontext-is-not-inherited/  -->
         <bindingproxy:BindingProxy x:Key="Proxy" Data="{Binding}" />
@@ -43,7 +43,7 @@
         <!--  정수 값과 문자열 값을 받는 MultiValueConverter 클래스 "ExplorerConverter"  -->
         <converters:ExplorerConverter x:Key="ExplorerConverter"   />
 
-        <!--  TODO : 바인딩한 객체(프로퍼티)에 할당된 값이 True면 False, False면 True로 반대의 값으로 리턴되는 Converter 클래스 "InvertBooleanConverter.cs" 구현 (2024.09.03 jbh)  -->
+        <!--  TODO : 바인딩한 객체(프로퍼티)에 할당된 값이 True면 False, False면 True로 반대의 값으로 리턴되는 Converter 클래스 "InvertBooleanConverter.cs" 구현 (2024.09.03 minjae)  -->
         <!--  참고 URL - https://codekiller.tistory.com/581 -->
         <!--  참고 2 URL - https://devbong.tistory.com/41   -->
         <!--  참고 3 URL - https://benstagram.tistory.com/203  -->
@@ -72,7 +72,7 @@
                     <!--  <StackPanel Height="40" Orientation="Horizontal">
                     <TextBlock Text="COBIM 전용 탐색기" Margin="10,0,10,0" VerticalAlignment="Center" FontSize="20" Foreground="{StaticResource App.Brush.Themes.Common.White}" FontWeight="Bold"/>
                     -->
-                    <!--  TODO : 다운로드 기능 필요시 구현 예정 (2023.10.19 jbh)  -->
+                    <!--  TODO : 다운로드 기능 필요시 구현 예정 (2023.10.19 minjae)  -->
                     <!--  Command="{s:Action DownlLoadAsync, ActionNotFound=Disable}"  -->
                     <!--  <Button Content="다운로드" Command="{Binding DownlLoadCommand}" Margin="0,0,10,0" Width="100"/>  -->
                     <!--  Command="{s:Action CheckOutAsync, ActionNotFound=Disable}"  -->
@@ -87,7 +87,7 @@
                 <Border DockPanel.Dock="Bottom" Background="{StaticResource App.Brush.Themes.Winter.Black.20}">
                     <Grid>
                         <!--  TODO : 화면 "성과품 조회" 하단에 속하는 3가지 <Grid> 영역의 모든 모서리 둥글게 설정하기 위해  --> 
-                        <!--         아래처럼 속성 "CornerRadius" 사용해서 스타일 구현 (2024.09.05 jbh)  -->
+                        <!--         아래처럼 속성 "CornerRadius" 사용해서 스타일 구현 (2024.09.05 minjae)  -->
                         <!--  참고 URL - https://ghostweb.tistory.com/1160  -->
                         <Grid.Resources>
                             <Style TargetType="{x:Type Border}">
@@ -96,7 +96,7 @@
                             </Style>
                         </Grid.Resources>
                         <Grid.ColumnDefinitions>
-                            <!--  TODO : <ColumnDefinition> 영역에서 Width 가중치 (0.5 대 2 비율) 구현 (2023.08.24 jbh)  -->
+                            <!--  TODO : <ColumnDefinition> 영역에서 Width 가중치 (0.5 대 2 비율) 구현 (2023.08.24 minjae)  -->
                             <!--  참고 URL - https://benstagram.tistory.com/33  -->
                             <!--  Width 가중치 0.5  -->
                             <ColumnDefinition Width="0.5*" />
@@ -112,7 +112,7 @@
 
                         <Grid Grid.Row="0" Grid.Column="0">
                             <Grid.RowDefinitions>
-                                <!--  TODO : <RowDefinition> 영역에서 Height 가중치 (1 대 2 비율) 구현 (2023.08.24 jbh)  -->
+                                <!--  TODO : <RowDefinition> 영역에서 Height 가중치 (1 대 2 비율) 구현 (2023.08.24 minjae)  -->
                                 <!--  참고 URL - https://benstagram.tistory.com/33  -->
                                 <!--  Height 가중치 1  -->
                                 <!--  <RowDefinition Height="*" />  -->
@@ -124,7 +124,7 @@
                             </Grid.RowDefinitions>
 
                             <!--  <Border Grid.Row="0" Grid.Column="0" BorderBrush="{StaticResource App.Brush.Themes.Common.Red}" BorderThickness="10">  -->  
-                            <!--  TODO : 테스트 코드 <ListBox> 영역 구현 (2023.08.24 jbh)  -->
+                            <!--  TODO : 테스트 코드 <ListBox> 영역 구현 (2023.08.24 minjae)  -->
                             <!--  참고 URL - https://kaki104.tistory.com/804  -->
                             <!--  <ListBox ItemsSource="{Binding ProjectTypeCollection}">
                                         <ListBox.ItemTemplate>
@@ -139,7 +139,7 @@
 
                             <Border BorderBrush="{StaticResource App.Brush.Themes.Common.White}" 
                                     BorderThickness="5">
-                                <!--  TODO : 테스트 코드 <ListBox> 영역 구현 (2023.08.24 jbh)  -->
+                                <!--  TODO : 테스트 코드 <ListBox> 영역 구현 (2023.08.24 minjae)  -->
                                 <!--  참고 URL - https://kaki104.tistory.com/804  -->
                                 <!--  <ListBox ItemsSource="{Binding ProjectTypeCollection}">
                                         <ListBox.ItemTemplate>
@@ -151,7 +151,7 @@
                                         </ListBox.ItemTemplate>
                                     </ListBox>  -->
 
-                                <!--  TODO : <TreeView> 영역에서 BorderBrush 색상이 화면 상으로 출력 되는 잔상을 제거하기 위해 역마진(negative margin) (Margin="-1") 설정 구현 (2024.09.10 jbh)  -->
+                                <!--  TODO : <TreeView> 영역에서 BorderBrush 색상이 화면 상으로 출력 되는 잔상을 제거하기 위해 역마진(negative margin) (Margin="-1") 설정 구현 (2024.09.10 minjae)  -->
                                 <!--  참고 URL - https://gold-dragon.tistory.com/41  -->
                                 <!--  화면 좌측 상단 TreeView(트리뷰) 영역  -->
                                 <TreeView x:Name="TreeView" 
@@ -168,7 +168,7 @@
                                         <!--  프로젝트  -->
                                         <HierarchicalDataTemplate DataType="{x:Type explorer_models:ProjectView}" 
                                                                   ItemsSource="{Binding ChildNodes}">
-                                            <!--  TODO : <StackPanel> 영역 <Image> 파일 Project.png 추가 (2023.09.18 jbh)  -->
+                                            <!--  TODO : <StackPanel> 영역 <Image> 파일 Project.png 추가 (2023.09.18 minjae)  -->
                                             <!--  참고 URL - https://drbeeeye.tistory.com/45  -->
                                             <StackPanel Orientation="Horizontal">
                                                 <Image x:Name="ProjectImg" Source="/Resources/Project.png"/>
@@ -186,15 +186,15 @@
                                         </HierarchicalDataTemplate>
 
                                         <!--  폴더  -->
-                                        <!--  TODO : 폴더명 클릭시 비동기 메서드 "ContainerSearchAsync" 실행 되도록 구현 (2023.09.19 jbh) -->
+                                        <!--  TODO : 폴더명 클릭시 비동기 메서드 "ContainerSearchAsync" 실행 되도록 구현 (2023.09.19 minjae) -->
                                         <HierarchicalDataTemplate DataType="{x:Type explorer_models:FolderView}" 
                                                                   ItemsSource="{Binding ChildNodes}">
                                             <!--  <StackPanel Orientation="Horizontal" s:View.ActionTarget="{Binding ExplorerVM}">  -->
                                             <StackPanel Orientation="Horizontal">
-                                                <!--  TODO : 버튼 기본 스타일(테두리, 배경 등등...) 제거 구현 (2023.09.18 jbh)  -->
+                                                <!--  TODO : 버튼 기본 스타일(테두리, 배경 등등...) 제거 구현 (2023.09.18 minjae)  -->
                                                 <!--  참고 URL - https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&blogId=skelentom&logNo=10166053623  -->
 
-                                                <!--  TODO : <HierarchicalDataTemplate> 영역 안 버튼 Command 바인딩 구현 (2023.09.18 jbh) -->
+                                                <!--  TODO : <HierarchicalDataTemplate> 영역 안 버튼 Command 바인딩 구현 (2023.09.18 minjae) -->
                                                 <!--  참고 URL - https://korsa.tistory.com/95 -->
                                                 <Button Command="{Binding DataContext.ContainerCommand, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type UserControl}}}"
                                                         Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}">
@@ -205,14 +205,14 @@
                                                         </StackPanel>
                                                     </Button.Content>
 
-                                                    <!--  TODO : 버튼 멀티 바인딩 구현 (2023.09.19 jbh) -->
+                                                    <!--  TODO : 버튼 멀티 바인딩 구현 (2023.09.19 minjae) -->
                                                     <!--  참고 URL - https://nonstop-antoine.tistory.com/40  -->
                                                     <!--  참고 2 URL - https://chashtag.tistory.com/43  -->
                                                     <!--  참고 3 URL - https://stackoverflow.com/questions/1350598/passing-two-command-parameters-using-a-wpf-binding -->
                                                     <!--  참고 4 URL - https://stackoverflow.com/questions/23499671/wpf-multibinding-button-isenabled-with-textboxes  -->
                                                     <!--  참고 5 URL - https://stackoverflow.com/questions/22084611/wpf-how-to-bind-together-two-properties-bound-to-two-different-controls -->
                                                     <Button.CommandParameter>
-                                                        <!--  TODO : 버튼 멀티 바인딩 시 프로퍼티 Path 사용 (2023.09.19 jbh)  -->
+                                                        <!--  TODO : 버튼 멀티 바인딩 시 프로퍼티 Path 사용 (2023.09.19 minjae)  -->
                                                         <!--  참고 URL - https://icodebroker.tistory.com/entry/CWPF-MultiBinding-%EC%97%98%EB%A6%AC%EB%A8%BC%ED%8A%B8-Converter-%EC%86%8D%EC%84%B1%EC%97%90%EC%84%9C-IMultiValueConverter-%EC%9D%B8%ED%84%B0%ED%8E%98%EC%9D%B4%EC%8A%A4-%EA%B5%AC%ED%98%84-%EA%B0%9D%EC%B2%B4%EB%A5%BC-%EC%82%AC%EC%9A%A9%ED%95%B4-%EB%B0%94%EC%9D%B8%EB%94%A9%ED%95%98%EA%B8%B0-2  -->
                                                         <MultiBinding Converter="{StaticResource ExplorerConverter}">
                                                             <Binding Path="exp_ProjectId" />
@@ -221,7 +221,7 @@
                                                         </MultiBinding>
                                                     </Button.CommandParameter>
                                                     
-                                                    <!--  TODO : 아래 주석친 테스트 코드 필요시 참고 (2024.09.09 jbh)  -->
+                                                    <!--  TODO : 아래 주석친 테스트 코드 필요시 참고 (2024.09.09 minjae)  -->
                                                     <!--  <Button.CommandParameter>
                                                         <MultiBinding Converter="{x:Static converters}">
                                                             <Binding Path="exp_ProjectId" ElementName="FolderInfo" />
@@ -235,7 +235,7 @@
                                     </TreeView.Resources>
                                 </TreeView>
 
-                                <!--  TODO : 테스트 코드 <ListView> 영역 ItemsSource Collection 바인딩 구현 (2023.08.24 jbh)  -->
+                                <!--  TODO : 테스트 코드 <ListView> 영역 ItemsSource Collection 바인딩 구현 (2023.08.24 minjae)  -->
                                 <!--  참고 URL - https://stackoverflow.com/questions/5896198/c-sharp-wpf-listview-binding-not-working  -->
                                 <!--  <ListView ItemsSource="{Binding ProjectTypeCollection}">
                                         <ListView.View>
@@ -277,7 +277,7 @@
 
                         <Grid Grid.Row="0" Grid.Column="2">
                             <Grid.RowDefinitions>
-                                <!--  TODO : <RowDefinition> 영역에서 Height 가중치 (1.5 대 1 비율) 구현 (2024.10.25 jbh)  -->
+                                <!--  TODO : <RowDefinition> 영역에서 Height 가중치 (1.5 대 1 비율) 구현 (2024.10.25 minjae)  -->
                                 <!--  참고 URL - https://benstagram.tistory.com/33  -->
                                 <!--  Height 가중치 1.5  -->
                                 <RowDefinition Height="1.5*" />
@@ -290,15 +290,15 @@
 
                             <!--  DataGrid 영역  -->
                             <Border Grid.Row="0" Grid.Column="0" BorderBrush="{StaticResource App.Brush.Themes.Common.White}" BorderThickness="5">
-                                <!--  TODO : 추후 화면 좌측에서 폴더 클릭시 아래 <DockPanel> 영역에서 클릭한 폴더 경로가 출력될 수 있도록 XAML 코드 수정 예정 (2023.12.29 jbh)  -->
-                                <!--  TODO : <DockPanel> 영역에서 BorderBrush 색상이 화면 상으로 출력 되는 잔상을 제거하기 위해 역마진(negative margin) (Margin="-1") 설정 구현 (2024.09.10 jbh)  -->
+                                <!--  TODO : 추후 화면 좌측에서 폴더 클릭시 아래 <DockPanel> 영역에서 클릭한 폴더 경로가 출력될 수 있도록 XAML 코드 수정 예정 (2023.12.29 minjae)  -->
+                                <!--  TODO : <DockPanel> 영역에서 BorderBrush 색상이 화면 상으로 출력 되는 잔상을 제거하기 위해 역마진(negative margin) (Margin="-1") 설정 구현 (2024.09.10 minjae)  -->
                                 <!--  참고 URL - https://gold-dragon.tistory.com/41  -->
                                 <DockPanel Background="{StaticResource App.Brush.Themes.Common.White}" Margin="-1">
                                     <Border DockPanel.Dock="Top"
                                             Background="{StaticResource App.Brush.Themes.Common.White}"
                                             Height="0"
                                             Margin="5,5,5,0">
-                                        <!--  TODO : ItemsControl 사용해서 화면 우측 상단에 팀이름 (exp_TreeName) 출력 되도록 구현 (2023.10.23 jbh)  -->
+                                        <!--  TODO : ItemsControl 사용해서 화면 우측 상단에 팀이름 (exp_TreeName) 출력 되도록 구현 (2023.10.23 minjae)  -->
                                         <!--  참고 URL - https://blog.naver.com/jjid0247/222111885157  -->
                                         <!--  참고 2 URL - https://nonstop-antoine.tistory.com/33  -->
                                         <ItemsControl ItemsSource="{Binding TeamList}">
@@ -310,7 +310,7 @@
                                                         <TextBlock Text="{Binding exp_TreeName}" Margin="5"/>
 
                                                         <!--  TODO : 파일(컨테이너) 신규 등록의 경우 COBIM 웹 사이트(인재 INC)에서만 사용하는 기능이고 CDE 탐색기 응용 프로그램에서는 사용 안 하는 걸로 소통 완료.  -->
-                                                        <!--         하여 해당 파일(컨테이너) 신규 등록 메서드는 주석 처리하고 사용 안 함. (2023.10.19 jbh)  -->
+                                                        <!--         하여 해당 파일(컨테이너) 신규 등록 메서드는 주석 처리하고 사용 안 함. (2023.10.19 minjae)  -->
                                                         <!--  <Button Content="신규등록" 
                                                                       Margin="0,5,5,0"
                                                                       HorizontalAlignment="Right"
@@ -323,23 +323,23 @@
 
                                     <Border DockPanel.Dock="Bottom" Margin="5">
                                         <!--  <GridView> 구현 예시  -->
-                                        <!--  TODO: <GridView> 영역 구현시 <Grid> 또는 <DataGrid> 둘 중에 하나로 구현하기 (2023.09.18 jbh)  -->
-                                        <!--  TODO: 아래 <DataGrid> 영역 테스트 코드 추후 삭제 예정 (2023.07.14 jbh)  -->
+                                        <!--  TODO: <GridView> 영역 구현시 <Grid> 또는 <DataGrid> 둘 중에 하나로 구현하기 (2023.09.18 minjae)  -->
+                                        <!--  TODO: 아래 <DataGrid> 영역 테스트 코드 추후 삭제 예정 (2023.07.14 minjae)  -->
                                         <!--  <DataGrid ItemsSource="{Binding ElementName=folderTreeView, Path=SelectedItem.SubFolderCollection, Mode=OneWay}"/>  -->
                                         <!--  <DataGrid ItemsSource="{Binding ContainerDatas}" />  -->
 
-                                        <!--  TODO: 탐색기 화면 뷰(ExplorerV.xaml) 우측 상단 컨테이너 정보 영역을 <DataGrid> 로 구현 및 컨테이너 정보에 속하는 컬럼을 <DataGridTextColumn> 로 구현하기 (2023.12.28 jbh)  -->
+                                        <!--  TODO: 탐색기 화면 뷰(ExplorerV.xaml) 우측 상단 컨테이너 정보 영역을 <DataGrid> 로 구현 및 컨테이너 정보에 속하는 컬럼을 <DataGridTextColumn> 로 구현하기 (2023.12.28 minjae)  -->
                                         <!--  참고 URL - https://stackoverflow.com/questions/2865505/how-do-i-hide-wpf-datagrid-row-selector  -->
                                         <!--  참고 URL - https://bumukisbest.tistory.com/7  -->
 
-                                        <!--  TODO : <DataGrid> 영역에서 특정 컬럼만 출력되도록 AutoGenerateColumns="False" 추가 (2023.12.28 jbh)  -->
+                                        <!--  TODO : <DataGrid> 영역에서 특정 컬럼만 출력되도록 AutoGenerateColumns="False" 추가 (2023.12.28 minjae)  -->
                                         <!--  참고 URL - https: //chat.openai.com/c/31259d02-861e-4814-a27a-5bc333dc0d8d  -->
 
-                                        <!--  TODO : <DataGrid> 영역에서 사용자가 DataGrid에 새 행을 추가할 수 없도록 CanUserAddRows="False" 추가 (2023.12.29 jbh)  -->
+                                        <!--  TODO : <DataGrid> 영역에서 사용자가 DataGrid에 새 행을 추가할 수 없도록 CanUserAddRows="False" 추가 (2023.12.29 minjae)  -->
                                         <!--  참고 URL - https://onlab94.tistory.com/361  -->
                                         
                                         <!--  TODO : <DataGrid> 영역에서 출력되는 데이터 로우들을 선택해서 멀티 체크아웃, 체크인 작업 처리하기 위해 
-                                                     아래처럼 SelectionMode="Extended" 구현하기 (2024.09.06 jbh)  -->
+                                                     아래처럼 SelectionMode="Extended" 구현하기 (2024.09.06 minjae)  -->
                                         <!--  참고 URL - https://nonstop-antoine.tistory.com/104  -->
                                         <DataGrid x:Name="ContainerDataGrid"
                                                   ItemsSource="{Binding ContainerDatas}"
@@ -351,7 +351,7 @@
                                                   HeadersVisibility="Column"
                                                   CanUserAddRows="False">
                                             <!--  TODO : <DataGrid> 영역에서 출력되는 데이터 로우들을 선택해서 멀티 체크아웃, 체크인 작업 처리하기 위해 
-                                                         아래처럼 <i:EventTrigger> 사용해서 SelectionChanged 이벤트 구현하기 (2024.09.06 jbh)  -->
+                                                         아래처럼 <i:EventTrigger> 사용해서 SelectionChanged 이벤트 구현하기 (2024.09.06 minjae)  -->
                                             <!--  참고 URL - https://nonstop-antoine.tistory.com/104  -->
                                             <!--  ItemsSource에서 어떤 Row든 선택하면 SelectionChanged 이벤트가 발생되니 해당 이벤트를 트리거 삼는다.  -->
                                             <i:Interaction.Triggers>
@@ -363,21 +363,21 @@
                                                 </i:EventTrigger>
                                             </i:Interaction.Triggers>
 
-                                            <!--  TODO : <DataGrid> 영역 스타일 구현 (2023.12.28 jbh)  -->
+                                            <!--  TODO : <DataGrid> 영역 스타일 구현 (2023.12.28 minjae)  -->
                                             <!--  참고 URL - https://velog.io/@yu_oolong/C-WPF-DataGrid-Style  -->
                                             <DataGrid.Resources>
                                                 <Style TargetType="{x:Type DataGrid}">
                                                     <Setter Property="HorizontalGridLinesBrush" Value="{DynamicResource App.Brush.Themes.Winter.Black.20}" />
                                                     <Setter Property="VerticalGridLinesBrush"   Value="{DynamicResource App.Brush.Themes.Winter.Black.20}" />
                                                 </Style>
-                                                <!--  TODO : <DataGrid> 영역에 속하는 DataGridColumnHeader 스타일 구현 (2024.01.02 jbh)  -->
+                                                <!--  TODO : <DataGrid> 영역에 속하는 DataGridColumnHeader 스타일 구현 (2024.01.02 minjae)  -->
                                                 <!--  참고 URL - http://sma6869.blogspot.com/2012/07/wpfdatagrid.html?m=1  -->
                                                 <!--  참고 2 URL - http://sleepingcloud.cocolog-nifty.com/blog/2013/01/wpf-datagrid-b7.html  -->
                                                 <Style TargetType="{x:Type DataGridColumnHeader}">
                                                     <Setter Property="HorizontalContentAlignment" Value="Center"  />
-                                                    <!--  TODO : 아래 스타일 속성 프로퍼티 "SeparatorBrush" 필요 없을 시 삭제 예정 (2024.01.02 jbh)  -->
+                                                    <!--  TODO : 아래 스타일 속성 프로퍼티 "SeparatorBrush" 필요 없을 시 삭제 예정 (2024.01.02 minjae)  -->
                                                     <!--  <Setter Property="SeparatorBrush" Value="{DynamicResource App.Brush.Themes.Winter.Black.20}" />  -->
-                                                    <!--  TODO : <DataGrid> 영역에 속하는 컬럼 헤더(DataGridColumnHeader)와 데이터 셀(DataGridCell)의 Grid Line Brush 간격 맞추기 위해 Margin 값 "-1,0,0,0" 설정 (2023.12.29 jbh)  -->  
+                                                    <!--  TODO : <DataGrid> 영역에 속하는 컬럼 헤더(DataGridColumnHeader)와 데이터 셀(DataGridCell)의 Grid Line Brush 간격 맞추기 위해 Margin 값 "-1,0,0,0" 설정 (2023.12.29 minjae)  -->  
                                                     <Setter Property="Margin"          Value="-1,0,0,0"  />
                                                     <Setter Property="Background"      Value="{DynamicResource App.Brush.Themes.Winter.Black.20}"    />
                                                     <Setter Property="BorderBrush"     Value="{DynamicResource App.Brush.Themes.Common.White}"  />
@@ -396,7 +396,7 @@
                                                 </Style>
                                             </DataGrid.Resources>
                                             <DataGrid.Columns>
-                                                <!--  TODO : <DataGrid> 영역의 총 너비(Width)를 컬럼만으로 꽉 채우기 위해 <DataGridTemplateColumn> 영역의 너비(Width)를 Width="3*" 구현 (2024.08.23 jbh)  -->
+                                                <!--  TODO : <DataGrid> 영역의 총 너비(Width)를 컬럼만으로 꽉 채우기 위해 <DataGridTemplateColumn> 영역의 너비(Width)를 Width="3*" 구현 (2024.08.23 minjae)  -->
                                                 <!--  참고 URL - https://stackoverflow.com/questions/32884616/wpf-full-width-datagridcolumn-on-datagrids-width  -->
                                                 <!--  제목  -->
                                                 <DataGridTemplateColumn Header="제목" Width="3*">
@@ -409,10 +409,10 @@
                                                         </DataTemplate>
                                                     </DataGridTemplateColumn.CellTemplate>
                                                 </DataGridTemplateColumn>
-                                                <!--  TODO : <DataGrid> 영역에 속하는 컬럼 "컨테이너 ID" 안에 <StackPanel> 구현하기 (2023.12.28 jbh)  -->
+                                                <!--  TODO : <DataGrid> 영역에 속하는 컬럼 "컨테이너 ID" 안에 <StackPanel> 구현하기 (2023.12.28 minjae)  -->
                                                 <!--  참고 URL - https://stackoverflow.com/questions/10312120/wpf-stackpanel-inside-datagrid-cell     -->
 
-                                                <!--  TODO : <DataGrid> 영역의 총 너비(Width)를 컬럼만으로 꽉 채우기 위해 <DataGridTemplateColumn> 영역의 너비(Width)를 Width="4*" 구현 (2023.12.29 jbh)  -->
+                                                <!--  TODO : <DataGrid> 영역의 총 너비(Width)를 컬럼만으로 꽉 채우기 위해 <DataGridTemplateColumn> 영역의 너비(Width)를 Width="4*" 구현 (2023.12.29 minjae)  -->
                                                 <!--  참고 URL - https://stackoverflow.com/questions/32884616/wpf-full-width-datagridcolumn-on-datagrids-width  -->
                                                 <!--  컨테이너 ID  -->
                                                 <DataGridTemplateColumn Header="컨테이너 ID" Width="4*">
@@ -422,7 +422,7 @@
                                                                         Width="Auto"
                                                                         Margin="5,0,0,0"
                                                                         HorizontalAlignment="Left">
-                                                                <!--  TODO: 버튼 기본 스타일(테두리, 배경 등등...) 제거 구현 (Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}") (2023.10.30 jbh)  -->
+                                                                <!--  TODO: 버튼 기본 스타일(테두리, 배경 등등...) 제거 구현 (Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}") (2023.10.30 minjae)  -->
                                                                 <!--  참고 URL - https: //m.blog.naver.com/PostView.naver?isHttpsRedirect=true&blogId=skelentom&logNo=10166053623  -->
                                                                 <!--  MouseRightButtonDown = "Btn_MouseRightButtonDown"  -->
                                                                 <Button Command="{Binding DataContext.DetailCommand, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type UserControl}}}"
@@ -431,14 +431,14 @@
                                                                         BorderBrush="{StaticResource App.Brush.Themes.Winter.Black.20}"
                                                                         Height="20">
                                                                     <Button.Content>
-                                                                        <!--  TODO:  <DockPanel> 영역에 속한 TextBlock("exp_Title")과 간격을 맞추기 위해 아래 <StackPanel> 영역 Margin 속성 값 음수 설정(역마진 - Negative Margin) (2023.10.5 jbh)  -->
+                                                                        <!--  TODO:  <DockPanel> 영역에 속한 TextBlock("exp_Title")과 간격을 맞추기 위해 아래 <StackPanel> 영역 Margin 속성 값 음수 설정(역마진 - Negative Margin) (2023.10.5 minjae)  -->
                                                                         <!--  참고 URL - https: //gold-dragon.tistory.com/41   -->
                                                                         <!--  <StackPanel> 영역 왼쪽으로 4px 이동(Margin = "-4")  -->
                                                                         <StackPanel Orientation="Horizontal" 
                                                                                     VerticalAlignment="Center"
                                                                                     Background="{StaticResource App.Brush.Themes.Common.White}">
                                                                             <Image x:Name="ClickImg">
-                                                                                <!--  TODO: 체크아웃 완료한 컨테이너 ID 문자열이 포함된 <Image> 영역 Style Triggers 구현 (2023.12.14 jbh)  -->
+                                                                                <!--  TODO: 체크아웃 완료한 컨테이너 ID 문자열이 포함된 <Image> 영역 Style Triggers 구현 (2023.12.14 minjae)  -->
                                                                                 <!--  참고 URL - https: //stackoverflow.com/questions/2414358/wpf-datatrigger-on-an-image-source  -->
                                                                                 <Image.Style>
                                                                                     <Style TargetType = "{x:Type Image}">
@@ -447,7 +447,7 @@
                                                                                             <DataTrigger Binding="{Binding exp_ReadYn}" Value="Y">
                                                                                                 <Setter Property="Width"  Value="16"  />
                                                                                                 <Setter Property="Height" Value="16"  />
-                                                                                                <!--  TODO : <Image> 영역 속성 Source = "/Resources/Click.png" <Image> 태그에서 직접 바인딩 안 하고 <Style.Triggers>에서 사용 (2023.12.14 jbh)  -->
+                                                                                                <!--  TODO : <Image> 영역 속성 Source = "/Resources/Click.png" <Image> 태그에서 직접 바인딩 안 하고 <Style.Triggers>에서 사용 (2023.12.14 minjae)  -->
                                                                                                 <Setter Property="Source" Value="/Resources/Click.png"  />
                                                                                             </DataTrigger>
                                                                                         </Style.Triggers>
@@ -459,7 +459,7 @@
                                                                             <TextBlock x:Name = "TextUpperContainerId" 
                                                                                        Text="{Binding exp_UpperContainerId}"
                                                                                        VerticalAlignment="Center">
-                                                                                <!--  TODO : 체크아웃 완료한 컨테이너 ID 문자열이 포함된 <TextBlock> 영역 Style Triggers 구현 (2023.12.14 jbh)  -->
+                                                                                <!--  TODO : 체크아웃 완료한 컨테이너 ID 문자열이 포함된 <TextBlock> 영역 Style Triggers 구현 (2023.12.14 minjae)  -->
                                                                                 <!--  참고 URL - https: //wpf-tutorial.com/styles/trigger-datatrigger-event-trigger/  -->
                                                                                 <TextBlock.Style>
                                                                                     <Style TargetType="{x:Type TextBlock}">
@@ -469,7 +469,7 @@
                                                                                                 <Setter Property="Background" Value="{DynamicResource App.Brush.Themes.Common.DarkGray}" />
                                                                                                 <Setter Property="Foreground" Value="{DynamicResource App.Brush.Themes.Common.White}"    />
                                                                                                 <Setter Property="FontWeight" Value="Bold"       />
-                                                                                                <!--  TODO : 프로퍼티 "Margin" 설정 필요시 사용 예정 (2024.01.04 jbh)  -->
+                                                                                                <!--  TODO : 프로퍼티 "Margin" 설정 필요시 사용 예정 (2024.01.04 minjae)  -->
                                                                                                 <!--  <Setter Property="Margin" Value="3,0,0,0"    />  -->
                                                                                             </DataTrigger>
                                                                                         </Style.Triggers>
@@ -478,30 +478,30 @@
                                                                             </TextBlock>
 
                                                                             <StackPanel.ContextMenu>
-                                                                                <!--  TODO: <StackPanel> 영역 안 마우스 우클릭시 ContextMenu "테스트", "파일열기", "체크아웃", "체크인" 출력 되도록 <ContextMenu> 영역 안 ItemsSource 바인딩 구현 (2023.12.13 jbh)  -->
+                                                                                <!--  TODO: <StackPanel> 영역 안 마우스 우클릭시 ContextMenu "테스트", "파일열기", "체크아웃", "체크인" 출력 되도록 <ContextMenu> 영역 안 ItemsSource 바인딩 구현 (2023.12.13 minjae)  -->
                                                                                 <!--  참고 URL - https: //onlab94.tistory.com/360  -->
                                                                                 <!--  참고 2 URL - https: //stackoverflow.com/questions/3583507/wpf-binding-a-contextmenu-to-an-mvvm-command  -->
                                                                                 <!--  참고 3 URL - https: //thomaslevesque.com/2011/03/21/wpf-how-to-bind-to-data-when-the-datacontext-is-not-inherited/  -->
 
                                                                                 <!--  컨텍스트 메뉴 <ContextMenu> 영역  -->
-                                                                                <!--  TODO : 바인딩한 객체(프로퍼티)에 할당된 값이 True면 False, False면 True로 반대의 값으로 리턴되는 Converter 클래스 "InvertBooleanConverter.cs" 구현 (2024.09.03 jbh)  -->
+                                                                                <!--  TODO : 바인딩한 객체(프로퍼티)에 할당된 값이 True면 False, False면 True로 반대의 값으로 리턴되는 Converter 클래스 "InvertBooleanConverter.cs" 구현 (2024.09.03 minjae)  -->
                                                                                 <!--  Converter 클래스 "InvertBooleanConverter.cs"     -->
                                                                                 <!--  사용 방법 (예시) - IsEnabled="{Binding Source={StaticResource Proxy}, Path=Data.IsCheckOutWorking, Mode=OneWay, Converter={StaticResource InvertBooleanConverter}}"  -->
                                                                                 <!--  참고 URL - https://codekiller.tistory.com/581    -->
                                                                                 <!--  참고 2 URL - https://devbong.tistory.com/41      -->
                                                                                 <!--  참고 3 URL - https://benstagram.tistory.com/203  -->
 
-                                                                                <!--  TODO : <ContextMenu> 태그 주요 속성 "IsOpen", "StaysOpen" 필요시 사용 예정 (2024.09.04 jbh)  -->
+                                                                                <!--  TODO : <ContextMenu> 태그 주요 속성 "IsOpen", "StaysOpen" 필요시 사용 예정 (2024.09.04 minjae)  -->
                                                                                 <!--  "IsOpen" 참고 URL - https://learn.microsoft.com/en-us/dotnet/api/system.windows.controls.contextmenu.isopen?view=windowsdesktop-8.0  -->
                                                                                 <!--  "StaysOpen" 참고 URL - https://learn.microsoft.com/en-us/dotnet/api/system.windows.controls.contextmenu.staysopen?view=windowsdesktop-8.0  -->
                                                                                 <!--  <ContextMenu> 참고 URL - https://onlab94.tistory.com/360  -->
 
                                                                                 <ContextMenu x:Name="ExpContextMenu">
-                                                                                    <!--  TODO : <ContextMenu> 컨텍스트 메뉴 "테스트", "파일열기", "로그인", "로그아웃" 체크시 뷰모델에 구현한 이벤트 메서드가 실행할 수 있도록 <MenuItem> 영역 Command 바인딩 구현(2023.11.14 jbh)  -->
+                                                                                    <!--  TODO : <ContextMenu> 컨텍스트 메뉴 "테스트", "파일열기", "로그인", "로그아웃" 체크시 뷰모델에 구현한 이벤트 메서드가 실행할 수 있도록 <MenuItem> 영역 Command 바인딩 구현(2023.11.14 minjae)  -->
                                                                                     <!--  참고 URL - https: //stackoverflow.com/questions/3583507/wpf-binding-a-contextmenu-to-an-mvvm-command  -->
                                                                                     <!--  참고 2 URL - https: //thomaslevesque.com/2011/03/21/wpf-how-to-bind-to-data-when-the-datacontext-is-not-inherited/  -->
 
-                                                                                    <!--  TODO : <MenuItem> "테스트" 필요시 사용 예정 (2024.09.03 jbh)  -->
+                                                                                    <!--  TODO : <MenuItem> "테스트" 필요시 사용 예정 (2024.09.03 minjae)  -->
                                                                                     <!--  "테스트"  -->
                                                                                     <!--  <MenuItem x:Name="Test"
                                                                                                     Header="테스트"
@@ -515,15 +515,15 @@
                                                                                         <MenuItem.Style>
                                                                                             <Style TargetType="{x:Type MenuItem}">
                                                                                                 <Style.Triggers>
-                                                                                                    <!--  TODO : BindingMode(바인딩 모드) 속성 Mode=OneWay 로 설정하여 뷰모델에 구현한 프로퍼티 "Data.IsOpenFileWorking" 값이 바뀌면 뷰로 변경된 값이 출력 되도록 구현 (2024.11.04 jbh)  -->
+                                                                                                    <!--  TODO : BindingMode(바인딩 모드) 속성 Mode=OneWay 로 설정하여 뷰모델에 구현한 프로퍼티 "Data.IsOpenFileWorking" 값이 바뀌면 뷰로 변경된 값이 출력 되도록 구현 (2024.11.04 minjae)  -->
                                                                                                     <!--  참고 URL - https://hihaoun.tistory.com/entry/C-%EB%B0%94%EC%9D%B8%EB%94%A9-onetime-oneway-twoway-onewaytosource  -->
                                                                                                     <DataTrigger Binding="{Binding Source={StaticResource Proxy}, Path=Data.IsOpenFileWorking, Mode=OneWay}" Value="True">
                                                                                                         <Setter Property="IsEnabled" Value="False"  />
                                                                                                     </DataTrigger>
                                                                                                     
-                                                                                                    <!--  TODO : 컨텍스트 메뉴 아이템(MenuItem) "파일열기"에 필요한 <Style.Triggers> 태그 필요시 구현 예정 (2024.09.04 jbh)  -->
+                                                                                                    <!--  TODO : 컨텍스트 메뉴 아이템(MenuItem) "파일열기"에 필요한 <Style.Triggers> 태그 필요시 구현 예정 (2024.09.04 minjae)  -->
                                                                                                     <!--  TODO: 체크인 완료한 컨테이너 ID 문자열이 포함된 <TextBlock> 영역 마우스 우클릭시 출력되는  -->
-                                                                                                    <!--  컨텍스트 메뉴 중 "파일열기" 출력 불가 (Visibility = Collapsed) 처리 되도록 <MenuItem> 영역 Style.Triggers 구현 (2024.09.03 jbh)  -->
+                                                                                                    <!--  컨텍스트 메뉴 중 "파일열기" 출력 불가 (Visibility = Collapsed) 처리 되도록 <MenuItem> 영역 Style.Triggers 구현 (2024.09.03 minjae)  -->
                                                                                                     <!--  참고 URL - https: //chat.openai.com/c/f178cc0c-df8d-4a7a-8974-b644d8cdf1c8  -->
                                                                                                     <!--  참고 2 URL - https: //stackoverflow.com/questions/44507562/wpf-menuitem-style-trigger  -->
                                                                                                     <!--  <DataTrigger Binding="{Binding exp_ReadYn}" Value="N">
@@ -533,7 +533,7 @@
                                                                                             </Style>
                                                                                         </MenuItem.Style>
                                                                                         <MenuItem.CommandParameter>
-                                                                                            <!--  TODO:  <ContextMenu> 영역 -  <MenuItem> 영역에 멀티 바인딩 시 프로퍼티 Path 사용 (2023.11.21 jbh)  -->
+                                                                                            <!--  TODO:  <ContextMenu> 영역 -  <MenuItem> 영역에 멀티 바인딩 시 프로퍼티 Path 사용 (2023.11.21 minjae)  -->
                                                                                             <!--  참고 URL - https: //icodebroker.tistory.com/entry/CWPF-MultiBinding-%EC%97%98%EB%A6%AC%EB%A8%BC%ED%8A%B8-Converter-%EC%86%8D%EC%84%B1%EC%97%90%EC%84%9C-IMultiValueConverter-%EC%9D%B8%ED%84%B0%ED%8E%98%EC%9D%B4%EC%8A%A4-%EA%B5%AC%ED%98%84-%EA%B0%9D%EC%B2%B4%EB%A5%BC-%EC%82%AC%EC%9A%A9%ED%95%B4-%EB%B0%94%EC%9D%B8%EB%94%A9%ED%95%98%EA%B8%B0-2  -->
                                                                                             <MultiBinding Converter="{StaticResource ExplorerConverter}">
                                                                                                 <!--  폴더(디렉토리) 정보  -->
@@ -554,30 +554,30 @@
                                                                                         <MenuItem.Style>
                                                                                             <Style TargetType="{x:Type MenuItem}">
                                                                                                 <Style.Triggers>
-                                                                                                    <!--  TODO : BindingMode(바인딩 모드) 속성 Mode=OneWay 로 설정하여 뷰모델에 구현한 프로퍼티 "Data.IsCheckOutWorking" 값이 바뀌면 뷰로 변경된 값이 출력 되도록 구현 (2024.09.04 jbh)  -->
+                                                                                                    <!--  TODO : BindingMode(바인딩 모드) 속성 Mode=OneWay 로 설정하여 뷰모델에 구현한 프로퍼티 "Data.IsCheckOutWorking" 값이 바뀌면 뷰로 변경된 값이 출력 되도록 구현 (2024.09.04 minjae)  -->
                                                                                                     <!--  참고 URL - https://hihaoun.tistory.com/entry/C-%EB%B0%94%EC%9D%B8%EB%94%A9-onetime-oneway-twoway-onewaytosource  -->
                                                                                                     <DataTrigger Binding="{Binding Source={StaticResource Proxy}, Path=Data.IsCheckOutWorking, Mode=OneWay}" Value="True">
                                                                                                         <Setter Property="IsEnabled" Value="False"  />
                                                                                                     </DataTrigger>
                                                                                                     
                                                                                                     <!--  TODO : 체크아웃 완료한 컨테이너 ID 문자열이 포함된 <TextBlock> 영역 마우스 우클릭시 출력되는  -->
-                                                                                                    <!--         컨텍스트 메뉴 중 "체크아웃" 비활성화(IsEnabled = False) 처리 되도록 <MenuItem> 영역 Style.Triggers 구현 (2023.12.12 jbh)  -->
+                                                                                                    <!--         컨텍스트 메뉴 중 "체크아웃" 비활성화(IsEnabled = False) 처리 되도록 <MenuItem> 영역 Style.Triggers 구현 (2023.12.12 minjae)  -->
                                                                                                     <!--  참고 URL - https: //chat.openai.com/c/f178cc0c-df8d-4a7a-8974-b644d8cdf1c8  -->
                                                                                                     <!--  참고 2 URL - https: //stackoverflow.com/questions/44507562/wpf-menuitem-style-trigger  -->
                                                                                                     <DataTrigger Binding="{Binding exp_ReadYn}" Value="Y">
                                                                                                         <Setter Property="IsEnabled" Value="False"  />
                                                                                                     </DataTrigger>
                                                                                                     
-                                                                                                    <!--  TODO : <DataTrigger> 영역 안 Binding 구현 (2024.09.02 jbh)  -->
+                                                                                                    <!--  TODO : <DataTrigger> 영역 안 Binding 구현 (2024.09.02 minjae)  -->
                                                                                                     <!--  참고 URL - https://korsa.tistory.com/95 -->
                                                                                                     <!--  TODO : 체크아웃 처리 중인 컨테이너 ID 문자열이 포함된 <TextBlock> 영역 마우스 우클릭시 출력되는  -->
-                                                                                                    <!--         컨텍스트 메뉴 중 "체크아웃" 비활성화(IsEnabled = False) 처리 되도록 <MenuItem> 영역 Style.Triggers 구현 (2024.09.02 jbh)  -->
+                                                                                                    <!--         컨텍스트 메뉴 중 "체크아웃" 비활성화(IsEnabled = False) 처리 되도록 <MenuItem> 영역 Style.Triggers 구현 (2024.09.02 minjae)  -->
                                                                                                     <!--  <DataTrigger Binding="{Binding Source={StaticResource Proxy}, Path=Data.IsCheckOutWorking, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" Value="True">-->
                                                                                                     <!--  <DataTrigger Binding="{Binding Source={StaticResource Proxy}, Path=Data.IsCheckOutWorking, Mode=OneWay }" Value="False">
                                                                                                               <Setter Property="IsEnabled"  Value="True"  />
                                                                                                           </DataTrigger>  -->
                                                                                                     
-                                                                                                    <!--  TODO : <MultiDataTrigger> 영역 안 Binding 구현 (오류가 발생하는 코드여서 참고만 할 것) (2024.09.03 jbh) -->
+                                                                                                    <!--  TODO : <MultiDataTrigger> 영역 안 Binding 구현 (오류가 발생하는 코드여서 참고만 할 것) (2024.09.03 minjae) -->
                                                                                                     <!--  Binding Mode OneWay 참고 URL - https://blog.naver.com/seokcrew/221666061145  -->
                                                                                                     <!--  MultiDataTrigger 참고 URL - https://m.blog.naver.com/sisayseki/221927285839  -->
                                                                                                     <!--  UpdateSourceTrigger  참고 URL - https://wpf-tutorial.com/ko/37/%EB%8D%B0%EC%9D%B4%ED%84%B0-%EB%B0%94%EC%9D%B8%EB%94%A9/updatesourcetrigger-%EC%86%8D%EC%84%B1/  -->
@@ -600,7 +600,7 @@
                                                                                         </MenuItem.Style>
                                                                                         <!--  MenuItem "체크아웃" 멀티 바인딩 파라미터  -->
                                                                                         <MenuItem.CommandParameter>
-                                                                                            <!--  TODO:  <ContextMenu> 영역 -  <MenuItem> 영역에 멀티 바인딩 시 프로퍼티 Path 사용 (2023.11.21 jbh)  -->
+                                                                                            <!--  TODO:  <ContextMenu> 영역 -  <MenuItem> 영역에 멀티 바인딩 시 프로퍼티 Path 사용 (2023.11.21 minjae)  -->
                                                                                             <!--  참고 URL - https: //icodebroker.tistory.com/entry/CWPF-MultiBinding-%EC%97%98%EB%A6%AC%EB%A8%BC%ED%8A%B8-Converter-%EC%86%8D%EC%84%B1%EC%97%90%EC%84%9C-IMultiValueConverter-%EC%9D%B8%ED%84%B0%ED%8E%98%EC%9D%B4%EC%8A%A4-%EA%B5%AC%ED%98%84-%EA%B0%9D%EC%B2%B4%EB%A5%BC-%EC%82%AC%EC%9A%A9%ED%95%B4-%EB%B0%94%EC%9D%B8%EB%94%A9%ED%95%98%EA%B8%B0-2  -->
                                                                                             <MultiBinding Converter="{StaticResource ExplorerConverter}">
                                                                                                 <!--  TODO: 체크아웃 비동기 메서드 "CheckOutAsync" 에 전달할 멀티 CommandParameter 대상  -->
@@ -616,7 +616,7 @@
 
                                                                                                 <!--  TODO: 아래 멀티 바인딩 대상을 폴더 아이디 프로퍼티 "exp_FolderId" 설정시  -->
                                                                                                 <!--  탐색기 뷰모델(ExplorerVM.cs) -> 컨테이너 리스트 생성 비동기 메서드 "ContainerListCreateAsync"  -->
-                                                                                                <!--  실행 결과 데이터 정보가 변경되어 컨테이너 리스트 화면이 바뀌므로 해당 프로퍼티는 멀티 바인딩 대상에서 제외 처리함. (2023.12.13 jbh)  -->
+                                                                                                <!--  실행 결과 데이터 정보가 변경되어 컨테이너 리스트 화면이 바뀌므로 해당 프로퍼티는 멀티 바인딩 대상에서 제외 처리함. (2023.12.13 minjae)  -->
                                                                                                 <!--  <Binding Path = "exp_FolderId" />  -->
                                                                                             </MultiBinding>
                                                                                         </MenuItem.CommandParameter>
@@ -629,30 +629,30 @@
                                                                                         <MenuItem.Style>
                                                                                             <Style TargetType="{x:Type MenuItem}">
                                                                                                 <Style.Triggers>
-                                                                                                    <!--  TODO : BindingMode(바인딩 모드) 속성 Mode=OneWay 로 설정하여 뷰모델에 구현한 프로퍼티 "Data.IsCheckInWorking" 값이 바뀌면 뷰로 변경된 값이 출력되도록 구현 (2024.09.04 jbh)  -->
+                                                                                                    <!--  TODO : BindingMode(바인딩 모드) 속성 Mode=OneWay 로 설정하여 뷰모델에 구현한 프로퍼티 "Data.IsCheckInWorking" 값이 바뀌면 뷰로 변경된 값이 출력되도록 구현 (2024.09.04 minjae)  -->
                                                                                                     <!--  참고 URL - https://hihaoun.tistory.com/entry/C-%EB%B0%94%EC%9D%B8%EB%94%A9-onetime-oneway-twoway-onewaytosource  -->
                                                                                                     <DataTrigger Binding="{Binding Source={StaticResource Proxy}, Path=Data.IsCheckInWorking, Mode=OneWay}" Value="True">
                                                                                                         <Setter Property="IsEnabled" Value="False"  />
                                                                                                     </DataTrigger>
                                                                                                     
                                                                                                     <!--  TODO: 체크인 완료한 컨테이너 ID 문자열이 포함된 <TextBlock> 영역 마우스 우클릭시 출력되는  -->
-                                                                                                    <!--  컨텍스트 메뉴 중 "체크인" 비활성화(IsEnabled = False)처리 되도록 <MenuItem> 영역 Style.Triggers 구현 (2023.12.12 jbh)  -->
+                                                                                                    <!--  컨텍스트 메뉴 중 "체크인" 비활성화(IsEnabled = False)처리 되도록 <MenuItem> 영역 Style.Triggers 구현 (2023.12.12 minjae)  -->
                                                                                                     <!--  참고 URL - https: //chat.openai.com/c/f178cc0c-df8d-4a7a-8974-b644d8cdf1c8  -->
                                                                                                     <!--  참고 2 URL - https: //stackoverflow.com/questions/44507562/wpf-menuitem-style-trigger  -->
                                                                                                     <DataTrigger Binding="{Binding exp_ReadYn}" Value="N">
                                                                                                         <Setter Property="IsEnabled" Value="False"  />
                                                                                                     </DataTrigger>
                                                                                                     
-                                                                                                    <!--  TODO : <DataTrigger> 영역 안 Binding 구현 (2024.09.02 jbh) -->
+                                                                                                    <!--  TODO : <DataTrigger> 영역 안 Binding 구현 (2024.09.02 minjae) -->
                                                                                                     <!--  참고 URL - https://korsa.tistory.com/95 -->
                                                                                                     <!--  TODO : 체크인 처리 중인 컨테이너 ID 문자열이 포함된 <TextBlock> 영역 마우스 우클릭시 출력되는  -->
-                                                                                                    <!--         컨텍스트 메뉴 중 "체크인" 비활성화(IsEnabled = False) 처리 되도록 <MenuItem> 영역 Style.Triggers 구현 (2024.09.02 jbh)  -->
+                                                                                                    <!--         컨텍스트 메뉴 중 "체크인" 비활성화(IsEnabled = False) 처리 되도록 <MenuItem> 영역 Style.Triggers 구현 (2024.09.02 minjae)  -->
                                                                                                     <!--  <DataTrigger Binding="{Binding RelativeSource={RelativeSource AncestorType=vm:ExplorerVM}, Path=IsCheckInWorking}" Value="True">
                                                                                                             <Setter Property="IsEnabled" Value="False"  />
                                                                                                     </DataTrigger>  -->
 
 
-                                                                                                    <!--  TODO : <MultiDataTrigger> 영역 안 Binding 구현 (오류가 발생하는 코드여서 참고만 할 것) (2024.09.03 jbh) -->
+                                                                                                    <!--  TODO : <MultiDataTrigger> 영역 안 Binding 구현 (오류가 발생하는 코드여서 참고만 할 것) (2024.09.03 minjae) -->
                                                                                                     <!--  Binding Mode OneWay 참고 URL - https://blog.naver.com/seokcrew/221666061145  -->
                                                                                                     <!--  MultiDataTrigger 참고 URL - https://m.blog.naver.com/sisayseki/221927285839  -->
                                                                                                     <!--  UpdateSourceTrigger  참고 URL - https://wpf-tutorial.com/ko/37/%EB%8D%B0%EC%9D%B4%ED%84%B0-%EB%B0%94%EC%9D%B8%EB%94%A9/updatesourcetrigger-%EC%86%8D%EC%84%B1/  -->
@@ -677,7 +677,7 @@
                                                                                         </MenuItem.Style>
                                                                                         <!--  MenuItem "체크인" 멀티 바인딩 파라미터  -->
                                                                                         <MenuItem.CommandParameter>
-                                                                                            <!--  TODO :  <ContextMenu> 영역 -  <MenuItem> 영역에 멀티 바인딩 시 프로퍼티 Path 사용 (2023.11.21 jbh)  -->
+                                                                                            <!--  TODO :  <ContextMenu> 영역 -  <MenuItem> 영역에 멀티 바인딩 시 프로퍼티 Path 사용 (2023.11.21 minjae)  -->
                                                                                             <!--  참고 URL - https: //icodebroker.tistory.com/entry/CWPF-MultiBinding-%EC%97%98%EB%A6%AC%EB%A8%BC%ED%8A%B8-Converter-%EC%86%8D%EC%84%B1%EC%97%90%EC%84%9C-IMultiValueConverter-%EC%9D%B8%ED%84%B0%ED%8E%98%EC%9D%B4%EC%8A%A4-%EA%B5%AC%ED%98%84-%EA%B0%9D%EC%B2%B4%EB%A5%BC-%EC%82%AC%EC%9A%A9%ED%95%B4-%EB%B0%94%EC%9D%B8%EB%94%A9%ED%95%98%EA%B8%B0-2  -->
                                                                                             <MultiBinding Converter="{StaticResource ExplorerConverter}">
                                                                                                 <Binding Path="exp_ProjectId"   />
@@ -701,7 +701,7 @@
                                                                                               Header="작업취소"
                                                                                               Command="{Binding Source={StaticResource Proxy}, Path=Data.CancelWorkCommand}">
                                                                                         <!--  TODO: 체크인 완료한 컨테이너 ID 문자열이 포함된 <TextBlock> 영역 마우스 우클릭시 출력되는  -->
-                                                                                        <!--  컨텍스트 메뉴 중 "작업취소" 비활성화 (IsEnabled = False) 처리 되도록 <MenuItem> 영역 <Style.Triggers> 구현 (2023.12.19 jbh)  -->
+                                                                                        <!--  컨텍스트 메뉴 중 "작업취소" 비활성화 (IsEnabled = False) 처리 되도록 <MenuItem> 영역 <Style.Triggers> 구현 (2023.12.19 minjae)  -->
                                                                                         <!--  참고 URL - https: //chat.openai.com/c/f178cc0c-df8d-4a7a-8974-b644d8cdf1c8  -->
                                                                                         <!--  참고 2 URL - https: //stackoverflow.com/questions/44507562/wpf-menuitem-style-trigger  -->
                                                                                         <MenuItem.Style>
@@ -715,7 +715,7 @@
                                                                                         </MenuItem.Style>
                                                                                         <!--  MenuItem "작업취소" 멀티 바인딩 파라미터  -->
                                                                                         <MenuItem.CommandParameter>
-                                                                                            <!--  TODO:  <ContextMenu> 영역 -  <MenuItem> 영역에 멀티 바인딩 시 프로퍼티 Path 사용 (2023.11.21 jbh)  -->
+                                                                                            <!--  TODO:  <ContextMenu> 영역 -  <MenuItem> 영역에 멀티 바인딩 시 프로퍼티 Path 사용 (2023.11.21 minjae)  -->
                                                                                             <!--  참고 URL - https: //icodebroker.tistory.com/entry/CWPF-MultiBinding-%EC%97%98%EB%A6%AC%EB%A8%BC%ED%8A%B8-Converter-%EC%86%8D%EC%84%B1%EC%97%90%EC%84%9C-IMultiValueConverter-%EC%9D%B8%ED%84%B0%ED%8E%98%EC%9D%B4%EC%8A%A4-%EA%B5%AC%ED%98%84-%EA%B0%9D%EC%B2%B4%EB%A5%BC-%EC%82%AC%EC%9A%A9%ED%95%B4-%EB%B0%94%EC%9D%B8%EB%94%A9%ED%95%98%EA%B8%B0-2  -->
                                                                                             <MultiBinding Converter="{StaticResource ExplorerConverter}">
                                                                                                 <!--  프로젝트 아이디  -->
@@ -747,7 +747,7 @@
                                                                     </Button.Content>
 
                                                                     <Button.CommandParameter>
-                                                                        <!--  TODO: 버튼 멀티 바인딩 시 프로퍼티 Path 사용 (2023.10.4 jbh)  -->
+                                                                        <!--  TODO: 버튼 멀티 바인딩 시 프로퍼티 Path 사용 (2023.10.4 minjae)  -->
                                                                         <!--  참고 URL - https: //icodebroker.tistory.com/entry/CWPF-MultiBinding-%EC%97%98%EB%A6%AC%EB%A8%BC%ED%8A%B8-Converter-%EC%86%8D%EC%84%B1%EC%97%90%EC%84%9C-IMultiValueConverter-%EC%9D%B8%ED%84%B0%ED%8E%98%EC%9D%B4%EC%8A%A4-%EA%B5%AC%ED%98%84-%EA%B0%9D%EC%B2%B4%EB%A5%BC-%EC%82%AC%EC%9A%A9%ED%95%B4-%EB%B0%94%EC%9D%B8%EB%94%A9%ED%95%98%EA%B8%B0-2  -->
                                                                         <MultiBinding Converter="{StaticResource ExplorerConverter}">
                                                                             <Binding Path="exp_ProjectId"   />
@@ -760,9 +760,9 @@
                                                                     </Button.CommandParameter>
                                                                 </Button>
 
-                                                                <!--  TODO : GridViewColumn.CellTemplate 영역 -> DataTemplate 영역-> 작성자 + " | " + 등록일시 프로퍼티 "CreateUserIdAndTime" 우측 정렬 구현 (2023.09.21 jbh)  -->
+                                                                <!--  TODO : GridViewColumn.CellTemplate 영역 -> DataTemplate 영역-> 작성자 + " | " + 등록일시 프로퍼티 "CreateUserIdAndTime" 우측 정렬 구현 (2023.09.21 minjae)  -->
                                                                 <!--  참고 URL - https: //icodebroker.tistory.com/8229  -->
-                                                                <!--  TODO : 아래 생성자 | 생성일자 <DockPanel> 태그 추후 필요시 사용 예정 (2024.08.23 jbh)  -->
+                                                                <!--  TODO : 아래 생성자 | 생성일자 <DockPanel> 태그 추후 필요시 사용 예정 (2024.08.23 minjae)  -->
                                                                 <!--  생성자 | 생성일자  -->
                                                                 <!--  <DockPanel Margin="10,0,0,0" 
                                                                                  VerticalAlignment="Center">
@@ -771,7 +771,7 @@
                                                                       <TextBlock Margin="5,0,0,0" TextAlignment="Right" Text="{Binding CreateUserIdAndTime}" />
                                                                   </DockPanel>  -->
 
-                                                                <!--  TODO : <DataTemplate> 영역-> <TextBlock> 영역 안 MultiBinding XAML 코드 필요시 사용 예정 (2023.09.21 jbh)  -->
+                                                                <!--  TODO : <DataTemplate> 영역-> <TextBlock> 영역 안 MultiBinding XAML 코드 필요시 사용 예정 (2023.09.21 minjae)  -->
                                                                 <!--  <TextBlock>
                                                                         <TextBlock.Text>
                                                                             <MultiBinding StringFormat = "{}{0} {1}">
@@ -785,7 +785,7 @@
                                                     </DataGridTemplateColumn.CellTemplate>
                                                 </DataGridTemplateColumn>
 
-                                                <!--  TODO : <DataGrid> 영역의 총 너비(Width)를 컬럼만으로 꽉 채우기 위해 <DataGridTemplateColumn> 영역의 너비(Width)를 Width="3*" 구현 (2023.12.29 jbh)  -->
+                                                <!--  TODO : <DataGrid> 영역의 총 너비(Width)를 컬럼만으로 꽉 채우기 위해 <DataGridTemplateColumn> 영역의 너비(Width)를 Width="3*" 구현 (2023.12.29 minjae)  -->
                                                 <!--  참고 URL - https://stackoverflow.com/questions/32884616/wpf-full-width-datagridcolumn-on-datagrids-width  -->
                                                 <!--  파일명  -->
                                                 <DataGridTemplateColumn Header="파일명" Width="3*">
@@ -799,7 +799,7 @@
                                                     </DataGridTemplateColumn.CellTemplate>
                                                 </DataGridTemplateColumn>
 
-                                                <!--  TODO : <DataGrid> 영역의 총 너비(Width)를 컬럼만으로 꽉 채우기 위해 <DataGridTemplateColumn> 영역의 너비(Width)를 Width="0.6*" 구현 (2023.12.29 jbh)  -->
+                                                <!--  TODO : <DataGrid> 영역의 총 너비(Width)를 컬럼만으로 꽉 채우기 위해 <DataGridTemplateColumn> 영역의 너비(Width)를 Width="0.6*" 구현 (2023.12.29 minjae)  -->
                                                 <!--  참고 URL - https://stackoverflow.com/questions/32884616/wpf-full-width-datagridcolumn-on-datagrids-width  -->
                                                 <!--  유형  -->
                                                 <DataGridTemplateColumn Header="유형" Width="0.6*">
@@ -812,7 +812,7 @@
                                                     </DataGridTemplateColumn.CellTemplate>
                                                 </DataGridTemplateColumn>
 
-                                                <!--  TODO : <DataGrid> 영역의 총 너비(Width)를 컬럼만으로 꽉 채우기 위해 <DataGridTemplateColumn> 영역의 너비(Width)를 Width="0.5*" 구현 (2023.12.29 jbh)  -->
+                                                <!--  TODO : <DataGrid> 영역의 총 너비(Width)를 컬럼만으로 꽉 채우기 위해 <DataGridTemplateColumn> 영역의 너비(Width)를 Width="0.5*" 구현 (2023.12.29 minjae)  -->
                                                 <!--  참고 URL - https://stackoverflow.com/questions/32884616/wpf-full-width-datagridcolumn-on-datagrids-width  -->
                                                 <!--  단계  -->
                                                 <DataGridTemplateColumn Header="단계" Width="0.5*">
@@ -825,7 +825,7 @@
                                                     </DataGridTemplateColumn.CellTemplate>
                                                 </DataGridTemplateColumn>
 
-                                                <!--  TODO : <DataGrid> 영역의 총 너비(Width)를 컬럼만으로 꽉 채우기 위해 <DataGridTemplateColumn> 영역의 너비(Width)를 Width="0.5*" 구현 (2023.12.29 jbh)  -->
+                                                <!--  TODO : <DataGrid> 영역의 총 너비(Width)를 컬럼만으로 꽉 채우기 위해 <DataGridTemplateColumn> 영역의 너비(Width)를 Width="0.5*" 구현 (2023.12.29 minjae)  -->
                                                 <!--  참고 URL - https://stackoverflow.com/questions/32884616/wpf-full-width-datagridcolumn-on-datagrids-width  -->
                                                 <!--  상태  -->
                                                 <DataGridTemplateColumn Header="상태" Width="0.5*">
@@ -838,7 +838,7 @@
                                                     </DataGridTemplateColumn.CellTemplate>
                                                 </DataGridTemplateColumn>
 
-                                                <!--  TODO : <DataGrid> 영역의 총 너비(Width)를 컬럼만으로 꽉 채우기 위해 <DataGridTemplateColumn> 영역의 너비(Width)를 Width="0.5*" 구현 (2023.12.29 jbh)  -->
+                                                <!--  TODO : <DataGrid> 영역의 총 너비(Width)를 컬럼만으로 꽉 채우기 위해 <DataGridTemplateColumn> 영역의 너비(Width)를 Width="0.5*" 구현 (2023.12.29 minjae)  -->
                                                 <!--  참고 URL - https://stackoverflow.com/questions/32884616/wpf-full-width-datagridcolumn-on-datagrids-width  -->
                                                 <!--  버전  -->
                                                 <DataGridTemplateColumn Header="버전" Width="0.5*">
@@ -851,15 +851,15 @@
                                                     </DataGridTemplateColumn.CellTemplate>
                                                 </DataGridTemplateColumn>
 
-                                                <!--  TODO : <DataGrid> 영역의 총 너비(Width)를 컬럼만으로 꽉 채우기 위해 <DataGridTemplateColumn> 영역의 너비(Width)를 Width="*" 구현 (2023.12.29 jbh)  -->
+                                                <!--  TODO : <DataGrid> 영역의 총 너비(Width)를 컬럼만으로 꽉 채우기 위해 <DataGridTemplateColumn> 영역의 너비(Width)를 Width="*" 구현 (2023.12.29 minjae)  -->
                                                 <!--  참고 URL - https://stackoverflow.com/questions/32884616/wpf-full-width-datagridcolumn-on-datagrids-width  -->
 
-                                                <!--  TODO : <DataGrid> 영역 컬럼 "추가" 필요시 사용 예정 (2024.10.28 jbh)  -->
-                                                <!--  TODO : <DataGrid> 영역 컬럼 "추가" 컬럼 너비(Width) 조정 못 하도록 CanUserResize="False" 추가 (2023.12.29 jbh)  -->
+                                                <!--  TODO : <DataGrid> 영역 컬럼 "추가" 필요시 사용 예정 (2024.10.28 minjae)  -->
+                                                <!--  TODO : <DataGrid> 영역 컬럼 "추가" 컬럼 너비(Width) 조정 못 하도록 CanUserResize="False" 추가 (2023.12.29 minjae)  -->
                                                 <!--  참고 URL - https://onlab94.tistory.com/361  -->
                                                 <!--  추가  -->
                                                 <!--<DataGridTemplateColumn Header="추가" CanUserResize="False">
-                                                    --><!--  TODO: DataGrid 영역 컬럼 "추가" 사용자가 컬럼 사이즈 조정(Resize) 못 하도록(disable)막는 Style 필요시 사용 예정 (2023.12.15 jbh)  -->
+                                                    --><!--  TODO: DataGrid 영역 컬럼 "추가" 사용자가 컬럼 사이즈 조정(Resize) 못 하도록(disable)막는 Style 필요시 사용 예정 (2023.12.15 minjae)  -->
                                                     <!--  참고 URL - https: //showmethecode.tistory.com/152  -->
                                                     <!--  <DataGridTemplateColumn.HeaderStyle>
                                                         <Style TargetType = "{x:Type DataGridColumnHeader}" >
@@ -868,10 +868,10 @@
                                                     </DataGridTemplateColumn.HeaderStyle>  --><!--
 
                                                     <DataGridTemplateColumn.CellTemplate>
-                                                        --><!--  TODO :  <DataTemplate> 영역 안 버튼 Command 바인딩 구현 (2023.09.21 jbh)  -->
+                                                        --><!--  TODO :  <DataTemplate> 영역 안 버튼 Command 바인딩 구현 (2023.09.21 minjae)  -->
                                                         <!--  참고 URL - https: //korsa.tistory.com/95 --><!--
                                                         <DataTemplate>
-                                                            --><!--  TODO : 버튼 기본 스타일(테두리, 배경 등등...) 제거 구현 (2023.09.18 jbh)  -->
+                                                            --><!--  TODO : 버튼 기본 스타일(테두리, 배경 등등...) 제거 구현 (2023.09.18 minjae)  -->
                                                             <!--  참고 URL - https: //m.blog.naver.com/PostView.naver?isHttpsRedirect=true&blogId=skelentom&logNo=10166053623  --><!--
                                                             <Button Command="{Binding DataContext.FileAddCommand, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type UserControl}}}"
                                                                     Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}">
@@ -883,14 +883,14 @@
                                                     </DataGridTemplateColumn.CellTemplate>
                                                 </DataGridTemplateColumn>-->
 
-                                                <!--  TODO : <DataGrid> 영역의 총 너비(Width)를 컬럼만으로 꽉 채우기 위해 <DataGridTemplateColumn> 영역의 너비(Width)를 Width="*" 구현 (2023.12.29 jbh)  -->
+                                                <!--  TODO : <DataGrid> 영역의 총 너비(Width)를 컬럼만으로 꽉 채우기 위해 <DataGridTemplateColumn> 영역의 너비(Width)를 Width="*" 구현 (2023.12.29 minjae)  -->
                                                 <!--  참고 URL - https://stackoverflow.com/questions/32884616/wpf-full-width-datagridcolumn-on-datagrids-width  -->
 
-                                                <!--  TODO : <DataGrid> 영역 컬럼 "보기" 컬럼 너비(Width) 조정 못 하도록 CanUserResize="False" 추가 (2023.12.29 jbh)  -->
+                                                <!--  TODO : <DataGrid> 영역 컬럼 "보기" 컬럼 너비(Width) 조정 못 하도록 CanUserResize="False" 추가 (2023.12.29 minjae)  -->
                                                 <!--  참고 URL - https://onlab94.tistory.com/361  -->
                                                 <!--  보기  -->
                                                 <DataGridTemplateColumn Header="보기" CanUserResize="False" Width="*">
-                                                    <!--  TODO: <DataGrid> 영역 컬럼 "보기" 사용자가 컬럼 사이즈 조정(Resize) 못 하도록(disable)막는 Style 필요시 사용 예정 (2023.12.15 jbh)  -->
+                                                    <!--  TODO: <DataGrid> 영역 컬럼 "보기" 사용자가 컬럼 사이즈 조정(Resize) 못 하도록(disable)막는 Style 필요시 사용 예정 (2023.12.15 minjae)  -->
                                                     <!--  참고 URL - https: //showmethecode.tistory.com/152  -->
                                                     <!--  <DataGridTemplateColumn.HeaderStyle>
                                                         <Style TargetType = "{x:Type DataGridColumnHeader}" >  
@@ -899,10 +899,10 @@
                                                     </DataGridTemplateColumn.HeaderStyle>  -->
 
                                                     <DataGridTemplateColumn.CellTemplate>
-                                                        <!--  TODO:  <DataTemplate> 영역 안 버튼 Command 바인딩 구현 (2023.09.21 jbh)  -->
+                                                        <!--  TODO:  <DataTemplate> 영역 안 버튼 Command 바인딩 구현 (2023.09.21 minjae)  -->
                                                         <!--  참고 URL - https: //korsa.tistory.com/95 -->
                                                         <DataTemplate>
-                                                            <!--  TODO: 버튼 기본 스타일(테두리, 배경 등등...) 제거 구현 (2023.09.18 jbh)  -->
+                                                            <!--  TODO: 버튼 기본 스타일(테두리, 배경 등등...) 제거 구현 (2023.09.18 minjae)  -->
                                                             <!--  참고 URL - https: //m.blog.naver.com/PostView.naver?isHttpsRedirect=true&blogId=skelentom&logNo=10166053623  -->
                                                             <Button Command="{Binding DataContext.ShowWebViewerCommand, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type UserControl}}}"
                                                                     Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}">
@@ -945,14 +945,14 @@
                                                                     </StackPanel>
                                                                 </Button.Content>
 
-                                                                <!--  TODO : 버튼 "돋보기" 멀티 바인딩 구현 (2024.08.22 jbh)  -->
+                                                                <!--  TODO : 버튼 "돋보기" 멀티 바인딩 구현 (2024.08.22 minjae)  -->
                                                                 <!--  참고 URL - https://nonstop-antoine.tistory.com/40  -->
                                                                 <!--  참고 2 URL - https://chashtag.tistory.com/43  -->
                                                                 <!--  참고 3 URL - https://stackoverflow.com/questions/1350598/passing-two-command-parameters-using-a-wpf-binding  -->
                                                                 <!--  참고 4 URL - https://stackoverflow.com/questions/23499671/wpf-multibinding-button-isenabled-with-textboxes  -->
                                                                 <!--  참고 5 URL - https://stackoverflow.com/questions/22084611/wpf-how-to-bind-together-two-properties-bound-to-two-different-controls -->
                                                                 <Button.CommandParameter>
-                                                                    <!--  TODO : 버튼 "돋보기" 멀티 바인딩 시 프로퍼티 Path 사용 (2024.08.22 jbh) -->
+                                                                    <!--  TODO : 버튼 "돋보기" 멀티 바인딩 시 프로퍼티 Path 사용 (2024.08.22 minjae) -->
                                                                     <!--  참고 URL - https://icodebroker.tistory.com/entry/CWPF-MultiBinding-%EC%97%98%EB%A6%AC%EB%A8%BC%ED%8A%B8-Converter-%EC%86%8D%EC%84%B1%EC%97%90%EC%84%9C-IMultiValueConverter-%EC%9D%B8%ED%84%B0%ED%8E%98%EC%9D%B4%EC%8A%A4-%EA%B5%AC%ED%98%84-%EA%B0%9D%EC%B2%B4%EB%A5%BC-%EC%82%AC%EC%9A%A9%ED%95%B4-%EB%B0%94%EC%9D%B8%EB%94%A9%ED%95%98%EA%B8%B0-2  -->
                                                                     <MultiBinding Converter="{StaticResource ExplorerConverter}">
                                                                         <Binding Path="exp_ProjectId"    />
@@ -968,7 +968,7 @@
                                                     </DataGridTemplateColumn.CellTemplate>
                                                 </DataGridTemplateColumn>
 
-                                                <!--  TODO : <DataGrid> 영역의 총 너비(Width)를 컬럼만으로 꽉 채우기 위해 <DataGridTemplateColumn> 영역의 너비(Width)를 Width="*" 구현 (2024.08.23 jbh)  -->
+                                                <!--  TODO : <DataGrid> 영역의 총 너비(Width)를 컬럼만으로 꽉 채우기 위해 <DataGridTemplateColumn> 영역의 너비(Width)를 Width="*" 구현 (2024.08.23 minjae)  -->
                                                 <!--  참고 URL - https://stackoverflow.com/questions/32884616/wpf-full-width-datagridcolumn-on-datagrids-width  -->
                                                 <!--  작성자  -->
                                                 <DataGridTemplateColumn Header="작성자" Width="*">
@@ -981,7 +981,7 @@
                                                     </DataGridTemplateColumn.CellTemplate>
                                                 </DataGridTemplateColumn>
 
-                                                <!--  TODO : <DataGrid> 영역의 총 너비(Width)를 컬럼만으로 꽉 채우기 위해 <DataGridTemplateColumn> 영역의 너비(Width)를 Width=2*" 구현 (2024.08.23 jbh)  -->
+                                                <!--  TODO : <DataGrid> 영역의 총 너비(Width)를 컬럼만으로 꽉 채우기 위해 <DataGridTemplateColumn> 영역의 너비(Width)를 Width=2*" 구현 (2024.08.23 minjae)  -->
                                                 <!--  참고 URL - https://stackoverflow.com/questions/32884616/wpf-full-width-datagridcolumn-on-datagrids-width  -->
                                                 <!--  생성일  -->
                                                 <DataGridTemplateColumn Header="생성일" Width="2*">
@@ -994,7 +994,7 @@
                                                     </DataGridTemplateColumn.CellTemplate>
                                                 </DataGridTemplateColumn>
 
-                                                <!--  TODO : <DataGrid> 영역의 총 너비(Width)를 컬럼만으로 꽉 채우기 위해 <DataGridTemplateColumn> 영역의 너비(Width)를 Width="*" 구현 (2023.12.29 jbh)  -->
+                                                <!--  TODO : <DataGrid> 영역의 총 너비(Width)를 컬럼만으로 꽉 채우기 위해 <DataGridTemplateColumn> 영역의 너비(Width)를 Width="*" 구현 (2023.12.29 minjae)  -->
                                                 <!--  참고 URL - https://stackoverflow.com/questions/32884616/wpf-full-width-datagridcolumn-on-datagrids-width  -->
                                                 <!--  작업 중인 이  -->
                                                 <DataGridTemplateColumn Header="작업 중인 이" Width="*">
@@ -1009,23 +1009,23 @@
                                             </DataGrid.Columns>
                                         </DataGrid>
 
-                                        <!--  TODO : 아래 테스트로 구현한 ListView - GridView XAML 코드 필요시 참고 (2023.12.29 jbh)  -->
+                                        <!--  TODO : 아래 테스트로 구현한 ListView - GridView XAML 코드 필요시 참고 (2023.12.29 minjae)  -->
                                         <!--  ListView - GridView 구현 예시  -->
                                         <!--  참고 URL - https://stackoverflow.com/questions/3539199/wpf-how-to-bind-gridview  -->
-                                        <!--  TODO : ListView에 출력되는 특정 데이터 로우 클릭시 해당 데이터 로우에 속하는 데이터 담는 리스트 객체 "SelectedContainerData" 필요시 사용 예정(2023.10.5 jbh)  -->
+                                        <!--  TODO : ListView에 출력되는 특정 데이터 로우 클릭시 해당 데이터 로우에 속하는 데이터 담는 리스트 객체 "SelectedContainerData" 필요시 사용 예정(2023.10.5 minjae)  -->
                                         <!--  <ListView x:Name="ContainerListView" 
                                                         ItemsSource="{Binding ContainerDatas}"
                                                         SelectedItem="{Binding SelectedContainerData}"
                                                         SelectionMode="Extended">  -->
-                                        <!--  TODO : ListView 영역안 여백(Padding) 설정 (2023.10.05 jbh)  -->
+                                        <!--  TODO : ListView 영역안 여백(Padding) 설정 (2023.10.05 minjae)  -->
                                         <!--  참고 URL - https://forum.dotnetdev.kr/t/listview/5423/2     -->
-                                        <!--  TODO : ListView 영역안 속성 "SelectionChanged"에 "s:Action" 사용해서 이벤트 메서드 "LockContainer" 바인딩 처리 구현 (2023.12.12 jbh)  -->
+                                        <!--  TODO : ListView 영역안 속성 "SelectionChanged"에 "s:Action" 사용해서 이벤트 메서드 "LockContainer" 바인딩 처리 구현 (2023.12.12 minjae)  -->
                                         <!--         ActionNotFound=Disable의 기능??                      -->
                                         <!--         ActionTarget에 할당된 메서드가 존재하지 않을 경우 버튼 실행 불가(Disable) 처리를 해주는 기능이다.  -->
                                         <!--         다만, 해당 기능은 속성 "SelectionChanged"에 바인딩 할 이벤트 메서드에서는 적용 불가이므로 아래 XAML 코드에서는 사용 안함. -->
                                         <!--  참고 URL - https://github.com/canton7/Stylet/wiki/Actions   -->
 
-                                        <!--  TODO : 아래 <ListView> 영역 속성 SelectionChanged에 바인딩할 메서드 "OnLockedContainer" 필요시 사용 예정 (2023.12.14 jbh)  -->
+                                        <!--  TODO : 아래 <ListView> 영역 속성 SelectionChanged에 바인딩할 메서드 "OnLockedContainer" 필요시 사용 예정 (2023.12.14 minjae)  -->
                                         <!--         속성 SelectionChanged 바인딩 예시 - SelectionChanged="{s:Action OnLockedContainer}"  -->
                                         <!--  <ListView x:Name="ContainerListView" 
                                                         ItemsSource="{Binding ContainerDatas}"
@@ -1039,7 +1039,7 @@
                                             </ListView.DataContext>  -->
 
                                             <!--  TODO : <ListView>에 속하는 데이터 로우 스타일 속성 변경할 수 있도록  -->
-                                            <!--         <ListView.ItemContainerStyle> 영역 안 <Style.Triggers> 구현 (2023.12.12 jbh)  -->
+                                            <!--         <ListView.ItemContainerStyle> 영역 안 <Style.Triggers> 구현 (2023.12.12 minjae)  -->
                                             <!--  참고 URL - https://itecnote.com/tecnote/c-how-to-disable-some-items-in-xaml-for-a-wpf-listview/  -->
                                             <!--  참고 2 URL - https://chat.openai.com/c/b9d52fcf-aab0-49e3-8008-8852767a9982  --><!--
                                             <ListView.ItemContainerStyle>
@@ -1058,19 +1058,19 @@
                                             </ListView.ItemContainerStyle>
 
                                             <ListView.Resources>
-                                                --><!--  TODO : 스크롤바 스타일 속성 구현 예정 (2023.12.21 jbh)  -->
+                                                --><!--  TODO : 스크롤바 스타일 속성 구현 예정 (2023.12.21 minjae)  -->
                                                 <!--<Style TargetType="{x:Type ScrollBar}">
                                                     <Setter Property="Background" Value="{DynamicResource App.Brush.Themes.Winter.Black.20}" />
                                                 </Style>-->
                                                 <!--<Style TargetType="{x:Type ListViewItem}">
                                                     <Setter Property="HorizontalContentAlignment" Value="Stretch" />
                                                 </Style>-->
-                                                <!--  TODO : <GridView> 속성 "GridViewColumnHeader" 사용해서 스타일 구현 (Width = "Auto") (2023.09.22 jbh)  -->
+                                                <!--  TODO : <GridView> 속성 "GridViewColumnHeader" 사용해서 스타일 구현 (Width = "Auto") (2023.09.22 minjae)  -->
                                                 <!--  참고 URL - https://icodebroker.tistory.com/entry/CWPF-GridView-%EC%97%98%EB%A6%AC%EB%A8%BC%ED%8A%B8-ColumnHeaderContainerStyleColumnHeaderTemplate-%EC%86%8D%EC%84%B1-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0  --><!--
                                                 <Style x:Key="ColumnHeaderContainerStyleKey" TargetType="{x:Type GridViewColumnHeader}">
                                                     <Setter Property="Margin" Value="0,0,-2,0" />
                                                     <Setter Property="HorizontalContentAlignment" Value="Center" />
-                                                    --><!--  TODO : "GridViewColumnHeader" 속성 Property="Role" 사용해서 우측 끝에 자동 추가된 여백 컬럼 (HeaderRole=Padding) 제거하기 (2023.12.26 jbh)  -->
+                                                    --><!--  TODO : "GridViewColumnHeader" 속성 Property="Role" 사용해서 우측 끝에 자동 추가된 여백 컬럼 (HeaderRole=Padding) 제거하기 (2023.12.26 minjae)  -->
                                                     <!--  참고 URL - https://stackoverflow.com/questions/4553073/how-to-remove-the-auto-added-column-headerrole-padding-in-wpf-gridview  --><!--
                                                     <Style.Triggers>
                                                         <Trigger Property="Role" Value="Padding">
@@ -1080,7 +1080,7 @@
                                                 </Style>
                                             </ListView.Resources>
                                             <i:Interaction.Triggers>
-                                                --><!--  TODO : <i:EventTrigger> 영역에서 구현한 <i:InvokeCommandAction> 필요시 사용 예정 (2023.10.4 jbh) -->
+                                                --><!--  TODO : <i:EventTrigger> 영역에서 구현한 <i:InvokeCommandAction> 필요시 사용 예정 (2023.10.4 minjae) -->
                                                 <!--  ItemsSource에서 어떤 Row든 선택하면 SelectionChanged 이벤트가 발생되니 해당 이벤트를 트리거 삼는다.  -->
                                                 <!--  <i:EventTrigger EventName="ContainerDetailSearchAsync"> -->
                                                 <!--  CommandParameter에 해당 Element에 직접 접근하여 Selecteditems를 파라미터로 땡겨온다.  -->
@@ -1088,9 +1088,9 @@
                                                 <!--  </i:EventTrigger>  -->
 
                                                 <!--  TODO : <ListView>의 데이터 로우 중 체크아웃 완료한 특정 컨테이너 아이디가 잠금(락 - Lock / 비활성화)(ReadYn = "Y") 처리 되도록  -->
-                                                <!--         이벤트 "SelectionChanged" 사용해서 해당 컨테이너 아이디를 선택 및 클릭하지 못 하도록 비활성화 처리 구현 (2023.12.12 jbh)  -->
+                                                <!--         이벤트 "SelectionChanged" 사용해서 해당 컨테이너 아이디를 선택 및 클릭하지 못 하도록 비활성화 처리 구현 (2023.12.12 minjae)  -->
                                                 <!--  참고 URL - https://nonstop-antoine.tistory.com/7  -->
-                                                <!--  TODO : 아래 EventTrigger XAML 코드 필요시 사용 예정 (2023.12.14 jbh)  -->
+                                                <!--  TODO : 아래 EventTrigger XAML 코드 필요시 사용 예정 (2023.12.14 minjae)  -->
                                                 <!--  <i:EventTrigger EventName="Click">
                                                         <i:InvokeCommandAction Command="{Binding LockContainerCommand}"
                                                                                CommandParameter="{Binding ElementName=ContainerListView, Path=SelectedItem}"/>
@@ -1102,16 +1102,16 @@
                                                 <GridView ColumnHeaderContainerStyle="{StaticResource ColumnHeaderContainerStyleKey}">
                                                     --><!--  <ListView> - <Columns> 영역  --><!--
                                                     <GridView.Columns>
-                                                        --><!--  TODO : 컬럼 "파일 이름" 필요시 사용 예정(2023.10.5 jbh)  -->
+                                                        --><!--  TODO : 컬럼 "파일 이름" 필요시 사용 예정(2023.10.5 minjae)  -->
                                                         <!--  <GridViewColumn Header="파일 이름" DisplayMemberBinding="{Binding exp_FileName}"  />  -->
 
                                                         <!--  <GridViewColumn Header="컨테이너 ID" DisplayMemberBinding="{Binding exp_ContainerId}"  />  --><!--
                                                         <GridViewColumn Header="컨테이너 ID">
                                                             <GridViewColumn.CellTemplate>
-                                                                --><!--  TODO : <GridView> -> GridViewColumn -> DataTemplate 영역 안에 <StackPanel> 구현 (하나의 셀 안에 데이터 멀티 바인딩) (2023.09.21 jbh)  -->
+                                                                --><!--  TODO : <GridView> -> GridViewColumn -> DataTemplate 영역 안에 <StackPanel> 구현 (하나의 셀 안에 데이터 멀티 바인딩) (2023.09.21 minjae)  -->
                                                                 <!--  참고 URL - https://icodebroker.tistory.com/entry/CWPF-GridViewColumn-%EC%97%98%EB%A6%AC%EB%A8%BC%ED%8A%B8-HeaderTemplateCellTemplate-%EC%86%8D%EC%84%B1-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0  -->
 
-                                                                <!--  TODO : <GridView> -> GridViewColumn -> DataTemplate 영역 속성 "DataType" 바인딩 대상 ContainerView 설정 필요시 사용 예정 (2023.10.5 jbh) -->
+                                                                <!--  TODO : <GridView> -> GridViewColumn -> DataTemplate 영역 속성 "DataType" 바인딩 대상 ContainerView 설정 필요시 사용 예정 (2023.10.5 minjae) -->
                                                                 <!--  참고 URL - https://yeko90.tistory.com/entry/c-wpf-DataTemplate  -->
                                                                 <!--  <DataTemplate DataType="{x:Type vm:ContainerView}">  --><!--
                                                                 <DataTemplate>
@@ -1119,19 +1119,19 @@
                                                                     <StackPanel Orientation="Horizontal" 
                                                                                 Width="Auto" 
                                                                                 HorizontalAlignment="Left">
-                                                                        --><!--  TODO : 버튼 기본 스타일(테두리, 배경 등등...) 제거 구현 (2023.10.30 jbh)  -->
+                                                                        --><!--  TODO : 버튼 기본 스타일(테두리, 배경 등등...) 제거 구현 (2023.10.30 minjae)  -->
                                                                         <!--  참고 URL - https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&blogId=skelentom&logNo=10166053623  -->
                                                                         <!--  MouseRightButtonDown="Btn_MouseRightButtonDown"  --><!--
                                                                         <Button Command="{Binding DataContext.DetailCommand, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type UserControl}}}"
                                                                                 Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}"
                                                                                 HorizontalAlignment="Left">
                                                                             <Button.Content>
-                                                                                --><!--  TODO : DockPanel 영역에 속한 TextBlock("exp_Title")과 간격을 맞추기 위해 아래 <StackPanel> 영역 Margin 속성 값 음수 설정(역마진 - Negative Margin) (2023.10.5 jbh)  -->
+                                                                                --><!--  TODO : DockPanel 영역에 속한 TextBlock("exp_Title")과 간격을 맞추기 위해 아래 <StackPanel> 영역 Margin 속성 값 음수 설정(역마진 - Negative Margin) (2023.10.5 minjae)  -->
                                                                                 <!--  참고 URL - https://gold-dragon.tistory.com/41  -->
                                                                                 <!--  StackPanel 영역 왼쪽으로 4px 이동 (Margin="-4")  --><!--
                                                                                 <StackPanel Orientation="Horizontal" Margin="-4">
                                                                                     <Image x:Name="ClickImg">
-                                                                                        --><!--  TODO : 체크아웃 완료한 컨테이너 ID 문자열이 포함된 <Image> 영역 <Style.Triggers> 구현 (2023.12.14 jbh)  -->
+                                                                                        --><!--  TODO : 체크아웃 완료한 컨테이너 ID 문자열이 포함된 <Image> 영역 <Style.Triggers> 구현 (2023.12.14 minjae)  -->
                                                                                         <!--  참고 URL - https://stackoverflow.com/questions/2414358/wpf-datatrigger-on-an-image-source  --><!--
                                                                                         <Image.Style>
                                                                                             <Style TargetType="{x:Type Image}">
@@ -1140,7 +1140,7 @@
                                                                                                     <DataTrigger Binding="{Binding exp_ReadYn}" Value="Y">
                                                                                                         <Setter Property="Width"  Value="16"  />
                                                                                                         <Setter Property="Height" Value="16"  />
-                                                                                                        --><!--  TODO : <Image> 영역 속성 Source="/Resources/Click.png" <Image> 태그에서 직접 바인딩 안 하고 <Style.Triggers>에서 사용 (2023.12.14 jbh)  --><!--
+                                                                                                        --><!--  TODO : <Image> 영역 속성 Source="/Resources/Click.png" <Image> 태그에서 직접 바인딩 안 하고 <Style.Triggers>에서 사용 (2023.12.14 minjae)  --><!--
                                                                                                         <Setter Property="Source" Value="/Resources/Click.png" />
                                                                                                     </DataTrigger>
                                                                                                 </Style.Triggers>
@@ -1151,7 +1151,7 @@
                                                                                     --><!--  프로퍼티 "exp_UpperContainerId" 용도 - 탐색기 화면 뷰(ExplorerV.xaml) <ListView> 영역에 바인딩할 컬럼 용도  --><!--
                                                                                     <TextBlock x:Name="TextUpperContainerId"  
                                                                                                Text="{Binding exp_UpperContainerId}">
-                                                                                        --><!--  TODO : 체크아웃 완료한 컨테이너 ID 문자열이 포함된 <TextBlock> 영역 <Style.Triggers> 구현 (2023.12.14 jbh)  -->
+                                                                                        --><!--  TODO : 체크아웃 완료한 컨테이너 ID 문자열이 포함된 <TextBlock> 영역 <Style.Triggers> 구현 (2023.12.14 minjae)  -->
                                                                                         <!--  참고 URL - https://wpf-tutorial.com/styles/trigger-datatrigger-event-trigger/  --><!--
                                                                                         <TextBlock.Style>
                                                                                             <Style TargetType="{x:Type TextBlock}">
@@ -1167,7 +1167,7 @@
                                                                                         </TextBlock.Style>
                                                                                     </TextBlock>
                                                                                     <StackPanel.ContextMenu>
-                                                                                        --><!--  TODO : <StackPanel> 영역 안 마우스 우클릭시 ContextMenu "테스트", "체크아웃", "체크인" 출력 되도록 <ContextMenu> 영역 안 ItemsSource 바인딩 구현 (2023.12.13 jbh)  -->
+                                                                                        --><!--  TODO : <StackPanel> 영역 안 마우스 우클릭시 ContextMenu "테스트", "체크아웃", "체크인" 출력 되도록 <ContextMenu> 영역 안 ItemsSource 바인딩 구현 (2023.12.13 minjae)  -->
                                                                                         <!--  참고 URL   - https://onlab94.tistory.com/360  -->
                                                                                         <!--  참고 2 URL - https://stackoverflow.com/questions/3583507/wpf-binding-a-contextmenu-to-an-mvvm-command  -->
                                                                                         <!--  참고 3 URL - https://thomaslevesque.com/2011/03/21/wpf-how-to-bind-to-data-when-the-datacontext-is-not-inherited/  -->
@@ -1175,7 +1175,7 @@
                                                                                         <!--  컨텍스트 메뉴 <ContextMenu> 영역  --><!--
                                                                                         <ContextMenu>
                                                                                             --><!--  TODO : 체크아웃 완료한 컨테이너 ID 문자열이 포함된 <TextBlock> 영역 마우스 우클릭시 출력되는  -->
-                                                                                            <!--            컨텍스트 메뉴 중 "체크아웃" 비활성화 처리 되도록 Style Triggers 구현 (2023.12.12 jbh)  -->
+                                                                                            <!--            컨텍스트 메뉴 중 "체크아웃" 비활성화 처리 되도록 Style Triggers 구현 (2023.12.12 minjae)  -->
                                                                                             <!--  <ContextMenu.ItemContainerStyle>
                                                                                                       <Style TargetType="{x:Type MenuItem}">
                                                                                                           <Style.Triggers>
@@ -1185,7 +1185,7 @@
                                                                                                           </Style.Triggers>
                                                                                                       </Style>
                                                                                                   </ContextMenu.ItemContainerStyle>  -->
-                                                                                            <!--  TODO : <ContextMenu> 컨텍스트 메뉴 "테스트", "로그인", "로그아웃" 체크시 뷰모델에 구현한 이벤트 메서드가 실행할 수 있도록 <MenuItem> 영역 Command 바인딩 구현 (2023.11.14 jbh)  -->
+                                                                                            <!--  TODO : <ContextMenu> 컨텍스트 메뉴 "테스트", "로그인", "로그아웃" 체크시 뷰모델에 구현한 이벤트 메서드가 실행할 수 있도록 <MenuItem> 영역 Command 바인딩 구현 (2023.11.14 minjae)  -->
                                                                                             <!--  참고 URL - https://stackoverflow.com/questions/3583507/wpf-binding-a-contextmenu-to-an-mvvm-command  -->
                                                                                             <!--  참고 2 URL - https://thomaslevesque.com/2011/03/21/wpf-how-to-bind-to-data-when-the-datacontext-is-not-inherited/  -->
                                                                                             <!--  "테스트"  --><!--
@@ -1199,7 +1199,7 @@
                                                                                                       Header="체크아웃"
                                                                                                       Command="{Binding Source={StaticResource Proxy}, Path=Data.CheckOutCommand}">
                                                                                                 --><!--  TODO : 체크아웃 완료한 컨테이너 ID 문자열이 포함된 <TextBlock> 영역 마우스 우클릭시 출력되는  -->
-                                                                                                <!--            컨텍스트 메뉴 중 "체크아웃" 비활성화(IsEnabled = False) 처리 되도록 <MenuItem> 영역 <Style.Triggers> 구현 (2023.12.12 jbh)  -->
+                                                                                                <!--            컨텍스트 메뉴 중 "체크아웃" 비활성화(IsEnabled = False) 처리 되도록 <MenuItem> 영역 <Style.Triggers> 구현 (2023.12.12 minjae)  -->
                                                                                                 <!--  참고 URL - https://chat.openai.com/c/f178cc0c-df8d-4a7a-8974-b644d8cdf1c8  -->
                                                                                                 <!--  참고 2 URL - https://stackoverflow.com/questions/44507562/wpf-menuitem-style-trigger  --><!--
                                                                                                 <MenuItem.Style>
@@ -1212,7 +1212,7 @@
                                                                                                     </Style>
                                                                                                 </MenuItem.Style>
                                                                                                 <MenuItem.CommandParameter>
-                                                                                                    --><!--  TODO : <ContextMenu> 영역 - <MenuItem> 영역에 멀티 바인딩 시 프로퍼티 Path 사용 (2023.11.21 jbh)  -->
+                                                                                                    --><!--  TODO : <ContextMenu> 영역 - <MenuItem> 영역에 멀티 바인딩 시 프로퍼티 Path 사용 (2023.11.21 minjae)  -->
                                                                                                     <!--  참고 URL - https://icodebroker.tistory.com/entry/CWPF-MultiBinding-%EC%97%98%EB%A6%AC%EB%A8%BC%ED%8A%B8-Converter-%EC%86%8D%EC%84%B1%EC%97%90%EC%84%9C-IMultiValueConverter-%EC%9D%B8%ED%84%B0%ED%8E%98%EC%9D%B4%EC%8A%A4-%EA%B5%AC%ED%98%84-%EA%B0%9D%EC%B2%B4%EB%A5%BC-%EC%82%AC%EC%9A%A9%ED%95%B4-%EB%B0%94%EC%9D%B8%EB%94%A9%ED%95%98%EA%B8%B0-2  --><!--
                                                                                                     <MultiBinding Converter="{StaticResource ExplorerConverter}">
                                                                                                         <Binding Path="exp_ProjectId"   />
@@ -1224,9 +1224,9 @@
 
                                                                                                         --><!--  TODO : 아래 멀티 바인딩 대상을 폴더 아이디 프로퍼티 "exp_FolderId" 설정시  -->
                                                                                                         <!--            탐색기 뷰모델(ExplorerVM.cs) -> 컨테이너 리스트 생성 비동기 메서드 "ContainerListCreateAsync"  -->
-                                                                                                        <!--            실행 결과 데이터 정보가 변경되어 컨테이너 리스트 화면이 바뀌므로 해당 프로퍼티는 멀티 바인딩 대상에서 제외 처리함. (2023.12.13 jbh)  -->
+                                                                                                        <!--            실행 결과 데이터 정보가 변경되어 컨테이너 리스트 화면이 바뀌므로 해당 프로퍼티는 멀티 바인딩 대상에서 제외 처리함. (2023.12.13 minjae)  -->
                                                                                                         <!--  <Binding Path="exp_FolderId"    />  -->
-                                                                                                        <!--  TODO : 체크아웃 비동기 메서드 "CheckOutAsync"에 전달할 멀티 CommandParameter 대상들 중 "exp_FileId", "exp_FileName" 대상 포함 (2023.11.28 jbh)  --><!--
+                                                                                                        <!--  TODO : 체크아웃 비동기 메서드 "CheckOutAsync"에 전달할 멀티 CommandParameter 대상들 중 "exp_FileId", "exp_FileName" 대상 포함 (2023.11.28 minjae)  --><!--
                                                                                                         <Binding Path="exp_FileId"    />
                                                                                                         <Binding Path="exp_FileName"  />
                                                                                                     </MultiBinding>
@@ -1238,7 +1238,7 @@
                                                                                                       Header="체크인"
                                                                                                       Command="{Binding Source={StaticResource Proxy}, Path=Data.CheckInCommand}">
                                                                                                 --><!--  TODO : 체크인 완료한 컨테이너 ID 문자열이 포함된 <TextBlock> 영역 마우스 우클릭시 출력되는  -->
-                                                                                                <!--            컨텍스트 메뉴 중 "체크인" 비활성화(IsEnabled = False) 처리 되도록 <MenuItem> 영역 <Style.Triggers> 구현 (2023.12.12 jbh)  -->
+                                                                                                <!--            컨텍스트 메뉴 중 "체크인" 비활성화(IsEnabled = False) 처리 되도록 <MenuItem> 영역 <Style.Triggers> 구현 (2023.12.12 minjae)  -->
                                                                                                 <!--  참고 URL - https://chat.openai.com/c/f178cc0c-df8d-4a7a-8974-b644d8cdf1c8  -->
                                                                                                 <!--  참고 2 URL - https://stackoverflow.com/questions/44507562/wpf-menuitem-style-trigger  --><!--
                                                                                                 <MenuItem.Style>
@@ -1251,7 +1251,7 @@
                                                                                                     </Style>
                                                                                                 </MenuItem.Style>
                                                                                                 <MenuItem.CommandParameter>
-                                                                                                    --><!--  TODO : <ContextMenu> 영역 - <MenuItem> 영역에 멀티 바인딩 시 프로퍼티 Path 사용 (2023.11.21 jbh) -->
+                                                                                                    --><!--  TODO : <ContextMenu> 영역 - <MenuItem> 영역에 멀티 바인딩 시 프로퍼티 Path 사용 (2023.11.21 minjae) -->
                                                                                                     <!--  참고 URL - https://icodebroker.tistory.com/entry/CWPF-MultiBinding-%EC%97%98%EB%A6%AC%EB%A8%BC%ED%8A%B8-Converter-%EC%86%8D%EC%84%B1%EC%97%90%EC%84%9C-IMultiValueConverter-%EC%9D%B8%ED%84%B0%ED%8E%98%EC%9D%B4%EC%8A%A4-%EA%B5%AC%ED%98%84-%EA%B0%9D%EC%B2%B4%EB%A5%BC-%EC%82%AC%EC%9A%A9%ED%95%B4-%EB%B0%94%EC%9D%B8%EB%94%A9%ED%95%98%EA%B8%B0-2  --><!--
                                                                                                     <MultiBinding Converter="{StaticResource ExplorerConverter}">
                                                                                                         <Binding Path="exp_ProjectId"  />
@@ -1273,7 +1273,7 @@
                                                                                                       Header="작업취소"
                                                                                                       Command="{Binding Source={StaticResource Proxy}, Path=Data.CancelWorkCommand}">
                                                                                                 --><!--  TODO : 체크인 완료한 컨테이너 ID 문자열이 포함된 <TextBlock> 영역 마우스 우클릭시 출력되는  -->
-                                                                                                <!--            컨텍스트 메뉴 중 "작업취소" 비활성화(IsEnabled = False) 처리 되도록 <MenuItem> 영역 <Style.Triggers> 구현 (2023.12.19 jbh)  -->
+                                                                                                <!--            컨텍스트 메뉴 중 "작업취소" 비활성화(IsEnabled = False) 처리 되도록 <MenuItem> 영역 <Style.Triggers> 구현 (2023.12.19 minjae)  -->
                                                                                                 <!--  참고 URL - https://chat.openai.com/c/f178cc0c-df8d-4a7a-8974-b644d8cdf1c8  -->
                                                                                                 <!--  참고 2 URL - https://stackoverflow.com/questions/44507562/wpf-menuitem-style-trigger  --><!--
                                                                                                 <MenuItem.Style>
@@ -1287,7 +1287,7 @@
                                                                                                 </MenuItem.Style>
                                                                                                 
                                                                                                 <MenuItem.CommandParameter>
-                                                                                                    --><!--  TODO : <ContextMenu> 영역 - <MenuItem> 영역에 멀티 바인딩 시 프로퍼티 Path 사용 (2023.11.21 jbh)  -->
+                                                                                                    --><!--  TODO : <ContextMenu> 영역 - <MenuItem> 영역에 멀티 바인딩 시 프로퍼티 Path 사용 (2023.11.21 minjae)  -->
                                                                                                     <!--  참고 URL - https://icodebroker.tistory.com/entry/CWPF-MultiBinding-%EC%97%98%EB%A6%AC%EB%A8%BC%ED%8A%B8-Converter-%EC%86%8D%EC%84%B1%EC%97%90%EC%84%9C-IMultiValueConverter-%EC%9D%B8%ED%84%B0%ED%8E%98%EC%9D%B4%EC%8A%A4-%EA%B5%AC%ED%98%84-%EA%B0%9D%EC%B2%B4%EB%A5%BC-%EC%82%AC%EC%9A%A9%ED%95%B4-%EB%B0%94%EC%9D%B8%EB%94%A9%ED%95%98%EA%B8%B0-2  --><!--
                                                                                                     <MultiBinding Converter="{StaticResource ExplorerConverter}">
                                                                                                         --><!--  프로젝트 아이디  --><!--
@@ -1316,7 +1316,7 @@
                                                                             </Button.Content>
 
                                                                             <Button.CommandParameter>
-                                                                                --><!--  TODO : 버튼 멀티 바인딩 시 프로퍼티 Path 사용 (2023.10.4 jbh)  -->
+                                                                                --><!--  TODO : 버튼 멀티 바인딩 시 프로퍼티 Path 사용 (2023.10.4 minjae)  -->
                                                                                 <!--  참고 URL - https://icodebroker.tistory.com/entry/CWPF-MultiBinding-%EC%97%98%EB%A6%AC%EB%A8%BC%ED%8A%B8-Converter-%EC%86%8D%EC%84%B1%EC%97%90%EC%84%9C-IMultiValueConverter-%EC%9D%B8%ED%84%B0%ED%8E%98%EC%9D%B4%EC%8A%A4-%EA%B5%AC%ED%98%84-%EA%B0%9D%EC%B2%B4%EB%A5%BC-%EC%82%AC%EC%9A%A9%ED%95%B4-%EB%B0%94%EC%9D%B8%EB%94%A9%ED%95%98%EA%B8%B0-2  --><!--
                                                                                 <MultiBinding Converter="{StaticResource ExplorerConverter}">
                                                                                     <Binding Path="exp_ProjectId"  />
@@ -1328,14 +1328,14 @@
                                                                                 </MultiBinding>
                                                                             </Button.CommandParameter>
                                                                         </Button>
-                                                                        --><!--  TODO : GridViewColumn.CellTemplate 영역 -> DataTemplate 영역 -> 작성자 + " | " + 등록일시 프로퍼티 "CreateUserIdAndTime" 우측 정렬 구현 (2023.09.21 jbh) -->
+                                                                        --><!--  TODO : GridViewColumn.CellTemplate 영역 -> DataTemplate 영역 -> 작성자 + " | " + 등록일시 프로퍼티 "CreateUserIdAndTime" 우측 정렬 구현 (2023.09.21 minjae) -->
                                                                         <!--  참고 URL - https://icodebroker.tistory.com/8229  --><!--
                                                                         <DockPanel Margin="10,0,0,0">
                                                                             --><!--  <TextBlock TextAlignment="Right" Text="{Binding exp_Title}" />  --><!--
                                                                             <TextBlock TextAlignment="Left" Text="{Binding exp_Title}" />
                                                                             <TextBlock Margin="5,0,0,0" TextAlignment="Right" Text="{Binding CreateUserIdAndTime}" />
                                                                         </DockPanel>
-                                                                        --><!--  TODO : <DataTemplate> 영역 -> <TextBlock> 영역 안 MultiBinding XAML 코드 필요시 사용 예정 (2023.09.21 jbh)  -->
+                                                                        --><!--  TODO : <DataTemplate> 영역 -> <TextBlock> 영역 안 MultiBinding XAML 코드 필요시 사용 예정 (2023.09.21 minjae)  -->
                                                                         <!--  <TextBlock>
                                                                               <TextBlock.Text>
                                                                                   <MultiBinding StringFormat="{}{0} {1}">
@@ -1349,7 +1349,7 @@
                                                             </GridViewColumn.CellTemplate>
                                                         </GridViewColumn>
 
-                                                        --><!--  TODO : GridViewColumn Header "유형" DisplayMemberBinding="{Binding exp_TypeCodeName}" 대신 GridViewColumn.CellTemplate 사용해서 텍스트 가운데 정렬 구현 (2023.12.11 jbh)  -->
+                                                        --><!--  TODO : GridViewColumn Header "유형" DisplayMemberBinding="{Binding exp_TypeCodeName}" 대신 GridViewColumn.CellTemplate 사용해서 텍스트 가운데 정렬 구현 (2023.12.11 minjae)  -->
                                                         <!--  참고 URL - https://stackoverflow.com/questions/2892271/wpf-listview-gridview-displaymemberbinding-center-alignin-content  --><!--
                                                         <GridViewColumn Header="유형">
                                                             <GridViewColumn.CellTemplate>
@@ -1359,7 +1359,7 @@
                                                             </GridViewColumn.CellTemplate>
                                                         </GridViewColumn>
 
-                                                        --><!--  TODO : GridViewColumn Header "단계" DisplayMemberBinding="{Binding exp_StepCodeName}" 대신 GridViewColumn.CellTemplate 사용해서 텍스트 가운데 정렬 구현 (2023.12.11 jbh)  -->
+                                                        --><!--  TODO : GridViewColumn Header "단계" DisplayMemberBinding="{Binding exp_StepCodeName}" 대신 GridViewColumn.CellTemplate 사용해서 텍스트 가운데 정렬 구현 (2023.12.11 minjae)  -->
                                                         <!--  참고 URL - https://stackoverflow.com/questions/2892271/wpf-listview-gridview-displaymemberbinding-center-alignin-content  --><!--
                                                         <GridViewColumn Header="단계">
                                                             <GridViewColumn.CellTemplate>
@@ -1369,7 +1369,7 @@
                                                             </GridViewColumn.CellTemplate>
                                                         </GridViewColumn>
 
-                                                        --><!--  TODO : GridViewColumn Header "상태" DisplayMemberBinding="{Binding exp_StatusCodeName}" 대신 GridViewColumn.CellTemplate 사용해서 텍스트 가운데 정렬 구현 (2023.12.11 jbh)  -->
+                                                        --><!--  TODO : GridViewColumn Header "상태" DisplayMemberBinding="{Binding exp_StatusCodeName}" 대신 GridViewColumn.CellTemplate 사용해서 텍스트 가운데 정렬 구현 (2023.12.11 minjae)  -->
                                                         <!--  참고 URL - https://stackoverflow.com/questions/2892271/wpf-listview-gridview-displaymemberbinding-center-alignin-content  --><!--
                                                         <GridViewColumn Header="상태">
                                                             <GridViewColumn.CellTemplate>
@@ -1379,7 +1379,7 @@
                                                             </GridViewColumn.CellTemplate>
                                                         </GridViewColumn>
 
-                                                        --><!--  TODO : GridViewColumn Header "버전" DisplayMemberBinding="{Binding exp_RevsnVal}" 대신 GridViewColumn.CellTemplate 사용해서 텍스트 가운데 정렬 구현 (2023.12.11 jbh)  -->
+                                                        --><!--  TODO : GridViewColumn Header "버전" DisplayMemberBinding="{Binding exp_RevsnVal}" 대신 GridViewColumn.CellTemplate 사용해서 텍스트 가운데 정렬 구현 (2023.12.11 minjae)  -->
                                                         <!--  참고 URL - https://stackoverflow.com/questions/2892271/wpf-listview-gridview-displaymemberbinding-center-alignin-content  --><!--
                                                         <GridViewColumn Header="버전">
                                                             <GridViewColumn.CellTemplate>
@@ -1389,9 +1389,9 @@
                                                             </GridViewColumn.CellTemplate>
                                                         </GridViewColumn>
 
-                                                        --><!--  TODO : <ListView> 영역 컬럼 "추가", "보기" 필요 시 구현 예정 (2023.09.20 jbh)  --><!--
+                                                        --><!--  TODO : <ListView> 영역 컬럼 "추가", "보기" 필요 시 구현 예정 (2023.09.20 minjae)  --><!--
                                                         <GridViewColumn Header="추가">
-                                                            --><!--  TODO : ListView 영역 컬럼 "추가" 사용자가 컬럼 사이즈 조정(Resize) 못 하도록(disable) 막는 Style 구현 (2023.12.15 jbh)  -->
+                                                            --><!--  TODO : ListView 영역 컬럼 "추가" 사용자가 컬럼 사이즈 조정(Resize) 못 하도록(disable) 막는 Style 구현 (2023.12.15 minjae)  -->
                                                             <!--  참고 URL - https://showmethecode.tistory.com/152  --><!--
                                                             <GridViewColumn.HeaderContainerStyle>
                                                                 <Style TargetType="{x:Type GridViewColumnHeader}">
@@ -1399,10 +1399,10 @@
                                                                 </Style>
                                                             </GridViewColumn.HeaderContainerStyle>
                                                             <GridViewColumn.CellTemplate>
-                                                                --><!--  TODO : <DataTemplate> 영역 안 버튼 Command 바인딩 구현 (2023.09.21 jbh) -->
+                                                                --><!--  TODO : <DataTemplate> 영역 안 버튼 Command 바인딩 구현 (2023.09.21 minjae) -->
                                                                 <!--  참고 URL - https://korsa.tistory.com/95 --><!--
                                                                 <DataTemplate>
-                                                                    --><!--  TODO : 버튼 기본 스타일(테두리, 배경 등등...) 제거 구현 (2023.09.18 jbh)  -->
+                                                                    --><!--  TODO : 버튼 기본 스타일(테두리, 배경 등등...) 제거 구현 (2023.09.18 minjae)  -->
                                                                     <!--  참고 URL - https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&blogId=skelentom&logNo=10166053623  --><!--
                                                                     <Button Command="{Binding DataContext.FileAddCommand, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type UserControl}}}"
                                                                             Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}">
@@ -1415,7 +1415,7 @@
                                                         </GridViewColumn>
 
                                                         <GridViewColumn Header="보기">
-                                                            --><!--  TODO : <ListView> 영역 컬럼 "보기" 사용자가 컬럼 사이즈 조정(Resize) 못 하도록(disable) 막는 Style 구현 (2023.12.15 jbh)  -->
+                                                            --><!--  TODO : <ListView> 영역 컬럼 "보기" 사용자가 컬럼 사이즈 조정(Resize) 못 하도록(disable) 막는 Style 구현 (2023.12.15 minjae)  -->
                                                             <!--  참고 URL - https://showmethecode.tistory.com/152  --><!--
                                                             <GridViewColumn.HeaderContainerStyle>
                                                                 <Style TargetType="{x:Type GridViewColumnHeader}">
@@ -1423,10 +1423,10 @@
                                                                 </Style>
                                                             </GridViewColumn.HeaderContainerStyle>
                                                             <GridViewColumn.CellTemplate>
-                                                                --><!--  TODO : <DataTemplate> 영역 안 버튼 Command 바인딩 구현 (2023.09.21 jbh)  -->
+                                                                --><!--  TODO : <DataTemplate> 영역 안 버튼 Command 바인딩 구현 (2023.09.21 minjae)  -->
                                                                 <!--  참고 URL - https://korsa.tistory.com/95 --><!--
                                                                 <DataTemplate>
-                                                                    --><!--  TODO : 버튼 기본 스타일(테두리, 배경 등등...) 제거 구현 (2023.09.18 jbh)  -->
+                                                                    --><!--  TODO : 버튼 기본 스타일(테두리, 배경 등등...) 제거 구현 (2023.09.18 minjae)  -->
                                                                     <!--  참고 URL - https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&blogId=skelentom&logNo=10166053623  --><!--
                                                                     <Button Command="{Binding DataContext.WebViewerCommand, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type UserControl}}}"
                                                                         Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}">
@@ -1438,9 +1438,9 @@
                                                             </GridViewColumn.CellTemplate>
                                                         </GridViewColumn>
 
-                                                        --><!--  TODO : GridViewColumn Header "작업 중인 이" DisplayMemberBinding="{Binding exp_WorkUserId}" 대신 GridViewColumn.CellTemplate 사용해서 텍스트 가운데 정렬 구현 (2023.12.11 jbh)  -->
+                                                        --><!--  TODO : GridViewColumn Header "작업 중인 이" DisplayMemberBinding="{Binding exp_WorkUserId}" 대신 GridViewColumn.CellTemplate 사용해서 텍스트 가운데 정렬 구현 (2023.12.11 minjae)  -->
                                                         <!--  참고 URL - https://stackoverflow.com/questions/2892271/wpf-listview-gridview-displaymemberbinding-center-alignin-content  -->
-                                                        <!--  TODO : 체크아웃 성공 완료 후 화면 우측 상단 <ListView> 영역 컬럼 "작업 중인 이" 구현 예정 (2023.11.27 jbh)  --><!--
+                                                        <!--  TODO : 체크아웃 성공 완료 후 화면 우측 상단 <ListView> 영역 컬럼 "작업 중인 이" 구현 예정 (2023.11.27 minjae)  --><!--
                                                         <GridViewColumn Header="작업 중인 이">
                                                             <GridViewColumn.CellTemplate>
                                                                 <DataTemplate>
@@ -1449,8 +1449,8 @@
                                                             </GridViewColumn.CellTemplate>
                                                         </GridViewColumn>
 
-                                                        --><!--  TODO : GridViewColumn Header "컨테이너 잠금 상태" 필요시 사용 예정 (2023.12.19 jbh)  -->
-                                                        <!--  TODO : GridViewColumn Header "컨테이너 잠금 상태" DisplayMemberBinding="{Binding exp_ReadYn}" 대신 GridViewColumn.CellTemplate 사용해서 텍스트 가운데 정렬 구현 (2023.12.11 jbh)  -->
+                                                        --><!--  TODO : GridViewColumn Header "컨테이너 잠금 상태" 필요시 사용 예정 (2023.12.19 minjae)  -->
+                                                        <!--  TODO : GridViewColumn Header "컨테이너 잠금 상태" DisplayMemberBinding="{Binding exp_ReadYn}" 대신 GridViewColumn.CellTemplate 사용해서 텍스트 가운데 정렬 구현 (2023.12.11 minjae)  -->
                                                         <!--  참고 URL - https://stackoverflow.com/questions/2892271/wpf-listview-gridview-displaymemberbinding-center-alignin-content  -->
                                                         <!--  <GridViewColumn Header="컨테이너 잠금 상태">
                                                             <GridViewColumn.CellTemplate>
@@ -1460,8 +1460,8 @@
                                                             </GridViewColumn.CellTemplate>
                                                         </GridViewColumn>  -->
 
-                                                        <!--  TODO : GridViewColumn Header "컨테이너 검토상태" 필요시 사용 예정 (2023.12.19 jbh)  -->
-                                                        <!--  TODO : GridViewColumn Header "컨테이너 검토상태" DisplayMemberBinding="{Binding exp_StatusCode}" 대신 GridViewColumn.CellTemplate 사용해서 텍스트 가운데 정렬 구현 (2023.12.11 jbh)  -->
+                                                        <!--  TODO : GridViewColumn Header "컨테이너 검토상태" 필요시 사용 예정 (2023.12.19 minjae)  -->
+                                                        <!--  TODO : GridViewColumn Header "컨테이너 검토상태" DisplayMemberBinding="{Binding exp_StatusCode}" 대신 GridViewColumn.CellTemplate 사용해서 텍스트 가운데 정렬 구현 (2023.12.11 minjae)  -->
                                                         <!--  참고 URL - https://stackoverflow.com/questions/2892271/wpf-listview-gridview-displaymemberbinding-center-alignin-content  -->
                                                         <!--<GridViewColumn Header="컨테이너 검토상태">
                                                             <GridViewColumn.CellTemplate>
@@ -1492,7 +1492,7 @@
                                     Grid.Column="0" 
                                     BorderBrush="{StaticResource App.Brush.Themes.Common.White}" 
                                     BorderThickness="5">
-                                <!--  TODO : <DockPanel> 영역에서 BorderBrush 색상이 화면 상으로 출력 되는 잔상을 제거하기 위해 역마진(negative margin) (Margin="-1") 설정 구현 (2024.09.10 jbh)  -->
+                                <!--  TODO : <DockPanel> 영역에서 BorderBrush 색상이 화면 상으로 출력 되는 잔상을 제거하기 위해 역마진(negative margin) (Margin="-1") 설정 구현 (2024.09.10 minjae)  -->
                                 <!--  참고 URL - https://gold-dragon.tistory.com/41  -->
                                 <DockPanel Background="{StaticResource App.Brush.Themes.Common.White}" Margin="-1">
                                     <Border DockPanel.Dock="Top" 
@@ -1502,15 +1502,15 @@
                                             Visibility="{Binding visibleRequest}">
 
                                         <DockPanel Margin="5,0,0,0">
-                                            <!--  TODO : 프로퍼티 SelectedContainerId 에 UpdateSourceTrigger=PropertyChanged 기능 필요시 사용 예정 (2023.10.23 jbh)  -->
+                                            <!--  TODO : 프로퍼티 SelectedContainerId 에 UpdateSourceTrigger=PropertyChanged 기능 필요시 사용 예정 (2023.10.23 minjae)  -->
                                             <!--  Text="{Binding SelectedContainerId, UpdateSourceTrigger=PropertyChanged}"  -->
-                                            <!--  TODO : 프로퍼티 "SelectedContainerId" 사용해서 컨테이너 아이디(영어 대문자) TextBlock 출력 구현 (2023.11.01 jbh) -->
+                                            <!--  TODO : 프로퍼티 "SelectedContainerId" 사용해서 컨테이너 아이디(영어 대문자) TextBlock 출력 구현 (2023.11.01 minjae) -->
                                             <TextBlock VerticalAlignment="Center" 
                                                        Text="{Binding SelectedContainerId}" />
 
-                                            <!--  TODO : 버튼 "검토요청" <StackPanel> 영역 필요시 사용 예정 (2024.10.28 jbh)  -->
+                                            <!--  TODO : 버튼 "검토요청" <StackPanel> 영역 필요시 사용 예정 (2024.10.28 minjae)  -->
                                             <!--<StackPanel Orientation="Horizontal" Width="90" HorizontalAlignment="Right" VerticalAlignment="Center">
-                                                --><!--TODO : 추후 버튼 "검토요청" 옆에 체크 이미지 파일 (.png) 리소스 추가 예정 (2023.10.18 jbh)--><!--
+                                                --><!--TODO : 추후 버튼 "검토요청" 옆에 체크 이미지 파일 (.png) 리소스 추가 예정 (2023.10.18 minjae)--><!--
                                                 <Image Width="30"/>
                                                 <Button Background="{StaticResource App.Brush.Themes.Winter.Gray.10}"
                                                         Foreground="{StaticResource App.Brush.Themes.Winter.Black.20}"
@@ -1524,12 +1524,12 @@
 
                                     <!--  TabControl 영역  -->
                                     <!--  TabControl 참고 URL - https://wpf-tutorial.com/ko/68/the-tabcontrol/using-the-wpf-tabcontrol/  -->
-                                    <!--  TODO : <Grid> 영역 Margin 간격 좌상우하 모두 5로 설정 (Margin="5") (2023.11.07 jbh)  -->
+                                    <!--  TODO : <Grid> 영역 Margin 간격 좌상우하 모두 5로 설정 (Margin="5") (2023.11.07 minjae)  -->
                                     <Border DockPanel.Dock="Bottom" Margin="5">
                                         <!--  TODO : 탐색기 화면(ExplorerV.xaml) 탭 "기본정보" 제외한 다른 TabItem 선택 후 
                                                      화면 종료 또는 다른 화면 이동 후 해당 탐색기 화면 재실행 시 
                                                      TabControl의 첫 번째 TabItem="기본정보"로 실행(Default로 지정) 하도록 
-                                                     SelectedIndex="0" 추가 (2023.11.01 jbh)  -->
+                                                     SelectedIndex="0" 추가 (2023.11.01 minjae)  -->
                                         <!--  참고 URL - https://stackoverflow.com/questions/20356239/tab-control-selecting-first-tab-by-default -->
                                         <!--  참고 2 URL - https://dotnetpattern.com/wpf-tab-control-selection  -->
                                         <TabControl SelectedIndex="{Binding SelectedTabIndex}" 
@@ -1537,7 +1537,7 @@
                                             <TabItem Header="기본정보">
                                                 <Grid>
                                                     <Grid.ColumnDefinitions>
-                                                        <!--  TODO : <ColumnDefinition> 영역에서 Width 가중치 (1 대 0.05 대 1 비율) 구현 (2023.08.24 jbh)  -->
+                                                        <!--  TODO : <ColumnDefinition> 영역에서 Width 가중치 (1 대 0.05 대 1 비율) 구현 (2023.08.24 minjae)  -->
                                                         <!--  참고 URL - https://benstagram.tistory.com/33  -->
                                                         <!--  Width 가중치 1  -->
                                                         <ColumnDefinition Width="*" />
@@ -1555,7 +1555,7 @@
                                                             <Border DockPanel.Dock="Top" Margin="5,3,5,3">
                                                                 <DockPanel>
                                                                     <TextBlock Text=">컨테이너 정보" VerticalAlignment="Center" Margin="5,0,0,0"/>
-                                                                    <!--  TODO : "수정" 버튼 <Button> 영역 필요시 사용 예정 (2024.10.28 jbh)  -->
+                                                                    <!--  TODO : "수정" 버튼 <Button> 영역 필요시 사용 예정 (2024.10.28 minjae)  -->
                                                                     <!--<Button Background="{StaticResource App.Brush.Themes.Winter.Gray.10}"
                                                                             Foreground="{StaticResource App.Brush.Themes.Winter.Black.20}"
                                                                             BorderBrush="{StaticResource App.Brush.Themes.Winter.Black.20}"
@@ -1568,9 +1568,9 @@
                                                                 </DockPanel>
                                                             </Border>
 
-                                                            <!--  TODO : <Border> 영역 Margin 간격 좌상우하 모두 5로 설정 (Margin="5") (2023.11.07 jbh)  -->
+                                                            <!--  TODO : <Border> 영역 Margin 간격 좌상우하 모두 5로 설정 (Margin="5") (2023.11.07 minjae)  -->
                                                             <Border DockPanel.Dock="Bottom" Margin="5,0,5,0">
-                                                                <!--  TODO : ItemsControl 사용해서 "컨테이너 정보" 테이블 표 구현 (2023.10.19 jbh)  -->
+                                                                <!--  TODO : ItemsControl 사용해서 "컨테이너 정보" 테이블 표 구현 (2023.10.19 minjae)  -->
                                                                 <!--  참고 URL - https://blog.naver.com/jjid0247/222111885157  -->
                                                                 <!--  참고 2 URL - https://nonstop-antoine.tistory.com/33  -->
                                                                 <ItemsControl ItemsSource="{Binding DetailDatas}">
@@ -1691,7 +1691,7 @@
                                                                                             BorderBrush="{StaticResource App.Brush.Themes.Winter.Black.20}"
                                                                                             BorderThickness="1"
                                                                                             Margin="0,0,5,0">
-                                                                                        <!--  TODO : <Border> 영역 Margin 간격 좌상우하 모두 2로 설정 (Margin="2") (2023.11.07 jbh)  -->
+                                                                                        <!--  TODO : <Border> 영역 Margin 간격 좌상우하 모두 2로 설정 (Margin="2") (2023.11.07 minjae)  -->
                                                                                         <Border Margin="2" 
                                                                                                 BorderBrush="{StaticResource App.Brush.Themes.Common.Gray}">
                                                                                             <TextBox Text="{Binding exp_Title}"/>
@@ -1715,7 +1715,7 @@
                                                                                             BorderBrush="{StaticResource App.Brush.Themes.Winter.Black.20}"
                                                                                             BorderThickness="1"
                                                                                             Margin="0,0,5,0">
-                                                                                        <!--  TODO : <Border> 영역 Margin 간격 좌상우하 모두 2로 설정 (Margin="2") (2023.11.07 jbh)  -->
+                                                                                        <!--  TODO : <Border> 영역 Margin 간격 좌상우하 모두 2로 설정 (Margin="2") (2023.11.07 minjae)  -->
                                                                                         <Border Margin="2" 
                                                                                                 BorderBrush="{StaticResource App.Brush.Themes.Common.Gray}">
                                                                                             <TextBox Text="{Binding exp_SoftName}"/>
@@ -1739,7 +1739,7 @@
                                                                                             BorderBrush="{StaticResource App.Brush.Themes.Winter.Black.20}"
                                                                                             BorderThickness="1"
                                                                                             Margin="0,0,5,0">
-                                                                                        <!--  TODO : <Border> 영역 Margin 간격 좌상우하 모두 2로 설정 (Margin="2") (2023.11.07 jbh)  -->
+                                                                                        <!--  TODO : <Border> 영역 Margin 간격 좌상우하 모두 2로 설정 (Margin="2") (2023.11.07 minjae)  -->
                                                                                         <Border Margin="2" 
                                                                                                 BorderBrush="{StaticResource App.Brush.Themes.Common.Gray}">
                                                                                             <TextBox Text="{Binding exp_SoftVer}"/>
@@ -1763,7 +1763,7 @@
                                                                                             BorderBrush="{StaticResource App.Brush.Themes.Winter.Black.20}"
                                                                                             BorderThickness="1"
                                                                                             Margin="0,0,5,0">
-                                                                                        <!--  TODO : <Border> 영역 Margin 간격 좌상우하 모두 2로 설정 (Margin="2") (2023.11.07 jbh)  -->
+                                                                                        <!--  TODO : <Border> 영역 Margin 간격 좌상우하 모두 2로 설정 (Margin="2") (2023.11.07 minjae)  -->
                                                                                         <Border Margin="2" 
                                                                                                 BorderBrush="{StaticResource App.Brush.Themes.Common.Gray}">
                                                                                             <TextBox Text="{Binding exp_KeywordTag}"/>
@@ -1787,10 +1787,10 @@
                                                                                             BorderBrush="{StaticResource App.Brush.Themes.Winter.Black.20}"
                                                                                             BorderThickness="1"
                                                                                             Margin="0,0,5,0">
-                                                                                        <!--  TODO : <Border> 영역 Margin 간격 좌상우하 모두 0으로 설정 (Margin="0") (2023.11.07 jbh)  -->
+                                                                                        <!--  TODO : <Border> 영역 Margin 간격 좌상우하 모두 0으로 설정 (Margin="0") (2023.11.07 minjae)  -->
                                                                                         <Border Margin="0" 
                                                                                                 BorderBrush="{StaticResource App.Brush.Themes.Common.Gray}">
-                                                                                            <!--  TODO : 파일유형 <ComboBox> 구현 (2023.10.19 jbh) -->
+                                                                                            <!--  TODO : 파일유형 <ComboBox> 구현 (2023.10.19 minjae) -->
                                                                                             <!--  SelectedItem="{Binding }"  -->
                                                                                             <!--  <ComboBox> 구현시 참고 자료  -->
                                                                                             <!--  참고 URL - https://kaki104.tistory.com/749  -->
@@ -1798,7 +1798,7 @@
                                                                                             <!--  참고 3 URL - https://chashtag.tistory.com/m/79  -->
 
                                                                                             <!-- TODO : <ItemsControl> - <ItemsControl.ItemTemplate> - <DataTemplate> - <DockPanel> - <Grid>
-		                                                                                                - <Border> - <Border> 영역 안 <ComboBox> SelectedItem 바인딩 구현 (2023.10.23 jbh) -->
+		                                                                                                - <Border> - <Border> 영역 안 <ComboBox> SelectedItem 바인딩 구현 (2023.10.23 minjae) -->
                                                                                             <!--  참고 URL - https://korsa.tistory.com/95 -->
                                                                                             <ComboBox x:Name="FileType" 
                                                                                                       ItemsSource="{Binding FileTypeList}"
@@ -1827,12 +1827,12 @@
                                                                                             BorderBrush="{StaticResource App.Brush.Themes.Winter.Black.20}"
                                                                                             BorderThickness="1"
                                                                                             Margin="0,0,5,3">
-                                                                                        <!--  TODO : <Border> 영역 Margin 간격 좌상우하 모두 0으로 설정 (Margin="0") (2023.11.07 jbh)  -->
+                                                                                        <!--  TODO : <Border> 영역 Margin 간격 좌상우하 모두 0으로 설정 (Margin="0") (2023.11.07 minjae)  -->
                                                                                         <Border Margin="0" 
                                                                                                 BorderBrush="{StaticResource App.Brush.Themes.Common.Gray}">
-                                                                                            <!--  TODO : 마일스톤 <ComboBox> 인재 INC 측으로 부터 Rest API 공유 받으면 구현 예정 (2023.10.19 jbh)  -->
+                                                                                            <!--  TODO : 마일스톤 <ComboBox> 인재 INC 측으로 부터 Rest API 공유 받으면 구현 예정 (2023.10.19 minjae)  -->
                                                                                             <!--  TODO : <ItemsControl> - <ItemsControl.ItemTemplate> - <DataTemplate> - <DockPanel> - <Grid>
-		                                                                                                 - <Border> - <Border> 영역 안 <ComboBox> SelectedItem 바인딩 구현 (2023.10.24 jbh)  -->
+		                                                                                                 - <Border> - <Border> 영역 안 <ComboBox> SelectedItem 바인딩 구현 (2023.10.24 minjae)  -->
                                                                                             <!--  참고 URL - https://korsa.tistory.com/95  -->
                                                                                             <ComboBox x:Name="TaskDetailType"
                                                                                                       ItemsSource="{Binding TaskDetailList}"
@@ -1934,18 +1934,18 @@
                                                                                             <DockPanel>
                                                                                                 <TextBlock Text="{Binding exp_FileName}" VerticalAlignment="Center"  />
                                                                                                 <StackPanel Orientation="Horizontal" Margin="10,0,0,0">
-                                                                                                    <!--  TODO : 다운로드 이미지 파일 추가 예정 (2023.10.19 jbh) -->
+                                                                                                    <!--  TODO : 다운로드 이미지 파일 추가 예정 (2023.10.19 minjae) -->
                                                                                                     <Image Width="10"  />
 
-                                                                                                    <!--  TODO : 바인딩한 객체(프로퍼티)에 할당된 값이 True면 False, False면 True로 반대의 값으로 리턴되는 Converter 클래스 "InvertBooleanConverter.cs" 구현 (2024.09.03 jbh)  -->
+                                                                                                    <!--  TODO : 바인딩한 객체(프로퍼티)에 할당된 값이 True면 False, False면 True로 반대의 값으로 리턴되는 Converter 클래스 "InvertBooleanConverter.cs" 구현 (2024.09.03 minjae)  -->
                                                                                                     <!--  참고 URL - https://codekiller.tistory.com/581    -->
                                                                                                     <!--  참고 2 URL - https://devbong.tistory.com/41      -->
                                                                                                     <!--  참고 3 URL - https://benstagram.tistory.com/203  -->
 
-                                                                                                    <!--  TODO : BindingMode(바인딩 모드) 속성 Mode=OneWay 로 설정하여 뷰모델에 구현한 프로퍼티 "DataContext.DownLoadCommand" 값이 바뀌면 뷰로 변경된 값이 출력되도록 구현 (2024.09.04 jbh)  -->
+                                                                                                    <!--  TODO : BindingMode(바인딩 모드) 속성 Mode=OneWay 로 설정하여 뷰모델에 구현한 프로퍼티 "DataContext.DownLoadCommand" 값이 바뀌면 뷰로 변경된 값이 출력되도록 구현 (2024.09.04 minjae)  -->
                                                                                                     <!--  참고 URL - https://hihaoun.tistory.com/entry/C-%EB%B0%94%EC%9D%B8%EB%94%A9-onetime-oneway-twoway-onewaytosource  -->
 
-                                                                                                    <!--  TODO : <ItemsControl> 영역 -> 내용 - 파일명 <Border> 영역 안 버튼 Command 바인딩 구현 (2023.10.19 jbh) -->
+                                                                                                    <!--  TODO : <ItemsControl> 영역 -> 내용 - 파일명 <Border> 영역 안 버튼 Command 바인딩 구현 (2023.10.19 minjae) -->
                                                                                                     <!--  참고 URL - https://korsa.tistory.com/95 -->
                                                                                                     <Button Background="{StaticResource App.Brush.Themes.Winter.Gray.10}"
                                                                                                             Foreground="{StaticResource App.Brush.Themes.Winter.Black.20}"
@@ -1956,14 +1956,14 @@
                                                                                                             Margin="0,2,2,2"
                                                                                                             Command="{Binding DataContext.DownLoadCommand, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type UserControl}}}"
                                                                                                             IsEnabled="{Binding DataContext.IsDownLoadWorking, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type UserControl}}, Converter={StaticResource InvertBooleanConverter}}">
-                                                                                                        <!--  TODO : 버튼 멀티 바인딩 구현 (2023.10.24 jbh) -->
+                                                                                                        <!--  TODO : 버튼 멀티 바인딩 구현 (2023.10.24 minjae) -->
                                                                                                         <!--  참고 URL - https://nonstop-antoine.tistory.com/40  -->
                                                                                                         <!--  참고 2 URL - https://chashtag.tistory.com/43  -->
                                                                                                         <!--  참고 3 URL - https://stackoverflow.com/questions/1350598/passing-two-command-parameters-using-a-wpf-binding -->
                                                                                                         <!--  참고 4 URL - https://stackoverflow.com/questions/23499671/wpf-multibinding-button-isenabled-with-textboxes  -->
                                                                                                         <!--  참고 5 URL - https://stackoverflow.com/questions/22084611/wpf-how-to-bind-together-two-properties-bound-to-two-different-controls -->
                                                                                                         <Button.CommandParameter>
-                                                                                                            <!--  TODO : 버튼 멀티 바인딩 시 프로퍼티 Path 사용 (2023.10.24 jbh)  -->
+                                                                                                            <!--  TODO : 버튼 멀티 바인딩 시 프로퍼티 Path 사용 (2023.10.24 minjae)  -->
                                                                                                             <!--  참고 URL - https://icodebroker.tistory.com/entry/CWPF-MultiBinding-%EC%97%98%EB%A6%AC%EB%A8%BC%ED%8A%B8-Converter-%EC%86%8D%EC%84%B1%EC%97%90%EC%84%9C-IMultiValueConverter-%EC%9D%B8%ED%84%B0%ED%8E%98%EC%9D%B4%EC%8A%A4-%EA%B5%AC%ED%98%84-%EA%B0%9D%EC%B2%B4%EB%A5%BC-%EC%82%AC%EC%9A%A9%ED%95%B4-%EB%B0%94%EC%9D%B8%EB%94%A9%ED%95%98%EA%B8%B0-2  -->
                                                                                                             <MultiBinding Converter="{StaticResource ExplorerConverter}">
                                                                                                                 <Binding Path="exp_ProjectId"    />
@@ -1989,12 +1989,12 @@
                                                 </Grid>
                                             </TabItem>
 
-                                            <!--  TODO : <TabItem> 영역 Header="미리보기" 필요시 사용 예정(2024.10.28 jbh)  -->
+                                            <!--  TODO : <TabItem> 영역 Header="미리보기" 필요시 사용 예정(2024.10.28 minjae)  -->
                                             <!--<TabItem Header="미리보기">
                                                 <Grid>
-                                                    --><!--  TODO : 가로 기준으로 Grid(그리드) 가로 분할 원할 시 아래 주석친 코드 참고 (2024.08.27 jbh)  -->
+                                                    --><!--  TODO : 가로 기준으로 Grid(그리드) 가로 분할 원할 시 아래 주석친 코드 참고 (2024.08.27 minjae)  -->
                                                     <!--  <Grid.RowDefinitions>
-                                                        --><!-- TODO : <RowDefinition>영역에서 Height 가중치 (0.3 대 0.05 대 1 비율) 구현 (2023.10.30 jbh)  -->
+                                                        --><!-- TODO : <RowDefinition>영역에서 Height 가중치 (0.3 대 0.05 대 1 비율) 구현 (2023.10.30 minjae)  -->
                                                         <!--  참고 URL - https://chashtag.tistory.com/11  -->
                                                         <!--  Height 가중치 1  --><!--
                                                         <RowDefinition Height="0.3*" />
@@ -2006,10 +2006,10 @@
                                                         <RowDefinition Height="*" />
                                                     </Grid.RowDefinitions>-->
 
-                                                    <!--  TODO : 웹뷰어 이미지 <Border> 영역 - CornerRadius ="5" 사용해서 모든 모서리 둥글게 구현 (2023.11.10 jbh)  -->
+                                                    <!--  TODO : 웹뷰어 이미지 <Border> 영역 - CornerRadius ="5" 사용해서 모든 모서리 둥글게 구현 (2023.11.10 minjae)  -->
                                                     <!--  참고 URL - https://insurang.tistory.com/entry/WPF-C-RoundButton-%EB%91%A5%EA%B7%BC%EB%B2%84%ED%8A%BC-%EB%A7%8C%EB%93%A4%EA%B8%B0-CornerRadius-Style  -->
                                                     <!--  웹뷰어 이미지 영역 -->
-                                                    <!--  TODO : <Border> 영역 Margin 간격 좌상우하 모두 10으로 설정 (Margin="10") (2023.11.07 jbh)  --><!--
+                                                    <!--  TODO : <Border> 영역 Margin 간격 좌상우하 모두 10으로 설정 (Margin="10") (2023.11.07 minjae)  --><!--
                                                     <Border Grid.Row="0" 
                                                             BorderBrush="{StaticResource App.Brush.Themes.Common.LightGray}" 
                                                             CornerRadius ="5"
@@ -2017,15 +2017,15 @@
                                                             Margin="10">
                                                         <DockPanel>
                                                             <StackPanel Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center">
-                                                                --><!--  TODO : 아래 주석친 코드 필요시 참고 (2024.08.26 jbh)  -->
-                                                                <!--  TODO : 웹뷰어 기능 개발 대상 제외(COBIM 웹사이트에서만 사용) (2023.10.26 jbh)  -->
+                                                                --><!--  TODO : 아래 주석친 코드 필요시 참고 (2024.08.26 minjae)  -->
+                                                                <!--  TODO : 웹뷰어 기능 개발 대상 제외(COBIM 웹사이트에서만 사용) (2023.10.26 minjae)  -->
                                                                 <!--  <Image Source="{Binding}"  />  -->
                                                                 <!--  <TextBlock Text="CDE 탐색기 프로그램 웹뷰어 기능 개발 대상 제외" FontSize="16" FontWeight="Bold" Foreground="Red"/>  --><!--
                                                             </StackPanel>
                                                         </DockPanel>
                                                     </Border>
 
-                                                    --><!--  TODO : 아래 주석친 <GridSplitter> 태그 필요시 사용 예정 (2024.09.05 jbh)  -->
+                                                    --><!--  TODO : 아래 주석친 <GridSplitter> 태그 필요시 사용 예정 (2024.09.05 minjae)  -->
                                                     <!--  <GridSplitter> 사용해서 그리드 가로 분할  -->
                                                     <!--  <GridSplitter Grid.Row="1" 
                                                                         HorizontalAlignment="Stretch"
@@ -2035,20 +2035,20 @@
                                                                         Background="{StaticResource App.Brush.Themes.Winter.Black.20}"
                                                                         ShowsPreview="True" />  -->
 
-                                                    <!--  TODO : 연관 컨테이너 <Border> 영역 - CornerRadius ="5" 사용해서 모든 모서리 둥글게 구현 (2023.11.10 jbh)  -->
+                                                    <!--  TODO : 연관 컨테이너 <Border> 영역 - CornerRadius ="5" 사용해서 모든 모서리 둥글게 구현 (2023.11.10 minjae)  -->
                                                     <!--  참고 URL - https://insurang.tistory.com/entry/WPF-C-RoundButton-%EB%91%A5%EA%B7%BC%EB%B2%84%ED%8A%BC-%EB%A7%8C%EB%93%A4%EA%B8%B0-CornerRadius-Style  -->
                                                     <!--  연관 컨테이너 (참조 관계 - 부모/자식 컨테이너) 영역  -->
-                                                    <!--  TODO : <Border> 영역 Margin 간격 좌상우하 모두 10으로 설정 (Margin="10") (2023.11.07 jbh)  --><!--
+                                                    <!--  TODO : <Border> 영역 Margin 간격 좌상우하 모두 10으로 설정 (Margin="10") (2023.11.07 minjae)  --><!--
                                                     <Border Grid.Row="2" 
                                                             BorderBrush="{StaticResource App.Brush.Themes.Common.LightGray}" 
                                                             CornerRadius ="5"
                                                             BorderThickness="3" 
                                                             Margin="10">
-                                                        --><!--  TODO : <DockPanel> 영역 필요시 사용 예정 (2023.12.14 jbh)  -->
+                                                        --><!--  TODO : <DockPanel> 영역 필요시 사용 예정 (2023.12.14 minjae)  -->
                                                         <!--  <DockPanel HorizontalAlignment="Center" 
                                                                          VerticalAlignment="Center">  -->
 
-                                                            <!--  TODO : <TreeView> 트리뷰 수평 방향으로 구현하기 (2023.10.26 jbh) -->
+                                                            <!--  TODO : <TreeView> 트리뷰 수평 방향으로 구현하기 (2023.10.26 minjae) -->
                                                             <!--  참고 URL - https://stackoverflow.com/questions/364083/wpf-treeview-with-horizontal-orientation  -->
                                                             <!--  참고 2 URL - https://www.codeproject.com/Articles/17025/Custom-TreeView-Layout-in-WPF  -->
                                                             <!--  참고 3 URL - https://www.generacodice.com/ko/articolo/169565/%EC%88%98%ED%8F%89-%EB%B0%A9%ED%96%A5%EC%9D%B4%EC%9E%88%EB%8A%94-wpf-%ED%8A%B8%EB%A6%AC-%EB%B7%B0  -->
@@ -2056,13 +2056,13 @@
                                                             <!--  탭 "미리보기" 우측 TreeView(트리뷰) 영역  -->
                                                             <!--  <TreeView x:Name="linkedNodeInfoTreeView"
                                                                             ItemsSource="{Binding LinkedNodeInfoDatas}">  -->
-                                                            <!--  TODO : <TreeView> -> TreeViewItem 전용 스타일 속성 바인딩 구현(ItemContainerStyle="{DynamicResource App.TreeViewItem.Horizontality}") (2023.10.30 jbh)  -->
+                                                            <!--  TODO : <TreeView> -> TreeViewItem 전용 스타일 속성 바인딩 구현(ItemContainerStyle="{DynamicResource App.TreeViewItem.Horizontality}") (2023.10.30 minjae)  -->
                                                             <!--  참고 URL - https://www.codeproject.com/Questions/1280454/Treeviewitem-togglebutton-style-working-only-for-p  -->
 
-                                                            <!--  TODO : <TreeView> 영역을 감싸는 Border 테두리 영역 두께 0 으로 설정 (BorderThickness="0") (2023.12.14 jbh)  -->
+                                                            <!--  TODO : <TreeView> 영역을 감싸는 Border 테두리 영역 두께 0 으로 설정 (BorderThickness="0") (2023.12.14 minjae)  -->
                                                             <!--  참고 URL - https://stackoverflow.com/questions/40234636/how-to-delete-the-border-from-a-wpf-treeview -->
                                                         
-                                                            <!--  TODO : <TreeView> 영역을 실선으로 표시 구현 예정 (2023.12.15 jbh)  -->
+                                                            <!--  TODO : <TreeView> 영역을 실선으로 표시 구현 예정 (2023.12.15 minjae)  -->
                                                             <!--  참고 URL - https://chat.openai.com/c/c0344600-9016-42b2-bc79-d9e1d797c808  --><!--
                                                             <TreeView x:Name="linkedNodeInfoTreeView"
                                                                       ItemsSource="{Binding LinkedNodeInfoDatas}"
@@ -2089,13 +2089,13 @@
                                                                     --><!--  This template explains how to render a Node object and its child nodes.  -->
                                                                     <!--  연관 컨테이너(참조관계 - 부모/자식 컨테이너) TreeView 형식 데이터 바인딩  -->
                                                                     <!--  x:Key="linkedNodeInfoTreeHorizontalItems"  -->
-                                                                    <!--  TODO : <HierarchicalDataTemplate> 영역에 DataType="{x:Type explorer_models:ExplorerView}" 바인딩 필요시 구현 예정 (2023.11.21 jbh)  --><!--
+                                                                    <!--  TODO : <HierarchicalDataTemplate> 영역에 DataType="{x:Type explorer_models:ExplorerView}" 바인딩 필요시 구현 예정 (2023.11.21 minjae)  --><!--
                                                                     <HierarchicalDataTemplate DataType="{x:Type explorer_models:LinkedNodeView}" 
                                                                                               ItemsSource="{Binding ChildNodes}">
-                                                                        --><!--  TODO : <TreeView> 영역 -> <HierarchicalDataTemplate> 영역 -> <StackPanel> 영역 안 버튼 Command 바인딩 구현 (2023.10.30 jbh)  -->
+                                                                        --><!--  TODO : <TreeView> 영역 -> <HierarchicalDataTemplate> 영역 -> <StackPanel> 영역 안 버튼 Command 바인딩 구현 (2023.10.30 minjae)  -->
                                                                         <!--  참고 URL - https://korsa.tistory.com/95  --><!--
                                                                         <StackPanel Orientation="Horizontal">
-                                                                            --><!--  TODO : 버튼 기본 스타일(테두리, 배경 등등...) 제거 구현 (2023.10.30 jbh)  -->
+                                                                            --><!--  TODO : 버튼 기본 스타일(테두리, 배경 등등...) 제거 구현 (2023.10.30 minjae)  -->
                                                                             <!--  참고 URL - https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&blogId=skelentom&logNo=10166053623  --><!--
                                                                             <Button Command="{Binding DataContext.LinkedNodeInfoCommand, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type UserControl}}}"
                                                                                     Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}">
@@ -2125,13 +2125,13 @@
                                                 </Grid>
                                             </TabItem>-->
 
-                                            <!--  TODO : <TabItem> 영역 Header="변경" 필요시 사용 예정 (2024.10.28 jbh)  -->
+                                            <!--  TODO : <TabItem> 영역 Header="변경" 필요시 사용 예정 (2024.10.28 minjae)  -->
                                             <!--  <TabItem Header="변경" />  -->
 
-                                            <!--  TODO : <TabItem> 영역 Header="이슈" 필요시 사용 예정 (2024.10.28 jbh)  -->
+                                            <!--  TODO : <TabItem> 영역 Header="이슈" 필요시 사용 예정 (2024.10.28 minjae)  -->
                                             <!--  <TabItem Header="이슈" />  -->
 
-                                            <!--  TODO : <TabItem> 영역 Header="검토" 필요시 사용 예정 (2024.10.28 jbh)  -->
+                                            <!--  TODO : <TabItem> 영역 Header="검토" 필요시 사용 예정 (2024.10.28 minjae)  -->
                                             <!--  <TabItem Header="검토" />  -->
                                         </TabControl>
                                     </Border>

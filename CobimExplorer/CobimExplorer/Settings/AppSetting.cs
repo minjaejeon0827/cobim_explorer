@@ -11,11 +11,11 @@ namespace CobimExplorer.Settings
     public class AppSetting : SettingPartBase
     {
         // private static AppSetting _default;
-        // TODO : UiSettingPart.cs 필요시 구현 예정 (2023.08.30 jbh)
+        // TODO : UiSettingPart.cs 필요시 구현 예정 (2023.08.30 minjae)
         //private UiSettingPart ui;
         // private LoginSetting login;
 
-        // TODO : AppSetting.cs -> 응용 프로그램 기본 설정 프로퍼티 "Default" 필요시 수정 예정 (2023.09.24 jbh)
+        // TODO : AppSetting.cs -> 응용 프로그램 기본 설정 프로퍼티 "Default" 필요시 수정 예정 (2023.09.24 minjae)
         /// <summary>
         /// 응용 프로그램 기본 설정
         /// </summary>
@@ -30,7 +30,7 @@ namespace CobimExplorer.Settings
         }
         private static AppSetting _Default;
 
-        // TODO : UiSettingPart.cs 필요시 구현 예정 (2023.08.30 jbh)
+        // TODO : UiSettingPart.cs 필요시 구현 예정 (2023.08.30 minjae)
         //public UiSettingPart UI
         //{
         //    get => this.ui ?? (this.ui = new UiSettingPart());
@@ -109,7 +109,7 @@ namespace CobimExplorer.Settings
 
         public static AppSetting Deserialize(string txt)
         {
-            // TODO : 로그 기록시 현재 실행 중인 메서드 위치 기록하기 (2023.10.10 jbh)
+            // TODO : 로그 기록시 현재 실행 중인 메서드 위치 기록하기 (2023.10.10 minjae)
             // 참고 URL - https://slaner.tistory.com/73
             // 참고 2 URL - https://stackoverflow.com/questions/4132810/how-can-i-get-a-method-name-with-the-namespace-class-name
             // 참고 3 URL - https://stackoverflow.com/questions/44153/can-you-use-reflection-to-find-the-name-of-the-currently-executing-method

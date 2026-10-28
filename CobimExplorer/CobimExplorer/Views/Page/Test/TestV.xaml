@@ -14,7 +14,7 @@
              d:DataContext="{d:DesignInstance vm:TestVM}"
              d:DesignHeight="450"
              d:DesignWidth="800">
-    <!-- TODO : C# WPF 팁 - Xaml 안에서 ViewModel속성을 자동완성 되도록 만들기(d:DataContext="{d:DesignInstance Type=vm:MainVM}") (2023.07.17 jbh) -->
+    <!-- TODO : C# WPF 팁 - Xaml 안에서 ViewModel속성을 자동완성 되도록 만들기(d:DataContext="{d:DesignInstance Type=vm:MainVM}") (2023.07.17 minjae) -->
     <!-- 유튜브 참고 URL - https://youtu.be/A8t5ktSAgdA -->
     
     <!-- TODO : Microsoft.Xaml.Behaviors.Wpf nuget package 추가 참고 URL - https://kaki104.tistory.com/870 -->

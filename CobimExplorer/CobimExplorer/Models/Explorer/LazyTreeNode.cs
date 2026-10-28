@@ -10,7 +10,7 @@ using System.Windows.Media.Imaging;
 
 namespace CobimExplorer.Models.Explorer
 {
-    // TODO : LazyTreeView 구현 (2023.07.17 jbh)
+    // TODO : LazyTreeView 구현 (2023.07.17 minjae)
     // 유튜브 참고 URL
     // WPF TreeView - LazyTreeNode(지연로드 트리뷰) 만들기 - 1
     // 참고 URL - https://youtu.be/8mCzmlGRU4Y
@@ -50,9 +50,9 @@ namespace CobimExplorer.Models.Explorer
         //public string Text { get; set; } = string.Empty;
         public string FileName { get; set; } = string.Empty;
 
-        // TODO: 오류 코드 "CS8370" 오류 메시지 "'nullable 참조 형식' 기능은 C# 7.3에서 사용할 수 없습니다. 8.0 이상의 언어 버전을 사용하세요." .Net 8.0 이상 언어 버전 설치 (2023.07.17 jbh)
+        // TODO: 오류 코드 "CS8370" 오류 메시지 "'nullable 참조 형식' 기능은 C# 7.3에서 사용할 수 없습니다. 8.0 이상의 언어 버전을 사용하세요." .Net 8.0 이상 언어 버전 설치 (2023.07.17 minjae)
         // 참고 URL - https://drehzr.tistory.com/872
-        // TODO : 경고 메시지 코드 "CS8632" 경고 메시지 "c# 경고 CS8632 nullable 참조 형식에 대한 주석은 코드에서 '#nullable' 주석 컨텍스트 내에만 사용되어야 합니다." 로직 보완 (2023.07.17 jbh)
+        // TODO : 경고 메시지 코드 "CS8632" 경고 메시지 "c# 경고 CS8632 nullable 참조 형식에 대한 주석은 코드에서 '#nullable' 주석 컨텍스트 내에만 사용되어야 합니다." 로직 보완 (2023.07.17 minjae)
         // 참고 URL - https://kukuta.tistory.com/359
         // C# Nullable 타입 참고 URL - https://www.csharpstudy.com/CSharp/CSharp-nullable.aspx
 #nullable enable   // 참조 타입 변수라도 null을 대입하면 경고
@@ -92,7 +92,7 @@ namespace CobimExplorer.Models.Explorer
         {
             get
             {
-                // TODO : if 조건절에 == null 보다 빠른 is null 연산자 사용 (2023.11.24 jbh)
+                // TODO : if 조건절에 == null 보다 빠른 is null 연산자 사용 (2023.11.24 minjae)
                 // 참고 URL - https://husk321.tistory.com/405
                 // 싱글톤 패턴 
                 if (_children is null)

@@ -11,7 +11,7 @@
         mc:Ignorable="d"
         Title="TestWindow" Height="450" Width="800">
 
-    <!--  TODO : C# WPF 팁 - Xaml 안에서 ViewModel속성을 자동완성 되도록 만들기(d:DataContext="{d:DesignInstance Type=vm:MainVM}") (2023.07.17 jbh)  -->
+    <!--  TODO : C# WPF 팁 - Xaml 안에서 ViewModel속성을 자동완성 되도록 만들기(d:DataContext="{d:DesignInstance Type=vm:MainVM}") (2023.07.17 minjae)  -->
     <!--  유튜브 참고 URL - https://youtu.be/A8t5ktSAgdA  -->
 
     <Grid Margin="10">
@@ -51,7 +51,7 @@
             <!--  화면 우측 상단 GridView 영역  -->
             <Border Grid.Row="0" Grid.Column="0" BorderBrush="{StaticResource App.Brush.Themes.Common.Red}" BorderThickness="10">
                 <!--  DataGrid 영역  -->
-                <!--  TODO: DataGrid 영역 구현시 <GridView> 또는 <DataGrid> 둘 중에 하나로 구현하기 (2023.07.13 jbh)  -->
+                <!--  TODO: DataGrid 영역 구현시 <GridView> 또는 <DataGrid> 둘 중에 하나로 구현하기 (2023.07.13 minjae)  -->
                 <DataGrid>
 
                 </DataGrid>

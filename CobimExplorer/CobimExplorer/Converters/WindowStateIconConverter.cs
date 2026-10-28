@@ -9,7 +9,7 @@ using System.Windows.Data;
 
 namespace CobimExplorer.Converters
 {
-    // TODO : 윈도우 상단 타이틀바(TitleBareControl.xaml)에 사용할 수 있는 컨버터 클래스 "WindowStateIconConverter" 필요시 사용 예정 (2023.11.13 jbh)
+    // TODO : 윈도우 상단 타이틀바(TitleBareControl.xaml)에 사용할 수 있는 컨버터 클래스 "WindowStateIconConverter" 필요시 사용 예정 (2023.11.13 minjae)
     // 참고 URL - https://youtu.be/Q6VxSPlkcCg?si=dkC2ujAX3reUjQPk  
     public class WindowStateIconConverter // : IValueConverter
     {

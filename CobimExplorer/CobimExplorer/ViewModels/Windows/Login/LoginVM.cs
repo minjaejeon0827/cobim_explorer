@@ -22,8 +22,8 @@ using CobimExplorer.Data.Models.CobimBase.Login;
 
 namespace CobimExplorer.ViewModels.Windows.Login
 {
-    // TODO : 추후 로그인 뷰모델(LoginVM.cs) 소스파일 명칭 (LogInVM.cs)로 변경 및 프로젝트 파일 "CobimExplorer.Data.Models"에 LogInView.cs, TLogInView.cs 추가 예정 (2023.11.30 jbh)
-    // TODO : 로그인 뷰모델의 부모 클래스 CobimScreen 추후 변경 예정 (CobimScreen<LoginView>) (2023.12.01 jbh)
+    // TODO : 추후 로그인 뷰모델(LoginVM.cs) 소스파일 명칭 (LogInVM.cs)로 변경 및 프로젝트 파일 "CobimExplorer.Data.Models"에 LogInView.cs, TLogInView.cs 추가 예정 (2023.11.30 minjae)
+    // TODO : 로그인 뷰모델의 부모 클래스 CobimScreen 추후 변경 예정 (CobimScreen<LoginView>) (2023.12.01 minjae)
     public class LoginVM : CobimScreen<LoginView>  // PageBase, IPageBase, 
     {
         #region 프로퍼티 
@@ -56,14 +56,14 @@ namespace CobimExplorer.ViewModels.Windows.Login
         /// </summary>
         public ICommand TestCommand { get; set; }
 
-        // TODO : 필요시 프로퍼티 "Container" 사용 예정 (2024.01.04 jbh) 
+        // TODO : 필요시 프로퍼티 "Container" 사용 예정 (2024.01.04 minjae) 
         //public IContainer Container { get; set; }
 
-        // TODO : 필요시 프로퍼티 "EventAggregator" 사용 예정 (2024.01.04 jbh)
+        // TODO : 필요시 프로퍼티 "EventAggregator" 사용 예정 (2024.01.04 minjae)
         //[Inject]
         //public IEventAggregator EventAggregator { get; set; }
 
-        // TODO : 필요시 프로퍼티 "WindowManager" 사용 예정 (2024.01.04 jbh)
+        // TODO : 필요시 프로퍼티 "WindowManager" 사용 예정 (2024.01.04 minjae)
         //[Inject]
         //public IWindowManager WindowManager { get; set; }
 
@@ -78,7 +78,7 @@ namespace CobimExplorer.ViewModels.Windows.Login
         /// </summary>
         public BindableCollection<string> ServerPaths { get; } = new BindableCollection<string>();
 
-        // TODO : 로그인 테마 설정 프로퍼티 "IsDarkTheme" 필요시 사용 예정 (2023.11.07 jbh)
+        // TODO : 로그인 테마 설정 프로퍼티 "IsDarkTheme" 필요시 사용 예정 (2023.11.07 minjae)
         /// <summary>
         /// 로그인 테마 설정
         /// </summary>
@@ -99,7 +99,7 @@ namespace CobimExplorer.ViewModels.Windows.Login
 
 
         // TODO : bool 자료형 프로퍼티 "IsLoginWorking"
-        //        private bool 프로퍼티 및 NotifyOfPropertyChange(nameof(~~~)) 참조(사용) 안함. (2024.09.04 jbh)
+        //        private bool 프로퍼티 및 NotifyOfPropertyChange(nameof(~~~)) 참조(사용) 안함. (2024.09.04 minjae)
         // private bool 프로퍼티 및 NotifyOfPropertyChange(nameof(~~~)) 참조(사용) 안 하는 이유?
         // "로그인" 기능 실행시 처리 중인 상태에서 해당 기능을 중복 요청하지 못 하도록
         // 버튼 "로그인"이 클릭되지 못하도록
@@ -142,7 +142,7 @@ namespace CobimExplorer.ViewModels.Windows.Login
         //    get => _PasswordNullCheck;
         //    set
         //    {
-                   // TODO : 삼항 연산자에 == null 보다 빠른 is null 연산자 사용 (2023.11.24 jbh)
+                   // TODO : 삼항 연산자에 == null 보다 빠른 is null 연산자 사용 (2023.11.24 minjae)
                    // 참고 URL - https://husk321.tistory.com/405
         //        _PasswordNullCheck = Password is null ? true : (Password == "" ? true : false);
         //        NotifyOfPropertyChange(nameof(_PasswordNullCheck));
@@ -156,7 +156,7 @@ namespace CobimExplorer.ViewModels.Windows.Login
         [Inject]
         public HttpClient _Client { get; set; }
 
-        // TODO : 로그인 정보 프로퍼티 "LoginPack"을 싱글톤으로 구현 후 테스트 예정 (2024.01.02 jbh)
+        // TODO : 로그인 정보 프로퍼티 "LoginPack"을 싱글톤으로 구현 후 테스트 예정 (2024.01.02 minjae)
         /// <summary>
         /// 로그인 정보 
         /// </summary>
@@ -196,7 +196,7 @@ namespace CobimExplorer.ViewModels.Windows.Login
         {
             Container = container;
 
-            // TODO : EventAggregator = events; 코드 추가 (2023.07.24 jbh)
+            // TODO : EventAggregator = events; 코드 추가 (2023.07.24 minjae)
             // 참고 URL - https://github.com/canton7/Stylet/wiki/3.-The-Taskbar
             EventAggregator = events;
 
@@ -231,7 +231,7 @@ namespace CobimExplorer.ViewModels.Windows.Login
         //    throw new NotImplementedException();
         //}
 
-        // TODO : 메서드 "CanExecuteMethod" 필요시 수정 예정 (2023.10.4 jbh)
+        // TODO : 메서드 "CanExecuteMethod" 필요시 수정 예정 (2023.10.4 minjae)
         private bool CanExecuteMethod(object obj)
         {
             return true;
@@ -241,7 +241,7 @@ namespace CobimExplorer.ViewModels.Windows.Login
 
         #region InitSetting
 
-        // TODO : 초기 셋팅 메서드 "InitSetting" 필요시 구현하기 (2024.11.04 jbh)
+        // TODO : 초기 셋팅 메서드 "InitSetting" 필요시 구현하기 (2024.11.04 minjae)
         // 참고 URL - https://chat.openai.com/c/b9d52fcf-aab0-49e3-8008-8852767a9982
         /// <summary>
         /// 초기 셋팅 
@@ -276,7 +276,7 @@ namespace CobimExplorer.ViewModels.Windows.Login
 
         #region toggleTheme
 
-        // TODO : 추후 필요시 테마 색상 변경 메서드 "toggleTheme" 구현 예정 (2023.08.17 jbh)
+        // TODO : 추후 필요시 테마 색상 변경 메서드 "toggleTheme" 구현 예정 (2023.08.17 minjae)
         /// <summary>
         /// 테마 색상 변경 
         /// </summary>
@@ -316,7 +316,7 @@ namespace CobimExplorer.ViewModels.Windows.Login
                 AppSetting.Default.LoginBase.SetPassword(this.Password);
                 LoginView.SetRequestHeader(new RequestHeader(this.TenantId, responseData.resultData, responseData.accessKey, responseData.refreshToken));
 
-                // TODO : 아래 주석친 테스트 코드 필요시 참고 (2024.09.23 jbh)
+                // TODO : 아래 주석친 테스트 코드 필요시 참고 (2024.09.23 minjae)
                 // AppSetting.Default.LoginBase.SetRequestHeader(this.TenantId, responseData.resultData);
                 // AppSetting.Default.LoginBase.SetLoginServerPath(this.LoginServerPath);
             }
@@ -332,7 +332,7 @@ namespace CobimExplorer.ViewModels.Windows.Login
 
         #region IsValidator
 
-        // TODO : 유효성 검사 메서드 IsValidator 로직 필요시 수정 예정 (2024.08.21 jbh)
+        // TODO : 유효성 검사 메서드 IsValidator 로직 필요시 수정 예정 (2024.08.21 minjae)
         /// <summary>
         /// 유효성 검사 - 테넌트 아이디(TenantId), 로그인 아이디(LoginID), 비밀번호(Password) 문자열 입력 여부 확인
         /// </summary>
@@ -364,7 +364,7 @@ namespace CobimExplorer.ViewModels.Windows.Login
             }
             catch(Exception ex)
             {
-                // TODO : 필요시 에러 로그 기록 사용 예정 (2024.07.03 jbh)
+                // TODO : 필요시 에러 로그 기록 사용 예정 (2024.07.03 minjae)
                 // Log.Error(Logger.GetMethodPath(currentMethod) + Logger.errorMessage + ex.Message);
                 //TaskDialog.Show(HTSHelper.ErrorTitle, ex.Message);
                 MessageBox.Show(ex.Message, CobimHelper.ErrorTitle);
@@ -381,7 +381,7 @@ namespace CobimExplorer.ViewModels.Windows.Login
         /// </summary>
         private async Task LoginAsync(object obj)
         {
-            // TODO : 아래 3가지 if절 유효성 검사 진행 로직 필요시 수정 예정 (2024.08.21 jbh)
+            // TODO : 아래 3가지 if절 유효성 검사 진행 로직 필요시 수정 예정 (2024.08.21 minjae)
             // 유효성 검사 진행 
             if(false == IsValidator(EnumRequestDataType.TENANTID)) return;   // 테넌트 아이디 입력하지 않은 경우 
             if(false == IsValidator(EnumRequestDataType.LOGINID)) return;    // 로그인 아이디 입력하지 않은 경우 
@@ -389,7 +389,7 @@ namespace CobimExplorer.ViewModels.Windows.Login
 
             var loadingWorkVM = Container.Get<CommonLoadingWorkVM>().SetMessage(CobimHelper.Login_LoadingWork);   // 로그인 처리 중 화면 뷰모델 할당
 
-            // TODO : 추후 필요시 문자열 앞뒤 공백 제거(Trim) 사용 로직으로 변경 (2023.08.22 jbh)
+            // TODO : 추후 필요시 문자열 앞뒤 공백 제거(Trim) 사용 로직으로 변경 (2023.08.22 minjae)
             // 참고 URL - https://developer-talk.tistory.com/660
             string inputTenantId = TenantId.Trim();
             string clientID      = LoginId.Trim();
@@ -412,8 +412,8 @@ namespace CobimExplorer.ViewModels.Windows.Login
 
                 var responseData = await LoginRestServer.PostLoginAsync(InputParamData);   // 로그인 처리 진행 
 
-                // TODO : if 조건절에 == null 보다 빠른 is null 연산자 사용 (2023.11.24 jbh)
-                // TODO : if 조건절에 != null 보다 빠른 is not null 연산자 사용 (2023.11.24 jbh)
+                // TODO : if 조건절에 == null 보다 빠른 is null 연산자 사용 (2023.11.24 minjae)
+                // TODO : if 조건절에 != null 보다 빠른 is not null 연산자 사용 (2023.11.24 minjae)
                 // 참고 URL - https://husk321.tistory.com/405
                 if(responseData.resultData is not null && responseData.resultMessage is null)
                 {
@@ -437,7 +437,7 @@ namespace CobimExplorer.ViewModels.Windows.Login
                 if(resMsg != CobimHelper.Login_LoadingWork)
                 {
                     IsLoginWorking = false;   // 로그인 처리 중 종료 
-                    // TODO : 로그인 처리 중 화면이 ShowDialog(Modal)가 아니라 Show(Modaless)로 출력되므로 해당 화면 종료시 메서드 "RequestClose" 호출할 때, 메서드 파라미터 "null"로 할당 (2024.01.04 jbh)
+                    // TODO : 로그인 처리 중 화면이 ShowDialog(Modal)가 아니라 Show(Modaless)로 출력되므로 해당 화면 종료시 메서드 "RequestClose" 호출할 때, 메서드 파라미터 "null"로 할당 (2024.01.04 minjae)
                     // 참고 URL - https://cosmosproject.tistory.com/563        
                     loadingWorkVM.RequestClose(null);   // 로그인 처리 중 화면 종료
                 }
@@ -451,7 +451,7 @@ namespace CobimExplorer.ViewModels.Windows.Login
 
         private async Task TestAsync(object obj)
         {
-            // TODO : 로그 기록시 현재 실행 중인 메서드 위치 기록하기 (2023.11.07 jbh)
+            // TODO : 로그 기록시 현재 실행 중인 메서드 위치 기록하기 (2023.11.07 minjae)
             var currentMethod = MethodBase.GetCurrentMethod();
 
             try
@@ -488,13 +488,13 @@ namespace CobimExplorer.ViewModels.Windows.Login
 
         #region Sample
 
-        // TODO : 필요시 아래 주석친 메서드 "SaveOption" 참고 (2024.10.29 jbh)
+        // TODO : 필요시 아래 주석친 메서드 "SaveOption" 참고 (2024.10.29 minjae)
         /// <summary>
         /// 테스트용 로그인 설정값 임시 저장
         /// </summary>
         // private void SaveOption(Login_Access_Token login_access_token)
         // {
-        //     // TODO : 로그 기록시 현재 실행 중인 메서드 위치 기록하기 (2023.10.10 jbh)
+        //     // TODO : 로그 기록시 현재 실행 중인 메서드 위치 기록하기 (2023.10.10 minjae)
         //     // 참고 URL - https://slaner.tistory.com/73
         //     // 참고 2 URL - https://stackoverflow.com/questions/4132810/how-can-i-get-a-method-name-with-the-namespace-class-name
         //     // 참고 3 URL - https://stackoverflow.com/questions/44153/can-you-use-reflection-to-find-the-name-of-the-currently-executing-method
@@ -508,20 +508,20 @@ namespace CobimExplorer.ViewModels.Windows.Login
         //         AppSetting.Default.Login.ServerPath = this.ServerPath;
         //         //AppSetting.Default.Login.SiteViewCode = this.SiteViewCode;
 
-        //         // TODO : 추후 필요시 "this.LoginID", "this.Password" 추가 예정 (2023.08.30 jbh)
+        //         // TODO : 추후 필요시 "this.LoginID", "this.Password" 추가 예정 (2023.08.30 minjae)
         //         AppSetting.Default.Login.LoginId = this.LoginID;
         //         AppSetting.Default.Login.Password = this.Password;
 
         //         AppSetting.Default.Login.ServerPaths = this.ServerPaths.ToList<string>();
         //         // AppSetting.Default.Login.Authorization = login_access_token;
 
-        //         // TODO : 추후 필요시 아래 "LoginView.RequestHeaders" 로직 수정 예정 (2023.12.22 jbh)
+        //         // TODO : 추후 필요시 아래 "LoginView.RequestHeaders" 로직 수정 예정 (2023.12.22 minjae)
         //         LoginView.RequestHeaders.Tenant = LoginHelper.inputTenantId;
         //         LoginView.RequestHeaders.Authorization = login_access_token.resultData;
 
 
         //         // TODO : 응용 프로그램 기본 설정 클래스 (AppSetting) 중 ProjectSetting 클래스 프로퍼티 "Project"에
-        //         //        테스트 프로젝트 아이디(TestProjectId), 테스트 팀 아이디(TestTeamId) 추가 구현 (2023.09.04 jbh)
+        //         //        테스트 프로젝트 아이디(TestProjectId), 테스트 팀 아이디(TestTeamId) 추가 구현 (2023.09.04 minjae)
         //         //        추후 필요 없을시 삭제 예정
         //         // AppSetting.Default.Project.TestProjectId = ProjectHelper.testProjectId;
         //         // AppSetting.Default.Project.TestTeamId = ProjectHelper.testTeamId;
@@ -533,12 +533,12 @@ namespace CobimExplorer.ViewModels.Windows.Login
         //     }
         // }
 
-        // TODO : ASP .NET CORE 웹서비스 프로젝트 파일 "CobimExplorer.Core.Rest.Api" 필요시 구현 예정 (2023.11.07 jbh)
+        // TODO : ASP .NET CORE 웹서비스 프로젝트 파일 "CobimExplorer.Core.Rest.Api" 필요시 구현 예정 (2023.11.07 minjae)
         // 참고 URL - https://ojava.tistory.com/63
         // 참고 2 URL - https://blog.naver.com/icysword/140180123082
         //private async Task LoginAsync(object obj)
         //{
-        //    // TODO : 아래 3가지 if절 유효성 검사 진행 로직 필요시 수정 예정 (2024.08.21 jbh)
+        //    // TODO : 아래 3가지 if절 유효성 검사 진행 로직 필요시 수정 예정 (2024.08.21 minjae)
         //    // 유효성 검사 진행 
         //    if (false == IsValidator(EnumRequestDataType.TENANTID)) return;   // 테넌트 아이디 입력하지 않은 경우 
         //    if (false == IsValidator(EnumRequestDataType.LOGINID)) return;    // 로그인 아이디 입력하지 않은 경우 
@@ -546,7 +546,7 @@ namespace CobimExplorer.ViewModels.Windows.Login
 
         //    var loadingWorkVM = Container.Get<CommonLoadingWorkVM>().SetMessage(CobimHelper.Login_LoadingWork);   // 로그인 처리 중 화면 뷰모델 할당
 
-        //    // TODO : 추후 필요시 문자열 앞뒤 공백 제거(Trim) 사용 로직으로 변경 (2023.08.22 jbh)
+        //    // TODO : 추후 필요시 문자열 앞뒤 공백 제거(Trim) 사용 로직으로 변경 (2023.08.22 minjae)
         //    // 참고 URL - https://developer-talk.tistory.com/660
         //    string inputTenantId = TenantId.Trim();
         //    string clientID = LoginId.Trim();
@@ -555,7 +555,7 @@ namespace CobimExplorer.ViewModels.Windows.Login
         //    // string testID   = LoginID.Trim();
         //    // string testPW   = Password.Trim();
 
-        //    // TODO : 테스트 로그인시 사용할 테넌드 아이디(LoginHelper.inputTenantId), 아이디(LoginHelper.testid), 비밀번호(LoginHelper.testpassword) 구현 (2023.08.23 jbh)
+        //    // TODO : 테스트 로그인시 사용할 테넌드 아이디(LoginHelper.inputTenantId), 아이디(LoginHelper.testid), 비밀번호(LoginHelper.testpassword) 구현 (2023.08.23 minjae)
         //    // string inputTenantId = LoginHelper.inputTenantId;
         //    // string clientID = LoginHelper.testId;
         //    // string clientPW = LoginHelper.testPassword;
@@ -566,7 +566,7 @@ namespace CobimExplorer.ViewModels.Windows.Login
         //    {
         //        // MessageBox.Show("로그인 테스트 중입니다.");
 
-        //        // TODO : 아래 주석친 코드 필요시 참고 (2024.09.04 jbh)
+        //        // TODO : 아래 주석친 코드 필요시 참고 (2024.09.04 minjae)
         //        // 로그인 처리 중인 상태에서 로그인을 중복 요청하는 경우 
         //        // if(true == IsLoginWorking)
         //        //     throw new Exception("현재 로그인 진행 중입니다.\r\n로그인 완료까지 잠시 기다려주세요.");
@@ -584,19 +584,19 @@ namespace CobimExplorer.ViewModels.Windows.Login
         //        // 로그인 처리 중 화면이 정상 출력되는지 1분간 대기 
         //        // await Task.Delay(TimeSpan.FromMinutes(1));
 
-        //        // TODO : 테스트 용 코드 필요 시 사용 예정 (2024.01.05 jbh)
+        //        // TODO : 테스트 용 코드 필요 시 사용 예정 (2024.01.05 minjae)
         //        // 테스트 처리 중 화면 출력 직후 30초 대기 
         //        // await Task.Delay(TimeSpan.FromSeconds(30));
         //        // await Task.Delay(TimeSpan.FromSeconds(20));
 
         //        Log.Information(Logger.GetMethodPath(currentMethod) + "Http 통신 연결 시도");
 
-        //        // TODO : Rest API POST 방식 사용자 로그인 static 메서드 "PostUserLogin" 호출문 구현 (2023.08.18 jbh)
+        //        // TODO : Rest API POST 방식 사용자 로그인 static 메서드 "PostUserLogin" 호출문 구현 (2023.08.18 minjae)
         //        var token = await UserRestServer.PostLoginAsync(Client, LoginPack);
 
 
-        //        // TODO : if 조건절에 == null 보다 빠른 is null 연산자 사용 (2023.11.24 jbh)
-        //        // TODO : if 조건절에 != null 보다 빠른 is not null 연산자 사용 (2023.11.24 jbh)
+        //        // TODO : if 조건절에 == null 보다 빠른 is null 연산자 사용 (2023.11.24 minjae)
+        //        // TODO : if 조건절에 != null 보다 빠른 is not null 연산자 사용 (2023.11.24 minjae)
         //        // 참고 URL - https://husk321.tistory.com/405
         //        if (token.resultData is not null && token.resultMessage is null)
         //        {
@@ -604,7 +604,7 @@ namespace CobimExplorer.ViewModels.Windows.Login
 
         //            Log.Information(Logger.GetMethodPath(currentMethod) + "로그인 성공");
 
-        //            // [테스트 완료] TODO : 로그 레벨(Debug, Verbose, Warning, Error, Fatal) 기록 테스트 진행 (2023.10.11 jbh)
+        //            // [테스트 완료] TODO : 로그 레벨(Debug, Verbose, Warning, Error, Fatal) 기록 테스트 진행 (2023.10.11 minjae)
         //            //Log.Debug(Logger.GetMethodPath(currentMethod) + "테스트 Debug 로그인");
         //            //Log.Verbose(Logger.GetMethodPath(currentMethod) + "테스트 Verbose 로그인");
         //            //Log.Warning(Logger.GetMethodPath(currentMethod) + "테스트 Warning 로그인");
@@ -623,7 +623,7 @@ namespace CobimExplorer.ViewModels.Windows.Login
 
         //            // ExplorerVM explorerVM = Container.Get(ExplorerVM).Set();
 
-        //            // TODO : 로그인 성공시 화면(Window - LoginV.xaml) 종료 구현 (2023.08.17 jbh)
+        //            // TODO : 로그인 성공시 화면(Window - LoginV.xaml) 종료 구현 (2023.08.17 minjae)
         //            // OnRequestClose(LoginVM, new EventArgs());
         //            this.RequestClose(loginVM.IsLogin);
         //        }
@@ -653,7 +653,7 @@ namespace CobimExplorer.ViewModels.Windows.Login
         //    }
         //    finally
         //    {
-        //        // TODO : 로그인 처리 중 화면이 ShowDialog(Modal)가 아니라 Show(Modaless)로 출력되므로 해당 화면 종료시 메서드 "RequestClose" 호출할 때, 메서드 파라미터 "null"로 할당 (2024.01.04 jbh)
+        //        // TODO : 로그인 처리 중 화면이 ShowDialog(Modal)가 아니라 Show(Modaless)로 출력되므로 해당 화면 종료시 메서드 "RequestClose" 호출할 때, 메서드 파라미터 "null"로 할당 (2024.01.04 minjae)
         //        // 참고 URL - https://cosmosproject.tistory.com/563
         //        // 로그인 처리 중 화면 종료        
         //        loadingWorkVM.RequestClose(null);

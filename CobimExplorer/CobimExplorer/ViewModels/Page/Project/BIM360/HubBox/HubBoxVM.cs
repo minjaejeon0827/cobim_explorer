@@ -12,13 +12,13 @@ namespace CobimExplorer.ViewModels.Page.Project.BIM360.HubBox
     // 구글 크롬 전용 <CefSharp> 화면
     // 뷰(HubBoxV.xaml)
     // 뷰모델(HubBoxVM.cs)에서
-    // 사용하고 있는 메모리를 정리하는 로직 구현하기 (2024.08.22 jbh)
+    // 사용하고 있는 메모리를 정리하는 로직 구현하기 (2024.08.22 minjae)
 
     // 참고 URL - https://stackoverflow.com/questions/48398628/c-sharp-cefsharp-memory-management
     // 참고 2 URL - https://blog.naver.com/iconms1/222033637762
     // 참고 3 URL - https://github.com/cefsharp/CefSharp/blob/master/CefSharp.WinForms.Example/BrowserForm.cs#L137
 
-    // TODO : 구글 크롬 기반 웹브라우저 화면을 WPF에서 출력할 수 있도록 CefSharp(구글 크롬 웹브라우저 컨트롤) 구현 (2024.08.22 jbh) 
+    // TODO : 구글 크롬 기반 웹브라우저 화면을 WPF에서 출력할 수 있도록 CefSharp(구글 크롬 웹브라우저 컨트롤) 구현 (2024.08.22 minjae) 
     // 참고 URL - https://blog.naver.com/codeknight2/222210163649  
     // 참고 2 URL - https://github.com/cefsharp/CefSharp/wiki/Quick-Start  
     // 유튜브 참고 URL - https://youtu.be/si8wemHOMYA?si=FiL-r-_5MoF1EwU_
@@ -40,7 +40,7 @@ namespace CobimExplorer.ViewModels.Page.Project.BIM360.HubBox
         {
             Container = container;
 
-            // TODO : EventAggregator = events; 코드 추가 (2023.08.22 jbh)
+            // TODO : EventAggregator = events; 코드 추가 (2023.08.22 minjae)
             // 참고 URL - https://github.com/canton7/Stylet/wiki/3.-The-Taskbar
             EventAggregator = events;
 
@@ -60,13 +60,13 @@ namespace CobimExplorer.ViewModels.Page.Project.BIM360.HubBox
         {
             base.OnActivate();
 
-            // TODO : 아래 테스트 코드 필요시 참고 (2024.08.22 jbh)
+            // TODO : 아래 테스트 코드 필요시 참고 (2024.08.22 minjae)
             // Sender = this;
 
             // var vm = Container.Get<HubBoxVM>();
             // string VMName = vm.GetViewModelName();
 
-            // TODO : 필요시 var msg = new ChangeViewModelMsg(this, VMName); 사용 예정 (2024.08.22 jbh)
+            // TODO : 필요시 var msg = new ChangeViewModelMsg(this, VMName); 사용 예정 (2024.08.22 minjae)
             // var msg = new ChangeViewModelMsg(this, VMName);
             // var msg = new OpenPageMsg((ICbVM)Sender, VMName);
             // EventAggregator.PublishOnUIThread(msg);

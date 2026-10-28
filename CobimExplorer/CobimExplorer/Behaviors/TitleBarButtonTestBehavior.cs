@@ -26,7 +26,7 @@ namespace CobimExplorer.Behaviors
         protected override void OnAttached()
         {
             AssociatedObject.GotFocus += AssociatedObject_GotFocus;
-            // TODO : if 조건절에 == null 보다 빠른 is null 연산자 사용 (2023.11.24 jbh)
+            // TODO : if 조건절에 == null 보다 빠른 is null 연산자 사용 (2023.11.24 minjae)
             // 참고 URL - https://husk321.tistory.com/405
             //if (_dr is null) return;
             ////OnAttached가 UI Thread에서 실행되지 않기 때문에 Dispatcher 이용해서 출력

@@ -1,5 +1,5 @@
 ﻿<!--  TODO : 체크인 팝업화면 뷰(CheckInPartV.xaml) 필요시 Nuget 패키지에서 "MahApps.Metro" dll 설치 후 -->
-<!--         WPF에서 제공하는 Metro 스타일 사용해서 구현하기 (2023.11.30 jbh)  -->
+<!--         WPF에서 제공하는 Metro 스타일 사용해서 구현하기 (2023.11.30 minjae)  -->
 <!--  참고 URL   - https://m.blog.naver.com/ljy5745/220662257027  -->
 <!--  참고 2 URL - http://mahapps.com/  -->
 <!--  <mah:MetroWindow x:Class="CobimExplorer.Views.Part.Project.CDE.Explorer.CheckInPartV"  -->
@@ -28,7 +28,7 @@
                       ResizeBorderThickness="2"/>
     </WindowChrome.WindowChrome>-->
 
-    <!--  TODO : 아래 주석친 뷰모델 바인딩 하는 XAML 코드 필요시 참고(2024.09.05 jbh)  -->
+    <!--  TODO : 아래 주석친 뷰모델 바인딩 하는 XAML 코드 필요시 참고(2024.09.05 minjae)  -->
     <!--<Window.DataContext>
         <Binding Path="CheckInPartVM" />
     </Window.DataContext>-->
@@ -83,16 +83,16 @@
                            FontSize="20"
                            VerticalAlignment="Center"/>
 
-                <!--  TODO : <TextBox> 영역에 PlaceHolder(Watermark) "Enter Comment (optional)..." 구현 (2023.12.01 jbh)  -->
+                <!--  TODO : <TextBox> 영역에 PlaceHolder(Watermark) "Enter Comment (optional)..." 구현 (2023.12.01 minjae)  -->
                 <!--  참고 URL - https://blissfuljoon.tistory.com/374  -->
                 <!--  참고 2 URL - https://kjun.kr/1127  -->
-                <!--  TODO : <TextBox>에 적힌 텍스트 <TextBox> 영역 중앙 정렬 구현 VerticalContentAlignment="Center" (2023.12.01 jbh)  -->
+                <!--  TODO : <TextBox>에 적힌 텍스트 <TextBox> 영역 중앙 정렬 구현 VerticalContentAlignment="Center" (2023.12.01 minjae)  -->
                 <!--  참고 URL - https://drbeeeye.tistory.com/9  -->
                 <Border Margin="10,0,0,0"
                         BorderBrush="{StaticResource App.Brush.Themes.Winter.Black.20}"
                         BorderThickness="2">
                     <Grid>
-                        <!--  TODO : 체크인 Comment 입력할 수 있는 <TextBox> 영역에 Text 문자열을 여러 줄 작성할 수 있도록 멀티라인 구현 (2023.12.04 jbh)  -->
+                        <!--  TODO : 체크인 Comment 입력할 수 있는 <TextBox> 영역에 Text 문자열을 여러 줄 작성할 수 있도록 멀티라인 구현 (2023.12.04 minjae)  -->
                         <!--  참고 URL - https://learn.microsoft.com/ko-kr/dotnet/desktop/wpf/controls/how-to-create-a-multiline-textbox-control?view=netframeworkdesktop-4.8  -->
                         <!--  참고 2 URL - https://m.blog.naver.com/lhs860226/142423158  -->
                         <!--  참고 3 URL - https://salmonworld.tistory.com/159?category=898737  -->
@@ -156,7 +156,7 @@
             <!--  기존 체크아웃한 파일 말고 새로운 파일도 다중 파일 업로드 기능 필요  -->
             <!--  컨테이너 1개 -> 파일 A, B, C ... (1 : N 관계) 로 체크인 + 다중 파일 업로드 할 수 있게끔  -->
             <!--  인재 INC와 소통 진행 필요함. (추후 Rest API 새로 구현 요청)  -->
-            <!--  TODO : WPF OpenFileDialog 사용해서 테스트용 팝업 "열기" 화면 출력 및 컨테이너 체크인 + 업로드 할 파일 열기 구현 (2023.12.04 jbh)  -->
+            <!--  TODO : WPF OpenFileDialog 사용해서 테스트용 팝업 "열기" 화면 출력 및 컨테이너 체크인 + 업로드 할 파일 열기 구현 (2023.12.04 minjae)  -->
             <!--  유튜브 참고 URL  -->
             <!--  https://youtu.be/Ks9bzPSx7Vs?si=GkwGbWPvbSYOYOwC  -->
 

@@ -8,7 +8,7 @@ using CobimExplorer.Rest.Api.CobimBase.Explorer;
 
 namespace CobimExplorer.Settings
 {
-    // TODO : ProjectSetting 클래스 구현 (프로젝트 아이디, 팀 아이디 테스트용으로 설정 -> 테스트용 필요 없을 시 추후 수정 예정) (2023.09.04 jbh)
+    // TODO : ProjectSetting 클래스 구현 (프로젝트 아이디, 팀 아이디 테스트용으로 설정 -> 테스트용 필요 없을 시 추후 수정 예정) (2023.09.04 minjae)
     public class ProjectSetting : BindableBase
     {
         /// <summary>

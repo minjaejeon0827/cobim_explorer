@@ -33,7 +33,7 @@ using CobimNet.Extensions;
 
 namespace CobimExplorer.ViewModels.Page.Parents
 {
-    // TODO : 리본 버튼 클릭시 출력되는 화면을 탭 페이지로 출력 + 버튼 "닫기" 클릭시 탭 페이지 화면 종료 되도록 구현 (2024.01.10 jbh)  
+    // TODO : 리본 버튼 클릭시 출력되는 화면을 탭 페이지로 출력 + 버튼 "닫기" 클릭시 탭 페이지 화면 종료 되도록 구현 (2024.01.10 minjae)  
     // 참고 URL - https://youtu.be/rFhmTccRUpQ?si=dNYuEcN6487nTeYt  
     public class TabParentPageVM : ParentOnePageBase, IHandle
     {
@@ -120,14 +120,14 @@ namespace CobimExplorer.ViewModels.Page.Parents
 
         #region Ribbon
 
-        // TODO : UserControl 클래스 리본 프로퍼티 "Ribbon" 필요시 사용 예정 (2023.11.09 jbh)
+        // TODO : UserControl 클래스 리본 프로퍼티 "Ribbon" 필요시 사용 예정 (2023.11.09 minjae)
         /// <summary>
         /// 탐색기 화면에서 출력하는 리본 바 뷰(RibbonControl) + 뷰모델(MainVM)
         /// </summary>
         //public UserControl Ribbon { get => _Ribbon; set { _Ribbon = value; NotifyOfPropertyChange(); } }
         //private UserControl _Ribbon = new UserControl();
 
-        // TODO : 리본 컨트롤 프로퍼티 "RibbonMenu" 필요시 사용 예정 (2023.11.09 jbh)
+        // TODO : 리본 컨트롤 프로퍼티 "RibbonMenu" 필요시 사용 예정 (2023.11.09 minjae)
         /// <summary>
         /// 리본 컨트롤
         /// </summary>
@@ -200,7 +200,7 @@ namespace CobimExplorer.ViewModels.Page.Parents
         public Visibility visibleTabControl { get => _visibleTabControl; set { _visibleTabControl = value; NotifyOfPropertyChange(); } }
         private Visibility _visibleTabControl = Visibility.Collapsed;
 
-        // TODO : 아래 프로퍼티 "_Tabs", "Tabs" 구현한 소스코드 필요시 수정 예정 (2024.08.22 jbh)
+        // TODO : 아래 프로퍼티 "_Tabs", "Tabs" 구현한 소스코드 필요시 수정 예정 (2024.08.22 minjae)
         /// <summary>
         /// TabItem Collection 
         /// </summary>
@@ -255,7 +255,7 @@ namespace CobimExplorer.ViewModels.Page.Parents
         {
             Container = container;
 
-            // TODO : EventAggregator = events; 코드 추가 (2024.01.10 jbh)
+            // TODO : EventAggregator = events; 코드 추가 (2024.01.10 minjae)
             // 참고 URL - https://github.com/canton7/Stylet/wiki/3.-The-Taskbar
             EventAggregator = events;
 
@@ -284,7 +284,7 @@ namespace CobimExplorer.ViewModels.Page.Parents
             this._CDE_NavButton = CobimHelper.CDE_NavButton;               // CDE - NavigationBar Button
             this._HubBox_NavButton = CobimHelper.HubBox_NavButton;         // HubBox - NavigationBar Button
 
-            // TODO : 아래 프로퍼티 "_Tabs", "Tabs" 사용하여 이벤트 CollectionChanged 등록한 소스코드 필요시 수정 예정 (2024.08.22 jbh)
+            // TODO : 아래 프로퍼티 "_Tabs", "Tabs" 사용하여 이벤트 CollectionChanged 등록한 소스코드 필요시 수정 예정 (2024.08.22 minjae)
             // this._Tabs = new ObservableCollection<ITab>();
             // this._Tabs.CollectionChanged -= Tabs_CollectionChanged;
             this._Tabs.CollectionChanged += Tabs_CollectionChanged;
@@ -318,7 +318,7 @@ namespace CobimExplorer.ViewModels.Page.Parents
                 OpenPageMsg message = new OpenPageMsg((ICbVM)Sender);
 
                 // TabParentPageVM.cs -> 이벤트 메서드 "ChangeActiveItem" 실행시
-                // -> OpenPageMsg 클래스 객체 message 생성하는 경우에만 아래 코드 2줄 필요 (2024.08.07 jbh)
+                // -> OpenPageMsg 클래스 객체 message 생성하는 경우에만 아래 코드 2줄 필요 (2024.08.07 minjae)
                 // -> 아래 코드 2줄은 MainVM.cs -> 메서드 Handle(OpenPageMsg message) 에서 사용하는 데이터임.
                 // -> message.Page = newItem; / message.VMName = message.Page.GetType().Name; 
                 message.Page = newItem;
@@ -332,12 +332,12 @@ namespace CobimExplorer.ViewModels.Page.Parents
             base.ChangeActiveItem(newItem, closePrevious);
         }
 
-        // TODO : 테스트 해보고 필요 하면 이벤트 OnActivate 사용 예정 (2024.08.08 jbh)
+        // TODO : 테스트 해보고 필요 하면 이벤트 OnActivate 사용 예정 (2024.08.08 minjae)
         //protected override void OnActivate()
         //{
         //    base.OnActivate();
 
-        //    // TODO : 아래 주석친 테스트 코드 필요시 참고 (2024.08.07 jbh)
+        //    // TODO : 아래 주석친 테스트 코드 필요시 참고 (2024.08.07 minjae)
         //    //var vm = Container.Get<TabParentPageVM>();
         //    //string VMName = vm.GetViewModelName();
 
@@ -352,7 +352,7 @@ namespace CobimExplorer.ViewModels.Page.Parents
         }
 
 
-        // TODO : 메서드 "CanExecuteMethod" 필요시 수정 예정 (2024.08.08 jbh)
+        // TODO : 메서드 "CanExecuteMethod" 필요시 수정 예정 (2024.08.08 minjae)
         private bool CanExecuteMethod(object obj)
         {
             return true;
@@ -381,7 +381,7 @@ namespace CobimExplorer.ViewModels.Page.Parents
 
                 visibleTabControl = Visibility.Collapsed;        // 화면 활성화될 때 마다 Grid 영역 -> TabControl 숨김 처리
 
-                // TODO : 테스트 TabItem 리스트 객체 tabItemList 에 Dictionary<string, string>() 형식 데이터 추가 구현 (2024.10.28 jbh)
+                // TODO : 테스트 TabItem 리스트 객체 tabItemList 에 Dictionary<string, string>() 형식 데이터 추가 구현 (2024.10.28 minjae)
                 // 참고 URL - https://learn.microsoft.com/ko-kr/dotnet/api/system.collections.generic.list-1.add?view=net-8.0#system-collections-generic-list-1-add(-0)
                 // 참고 2 URL - https://learn.microsoft.com/ko-kr/dotnet/api/system.collections.generic.dictionary-2?view=net-8.0
                 // 참고 3 URL - https://developer-talk.tistory.com/693
@@ -390,8 +390,8 @@ namespace CobimExplorer.ViewModels.Page.Parents
 
                 TestNewTabItem(tabItemList);   // 테스트 TabItem 신규 추가 메서드 TestNewTabItem 호출 
 
-                // TODO : 아래 주석친 코드 필요시 참고 (2024.08.06 jbh)
-                // TODO : 아래 VMNameList 데이터 추가 및 메서드 "TestNewTabItem" 호출문은 테스트 끝나고 나면 코드 삭제 처리 예정 (2024.08.07 jbh)
+                // TODO : 아래 주석친 코드 필요시 참고 (2024.08.06 minjae)
+                // TODO : 아래 VMNameList 데이터 추가 및 메서드 "TestNewTabItem" 호출문은 테스트 끝나고 나면 코드 삭제 처리 예정 (2024.08.07 minjae)
                 // tabNameList.Add(CobimHelper.ExplorerTabItemName);
                 // tabNameList.Add(CobimHelper.HubBoxTabItemName);
                 //TestNewTabItem(tabNameList);   // 테스트 TabItem 신규 추가 메서드 TestNewTabItem 호출 
@@ -399,13 +399,13 @@ namespace CobimExplorer.ViewModels.Page.Parents
                 // VMNameList.Add(CobimHelper.ExplorerVMName);
                 // VMNameList.Add(CobimHelper.HubBoxVMName);
 
-                // TODO : TestCefSharpVM - 구글 크롬(Google Chrome) 웹 브라우저 필요시 아래 주석친 코드 참고 (2024.08.22 jbh)
+                // TODO : TestCefSharpVM - 구글 크롬(Google Chrome) 웹 브라우저 필요시 아래 주석친 코드 참고 (2024.08.22 minjae)
                 // VMNameList.Add(CobimHelper.TestCefSharpVMName);
 
                 // TestNewTabItem(VMNameList);   // 테스트 TabItem 신규 추가 메서드 TestNewTabItem 호출 
                 // var start = this.Items.Where(it => string.Equals(it.GetType().Name, CobimHelper.StartVMName)).FirstOrDefault();
 
-                // TODO : if 조건절에 != null 보다 빠른 is not null 연산자 사용 (2024.08.06 jbh)
+                // TODO : if 조건절에 != null 보다 빠른 is not null 연산자 사용 (2024.08.06 minjae)
                 // 참고 URL - https://husk321.tistory.com/405
                 // if(start is not null)
                 // {
@@ -443,7 +443,7 @@ namespace CobimExplorer.ViewModels.Page.Parents
 
             try
             {
-                // TODO : 추후 메서드 "TestNewTabItem" 필요시 아래 MessageBox.Show / return; 삭제 예정 (2024.08.06 jbh)
+                // TODO : 추후 메서드 "TestNewTabItem" 필요시 아래 MessageBox.Show / return; 삭제 예정 (2024.08.06 minjae)
                 // MessageBox.Show("TabItem 신규 추가 추후 구현 예정");
                 // return;
 
@@ -458,7 +458,7 @@ namespace CobimExplorer.ViewModels.Page.Parents
 
                         openPage = this.Items.Where(it => string.Equals(it.GetType().Name, vmName)).FirstOrDefault();
 
-                        // TODO : if 조건절에 != null 보다 빠른 is not null 연산자 사용 (2024.08.06 jbh)
+                        // TODO : if 조건절에 != null 보다 빠른 is not null 연산자 사용 (2024.08.06 minjae)
                         // 참고 URL - https://husk321.tistory.com/405
                         if(openPage is not null)
                         {
@@ -481,13 +481,13 @@ namespace CobimExplorer.ViewModels.Page.Parents
                    && Visibility.Collapsed == visibleTabControl) visibleTabControl = Visibility.Visible;
 
 
-                // TODO : 아래 주석친 테스트 코드 참고(2024.08.07 jbh) 
+                // TODO : 아래 주석친 테스트 코드 참고(2024.08.07 minjae) 
                 //vmName = obj.ToString();
                 //tabItemName = vmName;
 
                 //openPage = this.Items.Where(it => string.Equals(it.GetType().Name, vmName)).FirstOrDefault();
 
-                //// TODO : if 조건절에 != null 보다 빠른 is not null 연산자 사용 (2024.08.06 jbh)
+                //// TODO : if 조건절에 != null 보다 빠른 is not null 연산자 사용 (2024.08.06 minjae)
                 //// 참고 URL - https://husk321.tistory.com/405
                 //if (openPage is not null)
                 //{
@@ -574,7 +574,7 @@ namespace CobimExplorer.ViewModels.Page.Parents
 
             try
             {
-                // TODO : 추후 메서드 "NewTabItem" 필요시 아래 MessageBox.Show / return; 삭제 예정 (2024.08.06 jbh)
+                // TODO : 추후 메서드 "NewTabItem" 필요시 아래 MessageBox.Show / return; 삭제 예정 (2024.08.06 minjae)
                 //MessageBox.Show("TabItem 신규 추가 추후 구현 예정");
                 return;
 
@@ -583,7 +583,7 @@ namespace CobimExplorer.ViewModels.Page.Parents
 
                 openPage = this.Items.Where(it => string.Equals(it.GetType().Name, vmName)).FirstOrDefault();
 
-                // TODO : if 조건절에 != null 보다 빠른 is not null 연산자 사용 (2024.08.06 jbh)
+                // TODO : if 조건절에 != null 보다 빠른 is not null 연산자 사용 (2024.08.06 minjae)
                 // 참고 URL - https://husk321.tistory.com/405
                 if(openPage is not null)
                 {
@@ -620,7 +620,7 @@ namespace CobimExplorer.ViewModels.Page.Parents
                 if(Tabs.Count >= (int)EnumTabItem.EXISTENCE
                    && Visibility.Collapsed == visibleTabControl) visibleTabControl = Visibility.Visible;
 
-                // TODO : 아래 주석친 테스트 코드 필요시 참고 (2024.07.22 jbh)
+                // TODO : 아래 주석친 테스트 코드 필요시 참고 (2024.07.22 minjae)
                 // this.mainVM = (MainVM)this.Parent;
 
                 // Tabs.Where(x => x.TabItemName)
@@ -691,9 +691,9 @@ namespace CobimExplorer.ViewModels.Page.Parents
 
         #endregion NewTabItem
 
-        // TODO: 오류 코드 "CS8370" 오류 메시지 "'nullable 참조 형식' 기능은 C# 7.3에서 사용할 수 없습니다. 8.0 이상의 언어 버전을 사용하세요." .Net 8.0 이상 언어 버전 설치 (2024.08.01 jbh)
+        // TODO: 오류 코드 "CS8370" 오류 메시지 "'nullable 참조 형식' 기능은 C# 7.3에서 사용할 수 없습니다. 8.0 이상의 언어 버전을 사용하세요." .Net 8.0 이상 언어 버전 설치 (2024.08.01 minjae)
         // 참고 URL - https://drehzr.tistory.com/872
-        // TODO : 경고 메시지 코드 "CS8632" 경고 메시지 "c# 경고 CS8632 nullable 참조 형식에 대한 주석은 코드에서 '#nullable' 주석 컨텍스트 내에만 사용되어야 합니다." 로직 보완 (2024.08.01 jbh)
+        // TODO : 경고 메시지 코드 "CS8632" 경고 메시지 "c# 경고 CS8632 nullable 참조 형식에 대한 주석은 코드에서 '#nullable' 주석 컨텍스트 내에만 사용되어야 합니다." 로직 보완 (2024.08.01 minjae)
         // 참고 URL - https://kukuta.tistory.com/359
         // C# Nullable 타입 참고 URL - https://www.csharpstudy.com/CSharp/CSharp-nullable.aspx
         // C# Nullable 타입 예제 코드
@@ -731,7 +731,7 @@ namespace CobimExplorer.ViewModels.Page.Parents
         /// </summary>
         private void OnTabCloseRequested(object? sender, EventArgs e)
         {
-            // TODO : 추후 이벤트 메서드 "OnTabCloseRequested" 필요시 아래 MessageBox.Show / return; 삭제 예정 (2024.08.06 jbh)
+            // TODO : 추후 이벤트 메서드 "OnTabCloseRequested" 필요시 아래 MessageBox.Show / return; 삭제 예정 (2024.08.06 minjae)
             //MessageBox.Show("TabItem 버튼 X 기능 추후 구현 예정");
             return;
 
@@ -778,7 +778,7 @@ namespace CobimExplorer.ViewModels.Page.Parents
                         //        메서드 Tabs.Insert 호출시 아래와 같은 오류 메시지 출력
                         //        'Unable to cast object of type 'MS.Internal.NamedObject' to type 'CobimExplorer.Interface.Page.ITab'.' 
                         //        해당 오류 해결하기 위해 해당 두가지 TabItem을 메서드 Tabs.Remove 호출하기 직전
-                        //        ITab 인터페이스 프로퍼티 "SourceTabItem", "TargetTabItem"에 값 할당 처리 (2024.08.05 jbh)
+                        //        ITab 인터페이스 프로퍼티 "SourceTabItem", "TargetTabItem"에 값 할당 처리 (2024.08.05 minjae)
                         // 참고 URL - https://stackoverflow.com/questions/18866308/unable-to-cast-object-of-type-ms-internal-namedobject-to-bitmapimage
                         SourceTabItem = (ITab)tabItemSource.Content;   // 탭 목록 순서가 바뀌어지는 SourceTabItem
                         TargetTabItem = (ITab)tabItemTarget.Content;   // 탭 목록 순서를 바꾸려고 하는 TargetTabItem
@@ -793,17 +793,17 @@ namespace CobimExplorer.ViewModels.Page.Parents
                         SelectedTabIndex = sourceIndex;  // sourceIndex에 추가된 TargetTabItem이 화면에 출력 되도록 설정 
                     }
                 }
-                // TODO : 아래 else 문 필요시 구현 예정 (2024.08.08 jbh)
+                // TODO : 아래 else 문 필요시 구현 예정 (2024.08.08 minjae)
                 // 탭 목록 순서가 바뀌어지는 TabItem(tabItemSource) 존재하지 않는 경우
                 // else throw new Exception("[오류]\r\n탭 목록 순서가 바뀌어지는 TabItem(tabItemSource)\r\nnull Exception 발생!\r\n담당자에게 문의하세요!");
 
 
-                // TODO : 아래 주석친 테스트 코드 필요시 참고 (2024.07.23 jbh)
+                // TODO : 아래 주석친 테스트 코드 필요시 참고 (2024.07.23 minjae)
                 // var tabItemTarget = e.Source as TabItem;
                 // var tabItemSource = e.Data.GetData(typeof(TabItem)) as TabItem;
 
                 // TODO : TabItem Header를 마우스로 드래그 앤 드롭 진행시 이벤트 메서드 TabItem_Drop 실행되고, 
-                //        아래 if절 로직의 조건절 if(false == tabItemTarget.Equals(tabItemSource))에서 오류 발생함. (2024.07.25 jbh)
+                //        아래 if절 로직의 조건절 if(false == tabItemTarget.Equals(tabItemSource))에서 오류 발생함. (2024.07.25 minjae)
                 // if(false == tabItemTarget.Equals(tabItemSource))
                 // {
                 //     int sourceIndex = tabControl.Items.IndexOf(tabItemSource);
@@ -834,7 +834,7 @@ namespace CobimExplorer.ViewModels.Page.Parents
         /// </summary>
         private TabItem GetSourceTabItem(object pOrgSource)
         {
-            // TODO : DependencyObject 클래스 객체 currentSource에 null을 할당할 수 있도록 물음표 연산(?)을 붙여서 Nullable 타입으로 변환 처리 (2024.08.05 jbh)
+            // TODO : DependencyObject 클래스 객체 currentSource에 null을 할당할 수 있도록 물음표 연산(?)을 붙여서 Nullable 타입으로 변환 처리 (2024.08.05 minjae)
             // 참고 URL - https://www.csharpstudy.com/CSharp/CSharp-nullable.aspx
             // DependencyObject currentSource = null;               // 탭 목록 순서가 바뀌어지는 TabItem을 DependencyObject으로 casting 후 값을 할당 받는 객체 
             DependencyObject? currentSource = null;               // 탭 목록 순서가 바뀌어지는 TabItem을 DependencyObject으로 casting 후 값을 할당 받는 객체 
@@ -866,7 +866,7 @@ namespace CobimExplorer.ViewModels.Page.Parents
             catch(Exception ex)
             {
                 Log.Error(Logger.GetMethodPath(currentMethod) + Logger.errorMessage + ex.Message);
-                // TODO : 필요시 throw; 문 사용 예정 (2024.08.08 jbh)
+                // TODO : 필요시 throw; 문 사용 예정 (2024.08.08 minjae)
                 //throw;   // 오류 발생시 상위 호출자 예외처리 전달 throw
             }
             return null;
@@ -882,7 +882,7 @@ namespace CobimExplorer.ViewModels.Page.Parents
 
         // TODO : <Canvas> 사용해서 <Canvas> 하위에 속한 <Image> 태그 - CobimLogo 이미지 객체(x:Name= "CobimLogoImg") 마우스로 클릭하여  
         //        CobimLogo 이미지 객체(x:Name= "CobimLogoImg") 위치 이동할 수 있는 이벤트 메서드(CobimLogo_MouseDown, CobimLogo_MouseMove, CobimLogo_MouseUp, CobimLogo_MouseLeave)  
-        //        필요시 탭 화면 뷰모델(TabParentPageVM.cs)에 이벤트 메서드 구현 예정 (2024.09.13 jbh)  
+        //        필요시 탭 화면 뷰모델(TabParentPageVM.cs)에 이벤트 메서드 구현 예정 (2024.09.13 minjae)  
         // 참고 URL - https://chatgpt.com/c/66e3cdcc-cd34-8002-9c0a-a55ab4b06e94  -->
         // 참고 2 URL - https://westahn.com/wpf-panel-canvas-%EC%82%AC%EC%9A%A9%EB%B2%95-%EB%B0%8F-%EC%98%88%EC%A0%9C/  -->
         // 참고 3 URL - https://wpf-tutorial.com/ko/24/panels/canvas-%EC%BB%A8%ED%8A%B8%EB%A1%A4/  -->

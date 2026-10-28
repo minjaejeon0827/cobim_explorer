@@ -15,7 +15,7 @@
                 </s:ApplicationLoader>
 
                 <ResourceDictionary Source="Styles/All.xaml"  />
-                <!--TODO: 직접 구현한 Resources / ResourceDictionaries(YourDictionary.xaml)를 애플리케이션에 추가 방법 (2023.07.03 jbh)-->
+                <!--TODO: 직접 구현한 Resources / ResourceDictionaries(YourDictionary.xaml)를 애플리케이션에 추가 방법 (2023.07.03 minjae)-->
                 <!--<ResourceDictionary Source="YourDictionary.xaml"/>-->
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>

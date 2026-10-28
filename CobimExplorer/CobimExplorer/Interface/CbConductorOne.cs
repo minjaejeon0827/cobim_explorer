@@ -36,7 +36,7 @@ namespace CobimExplorer.Interface
         [Inject]
         public IEventAggregator EventAggregator { get; set; }
 
-        // TODO : 로그인 정보 프로퍼티 "LogInPackInfo" 필요시 사용 예정 (2024.01.15 jbh)
+        // TODO : 로그인 정보 프로퍼티 "LogInPackInfo" 필요시 사용 예정 (2024.01.15 minjae)
         //[Inject]
         //public LogInPack LogInPackInfo { get; set; }
 
@@ -80,7 +80,7 @@ namespace CobimExplorer.Interface
 
         #region OnUserAnyAction
 
-        // TODO : 필요시 메서드 "OnUserAnyAction" 구현 예정 (2024.01.12 jbh)
+        // TODO : 필요시 메서드 "OnUserAnyAction" 구현 예정 (2024.01.12 minjae)
         public virtual void OnUserAnyAction()
         {
 
@@ -90,7 +90,7 @@ namespace CobimExplorer.Interface
 
         #region SaveManagedStatus
 
-        // TODO : 필요시 메서드 "SaveManagedStatus" 구현 예정 (2024.01.12 jbh)
+        // TODO : 필요시 메서드 "SaveManagedStatus" 구현 예정 (2024.01.12 minjae)
         // public void SaveManagedStatus() => this.App.Local.Status.SaveManagedStatus<CbConductorOne<TItem>>(this);
 
         #endregion SaveManagedStatus

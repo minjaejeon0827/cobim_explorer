@@ -42,27 +42,27 @@ using CobimExplorer.Utils.String;
 
 namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
 {
-    // TODO : 데이터 모델 클래스 "ExplorerView.cs" + 파이썬 Chat GPT API 사용해서 CobimExplorer 응용 프로그램을 설명해주는 챗봇 구현 예정 (2024.01.03 jbh)
+    // TODO : 데이터 모델 클래스 "ExplorerView.cs" + 파이썬 Chat GPT API 사용해서 CobimExplorer 응용 프로그램을 설명해주는 챗봇 구현 예정 (2024.01.03 minjae)
     // 참고 URL - https://topnanis.tistory.com/237
     // 참고 2 URL - https://www.innofactory.net/blog/posts/sseung/20231030-chatgptapi-3/
     public class ExplorerVM : PageBase<ExplorerView>, IPage
     {
         #region 프로퍼티 
 
-        // TODO : 필요시 프로퍼티 "WindowManager" 사용 예정 (2024.01.04 jbh) 
+        // TODO : 필요시 프로퍼티 "WindowManager" 사용 예정 (2024.01.04 minjae) 
         //[Inject]
         //public IWindowManager WindowManager { get; set; }
 
-        // TODO : 필요시 프로퍼티 "Container" 사용 예정 (2024.01.04 jbh) 
+        // TODO : 필요시 프로퍼티 "Container" 사용 예정 (2024.01.04 minjae) 
         //public IContainer Container { get; set; }
 
-        // TODO : 필요시 프로퍼티 "EventAggregator" 사용 예정 (2024.01.04 jbh) 
+        // TODO : 필요시 프로퍼티 "EventAggregator" 사용 예정 (2024.01.04 minjae) 
         //[Inject]
         //public IEventAggregator EventAggregator { get; set; }
 
         #region OnActivate
 
-        // TODO : 아래 프로퍼티 "Sender" 필요시 참고 (2024.08.07 jbh)
+        // TODO : 아래 프로퍼티 "Sender" 필요시 참고 (2024.08.07 minjae)
         /// <summary>
         /// 이벤트 OnActivate 실행시 
         /// OpenPageMsg 클래스 객체에 전달할 객체 Sender 
@@ -74,7 +74,7 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
         #region Command
 
         // TODO : CreateCommand - 파일(컨테이너) 신규 등록의 경우 COBIM 웹 사이트(인재 INC)에서만 사용하는 기능이고 CDE 탐색기 응용 프로그램에서는 사용 안 하는 걸로 소통 완료.
-        //        하여 해당 파일(컨테이너) 신규 등록 메서드는 주석 처리하고 사용 안 함. (2023.10.19 jbh)
+        //        하여 해당 파일(컨테이너) 신규 등록 메서드는 주석 처리하고 사용 안 함. (2023.10.19 minjae)
         /// <summary>
         /// 신규등록 Command
         /// </summary>
@@ -90,7 +90,7 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
         /// </summary>
         public ICommand SelectedContainerCommand { get; set; }
 
-        // TODO : 인터페이스 ICommand 객체 "FileAddCommand" 필요 없을 시 삭제 예정 (2023.09.21 jbh) 
+        // TODO : 인터페이스 ICommand 객체 "FileAddCommand" 필요 없을 시 삭제 예정 (2023.09.21 minjae) 
         /// <summary>
         /// 추가 (파일 등록) Command
         /// </summary>
@@ -132,7 +132,7 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
         /// </summary>
         public ICommand LinkedNodeInfoCommand { get; set; }
 
-        // TODO : 테스트 Command 프로퍼티 "TestCommand" 필요시 사용 예정 (2024.09.03 jbh)
+        // TODO : 테스트 Command 프로퍼티 "TestCommand" 필요시 사용 예정 (2024.09.03 minjae)
         /// <summary>
         /// 테스트 Command
         /// </summary>
@@ -158,9 +158,9 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
         /// </summary>
         public ICommand CancelWorkCommand { get; set; }
 
-        // TODO : 컨테이너 잠금(락 - Lock / 비활성화)(ReadYn = "Y") 처리 Command 프로퍼티 "LockContainerCommand" 필요시 사용 예정 (2023.12.12 jbh)
+        // TODO : 컨테이너 잠금(락 - Lock / 비활성화)(ReadYn = "Y") 처리 Command 프로퍼티 "LockContainerCommand" 필요시 사용 예정 (2023.12.12 minjae)
         // TODO : ListView의 데이터 로우 중 체크아웃 완료한 특정 컨테이너 아이디가 잠금(락 - Lock / 비활성화)(ReadYn = "Y") 처리 되도록  
-        //        이벤트 "SelectionChanged" 사용해서 해당 컨테이너 아이디를 선택 및 클릭하지 못 하도록 비활성화 처리 구현 (2023.12.12 jbh)  
+        //        이벤트 "SelectionChanged" 사용해서 해당 컨테이너 아이디를 선택 및 클릭하지 못 하도록 비활성화 처리 구현 (2023.12.12 minjae)  
         // 참고 URL - https://nonstop-antoine.tistory.com/7  
         /// <summary>
         /// 컨테이너 잠금(락 - Lock / 비활성화)(ReadYn = "Y") 처리 Command
@@ -179,7 +179,7 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
 
         #endregion Title
 
-        // TODO : 화면 셋팅 타입 (Visibility) 필요시 사용 예정 (2024.10.31 jbh)
+        // TODO : 화면 셋팅 타입 (Visibility) 필요시 사용 예정 (2024.10.31 minjae)
         /// <summary>
         /// 화면 셋팅 타입 (Visibility)
         /// </summary>
@@ -241,7 +241,7 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
         /// </summary>
         private string _CommonDirectoryPath { get; set; }
 
-        // TODO : 프로젝트(+팀) 정보 프로퍼티 "_ProjectPack" 필요시 사용 예정 (2024.10.31 jbh)
+        // TODO : 프로젝트(+팀) 정보 프로퍼티 "_ProjectPack" 필요시 사용 예정 (2024.10.31 minjae)
         /// <summary>
         /// 프로젝트(+팀) 정보
         /// </summary>
@@ -274,7 +274,7 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
         private TranslatePack _TranslatePack { get; set; }
 
         // TODO : bool 자료형 프로퍼티 "IsOpenFileWorking", "IsDownLoadWorking", "IsCheckOutWorking", "IsLinkedContainerWorking", "IsCheckInWorking", "IsTranslateWorking"
-        //        private bool 프로퍼티 및 NotifyOfPropertyChange(nameof(~~~)) 참조(사용) 안함. (2024.09.04 jbh)
+        //        private bool 프로퍼티 및 NotifyOfPropertyChange(nameof(~~~)) 참조(사용) 안함. (2024.09.04 minjae)
         // private bool 프로퍼티 및 NotifyOfPropertyChange(nameof(~~~)) 참조(사용) 안 하는 이유?
         // "파일 다운로드", "체크아웃", "체크인" 기능 실행시 처리 중인 상태에서 해당 기능을 중복 요청하지 못 하도록
         // 컨텍스트 메뉴 ("체크아웃", "체크인"), 화면 하단 탭 "기본정보" -> 항목 "파일정보"의 버튼 "다운로드"가 클릭되지 못하도록
@@ -331,7 +331,7 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
         public ExplorerVM explorerVM { get; set; }
 
 
-        // TODO : 사용자 정보 프로퍼티 "UserInfo" 필요시 사용 예정 (2023.08.30 jbh)
+        // TODO : 사용자 정보 프로퍼티 "UserInfo" 필요시 사용 예정 (2023.08.30 minjae)
         /// <sumary>
         /// 사용자 정보
         /// </sumary>
@@ -351,7 +351,7 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
         public BindableCollection<ContainerView> ContainerDatas { get => _ContainerDatas; set { _ContainerDatas = value; NotifyOfPropertyChange(); } }
         private BindableCollection<ContainerView> _ContainerDatas = new BindableCollection<ContainerView>();
 
-        // TODO : 리스트 객체 SelectedContainerData 필요시 사용 예정 (2023.11.29 jbh)
+        // TODO : 리스트 객체 SelectedContainerData 필요시 사용 예정 (2023.11.29 minjae)
         public List<ContainerView> SelectedContainerList { get => _SelectedContainerList; set { _SelectedContainerList = value; NotifyOfPropertyChange(); } }
         private List<ContainerView> _SelectedContainerList = new List<ContainerView>();
         //public BindableCollection<ContainerView> SelectedContainerDatas { get => _SelectedContainerDatas; set { _SelectedContainerDatas = value; NotifyOfPropertyChange(); } }
@@ -405,7 +405,7 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
         public List<LinkedNodeView> LinkedNodeInfoList { get => _LinkedNodeInfoList; set { _LinkedNodeInfoList = value; NotifyOfPropertyChange(); } }
         private List<LinkedNodeView> _LinkedNodeInfoList = new List<LinkedNodeView>();
 
-        // TODO : 필요시 "컨텍스트(ContextMenu) 메뉴 정보 Collection" 구현하기 (2023.12.12 jbh)
+        // TODO : 필요시 "컨텍스트(ContextMenu) 메뉴 정보 Collection" 구현하기 (2023.12.12 minjae)
         // 참고 URL - https://chat.openai.com/c/b9d52fcf-aab0-49e3-8008-8852767a9982
         /// <summary>
         /// 컨텍스트(ContextMenu) 메뉴 정보 Collection
@@ -426,14 +426,14 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
         {
             Container = container;
 
-            // TODO : EventAggregator = events; 코드 추가 (2023.07.24 jbh)
+            // TODO : EventAggregator = events; 코드 추가 (2023.07.24 minjae)
             // 참고 URL - https://github.com/canton7/Stylet/wiki/3.-The-Taskbar
             EventAggregator = events;
 
             this._ExpTitle = CobimHelper.ExpTitle;   // 탐색기 화면 Title 
 
             // TODO : CreateCommand - 파일(컨테이너) 신규 등록의 경우 COBIM 웹 사이트(인재 INC)에서만 사용하는 기능이고 CDE 탐색기 응용 프로그램에서는 사용 안 하는 걸로 소통 완료.
-            //        하여 해당 파일(컨테이너) 신규 등록 메서드는 주석 처리하고 사용 안 함. (2023.10.19 jbh)
+            //        하여 해당 파일(컨테이너) 신규 등록 메서드는 주석 처리하고 사용 안 함. (2023.10.19 minjae)
             // CreateCommand = new ButtonCommand(FileCreateAsync, CanExecuteMethod);
             // FolderListCommand = new ButtonCommand(FolderListAsync, CanExecuteMethod);
             // FolderCommand = new ButtonCommand(FolderListAsync, CanExecuteMethod);
@@ -450,14 +450,14 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
             UploadCommand = new ButtonCommand(CobimHelper.AsyncMethodType, UpLoadAsync, CanExecuteMethod);
             LinkedNodeInfoCommand = new ButtonCommand(CobimHelper.AsyncMethodType, LinkedNodeInfoSearchAsync, CanExecuteMethod);
 
-            // TODO : 테스트 Command 프로퍼티 "TestCommand" 필요시 사용 예정 (2024.09.03 jbh)
+            // TODO : 테스트 Command 프로퍼티 "TestCommand" 필요시 사용 예정 (2024.09.03 minjae)
             // TestCommand = new ButtonCommand(CobimHelper.AsyncMethodType, TestAsync, CanExecuteMethod);
             DownLoadCommand = new ButtonCommand(CobimHelper.AsyncMethodType, DownLoadAsync, CanExecuteMethod);
             CheckOutCommand = new ButtonCommand(CobimHelper.AsyncMethodType, CheckOutAsync, CanExecuteMethod);
             CheckInCommand = new ButtonCommand(CobimHelper.AsyncMethodType, CheckInAsync, CanExecuteMethod);
             CancelWorkCommand = new ButtonCommand(CobimHelper.AsyncMethodType, CancelWorkAsync, CanExecuteMethod);
             OpenFileCommand = new ButtonCommand(CobimHelper.AsyncMethodType, OpenFileAsync, CanExecuteMethod);
-            // TODO : 컨테이너 잠금(락 - Lock / 비활성화)(ReadYn = "Y") 처리 Command "LockContainerCommand" 필요시 Button Command 로 바인딩 예정 (2023.12.12 jbh)
+            // TODO : 컨테이너 잠금(락 - Lock / 비활성화)(ReadYn = "Y") 처리 Command "LockContainerCommand" 필요시 Button Command 로 바인딩 예정 (2023.12.12 minjae)
             // LockContainerCommand = new ButtonCommand(CobimHelper.VoidMethodType, LockContainer, CanExecuteMethod);
         }
 
@@ -472,7 +472,7 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
             InitSetting();
         }
 
-        // TODO : 이벤트 메서드 "OnActivate" 비동기(async)로 구현 (2023.09.18 jbh)
+        // TODO : 이벤트 메서드 "OnActivate" 비동기(async)로 구현 (2023.09.18 minjae)
         // 참고 URL - https://vmpo.tistory.com/89
         protected async override void OnActivate()
         {
@@ -496,7 +496,7 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
 
         #region InitSetting
 
-        // TODO : 초기 셋팅 메서드 "InitSetting" 필요시 구현하기 (2023.12.12 jbh)
+        // TODO : 초기 셋팅 메서드 "InitSetting" 필요시 구현하기 (2023.12.12 minjae)
         // 참고 URL - https://chat.openai.com/c/b9d52fcf-aab0-49e3-8008-8852767a9982
         /// <summary>
         /// 초기 셋팅 
@@ -507,7 +507,7 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
 
             try
             {
-                // TODO : 아래 주석 처리한 코드 필요시 사용 예정 (2023.12.22 jbh)
+                // TODO : 아래 주석 처리한 코드 필요시 사용 예정 (2023.12.22 minjae)
                 // ExplorerView.RequestHeaders.Tenant        = AppSetting.Default.Login.Tenant;                    // 테넌트 아이디 
                 // ExplorerView.RequestHeaders.Authorization = AppSetting.Default.Login.Authorization.resultData;  // 로그인 토큰 키 
 
@@ -547,7 +547,7 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
                         // TODO : 탐색기 화면(ExplorerV.xaml) 탭 "기본정보" 제외한 다른 TabItem 선택 후
                         //        화면 종료 또는 다른 화면 이동 후 해당 탐색기 화면 재실행 시
                         //        TabControl의 첫 번째 TabItem="기본정보"로 실행(Default로 지정)하도록
-                        //        SelectedIndex = "0" 추가(2023.11.01 jbh) 
+                        //        SelectedIndex = "0" 추가(2023.11.01 minjae) 
                         // 참고 URL - https://stackoverflow.com/questions/20356239/tab-control-selecting-first-tab-by-default 
                         // 참고 2 URL - https://dotnetpattern.com/wpf-tab-control-selection  
                         // 화면 재실행시 첫 번째 탭 "기본정보" Default 출력 하도록 인덱스 값 0으로 설정
@@ -571,7 +571,7 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
                         LinkedNodeInfoList.Clear();                               // 연관 컨테이너 정보 리스트 초기화
                         LinkedNodeInfoDatas.Clear();                              // 연관 컨테이너 정보 Collection 초기화
 
-                        // TODO : 컨테이너 ID (영어 대문자) 프로퍼티 exp_UpperContainerId 필요시 사용 예정 (2023.10.23 jbh) 
+                        // TODO : 컨테이너 ID (영어 대문자) 프로퍼티 exp_UpperContainerId 필요시 사용 예정 (2023.10.23 minjae) 
                         // exp_UpperContainerId  = string.Empty;
                         // visibleFirstTabItem   = Visibility.Visible;            // 화면 활성화될 때 마다 탭 "기본정보" Default 출력
                         visibleRequest           = Visibility.Collapsed;          // 화면 활성화될 때 마다 버튼 "검토요청" 숨김 처리 
@@ -598,7 +598,7 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
                         // TODO : 탐색기 화면(ExplorerV.xaml) 탭 "기본정보" 제외한 다른 TabItem 선택 후
                         //        컨테이너 ID 클릭 후 메서드 "ContainerDeatilSearchAsync" 실행시 
                         //        TabControl의 첫 번째 TabItem="기본정보"로 실행(Default로 지정)하도록
-                        //        SelectedIndex = "0" 추가(2023.11.01 jbh) 
+                        //        SelectedIndex = "0" 추가(2023.11.01 minjae) 
                         // 참고 URL - https://stackoverflow.com/questions/20356239/tab-control-selecting-first-tab-by-default 
                         // 참고 2 URL - https://dotnetpattern.com/wpf-tab-control-selection  
                         // 화면 재실행시 첫 번째 탭 "기본정보" Default 출력 하도록 인덱스 값 0으로 설정
@@ -632,7 +632,7 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
                         visibleDetailInfo = Visibility.Collapsed;                  // DockPanel 영역 "컨테이너 정보" 숨김 처리
                         visibleFileInfo = Visibility.Collapsed;                    // DockPanel 영역 "파일정보" 숨김 처리
                         break;
-                    // TODO : 아래 case 문 "case CobimHelper.TypeOfLinkedNodeInfoCreate:" 필요시 사용 예정 (2023.12.26 jbh) 
+                    // TODO : 아래 case 문 "case CobimHelper.TypeOfLinkedNodeInfoCreate:" 필요시 사용 예정 (2023.12.26 minjae) 
                     //case CobimHelper.TypeOfLinkedNodeInfoCreate:
                     //    // 메서드 "LinkedNodeInfoCreate" 사용되는 리스트, Collection 초기화
                     //    LinkedNodeInfoList.Clear();                               // 연관 컨테이너 정보 리스트 초기화
@@ -679,7 +679,7 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
                     DisplaySetting(CobimHelper.TypeOfExplorerListCreateAsync);   // 화면 셋팅 처리
 
                     var projectDic = data[ProjectHelper.projectEntity].ToDictionary();   // 프로젝트 메타 데이터 Dictionary
-                    // Dictionary 객체 projectDic 특정 키(Key) "projectId"에 속하는 값(Value) 문자열로 변환 (2023.09.11 jbh)
+                    // Dictionary 객체 projectDic 특정 키(Key) "projectId"에 속하는 값(Value) 문자열로 변환 (2023.09.11 minjae)
                     // 참고 URL - https://developer-talk.tistory.com/694
                     projectId      = projectDic[ProjectHelper.projectId].ToString();     // 해당 프로젝트 아이디 
                     projectName    = projectDic[ProjectHelper.projectName].ToString();   // 해당 프로젝트 이름 
@@ -700,18 +700,18 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
 
                     if((int)EnumFolder.NONE == folderList.Count) continue;   // 폴더 목록 리스트 객체 folderList 에 데이터가 없는 경우((int)EnumFolder.NONE) 폴더가 없으므로 continue 처리 
 
-                    // TODO : Linq Where 확장메서드에 == null 보다 빠른 is null 연산자 사용 (2023.11.24 jbh)
+                    // TODO : Linq Where 확장메서드에 == null 보다 빠른 is null 연산자 사용 (2023.11.24 minjae)
                     // 참고 URL - https://husk321.tistory.com/405
                     // 프로젝트 - 팀 하위에 속하는 루트 폴더 리스트 데이터 추출
                     var rootFolderList = folderList.Where(folder => folder[FolderHelper.parentFolderId] is null).Select(folder => new FolderView
                     {
                         FolderDataInfo = folder,
-                        // TODO : 개체 이니셜라이저 사용해서 폴더 목록 리스트 객체 FolderItems 생성시 객체 값(folder) 할당 (2023.11.23 jbh)
+                        // TODO : 개체 이니셜라이저 사용해서 폴더 목록 리스트 객체 FolderItems 생성시 객체 값(folder) 할당 (2023.11.23 minjae)
                         // 참고 URL - https://hyokye0ng.tistory.com/86
                         FolderItems    = new List<Dictionary<string, object>> { folder },
-                        // TODO : == null 보다 빠른 is null 연산자 사용 (2023.11.24 jbh)
+                        // TODO : == null 보다 빠른 is null 연산자 사용 (2023.11.24 minjae)
                         // 참고 URL - https://husk321.tistory.com/405
-                        // TODO : NULL 예외처리 연산자 ?. 사용시 오류 발생으로 인하여 NULL 예외처리 삼항 연산자 사용하는 로직으로 수정 (2023.09.11 jbh)
+                        // TODO : NULL 예외처리 연산자 ?. 사용시 오류 발생으로 인하여 NULL 예외처리 삼항 연산자 사용하는 로직으로 수정 (2023.09.11 minjae)
                         // 참고 URL - https://jellyho.com/blog/54/
                         exp_ParentFolderId = (folder[FolderHelper.parentFolderId] is null) ? (string.Empty) : (folder[FolderHelper.parentFolderId].ToString()),
                         exp_FolderGroupId  = folder[FolderHelper.folderGroupId].ToString(),
@@ -720,7 +720,7 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
                         exp_TeamId         = teamId,
                         exp_FolderId = folder[FolderHelper.folderId].ToString(),
                         exp_TreeName = folder[FolderHelper.folderName].ToString(),
-                        // TODO : 파일 리스트 추가 작업시 ChildNodes 사용 예정 (2023.09.18 jbh)
+                        // TODO : 파일 리스트 추가 작업시 ChildNodes 사용 예정 (2023.09.18 minjae)
                         // ChildNodes = subNodes
                     });
 
@@ -733,7 +733,7 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
                     }
 
                     // 프로젝트 하위 디렉토리 (팀) 존재하지 않을 경우 새로 생성
-                    // TODO : bool 변수 "hasTeamInfo" 구현 (2023.09.18 jbh)
+                    // TODO : bool 변수 "hasTeamInfo" 구현 (2023.09.18 minjae)
                     // 참고 URL - https://frogand.tistory.com/211
                     bool hasTeamInfo =    false == string.IsNullOrWhiteSpace(teamProjectId)
                                        && false == string.IsNullOrWhiteSpace(teamId)
@@ -746,15 +746,15 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
                         var teamInfo = new TeamView()
                         {
                             TeamDataInfo = teamDic,
-                            // TODO : 개체 이니셜라이저 사용해서 팀 목록 리스트 객체 TeamItems 생성시 객체 값(teamDic) 할당 (2023.11.23 jbh)
+                            // TODO : 개체 이니셜라이저 사용해서 팀 목록 리스트 객체 TeamItems 생성시 객체 값(teamDic) 할당 (2023.11.23 minjae)
                             // 참고 URL - https://hyokye0ng.tistory.com/86
-                            // TODO : TeamItems값이 NULL인 원인 파악 후 해결하기 (2023.09.11 jbh) 
+                            // TODO : TeamItems값이 NULL인 원인 파악 후 해결하기 (2023.09.11 minjae) 
                             // TeamItems = teamArray.Where(key => key["teamId"].Equals(teamIdValue)).Select(x => JsonSerializer.Deserialize<Dictionary<string, object>>(x)).ToList(),
                             TeamItems    = new List<Dictionary<string, object>> { teamDic },
-                            // TODO : 팀에 소속된 사용자 리스트 JSON 데이터 인재 INC 로부터 REST API 공유 받으면 구현 진행 예정 (2023.09.12 jbh)
+                            // TODO : 팀에 소속된 사용자 리스트 JSON 데이터 인재 INC 로부터 REST API 공유 받으면 구현 진행 예정 (2023.09.12 minjae)
                             // TeamUserList = new List<Dictionary<string, object>> { teamUserDic },
                             exp_TeamId   = teamId,
-                            // TODO : 프로퍼티 "exp_TeamName" 필요시 사용 예정 (2023.10.23 jbh)
+                            // TODO : 프로퍼티 "exp_TeamName" 필요시 사용 예정 (2023.10.23 minjae)
                             // exp_TeamName = teamName,   // 화면 우측 상단 팀 이름 출력할 때 사용할 바인딩 객체 "exp_TeamName"
                             exp_TreeName = teamName,
                             // TestChildNodes = pFolderList
@@ -769,7 +769,7 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
                     }
 
                     // 루트 디렉토리 (프로젝트) 존재하지 않을 경우 새로 생성
-                    // TODO : bool 변수 "hasProjectInfo" 구현 (2023.09.18 jbh)
+                    // TODO : bool 변수 "hasProjectInfo" 구현 (2023.09.18 minjae)
                     // 참고 URL - https://frogand.tistory.com/211
                     bool hasProjectInfo =    false == string.IsNullOrWhiteSpace(projectId)
                                           && projectId == teamProjectId
@@ -780,9 +780,9 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
                         var projectInfo = new ProjectView()
                         {
                             ProjectDataInfo = projectDic,
-                            // TODO : 개체 이니셜라이저 사용해서 프로젝트 목록 리스트 객체 ProjectItems 생성시 객체 값(projectDic) 할당 (2023.11.23 jbh)
+                            // TODO : 개체 이니셜라이저 사용해서 프로젝트 목록 리스트 객체 ProjectItems 생성시 객체 값(projectDic) 할당 (2023.11.23 minjae)
                             // 참고 URL - https://hyokye0ng.tistory.com/86
-                            // TODO : ProjectItems값이 NULL인 원인 파악 후 해결하기(2023.09.11 jbh)
+                            // TODO : ProjectItems값이 NULL인 원인 파악 후 해결하기(2023.09.11 minjae)
                             ProjectItems = new List<Dictionary<string, object>> { projectDic },
                             exp_ProjectId = projectId,
 
@@ -801,7 +801,7 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
             catch(Exception ex)
             {
                 Log.Error(Logger.GetMethodPath(currentMethod) + Logger.errorMessage + ex.Message);
-                // TODO : 비동기 메서드 "ExplorerListCreateAsync" 실행시 발견한 오류 메시지 "'<' is an invalid start of a value. LineNumber: 0 | BytePositionInLine: 0." 오류 원인 파악하기 (2023.11.27 jbh)
+                // TODO : 비동기 메서드 "ExplorerListCreateAsync" 실행시 발견한 오류 메시지 "'<' is an invalid start of a value. LineNumber: 0 | BytePositionInLine: 0." 오류 원인 파악하기 (2023.11.27 minjae)
                 // 참고 URL - https://stackoverflow.com/questions/61487289/exception-is-an-invalid-start-of-a-value
                 MessageBox.Show(ex.Message, CobimHelper.ErrorTitle);
             }
@@ -830,9 +830,9 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
 
                 foreach(var childNode in childNodes)
                 {
-                    // TODO : 개체 이니셜라이저 사용해서 서브 폴더 객체 subFolder 생성시 객체 값(FolderDataInfo ~ exp_TeamId) 할당 (2023.11.23 jbh)
+                    // TODO : 개체 이니셜라이저 사용해서 서브 폴더 객체 subFolder 생성시 객체 값(FolderDataInfo ~ exp_TeamId) 할당 (2023.11.23 minjae)
                     // 참고 URL - https://hyokye0ng.tistory.com/86
-                    // TODO : Dictionary 특정 키(Key)에 해당하는 값(Value) 구해서 FolderView 클래스에 존재하는 프로퍼티에 값 할당 (2023.09.15 jbh)
+                    // TODO : Dictionary 특정 키(Key)에 해당하는 값(Value) 구해서 FolderView 클래스에 존재하는 프로퍼티에 값 할당 (2023.09.15 minjae)
                     // 참고 URL - https://developer-talk.tistory.com/694
                     var subFolder = new FolderView {
                                             FolderDataInfo     = childNode,
@@ -855,7 +855,7 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
             {
                 Log.Error(Logger.GetMethodPath(currentMethod) + Logger.errorMessage + ex.Message);
                 
-                // TODO : 오류 발생시 상위 호출자 예외처리 전달 throw 구현 (2023.12.6 jbh)
+                // TODO : 오류 발생시 상위 호출자 예외처리 전달 throw 구현 (2023.12.6 minjae)
                 // 참고 URL - https://devlog.jwgo.kr/2009/11/27/thrownthrowex/
                 throw;
             }
@@ -865,7 +865,7 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
 
         #region Set 
 
-        // TODO : 추후 필요시 사용 예정 (2023.08.30 jbh)
+        // TODO : 추후 필요시 사용 예정 (2023.08.30 minjae)
         //public static void Set(UserInfoView userInfoView)
         //{
         //    try
@@ -883,7 +883,7 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
         #region FileCreateAsync
 
         // TODO : 파일(컨테이너) 신규 등록의 경우 COBIM 웹 사이트(인재 INC)에서만 사용하는 기능이고 CDE 탐색기 응용 프로그램에서는 사용 안 하는 걸로 소통 완료.
-        //        하여 해당 파일(컨테이너) 신규 등록 메서드는 주석 처리하고 사용 안 함. (2023.10.19 jbh)
+        //        하여 해당 파일(컨테이너) 신규 등록 메서드는 주석 처리하고 사용 안 함. (2023.10.19 minjae)
         /// <summary>
         /// 파일(컨테이너) 신규 등록 
         /// </summary>
@@ -908,25 +908,25 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
 
         #region ContainerSearchAsync
 
-        // TODO : 메서드 파라미터 "object obj" -> object 배열 "object[] obj"로 변환 및 지역변수 "var parameters" 사용 안하고 리스트 변환 가능한지 테스트 진행 예정 (2023.12.18 jbh)
+        // TODO : 메서드 파라미터 "object obj" -> object 배열 "object[] obj"로 변환 및 지역변수 "var parameters" 사용 안하고 리스트 변환 가능한지 테스트 진행 예정 (2023.12.18 minjae)
         /// <summary>
         /// 컨테이너(파일 포함) 목록 조회
         /// </summary>
         private async Task ContainerSearchAsync(object obj)
         {
-            // TODO : 아래 주석친 소스 코드 3줄(parameters, containerDatas, containerDataDic) 필요 없을 시 삭제 예정 (2023.12.05 jbh)
-            // TODO : Object 배열 객체 obj 리스트로 변환 (2023.09.19 jbh)
+            // TODO : 아래 주석친 소스 코드 3줄(parameters, containerDatas, containerDataDic) 필요 없을 시 삭제 예정 (2023.12.05 minjae)
+            // TODO : Object 배열 객체 obj 리스트로 변환 (2023.09.19 minjae)
             // 참고 URL - https://nonstop-antoine.tistory.com/36
             // var parameters        = obj as IEnumerable;                 // 폴더 버튼으로 부터 받은 파일 정보(CommandParameter "exp_ProjectId", "exp_TeamId", "exp_TreeFolderId") (Object Array -> IEnumerable 형변환) 
             // var containerDatas    = new List<string>();                 // parameters 를 리스트로 변환할 때 사용하는 리스트 객체 "containerDatas"
             // var containerDataDic  = new Dictionary<string, string>();   // 컨테이너 데이터를 담는 Dictionary 객체 containerDataDic 생성
 
-            // TODO : 폴더 버튼 클릭 시 MultiCommandParameter 데이터(obj)를 object 배열(object[])로 형변환 (2023.12.05 jbh)
+            // TODO : 폴더 버튼 클릭 시 MultiCommandParameter 데이터(obj)를 object 배열(object[])로 형변환 (2023.12.05 minjae)
             // 참고 URL - https://www.melodiouscode.net/passing-multiple-parameters-to-an-icommand-in-wpf
             var parameters = (object[])obj;                                // 폴더 버튼으로 부터 받은 파일 정보(CommandParameter "exp_ProjectId", "exp_TeamId", "exp_TreeFolderId") (Object Array -> IEnumerable 형변환) 
             // var containerDatas = parameters.ToList();                   // parameters를 리스트로 변환할 때 사용하는 리스트 객체 "containerDatas"
 
-            // TODO : (기존) object 배열 "(object[])obj" 형식 -> (변경) string 배열 "string[] containerDatas" 형식으로 형변환 구현 (2023.12.19 jbh)
+            // TODO : (기존) object 배열 "(object[])obj" 형식 -> (변경) string 배열 "string[] containerDatas" 형식으로 형변환 구현 (2023.12.19 minjae)
             // 참고 URL - https://afsdzvcx123.tistory.com/entry/C-%EB%AC%B8%EB%B2%95-Object-%ED%98%95%EC%8B%9D-String-%ED%98%95%EC%8B%9D%EC%9C%BC%EB%A1%9C-%ED%98%95%EB%B3%80%ED%99%98Casting-%ED%95%98%EB%8A%94-%EB%B0%A9%EB%B2%95
             string[] containerDatas  = Array.ConvertAll(parameters, param => (param ?? string.Empty).ToString());
 
@@ -939,7 +939,7 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
                 //        실행 결과 데이터 정보가 변경되어 컨테이너 리스트 화면이 바뀌므로
                 //        처음 사용자가 선택(클릭)한 특정 폴더 ID 프로퍼티 "SelectedFolderId" 에 폴더 ID 문자열을 할당해서 
                 //        컨테이너 리스트 생성 비동기 메서드 "ContainerListCreateAsync"에 메서드 파라미터를
-                //        프로퍼티 "SelectedFolderId"로 전달함. (2023.12.13 jbh) 
+                //        프로퍼티 "SelectedFolderId"로 전달함. (2023.12.13 minjae) 
                 // 선택(클릭)한 특정 폴더 ID    
                 SelectedFolderId = containerDatas[(int)EnumContainer.FOLDERID];
 
@@ -965,7 +965,7 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
 
         // TODO : 추후 필요시 이벤트 메서드 "SelectedChangedContainer" 구현 예정
         // <DataGrid> 영역에서 출력되는 데이터로 로우들을 선택해서 멀티 체크아웃, 체크인 작업 처리하기 위해
-        // 아래처럼 SelectionChanged 이벤트 메서드 "SelectedContainerExecuteAsync"  구현하기(2024.09.06 jbh) 
+        // 아래처럼 SelectionChanged 이벤트 메서드 "SelectedContainerExecuteAsync"  구현하기(2024.09.06 minjae) 
         // 참고 URL - https://nonstop-antoine.tistory.com/104  
 
         /// <summary>
@@ -1023,7 +1023,7 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
                                        pContainerPack);   
 
                 // TODO : 오류 메시지 "Id = 3455, Status = WaitingForActivation, Method = "{null}", Result = "{Not yet computed}"
-                //        해결하기 위해 비동기 메서드 호출시 키워드 "await" 추가 (2023.12.21 jbh)
+                //        해결하기 위해 비동기 메서드 호출시 키워드 "await" 추가 (2023.12.21 minjae)
                 // 참고 URL - https://www.codeproject.com/Questions/1156449/How-to-call-async-methods-Csharp
                 containerList = await ExplorerRestServer.GetContainerListAsync(InputParamData);   // 컨테이너 목록(리스트) 가져오기
 
@@ -1052,7 +1052,7 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
 
                     createUserId = container[ContainerHelper.createUserId].ToString();     // 작성자 
 
-                    // TODO : 특정 문자 'T'를 포함한 등록일시 문자열 (예) "2023-07-25T10:44:45.988+00:00" 을 DateTime 객체 dt로 변환 (2023.09.21 jbh)
+                    // TODO : 특정 문자 'T'를 포함한 등록일시 문자열 (예) "2023-07-25T10:44:45.988+00:00" 을 DateTime 객체 dt로 변환 (2023.09.21 minjae)
                     // 참고 URL - https://stackoverflow.com/questions/14252312/how-to-convert-date-with-t-to-from-string-in-c-sharp
                     var createDT = container[ContainerHelper.createDateTime].ToString();   // 등록일시
 
@@ -1060,7 +1060,7 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
                     // 참고 URL - https://afsdzvcx123.tistory.com/entry/C-%EB%AC%B8%EB%B2%95-C-NET%EC%9D%98-DataTime-%EB%AA%A8%EB%B2%94-%EC%82%AC%EB%A1%80
                     //var dto = DateTimeOffset.Parse(createDT);
 
-                    // TODO : UTC 협정 세계시로 변환할 필요 없이 대한민국 시간(로컬 타임)으로 변환하기 위해 DateTime 클래스 객체 dt 선언 및 초기화(2023.09.26 jbh)
+                    // TODO : UTC 협정 세계시로 변환할 필요 없이 대한민국 시간(로컬 타임)으로 변환하기 위해 DateTime 클래스 객체 dt 선언 및 초기화(2023.09.26 minjae)
                     // DataTime VS DateTimeOffset 비교 문서
                     // 참고 URL - https://afsdzvcx123.tistory.com/entry/C-%EB%AC%B8%EB%B2%95-C-%EC%97%90%EC%84%9C-IronPython-%EC%9D%B4%EC%9A%A9%ED%95%98%EC%97%AC-Python-%EC%97%B0%EB%8F%99
                     // 문자열 ->  DateTime 객체 dt로 형변환
@@ -1076,7 +1076,7 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
                     var containerInfo = new ContainerView()
                     {
                         FileDataInfo = container,
-                        // TODO : 개체 이니셜라이저 사용해서 파일 목록 리스트 객체 FileItems 생성시 객체 값(file) 할당 (2023.11.23 jbh)
+                        // TODO : 개체 이니셜라이저 사용해서 파일 목록 리스트 객체 FileItems 생성시 객체 값(file) 할당 (2023.11.23 minjae)
                         // 참고 URL - https://hyokye0ng.tistory.com/86
                         FileItems = new List<Dictionary<string, object>> { container },
                         FileTypeCodeInfo = container[ContainerHelper.fileTypeCodeInfo].ToDictionary(),
@@ -1084,17 +1084,17 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
                         StatusCodeInfo = container[ContainerHelper.statusCodeInfo].ToDictionary(),
                         CheckCodeInfo = container[ContainerHelper.checkCodeInfo].ToDictionary(),
                         
-                        // TODO : "SharedContainerList" 필요시 구현 예정 (2023.09.22 jbh)
+                        // TODO : "SharedContainerList" 필요시 구현 예정 (2023.09.22 minjae)
                         SharedContainerList = new List<Dictionary<string, object>>(),
                         
                         CreateUserIdAndTime = createUserId + " | " + createDateTime,
                         exp_FileName = container[ContainerHelper.fileNm].ToString(),
                         exp_ContainerGroup = container[ContainerHelper.containerGroup].ToString(),
-                        // TODO : 컨테이너 ID(영어 대문자) 프로퍼티 "exp_UpperContainerId" 영어 대문자로 구현(2023.09.22 jbh)
+                        // TODO : 컨테이너 ID(영어 대문자) 프로퍼티 "exp_UpperContainerId" 영어 대문자로 구현(2023.09.22 minjae)
                         //        프로퍼티 "exp_UpperContainerId" 용도 - 탐색기 화면 뷰(ExplorerV.xaml) "ListView" 영역에 바인딩할 컬럼 용도
                         // 참고 URL - https://developer-talk.tistory.com/669
                         exp_UpperContainerId = container[ContainerHelper.containerId].ToString().ToUpper(),
-                        // TODO : 컨테이너 ID(영어 소문자) 프로퍼티 "exp_ContainerId" 영어 대문자로 구현(2023.10.12 jbh)
+                        // TODO : 컨테이너 ID(영어 소문자) 프로퍼티 "exp_ContainerId" 영어 대문자로 구현(2023.10.12 minjae)
                         //        프로퍼티 "exp_ContainerId" 용도
                         //        - Rest API 메서드 "ExplorerRestServer.GetContainerDetailListAsync" 파라미터 "ContainerPack"에 속하는
                         //          컨테이너 아이디(containerId)에 영어 소문자로 넘겨줘야 인재 INC 서버 로부터 응답 결과 JSON 데이터를 정상적으로 넘겨 받을 수 있음. 
@@ -1151,15 +1151,15 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
                             break;
 
                         case ContainerHelper.no:   // 체크인 요청, 컨테이너 작업 취소 요청
-                            // TODO : 컨테이너 작업 중인 사용자 아이디 데이터(workUserId) 구할 때 삼항 연산자 구현 (2023.12.20 jbh)
+                            // TODO : 컨테이너 작업 중인 사용자 아이디 데이터(workUserId) 구할 때 삼항 연산자 구현 (2023.12.20 minjae)
                             // 참고 URL - https://spaghetti-code.tistory.com/51
-                            // TODO : switch - case 문 (체크인 요청 - case ContainerHelper.no:) 필요시 로직 수정 예정(2023.12.19 jbh)
-                            // TODO : if 조건절에 == null 보다 빠른 is null 연산자 사용 (2023.12.20 jbh)
+                            // TODO : switch - case 문 (체크인 요청 - case ContainerHelper.no:) 필요시 로직 수정 예정(2023.12.19 minjae)
+                            // TODO : if 조건절에 == null 보다 빠른 is null 연산자 사용 (2023.12.20 minjae)
                             // 참고 URL - https://husk321.tistory.com/405
                             containerInfo.exp_WorkUserId = (container[ContainerHelper.workUserId] is null) ? string.Empty : container[ContainerHelper.workUserId].ToString();
                             break;
 
-                        // TODO : 변수 "readYn"에 문자열 값이 잘못 들어간 경우가 존재하면 아래 "그 외" default 레이블 추가 구현 예정 (2024.10.30 jbh)
+                        // TODO : 변수 "readYn"에 문자열 값이 잘못 들어간 경우가 존재하면 아래 "그 외" default 레이블 추가 구현 예정 (2024.10.30 minjae)
                         // default:   // 그 외
                         //     containerInfo.exp_WorkUserId = string.Empty;
                         //     break;
@@ -1168,7 +1168,7 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
                     ContainerList.Add(containerInfo);
                 }
 
-                // TODO : 추후 필요시 컨테이너 리스트에 저장된 컨테이너 아이디 오름차순 정렬 구현 예정 (2024.10.30 jbh)
+                // TODO : 추후 필요시 컨테이너 리스트에 저장된 컨테이너 아이디 오름차순 정렬 구현 예정 (2024.10.30 minjae)
                 // ContainerList.Sort();   
                 ContainerDatas.AddRange(ContainerList.ToArray());
             }
@@ -1183,7 +1183,7 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
 
         #region FileAddAsync
 
-        // TODO : 메서드 파라미터 "object obj" -> object 배열 "object[] obj"로 변환 및 지역변수 "var parameters" 사용 안하고 리스트 변환 가능한지 테스트 진행 예정 (2023.12.18 jbh)
+        // TODO : 메서드 파라미터 "object obj" -> object 배열 "object[] obj"로 변환 및 지역변수 "var parameters" 사용 안하고 리스트 변환 가능한지 테스트 진행 예정 (2023.12.18 minjae)
         /// <summary>
         /// 파일 추가
         /// </summary>
@@ -1207,7 +1207,7 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
 
         #region ShowWebViewerAsync
 
-        // TODO : 메서드 파라미터 "object obj" -> object 배열 "object[] obj"로 변환 및 지역변수 "var parameters" 사용 안하고 리스트 변환 가능한지 테스트 진행 예정 (2025.08.22 jbh)
+        // TODO : 메서드 파라미터 "object obj" -> object 배열 "object[] obj"로 변환 및 지역변수 "var parameters" 사용 안하고 리스트 변환 가능한지 테스트 진행 예정 (2025.08.22 minjae)
         /// <summary>
         /// 보기 (특정 컨테이너에 속한 파일 변환해서 웹뷰어로 출력)
         /// </summary>
@@ -1216,11 +1216,11 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
             ContainerView webViewerContainerInfo = null;   // 사용자가 선택한 변환 처리 완료된 파일의 상위 컨테이너 정보 
             string webViewerURL = string.Empty;    // 변환 처리 완료된 파일 웹뷰어 URL 주소 
 
-            // TODO : 보기 (파일 정보 자세히 보기) 버튼 클릭시 MultiCommandParameter 데이터(obj)를 object 배열(object[])로 형변환 (2024.08.22 jbh)
+            // TODO : 보기 (파일 정보 자세히 보기) 버튼 클릭시 MultiCommandParameter 데이터(obj)를 object 배열(object[])로 형변환 (2024.08.22 minjae)
             // 참고 URL - https://www.melodiouscode.net/passing-multiple-parameters-to-an-icommand-in-wpf
             var parameters = (object[])obj;                      // 보기 버튼으로 부터 받은 특정 컨테이너 정보(CommandParameter "exp_ProjectId", "exp_TeamId", "exp_ContainerId", "exp_FileIdexp_FileId (Object Array -> IEnumerable 형변환) 
 
-            // TODO : (기존) object 배열 "(object[])obj" 형식 -> (변경) string 배열 "string[] showWebViewerDatas" 형식으로 형변환 구현 (2024.08.22 jbh)
+            // TODO : (기존) object 배열 "(object[])obj" 형식 -> (변경) string 배열 "string[] showWebViewerDatas" 형식으로 형변환 구현 (2024.08.22 minjae)
             // 참고 URL - https://afsdzvcx123.tistory.com/entry/C-%EB%AC%B8%EB%B2%95-Object-%ED%98%95%EC%8B%9D-String-%ED%98%95%EC%8B%9D%EC%9C%BC%EB%A1%9C-%ED%98%95%EB%B3%80%ED%99%98Casting-%ED%95%98%EB%8A%94-%EB%B0%A9%EB%B2%95
             string[] showWebViewerDatas = Array.ConvertAll(parameters, param => (param ?? string.Empty).ToString());
 
@@ -1245,7 +1245,7 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
 
                 webViewerURL = webViewerContainerInfo.exp_TranslateData;   // 변환 처리 완료된 파일 웹뷰어 URL 주소 가져오기
 
-                // TODO : 추후 필요시 if 조건절 안의 로직 수정 예정 (2024.10.30 jbh) 
+                // TODO : 추후 필요시 if 조건절 안의 로직 수정 예정 (2024.10.30 minjae) 
                 // 변환 처리 완료된 파일 웹뷰어 URL 주소가 공백 또는 null이 아닌 경우 
                 if(false == string.IsNullOrWhiteSpace(webViewerURL))
                 {
@@ -1281,7 +1281,7 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
 
         #region DetailSearchAsync
 
-        // TODO : 메서드 파라미터 "object obj" -> object 배열 "object[] obj"로 변환 및 지역변수 "var parameters" 사용 안하고 리스트 변환 가능한지 테스트 진행 예정 (2023.12.18 jbh)
+        // TODO : 메서드 파라미터 "object obj" -> object 배열 "object[] obj"로 변환 및 지역변수 "var parameters" 사용 안하고 리스트 변환 가능한지 테스트 진행 예정 (2023.12.18 minjae)
         /// <summary>
         /// 컨테이너 정보 + 파일정보 조회
         /// </summary>
@@ -1321,19 +1321,19 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
             string fileNm = string.Empty;               // 파일명
             string fileId = string.Empty;               // 파일 아이디
 
-            // TODO : 아래 주석친 소스 코드 3줄(parameters, containerDatas, containerDataDic) 필요 없을 시 삭제 예정 (2023.12.05 jbh)
-            // TODO : Object 배열 객체 obj 리스트로 변환 (2023.09.19 jbh)
+            // TODO : 아래 주석친 소스 코드 3줄(parameters, containerDatas, containerDataDic) 필요 없을 시 삭제 예정 (2023.12.05 minjae)
+            // TODO : Object 배열 객체 obj 리스트로 변환 (2023.09.19 minjae)
             // 참고 URL - https://nonstop-antoine.tistory.com/36
             // var parameters = obj as IEnumerable;                       // 컨테이너 아이디 버튼으로 부터 받은 파일 정보(CommandParameter "exp_ProjectId", "exp_TeamId", "exp_ContainerId") (Object Array -> IEnumerable 형변환) 
             // var containerDetails = new List<string>();                 // parameters 를 리스트로 변환할 때 사용하는 리스트 객체 "containerDetails"
             // var containerDataDic = new Dictionary<string, string>();   // 컨테이너 정보 데이터를 담는 Dictionary 객체 containerDataDic 생성
 
-            // 컨테이너 아이디 버튼 클릭시 MultiCommandParameter 데이터(obj)를 object 배열(object[])로 형변환 (2023.12.05 jbh)
+            // 컨테이너 아이디 버튼 클릭시 MultiCommandParameter 데이터(obj)를 object 배열(object[])로 형변환 (2023.12.05 minjae)
             // 참고 URL - https://www.melodiouscode.net/passing-multiple-parameters-to-an-icommand-in-wpf 
             var parameters = (object[])obj;                               // 컨테이너 아이디 버튼으로 부터 받은 파일 정보(CommandParameter "exp_ProjectId", "exp_TeamId", "exp_ContainerId") (Object Array -> IEnumerable 형변환) 
             // var containerDetails = parameters.ToList();                // parameters 를 리스트로 변환할 때 사용하는 리스트 객체 "containerDetails"
 
-            // TODO : (기존) object 배열 "(object[])obj" 형식 -> (변경) string 배열 "string[] containerDetails" 형식으로 형변환 구현 (2023.12.19 jbh)
+            // TODO : (기존) object 배열 "(object[])obj" 형식 -> (변경) string 배열 "string[] containerDetails" 형식으로 형변환 구현 (2023.12.19 minjae)
             // 참고 URL - https://afsdzvcx123.tistory.com/entry/C-%EB%AC%B8%EB%B2%95-Object-%ED%98%95%EC%8B%9D-String-%ED%98%95%EC%8B%9D%EC%9C%BC%EB%A1%9C-%ED%98%95%EB%B3%80%ED%99%98Casting-%ED%95%98%EB%8A%94-%EB%B0%A9%EB%B2%95
             string[] containerDetails = Array.ConvertAll(parameters, param => (param ?? string.Empty).ToString());
 
@@ -1357,17 +1357,17 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
 
                 foreach(var infoDic in total_Info_List)
                 {
-                    // TODO : Dictionary 객체 "infoDic"에 존재하는 value 값 가져와서 리스트로 구현 (2023.10.18 jbh)
+                    // TODO : Dictionary 객체 "infoDic"에 존재하는 value 값 가져와서 리스트로 구현 (2023.10.18 minjae)
                     var containerList = infoDic.SelectMany(container => container.Value).ToList();
 
                     // 연관 컨테이너 정보(ContainerHelper.linkedNodeInfo)가 존재하지 않을 경우 continue 처리
                     if((int)EnumLinkedRelation.NONE == containerList.Count) continue;
 
-                    // TODO : Dictionary<string, List<Dictionary<string, object>>> 클래스 객체 "infoDic"에 존재하는 Key 값 가져와서 리스트로 변환 (2023.10.18 jbh)
+                    // TODO : Dictionary<string, List<Dictionary<string, object>>> 클래스 객체 "infoDic"에 존재하는 Key 값 가져와서 리스트로 변환 (2023.10.18 minjae)
                     // 참고 URL - https://www.techiedelight.com/ko/get-list-of-keys-and-values-in-a-dictionary-in-csharp/
                     var infoTypeList = new List<string>(infoDic.Keys);
 
-                    // TODO : 리스트 객체 "infoTypeList"의 첫 번째 요소 값을 반환 하도록 메서드 "FirstOfDefault" 사용 (2023.10.18 jbh)
+                    // TODO : 리스트 객체 "infoTypeList"의 첫 번째 요소 값을 반환 하도록 메서드 "FirstOfDefault" 사용 (2023.10.18 minjae)
                     // 참고 URL - https://developer-talk.tistory.com/294
                     var infoType = infoTypeList.FirstOrDefault();
 
@@ -1380,12 +1380,12 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
                                 // TODO : 아래 프로퍼티 "linkedNodeMetaDataList"에 할당 해야할 메타 데이터 리스트 "MetaDataList"의 경우 
                                 //        Rest API 메서드 "ExplorerRestServer.GetLinkedNodeInfoListAsync"(Rest API 8. 연관 컨테이너 목록 조회)의 결과값이긴 하나
                                 //        현재 사용 중인 기능이 아님. 추후에 API 사용하거나 혹은 API 기능이 삭제될 시에 인재 INC측으로 부터
-                                //        문서 정리하여 공유 받고 구현 예정 (2023.11.01 jbh)
+                                //        문서 정리하여 공유 받고 구현 예정 (2023.11.01 minjae)
                                 // linkedNodeMetaDataList = MetaDataList;
                                 break;
 
                             case ContainerHelper.detail:   // 컨테이너 정보, 파일정보
-                                // TODO : 추후 필요시 "컨테이너 정보, 파일정보" 객체 containerDetailList 구현 예정 (2024.10.30 jbh)
+                                // TODO : 추후 필요시 "컨테이너 정보, 파일정보" 객체 containerDetailList 구현 예정 (2024.10.30 minjae)
                                 // containerDetailList = infoList;
                                 detailDic = data;
                                 createUserId = data[ContainerHelper.createUserId].ToString();   // 작성자 
@@ -1437,14 +1437,14 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
                                 taskDetailDic = data;
                                 // TODO : Rest API 특정 컨테이너 상세조회 실행 되고 결과로 리턴 받은 json 데이터 결과값 중 "milestoneTaskInfo" 사라져서
                                 //        탭 "미리보기" 항목에 출력되는 참조(연관)컨테이너 리스트가 출력되지 않는 오류 발생
-                                //        해당 오류 원인 파악 후 아래 코드 taskDetailDic[ContainerHelper.milestoneTaskInfo] 개선 작업 예정 (2024.08.21 jbh)
+                                //        해당 오류 원인 파악 후 아래 코드 taskDetailDic[ContainerHelper.milestoneTaskInfo] 개선 작업 예정 (2024.08.21 minjae)
                                 milestoneTaskInfoDic = taskDetailDic is null ? null : taskDetailDic[ContainerHelper.milestoneTaskInfo].ToDictionary();
 
                                 taskDetailIdx = milestoneTaskInfoDic is null ? ContainerHelper.taskIdxNone : milestoneTaskInfoDic[ContainerHelper.idx].ToString();
 
-                                // TODO : 마일스톤 업무 리스트 객체 "taskDetailList" 필요시 사용 예정 (2023.10.17 jbh)
+                                // TODO : 마일스톤 업무 리스트 객체 "taskDetailList" 필요시 사용 예정 (2023.10.17 minjae)
                                 // taskDetailList = infoDic[key];
-                                // 마일스톤 - 업무 유형 데이터 마일스톤 관련 Rest API를 통해 데이터를 받아와야 하는 경우 아래 소스코드 수정 예정(2023.10.17 jbh)
+                                // 마일스톤 - 업무 유형 데이터 마일스톤 관련 Rest API를 통해 데이터를 받아와야 하는 경우 아래 소스코드 수정 예정(2023.10.17 minjae)
                                 // taskDetailType = taskDetailDic == null ? ContainerHelper.taskDetailTypeNone : taskDetailDic.Values.ToString();
                                 taskDetailType       = milestoneTaskInfoDic is null ? ContainerHelper.taskTypeNone : milestoneTaskInfoDic[ContainerHelper.title].ToString();
 
@@ -1460,10 +1460,10 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
                     // TODO : 아래 프로퍼티 "LinkedNodeMetaDataList"에 할당 해야할 메타 데이터 리스트 "linkedNodeMetaDataList"의 경우 
                     //        Rest API 메서드 "ExplorerRestServer.GetLinkedNodeInfoListAsync"(Rest API 8. 연관 컨테이너 목록 조회)의 결과값이긴 하나
                     //        현재 사용 중인 기능이 아님. 추후에 API 사용하거나 혹은 API 기능이 삭제될 시에 인재 INC측으로 부터
-                    //        문서 정리하여 공유 받고 구현 예정 (2023.11.01 jbh)
+                    //        문서 정리하여 공유 받고 구현 예정 (2023.11.01 minjae)
                     // LinkedNodeMetaDataList = linkedNodeMetaDataList,
 
-                    // TODO : 추후 필요시 "컨테이너 정보, 파일정보" 객체 containerDetailList 구현 예정 (2023.10.17 jbh)
+                    // TODO : 추후 필요시 "컨테이너 정보, 파일정보" 객체 containerDetailList 구현 예정 (2023.10.17 minjae)
                     // ContainerDetailList = containerDetailList,
                     DetailDic = detailDic,
                                            
@@ -1471,7 +1471,7 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
                                            
                     MetaDataList = metaDataList,
 
-                    // TODO : 추후 필요시 "마일스톤 업무" 리스트 객체 "TaskDetailList" 필요시 사용 예정 (2023.10.17 jbh)
+                    // TODO : 추후 필요시 "마일스톤 업무" 리스트 객체 "TaskDetailList" 필요시 사용 예정 (2023.10.17 minjae)
                     // TaskDetailList = taskDetailList,
                     TaskDetailDic = taskDetailDic,
                     MilestoneTaskInfoDic = milestoneTaskInfoDic,
@@ -1480,7 +1480,7 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
                     exp_CreateUserId = createUserId,
                     exp_ContainerId = containerId,
 
-                    // TODO : 추후 필요시 아래 주석친 코드 참고 (2024.10.30 jbh)
+                    // TODO : 추후 필요시 아래 주석친 코드 참고 (2024.10.30 minjae)
                     // exp_SelectedContainerId = ContainerPack.containerId.ToUpper(),   
                     // exp_UpperContainerId = containerId.ToUpper(),                 // 탐색기 화면 뷰(ExplorerV.xaml) 우측 하단에 할당할 컨테이너 아이디 값 영어 대문자로 할당
 
@@ -1493,15 +1493,15 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
                     exp_FileTypeCodeName = fileTypeCodeNm,
 
                     // 메타 데이터 
-                    // TODO : 프로퍼티 "exp_SoftMetaName" 필요시 사용 예정 (2024.10.30 jbh)
+                    // TODO : 프로퍼티 "exp_SoftMetaName" 필요시 사용 예정 (2024.10.30 minjae)
                     // exp_SoftMetaName = softMetaNm,
                     exp_SoftName = softNm,
 
-                    // TODO : 프로퍼티 "exp_SoftVerMetaName" 필요시 사용 예정 (2024.10.30 jbh)
+                    // TODO : 프로퍼티 "exp_SoftVerMetaName" 필요시 사용 예정 (2024.10.30 minjae)
                     // exp_SoftVerMetaName = softVerMetaNm,
                     exp_SoftVer = softVer,
 
-                    // TODO : 프로퍼티 "exp_KeywordTagMetaName" 필요시 사용 예정 (2024.10.30 jbh)
+                    // TODO : 프로퍼티 "exp_KeywordTagMetaName" 필요시 사용 예정 (2024.10.30 minjae)
                     // exp_KeywordTagMetaName = keywordMetaNm,
                     exp_KeywordTag = keyword,
 
@@ -1530,7 +1530,7 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
                 };
 
                 // TODO : 메서드 "DetailTypeListCreate" 호출시 전달 인자로 detailData 설정할 때
-                //        ref(기존 변수 detailData안에 들어있는 값을 메서드 "DetailTypeListCreate" 실행시 수정)로 구현 (2023.10.23 jbh)
+                //        ref(기존 변수 detailData안에 들어있는 값을 메서드 "DetailTypeListCreate" 실행시 수정)로 구현 (2023.10.23 minjae)
                 // 참고 URL - https://yeko90.tistory.com/entry/c-%EA%B8%B0%EC%B4%88-ref-vs-out-%EC%B0%A8%EC%9D%B4
                 // 참고 2 URL - https://kdsoft-zeros.tistory.com/142
                 // 참고 3 URL - https://codingcoding.tistory.com/56
@@ -1545,12 +1545,12 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
                     // TODO : 아래 비동기 메서드 "LinkedNodeInfoCreate"에 전달할 메서드 파라미터 메타 데이터 리스트 "MetaDataList"의 경우 
                     //        Rest API 메서드 "ExplorerRestServer.GetLinkedNodeInfoListAsync"(Rest API 8. 연관 컨테이너 목록 조회)의 결과값이긴 하나
                     //        현재 사용 중인 기능이 아님. 추후에 API 사용하거나 혹은 API 기능이 삭제될 시에 인재 INC측으로 부터
-                    //        문서 정리하여 공유 받고 필요시 메서드 파라미터로 구현 예정 (2023.11.01 jbh)
+                    //        문서 정리하여 공유 받고 필요시 메서드 파라미터로 구현 예정 (2023.11.01 minjae)
                     // await LinkedNodeInfoCreate(linkedNodeInfoList, linkedNodeMetaDataList); // 연관 컨테이너 정보 Tree 생성 
                     await LinkedNodeInfoCreate(linkedNodeInfoList); // 연관 컨테이너 정보 Tree 생성 
                 }
 
-                // TODO : ComboxBox - 마일스톤의 경우 추후 인재 INC 측으로 마일스톤 목록 조회 RestAPI 요청 후 개발 진행 (2023.10.20 jbh)
+                // TODO : ComboxBox - 마일스톤의 경우 추후 인재 INC 측으로 마일스톤 목록 조회 RestAPI 요청 후 개발 진행 (2023.10.20 minjae)
                 // "마일스톤" List 생성 
                 // var taskDetailList = await ExplorerRestServer.GetTaskDetailListAsync();
                 // detailData.TaskDetailType = await ExplorerRestServer.GetTaskDetailListAsync();
@@ -1571,7 +1571,7 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
         #region DetailTypeListCreate
 
         // TODO : 메서드 "DetailTypeListCreate" 호출시 메서드 파라미터로 pContainerInfo 설정할 때
-        //        ref(기존 변수 pContainerInfo안에 들어있는 값을 메서드 "DetailTypeListCreate" 실행시 수정)로 구현 (2023.10.23 jbh)
+        //        ref(기존 변수 pContainerInfo안에 들어있는 값을 메서드 "DetailTypeListCreate" 실행시 수정)로 구현 (2023.10.23 minjae)
         // 참고 URL - https://yeko90.tistory.com/entry/c-%EA%B8%B0%EC%B4%88-ref-vs-out-%EC%B0%A8%EC%9D%B4
         // 참고 2 URL - https://kdsoft-zeros.tistory.com/142
         // 참고 3 URL - https://codingcoding.tistory.com/56
@@ -1596,22 +1596,22 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
                 taskIdx = pContainerInfo.exp_TaskDetailIdx;                   // 마일스톤 - 업무 인덱스
                 taskType = pContainerInfo.exp_TaskDetailType;                 // 마일스톤 - 업무 유형
 
-                // TODO : pContainerInfo.FileTypeList.Clear(); 소스코드 실행시 FileTypeList 값이 null이므로 null Exception 발생해서 사용 안함.(2023.10.23 jbh)
+                // TODO : pContainerInfo.FileTypeList.Clear(); 소스코드 실행시 FileTypeList 값이 null이므로 null Exception 발생해서 사용 안함.(2023.10.23 minjae)
                 // pContainerInfo.FileTypeList.Clear();    // ComboBox - 파일유형 리스트 초기화
 
-                // TODO : ComboBox "파일유형" 리스트 생성 구현 (2023.10.24 jbh)
+                // TODO : ComboBox "파일유형" 리스트 생성 구현 (2023.10.24 minjae)
                 pContainerInfo.FileTypeList = new List<FileTypeView>
                 {
-                    // TODO : 개체 이니셜라이저 사용해서 파일 유형 리스트 객체 pContainerInfo.FileTypeList 생성시 객체 값(exp_systemCode, exp_codeName) 할당 (2023.11.23 jbh)
+                    // TODO : 개체 이니셜라이저 사용해서 파일 유형 리스트 객체 pContainerInfo.FileTypeList 생성시 객체 값(exp_systemCode, exp_codeName) 할당 (2023.11.23 minjae)
                     // 참고 URL - https://hyokye0ng.tistory.com/86
                     new FileTypeView(ContainerHelper.systemCodeModel, ContainerHelper.codeNameModel),
                     new FileTypeView(ContainerHelper.systemCodeReprt, ContainerHelper.codeNameReprt)
                 };
 
-                // TODO : ComboBox "마일스톤" 리스트 생성 구현 (2023.10.24 jbh)
+                // TODO : ComboBox "마일스톤" 리스트 생성 구현 (2023.10.24 minjae)
                 pContainerInfo.TaskDetailList = new List<TaskDetailView>
                 {
-                    // TODO : 개체 이니셜라이저 사용해서 마일스톤 리스트 객체 pContainerInfo.FileTypeList 생성시 객체 값(exp_idx, exp_title) 할당 (2023.11.23 jbh)
+                    // TODO : 개체 이니셜라이저 사용해서 마일스톤 리스트 객체 pContainerInfo.FileTypeList 생성시 객체 값(exp_idx, exp_title) 할당 (2023.11.23 minjae)
                     // 참고 URL - https://hyokye0ng.tistory.com/86
                     new TaskDetailView (ContainerHelper.taskIdxNone,     ContainerHelper.taskTypeNone     ),     // 관련업무선택
                     new TaskDetailView (ContainerHelper.taskIdxDefine,   ContainerHelper.taskTypeDefine   ),     // 요구사항정의            
@@ -1621,9 +1621,9 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
                 };
 
 
-                // TODO : 리스트 객체 "pContainerInfo.FileTypeList"의 조건을 만족하는 첫 번째 요소 값을 반환 하도록 메서드 "FirstOfDefault" 사용 (2023.10.18 jbh)
+                // TODO : 리스트 객체 "pContainerInfo.FileTypeList"의 조건을 만족하는 첫 번째 요소 값을 반환 하도록 메서드 "FirstOfDefault" 사용 (2023.10.18 minjae)
                 // 참고 URL - https://developer-talk.tistory.com/294
-                // TODO : 리스트 객체 "pContainerInfo.FileTypeList"의 FirstOrDefault 메서드 사용할 때, Contains 메서드 사용해서 조건 1, 조건 2 만족하는 데이터 있는지 찾기 (2023.10.23 jbh) 
+                // TODO : 리스트 객체 "pContainerInfo.FileTypeList"의 FirstOrDefault 메서드 사용할 때, Contains 메서드 사용해서 조건 1, 조건 2 만족하는 데이터 있는지 찾기 (2023.10.23 minjae) 
                 // 참고 URL - https://developer-talk.tistory.com/585 
                 // FirstOrDefault (where 조건절과 하는 역할 비슷하고 조건을 만족하는 요소가 존재하는지 체크 기능)
                 // 조건 1 - pContainerInfo.FileTypeList에 할당된 (파일유형 - systemCode - fileType.exp_systemCode) 값과 fileTypeSystemCode에 할당된 (컨테이너 정보 파일유형 - systemCode) 가 동일해야 한다.
@@ -1631,19 +1631,19 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
                 pContainerInfo.SelectParam.FileTypeCodeInfo = pContainerInfo.FileTypeList.FirstOrDefault(fileType => fileType.exp_systemCode.Contains(fileTypeSystemCode)
                                                                                                                   && fileType.exp_codeName.Contains(fileTypeCodeNm));
 
-                // TODO : 리스트 객체 "pContainerInfo.TaskDetailList"의 조건을 만족하는 첫 번째 요소 값을 반환 하도록 메서드 "FirstOfDefault" 사용 (2023.10.24 jbh)
+                // TODO : 리스트 객체 "pContainerInfo.TaskDetailList"의 조건을 만족하는 첫 번째 요소 값을 반환 하도록 메서드 "FirstOfDefault" 사용 (2023.10.24 minjae)
                 pContainerInfo.SelectParam.TaskDetail = pContainerInfo.TaskDetailList.FirstOrDefault(taskDetailType => taskDetailType.exp_idx.Contains(taskIdx)
                                                                                                                     && taskDetailType.exp_title.Contains(taskType));
 
-                // TODO : ComboxBox - 마일스톤의 경우 추후 인재 INC 측에서 마일스톤 RestAPI 공유 받은 후 개발 진행 (2023.10.23 jbh)
+                // TODO : ComboxBox - 마일스톤의 경우 추후 인재 INC 측에서 마일스톤 RestAPI 공유 받은 후 개발 진행 (2023.10.23 minjae)
                 // pContainerInfo.TaskDetailType = pMilestoneTaskInfoDic.Where().Select()).
                 // pContainerInfo.TaskDetailType.Title
                 // var result = await ExplorerRestServer.GetTaskDetailListAsync();
 
 
                 // TODO : ComboxBox - 파일유형에 바인딩할 BindableCollection에 값 할당 및 서버로부터 받은 값을 화면에 출력 할 수 있도록
-                //        메서드 파라미터 "pContainerInfo", "pFileTypeCodeInfoDic" 활용하기 (2023.10.20 jbh)
-                //        컨테이너 정보 영역 "마일스톤" ComboBox 구현시 바인딩할 BindableCollection 객체 TaskDetailType 구현(2023.10.20 jbh)
+                //        메서드 파라미터 "pContainerInfo", "pFileTypeCodeInfoDic" 활용하기 (2023.10.20 minjae)
+                //        컨테이너 정보 영역 "마일스톤" ComboBox 구현시 바인딩할 BindableCollection 객체 TaskDetailType 구현(2023.10.20 minjae)
                 // pContainerInfo.FileType
                 // exp_systemCode 
                 // exp_codeName 
@@ -1662,7 +1662,7 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
         // TODO : 아래 비동기 메서드 "LinkedNodeInfoCreate"에 전달할 메서드 파라미터 메타 데이터 리스트 "pLinkedNodeMetaDataList"의 경우 
         //        Rest API 메서드 "ExplorerRestServer.GetLinkedNodeInfoListAsync"(Rest API 8. 연관 컨테이너 목록 조회)의 결과값이긴 하나
         //        현재 사용 중인 기능이 아님. 추후에 API 사용하거나 혹은 API 기능이 삭제될 시에 인재 INC측으로 부터
-        //        문서 정리하여 공유 받고 필요시 메서드 파라미터로 구현 예정 (2023.11.01 jbh)
+        //        문서 정리하여 공유 받고 필요시 메서드 파라미터로 구현 예정 (2023.11.01 minjae)
         /// <summary>
         /// 연관 컨테이너 정보 Tree 생성 
         /// </summary>
@@ -1674,9 +1674,9 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
 
             try
             {
-                // TODO : Linq 확장메서드 Where 조건절에 == null 보다 빠른 is null 연산자 사용 (2023.11.24 jbh)
+                // TODO : Linq 확장메서드 Where 조건절에 == null 보다 빠른 is null 연산자 사용 (2023.11.24 minjae)
                 // 참고 URL - https://husk321.tistory.com/405
-                // TODO : 추후 using static CobimExplorer.Data.Models.CobimBase.Explorer.ExplorerView; 문을 사용하지 않고도 ExplorerView.LinkedNodeView -> LinkedNodeView만 쓸 수 있도록 구현하기 (2023.11.21 jbh) 
+                // TODO : 추후 using static CobimExplorer.Data.Models.CobimBase.Explorer.ExplorerView; 문을 사용하지 않고도 ExplorerView.LinkedNodeView -> LinkedNodeView만 쓸 수 있도록 구현하기 (2023.11.21 minjae) 
                 // 루트 노드(컨테이너) 찾기
                 // 부모 컨테이너 아이디(ContainerHelper.targetId)는 존재하지 않고(== null),
                 // 자식 컨테이너 아이디(또는 자기 자신 컨테이너 ID)(ContainerHelper.sourceId)만 존재하는 경우(is not null)
@@ -1684,12 +1684,12 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
                                                                               && node[ContainerHelper.sourceId] is not null)
                                                                   //.Select(node => new LinkedNodeView
                                                                   //                    {
-                                                                  //                        // TreeView 영역 루트 노드 이름 프로퍼티 "exp_TreeName" 영어 대문자로 출력 (2023.11.01 jbh)
+                                                                  //                        // TreeView 영역 루트 노드 이름 프로퍼티 "exp_TreeName" 영어 대문자로 출력 (2023.11.01 minjae)
                                                                   //                        exp_TreeName = node[ContainerHelper.sourceId].ToString().ToUpper()
                                                                   //                        // LinkedNodeInfoDic = linkedNodeInfoList.Where(node => node.Values.Equals())
                                                                   //                    })
 
-                                                                  // TreeView 영역 루트 노드 이름 프로퍼티 "exp_TreeName" 영어 대문자로 출력 (2023.11.01 jbh)
+                                                                  // TreeView 영역 루트 노드 이름 프로퍼티 "exp_TreeName" 영어 대문자로 출력 (2023.11.01 minjae)
                                                                   .Select(node => new LinkedNodeView(node[ContainerHelper.sourceId].ToString().ToUpper()))
                                                                   .FirstOrDefault();
 
@@ -1697,9 +1697,9 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
                 // TODO : 메서드 파라미터 메타 데이터 리스트 "pLinkedNodeMetaDataList"의 경우
                 //        Rest API 메서드 "ExplorerRestServer.GetLinkedNodeInfoListAsync"(Rest API 8. 연관 컨테이너 목록 조회)의 결과값이긴 하나
                 //        현재 사용 중인 기능이 아님. 추후에 API 사용하거나 혹은 API 기능이 삭제될 시에 인재 INC측으로 부터
-                //        문서 정리하여 공유 받고 필요시 메서드 파라미터로 구현 예정 (2023.11.01 jbh)
+                //        문서 정리하여 공유 받고 필요시 메서드 파라미터로 구현 예정 (2023.11.01 minjae)
                 // TODO : 루트 컨테이너 "rootContainer"에 루트 컨테이너 아이디 "rootContainerId"에 속하는 메타데이터를
-                //        메타데이터 리스트 객체 "pLinkedNodeMetaDataList"에서 Linq로 찾아서 "new LinkedNodeView" 프로퍼티 "LinkedNodeInfoDic"에 할당하기 (2023.11.01 jbh)
+                //        메타데이터 리스트 객체 "pLinkedNodeMetaDataList"에서 Linq로 찾아서 "new LinkedNodeView" 프로퍼티 "LinkedNodeInfoDic"에 할당하기 (2023.11.01 minjae)
                 // LinkedNodeView rootContainer = pLinkedNodeMetaDataList.Where(meta => meta[ContainerHelper.containerId].ToString().Equals(rootContainerId))
                 //                                                       .Select(meta => new LinkedNodeView
                 //                                                                           {
@@ -1708,7 +1708,7 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
                 //                                                                           })
                 //                                                       .FirstOrDefault();
 
-                // TODO : if 조건절에 == null 보다 빠른 is null 연산자 사용 (2023.11.24 jbh)
+                // TODO : if 조건절에 == null 보다 빠른 is null 연산자 사용 (2023.11.24 minjae)
                 // 참고 URL - https://husk321.tistory.com/405
                 // 루트 노드(컨테이너)가 존재하지 않을 경우 리턴 
                 if(rootContainer is null) return;
@@ -1718,7 +1718,7 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
                 // TODO : 비동기 메서드 "FillLinkedNodes"에 속하는 메서드 파라미터 메타 데이터 리스트 "pLinkedNodeMetaDataList"의 경우
                 //        Rest API 메서드 "ExplorerRestServer.GetLinkedNodeInfoListAsync"(Rest API 8. 연관 컨테이너 목록 조회)의 결과값이긴 하나
                 //        현재 사용 중인 기능이 아님. 추후에 API 사용하거나 혹은 API 기능이 삭제될 시에 인재 INC측으로 부터
-                //        문서 정리하여 공유 받고 필요시 메서드 파라미터로 구현 예정 (2023.11.01 jbh)
+                //        문서 정리하여 공유 받고 필요시 메서드 파라미터로 구현 예정 (2023.11.01 minjae)
                 // 루트 컨테이너(노드) 하위 참조관계에 속한 자식 컨테이너(노드) 추가
                 // await FillLinkedNodes(rootContainer, pLinkedNodeInfoList, pLinkedNodeMetaDataList);
                 await FillLinkedNodes(rootContainer, pLinkedNodeInfoList);
@@ -1740,7 +1740,7 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
         // TODO : 비동기 메서드 "FillLinkedNodes"에 속하는 메서드 파라미터 메타 데이터 리스트 "pLinkedNodeMetaDataList"의 경우
         //        Rest API 메서드 "ExplorerRestServer.GetLinkedNodeInfoListAsync"(Rest API 8. 연관 컨테이너 목록 조회)의 결과값이긴 하나
         //        현재 사용 중인 기능이 아님. 추후에 API 사용하거나 혹은 API 기능이 삭제될 시에 인재 INC측으로 부터
-        //        문서 정리하여 공유 받고 필요시 메서드 파라미터로 구현 예정 (2023.11.01 jbh)
+        //        문서 정리하여 공유 받고 필요시 메서드 파라미터로 구현 예정 (2023.11.01 minjae)
         /// <summary>
         /// 루트 컨테이너(노드) 하위 참조관계에 속한 자식 컨테이너(노드) 추가
         /// </summary>
@@ -1753,7 +1753,7 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
             try
             {
                 // TODO : pLinkedNodeInfoList의 WHERE 조건절 -> TreeView 영역 부모 노드 이름 프로퍼티 " parentContainer.exp_TreeName" 영어 대문자 -> 소문자로 변환(ToLower()) 후
-                //        node[ContainerHelper.targetId]?.ToString() 문자열(영어 소문자) 값과 비교하여 같은 값만 추출하기 (2023.11.01 jbh)
+                //        node[ContainerHelper.targetId]?.ToString() 문자열(영어 소문자) 값과 비교하여 같은 값만 추출하기 (2023.11.01 minjae)
                 // 부모 컨테이너(루트 또는 서브)에 하위 참조관계에 속한 자식 컨테이너 데이터 추출 
                 var childNodes = pLinkedNodeInfoList.Where(node => parentContainer.exp_TreeName.ToLower() == node[ContainerHelper.targetId]?.ToString());
 
@@ -1761,7 +1761,7 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
 
                 foreach(var childNode in childNodes)
                 {
-                    // TODO : TreeView 영역 부모 노드 하위 자식 노드(childNode) 이름 프로퍼티 "exp_TreeName" 영어 대문자로 출력 (2023.11.01 jbh)
+                    // TODO : TreeView 영역 부모 노드 하위 자식 노드(childNode) 이름 프로퍼티 "exp_TreeName" 영어 대문자로 출력 (2023.11.01 minjae)
                     subContainerId = childNode[ContainerHelper.sourceId].ToString().ToUpper();
 
                     var subContainer = new LinkedNodeView(childNode[ContainerHelper.sourceId].ToString().ToUpper());   // 참조 컨테이너 "subContainer" 객체 생성
@@ -1769,7 +1769,7 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
                     // TODO : 메서드 파라미터 메타 데이터 리스트 "pLinkedNodeMetaDataList"의 경우
                     //        Rest API 메서드 "ExplorerRestServer.GetLinkedNodeInfoListAsync"(Rest API 8. 연관 컨테이너 목록 조회)의 결과값이긴 하나
                     //        현재 사용 중인 기능이 아님. 추후에 API 사용하거나 혹은 API 기능이 삭제될 시에 인재 INC측으로 부터
-                    //        문서 정리하여 공유 받고 필요시 메서드 파라미터로 구현 예정 (2023.11.01 jbh)
+                    //        문서 정리하여 공유 받고 필요시 메서드 파라미터로 구현 예정 (2023.11.01 minjae)
                     // var subContainer = pLinkedNodeMetaDataList.Where(meta => meta[ContainerHelper.containerId].ToString().Equals(subContainerId))
                     //                                           .Select(meta => new LinkedNodeView 
                     //                                                               { 
@@ -1784,7 +1784,7 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
                     // TODO : 비동기 메서드 "FillLinkedNodes"에 속하는 파라미터 메타 데이터 리스트 "pLinkedNodeMetaDataList"의 경우
                     //        Rest API 메서드 "ExplorerRestServer.GetLinkedNodeInfoListAsync"(Rest API 8. 연관 컨테이너 목록 조회)의 결과값이긴 하나
                     //        현재 사용 중인 기능이 아님. 추후에 API 사용하거나 혹은 API 기능이 삭제될 시에 인재 INC측으로 부터
-                    //        문서 정리하여 공유 받고 필요시 메서드 파라미터로 구현 예정 (2023.11.01 jbh)
+                    //        문서 정리하여 공유 받고 필요시 메서드 파라미터로 구현 예정 (2023.11.01 minjae)
                     // 서브 컨테이너의 자식 노드로 또 다른 서브 컨테이너 추가 
                     // await FillLinkedNodes(subContainer, pLinkedNodeInfoList, pLinkedNodeMetaDataList);
                     await FillLinkedNodes(subContainer, pLinkedNodeInfoList);
@@ -1801,7 +1801,7 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
 
         #region LinkedNodeInfoSearchAsync
 
-        // TODO : 메서드 파라미터 "object obj" -> object 배열 "object[] obj"로 변환 및 지역변수 "var parameters" 사용 안하고 리스트 변환 가능한지 테스트 진행 예정 (2023.12.18 jbh)
+        // TODO : 메서드 파라미터 "object obj" -> object 배열 "object[] obj"로 변환 및 지역변수 "var parameters" 사용 안하고 리스트 변환 가능한지 테스트 진행 예정 (2023.12.18 minjae)
         /// <summary>
         /// 연관 컨테이너(참조관계 - 부모/자식 컨테이너) 메타데이터 정보 출력
         /// </summary>
@@ -1825,7 +1825,7 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
 
         #region RequestAsync
 
-        // TODO : 메서드 파라미터 "object obj" -> object 배열 "object[] obj"로 변환 및 지역변수 "var parameters" 사용 안하고 리스트 변환 가능한지 테스트 진행 예정 (2023.12.18 jbh)
+        // TODO : 메서드 파라미터 "object obj" -> object 배열 "object[] obj"로 변환 및 지역변수 "var parameters" 사용 안하고 리스트 변환 가능한지 테스트 진행 예정 (2023.12.18 minjae)
         /// <summary>
         /// 검토요청
         /// </summary>
@@ -1849,24 +1849,24 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
 
         #region UpdateAsync
 
-        // TODO : 수정 메서드 "UpdateAsync" 필요시 구현 예정 (2024.10.28 jbh)
-        // TODO : 메서드 파라미터 "object obj" -> object 배열 "object[] obj"로 변환 및 지역변수 "var parameters" 사용 안하고 리스트 변환 가능한지 테스트 진행 예정 (2023.12.18 jbh)
+        // TODO : 수정 메서드 "UpdateAsync" 필요시 구현 예정 (2024.10.28 minjae)
+        // TODO : 메서드 파라미터 "object obj" -> object 배열 "object[] obj"로 변환 및 지역변수 "var parameters" 사용 안하고 리스트 변환 가능한지 테스트 진행 예정 (2023.12.18 minjae)
         /// <summary>
         /// 수정
         /// </summary>
         private async Task UpdateAsync(object obj)
         {
-            // TODO : 아래 주석친 소스 코드 (upContainerDatas) 필요 없을 시 삭제 예정 (2023.12.05 jbh)
+            // TODO : 아래 주석친 소스 코드 (upContainerDatas) 필요 없을 시 삭제 예정 (2023.12.05 minjae)
             // Object 배열 객체 obj 리스트로 변환
             // 참고 URL - https://nonstop-antoine.tistory.com/36
             // var upContainerDatas = obj as IEnumerable;
 
-            // TODO : 아래 주석친 코드 필요시 참고 (2024.08.26 jbh)
-            // 컨테이너 아이디 버튼 클릭시 MultiCommandParameter 데이터(obj)를 object 배열(object[])로 형변환 (2023.12.05 jbh)
+            // TODO : 아래 주석친 코드 필요시 참고 (2024.08.26 minjae)
+            // 컨테이너 아이디 버튼 클릭시 MultiCommandParameter 데이터(obj)를 object 배열(object[])로 형변환 (2023.12.05 minjae)
             // 참고 URL - https://www.melodiouscode.net/passing-multiple-parameters-to-an-icommand-in-wpf 
             // var parameters = (object[])obj;                                   // 컨테이너 아이디 버튼으로 부터 받은 파일 정보(CommandParameter "exp_ProjectId", "exp_TeamId", "exp_ContainerId") (Object Array -> IEnumerable 형변환) 
 
-            // TODO : (기존) object 배열 "(object[])obj" 형식 -> (변경) string 배열 "string[] containerUpdate" 형식으로 형변환 구현 (2024.01.03 jbh)
+            // TODO : (기존) object 배열 "(object[])obj" 형식 -> (변경) string 배열 "string[] containerUpdate" 형식으로 형변환 구현 (2024.01.03 minjae)
             // 참고 URL - https://afsdzvcx123.tistory.com/entry/C-%EB%AC%B8%EB%B2%95-Object-%ED%98%95%EC%8B%9D-String-%ED%98%95%EC%8B%9D%EC%9C%BC%EB%A1%9C-%ED%98%95%EB%B3%80%ED%99%98Casting-%ED%95%98%EB%8A%94-%EB%B0%A9%EB%B2%95
             // string[] containerUpdate = Array.ConvertAll(parameters, param => (param ?? string.Empty).ToString());
             // var upContainerDatas    = parameters.ToList();          // parameters를 리스트로 변환할 때 사용하는 리스트 객체 "upContainerDatas"
@@ -1878,11 +1878,11 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
 
             try 
             {
-                // TODO : 아래 foreach 문 필요시 참고 (2023.12.05 jbh)
+                // TODO : 아래 foreach 문 필요시 참고 (2023.12.05 minjae)
                 //foreach (ContainerDetailView data in upContainerDatas)
                 //{
-                //    // TODO : 아래 소스코드에 들어갈 데이터가 추가로 필요할 시 소스코드 수정 예정 (2023.10.23 jbh)
-                //    //        UpdateParam 프로퍼티 필요 없어도 변경된 데이터(data.SelectParam)들이 정상적으로 서버로 넘어갈 수 있으면 UpdateParam 삭제 예정 (2023.10.23 jbh)
+                //    // TODO : 아래 소스코드에 들어갈 데이터가 추가로 필요할 시 소스코드 수정 예정 (2023.10.23 minjae)
+                //    //        UpdateParam 프로퍼티 필요 없어도 변경된 데이터(data.SelectParam)들이 정상적으로 서버로 넘어갈 수 있으면 UpdateParam 삭제 예정 (2023.10.23 minjae)
                 //    UpdateParam = new Param();
                 //    UpdateParam = data.SelectParam;
                 //}
@@ -1890,7 +1890,7 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
                 // var test = DetailDatas.(detailData => detailData.SelectParam).Object;
                 // UpdateParam  = obj as IEnumerable; // .Select(s => s.SelectParam.FileTypeCodeInfo);
 
-                // UpdateAsync 메서드 실행시 ComboBox 파일유형에서 변경된 값을 가져오도록 Linq 식으로 구현하기 (2023.10.23 jbh) 
+                // UpdateAsync 메서드 실행시 ComboBox 파일유형에서 변경된 값을 가져오도록 Linq 식으로 구현하기 (2023.10.23 minjae) 
                 // var obj      = null;
                 // FileTypeView fileTypeCodeInfo = ContainerDatas.Select(x => x.Param.FileTypeCodeInfo);
 
@@ -1910,7 +1910,7 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
 
         #region UpLoadAsync
 
-        // TODO : 메서드 파라미터 "object obj" -> object 배열 "object[] obj"로 변환 및 지역변수 "var parameters" 사용 안하고 리스트 변환 가능한지 테스트 진행 예정 (2023.12.18 jbh)
+        // TODO : 메서드 파라미터 "object obj" -> object 배열 "object[] obj"로 변환 및 지역변수 "var parameters" 사용 안하고 리스트 변환 가능한지 테스트 진행 예정 (2023.12.18 minjae)
         /// <summary>
         /// 탭 "변경" - 컨테이너 변경(컨테이너 안에 저장한 파일 A -> B) 및 저장 
         /// </summary>
@@ -1934,8 +1934,8 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
 
         #region Btn_MouseRightButtonDown
 
-        // TODO : 필요시 마우스 오른쪽 클릭 이벤트 메서드 "Btn_MouseRightButtonDown" 뷰모델에 구현 예정 (2023.11.02 jbh)
-        // TODO : 마우스 오른쪽 클릭 이벤트 메서드 "Btn_MouseRightButtonDown" 구현 (2023.11.02 jbh)
+        // TODO : 필요시 마우스 오른쪽 클릭 이벤트 메서드 "Btn_MouseRightButtonDown" 뷰모델에 구현 예정 (2023.11.02 minjae)
+        // TODO : 마우스 오른쪽 클릭 이벤트 메서드 "Btn_MouseRightButtonDown" 구현 (2023.11.02 minjae)
         // 참고 URL - https://yeko90.tistory.com/entry/c-wpf-%EB%A7%88%EC%9A%B0%EC%8A%A4-%EC%9D%B4%EB%B2%A4%ED%8A%B8%EB%8D%94%EB%B8%94%ED%81%B4%EB%A6%AD-%EC%98%A4%EB%A5%B8%EC%AA%BD%ED%81%B4%EB%A6%AD-%EC%99%BC%EC%AA%BD-%ED%81%B4%EB%A6%AD
         // 참고 2 URL - https://poorman.tistory.com/263
         // public void Btn_MouseRightButtonDown(object sender, MouseButtonEventArgs e)
@@ -1947,7 +1947,7 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
 
         #region TestAsync
 
-        // TODO : 메서드 파라미터 "object obj" -> object 배열 "object[] obj"로 변환 및 지역변수 "var parameters" 사용 안하고 리스트 변환 가능한지 테스트 진행 예정 (2023.12.18 jbh)
+        // TODO : 메서드 파라미터 "object obj" -> object 배열 "object[] obj"로 변환 및 지역변수 "var parameters" 사용 안하고 리스트 변환 가능한지 테스트 진행 예정 (2023.12.18 minjae)
         /// <summary>
         /// 테스트
         /// </summary>
@@ -2004,13 +2004,13 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
                 // commonProgressV.Close();
 
 
-                // TODO : await Task.Yield(); 사용법 제대로 확인 후 사용 예정 (2023.12.04 jbh)
+                // TODO : await Task.Yield(); 사용법 제대로 확인 후 사용 예정 (2023.12.04 minjae)
                 // 참고 URL - https://www.sysnet.pe.kr/2/0/12241
                 // 참고 2 URL - https://www.sysnet.pe.kr/2/0/12245
                 // 참고 3 URL - https://stackoverflow.com/questions/22645024/when-would-i-use-task-yield
                 // await Task.Yield();
 
-                // TODO : 로그인/체크아웃/체크인/작업취소 시 사용할 공용 컨트롤 BackgroundWorkerControl.xaml 화면 출력 테스크 코드 필요시 참고 (2024.01.03 jbh) 
+                // TODO : 로그인/체크아웃/체크인/작업취소 시 사용할 공용 컨트롤 BackgroundWorkerControl.xaml 화면 출력 테스크 코드 필요시 참고 (2024.01.03 minjae) 
                 // 참고 URL - https://2bbear-gds.tistory.com/entry/WPF-C%EC%9C%BC%EB%A1%9C-UserControll%EC%9D%84-%EB%B0%94%EB%A1%9C-%EB%8B%A4%EC%9D%B4%EC%96%BC%EB%A1%9C%EA%B7%B8-%ED%99%94%EB%A9%B4%EC%9C%BC%EB%A1%9C-%EC%B6%9C%EB%A0%A5-%ED%95%98%EA%B3%A0-%EC%8B%B6%EC%9D%84%EB%95%8C
                 // BackgroundWorkerControl testDialog = new BackgroundWorkerControl();
                 // Window window = new Window { Title = "테스트", Content = testDialog, Width=300, Height=200};
@@ -2026,7 +2026,7 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
             }
             finally
             {
-                // TODO : 추후 필요 시 finally문에 코드 추가 예정 (2023.08.24 jbh)
+                // TODO : 추후 필요 시 finally문에 코드 추가 예정 (2023.08.24 minjae)
             }
             return;
         }
@@ -2036,7 +2036,7 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
         #region IsOpenedFile
 
         // TODO : 해당 파일 경로(filePath)에 존재하는 Revit 문서가 Revit 응용 프로그램에서 열려있는 경우
-        //        체크인 처리시 오류가 발생하므로 Revit 문서가 Revit 응용 프로그램에서 열려 있으면 오류 처리 메서드 "IsOpenedFile" 구현 (2024.10.22 jbh)
+        //        체크인 처리시 오류가 발생하므로 Revit 문서가 Revit 응용 프로그램에서 열려 있으면 오류 처리 메서드 "IsOpenedFile" 구현 (2024.10.22 minjae)
         // 참고 URL - https://learn.microsoft.com/ko-kr/dotnet/api/system.io.file.open?view=net-8.0
         // 참고 2 URL - https://www.csharpstudy.com/Tip/Tip-file-open.aspx
         // 참고 3 URL - https://bigexecution.tistory.com/288
@@ -2066,10 +2066,10 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
 
         #region DownLoadAsync
 
-        // TODO : 체크아웃, 체크인, 파일 다운로드 중복 처리 시 컨텍스트 메뉴창 비활성화(Enabled = false;) 구현 예정 (2024.09.03 jbh)
+        // TODO : 체크아웃, 체크인, 파일 다운로드 중복 처리 시 컨텍스트 메뉴창 비활성화(Enabled = false;) 구현 예정 (2024.09.03 minjae)
         // 컨테스트 메뉴창 객체 이름 설정(예) x:Name="ExplorerContextMenu"
 
-        // TODO : 메서드 파라미터 "object obj" -> object 배열 "object[] obj"로 변환 및 지역변수 "var parameters" 사용 안하고 리스트 변환 가능한지 테스트 진행 예정 (2023.12.18 jbh)
+        // TODO : 메서드 파라미터 "object obj" -> object 배열 "object[] obj"로 변환 및 지역변수 "var parameters" 사용 안하고 리스트 변환 가능한지 테스트 진행 예정 (2023.12.18 minjae)
         /// <summary>
         /// 파일 다운로드
         /// </summary>
@@ -2077,11 +2077,11 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
         {
             var loadingWorkVM = Container.Get<CommonLoadingWorkVM>().SetMessage(CobimHelper.DownLoad_LoadingWork);   // 다운로드 처리 중 화면 뷰모델 할당
 
-            // TODO : 다운로드 버튼 클릭시 MultiCommandParameter 데이터(obj)를 object 배열(object[])로 형변환 (2023.12.05 jbh)
+            // TODO : 다운로드 버튼 클릭시 MultiCommandParameter 데이터(obj)를 object 배열(object[])로 형변환 (2023.12.05 minjae)
             // 참고 URL - https://www.melodiouscode.net/passing-multiple-parameters-to-an-icommand-in-wpf
             var parameters = (object[])obj;   // 다운로드 버튼으로 부터 받은 다운로드 받을 파일 정보(CommandParameter "exp_ProjectId", "exp_TeamId", "exp_ContainerId") (Object Array -> IEnumerable 형변환) 
 
-            // TODO : (기존) object 배열 "(object[])obj" 형식 -> (변경) string 배열 "string[] downLoadDatas" 형식으로 형변환 구현 (2023.12.19 jbh)
+            // TODO : (기존) object 배열 "(object[])obj" 형식 -> (변경) string 배열 "string[] downLoadDatas" 형식으로 형변환 구현 (2023.12.19 minjae)
             // 참고 URL - https://afsdzvcx123.tistory.com/entry/C-%EB%AC%B8%EB%B2%95-Object-%ED%98%95%EC%8B%9D-String-%ED%98%95%EC%8B%9D%EC%9C%BC%EB%A1%9C-%ED%98%95%EB%B3%80%ED%99%98Casting-%ED%95%98%EB%8A%94-%EB%B0%A9%EB%B2%95
             string[] downLoadDatas = Array.ConvertAll(parameters, param => (param ?? string.Empty).ToString());
 
@@ -2127,7 +2127,7 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
                 // 파일 다운로드 처리 중이 아닌 경우 
                 if(resMsg != CobimHelper.DownLoad_LoadingWork)
                 {
-                    // TODO : 파일 다운로드 처리 중 화면이 ShowDialog(Modal)가 아니라 Show(Modaless)로 출력되므로 해당 화면 종료시 메서드 "RequestClose" 호출할 때, 메서드 파라미터 "null"로 할당 (2024.01.04 jbh)
+                    // TODO : 파일 다운로드 처리 중 화면이 ShowDialog(Modal)가 아니라 Show(Modaless)로 출력되므로 해당 화면 종료시 메서드 "RequestClose" 호출할 때, 메서드 파라미터 "null"로 할당 (2024.01.04 minjae)
                     // 참고 URL - https://cosmosproject.tistory.com/563
                     IsDownLoadWorking = false;          // 파일 다운로드 처리 중 종료
                     loadingWorkVM.RequestClose(null);   // 파일 다운로드 처리 중 화면 종료
@@ -2140,10 +2140,10 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
 
         #region CheckOutAsync
 
-        // TODO : 체크아웃, 체크인, 파일 다운로드 중복 처리 시 컨텍스트 메뉴창 비활성화(Enabled = false;) 구현 예정 (2024.09.03 jbh)
+        // TODO : 체크아웃, 체크인, 파일 다운로드 중복 처리 시 컨텍스트 메뉴창 비활성화(Enabled = false;) 구현 예정 (2024.09.03 minjae)
         // 컨테스트 메뉴창 객체 이름 설정(예) x:Name="ExplorerContextMenu"
 
-        // TODO : 메서드 파라미터 "object obj" -> object 배열 "object[] obj"로 변환 및 지역변수 "var parameters" 사용 안하고 리스트 변환 가능한지 테스트 진행 예정 (2023.12.18 jbh)
+        // TODO : 메서드 파라미터 "object obj" -> object 배열 "object[] obj"로 변환 및 지역변수 "var parameters" 사용 안하고 리스트 변환 가능한지 테스트 진행 예정 (2023.12.18 minjae)
         /// <summary>
         /// 컨테이너 체크아웃 + (참조/연관) 관계 컨테이너 파일 다운로드  
         /// </summary>
@@ -2154,11 +2154,11 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
             string checkOutContainerId = string.Empty;   // 체크아웃 요청 컨테이너 아이디
             string linkedContainerId = string.Empty;     // 연관 컨테이너 아이디
 
-            // TODO : Context Menu(컨텍스트 메뉴) "체크아웃" 클릭시 MultiCommandParameter 데이터(obj)를 object 배열(object[])로 형변환 (2023.12.05 jbh)
+            // TODO : Context Menu(컨텍스트 메뉴) "체크아웃" 클릭시 MultiCommandParameter 데이터(obj)를 object 배열(object[])로 형변환 (2023.12.05 minjae)
             // 참고 URL - https://www.melodiouscode.net/passing-multiple-parameters-to-an-icommand-in-wpf
             var parameters = (object[])obj;   // Context Menu(컨텍스트 메뉴) "체크아웃" 클릭시 받은 체크아웃 시 필요한 정보(CommandParameter "exp_ProjectId", "exp_TeamId", "exp_ContainerId", "exp_FileId") (Object Array -> IEnumerable 형변환)
 
-            // TODO : (기존) object 배열 "(object[])obj" 형식 -> (변경) string 배열 "string[] checkOutDatas" 형식으로 형변환 구현 (2023.12.19 jbh)
+            // TODO : (기존) object 배열 "(object[])obj" 형식 -> (변경) string 배열 "string[] checkOutDatas" 형식으로 형변환 구현 (2023.12.19 minjae)
             // 참고 URL - https://afsdzvcx123.tistory.com/entry/C-%EB%AC%B8%EB%B2%95-Object-%ED%98%95%EC%8B%9D-String-%ED%98%95%EC%8B%9D%EC%9C%BC%EB%A1%9C-%ED%98%95%EB%B3%80%ED%99%98Casting-%ED%95%98%EB%8A%94-%EB%B0%A9%EB%B2%95
             string[] checkOutDatas = Array.ConvertAll(parameters, param => (param ?? string.Empty).ToString());
 
@@ -2203,7 +2203,7 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
                 // 3) 검토 요청 중인 컨테이너가 아닐 때(statusCode != 'comstt20')
                 await ExplorerRestServer.GetCheckOutAsync(InputParamData);
 
-                // TODO : 체크아웃 처리 중 화면이 ShowDialog(Modal)가 아니라 Show(Modaless)로 출력되므로 해당 화면 종료시 메서드 "RequestClose" 호출할 때, 메서드 파라미터 "null"로 할당 (2024.01.04 jbh)
+                // TODO : 체크아웃 처리 중 화면이 ShowDialog(Modal)가 아니라 Show(Modaless)로 출력되므로 해당 화면 종료시 메서드 "RequestClose" 호출할 때, 메서드 파라미터 "null"로 할당 (2024.01.04 minjae)
                 // 참고 URL - https://cosmosproject.tistory.com/563
                 loadingWorkVM.RequestClose(null);   // 체크아웃 처리 중 화면 종료 
 
@@ -2214,8 +2214,8 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
                 if(linkedContainerList.Count == (int)EnumLinkedRelation.NONE)
                     MessageBox.Show($"컨테이너 아이디 {checkOutContainerId}\r\n체크아웃 완료!\r\n연관 컨테이너 목록이 존재하지 않습니다.");
 
-                // TODO : 아래 주석친 테스트 코드 (연관 컨테이너가 존재하는 경우) 코드 필요시 참고 (2024.01.03 jbh)
-                // TODO : 아래 연관 컨테이너가 존재하는 경우 리스트 객체 "linkedContainerList" 컨테이너 아이디(containerId) 오름차순 정렬 (Sort 메서드) (2023.11.29 jbh)
+                // TODO : 아래 주석친 테스트 코드 (연관 컨테이너가 존재하는 경우) 코드 필요시 참고 (2024.01.03 minjae)
+                // TODO : 아래 연관 컨테이너가 존재하는 경우 리스트 객체 "linkedContainerList" 컨테이너 아이디(containerId) 오름차순 정렬 (Sort 메서드) (2023.11.29 minjae)
                 // 참고 URL - https://www.techiedelight.com/ko/sort-list-in-descending-order-in-csharp/
                 // (참조/연관) 컨테이너가 존재하는 경우 
                 // if (linkedContainerList.Count >= (int)EnumLinkedRelation.EXISTENCE)
@@ -2240,7 +2240,7 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
 
                         // TODO : (참조/연관) 컨테이너 다운로드 하는 경우 다운로드 받은 파일의 상위 컨테이너(컨테이너 아이디)을
                         //        각각의 (참조/연관) 컨테이너 아이디가 아니라 루트 컨테이너 아이디(체크아웃 요청한 컨테이너 아이디)
-                        //        하나로만 상위 컨테이너로 설정 해야 하므로 아래 소스코드는 주석 처리 진행 (2023.12.14 jbh)
+                        //        하나로만 상위 컨테이너로 설정 해야 하므로 아래 소스코드는 주석 처리 진행 (2023.12.14 minjae)
                         // 체크아웃 요청한 컨테이너 아이디 
                         // ContainerPack.containerId = linkedContainer[ContainerHelper.containerId].ToString();
                         // InputParamData.GetContainerPack().SetContainerId(linkedContainer[ContainerHelper.containerId].ToString());
@@ -2251,7 +2251,7 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
                         InputParamData.GetContainerPack().SetLinkedContainerId(linkedContainerId);
 
                         // TODO : 체크아웃 요청한 컨테이너 아이디(checkOutContainerId) 문자열 값과 연관 컨테이너 아이디(linkedContainerId)의 문자열이 동일한 경우 파일 다운로드 대상 제외
-                        //        이미 체크아웃 + 파일 다운로드 처리 동시에 하였으므로 파일 중복 다운로드 안 하기 위해 continue 처리 구현 (2024.10.31 jbh)
+                        //        이미 체크아웃 + 파일 다운로드 처리 동시에 하였으므로 파일 중복 다운로드 안 하기 위해 continue 처리 구현 (2024.10.31 minjae)
                         if(checkOutContainerId == linkedContainerId) continue;
 
                         // (참조/연관) 컨테이너에 속한 파일 다운로드 진행
@@ -2283,16 +2283,16 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
                     //        체크아웃 비동기 메서드 "CheckOutAsync" 호출 -> 컨테이너 리스트 생성 비동기 메서드 "ContainerListCreateAsync" 호출 
                     //        실행 결과 데이터 정보가 변경되어 컨테이너 리스트 화면이 바뀌므로
                     //        컨테이너 리스트 생성 비동기 메서드 "ContainerListCreateAsync" 메서드 파라미터 _ContainerPack에
-                    //        프로퍼티 "SelectedFolderId" 같이 추가해서 전달함. (2024.10.30 jbh) 
+                    //        프로퍼티 "SelectedFolderId" 같이 추가해서 전달함. (2024.10.30 minjae) 
                     // 체크아웃 요청한 컨테이너 아이디를 가지고 Rest API 6.컨테이너 목록 조회 호출
                     await ContainerListCreateAsync(_ContainerPack);
 
-                    // TODO : 체크아웃 처리 중 또는 연관 컨테이너 파일 다운로드 처리 중 화면이 ShowDialog(Modal)가 아니라 Show(Modaless)로 출력되므로 해당 화면 종료시 메서드 "RequestClose" 호출할 때, 메서드 파라미터 "null"로 할당 (2024.01.05 jbh)
+                    // TODO : 체크아웃 처리 중 또는 연관 컨테이너 파일 다운로드 처리 중 화면이 ShowDialog(Modal)가 아니라 Show(Modaless)로 출력되므로 해당 화면 종료시 메서드 "RequestClose" 호출할 때, 메서드 파라미터 "null"로 할당 (2024.01.05 minjae)
                     // 참고 URL - https://cosmosproject.tistory.com/563
                     loadingWorkVM.RequestClose(null);   // 체크아웃 처리 중 또는 연관 컨테이너 파일 다운로드 처리 중 화면 종료 
 
 
-                    // TODO : 아래 주석친 테스트 코드 필요시 참고 (2024.11.01 jbh)
+                    // TODO : 아래 주석친 테스트 코드 필요시 참고 (2024.11.01 minjae)
                     // if(false == string.IsNullOrWhiteSpace(SelectedFolderId))
                     //     await ContainerListCreateAsync(_ContainerPack);
                     // else throw new Exception("선택(클릭)한 폴더 ID 정보가 존재하지 않습니다.\r\n담당자에게 문의하시기 바랍니다.");
@@ -2305,10 +2305,10 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
 
         #region CheckInAsync
 
-        // TODO : 체크아웃, 체크인, 파일 다운로드 중복 처리 시 컨텍스트 메뉴창 비활성화(Enabled = false;) 구현 예정 (2024.09.03 jbh)
+        // TODO : 체크아웃, 체크인, 파일 다운로드 중복 처리 시 컨텍스트 메뉴창 비활성화(Enabled = false;) 구현 예정 (2024.09.03 minjae)
         // 컨테스트 메뉴창 객체 이름 설정(예) x:Name="ExplorerContextMenu"
 
-        // TODO : 메서드 파라미터 "object obj" -> object 배열 "object[] obj"로 변환 및 지역변수 "var parameters" 사용 안하고 리스트 변환 가능한지 테스트 진행 예정 (2023.12.18 jbh)
+        // TODO : 메서드 파라미터 "object obj" -> object 배열 "object[] obj"로 변환 및 지역변수 "var parameters" 사용 안하고 리스트 변환 가능한지 테스트 진행 예정 (2023.12.18 minjae)
         /// <summary>
         /// 컨테이너 체크인 + (컨테이너에 속한 파일) 웹서버로 업로드 + HubBox 파일 변환 요청 
         /// 컨테이너 체크인 + (컨테이너에 속한 파일) 웹서버로 업로드 성공하면 
@@ -2323,18 +2323,18 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
             // string resultTranslateCode = string.Empty;   // 특정 컨테이너에 속한 파일 변환 처리 결과 상태 코드 문자열 초기화
             // string resultTranslateMsg = string.Empty;    // 특정 컨테이너에 속한 파일 변환 처리 관련 공통 메세지 초기화
 
-            // TODO : Context Menu(컨텍스트 메뉴) "체크인" 클릭시 MultiCommandParameter 데이터(obj)를 object 배열(object[])로 형변환 (2023.12.05 jbh)
+            // TODO : Context Menu(컨텍스트 메뉴) "체크인" 클릭시 MultiCommandParameter 데이터(obj)를 object 배열(object[])로 형변환 (2023.12.05 minjae)
             // 참고 URL - https://www.melodiouscode.net/passing-multiple-parameters-to-an-icommand-in-wpf
             var parameters = (object[])obj;              // Context Menu(컨텍스트 메뉴) "체크인" 클릭시 받은 체크인 시 필요한 정보(CommandParameter "exp_ProjectId", "exp_TeamId", "exp_ContainerId", "exp_FileId", "exp_FileName") (Object Array -> IEnumerable 형변환) 
 
-            // TODO : (기존) object 배열 "(object[])obj" 형식 -> (변경) string 배열 "string[] checkInDatas" 형식으로 형변환 구현 (2023.12.19 jbh)
+            // TODO : (기존) object 배열 "(object[])obj" 형식 -> (변경) string 배열 "string[] checkInDatas" 형식으로 형변환 구현 (2023.12.19 minjae)
             // 참고 URL - https://afsdzvcx123.tistory.com/entry/C-%EB%AC%B8%EB%B2%95-Object-%ED%98%95%EC%8B%9D-String-%ED%98%95%EC%8B%9D%EC%9C%BC%EB%A1%9C-%ED%98%95%EB%B3%80%ED%99%98Casting-%ED%95%98%EB%8A%94-%EB%B0%A9%EB%B2%95
 
             // TODO : (기존) object 배열 "(object[])obj" 형식 -> (변경) string 배열
             //        단, 변경할 때, (기존) object 배열에 속하는 데이터 중 "제목"을
             //        갖고 있는 데이터를 제외하기 위해 Linq 조건절 확장 메서드 Where 사용해서
             //        특정 인덱스 "(int)EnumCheckIn.TITLE" 제외한 
-            //        데이터만 추출해서 string 배열 객체 "checkInDatas" 구현 (2024.08.26 jbh)
+            //        데이터만 추출해서 string 배열 객체 "checkInDatas" 구현 (2024.08.26 minjae)
             // 참고 URL - https://chatgpt.com/c/332ba391-669d-4e7b-8e5a-af86cbd6516e
             string[] checkInDatas = Array.ConvertAll(parameters, param => (param ?? string.Empty).ToString())
                                          .Where((checkInRequestData, index) => index != (int)EnumCheckIn.TITLE)
@@ -2355,7 +2355,7 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
             string checkInFileId = string.Empty;           // 체크인 처리 완료 후 파일 아이디  
             string checkInRevsnVal = string.Empty;         // 체크인 처리 완료 후 파일 버전 
 
-            // TODO : C# 문자열 보간 기능 사용해서 웹서버로 업로드 할 상위 폴더 경로 문자열로 변환 (2024.09.02 jbh)
+            // TODO : C# 문자열 보간 기능 사용해서 웹서버로 업로드 할 상위 폴더 경로 문자열로 변환 (2024.09.02 minjae)
             // 참고 URL - https://gaeunhan.tistory.com/61
             string dirPath = string.Empty;                 // 웹서버로 업로드 할 파일의 상위 디렉토리(폴더) 경로
             string filePath= string.Empty;                 // 웹서버로 업로드 할 파일 전체 경로 
@@ -2381,7 +2381,7 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
                                                                                               string.Empty));
                 checkInPartVM.ShowDialog();      // 체크인 팝업 화면 생성 및 결과 리턴
 
-                // TODO : await Task.Yield(); 사용법 제대로 확인 후 사용 예정 (2023.12.04 jbh)
+                // TODO : await Task.Yield(); 사용법 제대로 확인 후 사용 예정 (2023.12.04 minjae)
                 // 참고 URL - https://www.sysnet.pe.kr/2/0/12241
                 // 참고 2 URL - https://www.sysnet.pe.kr/2/0/12245
                 // 참고 3 URL - https://stackoverflow.com/questions/22645024/when-would-i-use-task-yield
@@ -2389,11 +2389,11 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
 
                 if(true == checkInPartVM.IsExit) return;   // 체크인 팝업 화면 종료(닫기("X") 버튼 클릭)시 메서드 CheckInAsync 종료 
 
-                // TODO : 다른 PC에서도 파일 업로드 기능이 실행될 수 있도록 웹서버로 업로드 할 파일 전체 경로 "dirPath"의 루트 디렉토리 값을 내문서 폴더 (Environment.SpecialFolder.MyDocuments)로 설정 (2023.12.05 jbh)
+                // TODO : 다른 PC에서도 파일 업로드 기능이 실행될 수 있도록 웹서버로 업로드 할 파일 전체 경로 "dirPath"의 루트 디렉토리 값을 내문서 폴더 (Environment.SpecialFolder.MyDocuments)로 설정 (2023.12.05 minjae)
                 // 참고 URL - https://learn.microsoft.com/ko-kr/dotnet/api/system.environment.specialfolder?view=net-7.0
                 // 웹서버로 업로드 할 파일의 상위 디렉토리 폴더 전체 경로 예시 - "C:\Users\bhjeon\Documents\COBIM\CobimExplorer\bmcb\inc-001-bmcb-t005\bmcb-imbu-func_016-sptl_901-002"
                 // SpecialFolder 시스템 디렉토리(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) 사용
-                // TODO : 아래 주석친 테스트 코드 필요시 참고 (2024.10.14 jbh)
+                // TODO : 아래 주석친 테스트 코드 필요시 참고 (2024.10.14 minjae)
                 // dirPath = $"{Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)}" +
                 //           $"\\{CobimHelper.CobimBaseDirectory}" +
                 //           $"\\{CobimHelper.AssemblyName}" +
@@ -2401,7 +2401,7 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
                 //           $"\\{checkInDatas[(int)EnumCheckIn.TEAMID]}" +
                 //           $"\\{checkInDatas[(int)EnumCheckIn.CONTAINERID]}";
 
-                // TODO : StringBuilder 클래스 객체 sbDirPath 생성 -> string 클래스 객체 dirPath에 문자열 추가 (2024.10.15 jbh)
+                // TODO : StringBuilder 클래스 객체 sbDirPath 생성 -> string 클래스 객체 dirPath에 문자열 추가 (2024.10.15 minjae)
                 // StringBuilder vs String 비교 
                 // 참고 URL - https://afsdzvcx123.tistory.com/entry/C-%ED%99%9C%EC%9A%A9-String-StringBuilder-%EC%84%B1%EB%8A%A5-%EC%B0%A8%EC%9D%B4
                 // StringBuilder sbDirPath = new StringBuilder($"{Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)}");
@@ -2418,11 +2418,11 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
                 fileId = checkInDatas[(int)EnumCheckIn.FILEID];
                 revsnVal = checkInDatas[(int)EnumCheckIn.REVSNVAL];
 
-                // TODO : 웹서버로 업로드 할 파일 전체 경로 구현 (2023.12.04 jbh)
+                // TODO : 웹서버로 업로드 할 파일 전체 경로 구현 (2023.12.04 minjae)
                 // 참고 URL - https://dlgnlfus.tistory.com/129
                 filePath = dirPath + $"\\{fileName}";   // 웹서버로 업로드 할 파일 전체 경로 
 
-                // TODO : 웹서버로 업로드 할 파일 전체 경로에 있는 파일 정보 불러 오도록 구현 (2023.12.05 jbh)
+                // TODO : 웹서버로 업로드 할 파일 전체 경로에 있는 파일 정보 불러 오도록 구현 (2023.12.05 minjae)
                 // 참고 URL   - https://chashtag.tistory.com/37
                 // 참고 2 URL - https://www.delftstack.com/ko/howto/csharp/get-filesize-in-csharp/
                 // 참고 3 URL - https://dlgnlfus.tistory.com/129
@@ -2455,14 +2455,14 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
 
                         var resultCheckInData = await ExplorerRestServer.PostCheckInAsync(InputParamData);   // 컨테이너 체크인 + 파일 웹서버 업로드 
 
-                        // Dictionary 객체 resultCheckInData 특정 키(Key) "fileName", "fileId", "revsnVal"에 속하는 값(Value) 문자열로 변환 (2024.08.26 jbh)
+                        // Dictionary 객체 resultCheckInData 특정 키(Key) "fileName", "fileId", "revsnVal"에 속하는 값(Value) 문자열로 변환 (2024.08.26 minjae)
                         // 참고 URL - https://developer-talk.tistory.com/694
-                        // TODO : 체크인 처리 완료 후 파일명 string 객체 checkInFileName 필요시 사용 예정 (2024.08.26 jbh)
+                        // TODO : 체크인 처리 완료 후 파일명 string 객체 checkInFileName 필요시 사용 예정 (2024.08.26 minjae)
                         // checkInFileName = resultCheckInData[ContainerHelper.fileNm].ToString();
                         checkInFileId = resultCheckInData[ContainerHelper.fileId].ToString();
                         checkInRevsnVal = resultCheckInData[ContainerHelper.revsnVal].ToString();
 
-                        // TODO : 체크인 처리중 화면이 ShowDialog(Modal)가 아니라 Show(Modaless)로 출력되므로 해당 화면 종료시 메서드 "RequestClose" 호출할 때, 메서드 파라미터 "null"로 할당 (2024.01.04 jbh)
+                        // TODO : 체크인 처리중 화면이 ShowDialog(Modal)가 아니라 Show(Modaless)로 출력되므로 해당 화면 종료시 메서드 "RequestClose" 호출할 때, 메서드 파라미터 "null"로 할당 (2024.01.04 minjae)
                         // 참고 URL - https://cosmosproject.tistory.com/563
                         loadingWorkVM.RequestClose(null);   // 체크인 처리 중 화면 종료 
 
@@ -2500,7 +2500,7 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
 
                         // MessageBox.Show("체크인 완료!");
 
-                        // TODO : 아래 주석친 코드 필요시 참고 (2024.10.31 jbh)
+                        // TODO : 아래 주석친 코드 필요시 참고 (2024.10.31 minjae)
                         // TODO : Dictionary 객체 resultTranslateData에 담긴 파일 변환 API 결과 값 중 파일 변환 성공/처리 중일 경우 키 "code"에 매핑된 값으로 할당
                         //        만약 파일 변환 실패했을 경우 키 "status"에 매핑된 값으로 할당 하도록 삼항연산자 사용하여 로직 구현하기 (2024.08.26) 
                         // bool result =  resultTranslateData.TryGetValue(resultTranslateData[EnumTranslateResult.CODE.ToDescription()], out resultTranslateCode))
@@ -2540,7 +2540,7 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
                     // 컨테이너 체크인 + 업로드 실패한 경우
                     else throw new Exception("체크인 오류 발생!\r\n담당자에게 문의하세요.");
 
-                    // TODO : 체크인 완료(+ 컨테이너에 속한 파일 웹서버로 업로드) 후 파일 삭제 기능이 실행될 수 있도록 삭제 할 파일의 상위 폴더 경로 "deleteDirPath"의 루트 디렉토리 값을 내문서 폴더 (Environment.SpecialFolder.MyDocuments)로 설정 (2024.08.30 jbh)
+                    // TODO : 체크인 완료(+ 컨테이너에 속한 파일 웹서버로 업로드) 후 파일 삭제 기능이 실행될 수 있도록 삭제 할 파일의 상위 폴더 경로 "deleteDirPath"의 루트 디렉토리 값을 내문서 폴더 (Environment.SpecialFolder.MyDocuments)로 설정 (2024.08.30 minjae)
                     // 참고 URL - https://learn.microsoft.com/ko-kr/dotnet/api/system.environment.specialfolder?view=net-7.0
                     // 삭제할 파일의 상위 폴더 전체 경로 예시 - "C:\Users\bhjeon\Documents\COBIM\CobimExplorer\bmcb\inc-001-bmcb-t005\bmcb-imbu-func_016-sptl_901-002"
                     // SpecialFolder 시스템 디렉토리(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) 사용
@@ -2553,9 +2553,9 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
                         // MessageBox.Show($"로컬에 존재하는 루트 컨테이너 폴더({deleteContainerId})\r\n다운로드 받은 파일 삭제 진행합니다.");
 
                         // TODO : 체크인 완료 후(+ 파일 웹서버 업로드 완료) 로컬 PC에 다운로드 받은 기존 루트 컨테이너 폴더(deleteContainerId) 및 폴더에 속한 모든 파일 삭제 
-                        // TODO : 폴더(디렉토리) 클래스 "Directory", "DirectoryInfo" 차이점 비교 후 static 클래스 "Directory" 사용 (2024.08.30 jbh)
+                        // TODO : 폴더(디렉토리) 클래스 "Directory", "DirectoryInfo" 차이점 비교 후 static 클래스 "Directory" 사용 (2024.08.30 minjae)
                         // 참고 URL - https://nomad-programmer.tistory.com/207
-                        // TODO : Directory.Delete 메서드의 2번째 파라미터 값 설정 구현 (2024.08.30 jbh)
+                        // TODO : Directory.Delete 메서드의 2번째 파라미터 값 설정 구현 (2024.08.30 minjae)
                         //        deleteDirPath 경로의 폴더(디렉터리), 해당 폴더의 하위 폴더(디렉터리) 및 파일을 제거하려면 true, 제거하지 않으려면 false 설정
                         //        true로 설정하면 해당 폴더의 하위 폴더(디렉터리) 및 파일을 제거할 때, 재귀적으로 (recursive) Directory.Delete 메서드 실행 
                         // 참고 URL - https://learn.microsoft.com/ko-kr/dotnet/api/system.io.directory.delete?view=net-8.0
@@ -2592,15 +2592,15 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
                     //        체크인 비동기 메서드 "CheckInAsync" 호출 -> 컨테이너 리스트 생성 비동기 메서드 "ContainerListCreateAsync" 호출 
                     //        실행 결과 데이터 정보가 변경되어 컨테이너 리스트 화면이 바뀌므로
                     //        컨테이너 리스트 생성 비동기 메서드 "ContainerListCreateAsync" 메서드 파라미터 _ContainerPack에
-                    //        프로퍼티 "SelectedFolderId" 같이 추가해서 전달함. (2024.10.30 jbh) 
+                    //        프로퍼티 "SelectedFolderId" 같이 추가해서 전달함. (2024.10.30 minjae) 
                     // 체크인 요청한 컨테이너 아이디를 가지고 Rest API 6.컨테이너 목록 조회 호출
                     await ContainerListCreateAsync(_ContainerPack);
 
-                    // TODO : 체크인 처리 중 또는 파일 변환 처리 중 화면이 ShowDialog(Modal)가 아니라 Show(Modaless)로 출력되므로 해당 화면 종료시 메서드 "RequestClose" 호출할 때, 메서드 파라미터 "null"로 할당 (2024.01.05 jbh)
+                    // TODO : 체크인 처리 중 또는 파일 변환 처리 중 화면이 ShowDialog(Modal)가 아니라 Show(Modaless)로 출력되므로 해당 화면 종료시 메서드 "RequestClose" 호출할 때, 메서드 파라미터 "null"로 할당 (2024.01.05 minjae)
                     // 참고 URL - https://cosmosproject.tistory.com/563
                     loadingWorkVM.RequestClose(null);   // 체크인 처리 중 또는 파일 변환 처리 중 화면 종료
 
-                    // TODO : 아래 주석친 테스트 코드 필요시 참고 (2024.11.01 jbh)
+                    // TODO : 아래 주석친 테스트 코드 필요시 참고 (2024.11.01 minjae)
                     // if(false == string.IsNullOrWhiteSpace(SelectedFolderId))
                     //     await ContainerListCreateAsync(_ContainerPack);
                     // else throw new Exception("선택(클릭)한 폴더 ID 정보가 존재하지 않습니다.\r\n담당자에게 문의하시기 바랍니다.");
@@ -2613,7 +2613,7 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
 
         #region OpenCheckIn
 
-        // TODO : 체크인 팝업화면 오픈 메서드 "OpenCheckIn" 필요시 사용 예정 (2023.12.04 jbh)
+        // TODO : 체크인 팝업화면 오픈 메서드 "OpenCheckIn" 필요시 사용 예정 (2023.12.04 minjae)
         /// <summary>
         /// 체크인 팝업화면 오픈 
         /// </summary>
@@ -2628,7 +2628,7 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
 
         #region CancelWorkAsync
 
-        // TODO : 메서드 파라미터 "object obj" -> object 배열 "object[] obj"로 변환 및 지역변수 "var parameters" 사용 안하고 리스트 변환 가능한지 테스트 진행 예정 (2023.12.18 jbh)
+        // TODO : 메서드 파라미터 "object obj" -> object 배열 "object[] obj"로 변환 및 지역변수 "var parameters" 사용 안하고 리스트 변환 가능한지 테스트 진행 예정 (2023.12.18 minjae)
         /// <summary>
         /// 컨테이너 작업 취소
         /// 체크아웃 상태의 컨테이너 ID 락 해제 (ReadYn = "Y" -> "N")
@@ -2638,20 +2638,20 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
         {
             var loadingWorkVM = Container.Get<CommonLoadingWorkVM>().SetMessage(CobimHelper.CancelWork_LoadingWork);   // 컨테이너 작업 취소 처리 중 화면 뷰모델 할당 
 
-            // TODO : Context Menu(컨텍스트 메뉴) "작업취소" 클릭시 MultiCommandParameter 데이터(obj)를 object 배열(object[])로 형변환 (2023.12.19 jbh)
+            // TODO : Context Menu(컨텍스트 메뉴) "작업취소" 클릭시 MultiCommandParameter 데이터(obj)를 object 배열(object[])로 형변환 (2023.12.19 minjae)
             // 참고 URL - https://www.melodiouscode.net/passing-multiple-parameters-to-an-icommand-in-wpf
             // var parameters = (object[])obj;
             object[] parameters = (object[])obj;
 
             // TODO : Context Menu(컨텍스트 메뉴) "작업취소" 클릭시 MultiCommandParameter 데이터(obj)를
-            //        (기존) object 배열 "(object[])obj" 형식 -> (변경) string 배열 "string[] cancelWorkDatas" 형식으로 형변환 구현 (2023.12.19 jbh)
+            //        (기존) object 배열 "(object[])obj" 형식 -> (변경) string 배열 "string[] cancelWorkDatas" 형식으로 형변환 구현 (2023.12.19 minjae)
             // 참고 URL - https://afsdzvcx123.tistory.com/entry/C-%EB%AC%B8%EB%B2%95-Object-%ED%98%95%EC%8B%9D-String-%ED%98%95%EC%8B%9D%EC%9C%BC%EB%A1%9C-%ED%98%95%EB%B3%80%ED%99%98Casting-%ED%95%98%EB%8A%94-%EB%B0%A9%EB%B2%95
             string[] cancelWorkDatas = Array.ConvertAll(parameters, param => (param ?? string.Empty).ToString());
             // var cancelWorkDatas = parameters.ToList();   // parameters를 리스트로 변환할 때 사용하는 리스트 객체 "cancelWorkDatas"
 
             string fileName = string.Empty;                      // 컨테이너 작업 취소 처리할 컨테이너에 속한 파일명
 
-            // TODO : C# 문자열 보간 기능 사용해서 삭제 처리 할 파일 + 상위 디렉토리(폴더) 경로 문자열로 변환 (2023.12.20 jbh)
+            // TODO : C# 문자열 보간 기능 사용해서 삭제 처리 할 파일 + 상위 디렉토리(폴더) 경로 문자열로 변환 (2023.12.20 minjae)
             // 참고 URL - https://gaeunhan.tistory.com/61
             string dirPath = string.Empty;                       // 컨테이너 작업 취소 처리할 파일의 상위 디렉토리(폴더) 경로
             string filePath = string.Empty;                      // 컨테이너 작업 취소 처리할 파일 전체 경로 
@@ -2670,12 +2670,12 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
 
                 IsCancelWorking = true;   // 컨테이너 작업 취소 처리 중 시작 
 
-                // TODO : 다른 PC에서도 루트 컨테이너 폴더 및 폴더에 속한 모든 파일 삭제 기능이 실행될 수 있도록 업로드 할 파일 전체 경로 "dirPath"의 루트 디렉토리 값을 내문서 폴더 (Environment.SpecialFolder.MyDocuments)로 설정 (2023.12.20 jbh)
+                // TODO : 다른 PC에서도 루트 컨테이너 폴더 및 폴더에 속한 모든 파일 삭제 기능이 실행될 수 있도록 업로드 할 파일 전체 경로 "dirPath"의 루트 디렉토리 값을 내문서 폴더 (Environment.SpecialFolder.MyDocuments)로 설정 (2023.12.20 minjae)
                 // 참고 URL - https://learn.microsoft.com/ko-kr/dotnet/api/system.environment.specialfolder?view=net-7.0
                 // 파일 업로드 전체 경로 예시 - "C:\Users\bhjeon\Documents\COBIM\CobimExplorer\bmcb\inc-001-bmcb-t005\bmcb-imbu-func_016-sptl_901-002" - (SpecialFolder 시스템 디렉토리(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)) 사용)
                 // dirPath = $"{Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)}\\COBIM\\{Assembly.GetEntryAssembly().GetName().Name}\\{ContainerPack.projectId}\\{ContainerPack.teamId}\\{ContainerPack.containerId}";
 
-                // TODO : StringBuilder 클래스 객체 sbDirPath 생성 -> string 클래스 객체 dirPath에 문자열 추가 (2024.10.15 jbh)
+                // TODO : StringBuilder 클래스 객체 sbDirPath 생성 -> string 클래스 객체 dirPath에 문자열 추가 (2024.10.15 minjae)
                 // StringBuilder vs String 비교 
                 // 참고 URL - https://afsdzvcx123.tistory.com/entry/C-%ED%99%9C%EC%9A%A9-String-StringBuilder-%EC%84%B1%EB%8A%A5-%EC%B0%A8%EC%9D%B4
                 // StringBuilder sbDirPath = new StringBuilder($"{Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)}");
@@ -2689,7 +2689,7 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
 
                 fileName = cancelWorkDatas[(int)EnumCancelWork.FILENAME];
 
-                // TODO : 컨테이너 작업 취소 처리할 파일 전체 경로 구현 (2023.12.04 jbh)
+                // TODO : 컨테이너 작업 취소 처리할 파일 전체 경로 구현 (2023.12.04 minjae)
                 // 참고 URL - https://dlgnlfus.tistory.com/129
                 filePath = dirPath + $"\\{fileName}";   // 컨테이너 작업 취소 처리할 파일 전체 경로 
 
@@ -2713,17 +2713,17 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
 
                 // TODO : Rest API 17. 컨테이너 작업 취소 Rest API 비동기 메서드 "ExplorerRestServer.PostCancelWorkAsync" 호출시
                 //        출력되는 오류 메시지 "오류 메시지 "{"status":"V000","message":"필수 입력항목이 누락 되었습니다.","error":"com.bim.common.exception.ServiceRuleException"}""
-                //        오류 원인 파악 및 해결 하기 (2024.10.31 jbh)
+                //        오류 원인 파악 및 해결 하기 (2024.10.31 minjae)
                 // 1 단계 : Rest API 17. 컨테이너 작업 취소 호출 
                 var resultData = await ExplorerRestServer.PostCancelWorkAsync(InputParamData);
                 
 
-                // TODO : 컨테이너 작업 취소 결과 확인 로직 오류 발생시 수정 예정 (2023.12.21 jbh)
+                // TODO : 컨테이너 작업 취소 결과 확인 로직 오류 발생시 수정 예정 (2023.12.21 minjae)
                 // 2 단계 : 컨테이너 작업 취소 결과 확인
                 // 조건 1 - resultData 값이 null 이 아님
                 // 조건 2 - resultData[ContainerHelper.workUserId] 값이 null임.
                 // 조건 3 - resultData[ContainerHelper.readYn] 문자열 변환시 'N'과 같아야 함.
-                // TODO : if 조건절에 != null 보다 빠른 is not null 연산자 사용 (2023.12.20 jbh)
+                // TODO : if 조건절에 != null 보다 빠른 is not null 연산자 사용 (2023.12.20 minjae)
                 // 참고 URL - https://husk321.tistory.com/405
                 bool bCancelWork = (resultData is not null)
                                    && (resultData[ContainerHelper.workUserId] is null)
@@ -2744,9 +2744,9 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
                         // MessageBox.Show($"로컬에 존재하는 루트 컨테이너 폴더({deleteContainerId})\r\n다운로드 받은 파일 삭제 진행합니다.");
 
                         // 3 단계 : 컨테이너 작업 취소 완료 후 로컬 PC에 다운로드 받은 기존 루트 컨테이너 폴더(deleteContainerId) 및 폴더에 속한 모든 파일 삭제 
-                        // TODO : 폴더(디렉토리) 클래스 "Directory", "DirectoryInfo" 차이점 비교 후 static 클래스 "Directory" 사용 (2023.12.20 jbh)
+                        // TODO : 폴더(디렉토리) 클래스 "Directory", "DirectoryInfo" 차이점 비교 후 static 클래스 "Directory" 사용 (2023.12.20 minjae)
                         // 참고 URL - https://nomad-programmer.tistory.com/207
-                        // TODO : Directory.Delete 메서드의 2번째 파라미터 값 설정 구현 (2023.12.20 jbh)
+                        // TODO : Directory.Delete 메서드의 2번째 파라미터 값 설정 구현 (2023.12.20 minjae)
                         //        deleteDirPath 경로의 폴더(디렉터리), 해당 폴더의 하위 폴더(디렉터리) 및 파일을 제거하려면 true, 제거하지 않으려면 false 설정
                         //        true로 설정하면 해당 폴더의 하위 폴더(디렉터리) 및 파일을 제거할 때, 재귀적으로 (recursive) Directory.Delete 메서드 실행 
                         // 참고 URL - https://learn.microsoft.com/ko-kr/dotnet/api/system.io.directory.delete?view=net-8.0
@@ -2782,14 +2782,14 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
                     //        컨테이너 작업 취소 비동기 메서드 "CancelWorkAsync" 호출 -> 컨테이너 리스트 생성 비동기 메서드 "ContainerListCreateAsync" 호출 
                     //        실행 결과 데이터 정보가 변경되어 컨테이너 리스트 화면이 바뀌므로
                     //        컨테이너 리스트 생성 비동기 메서드 "ContainerListCreateAsync" 메서드 파라미터 _ContainerPack에
-                    //        프로퍼티 "SelectedFolderId" 같이 추가해서 전달함. (2024.10.30 jbh) 
+                    //        프로퍼티 "SelectedFolderId" 같이 추가해서 전달함. (2024.10.30 minjae) 
                     await ContainerListCreateAsync(_ContainerPack);
 
-                    // TODO : 컨테이너 작업 취소 처리 중 화면이 ShowDialog(Modal)가 아니라 Show(Modaless)로 출력되므로 해당 화면 종료시 메서드 "RequestClose" 호출할 때, 메서드 파라미터 "null"로 할당 (2024.01.04 jbh)
+                    // TODO : 컨테이너 작업 취소 처리 중 화면이 ShowDialog(Modal)가 아니라 Show(Modaless)로 출력되므로 해당 화면 종료시 메서드 "RequestClose" 호출할 때, 메서드 파라미터 "null"로 할당 (2024.01.04 minjae)
                     // 참고 URL - https://cosmosproject.tistory.com/563
                     loadingWorkVM.RequestClose(null);   // 컨테이너 작업 취소 처리 중 화면 종료
 
-                    // TODO : 아래 주석친 코드 필요시 참고 (2024.10.31 jbh)
+                    // TODO : 아래 주석친 코드 필요시 참고 (2024.10.31 minjae)
                     // if(false == string.IsNullOrWhiteSpace(SelectedFolderId))
                     //     await ContainerListCreateAsync(_ContainerPack);
                     // else throw new Exception("선택(클릭)한 폴더 ID 정보가 존재하지 않습니다.\r\n담당자에게 문의하시기 바랍니다.");
@@ -2810,12 +2810,12 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
         {
             var loadingWorkVM = Container.Get<CommonLoadingWorkVM>().SetMessage(CobimHelper.OpenFile_LoadingWork);   // 파일열기 처리 중 화면 뷰모델 할당
 
-            // TODO : Context Menu(컨텍스트 메뉴) "파일열기" 클릭시 MultiCommandParameter 데이터(obj)를 object 배열(object[])로 형변환 (2023.12.05 jbh)
+            // TODO : Context Menu(컨텍스트 메뉴) "파일열기" 클릭시 MultiCommandParameter 데이터(obj)를 object 배열(object[])로 형변환 (2023.12.05 minjae)
             // 참고 URL - https://www.melodiouscode.net/passing-multiple-parameters-to-an-icommand-in-wpf
             var parameters = (object[])obj;
 
             // TODO : Context Menu(컨텍스트 메뉴) "파일열기" 클릭시 MultiCommandParameter 데이터(obj)를
-            //        (기존) object 배열 "(object[])obj" 형식 -> (변경) string 배열 "string[] openFileDatas" 형식으로 형변환 구현 (2023.12.19 jbh)
+            //        (기존) object 배열 "(object[])obj" 형식 -> (변경) string 배열 "string[] openFileDatas" 형식으로 형변환 구현 (2023.12.19 minjae)
             // 참고 URL - https://afsdzvcx123.tistory.com/entry/C-%EB%AC%B8%EB%B2%95-Object-%ED%98%95%EC%8B%9D-String-%ED%98%95%EC%8B%9D%EC%9C%BC%EB%A1%9C-%ED%98%95%EB%B3%80%ED%99%98Casting-%ED%95%98%EB%8A%94-%EB%B0%A9%EB%B2%95
             string[] openFileDatas = Array.ConvertAll(parameters, param => (param ?? string.Empty).ToString());
 
@@ -2823,7 +2823,7 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
 
             string extensionName = string.Empty;                 // 파일열기 처리할 파일 확장자 이름(.rvt, .rft, .rfa, .ifc, .dwg, .dxf 등등...)
 
-            // TODO : C# 문자열 보간 기능 사용해서 파일열기 처리할 파일 + 상위 디렉토리(폴더) 경로 문자열로 변환 (2023.12.20 jbh)
+            // TODO : C# 문자열 보간 기능 사용해서 파일열기 처리할 파일 + 상위 디렉토리(폴더) 경로 문자열로 변환 (2023.12.20 minjae)
             // 참고 URL - https://gaeunhan.tistory.com/61
             string dirPath = string.Empty;                       // 파일열기 처리할 파일의 상위 디렉토리(폴더) 경로
             string filePath = string.Empty;                      // 파일열기 처리할 파일 전체 경로 
@@ -2839,12 +2839,12 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
 
                 IsOpenFileWorking = true;   // 컨테이너에 속한 파일열기 처리 시작
 
-                // TODO : 다른 PC에서도 루트 컨테이너 폴더 및 폴더에 속한 모든 파일 삭제 기능이 실행될 수 있도록 업로드 할 파일 전체 경로 "dirPath"의 루트 디렉토리 값을 내문서 폴더 (Environment.SpecialFolder.MyDocuments)로 설정 (2023.12.20 jbh)
+                // TODO : 다른 PC에서도 루트 컨테이너 폴더 및 폴더에 속한 모든 파일 삭제 기능이 실행될 수 있도록 업로드 할 파일 전체 경로 "dirPath"의 루트 디렉토리 값을 내문서 폴더 (Environment.SpecialFolder.MyDocuments)로 설정 (2023.12.20 minjae)
                 // 참고 URL - https://learn.microsoft.com/ko-kr/dotnet/api/system.environment.specialfolder?view=net-7.0
                 // 파일 업로드 전체 경로 예시 - "C:\Users\bhjeon\Documents\COBIM\CobimExplorer\bmcb\inc-001-bmcb-t005\bmcb-imbu-func_016-sptl_901-002" - (SpecialFolder 시스템 디렉토리(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)) 사용)
                 // dirPath = $"{Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)}\\COBIM\\{Assembly.GetEntryAssembly().GetName().Name}\\{ContainerPack.projectId}\\{ContainerPack.teamId}\\{ContainerPack.containerId}";
 
-                // TODO : StringBuilder 클래스 객체 sbDirPath 생성 -> string 클래스 객체 dirPath에 문자열 추가 (2024.10.15 jbh)
+                // TODO : StringBuilder 클래스 객체 sbDirPath 생성 -> string 클래스 객체 dirPath에 문자열 추가 (2024.10.15 minjae)
                 // StringBuilder vs String 비교 
                 // 참고 URL - https://afsdzvcx123.tistory.com/entry/C-%ED%99%9C%EC%9A%A9-String-StringBuilder-%EC%84%B1%EB%8A%A5-%EC%B0%A8%EC%9D%B4
                 // StringBuilder sbDirPath = new StringBuilder($"{Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)}");
@@ -2858,12 +2858,12 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
 
                 fileName = openFileDatas[(int)EnumOpenFile.FILENAME];
 
-                // TODO : 파일열기 처리할 파일 전체 경로 구현 (2023.12.04 jbh)
+                // TODO : 파일열기 처리할 파일 전체 경로 구현 (2023.12.04 minjae)
                 // 참고 URL - https://dlgnlfus.tistory.com/129
                 filePath = dirPath + $"\\{fileName}";   // 파일열기 처리할 파일 전체 경로 
 
 
-                // TODO : 파일 전체 경로(filePath)에 있는 파일 정보 불러 오도록 구현 (2024.11.22 jbh)
+                // TODO : 파일 전체 경로(filePath)에 있는 파일 정보 불러 오도록 구현 (2024.11.22 minjae)
                 // 참고 URL   - https://chashtag.tistory.com/37
                 // 참고 2 URL - https://dlgnlfus.tistory.com/129
                 if(true == File.Exists(filePath))
@@ -2872,7 +2872,7 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
                         throw new Exception($"파일명 : {fileName}\r\n\r\n해당 문서가 이미 열려있는 상태입니다.");
 
                     // TODO : 메서드 "Path.GetExtension" 사용해서
-                    //        파일열기 처리 하고자 하는 파일의 확장자 이름(.rvt, .rft, .rfa, .ifc 등등...) 문자열로 구하기 (2024.10.21 jbh)
+                    //        파일열기 처리 하고자 하는 파일의 확장자 이름(.rvt, .rft, .rfa, .ifc 등등...) 문자열로 구하기 (2024.10.21 minjae)
                     // 참고 URL - https://learn.microsoft.com/ko-kr/dotnet/api/system.io.path.getextension?view=net-8.0
                     extensionName = Path.GetExtension(filePath);
 
@@ -2887,13 +2887,13 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
 
                     // TODO : 1. 해당 "파일열기" 기능 실행시 중복된 파일이 존재하는 경우 (기존에 다운로드 받은 파일이 존재)
                     //        기존에 다운로드 받은 파일(.확장자)과 새로 다운로드 받은 파일(.확장자) 중에 어떤 파일을 연결 프로그램으로 열기를 진행할지는 "김명환 소장님"과 소통 후 구현 예정 
-                    //        2. 해당 "파일열기" 기능 실행시 Revit 도면(확장자 .rvt)만 파일을 열고 그 외 나머지 파일들은 파일열기 대상 제외 처리 여부 또한 "김명환 소장님"과 소통 후 구현 예정 (2024.09.04 jbh)
+                    //        2. 해당 "파일열기" 기능 실행시 Revit 도면(확장자 .rvt)만 파일을 열고 그 외 나머지 파일들은 파일열기 대상 제외 처리 여부 또한 "김명환 소장님"과 소통 후 구현 예정 (2024.09.04 minjae)
 
                     loadingWorkVM.ShowWindow();   // 파일열기 처리 중 화면 출력
 
                     Log.Information(Logger.GetMethodPath(currentMethod) + $"파일명 - {fileName} 열기 시작!");
 
-                    // TODO : Revit 파일(확장자 - .rvt) 열기 실행시 아래 오류 메시지 출력시 레지스트리 편집기 설정 (기본값) 변경 필수 (2024.11.27 jbh)
+                    // TODO : Revit 파일(확장자 - .rvt) 열기 실행시 아래 오류 메시지 출력시 레지스트리 편집기 설정 (기본값) 변경 필수 (2024.11.27 minjae)
                     //        레지스트리 편집기 실행 -> 편집기 경로 "컴퓨터\HKEY_LOCAL_MACHINE\SOFTWARE\Classes\Revit.Project\shell\open\command" 폴더 이동
                     //        -> (기본값)에 할당할 값 데이터(V): 항목에 할당된 문자열 변경 
                     //        (기존) "C:\Program Files\Autodesk\Revit 2024\Revit.exe" /dde
@@ -2904,7 +2904,7 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
                     //       파일의 Revit 릴리즈 : Autodesk Revit 2025
                     //       현재 Revit 릴리즈 : Autodesk Revit 2024" 
 
-                    // TODO : 메서드 "Process.Start()" 사용하여 파일열기 처리할 파일 전체 경로 정보를 읽어서 해당 파일 확장자에 맞는 응용 프로그램 실행하여 문서(또는 도면) 열기 기능 구현 (2024.11.04 jbh)
+                    // TODO : 메서드 "Process.Start()" 사용하여 파일열기 처리할 파일 전체 경로 정보를 읽어서 해당 파일 확장자에 맞는 응용 프로그램 실행하여 문서(또는 도면) 열기 기능 구현 (2024.11.04 minjae)
                     // 참고 URL - https://learn.microsoft.com/ko-kr/dotnet/api/system.diagnostics.process.start?view=net-8.0
                     // 참고 2 URL - https://afsdzvcx123.tistory.com/entry/C-%EB%AC%B8%EB%B2%95-C-%ED%8F%B4%EB%8D%94-%EC%97%B4%EA%B8%B0-%E2%80%93-Process-Start
                     // 참고 3 URL - https://kojin777.tistory.com/99
@@ -2916,7 +2916,7 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
 
                     Log.Information(Logger.GetMethodPath(currentMethod) + $"파일명 - {fileName} 열기 완료!");
 
-                    // TODO : 아래 주석친 테스트 코드 필요시 참고 (2024.11.04 jbh)
+                    // TODO : 아래 주석친 테스트 코드 필요시 참고 (2024.11.04 minjae)
                     // Process.Start(path + "text.txt");
                     // Process.Start("Revit.exe", path + "text.txt");
 
@@ -2940,7 +2940,7 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
                 // 파일열기 처리 중이 아닌 경우 
                 if(resMsg != CobimHelper.OpenFile_LoadingWork)
                 {
-                    // TODO : 파일열기 처리 중 화면이 ShowDialog(Modal)가 아니라 Show(Modaless)로 출력되므로 해당 화면 종료시 메서드 "RequestClose" 호출할 때, 메서드 파라미터 "null"로 할당 (2024.01.04 jbh)
+                    // TODO : 파일열기 처리 중 화면이 ShowDialog(Modal)가 아니라 Show(Modaless)로 출력되므로 해당 화면 종료시 메서드 "RequestClose" 호출할 때, 메서드 파라미터 "null"로 할당 (2024.01.04 minjae)
                     // 참고 URL - https://cosmosproject.tistory.com/563
                     IsOpenFileWorking = false;          // 파일열기 처리 중 종료
                     loadingWorkVM.RequestClose(null);   // 파일열기 처리 중 화면 종료
@@ -2954,7 +2954,7 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
 
         #region StartCancelWorkAsync
 
-        // TODO : 아래 주석친 비동기 메서드 "StartCancelWorkAsync" 필요시 참고 (2024.09.24 jbh)
+        // TODO : 아래 주석친 비동기 메서드 "StartCancelWorkAsync" 필요시 참고 (2024.09.24 minjae)
         /// <summary>
         /// 컨테이너 작업 취소 시작 
         /// </summary>
@@ -2968,12 +2968,12 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
         //        // 1 단계 : Rest API 17. 컨테이너 작업 취소 호출 
         //        var resultData = await ExplorerRestServer.PostCancelWorkAsync(Client, ContainerPack, LoginView.RequestHeaders);
 
-        //        // TODO : 컨테이너 작업 취소 결과 확인 로직 오류 발생시 수정 예정 (2023.12.21 jbh)
+        //        // TODO : 컨테이너 작업 취소 결과 확인 로직 오류 발생시 수정 예정 (2023.12.21 minjae)
         //        // 2 단계 : 컨테이너 작업 취소 결과 확인
         //        // 조건 1 - resultData 값이 null 이 아님
         //        // 조건 2 - resultData[ContainerHelper.workUserId] 값이 null임.
         //        // 조건 3 - resultData[ContainerHelper.readYn] 문자열 변환시 'N'과 같아야 함.
-        //        // TODO : if 조건절에 != null 보다 빠른 is not null 연산자 사용 (2023.12.20 jbh)
+        //        // TODO : if 조건절에 != null 보다 빠른 is not null 연산자 사용 (2023.12.20 minjae)
         //        // 참고 URL - https://husk321.tistory.com/405
         //        bool bCancelWork = (resultData is not null)
         //                           && (resultData[ContainerHelper.workUserId] is null)
@@ -2986,7 +2986,7 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
         //            // TODO : 탐색기 화면 뷰(ExplorerV.xaml) -> 컨텍스트 메뉴 "작업취소" 클릭시 탐색기 뷰모델(ExplorerVM.cs)
         //            //        컨테이너 작업 취소 비동기 메서드 "CancelWorkAsync" 호출 -> 컨테이너 리스트 생성 비동기 메서드 "ContainerListCreateAsync" 호출 
         //            //        실행 결과 데이터 정보가 변경되어 컨테이너 리스트 화면이 바뀌므로
-        //            //        컨테이너 리스트 생성 비동기 메서드 "ContainerListCreateAsync" 파라미터를 프로퍼티 "SelectedFolderId"로 전달함. (2023.12.20 jbh)
+        //            //        컨테이너 리스트 생성 비동기 메서드 "ContainerListCreateAsync" 파라미터를 프로퍼티 "SelectedFolderId"로 전달함. (2023.12.20 minjae)
         //            if (false == string.IsNullOrWhiteSpace(SelectedFolderId))
         //                await ContainerListCreateAsync(ContainerPack, SelectedFolderId);
         //            else throw new Exception("선택(클릭)한 폴더 ID 정보가 존재하지 않습니다.\r\n담당자에게 문의하시기 바랍니다.");
@@ -2999,9 +2999,9 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
         //                //MessageBox.Show($"로컬에 존재하는 루트 컨테이너 폴더({pCancelWorkContainerId})\r\n다운로드 받은 파일 삭제 진행합니다.");
 
         //                // 4 단계 : 컨테이너 작업 취소 완료 후 로컬 PC에 다운로드 받은 기존 루트 컨테이너 폴더(cancelWorkContainerId) 및 폴더에 속한 모든 파일 삭제 
-        //                // TODO : 폴더(디렉토리) 클래스 "Directory", "DirectoryInfo" 차이점 비교 후 static 클래스 "Directory" 사용 (2023.12.20 jbh)
+        //                // TODO : 폴더(디렉토리) 클래스 "Directory", "DirectoryInfo" 차이점 비교 후 static 클래스 "Directory" 사용 (2023.12.20 minjae)
         //                // 참고 URL - https://nomad-programmer.tistory.com/207
-        //                // TODO : Directory.Delete 메서드의 2번째 파라미터 값 설정 구현 (2023.12.20 jbh)
+        //                // TODO : Directory.Delete 메서드의 2번째 파라미터 값 설정 구현 (2023.12.20 minjae)
         //                //        dirPath 경로의 폴더(디렉터리), 해당 폴더의 하위 폴더(디렉터리) 및 파일을 제거하려면 true, 제거하지 않으려면 false 설정
         //                //        true로 설정하면 해당 폴더의 하위 폴더(디렉터리) 및 파일을 제거할 때, 재귀적으로 (recursive) Directory.Delete 메서드 실행 
         //                // 참고 URL - https://learn.microsoft.com/ko-kr/dotnet/api/system.io.directory.delete?view=net-8.0
@@ -3023,7 +3023,7 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
         //    catch (Exception ex)
         //    {
         //        Log.Error(Logger.GetMethodPath(currentMethod) + Logger.errorMessage + ex.Message);
-        //        // TODO : 오류 발생시 상위 호출자 예외처리 전달 throw 구현 (2024.01.26 jbh)
+        //        // TODO : 오류 발생시 상위 호출자 예외처리 전달 throw 구현 (2024.01.26 minjae)
         //        // 참고 URL - https://devlog.jwgo.kr/2009/11/27/thrownthrowex/
         //        throw;
         //    }
@@ -3036,7 +3036,7 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
 
         #region LockContainer
 
-        // TODO : 컨테이너 잠금(락 - Lock / 비활성화)(ReadYn = "Y") 처리 이벤트 메서드 "OnLockedContainer" 필요시 사용 예정 (2023.12.14 jbh)
+        // TODO : 컨테이너 잠금(락 - Lock / 비활성화)(ReadYn = "Y") 처리 이벤트 메서드 "OnLockedContainer" 필요시 사용 예정 (2023.12.14 minjae)
         // TODO : 오류 메시지 "Stylet.Xaml.ActionNotFoundException: 'Unable to find method OnLockedContainer on target ExplorerVM'" 원인 파악 결과 
         //        탐색기 뷰 (ExplorerV.xaml) 우측 상단 컨테이너 리스트 (ListView)에 구현한 속성 "SelectionChanged"에
         //        메서드 "{s:Action OnLockedContainer}"가 바인딩 되어 있고 해당 이벤트 메서드가 바인딩 되어 정상적으로 실행되려면 
@@ -3069,7 +3069,7 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
 
         #region Sample
 
-        // TODO : 아래 주석친 이벤트 메서드 "OnInitialActivate" 필요시 참고 (2024.10.31 jbh)
+        // TODO : 아래 주석친 이벤트 메서드 "OnInitialActivate" 필요시 참고 (2024.10.31 minjae)
         // protected override void OnInitialActivate()
         // {
         //     base.OnInitialActivate();
@@ -3082,8 +3082,8 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
         //     // await ExplorerListCreateAsync();
         // }
 
-        // TODO : 아래 주석친 이벤트 메서드 "OnActivate" 필요시 참고 (2024.10.31 jbh)
-        // TODO : 이벤트 메서드 "OnActivate" 비동기(async)로 구현 (2023.09.18 jbh)
+        // TODO : 아래 주석친 이벤트 메서드 "OnActivate" 필요시 참고 (2024.10.31 minjae)
+        // TODO : 이벤트 메서드 "OnActivate" 비동기(async)로 구현 (2023.09.18 minjae)
         // 참고 URL - https://vmpo.tistory.com/89
         //protected async override void OnActivate()
         //{
@@ -3103,13 +3103,13 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
         //    //    await ExplorerListCreateAsync();
         //    //}
 
-        //    // TODO : 초기 셋팅 메서드 "InitSetting" 필요시 구현하기 (2023.12.14 jbh)
+        //    // TODO : 초기 셋팅 메서드 "InitSetting" 필요시 구현하기 (2023.12.14 minjae)
         //    // InitSetting();                 // 화면 초기 셋팅  
 
-        //    // TODO : 아래 테스트 코드 필요시 참고 (2024.08.07 jbh)
+        //    // TODO : 아래 테스트 코드 필요시 참고 (2024.08.07 minjae)
         //    // Sender = this;
 
-        //    // TODO : TreeView 데이터 출력 테스트 코드 추후 삭제 예정 (2023.07.14 jbh)
+        //    // TODO : TreeView 데이터 출력 테스트 코드 추후 삭제 예정 (2023.07.14 minjae)
         //    // InitTreeViewText();
 
         //    // await ExplorerListCreateAsync();
@@ -3117,13 +3117,13 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
         //    //var vm = Container.Get<ExplorerVM>();
         //    //string VMName = vm.GetViewModelName();
 
-        //    // TODO : 필요시 var msg = new ChangeViewModelMsg(this, VMName); 사용 예정 (2024.08.06 jbh)
+        //    // TODO : 필요시 var msg = new ChangeViewModelMsg(this, VMName); 사용 예정 (2024.08.06 minjae)
         //    // var msg = new ChangeViewModelMsg(this, VMName);
         //    //var msg = new OpenPageMsg((ICbVM)Sender, VMName);
         //    //EventAggregator.PublishOnUIThread(msg);
         //}
 
-        // TODO : 아래 주석친 메서드 "DisplaySetting" 필요시 참고 (2024.10.31 jbh)
+        // TODO : 아래 주석친 메서드 "DisplaySetting" 필요시 참고 (2024.10.31 minjae)
         /// <summary>
         /// 화면셋팅 - 화면에 필요한 컨트롤러(DockPanel, Button 등등...) 출력, 리스트 및 Collection 초기화(Clear)
         /// </summary>
@@ -3142,7 +3142,7 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
         //                // TODO : 탐색기 화면(ExplorerV.xaml) 탭 "기본정보" 제외한 다른 TabItem 선택 후
         //                //        화면 종료 또는 다른 화면 이동 후 해당 탐색기 화면 재실행 시
         //                //        TabControl의 첫 번째 TabItem="기본정보"로 실행(Default로 지정)하도록
-        //                //        SelectedIndex = "0" 추가(2023.11.01 jbh) 
+        //                //        SelectedIndex = "0" 추가(2023.11.01 minjae) 
         //                // 참고 URL - https://stackoverflow.com/questions/20356239/tab-control-selecting-first-tab-by-default 
         //                // 참고 2 URL - https://dotnetpattern.com/wpf-tab-control-selection  
         //                // 화면 재실행시 첫 번째 탭 "기본정보" Default 출력 하도록 인덱스 값 0으로 설정
@@ -3166,7 +3166,7 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
         //                LinkedNodeInfoList.Clear();                               // 연관 컨테이너 정보 리스트 초기화
         //                LinkedNodeInfoDatas.Clear();                              // 연관 컨테이너 정보 Collection 초기화
 
-        //                // TODO : 컨테이너 ID (영어 대문자) 프로퍼티 exp_UpperContainerId 필요시 사용 예정 (2023.10.23 jbh) 
+        //                // TODO : 컨테이너 ID (영어 대문자) 프로퍼티 exp_UpperContainerId 필요시 사용 예정 (2023.10.23 minjae) 
         //                // exp_UpperContainerId  = string.Empty;
         //                // visibleFirstTabItem   = Visibility.Visible;            // 화면 활성화될 때 마다 탭 "기본정보" Default 출력
         //                visibleRequest = Visibility.Collapsed;          // 화면 활성화될 때 마다 버튼 "검토요청" 숨김 처리 
@@ -3193,7 +3193,7 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
         //                // TODO : 탐색기 화면(ExplorerV.xaml) 탭 "기본정보" 제외한 다른 TabItem 선택 후
         //                //        컨테이너 ID 클릭 후 메서드 "ContainerDeatilSearchAsync" 실행시 
         //                //        TabControl의 첫 번째 TabItem="기본정보"로 실행(Default로 지정)하도록
-        //                //        SelectedIndex = "0" 추가(2023.11.01 jbh) 
+        //                //        SelectedIndex = "0" 추가(2023.11.01 minjae) 
         //                // 참고 URL - https://stackoverflow.com/questions/20356239/tab-control-selecting-first-tab-by-default 
         //                // 참고 2 URL - https://dotnetpattern.com/wpf-tab-control-selection  
         //                // 화면 재실행시 첫 번째 탭 "기본정보" Default 출력 하도록 인덱스 값 0으로 설정
@@ -3227,7 +3227,7 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
         //                visibleDetailInfo = Visibility.Collapsed;                  // DockPanel 영역 "컨테이너 정보" 숨김 처리
         //                visibleFileInfo = Visibility.Collapsed;                    // DockPanel 영역 "파일정보" 숨김 처리
         //                break;
-        //            // TODO : 아래 case 문 "case CobimHelper.TypeOfLinkedNodeInfoCreate:" 필요시 사용 예정 (2023.12.26 jbh) 
+        //            // TODO : 아래 case 문 "case CobimHelper.TypeOfLinkedNodeInfoCreate:" 필요시 사용 예정 (2023.12.26 minjae) 
         //            //case CobimHelper.TypeOfLinkedNodeInfoCreate:
         //            //    // 메서드 "LinkedNodeInfoCreate" 사용되는 리스트, Collection 초기화
         //            //    LinkedNodeInfoList.Clear();                               // 연관 컨테이너 정보 리스트 초기화
@@ -3237,7 +3237,7 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
         //                break;
         //        }
 
-        //        // TODO : 아래 테스트 코드 필요시 참고 (2023.11.01 jbh)
+        //        // TODO : 아래 테스트 코드 필요시 참고 (2023.11.01 minjae)
         //        //if (!pIsVisibie)
         //        //{
         //        //    // InitSetting();              // 화면 초기 셋팅  
@@ -3245,7 +3245,7 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
         //        //    // TODO : 탐색기 화면(ExplorerV.xaml) 탭 "기본정보" 제외한 다른 TabItem 선택 후
         //        //    //        화면 종료 또는 다른 화면 이동 후 해당 탐색기 화면 재실행 시
         //        //    //        TabControl의 첫 번째 TabItem="기본정보"로 실행(Default로 지정)하도록
-        //        //    //        SelectedIndex = "0" 추가(2023.11.01 jbh) 
+        //        //    //        SelectedIndex = "0" 추가(2023.11.01 minjae) 
         //        //    // 참고 URL - https://stackoverflow.com/questions/20356239/tab-control-selecting-first-tab-by-default 
         //        //    // 참고 2 URL - https://dotnetpattern.com/wpf-tab-control-selection  
         //        //    // 화면 재실행시 첫 번째 탭 "기본정보" Default 출력 하도록 인덱스 값 0으로 설정
@@ -3271,7 +3271,7 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
         //        //    LinkedNodeInfoList.Clear();          // 연관 컨테이너 정보 리스트 초기화
         //        //    LinkedNodeInfoDatas.Clear();         // 연관 컨테이너 정보 Collection 초기화
 
-        //        //    // TODO : 컨테이너 ID (영어 대문자) 프로퍼티 exp_UpperContainerId 필요시 사용 예정 (2023.10.23 jbh) 
+        //        //    // TODO : 컨테이너 ID (영어 대문자) 프로퍼티 exp_UpperContainerId 필요시 사용 예정 (2023.10.23 minjae) 
         //        //    // exp_UpperContainerId = string.Empty;
         //        //    // visibleFirstTabItem = Visibility.Visible;              // 화면 활성화될 때 마다 탭 "기본정보" Default 출력
         //        //    visibleRequest        = Visibility.Collapsed;            // 화면 활성화될 때 마다 버튼 "검토요청" 숨김 처리 
@@ -3293,7 +3293,7 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
         //        //    // TODO : 탐색기 화면(ExplorerV.xaml) 탭 "기본정보" 제외한 다른 TabItem 선택 후
         //        //    //        컨테이너 ID 클릭 후 메서드 "DetailSearchAsync" 실행시 
         //        //    //        TabControl의 첫 번째 TabItem="기본정보"로 실행(Default로 지정)하도록
-        //        //    //        SelectedIndex = "0" 추가(2023.11.01 jbh) 
+        //        //    //        SelectedIndex = "0" 추가(2023.11.01 minjae) 
         //        //    // 참고 URL - https://stackoverflow.com/questions/20356239/tab-control-selecting-first-tab-by-default 
         //        //    // 참고 2 URL - https://dotnetpattern.com/wpf-tab-control-selection  
         //        //    // 화면 재실행시 첫 번째 탭 "기본정보" Default 출력 하도록 인덱스 값 0으로 설정
@@ -3308,13 +3308,13 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
         //    catch(Exception ex)
         //    {
         //        Log.Error(Logger.GetMethodPath(currentMethod) + Logger.errorMessage + ex.Message);
-        //        // TODO : 오류 발생시 상위 호출자 예외처리 전달 throw 구현 (2023.12.20 jbh)
+        //        // TODO : 오류 발생시 상위 호출자 예외처리 전달 throw 구현 (2023.12.20 minjae)
         //        // 참고 URL - https://devlog.jwgo.kr/2009/11/27/thrownthrowex/
         //        throw;
         //    }
         //}
 
-        // TODO : 아래 주석친 비동기 메서드 "ExplorerListCreateAsync" 필요시 참고 (2024.10.30 jbh)
+        // TODO : 아래 주석친 비동기 메서드 "ExplorerListCreateAsync" 필요시 참고 (2024.10.30 minjae)
         /// <summary>
         /// 프로젝트 - 팀 - 폴더 - 서브폴더 리스트 생성 및 초기화 / 파일 메타 데이터 Collection 초기화 
         /// 메서드 파라미터 List<ITreeNode> pSubFolderFileList 추가 여부 확인 
@@ -3338,7 +3338,7 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
         //    try
         //    {
         //        // TODO : ProjectHelper.cs -> ProjectPack 클래스 프로퍼티 "ProjectPack" 구현 및
-        //        //        테스트 프로젝트 아이디(testProjectId), 테스트 팀 아이디(testTeamId) 값 할당 추후 필요시 수정 예정 (2023.09.04 jbh)     
+        //        //        테스트 프로젝트 아이디(testProjectId), 테스트 팀 아이디(testTeamId) 값 할당 추후 필요시 수정 예정 (2023.09.04 minjae)     
         //        //ProjectPack = new ProjectPack
         //        //{
         //        //    projectId = testProjectId,
@@ -3359,7 +3359,7 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
         //            DisplaySetting(CobimHelper.TypeOfExplorerListCreateAsync);
 
         //            var projectDic = data[ProjectHelper.projectEntity].ToDictionary();        // 프로젝트 메타 데이터 Dictionary
-        //            // Dictionary 객체 projectDic 특정 키(Key) "projectId"에 속하는 값(Value) 문자열로 변환 (2023.09.11 jbh)
+        //            // Dictionary 객체 projectDic 특정 키(Key) "projectId"에 속하는 값(Value) 문자열로 변환 (2023.09.11 minjae)
         //            // 참고 URL - https://developer-talk.tistory.com/694
         //            projectId = projectDic[ProjectHelper.projectId].ToString();          // 해당 프로젝트 아이디 
         //            projectName = projectDic[ProjectHelper.projectName].ToString();        // 해당 프로젝트 이름 
@@ -3380,18 +3380,18 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
 
         //            if ((int)EnumFolder.NONE == folderList.Count) continue;   // 폴더 목록 리스트 객체 folderList 에 데이터가 없는 경우((int)EnumFolder.NONE) 폴더가 없으므로 continue 처리 
 
-        //            // TODO : Linq Where 확장메서드에 == null 보다 빠른 is null 연산자 사용 (2023.11.24 jbh)
+        //            // TODO : Linq Where 확장메서드에 == null 보다 빠른 is null 연산자 사용 (2023.11.24 minjae)
         //            // 참고 URL - https://husk321.tistory.com/405
         //            // 프로젝트 - 팀 하위에 속하는 루트 폴더 리스트 데이터 추출
         //            var rootFolderList = folderList.Where(folder => folder[FolderHelper.parentFolderId] is null).Select(folder => new FolderView
         //            {
         //                FolderDataInfo = folder,
-        //                // TODO : 개체 이니셜라이저 사용해서 폴더 목록 리스트 객체 FolderItems 생성시 객체 값(folder) 할당 (2023.11.23 jbh)
+        //                // TODO : 개체 이니셜라이저 사용해서 폴더 목록 리스트 객체 FolderItems 생성시 객체 값(folder) 할당 (2023.11.23 minjae)
         //                // 참고 URL - https://hyokye0ng.tistory.com/86
         //                FolderItems = new List<Dictionary<string, object>> { folder },
-        //                // TODO : == null 보다 빠른 is null 연산자 사용 (2023.11.24 jbh)
+        //                // TODO : == null 보다 빠른 is null 연산자 사용 (2023.11.24 minjae)
         //                // 참고 URL - https://husk321.tistory.com/405
-        //                // TODO : NULL 예외처리 연산자 ?. 사용시 오류 발생으로 인하여 NULL 예외처리 삼항 연산자 사용하는 로직으로 수정 (2023.09.11 jbh)
+        //                // TODO : NULL 예외처리 연산자 ?. 사용시 오류 발생으로 인하여 NULL 예외처리 삼항 연산자 사용하는 로직으로 수정 (2023.09.11 minjae)
         //                // 참고 URL - https://jellyho.com/blog/54/
         //                exp_ParentFolderId = (folder[FolderHelper.parentFolderId] is null) ? (string.Empty) : (folder[FolderHelper.parentFolderId].ToString()),
         //                exp_FolderGroupId = folder[FolderHelper.folderGroupId].ToString(),
@@ -3400,7 +3400,7 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
         //                exp_TeamId = teamId,
         //                exp_FolderId = folder[FolderHelper.folderId].ToString(),
         //                exp_TreeName = folder[FolderHelper.folderName].ToString(),
-        //                // TODO : 파일 리스트 추가 작업시 ChildNodes 사용 예정 (2023.09.18 jbh)
+        //                // TODO : 파일 리스트 추가 작업시 ChildNodes 사용 예정 (2023.09.18 minjae)
         //                // ChildNodes = subNodes
         //            });
 
@@ -3417,7 +3417,7 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
         //            }
 
         //            // 프로젝트 하위 디렉토리 (팀) 존재하지 않을 경우 새로 생성
-        //            // TODO : bool 변수 "hasTeamInfo" 구현 (2023.09.18 jbh)
+        //            // TODO : bool 변수 "hasTeamInfo" 구현 (2023.09.18 minjae)
         //            // 참고 URL - https://frogand.tistory.com/211
         //            bool hasTeamInfo = false == string.IsNullOrWhiteSpace(teamProjectId)
         //                               && false == string.IsNullOrWhiteSpace(teamId)
@@ -3430,15 +3430,15 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
         //                var teamInfo = new TeamView()
         //                {
         //                    TeamDataInfo = teamDic,
-        //                    // TODO : 개체 이니셜라이저 사용해서 팀 목록 리스트 객체 TeamItems 생성시 객체 값(teamDic) 할당 (2023.11.23 jbh)
+        //                    // TODO : 개체 이니셜라이저 사용해서 팀 목록 리스트 객체 TeamItems 생성시 객체 값(teamDic) 할당 (2023.11.23 minjae)
         //                    // 참고 URL - https://hyokye0ng.tistory.com/86
-        //                    // TODO : TeamItems값이 NULL인 원인 파악 후 해결하기(2023.09.11 jbh) 
+        //                    // TODO : TeamItems값이 NULL인 원인 파악 후 해결하기(2023.09.11 minjae) 
         //                    // TeamItems = teamArray.Where(key => key["teamId"].Equals(teamIdValue)).Select(x => JsonSerializer.Deserialize<Dictionary<string, object>>(x)).ToList(),
         //                    TeamItems = new List<Dictionary<string, object>> { teamDic },
-        //                    // TODO : 팀에 소속된 사용자 리스트 JSON 데이터 인재 INC 로부터 REST API 공유 받으면 구현 진행 예정 (2023.09.12 jbh)
+        //                    // TODO : 팀에 소속된 사용자 리스트 JSON 데이터 인재 INC 로부터 REST API 공유 받으면 구현 진행 예정 (2023.09.12 minjae)
         //                    // TeamUserList = new List<Dictionary<string, object>> { teamUserDic },
         //                    exp_TeamId = teamId,
-        //                    // TODO : 프로퍼티 "exp_TeamName" 필요시 사용 예정(2023.10.23 jbh)
+        //                    // TODO : 프로퍼티 "exp_TeamName" 필요시 사용 예정(2023.10.23 minjae)
         //                    // exp_TeamName = teamName,   // 화면 우측 상단 팀 이름 출력할 때 사용할 바인딩 객체 "exp_TeamName"
         //                    exp_TreeName = teamName,
         //                    // TestChildNodes = pFolderList
@@ -3453,7 +3453,7 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
         //            }
 
         //            // 루트 디렉토리 (프로젝트) 존재하지 않을 경우 새로 생성
-        //            // TODO : bool 변수 "hasProjectInfo" 구현 (2023.09.18 jbh)
+        //            // TODO : bool 변수 "hasProjectInfo" 구현 (2023.09.18 minjae)
         //            // 참고 URL - https://frogand.tistory.com/211
         //            bool hasProjectInfo = false == string.IsNullOrWhiteSpace(projectId)
         //                                  && true == projectId.Equals(teamProjectId)
@@ -3464,9 +3464,9 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
         //                var projectInfo = new ProjectView()
         //                {
         //                    ProjectDataInfo = projectDic,
-        //                    // TODO : 개체 이니셜라이저 사용해서 프로젝트 목록 리스트 객체 ProjectItems 생성시 객체 값(projectDic) 할당 (2023.11.23 jbh)
+        //                    // TODO : 개체 이니셜라이저 사용해서 프로젝트 목록 리스트 객체 ProjectItems 생성시 객체 값(projectDic) 할당 (2023.11.23 minjae)
         //                    // 참고 URL - https://hyokye0ng.tistory.com/86
-        //                    // TODO : ProjectItems값이 NULL인 원인 파악 후 해결하기(2023.09.11 jbh)
+        //                    // TODO : ProjectItems값이 NULL인 원인 파악 후 해결하기(2023.09.11 minjae)
         //                    ProjectItems = new List<Dictionary<string, object>> { projectDic },
         //                    exp_ProjectId = projectId,
 
@@ -3485,7 +3485,7 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
         //    catch(Exception ex)
         //    {
         //        Log.Error(Logger.GetMethodPath(currentMethod) + Logger.errorMessage + ex.Message);
-        //        // TODO : 비동기 메서드 "ExplorerListCreateAsync" 실행시 발견한 오류 메시지 "'<' is an invalid start of a value. LineNumber: 0 | BytePositionInLine: 0." 오류 원인 파악하기 (2023.11.27 jbh)
+        //        // TODO : 비동기 메서드 "ExplorerListCreateAsync" 실행시 발견한 오류 메시지 "'<' is an invalid start of a value. LineNumber: 0 | BytePositionInLine: 0." 오류 원인 파악하기 (2023.11.27 minjae)
         //        // 참고 URL - https://stackoverflow.com/questions/61487289/exception-is-an-invalid-start-of-a-value
         //        MessageBox.Show(ex.Message, CobimHelper.ErrorTitle);
         //    }
@@ -3493,26 +3493,26 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
         //}
 
 
-        // TODO : 필요시 아래 주석친 컨테이너(파일 포함) 목록 조회 비동기 메서드 "ContainerSearchAsync" 참고 (2024.10.30 jbh)
-        // TODO : 메서드 파라미터 "object obj" -> object 배열 "object[] obj"로 변환 및 지역변수 "var parameters" 사용 안하고 리스트 변환 가능한지 테스트 진행 예정 (2023.12.18 jbh)
-        // TODO : 메서드 파라미터 "object obj" -> object 배열 "object[] obj"로 변환 및 지역변수 "var parameters" 사용 안하고 리스트 변환 가능한지 테스트 진행 예정 (2023.12.18 jbh)
+        // TODO : 필요시 아래 주석친 컨테이너(파일 포함) 목록 조회 비동기 메서드 "ContainerSearchAsync" 참고 (2024.10.30 minjae)
+        // TODO : 메서드 파라미터 "object obj" -> object 배열 "object[] obj"로 변환 및 지역변수 "var parameters" 사용 안하고 리스트 변환 가능한지 테스트 진행 예정 (2023.12.18 minjae)
+        // TODO : 메서드 파라미터 "object obj" -> object 배열 "object[] obj"로 변환 및 지역변수 "var parameters" 사용 안하고 리스트 변환 가능한지 테스트 진행 예정 (2023.12.18 minjae)
         /// <summary>
         /// 컨테이너(파일 포함) 목록 조회
         /// </summary>
         //private async Task ContainerSearchAsync(object obj)
         //{
-        //    // TODO : 아래 주석친 소스 코드 3줄(parameters, containerDatas, containerDataDic) 필요 없을 시 삭제 예정 (2023.12.05 jbh)
-        //    // TODO : Object 배열 객체 obj 리스트로 변환 (2023.09.19 jbh)
+        //    // TODO : 아래 주석친 소스 코드 3줄(parameters, containerDatas, containerDataDic) 필요 없을 시 삭제 예정 (2023.12.05 minjae)
+        //    // TODO : Object 배열 객체 obj 리스트로 변환 (2023.09.19 minjae)
         //    // 참고 URL - https://nonstop-antoine.tistory.com/36
         //    // var parameters        = obj as IEnumerable;                 // 폴더 버튼으로 부터 받은 파일 정보(CommandParameter "exp_ProjectId", "exp_TeamId", "exp_TreeFolderId") (Object Array -> IEnumerable 형변환) 
         //    // var containerDatas    = new List<string>();                 // parameters 를 리스트로 변환할 때 사용하는 리스트 객체 "containerDatas"
         //    // var containerDataDic  = new Dictionary<string, string>();   // 컨테이너 데이터를 담는 Dictionary 객체 containerDataDic 생성
 
-        //    // TODO : 폴더 버튼 클릭 시 MultiCommandParameter 데이터(obj)를 object 배열(object[])로 형변환 (2023.12.05 jbh)
+        //    // TODO : 폴더 버튼 클릭 시 MultiCommandParameter 데이터(obj)를 object 배열(object[])로 형변환 (2023.12.05 minjae)
         //    // 참고 URL - https://www.melodiouscode.net/passing-multiple-parameters-to-an-icommand-in-wpf
         //    var parameters = (object[])obj;                                // 폴더 버튼으로 부터 받은 파일 정보(CommandParameter "exp_ProjectId", "exp_TeamId", "exp_TreeFolderId") (Object Array -> IEnumerable 형변환) 
 
-        //    // TODO : (기존) object 배열 "(object[])obj" 형식 -> (변경) string 배열 "string[] containerDatas" 형식으로 형변환 구현 (2023.12.19 jbh)
+        //    // TODO : (기존) object 배열 "(object[])obj" 형식 -> (변경) string 배열 "string[] containerDatas" 형식으로 형변환 구현 (2023.12.19 minjae)
         //    // 참고 URL - https://afsdzvcx123.tistory.com/entry/C-%EB%AC%B8%EB%B2%95-Object-%ED%98%95%EC%8B%9D-String-%ED%98%95%EC%8B%9D%EC%9C%BC%EB%A1%9C-%ED%98%95%EB%B3%80%ED%99%98Casting-%ED%95%98%EB%8A%94-%EB%B0%A9%EB%B2%95
         //    string[] containerDatas = Array.ConvertAll(parameters, param => (param ?? string.Empty).ToString());
         //    // var containerDatas = parameters.ToList();                   // parameters를 리스트로 변환할 때 사용하는 리스트 객체 "containerDatas"
@@ -3526,7 +3526,7 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
         //        //        실행 결과 데이터 정보가 변경되어 컨테이너 리스트 화면이 바뀌므로
         //        //        처음 사용자가 선택(클릭)한 특정 폴더 ID 프로퍼티 "SelectedFolderId" 에 폴더 ID 문자열을 할당해서 
         //        //        컨테이너 리스트 생성 비동기 메서드 "ContainerListCreateAsync"에 메서드 파라미터를
-        //        //        프로퍼티 "SelectedFolderId"로 전달함. (2023.12.13 jbh) 
+        //        //        프로퍼티 "SelectedFolderId"로 전달함. (2023.12.13 minjae) 
         //        // 선택(클릭)한 특정 폴더 ID    
         //        // SelectedFolderId = containerDatas[(int)EnumContainer.FOLDERID].ToString();
         //        SelectedFolderId = containerDatas[(int)EnumContainer.FOLDERID];
@@ -3558,18 +3558,18 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
         //{
         //    // string tokenKey = AppSetting.Default.Login.Token.resultData;       // 로그인 토큰 키 
 
-        //    // TODO : 아래 주석친 소스 코드 3줄(parameters, containerDatas, containerDataDic) 필요 없을 시 삭제 예정 (2023.12.05 jbh)
-        //    // TODO : Object 배열 객체 obj 리스트로 변환 (2023.09.19 jbh)
+        //    // TODO : 아래 주석친 소스 코드 3줄(parameters, containerDatas, containerDataDic) 필요 없을 시 삭제 예정 (2023.12.05 minjae)
+        //    // TODO : Object 배열 객체 obj 리스트로 변환 (2023.09.19 minjae)
         //    // 참고 URL - https://nonstop-antoine.tistory.com/36
         //    // var parameters        = obj as IEnumerable;                             // 폴더 버튼으로 부터 받은 파일 정보(CommandParameter "exp_ProjectId", "exp_TeamId", "exp_TreeFolderId") (Object Array -> IEnumerable 형변환) 
         //    // var containerDatas    = new List<string>();                             // parameters 를 리스트로 변환할 때 사용하는 리스트 객체 "containerDatas"
         //    // var containerDataDic  = new Dictionary<string, string>();               // 컨테이너 데이터를 담는 Dictionary 객체 containerDataDic 생성
 
-        //    // TODO : 폴더 버튼 클릭 시 MultiCommandParameter 데이터(obj)를 object 배열(object[])로 형변환 (2023.12.05 jbh)
+        //    // TODO : 폴더 버튼 클릭 시 MultiCommandParameter 데이터(obj)를 object 배열(object[])로 형변환 (2023.12.05 minjae)
         //    // 참고 URL - https://www.melodiouscode.net/passing-multiple-parameters-to-an-icommand-in-wpf
         //    var parameters = (object[])obj;                                  // 폴더 버튼으로 부터 받은 파일 정보(CommandParameter "exp_ProjectId", "exp_TeamId", "exp_TreeFolderId") (Object Array -> IEnumerable 형변환) 
 
-        //    // TODO : (기존) object 배열 "(object[])obj" 형식 -> (변경) string 배열 "string[] containerDatas" 형식으로 형변환 구현 (2023.12.19 jbh)
+        //    // TODO : (기존) object 배열 "(object[])obj" 형식 -> (변경) string 배열 "string[] containerDatas" 형식으로 형변환 구현 (2023.12.19 minjae)
         //    // 참고 URL - https://afsdzvcx123.tistory.com/entry/C-%EB%AC%B8%EB%B2%95-Object-%ED%98%95%EC%8B%9D-String-%ED%98%95%EC%8B%9D%EC%9C%BC%EB%A1%9C-%ED%98%95%EB%B3%80%ED%99%98Casting-%ED%95%98%EB%8A%94-%EB%B0%A9%EB%B2%95
         //    string[] containerDatas = Array.ConvertAll(parameters, param => (param ?? string.Empty).ToString());
         //    // var containerDatas       = parameters.ToList();                            // parameters를 리스트로 변환할 때 사용하는 리스트 객체 "containerDatas"
@@ -3582,19 +3582,19 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
 
         //    try
         //    {
-        //        // TODO : 화면 셋팅 "ContainerSearchAsync" 필요시 사용 예정 (2023.12.19 jbh) 
+        //        // TODO : 화면 셋팅 "ContainerSearchAsync" 필요시 사용 예정 (2023.12.19 minjae) 
         //        // DisplayType = CobimHelper.TypeOfContainerSearch;
         //        // IsVisible = true;            // 화면에 필요한 컨트롤러 (DockPanel, Button 등등...) 화면에 보이도록 활성화
         //        // DisplaySetting(DisplayType);
 
-        //        // TODO : 아래 주석친 foreach 문 필요 없을 시 삭제 예정 (2023.12.05 jbh)
+        //        // TODO : 아래 주석친 foreach 문 필요 없을 시 삭제 예정 (2023.12.05 minjae)
         //        // containerDatas 안에 존재하는 파일 정보 반복문으로 방문 -> List 객체 containerInfos에 컨테이너 정보 데이터 추가 
         //        // foreach (var data in containerDatas)
         //        // {
         //        //     containerInfos.Add(data.ToString());
         //        // }
 
-        //        // TODO : 아래 주석친 소스코드 3줄 (containerDataDic.Add) 필요 없을시 삭제 예정 (2023.12.05 jbh)
+        //        // TODO : 아래 주석친 소스코드 3줄 (containerDataDic.Add) 필요 없을시 삭제 예정 (2023.12.05 minjae)
         //        //containerDataDic.Add(ProjectHelper.projectId, containerInfos[(int)EnumContainer.PROJECTID]);
         //        //containerDataDic.Add(TeamHelper.teamId,       containerInfos[(int)EnumContainer.TEAMID]);
         //        //containerDataDic.Add(FolderHelper.folderId,   containerInfos[(int)EnumContainer.FOLDERID]);
@@ -3607,22 +3607,22 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
         //        //        실행 결과 데이터 정보가 변경되어 컨테이너 리스트 화면이 바뀌므로
         //        //        처음 사용자가 선택(클릭)한 특정 폴더 ID 프로퍼티 "SelectedFolderId" 에 폴더 ID 문자열을 할당해서 
         //        //        컨테이너 리스트 생성 비동기 메서드 "ContainerListCreateAsync"에 메서드 파라미터를
-        //        //        프로퍼티 "SelectedFolderId"로 전달함. (2023.12.13 jbh) 
+        //        //        프로퍼티 "SelectedFolderId"로 전달함. (2023.12.13 minjae) 
         //        // 선택(클릭)한 특정 폴더 ID
         //        // SelectedFolderId = containerDatas[(int)EnumContainer.FOLDERID].ToString();
         //        SelectedFolderId = containerDatas[(int)EnumContainer.FOLDERID];
 
 
-        //        // TODO : 아래 주석친 ProjectPack 클래스 프로퍼티 "ProjectPack" 구현 소스코드 필요 없을시 삭제 예정 (2023.12.05 jbh)
+        //        // TODO : 아래 주석친 ProjectPack 클래스 프로퍼티 "ProjectPack" 구현 소스코드 필요 없을시 삭제 예정 (2023.12.05 minjae)
         //        // TODO : ProjectHelper.cs -> ProjectPack 클래스 프로퍼티 "ProjectPack" 구현 및
-        //        //        테스트 프로젝트 아이디(testProjectId), 테스트 팀 아이디(testTeamId) 값 할당 추후 필요시 수정 예정 (2023.09.04 jbh)     
+        //        //        테스트 프로젝트 아이디(testProjectId), 테스트 팀 아이디(testTeamId) 값 할당 추후 필요시 수정 예정 (2023.09.04 minjae)     
         //        // ProjectPack = new ProjectPack
         //        // {
         //        //     projectId = containerDataDic[ProjectHelper.projectId],
         //        //     teamId    = containerDataDic[TeamHelper.teamId]
         //        // };
         //        // TODO : ProjectHelper.cs -> ProjectPack 클래스 프로퍼티 "ProjectPack" 구현 및
-        //        //        테스트 프로젝트 아이디(testProjectId), 테스트 팀 아이디(testTeamId) 값 할당 추후 필요시 수정 예정 (2023.12.05 jbh)     
+        //        //        테스트 프로젝트 아이디(testProjectId), 테스트 팀 아이디(testTeamId) 값 할당 추후 필요시 수정 예정 (2023.12.05 minjae)     
         //        // ProjectPack = new ProjectPack
         //        // {
         //        //     projectId = containerDatas[(int)EnumContainer.PROJECTID],
@@ -3653,7 +3653,7 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
         //    return;
         //}
 
-        // TODO : 필요시 아래 주석친 컨테이너 리스트 생성(재조회 - Refresh 기능 포함) 비동기 메서드 "ContainerListCreateAsync" 참고 (2024.10.30 jbh)
+        // TODO : 필요시 아래 주석친 컨테이너 리스트 생성(재조회 - Refresh 기능 포함) 비동기 메서드 "ContainerListCreateAsync" 참고 (2024.10.30 minjae)
         /// <summary>
         /// 컨테이너 리스트 생성(재조회 - Refresh 기능 포함)
         /// </summary>
@@ -3686,7 +3686,7 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
         //        DisplaySetting(DisplayType);
 
         //        // TODO : 오류 메시지 "Id = 3455, Status = WaitingForActivation, Method = "{null}", Result = "{Not yet computed}"
-        //        //        해결하기 위해 비동기 메서드 호출시 키워드 "await" 추가 (2023.12.21 jbh)
+        //        //        해결하기 위해 비동기 메서드 호출시 키워드 "await" 추가 (2023.12.21 minjae)
         //        // 참고 URL - https://www.codeproject.com/Questions/1156449/How-to-call-async-methods-Csharp
         //        containerList = await ExplorerRestServer.GetContainerListAsync(Client, pContainerPack, pSelectedFolderId, LoginView.RequestHeaders);
 
@@ -3716,7 +3716,7 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
 
         //            createUserId = container[ContainerHelper.createUserId].ToString();       // 작성자 
 
-        //            // TODO : 특정 문자 'T'를 포함한 등록일시 문자열 (예) "2023-07-25T10:44:45.988+00:00" 을 DateTime 객체 dt로 변환 (2023.09.21 jbh)
+        //            // TODO : 특정 문자 'T'를 포함한 등록일시 문자열 (예) "2023-07-25T10:44:45.988+00:00" 을 DateTime 객체 dt로 변환 (2023.09.21 minjae)
         //            // 참고 URL - https://stackoverflow.com/questions/14252312/how-to-convert-date-with-t-to-from-string-in-c-sharp
         //            var createDT = container[ContainerHelper.createDateTime].ToString();     // 등록일시
 
@@ -3724,7 +3724,7 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
         //            // 참고 URL - https://afsdzvcx123.tistory.com/entry/C-%EB%AC%B8%EB%B2%95-C-NET%EC%9D%98-DataTime-%EB%AA%A8%EB%B2%94-%EC%82%AC%EB%A1%80
         //            //var dto = DateTimeOffset.Parse(createDT);
 
-        //            // TODO : UTC 협정 세계시로 변환할 필요 없이 대한민국 시간(로컬 타임)으로 변환하기 위해 DateTime 클래스 객체 dt 선언 및 초기화(2023.09.26 jbh)
+        //            // TODO : UTC 협정 세계시로 변환할 필요 없이 대한민국 시간(로컬 타임)으로 변환하기 위해 DateTime 클래스 객체 dt 선언 및 초기화(2023.09.26 minjae)
         //            // DataTime VS DateTimeOffset 비교 문서
         //            // 참고 URL - https://afsdzvcx123.tistory.com/entry/C-%EB%AC%B8%EB%B2%95-C-%EC%97%90%EC%84%9C-IronPython-%EC%9D%B4%EC%9A%A9%ED%95%98%EC%97%AC-Python-%EC%97%B0%EB%8F%99
         //            // 문자열 ->  DateTime 객체 dt로 형변환
@@ -3767,7 +3767,7 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
         //            var containerInfo = new ContainerView()
         //            {
         //                FileDataInfo = container,
-        //                // TODO : 개체 이니셜라이저 사용해서 파일 목록 리스트 객체 FileItems 생성시 객체 값(file) 할당 (2023.11.23 jbh)
+        //                // TODO : 개체 이니셜라이저 사용해서 파일 목록 리스트 객체 FileItems 생성시 객체 값(file) 할당 (2023.11.23 minjae)
         //                // 참고 URL - https://hyokye0ng.tistory.com/86
         //                FileItems = new List<Dictionary<string, object>> { container },
         //                FileTypeCodeInfo = container[ContainerHelper.fileTypeCodeInfo].ToDictionary(),
@@ -3775,17 +3775,17 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
         //                StatusCodeInfo = container[ContainerHelper.statusCodeInfo].ToDictionary(),
         //                CheckCodeInfo = container[ContainerHelper.checkCodeInfo].ToDictionary(),
 
-        //                // TODO : "SharedContainerList" 필요시 구현 예정 (2023.09.22 jbh)
+        //                // TODO : "SharedContainerList" 필요시 구현 예정 (2023.09.22 minjae)
         //                SharedContainerList = new List<Dictionary<string, object>>(),
 
         //                CreateUserIdAndTime = createUserId + " | " + createDateTime,
         //                exp_FileName = container[ContainerHelper.fileNm].ToString(),
         //                exp_ContainerGroup = container[ContainerHelper.containerGroup].ToString(),
-        //                // TODO : 컨테이너 ID(영어 대문자) 프로퍼티 "exp_UpperContainerId" 영어 대문자로 구현(2023.09.22 jbh)
+        //                // TODO : 컨테이너 ID(영어 대문자) 프로퍼티 "exp_UpperContainerId" 영어 대문자로 구현(2023.09.22 minjae)
         //                //        프로퍼티 "exp_UpperContainerId" 용도 - 탐색기 화면 뷰(ExplorerV.xaml) "ListView" 영역에 바인딩할 컬럼 용도
         //                // 참고 URL - https://developer-talk.tistory.com/669
         //                exp_UpperContainerId = container[ContainerHelper.containerId].ToString().ToUpper(),
-        //                // TODO : 컨테이너 ID(영어 소문자) 프로퍼티 "exp_ContainerId" 영어 대문자로 구현(2023.10.12 jbh)
+        //                // TODO : 컨테이너 ID(영어 소문자) 프로퍼티 "exp_ContainerId" 영어 대문자로 구현(2023.10.12 minjae)
         //                //        프로퍼티 "exp_ContainerId" 용도
         //                //        - Rest API 메서드 "ExplorerRestServer.GetContainerDetailListAsync" 파라미터 "ContainerPack"에 속하는
         //                //          컨테이너 아이디(containerId)에 영어 소문자로 넘겨줘야 인재 INC 서버 로부터 응답 결과 JSON 데이터를 정상적으로 넘겨 받을 수 있음. 
@@ -3844,24 +3844,24 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
         //                    break;
         //                // 체크인 요청, 컨테이너 작업 취소 요청
         //                case ContainerHelper.no:
-        //                    // TODO : 컨테이너 작업 중인 사용자 아이디 데이터(workUserId) 구할 때 삼항 연산자 구현 (2023.12.20 jbh)
+        //                    // TODO : 컨테이너 작업 중인 사용자 아이디 데이터(workUserId) 구할 때 삼항 연산자 구현 (2023.12.20 minjae)
         //                    // 참고 URL - https://spaghetti-code.tistory.com/51
-        //                    // TODO : switch - case 문 (체크인 요청 - case ContainerHelper.no:) 필요시 로직 수정 예정(2023.12.19 jbh)
-        //                    // TODO : if 조건절에 == null 보다 빠른 is null 연산자 사용 (2023.12.20 jbh)
+        //                    // TODO : switch - case 문 (체크인 요청 - case ContainerHelper.no:) 필요시 로직 수정 예정(2023.12.19 minjae)
+        //                    // TODO : if 조건절에 == null 보다 빠른 is null 연산자 사용 (2023.12.20 minjae)
         //                    // 참고 URL - https://husk321.tistory.com/405
         //                    //containerInfo.exp_WorkUserId = (container[ContainerHelper.workUserId] is null) ? "체크인" : container[ContainerHelper.workUserId].ToString();
         //                    containerInfo.exp_WorkUserId = (container[ContainerHelper.workUserId] is null) ? string.Empty : container[ContainerHelper.workUserId].ToString();
 
         //                    break;
 
-        //                    // TODO : 변수 "readYn"에 문자열 값이 잘못 들어간 경우가 존재하면 아래 "그 외" default 사항도 추가하기 (2023.12.19 jbh)
+        //                    // TODO : 변수 "readYn"에 문자열 값이 잘못 들어간 경우가 존재하면 아래 "그 외" default 사항도 추가하기 (2023.12.19 minjae)
         //                    // 그 외
         //                    // default:
         //                    //     containerInfo.exp_WorkUserId = string.Empty;
         //                    //     break;
         //            }
 
-        //            // TODO : 아래 테스트 코드 필요시 참고 (2023.12.08 jbh)
+        //            // TODO : 아래 테스트 코드 필요시 참고 (2023.12.08 minjae)
         //            // 체크아웃 요청한 컨테이너 아이디인 경우 
         //            // if (false == string.IsNullOrWhiteSpace(pCheckOutContainerId)
         //            //     && containerInfo.exp_ContainerId.Equals(pCheckOutContainerId))
@@ -3888,10 +3888,10 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
         //            ContainerList.Add(containerInfo);
         //        }
 
-        //        // TODO : 추후 필요시 컨테이너 리스트에 저장된 컨테이너 아이디 오름차순 정렬 구현하기 (2023.10.27 jbh)
+        //        // TODO : 추후 필요시 컨테이너 리스트에 저장된 컨테이너 아이디 오름차순 정렬 구현하기 (2023.10.27 minjae)
         //        // ContainerList.Sort();   
 
-        //        // TODO : 필요시 ContainerDatas.Clear(); 호출 예정 (2024.09.09 jbh)
+        //        // TODO : 필요시 ContainerDatas.Clear(); 호출 예정 (2024.09.09 minjae)
         //        // ContainerDatas.Clear();
         //        ContainerDatas.AddRange(ContainerList.ToArray());
 
@@ -3900,13 +3900,13 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
         //    catch (Exception ex)
         //    {
         //        Log.Error(Logger.GetMethodPath(currentMethod) + Logger.errorMessage + ex.Message);
-        //        // TODO : 오류 발생시 상위 호출자 예외처리 전달 throw 구현 (2023.12.20 jbh)
+        //        // TODO : 오류 발생시 상위 호출자 예외처리 전달 throw 구현 (2023.12.20 minjae)
         //        // 참고 URL - https://devlog.jwgo.kr/2009/11/27/thrownthrowex/
         //        throw;
         //    }
         //}
 
-        // TODO : 필요시 아래 주석친 보기 (특정 컨테이너에 속한 파일 변환해서 웹뷰어로 출력) 비동기 메서드 "ShowWebViewerAsync" 참고 (2024.10.30 jbh)
+        // TODO : 필요시 아래 주석친 보기 (특정 컨테이너에 속한 파일 변환해서 웹뷰어로 출력) 비동기 메서드 "ShowWebViewerAsync" 참고 (2024.10.30 minjae)
         /// <summary>
         /// 보기 (특정 컨테이너에 속한 파일 변환해서 웹뷰어로 출력)
         /// </summary>
@@ -3918,11 +3918,11 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
 
         //    // string webViewerUrl = string.Empty;    // 변환 처리 완료된 파일 웹뷰어 Url 주소 
 
-        //    // TODO : 보기 (파일 정보 자세히 보기) 버튼 클릭시 MultiCommandParameter 데이터(obj)를 object 배열(object[])로 형변환 (2024.08.22 jbh)
+        //    // TODO : 보기 (파일 정보 자세히 보기) 버튼 클릭시 MultiCommandParameter 데이터(obj)를 object 배열(object[])로 형변환 (2024.08.22 minjae)
         //    // 참고 URL - https://www.melodiouscode.net/passing-multiple-parameters-to-an-icommand-in-wpf
         //    var parameters = (object[])obj;                      // 보기 버튼으로 부터 받은 특정 컨테이너 정보(CommandParameter "exp_ProjectId", "exp_TeamId", "exp_ContainerId", "exp_FileIdexp_FileId (Object Array -> IEnumerable 형변환) 
 
-        //    // TODO : (기존) object 배열 "(object[])obj" 형식 -> (변경) string 배열 "string[] showWebViewerDatas" 형식으로 형변환 구현 (2024.08.22 jbh)
+        //    // TODO : (기존) object 배열 "(object[])obj" 형식 -> (변경) string 배열 "string[] showWebViewerDatas" 형식으로 형변환 구현 (2024.08.22 minjae)
         //    // 참고 URL - https://afsdzvcx123.tistory.com/entry/C-%EB%AC%B8%EB%B2%95-Object-%ED%98%95%EC%8B%9D-String-%ED%98%95%EC%8B%9D%EC%9C%BC%EB%A1%9C-%ED%98%95%EB%B3%80%ED%99%98Casting-%ED%95%98%EB%8A%94-%EB%B0%A9%EB%B2%95
         //    string[] showWebViewerDatas = Array.ConvertAll(parameters, param => (param ?? string.Empty).ToString());
 
@@ -3964,7 +3964,7 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
         //        // else Process.Start(new ProcessStartInfo(WebViewerUrn) { UseShellExecute = true });
 
 
-        //        // TODO : 아래 주석친 테스트 코드 필요시 참고 (2024.08.30 jbh)
+        //        // TODO : 아래 주석친 테스트 코드 필요시 참고 (2024.08.30 minjae)
         //        // MessageBox.Show($" 특정 컨테이너에 속한 파일 정보 웹뷰어 URL 주소\r\n{ webViewerInfoDic }");
 
         //        // WebViewerPack = new WebViewerPack(showWebViewerDatas[(int)EnumWebViewer.PROJECTID],
@@ -3982,16 +3982,16 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
         //        //   && false == string.IsNullOrWhiteSpace(resultWebViewerData[EnumWebViewerResult.DATA.ToDescription()].ToString()))
         //        //{
         //        //    // 2. 1번 과정에서 웹서버로 부터 리턴 받은 Http URL 주소 문자열 가지고 웹뷰어 출력하기 
-        //        //    // TODO : 웹뷰어 팝업 화면 출력 구현 (2024.08.23 jbh)
+        //        //    // TODO : 웹뷰어 팝업 화면 출력 구현 (2024.08.23 minjae)
         //        //    // 참고 URL   - https://yongtech.tistory.com/58
         //        //    // 참고 2 URL - https://findfun.tistory.com/485
 
-        //        //    // TODO : 웹뷰어 구글 크롬(chrome.exe)으로 출력 구현 (2024.08.23 jbh)
+        //        //    // TODO : 웹뷰어 구글 크롬(chrome.exe)으로 출력 구현 (2024.08.23 minjae)
         //        //    // 참고 URL - https://www.codeproject.com/Questions/5286855/How-do-I-open-Google-chrome-in-Csharp
         //        //    // Process.Start("chrome.exe", pURL);
         //        //    // Process.Start("firefox.exe", pURL);
 
-        //        //    // TODO : .net FrameWork 말고 .net Core 6.0 이상 버전에서 웹뷰어) 출력 오류시 아래 처럼 구현 (2024.08.23 jbh)
+        //        //    // TODO : .net FrameWork 말고 .net Core 6.0 이상 버전에서 웹뷰어) 출력 오류시 아래 처럼 구현 (2024.08.23 minjae)
         //        //    // 참고 URL - https://endev.tistory.com/m/237
         //        //    Process.Start(new ProcessStartInfo(resultWebViewerData[EnumWebViewerResult.DATA.ToDescription()].ToString()) { UseShellExecute = true });
 
@@ -4018,8 +4018,8 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
         //    return;
         //}
 
-        // TODO : 필요시 아래 주석친 컨테이너 정보 + 파일정보 조회 비동기 메서드 "DetailSearchAsync" 참고 (2024.10.30 jbh)
-        // TODO : 메서드 파라미터 "object obj" -> object 배열 "object[] obj"로 변환 및 지역변수 "var parameters" 사용 안하고 리스트 변환 가능한지 테스트 진행 예정 (2023.12.18 jbh)
+        // TODO : 필요시 아래 주석친 컨테이너 정보 + 파일정보 조회 비동기 메서드 "DetailSearchAsync" 참고 (2024.10.30 minjae)
+        // TODO : 메서드 파라미터 "object obj" -> object 배열 "object[] obj"로 변환 및 지역변수 "var parameters" 사용 안하고 리스트 변환 가능한지 테스트 진행 예정 (2023.12.18 minjae)
         /// <summary>
         /// 컨테이너 정보 + 파일정보 조회
         /// </summary>
@@ -4028,11 +4028,11 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
         //    // string tokenKey         = AppSetting.Default.Login.Token.resultData;  // 로그인 토큰 키 
         //    // string inputTenantId    = LoginHelper.inputTenantId;                  // 테넌트 아이디
 
-        //    // TODO : 컨테이너 정보, 파일정보 리스트 객체 "detailList" 필요시 사용 예정 (2023.10.17 jbh)
+        //    // TODO : 컨테이너 정보, 파일정보 리스트 객체 "detailList" 필요시 사용 예정 (2023.10.17 minjae)
         //    // List<Dictionary<string, object>> detailList = new List<Dictionary<string, object>>();  
         //    List<Dictionary<string, object>> linkedNodeInfoList = new List<Dictionary<string, object>>();     // 연관된 부모 컨테이너 정보 리스트
 
-        //    // TODO : 연관 컨테이너 정보(메타 데이터) 리스트 객체 "linkedNodeMetaDataList" 필요시 사용 예정 (2023.10.17 jbh)
+        //    // TODO : 연관 컨테이너 정보(메타 데이터) 리스트 객체 "linkedNodeMetaDataList" 필요시 사용 예정 (2023.10.17 minjae)
         //    // List<Dictionary<string, object>> linkedNodeMetaDataList = new List<Dictionary<string, object>>();  // 연관 컨테이너 정보(메타 데이터) 리스트
 
         //    Dictionary<string, object> detailDic = null;          // 컨테이너 정보, 파일정보 Dictionary
@@ -4041,7 +4041,7 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
 
         //    Dictionary<string, object> fileTypeCodeInfoDic = null;          // 파일유형 Dictionary
 
-        //    // TODO : 마일스톤 업무 리스트 객체 "taskDetailList" 필요시 사용 예정 (2023.10.17 jbh)
+        //    // TODO : 마일스톤 업무 리스트 객체 "taskDetailList" 필요시 사용 예정 (2023.10.17 minjae)
         //    // List<Dictionary<string, object>> taskDetailList      = null;          // 마일스톤 업무 리스트
         //    Dictionary<string, object> taskDetailDic = null;          // 마일스톤 업무 Dictionary
         //    Dictionary<string, object> milestoneTaskInfoDic = null;          // 특정 마일스톤 업무 정보 Dictionary
@@ -4073,18 +4073,18 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
         //    string fileNm = string.Empty;                                // 파일명
         //    string fileId = string.Empty;                                // 파일 아이디
 
-        //    // TODO : 아래 주석친 소스 코드 3줄(parameters, containerDatas, containerDataDic) 필요 없을 시 삭제 예정 (2023.12.05 jbh)
-        //    // TODO : Object 배열 객체 obj 리스트로 변환 (2023.09.19 jbh)
+        //    // TODO : 아래 주석친 소스 코드 3줄(parameters, containerDatas, containerDataDic) 필요 없을 시 삭제 예정 (2023.12.05 minjae)
+        //    // TODO : Object 배열 객체 obj 리스트로 변환 (2023.09.19 minjae)
         //    // 참고 URL - https://nonstop-antoine.tistory.com/36
         //    // var parameters = obj as IEnumerable;                                    // 컨테이너 아이디 버튼으로 부터 받은 파일 정보(CommandParameter "exp_ProjectId", "exp_TeamId", "exp_ContainerId") (Object Array -> IEnumerable 형변환) 
         //    // var containerDetails = new List<string>();                              // parameters 를 리스트로 변환할 때 사용하는 리스트 객체 "containerDetails"
         //    // var containerDataDic = new Dictionary<string, string>();                // 컨테이너 정보 데이터를 담는 Dictionary 객체 containerDataDic 생성
 
-        //    // 컨테이너 아이디 버튼 클릭시 MultiCommandParameter 데이터(obj)를 object 배열(object[])로 형변환 (2023.12.05 jbh)
+        //    // 컨테이너 아이디 버튼 클릭시 MultiCommandParameter 데이터(obj)를 object 배열(object[])로 형변환 (2023.12.05 minjae)
         //    // 참고 URL - https://www.melodiouscode.net/passing-multiple-parameters-to-an-icommand-in-wpf 
         //    var parameters = (object[])obj;                                   // 컨테이너 아이디 버튼으로 부터 받은 파일 정보(CommandParameter "exp_ProjectId", "exp_TeamId", "exp_ContainerId") (Object Array -> IEnumerable 형변환) 
 
-        //    // TODO : (기존) object 배열 "(object[])obj" 형식 -> (변경) string 배열 "string[] containerDetails" 형식으로 형변환 구현 (2023.12.19 jbh)
+        //    // TODO : (기존) object 배열 "(object[])obj" 형식 -> (변경) string 배열 "string[] containerDetails" 형식으로 형변환 구현 (2023.12.19 minjae)
         //    // 참고 URL - https://afsdzvcx123.tistory.com/entry/C-%EB%AC%B8%EB%B2%95-Object-%ED%98%95%EC%8B%9D-String-%ED%98%95%EC%8B%9D%EC%9C%BC%EB%A1%9C-%ED%98%95%EB%B3%80%ED%99%98Casting-%ED%95%98%EB%8A%94-%EB%B0%A9%EB%B2%95
         //    string[] containerDetails = Array.ConvertAll(parameters, param => (param ?? string.Empty).ToString());
         //    // var containerDetails = parameters.ToList();                             // parameters 를 리스트로 변환할 때 사용하는 리스트 객체 "containerDetails"
@@ -4093,25 +4093,25 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
 
         //    try
         //    {
-        //        // TODO : 리스트 객체 "DetailList", "MetaDataList", "TaskDetailList" 필요시 구현 예정 (2023.10.12 jbh)
+        //        // TODO : 리스트 객체 "DetailList", "MetaDataList", "TaskDetailList" 필요시 구현 예정 (2023.10.12 minjae)
         //        // DetailList.Clear();            // 파일 컨테이너 정보 + 메타데이터 + 파일정보 리스트 초기화
         //        // MetaDataList.Clear();          // 메타데이터 정보 리스트 초기화
         //        // TaskDetailList.Clear();        // 마일스톤 업무 리스트 초기화
 
-        //        // TODO : 아래 주석친 foreach문 필요 없을 시 삭제 예정 (2023.12.05 jbh)
+        //        // TODO : 아래 주석친 foreach문 필요 없을 시 삭제 예정 (2023.12.05 minjae)
         //        // containerDatas 안에 존재하는 파일 정보 반복문으로 방문 -> List 객체 containerDetails에 파일 정보 데이터 추가 
         //        // foreach (var data in containerDatas)
         //        // {
         //        //     containerDetails.Add(data.ToString());
         //        // }
 
-        //        // TODO : 아래 주석친 소스코드 3줄(containerDataDic.Add) 필요 없을 시 삭제 예정 (2023.12.05 jbh)
+        //        // TODO : 아래 주석친 소스코드 3줄(containerDataDic.Add) 필요 없을 시 삭제 예정 (2023.12.05 minjae)
         //        // containerDataDic.Add(ProjectHelper.projectId, containerDetails[(int)EnumContainerDetail.PROJECTID]);
         //        // containerDataDic.Add(TeamHelper.teamId, containerDetails[(int)EnumContainerDetail.TEAMID]);
         //        // containerDataDic.Add(ContainerHelper.containerId, containerDetails[(int)EnumContainerDetail.CONTAINERID]);
 
-        //        // TODO : 아래 소스코드 ContainerPack 클래스 프로퍼티 "ContainerPack" 구현 필요 없을시 삭제 예정 (2023.12.05 jbh)
-        //        // TODO : ContainerHelper.cs -> ContainerPack 클래스 프로퍼티 "ContainerPack" 구현 (2023.10.12 jbh)  
+        //        // TODO : 아래 소스코드 ContainerPack 클래스 프로퍼티 "ContainerPack" 구현 필요 없을시 삭제 예정 (2023.12.05 minjae)
+        //        // TODO : ContainerHelper.cs -> ContainerPack 클래스 프로퍼티 "ContainerPack" 구현 (2023.10.12 minjae)  
         //        //ContainerPack = new ContainerPack
         //        //{
         //        //    projectId = containerDataDic[ProjectHelper.projectId],
@@ -4119,7 +4119,7 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
         //        //    containerId = containerDataDic[ContainerHelper.containerId]
         //        //};
 
-        //        // TODO : ContainerHelper.cs -> ContainerPack 클래스 프로퍼티 "ContainerPack" 구현 (2023.10.12 jbh)  
+        //        // TODO : ContainerHelper.cs -> ContainerPack 클래스 프로퍼티 "ContainerPack" 구현 (2023.10.12 minjae)  
         //        //ContainerPack = new ContainerPack
         //        //{
         //        //    projectId   = containerDetails[(int)EnumContainerDetail.PROJECTID],
@@ -4140,17 +4140,17 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
 
         //        foreach (var infoDic in total_Info_List)
         //        {
-        //            // TODO : Dictionary 객체 "infoDic"에 존재하는 value 값 가져와서 리스트로 구현 (2023.10.18 jbh)
+        //            // TODO : Dictionary 객체 "infoDic"에 존재하는 value 값 가져와서 리스트로 구현 (2023.10.18 minjae)
         //            var containerList = infoDic.SelectMany(container => container.Value).ToList();
 
         //            // 연관 컨테이너의 정보(ContainerHelper.linkedNodeInfo)가 존재하지 않을 경우 continue 처리
         //            if (containerList.Count.Equals((int)EnumLinkedRelation.NONE)) continue;
 
-        //            // TODO : Dictionary<string, List<Dictionary<string, object>>> 클래스 객체 "infoDic"에 존재하는 Key 값 가져와서 리스트로 변환 (2023.10.18 jbh)
+        //            // TODO : Dictionary<string, List<Dictionary<string, object>>> 클래스 객체 "infoDic"에 존재하는 Key 값 가져와서 리스트로 변환 (2023.10.18 minjae)
         //            // 참고 URL - https://www.techiedelight.com/ko/get-list-of-keys-and-values-in-a-dictionary-in-csharp/
         //            var infoTypeList = new List<string>(infoDic.Keys);
 
-        //            // TODO : 리스트 객체 "infoTypeList"의 첫 번째 요소 값을 반환 하도록 메서드 "FirstOfDefault" 사용 (2023.10.18 jbh)
+        //            // TODO : 리스트 객체 "infoTypeList"의 첫 번째 요소 값을 반환 하도록 메서드 "FirstOfDefault" 사용 (2023.10.18 minjae)
         //            // 참고 URL - https://developer-talk.tistory.com/294
         //            var infoType = infoTypeList.FirstOrDefault();
 
@@ -4164,13 +4164,13 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
         //                        // TODO : 아래 프로퍼티 "linkedNodeMetaDataList"에 할당 해야할 메타 데이터 리스트 "MetaDataList"의 경우 
         //                        //        Rest API 메서드 "ExplorerRestServer.GetLinkedNodeInfoListAsync"(Rest API 8. 연관 컨테이너 목록 조회)의 결과값이긴 하나
         //                        //        현재 사용 중인 기능이 아님. 추후에 API 사용하거나 혹은 API 기능이 삭제될 시에 인재 INC측으로 부터
-        //                        //        문서 정리하여 공유 받고 구현 예정 (2023.11.01 jbh)
+        //                        //        문서 정리하여 공유 받고 구현 예정 (2023.11.01 minjae)
         //                        // linkedNodeMetaDataList = MetaDataList;
         //                        break;
 
         //                    // 컨테이너 정보, 파일정보
         //                    case ContainerHelper.detail:
-        //                        // TODO : 추후 필요시 "컨테이너 정보, 파일정보" 객체 containerDetailList 구현 예정 (2023.10.17 jbh)
+        //                        // TODO : 추후 필요시 "컨테이너 정보, 파일정보" 객체 containerDetailList 구현 예정 (2023.10.17 minjae)
         //                        // containerDetailList = infoList;
         //                        detailDic = data;
         //                        createUserId = data[ContainerHelper.createUserId].ToString();                   // 작성자 
@@ -4227,16 +4227,16 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
         //                        taskDetailDic = data;
         //                        // TODO : Rest API 특정 컨테이너 상세조회 실행 되고 결과로 리턴 받은 json 데이터 결과값 중 "milestoneTaskInfo" 사라져서
         //                        //        탭 "미리보기" 항목에 출력되는 참조(연관)컨테이너 리스트가 출력되지 않는 오류 발생
-        //                        //        해당 오류 원인 파악 후 아래 코드 taskDetailDic[ContainerHelper.milestoneTaskInfo] 개선 작업 예정 (2024.08.21 jbh)
+        //                        //        해당 오류 원인 파악 후 아래 코드 taskDetailDic[ContainerHelper.milestoneTaskInfo] 개선 작업 예정 (2024.08.21 minjae)
         //                        milestoneTaskInfoDic = taskDetailDic is null ? null : taskDetailDic[ContainerHelper.milestoneTaskInfo].ToDictionary();
         //                        // taskDetailDic.Where(x => x.Key.Equals("title")).Select(value => value).ToString();
 
 
         //                        taskDetailIdx = milestoneTaskInfoDic is null ? ContainerHelper.taskIdxNone : milestoneTaskInfoDic[ContainerHelper.idx].ToString();
 
-        //                        // TODO : 마일스톤 업무 리스트 객체 "taskDetailList" 필요시 사용 예정 (2023.10.17 jbh)
+        //                        // TODO : 마일스톤 업무 리스트 객체 "taskDetailList" 필요시 사용 예정 (2023.10.17 minjae)
         //                        // taskDetailList = infoDic[key];
-        //                        // 마일스톤 - 업무 유형 데이터 마일스톤 관련 Rest API를 통해 데이터를 받아와야 하는 경우 아래 소스코드 수정 예정(2023.10.17 jbh)
+        //                        // 마일스톤 - 업무 유형 데이터 마일스톤 관련 Rest API를 통해 데이터를 받아와야 하는 경우 아래 소스코드 수정 예정(2023.10.17 minjae)
         //                        // taskDetailType = taskDetailDic == null ? ContainerHelper.taskDetailTypeNone : taskDetailDic.Values.ToString();
         //                        taskDetailType = milestoneTaskInfoDic is null ? ContainerHelper.taskTypeNone : milestoneTaskInfoDic[ContainerHelper.title].ToString();
         //                        // taskDetailType = milestoneTaskInfoDic[ContainerHelper.title].ToString();
@@ -4253,10 +4253,10 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
         //            // TODO : 아래 프로퍼티 "LinkedNodeMetaDataList"에 할당 해야할 메타 데이터 리스트 "linkedNodeMetaDataList"의 경우 
         //            //        Rest API 메서드 "ExplorerRestServer.GetLinkedNodeInfoListAsync"(Rest API 8. 연관 컨테이너 목록 조회)의 결과값이긴 하나
         //            //        현재 사용 중인 기능이 아님. 추후에 API 사용하거나 혹은 API 기능이 삭제될 시에 인재 INC측으로 부터
-        //            //        문서 정리하여 공유 받고 구현 예정 (2023.11.01 jbh)
+        //            //        문서 정리하여 공유 받고 구현 예정 (2023.11.01 minjae)
         //            // LinkedNodeMetaDataList = linkedNodeMetaDataList,
 
-        //            // TODO : 추후 필요시 "컨테이너 정보, 파일정보" 객체 containerDetailList 구현 예정 (2023.10.17 jbh)
+        //            // TODO : 추후 필요시 "컨테이너 정보, 파일정보" 객체 containerDetailList 구현 예정 (2023.10.17 minjae)
         //            // ContainerDetailList = containerDetailList,
         //            DetailDic = detailDic,
 
@@ -4264,7 +4264,7 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
 
         //            MetaDataList = metaDataList,
 
-        //            // TODO : 추후 필요시 "마일스톤 업무" 리스트 객체 "TaskDetailList" 필요시 사용 예정 (2023.10.17 jbh)
+        //            // TODO : 추후 필요시 "마일스톤 업무" 리스트 객체 "TaskDetailList" 필요시 사용 예정 (2023.10.17 minjae)
         //            // TaskDetailList      = taskDetailList,
         //            TaskDetailDic = taskDetailDic,
         //            MilestoneTaskInfoDic = milestoneTaskInfoDic,
@@ -4284,15 +4284,15 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
         //            exp_FileTypeCodeName = fileTypeCodeNm,
 
         //            // 메타 데이터 
-        //            // TODO : 프로퍼티 "exp_SoftMetaName" 필요시 사용 예정 (2023.10.23 jbh)
+        //            // TODO : 프로퍼티 "exp_SoftMetaName" 필요시 사용 예정 (2023.10.23 minjae)
         //            // exp_SoftMetaName    = softMetaNm,
         //            exp_SoftName = softNm,
 
-        //            // TODO : 프로퍼티 "exp_SoftVerMetaName" 필요시 사용 예정 (2023.10.23 jbh)
+        //            // TODO : 프로퍼티 "exp_SoftVerMetaName" 필요시 사용 예정 (2023.10.23 minjae)
         //            // exp_SoftVerMetaName = softVerMetaNm,
         //            exp_SoftVer = softVer,
 
-        //            // TODO : 프로퍼티 "exp_KeywordTagMetaName" 필요시 사용 예정 (2023.10.23 jbh)
+        //            // TODO : 프로퍼티 "exp_KeywordTagMetaName" 필요시 사용 예정 (2023.10.23 minjae)
         //            //exp_KeywordTagMetaName = keywordMetaNm,
         //            exp_KeywordTag = keyword,
 
@@ -4321,13 +4321,13 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
         //        };
 
         //        // TODO : 메서드 "DetailTypeListCreate" 호출시 전달 인자로 detailData 설정할 때
-        //        //        ref(기존 변수 detailData안에 들어있는 값을 메서드 "DetailTypeListCreate" 실행시 수정)로 구현 (2023.10.23 jbh)
+        //        //        ref(기존 변수 detailData안에 들어있는 값을 메서드 "DetailTypeListCreate" 실행시 수정)로 구현 (2023.10.23 minjae)
         //        // 참고 URL - https://yeko90.tistory.com/entry/c-%EA%B8%B0%EC%B4%88-ref-vs-out-%EC%B0%A8%EC%9D%B4
         //        // 참고 2 URL - https://kdsoft-zeros.tistory.com/142
         //        // 참고 3 URL - https://codingcoding.tistory.com/56
         //        DetailTypeListCreate(ref detailData, fileTypeCodeInfoDic, taskDetailDic);   // ComboBox "파일유형", "마일스톤" List 생성 
 
-        //        // TODO : 아래 소스코드 "DisplayType", 메서드 "DisplaySetting" 필요시 수정 예정 (2023.12.26 jbh) 
+        //        // TODO : 아래 소스코드 "DisplayType", 메서드 "DisplaySetting" 필요시 수정 예정 (2023.12.26 minjae) 
         //        DisplayType = CobimHelper.TypeOfDetailSearch;
         //        // IsVisible = true;            // 화면에 필요한 컨트롤러 (DockPanel, Button 등등...) 화면에 보이도록 활성화
         //        DisplaySetting(DisplayType);
@@ -4339,21 +4339,21 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
         //            // TODO : 아래 비동기 메서드 "LinkedNodeInfoCreate"에 전달할 메서드 파라미터 메타 데이터 리스트 "MetaDataList"의 경우 
         //            //        Rest API 메서드 "ExplorerRestServer.GetLinkedNodeInfoListAsync"(Rest API 8. 연관 컨테이너 목록 조회)의 결과값이긴 하나
         //            //        현재 사용 중인 기능이 아님. 추후에 API 사용하거나 혹은 API 기능이 삭제될 시에 인재 INC측으로 부터
-        //            //        문서 정리하여 공유 받고 필요시 메서드 파라미터로 구현 예정 (2023.11.01 jbh)
+        //            //        문서 정리하여 공유 받고 필요시 메서드 파라미터로 구현 예정 (2023.11.01 minjae)
         //            // await LinkedNodeInfoCreate(linkedNodeInfoList, linkedNodeMetaDataList); // 연관 컨테이너 정보 Tree 생성 
         //            await LinkedNodeInfoCreate(linkedNodeInfoList); // 연관 컨테이너 정보 Tree 생성 
         //        }
 
-        //        // TODO : ComboxBox - 마일스톤의 경우 추후 인재 INC 측으로 마일스톤 목록 조회 RestAPI 요청 후 개발 진행 (2023.10.20 jbh)
+        //        // TODO : ComboxBox - 마일스톤의 경우 추후 인재 INC 측으로 마일스톤 목록 조회 RestAPI 요청 후 개발 진행 (2023.10.20 minjae)
         //        // "마일스톤" List 생성 
         //        // var taskDetailList = await ExplorerRestServer.GetTaskDetailListAsync();
         //        // detailData.TaskDetailType = await ExplorerRestServer.GetTaskDetailListAsync();
 
-        //        // TODO : 필요시 DetailList.Clear(); 호출 예정 (2024.09.09 jbh)
+        //        // TODO : 필요시 DetailList.Clear(); 호출 예정 (2024.09.09 minjae)
         //        // DetailList.Clear();
         //        DetailList.Add(detailData);
 
-        //        // TODO : 필요시 DetailDatas.Clear(); 호출 예정 (2024.09.09 jbh)
+        //        // TODO : 필요시 DetailDatas.Clear(); 호출 예정 (2024.09.09 minjae)
         //        // DetailDatas.Clear();
         //        DetailDatas.AddRange(DetailList.ToArray());
 
@@ -4361,7 +4361,7 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
         //        //// IsVisible = true;            // 화면에 필요한 컨트롤러 (DockPanel, Button 등등...) 화면에 보이도록 활성화
         //        //DisplaySetting(DisplayType);
 
-        //        // TODO : 테스트 코드 - 강제로 오류 발생하도록 Exception 생성 코드 필요시 사용 예정 (2023.10.24 jbh)
+        //        // TODO : 테스트 코드 - 강제로 오류 발생하도록 Exception 생성 코드 필요시 사용 예정 (2023.10.24 minjae)
         //        // 참고 URL - https://morm.tistory.com/187
         //        // 참고 2 URL - https://learn.microsoft.com/ko-kr/dotnet/csharp/fundamentals/exceptions/creating-and-throwing-exceptions
         //        // throw new Exception("테스트 오류 코드");
@@ -4373,13 +4373,13 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
         //    {
         //        Log.Error(Logger.GetMethodPath(currentMethod) + Logger.errorMessage + ex.Message);
 
-        //        // TODO : 오류 메시지 로그로 작성하는 다른 방법(e.StackTrace - 오류 발생한 파일 경로 포함) 구현 (2023.10.19 jbh) 
+        //        // TODO : 오류 메시지 로그로 작성하는 다른 방법(e.StackTrace - 오류 발생한 파일 경로 포함) 구현 (2023.10.19 minjae) 
         //        // 참고 URL - https://morm.tistory.com/187
         //        // 참고 2 URL - https://learn.microsoft.com/ko-kr/dotnet/csharp/fundamentals/exceptions/creating-and-throwing-exceptions
         //        // 참고 3 URL - https://learn.microsoft.com/ko-kr/dotnet/api/system.exception.stacktrace?view=net-7.0
         //        Log.Error(ex.StackTrace);
 
-        //        // TODO : 오류 메시지 로그로 작성하는 다른 방법(e.ToString() - 오류 발생한 파일 경로 포함) 구현 (2023.10.19 jbh) 
+        //        // TODO : 오류 메시지 로그로 작성하는 다른 방법(e.ToString() - 오류 발생한 파일 경로 포함) 구현 (2023.10.19 minjae) 
         //        // 참고 URL - https://morm.tistory.com/187
         //        // 참고 2 URL - https://learn.microsoft.com/ko-kr/dotnet/csharp/fundamentals/exceptions/creating-and-throwing-exceptions
         //        // 참고 3 URL - https://learn.microsoft.com/ko-kr/dotnet/api/system.exception.stacktrace?view=net-7.0
@@ -4390,9 +4390,9 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
         //    return;
         //}
 
-        // TODO : 필요시 아래 주석친 ComboBox "파일유형", "마일스톤" List 생성 메서드 "DetailTypeListCreate" 참고 (2024.10.30 jbh)
+        // TODO : 필요시 아래 주석친 ComboBox "파일유형", "마일스톤" List 생성 메서드 "DetailTypeListCreate" 참고 (2024.10.30 minjae)
         // TODO : 메서드 "DetailTypeListCreate" 호출시 메서드 파라미터로 pContainerInfo 설정할 때
-        //        ref(기존 변수 pContainerInfo안에 들어있는 값을 메서드 "DetailTypeListCreate" 실행시 수정)로 구현 (2023.10.23 jbh)
+        //        ref(기존 변수 pContainerInfo안에 들어있는 값을 메서드 "DetailTypeListCreate" 실행시 수정)로 구현 (2023.10.23 minjae)
         // 참고 URL - https://yeko90.tistory.com/entry/c-%EA%B8%B0%EC%B4%88-ref-vs-out-%EC%B0%A8%EC%9D%B4
         // 참고 2 URL - https://kdsoft-zeros.tistory.com/142
         // 참고 3 URL - https://codingcoding.tistory.com/56
@@ -4419,13 +4419,13 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
         //        taskIdx = pContainerInfo.exp_TaskDetailIdx;        // 마일스톤 - 업무 인덱스
         //        taskType = pContainerInfo.exp_TaskDetailType;       // 마일스톤 - 업무 유형
 
-        //        // TODO : pContainerInfo.FileTypeList.Clear(); 소스코드 실행시 FileTypeList 값이 null이므로 null Exception 발생해서 사용 안함.(2023.10.23 jbh)
+        //        // TODO : pContainerInfo.FileTypeList.Clear(); 소스코드 실행시 FileTypeList 값이 null이므로 null Exception 발생해서 사용 안함.(2023.10.23 minjae)
         //        // pContainerInfo.FileTypeList.Clear();    // ComboBox - 파일유형 리스트 초기화
 
-        //        // TODO : ComboBox "파일유형" 리스트 생성 구현 (2023.10.24 jbh)
+        //        // TODO : ComboBox "파일유형" 리스트 생성 구현 (2023.10.24 minjae)
         //        pContainerInfo.FileTypeList = new List<FileTypeView>
         //        {
-        //            // TODO : 개체 이니셜라이저 사용해서 파일 유형 리스트 객체 pContainerInfo.FileTypeList 생성시 객체 값(exp_systemCode, exp_codeName) 할당 (2023.11.23 jbh)
+        //            // TODO : 개체 이니셜라이저 사용해서 파일 유형 리스트 객체 pContainerInfo.FileTypeList 생성시 객체 값(exp_systemCode, exp_codeName) 할당 (2023.11.23 minjae)
         //            // 참고 URL - https://hyokye0ng.tistory.com/86
         //            // new FileTypeView { exp_systemCode = ContainerHelper.systemCodeModel, exp_codeName = ContainerHelper.codeNameModel },
         //            // new FileTypeView { exp_systemCode = ContainerHelper.systemCodeReprt, exp_codeName = ContainerHelper.codeNameReprt }
@@ -4433,10 +4433,10 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
         //            new FileTypeView(ContainerHelper.systemCodeReprt, ContainerHelper.codeNameReprt)
         //        };
 
-        //        // TODO : ComboBox "마일스톤" 리스트 생성 구현 (2023.10.24 jbh)
+        //        // TODO : ComboBox "마일스톤" 리스트 생성 구현 (2023.10.24 minjae)
         //        pContainerInfo.TaskDetailList = new List<TaskDetailView>
         //        {
-        //            // TODO : 개체 이니셜라이저 사용해서 마일스톤 리스트 객체 pContainerInfo.FileTypeList 생성시 객체 값(exp_idx, exp_title) 할당 (2023.11.23 jbh)
+        //            // TODO : 개체 이니셜라이저 사용해서 마일스톤 리스트 객체 pContainerInfo.FileTypeList 생성시 객체 값(exp_idx, exp_title) 할당 (2023.11.23 minjae)
         //            // 참고 URL - https://hyokye0ng.tistory.com/86
         //            //new TaskDetailView { exp_idx = ContainerHelper.taskIdxNone,     exp_title = ContainerHelper.taskTypeNone     },     // 관련업무선택
         //            //new TaskDetailView { exp_idx = ContainerHelper.taskIdxDefine,   exp_title = ContainerHelper.taskTypeDefine   },     // 요구사항정의            
@@ -4451,9 +4451,9 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
         //        };
 
 
-        //        // TODO : 리스트 객체 "pContainerInfo.FileTypeList"의 조건을 만족하는 첫 번째 요소 값을 반환 하도록 메서드 "FirstOfDefault" 사용 (2023.10.18 jbh)
+        //        // TODO : 리스트 객체 "pContainerInfo.FileTypeList"의 조건을 만족하는 첫 번째 요소 값을 반환 하도록 메서드 "FirstOfDefault" 사용 (2023.10.18 minjae)
         //        // 참고 URL - https://developer-talk.tistory.com/294
-        //        // TODO : 리스트 객체 "pContainerInfo.FileTypeList"의 FirstOrDefault 메서드 사용할 때, Contains 메서드 사용해서 조건 1, 조건 2 만족하는 데이터 있는지 찾기 (2023.10.23 jbh) 
+        //        // TODO : 리스트 객체 "pContainerInfo.FileTypeList"의 FirstOrDefault 메서드 사용할 때, Contains 메서드 사용해서 조건 1, 조건 2 만족하는 데이터 있는지 찾기 (2023.10.23 minjae) 
         //        // 참고 URL - https://developer-talk.tistory.com/585 
         //        // FirstOrDefault (where 조건절과 하는 역할 비슷하고 조건을 만족하는 요소가 존재하는지 체크 기능)
         //        // 조건 1 - pContainerInfo.FileTypeList에 할당된 (파일유형 - systemCode - fileType.exp_systemCode) 값과 fileTypeSystemCode에 할당된 (컨테이너 정보 파일유형 - systemCode) 가 동일해야 한다.
@@ -4461,19 +4461,19 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
         //        pContainerInfo.SelectParam.FileTypeCodeInfo = pContainerInfo.FileTypeList.FirstOrDefault(fileType => fileType.exp_systemCode.Contains(fileTypeSystemCode)
         //                                                                                                          && fileType.exp_codeName.Contains(fileTypeCodeNm));
 
-        //        // TODO : 리스트 객체 "pContainerInfo.TaskDetailList"의 조건을 만족하는 첫 번째 요소 값을 반환 하도록 메서드 "FirstOfDefault" 사용 (2023.10.24 jbh)
+        //        // TODO : 리스트 객체 "pContainerInfo.TaskDetailList"의 조건을 만족하는 첫 번째 요소 값을 반환 하도록 메서드 "FirstOfDefault" 사용 (2023.10.24 minjae)
         //        pContainerInfo.SelectParam.TaskDetail = pContainerInfo.TaskDetailList.FirstOrDefault(taskDetailType => taskDetailType.exp_idx.Contains(taskIdx)
         //                                                                                                            && taskDetailType.exp_title.Contains(taskType));
 
-        //        // TODO : ComboxBox - 마일스톤의 경우 추후 인재 INC 측에서 마일스톤 RestAPI 공유 받은 후 개발 진행 (2023.10.23 jbh)
+        //        // TODO : ComboxBox - 마일스톤의 경우 추후 인재 INC 측에서 마일스톤 RestAPI 공유 받은 후 개발 진행 (2023.10.23 minjae)
         //        //pContainerInfo.TaskDetailType = pMilestoneTaskInfoDic.Where().Select()).
         //        //pContainerInfo.TaskDetailType.Title
         //        // var result = await ExplorerRestServer.GetTaskDetailListAsync();
 
 
         //        // TODO : ComboxBox - 파일유형에 바인딩할 BindableCollection에 값 할당 및 서버로부터 받은 값을 화면에 출력 할 수 있도록
-        //        //        메서드 파라미터 "pContainerInfo", "pFileTypeCodeInfoDic" 활용하기 (2023.10.20 jbh)
-        //        //        컨테이너 정보 영역 "마일스톤" ComboBox 구현시 바인딩할 BindableCollection 객체 TaskDetailType 구현(2023.10.20 jbh)
+        //        //        메서드 파라미터 "pContainerInfo", "pFileTypeCodeInfoDic" 활용하기 (2023.10.20 minjae)
+        //        //        컨테이너 정보 영역 "마일스톤" ComboBox 구현시 바인딩할 BindableCollection 객체 TaskDetailType 구현(2023.10.20 minjae)
         //        // pContainerInfo.FileType
         //        // exp_systemCode 
         //        // exp_codeName 
@@ -4482,25 +4482,25 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
         //    {
         //        Log.Error(Logger.GetMethodPath(currentMethod) + Logger.errorMessage + ex.Message);
 
-        //        // TODO : 오류 메시지 로그로 작성하는 다른 방법(e.StackTrace - 오류 발생한 파일 경로 포함) 구현 (2023.10.19 jbh) 
+        //        // TODO : 오류 메시지 로그로 작성하는 다른 방법(e.StackTrace - 오류 발생한 파일 경로 포함) 구현 (2023.10.19 minjae) 
         //        // 참고 URL - https://morm.tistory.com/187
         //        // 참고 2 URL - https://learn.microsoft.com/ko-kr/dotnet/csharp/fundamentals/exceptions/creating-and-throwing-exceptions
         //        // 참고 3 URL - https://learn.microsoft.com/ko-kr/dotnet/api/system.exception.stacktrace?view=net-7.0
         //        Log.Error(ex.StackTrace);
 
-        //        // TODO : 오류 메시지 로그로 작성하는 다른 방법(e.ToString() - 오류 발생한 파일 경로 포함) 구현 (2023.10.19 jbh) 
+        //        // TODO : 오류 메시지 로그로 작성하는 다른 방법(e.ToString() - 오류 발생한 파일 경로 포함) 구현 (2023.10.19 minjae) 
         //        // 참고 URL - https://morm.tistory.com/187
         //        // 참고 2 URL - https://learn.microsoft.com/ko-kr/dotnet/csharp/fundamentals/exceptions/creating-and-throwing-exceptions
         //        // 참고 3 URL - https://learn.microsoft.com/ko-kr/dotnet/api/system.exception.stacktrace?view=net-7.0
         //        Log.Error(ex.ToString());
 
-        //        // TODO : 오류 발생시 상위 호출자 예외처리 전달 throw 구현 (2023.12.20 jbh)
+        //        // TODO : 오류 발생시 상위 호출자 예외처리 전달 throw 구현 (2023.12.20 minjae)
         //        // 참고 URL - https://devlog.jwgo.kr/2009/11/27/thrownthrowex/
         //        throw;
         //    }
         //}
 
-        // TODO : 필요시 연관 컨테이너 정보 Tree 생성 비동기 메서드 "LinkedNodeInfoCreate" 참고 (2024.10.30 jbh)
+        // TODO : 필요시 연관 컨테이너 정보 Tree 생성 비동기 메서드 "LinkedNodeInfoCreate" 참고 (2024.10.30 minjae)
         /// <summary>
         /// 연관 컨테이너 정보 Tree 생성 
         /// </summary>
@@ -4514,12 +4514,12 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
 
         //    try
         //    {
-        //        // TODO : 아래 주석친 코드 "DisplayType", 메서드 "DisplaySetting" 필요시 사용 예정 (2023.12.26 jbh)
+        //        // TODO : 아래 주석친 코드 "DisplayType", 메서드 "DisplaySetting" 필요시 사용 예정 (2023.12.26 minjae)
         //        // DisplayType = CobimHelper.TypeOfLinkedNodeInfoCreate;
         //        // DisplaySetting(DisplayType);
 
 
-        //        // TODO : Linq 확장메서드 Where 조건절에 == null 보다 빠른 is null 연산자 사용 (2023.11.24 jbh)
+        //        // TODO : Linq 확장메서드 Where 조건절에 == null 보다 빠른 is null 연산자 사용 (2023.11.24 minjae)
         //        // 참고 URL - https://husk321.tistory.com/405
         //        // 루트 노드 컨테이너 아이디 찾기
         //        // 부모 컨테이너 아이디(ContainerHelper.targetId)는 존재하지 않고(== null),
@@ -4529,9 +4529,9 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
         //        //                                      .Select(node => node[ContainerHelper.sourceId].ToString())
         //        //                                      .FirstOrDefault();
 
-        //        // TODO : Linq 확장메서드 Where 조건절에 == null 보다 빠른 is null 연산자 사용 (2023.11.24 jbh)
+        //        // TODO : Linq 확장메서드 Where 조건절에 == null 보다 빠른 is null 연산자 사용 (2023.11.24 minjae)
         //        // 참고 URL - https://husk321.tistory.com/405
-        //        // TODO : 추후 using static CobimExplorer.Data.Models.CobimBase.Explorer.ExplorerView; 문을 사용하지 않고도 ExplorerView.LinkedNodeView -> LinkedNodeView만 쓸 수 있도록 구현하기 (2023.11.21 jbh) 
+        //        // TODO : 추후 using static CobimExplorer.Data.Models.CobimBase.Explorer.ExplorerView; 문을 사용하지 않고도 ExplorerView.LinkedNodeView -> LinkedNodeView만 쓸 수 있도록 구현하기 (2023.11.21 minjae) 
         //        // 루트 노드(컨테이너) 찾기
         //        // 부모 컨테이너 아이디(ContainerHelper.targetId)는 존재하지 않고(== null),
         //        // 자식 컨테이너 아이디(또는 자기 자신 컨테이너 ID)(ContainerHelper.sourceId)만 존재하는 경우(is not null)
@@ -4539,12 +4539,12 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
         //                                                                      && node[ContainerHelper.sourceId] is not null)
         //                                                          //.Select(node => new LinkedNodeView
         //                                                          //                    {
-        //                                                          //                        // TreeView 영역 루트 노드 이름 프로퍼티 "exp_TreeName" 영어 대문자로 출력 (2023.11.01 jbh)
+        //                                                          //                        // TreeView 영역 루트 노드 이름 프로퍼티 "exp_TreeName" 영어 대문자로 출력 (2023.11.01 minjae)
         //                                                          //                        exp_TreeName = node[ContainerHelper.sourceId].ToString().ToUpper()
         //                                                          //                        // LinkedNodeInfoDic = linkedNodeInfoList.Where(node => node.Values.Equals())
         //                                                          //                    })
 
-        //                                                          // TreeView 영역 루트 노드 이름 프로퍼티 "exp_TreeName" 영어 대문자로 출력 (2023.11.01 jbh)
+        //                                                          // TreeView 영역 루트 노드 이름 프로퍼티 "exp_TreeName" 영어 대문자로 출력 (2023.11.01 minjae)
         //                                                          .Select(node => new LinkedNodeView(node[ContainerHelper.sourceId].ToString().ToUpper()))
         //                                                          .FirstOrDefault();
 
@@ -4552,9 +4552,9 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
         //        // TODO : 메서드 파라미터 메타 데이터 리스트 "pLinkedNodeMetaDataList"의 경우
         //        //        Rest API 메서드 "ExplorerRestServer.GetLinkedNodeInfoListAsync"(Rest API 8. 연관 컨테이너 목록 조회)의 결과값이긴 하나
         //        //        현재 사용 중인 기능이 아님. 추후에 API 사용하거나 혹은 API 기능이 삭제될 시에 인재 INC측으로 부터
-        //        //        문서 정리하여 공유 받고 필요시 메서드 파라미터로 구현 예정 (2023.11.01 jbh)
+        //        //        문서 정리하여 공유 받고 필요시 메서드 파라미터로 구현 예정 (2023.11.01 minjae)
         //        // TODO : 루트 컨테이너 "rootContainer"에 루트 컨테이너 아이디 "rootContainerId"에 속하는 메타데이터를
-        //        //        메타데이터 리스트 객체 "pLinkedNodeMetaDataList"에서 Linq로 찾아서 "new LinkedNodeView" 프로퍼티 "LinkedNodeInfoDic"에 할당하기 (2023.11.01 jbh)
+        //        //        메타데이터 리스트 객체 "pLinkedNodeMetaDataList"에서 Linq로 찾아서 "new LinkedNodeView" 프로퍼티 "LinkedNodeInfoDic"에 할당하기 (2023.11.01 minjae)
         //        // LinkedNodeView rootContainer = pLinkedNodeMetaDataList.Where(meta => meta[ContainerHelper.containerId].ToString().Equals(rootContainerId))
         //        //                                                       .Select(meta => new LinkedNodeView
         //        //                                                                           {
@@ -4563,7 +4563,7 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
         //        //                                                                           })
         //        //                                                       .FirstOrDefault();
 
-        //        // TODO : if 조건절에 == null 보다 빠른 is null 연산자 사용 (2023.11.24 jbh)
+        //        // TODO : if 조건절에 == null 보다 빠른 is null 연산자 사용 (2023.11.24 minjae)
         //        // 참고 URL - https://husk321.tistory.com/405
         //        // 루트 노드(컨테이너)가 존재하지 않을 경우 리턴 
         //        if (rootContainer is null) return;
@@ -4573,7 +4573,7 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
         //        // TODO : 비동기 메서드 "FillLinkedNodes"에 속하는 메서드 파라미터 메타 데이터 리스트 "pLinkedNodeMetaDataList"의 경우
         //        //        Rest API 메서드 "ExplorerRestServer.GetLinkedNodeInfoListAsync"(Rest API 8. 연관 컨테이너 목록 조회)의 결과값이긴 하나
         //        //        현재 사용 중인 기능이 아님. 추후에 API 사용하거나 혹은 API 기능이 삭제될 시에 인재 INC측으로 부터
-        //        //        문서 정리하여 공유 받고 필요시 메서드 파라미터로 구현 예정 (2023.11.01 jbh)
+        //        //        문서 정리하여 공유 받고 필요시 메서드 파라미터로 구현 예정 (2023.11.01 minjae)
         //        // 루트 컨테이너(노드) 하위 참조관계에 속한 자식 컨테이너(노드) 추가
         //        // await FillLinkedNodes(rootContainer, pLinkedNodeInfoList, pLinkedNodeMetaDataList);
         //        await FillLinkedNodes(rootContainer, pLinkedNodeInfoList);
@@ -4585,23 +4585,23 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
         //    {
         //        Log.Error(Logger.GetMethodPath(currentMethod) + Logger.errorMessage + ex.Message);
 
-        //        // TODO : 오류 메시지 로그로 작성하는 다른 방법(e.StackTrace - 오류 발생한 파일 경로 포함) 구현 (2023.10.27 jbh) 
+        //        // TODO : 오류 메시지 로그로 작성하는 다른 방법(e.StackTrace - 오류 발생한 파일 경로 포함) 구현 (2023.10.27 minjae) 
         //        Log.Error(ex.StackTrace);
 
-        //        // TODO : 오류 메시지 로그로 작성하는 다른 방법(e.ToString() - 오류 발생한 파일 경로 포함) 구현 (2023.10.27 jbh) 
+        //        // TODO : 오류 메시지 로그로 작성하는 다른 방법(e.ToString() - 오류 발생한 파일 경로 포함) 구현 (2023.10.27 minjae) 
         //        Log.Error(ex.ToString());
 
-        //        // TODO : 오류 발생시 상위 호출자 예외처리 전달 throw 구현 (2023.12.20 jbh)
+        //        // TODO : 오류 발생시 상위 호출자 예외처리 전달 throw 구현 (2023.12.20 minjae)
         //        // 참고 URL - https://devlog.jwgo.kr/2009/11/27/thrownthrowex/
         //        throw;
         //    }
         //}
 
-        // TODO : 필요시 루트 컨테이너(노드) 하위 참조관계에 속한 자식 컨테이너(노드) 추가 비동기 메서드 "FillLinkedNodes" 참고 (2024.10.30 jbh)
+        // TODO : 필요시 루트 컨테이너(노드) 하위 참조관계에 속한 자식 컨테이너(노드) 추가 비동기 메서드 "FillLinkedNodes" 참고 (2024.10.30 minjae)
         // TODO : 비동기 메서드 "FillLinkedNodes"에 속하는 메서드 파라미터 메타 데이터 리스트 "pLinkedNodeMetaDataList"의 경우
         //        Rest API 메서드 "ExplorerRestServer.GetLinkedNodeInfoListAsync"(Rest API 8. 연관 컨테이너 목록 조회)의 결과값이긴 하나
         //        현재 사용 중인 기능이 아님. 추후에 API 사용하거나 혹은 API 기능이 삭제될 시에 인재 INC측으로 부터
-        //        문서 정리하여 공유 받고 필요시 메서드 파라미터로 구현 예정 (2023.11.01 jbh)
+        //        문서 정리하여 공유 받고 필요시 메서드 파라미터로 구현 예정 (2023.11.01 minjae)
         /// <summary>
         /// 루트 컨테이너(노드) 하위 참조관계에 속한 자식 컨테이너(노드) 추가
         /// </summary>
@@ -4615,7 +4615,7 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
         //    try
         //    {
         //        // TODO : pLinkedNodeInfoList의 WHERE 조건절 -> TreeView 영역 부모 노드 이름 프로퍼티 " parentContainer.exp_TreeName" 영어 대문자 -> 소문자로 변환(ToLower()) 후
-        //        //        node[ContainerHelper.targetId]?.ToString() 문자열(영어 소문자) 값과 비교하여 같은 값만 추출하기 (2023.11.01 jbh)
+        //        //        node[ContainerHelper.targetId]?.ToString() 문자열(영어 소문자) 값과 비교하여 같은 값만 추출하기 (2023.11.01 minjae)
         //        // 부모 컨테이너(루트 또는 서브)에 하위 참조관계에 속한 자식 컨테이너 데이터 추출 
         //        var childNodes = pLinkedNodeInfoList.Where(node => parentContainer.exp_TreeName.ToLower() == node[ContainerHelper.targetId]?.ToString());
 
@@ -4624,10 +4624,10 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
 
         //        foreach (var childNode in childNodes)
         //        {
-        //            // TODO : TreeView 영역 부모 노드 하위 자식 노드(childNode) 이름 프로퍼티 "exp_TreeName" 영어 대문자로 출력 (2023.11.01 jbh)
+        //            // TODO : TreeView 영역 부모 노드 하위 자식 노드(childNode) 이름 프로퍼티 "exp_TreeName" 영어 대문자로 출력 (2023.11.01 minjae)
         //            subContainerId = childNode[ContainerHelper.sourceId].ToString().ToUpper();
 
-        //            // TODO : 참조 컨테이너 "subContainer"에 참조 컨테이너 아이디 "subContainer"에 속하는 메타데이터를 "new LinkedNodeView" 프로퍼티 "LinkedNodeInfoDic"에 할당하기 (2023.10.30 jbh)
+        //            // TODO : 참조 컨테이너 "subContainer"에 참조 컨테이너 아이디 "subContainer"에 속하는 메타데이터를 "new LinkedNodeView" 프로퍼티 "LinkedNodeInfoDic"에 할당하기 (2023.10.30 minjae)
         //            // 참조관계에 속한 자식 컨테이너(subContainer) 생성 및 아이디 값 할당 
         //            //var subContainer = new LinkedNodeView
         //            //                       {
@@ -4639,7 +4639,7 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
         //            // TODO : 메서드 파라미터 메타 데이터 리스트 "pLinkedNodeMetaDataList"의 경우
         //            //        Rest API 메서드 "ExplorerRestServer.GetLinkedNodeInfoListAsync"(Rest API 8. 연관 컨테이너 목록 조회)의 결과값이긴 하나
         //            //        현재 사용 중인 기능이 아님. 추후에 API 사용하거나 혹은 API 기능이 삭제될 시에 인재 INC측으로 부터
-        //            //        문서 정리하여 공유 받고 필요시 메서드 파라미터로 구현 예정 (2023.11.01 jbh)
+        //            //        문서 정리하여 공유 받고 필요시 메서드 파라미터로 구현 예정 (2023.11.01 minjae)
         //            // var subContainer = pLinkedNodeMetaDataList.Where(meta => meta[ContainerHelper.containerId].ToString().Equals(subContainerId))
         //            //                                           .Select(meta => new LinkedNodeView 
         //            //                                                               { 
@@ -4654,7 +4654,7 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
         //            // TODO : 비동기 메서드 "FillLinkedNodes"에 속하는 파라미터 메타 데이터 리스트 "pLinkedNodeMetaDataList"의 경우
         //            //        Rest API 메서드 "ExplorerRestServer.GetLinkedNodeInfoListAsync"(Rest API 8. 연관 컨테이너 목록 조회)의 결과값이긴 하나
         //            //        현재 사용 중인 기능이 아님. 추후에 API 사용하거나 혹은 API 기능이 삭제될 시에 인재 INC측으로 부터
-        //            //        문서 정리하여 공유 받고 필요시 메서드 파라미터로 구현 예정 (2023.11.01 jbh)
+        //            //        문서 정리하여 공유 받고 필요시 메서드 파라미터로 구현 예정 (2023.11.01 minjae)
         //            // 서브 컨테이너의 자식 노드로 또 다른 서브 컨테이너 추가 
         //            // await FillLinkedNodes(subContainer, pLinkedNodeInfoList, pLinkedNodeMetaDataList);
         //            await FillLinkedNodes(subContainer, pLinkedNodeInfoList);
@@ -4665,19 +4665,19 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
         //    {
         //        Log.Error(Logger.GetMethodPath(currentMethod) + Logger.errorMessage + ex.Message);
 
-        //        // TODO : 오류 메시지 로그로 작성하는 다른 방법(e.StackTrace - 오류 발생한 파일 경로 포함) 구현 (2023.10.27 jbh) 
+        //        // TODO : 오류 메시지 로그로 작성하는 다른 방법(e.StackTrace - 오류 발생한 파일 경로 포함) 구현 (2023.10.27 minjae) 
         //        Log.Error(ex.StackTrace);
 
-        //        // TODO : 오류 메시지 로그로 작성하는 다른 방법(e.ToString() - 오류 발생한 파일 경로 포함) 구현 (2023.10.27 jbh) 
+        //        // TODO : 오류 메시지 로그로 작성하는 다른 방법(e.ToString() - 오류 발생한 파일 경로 포함) 구현 (2023.10.27 minjae) 
         //        Log.Error(ex.ToString());
 
-        //        // TODO : 오류 발생시 상위 호출자 예외처리 전달 throw 구현 (2023.12.20 jbh)
+        //        // TODO : 오류 발생시 상위 호출자 예외처리 전달 throw 구현 (2023.12.20 minjae)
         //        // 참고 URL - https://devlog.jwgo.kr/2009/11/27/thrownthrowex/
         //        throw;
         //    }
         //}
 
-        // TODO : 필요시 연관 컨테이너(참조관계 - 부모/자식 컨테이너) 메타데이터 정보 출력 비동기 메서드 "LinkedNodeInfoSearchAsync" 참고 (2024.10.30 jbh)
+        // TODO : 필요시 연관 컨테이너(참조관계 - 부모/자식 컨테이너) 메타데이터 정보 출력 비동기 메서드 "LinkedNodeInfoSearchAsync" 참고 (2024.10.30 minjae)
         /// <summary>
         /// 연관 컨테이너(참조관계 - 부모/자식 컨테이너) 메타데이터 정보 출력
         /// </summary>
@@ -4694,19 +4694,19 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
         //        Log.Error(Logger.GetMethodPath(currentMethod) + Logger.errorMessage + ex.Message);
         //        MessageBox.Show(ex.Message, CobimHelper.ErrorTitle);
 
-        //        // TODO : 오류 메시지 로그로 작성하는 다른 방법(e.StackTrace - 오류 발생한 파일 경로 포함) 구현 (2023.10.27 jbh) 
+        //        // TODO : 오류 메시지 로그로 작성하는 다른 방법(e.StackTrace - 오류 발생한 파일 경로 포함) 구현 (2023.10.27 minjae) 
         //        // Log.Error(e.StackTrace);
 
-        //        // TODO : 오류 메시지 로그로 작성하는 다른 방법(e.ToString() - 오류 발생한 파일 경로 포함) 구현 (2023.10.27 jbh) 
+        //        // TODO : 오류 메시지 로그로 작성하는 다른 방법(e.ToString() - 오류 발생한 파일 경로 포함) 구현 (2023.10.27 minjae) 
         //        // Log.Error(e.ToString());
-        //        // TODO : 오류 발생시 상위 호출자 예외처리 전달 throw 구현 (2023.12.6 jbh)
+        //        // TODO : 오류 발생시 상위 호출자 예외처리 전달 throw 구현 (2023.12.6 minjae)
         //        // 참고 URL - https://devlog.jwgo.kr/2009/11/27/thrownthrowex/
         //        // throw;
         //    }
         //    return;
         //}
 
-        // TODO : 필요시 검토요청 비동기 메서드 "RequestAsync" 참고 (2024.10.30 jbh)
+        // TODO : 필요시 검토요청 비동기 메서드 "RequestAsync" 참고 (2024.10.30 minjae)
         /// <summary>
         /// 검토요청
         /// </summary>
@@ -4726,23 +4726,23 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
         //    return;
         //}
 
-        // TODO : 필요시 수정 비동기 메서드 "UpdateAsync" 참고 (2024.10.30 jbh)
+        // TODO : 필요시 수정 비동기 메서드 "UpdateAsync" 참고 (2024.10.30 minjae)
         /// <summary>
         /// 수정
         /// </summary>
         //private async Task UpdateAsync(object obj)
         //{
-        //    // TODO : 아래 주석친 소스 코드 (upContainerDatas) 필요 없을 시 삭제 예정 (2023.12.05 jbh)
+        //    // TODO : 아래 주석친 소스 코드 (upContainerDatas) 필요 없을 시 삭제 예정 (2023.12.05 minjae)
         //    // Object 배열 객체 obj 리스트로 변환
         //    // 참고 URL - https://nonstop-antoine.tistory.com/36
         //    // var upContainerDatas = obj as IEnumerable;
 
-        //    // TODO : 아래 주석친 코드 필요시 참고 (2024.08.26 jbh)
-        //    // 컨테이너 아이디 버튼 클릭시 MultiCommandParameter 데이터(obj)를 object 배열(object[])로 형변환 (2023.12.05 jbh)
+        //    // TODO : 아래 주석친 코드 필요시 참고 (2024.08.26 minjae)
+        //    // 컨테이너 아이디 버튼 클릭시 MultiCommandParameter 데이터(obj)를 object 배열(object[])로 형변환 (2023.12.05 minjae)
         //    // 참고 URL - https://www.melodiouscode.net/passing-multiple-parameters-to-an-icommand-in-wpf 
         //    // var parameters = (object[])obj;                                   // 컨테이너 아이디 버튼으로 부터 받은 파일 정보(CommandParameter "exp_ProjectId", "exp_TeamId", "exp_ContainerId") (Object Array -> IEnumerable 형변환) 
 
-        //    // TODO : (기존) object 배열 "(object[])obj" 형식 -> (변경) string 배열 "string[] containerUpdate" 형식으로 형변환 구현 (2024.01.03 jbh)
+        //    // TODO : (기존) object 배열 "(object[])obj" 형식 -> (변경) string 배열 "string[] containerUpdate" 형식으로 형변환 구현 (2024.01.03 minjae)
         //    // 참고 URL - https://afsdzvcx123.tistory.com/entry/C-%EB%AC%B8%EB%B2%95-Object-%ED%98%95%EC%8B%9D-String-%ED%98%95%EC%8B%9D%EC%9C%BC%EB%A1%9C-%ED%98%95%EB%B3%80%ED%99%98Casting-%ED%95%98%EB%8A%94-%EB%B0%A9%EB%B2%95
         //    // string[] containerUpdate = Array.ConvertAll(parameters, param => (param ?? string.Empty).ToString());
         //    // var upContainerDatas    = parameters.ToList();          // parameters를 리스트로 변환할 때 사용하는 리스트 객체 "upContainerDatas"
@@ -4754,11 +4754,11 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
 
         //    try
         //    {
-        //        // TODO : 아래 foreach 문 필요시 참고 (2023.12.05 jbh)
+        //        // TODO : 아래 foreach 문 필요시 참고 (2023.12.05 minjae)
         //        //foreach (ContainerDetailView data in upContainerDatas)
         //        //{
-        //        //    // TODO : 아래 소스코드에 들어갈 데이터가 추가로 필요할 시 소스코드 수정 예정 (2023.10.23 jbh)
-        //        //    //        UpdateParam 프로퍼티 필요 없어도 변경된 데이터(data.SelectParam)들이 정상적으로 서버로 넘어갈 수 있으면 UpdateParam 삭제 예정 (2023.10.23 jbh)
+        //        //    // TODO : 아래 소스코드에 들어갈 데이터가 추가로 필요할 시 소스코드 수정 예정 (2023.10.23 minjae)
+        //        //    //        UpdateParam 프로퍼티 필요 없어도 변경된 데이터(data.SelectParam)들이 정상적으로 서버로 넘어갈 수 있으면 UpdateParam 삭제 예정 (2023.10.23 minjae)
         //        //    UpdateParam = new Param();
         //        //    UpdateParam = data.SelectParam;
         //        //}
@@ -4766,7 +4766,7 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
         //        // var test = DetailDatas.(detailData => detailData.SelectParam).Object;
         //        // UpdateParam  = obj as IEnumerable; // .Select(s => s.SelectParam.FileTypeCodeInfo);
 
-        //        // UpdateAsync 메서드 실행시 ComboBox 파일유형에서 변경된 값을 가져오도록 Linq 식으로 구현하기 (2023.10.23 jbh) 
+        //        // UpdateAsync 메서드 실행시 ComboBox 파일유형에서 변경된 값을 가져오도록 Linq 식으로 구현하기 (2023.10.23 minjae) 
         //        // var obj      = null;
         //        // FileTypeView fileTypeCodeInfo = ContainerDatas.Select(x => x.Param.FileTypeCodeInfo);
 
@@ -4782,7 +4782,7 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
         //    }
         //}
 
-        // TODO : 필요시 파일 다운로드 비동기 메서드 "DownLoadAsync" 참고 (2024.10.30 jbh)
+        // TODO : 필요시 파일 다운로드 비동기 메서드 "DownLoadAsync" 참고 (2024.10.30 minjae)
         /// <summary>
         /// 파일 다운로드
         /// </summary>
@@ -4790,11 +4790,11 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
         //{
         //    var loadingWorkVM = Container.Get<CommonLoadingWorkVM>().SetMessage(CobimHelper.DownLoad_LoadingWork);   // 다운로드 처리 중 화면 뷰모델 할당
 
-        //    // TODO : 다운로드 버튼 클릭시 MultiCommandParameter 데이터(obj)를 object 배열(object[])로 형변환 (2023.12.05 jbh)
+        //    // TODO : 다운로드 버튼 클릭시 MultiCommandParameter 데이터(obj)를 object 배열(object[])로 형변환 (2023.12.05 minjae)
         //    // 참고 URL - https://www.melodiouscode.net/passing-multiple-parameters-to-an-icommand-in-wpf
         //    var parameters = (object[])obj;                                      // 다운로드 버튼으로 부터 받은 다운로드 받을 파일 정보(CommandParameter "exp_ProjectId", "exp_TeamId", "exp_ContainerId") (Object Array -> IEnumerable 형변환) 
 
-        //    // TODO : (기존) object 배열 "(object[])obj" 형식 -> (변경) string 배열 "string[] downLoadDatas" 형식으로 형변환 구현 (2023.12.19 jbh)
+        //    // TODO : (기존) object 배열 "(object[])obj" 형식 -> (변경) string 배열 "string[] downLoadDatas" 형식으로 형변환 구현 (2023.12.19 minjae)
         //    // 참고 URL - https://afsdzvcx123.tistory.com/entry/C-%EB%AC%B8%EB%B2%95-Object-%ED%98%95%EC%8B%9D-String-%ED%98%95%EC%8B%9D%EC%9C%BC%EB%A1%9C-%ED%98%95%EB%B3%80%ED%99%98Casting-%ED%95%98%EB%8A%94-%EB%B0%A9%EB%B2%95
         //    string[] downLoadDatas = Array.ConvertAll(parameters, param => (param ?? string.Empty).ToString());
 
@@ -4851,7 +4851,7 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
         //        // 파일 다운로드 처리 중이 아닌 경우 
         //        if (resMsg != CobimHelper.DownLoad_LoadingWork)
         //        {
-        //            // TODO : 파일 다운로드 처리 중 화면이 ShowDialog(Modal)가 아니라 Show(Modaless)로 출력되므로 해당 화면 종료시 메서드 "RequestClose" 호출할 때, 메서드 파라미터 "null"로 할당 (2024.01.04 jbh)
+        //            // TODO : 파일 다운로드 처리 중 화면이 ShowDialog(Modal)가 아니라 Show(Modaless)로 출력되므로 해당 화면 종료시 메서드 "RequestClose" 호출할 때, 메서드 파라미터 "null"로 할당 (2024.01.04 minjae)
         //            // 참고 URL - https://cosmosproject.tistory.com/563
         //            IsDownLoadWorking = false;   // 파일 다운로드 처리 중 종료
         //            loadingWorkVM.RequestClose(null);   // 파일 다운로드 처리 중 화면 종료
@@ -4860,7 +4860,7 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
         //    return;
         //}
 
-        // TODO : 필요시 컨테이너 체크아웃 + (참조/연관) 관계 컨테이너 파일 다운로드 비동기 메서드 "CheckOutAsync" 참고 (2024.10.30 jbh)
+        // TODO : 필요시 컨테이너 체크아웃 + (참조/연관) 관계 컨테이너 파일 다운로드 비동기 메서드 "CheckOutAsync" 참고 (2024.10.30 minjae)
         /// <summary>
         /// 컨테이너 체크아웃 + (참조/연관) 관계 컨테이너 파일 다운로드  
         /// </summary>
@@ -4870,11 +4870,11 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
 
         //    string checkOutContainerId = string.Empty;   // 체크아웃 요청 컨테이너 아이디
 
-        //    // TODO : Context Menu(컨텍스트 메뉴) "체크아웃" 클릭시 MultiCommandParameter 데이터(obj)를 object 배열(object[])로 형변환 (2023.12.05 jbh)
+        //    // TODO : Context Menu(컨텍스트 메뉴) "체크아웃" 클릭시 MultiCommandParameter 데이터(obj)를 object 배열(object[])로 형변환 (2023.12.05 minjae)
         //    // 참고 URL - https://www.melodiouscode.net/passing-multiple-parameters-to-an-icommand-in-wpf
         //    var parameters = (object[])obj;   // Context Menu(컨텍스트 메뉴) "체크아웃" 클릭시 받은 체크아웃 시 필요한 정보(CommandParameter "exp_ProjectId", "exp_TeamId", "exp_ContainerId", "exp_FileId") (Object Array -> IEnumerable 형변환)
 
-        //    // TODO : (기존) object 배열 "(object[])obj" 형식 -> (변경) string 배열 "string[] checkOutDatas" 형식으로 형변환 구현 (2023.12.19 jbh)
+        //    // TODO : (기존) object 배열 "(object[])obj" 형식 -> (변경) string 배열 "string[] checkOutDatas" 형식으로 형변환 구현 (2023.12.19 minjae)
         //    // 참고 URL - https://afsdzvcx123.tistory.com/entry/C-%EB%AC%B8%EB%B2%95-Object-%ED%98%95%EC%8B%9D-String-%ED%98%95%EC%8B%9D%EC%9C%BC%EB%A1%9C-%ED%98%95%EB%B3%80%ED%99%98Casting-%ED%95%98%EB%8A%94-%EB%B0%A9%EB%B2%95
         //    string[] checkOutDatas = Array.ConvertAll(parameters, param => (param ?? string.Empty).ToString());
 
@@ -4927,7 +4927,7 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
         //        // 3) 검토 요청 중인 컨테이너가 아닐 때(statusCode != 'comstt20')
         //        await ExplorerRestServer.GetCheckOutAsync(Client, ContainerPack, FilePack, LoginView.RequestHeaders);
 
-        //        // TODO : 체크아웃 처리 중 화면이 ShowDialog(Modal)가 아니라 Show(Modaless)로 출력되므로 해당 화면 종료시 메서드 "RequestClose" 호출할 때, 메서드 파라미터 "null"로 할당 (2024.01.04 jbh)
+        //        // TODO : 체크아웃 처리 중 화면이 ShowDialog(Modal)가 아니라 Show(Modaless)로 출력되므로 해당 화면 종료시 메서드 "RequestClose" 호출할 때, 메서드 파라미터 "null"로 할당 (2024.01.04 minjae)
         //        // 참고 URL - https://cosmosproject.tistory.com/563
         //        // 체크아웃 처리 중 화면 종료 
         //        // IsCheckOutWorking = false;
@@ -4937,7 +4937,7 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
         //        // TODO : 탐색기 화면 뷰(ExplorerV.xaml) -> 컨텍스트 메뉴 "체크아웃" 클릭시 탐색기 뷰모델(ExplorerVM.cs)
         //        //        체크아웃 비동기 메서드 "CheckOutAsync" 호출 -> 컨테이너 리스트 생성 비동기 메서드 "ContainerListCreateAsync" 호출 
         //        //        실행 결과 데이터 정보가 변경되어 컨테이너 리스트 화면이 바뀌므로
-        //        //        컨테이너 리스트 생성 비동기 메서드 "ContainerListCreateAsync" 파라미터를 프로퍼티 "SelectedFolderId"로 전달함. (2023.12.13 jbh) 
+        //        //        컨테이너 리스트 생성 비동기 메서드 "ContainerListCreateAsync" 파라미터를 프로퍼티 "SelectedFolderId"로 전달함. (2023.12.13 minjae) 
         //        // 3 단계: 체크아웃 요청한 컨테이너 아이디를 가지고 Rest API 6.컨테이너 목록 조회 호출
         //        if (false == string.IsNullOrWhiteSpace(SelectedFolderId))
         //            await ContainerListCreateAsync(ContainerPack, SelectedFolderId);
@@ -4955,8 +4955,8 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
         //        if (linkedContainerList.Count == (int)EnumLinkedRelation.NONE)
         //            MessageBox.Show($"컨테이너 아이디 {checkOutContainerId}\r\n체크아웃 완료!\r\n연관 컨테이너 목록이 존재하지 않습니다.");
 
-        //        // TODO : 아래 주석친 테스트 코드 (연관 컨테이너가 존재하는 경우) 코드 필요시 참고 (2024.01.03 jbh)
-        //        // TODO : 아래 연관 컨테이너가 존재하는 경우 리스트 객체 "linkedContainerList" 컨테이너 아이디(containerId) 오름차순 정렬 (Sort 메서드) (2023.11.29 jbh)
+        //        // TODO : 아래 주석친 테스트 코드 (연관 컨테이너가 존재하는 경우) 코드 필요시 참고 (2024.01.03 minjae)
+        //        // TODO : 아래 연관 컨테이너가 존재하는 경우 리스트 객체 "linkedContainerList" 컨테이너 아이디(containerId) 오름차순 정렬 (Sort 메서드) (2023.11.29 minjae)
         //        // 참고 URL - https://www.techiedelight.com/ko/sort-list-in-descending-order-in-csharp/
         //        // 연관 컨테이너가 존재하는 경우 
         //        // if (linkedContainerList.Count >= (int)EnumLinkedRelation.EXISTENCE)
@@ -4979,7 +4979,7 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
 
         //            foreach (var linkedContainer in linkedContainerList)
         //            {
-        //                // TODO : 다운로드할 파일 정보 프로퍼티 "FilePack"에 속한 "fileId", "fileName"에 문자열 재할당 (2023.11.30 jbh)
+        //                // TODO : 다운로드할 파일 정보 프로퍼티 "FilePack"에 속한 "fileId", "fileName"에 문자열 재할당 (2023.11.30 minjae)
         //                // 파일 아이디
         //                FilePack.fileId = linkedContainer[ContainerHelper.fileId].ToString();
 
@@ -4988,7 +4988,7 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
 
         //                // TODO : 연관 컨테이너 다운로드 하는 경우 다운로드 받은 파일의 상위 폴더명(컨테이너 아이디)을
         //                //        각각의 연관 컨테이너 아이디가 아니라 루트 컨테이너 아이디(체크아웃 요청한 컨테이너 아이디)
-        //                //        하나로만 상위 폴더명으로 설정 해야 하므로 아래 소스코드는 주석 처리 진행 (2023.12.14 jbh)
+        //                //        하나로만 상위 폴더명으로 설정 해야 하므로 아래 소스코드는 주석 처리 진행 (2023.12.14 minjae)
         //                // 체크아웃 요청한 컨테이너 아이디 
         //                // ContainerPack.containerId = linkedContainer[ContainerHelper.containerId].ToString();
 
@@ -4998,7 +4998,7 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
         //                string linkedContainerId = ContainerPack.linkedContainerId;
 
         //                // TODO : 체크아웃 요청한 컨테이너 아이디(checkOutContainerId) 문자열 값과 연관 컨테이너 아이디(ContainerPack.linkedContainerId)의 문자열이 동일한 경우 파일 다운로드 대상 제외
-        //                //        이미 체크아웃 + 파일 다운로드 처리 동시에 하였으므로 파일 중복 다운로드 안 하기 위해 continue 처리 구현 (2023.12.15 jbh)
+        //                //        이미 체크아웃 + 파일 다운로드 처리 동시에 하였으므로 파일 중복 다운로드 안 하기 위해 continue 처리 구현 (2023.12.15 minjae)
         //                // if(true == ContainerPack.containerId.Equals(ContainerPack.linkedContainerId)) continue;
         //                //if(checkOutContainerId == (ContainerPack.linkedContainerId)) continue;
         //                if (checkOutContainerId == linkedContainerId) continue;
@@ -5012,7 +5012,7 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
 
         //        resMsg = "success";   // 컨테이너 체크아웃 + (참조/연관) 관계 컨테이너 파일 다운로드 성공
 
-        //        // TODO : 연관 컨테이너 파일 다운로드 처리 중 화면이 ShowDialog(Modal)가 아니라 Show(Modaless)로 출력되므로 해당 화면 종료시 메서드 "RequestClose" 호출할 때, 메서드 파라미터 "null"로 할당 (2024.01.05 jbh)
+        //        // TODO : 연관 컨테이너 파일 다운로드 처리 중 화면이 ShowDialog(Modal)가 아니라 Show(Modaless)로 출력되므로 해당 화면 종료시 메서드 "RequestClose" 호출할 때, 메서드 파라미터 "null"로 할당 (2024.01.05 minjae)
         //        // 참고 URL - https://cosmosproject.tistory.com/563
         //        // 연관 컨테이너 파일 다운로드 처리 중 화면 종료 
         //        // IsLinkedContainerWorking = false;
@@ -5042,7 +5042,7 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
         //    return;
         //}
 
-        // TODO : 필요시 컨테이너 체크인 + (컨테이너에 속한 파일) 웹서버로 업로드 비동기 메서드 "CheckInAsync" 참고 (2024.10.31 jbh)
+        // TODO : 필요시 컨테이너 체크인 + (컨테이너에 속한 파일) 웹서버로 업로드 비동기 메서드 "CheckInAsync" 참고 (2024.10.31 minjae)
         /// <summary>
         /// 컨테이너 체크인 + (컨테이너에 속한 파일) 웹서버로 업로드  
         /// 컨테이너 체크인 + (컨테이너에 속한 파일) 웹서버로 업로드 성공하면 
@@ -5057,18 +5057,18 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
         //    string resultTranslateCode = string.Empty;   // 특정 컨테이너에 속한 파일 변환 처리 결과 상태 코드 문자열 초기화
         //    // string resultTranslateMsg = string.Empty;    // 특정 컨테이너에 속한 파일 변환 처리 관련 공통 메세지 초기화
 
-        //    // TODO : Context Menu(컨텍스트 메뉴) "체크인" 클릭시 MultiCommandParameter 데이터(obj)를 object 배열(object[])로 형변환 (2023.12.05 jbh)
+        //    // TODO : Context Menu(컨텍스트 메뉴) "체크인" 클릭시 MultiCommandParameter 데이터(obj)를 object 배열(object[])로 형변환 (2023.12.05 minjae)
         //    // 참고 URL - https://www.melodiouscode.net/passing-multiple-parameters-to-an-icommand-in-wpf
         //    var parameters = (object[])obj;              // Context Menu(컨텍스트 메뉴) "체크인" 클릭시 받은 체크인 시 필요한 정보(CommandParameter "exp_ProjectId", "exp_TeamId", "exp_ContainerId", "exp_FileId", "exp_FileName") (Object Array -> IEnumerable 형변환) 
 
-        //    // TODO : (기존) object 배열 "(object[])obj" 형식 -> (변경) string 배열 "string[] checkInDatas" 형식으로 형변환 구현 (2023.12.19 jbh)
+        //    // TODO : (기존) object 배열 "(object[])obj" 형식 -> (변경) string 배열 "string[] checkInDatas" 형식으로 형변환 구현 (2023.12.19 minjae)
         //    // 참고 URL - https://afsdzvcx123.tistory.com/entry/C-%EB%AC%B8%EB%B2%95-Object-%ED%98%95%EC%8B%9D-String-%ED%98%95%EC%8B%9D%EC%9C%BC%EB%A1%9C-%ED%98%95%EB%B3%80%ED%99%98Casting-%ED%95%98%EB%8A%94-%EB%B0%A9%EB%B2%95
 
         //    // TODO : (기존) object 배열 "(object[])obj" 형식 -> (변경) string 배열
         //    //        단, 변경할 때, (기존) object 배열에 속하는 데이터 중 "제목"을
         //    //        갖고 있는 데이터를 제외하기 위해 Linq 조건절 확장 메서드 Where 사용해서
         //    //        특정 인덱스 "(int)EnumCheckIn.TITLE" 제외한 
-        //    //        데이터만 추출해서 string 배열 객체 "checkInDatas" 구현 (2024.08.26 jbh)
+        //    //        데이터만 추출해서 string 배열 객체 "checkInDatas" 구현 (2024.08.26 minjae)
         //    // 참고 URL - https://chatgpt.com/c/332ba391-669d-4e7b-8e5a-af86cbd6516e
         //    string[] checkInDatas = Array.ConvertAll(parameters, param => (param ?? string.Empty).ToString())
         //                                 .Where((checkInRequestData, index) => index != (int)EnumCheckIn.TITLE)
@@ -5090,7 +5090,7 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
         //    string checkInFileId = string.Empty;                 // 체크인 처리 완료 후 파일 아이디  
         //    string checkInRevsnVal = string.Empty;               // 체크인 처리 완료 후 파일 버전 
 
-        //    // TODO : C# 문자열 보간 기능 사용해서 웹서버로 업로드 할 상위 폴더 경로 문자열로 변환 (2024.09.02 jbh)
+        //    // TODO : C# 문자열 보간 기능 사용해서 웹서버로 업로드 할 상위 폴더 경로 문자열로 변환 (2024.09.02 minjae)
         //    // 참고 URL - https://gaeunhan.tistory.com/61
         //    string dirPath = string.Empty;                       // 웹서버로 업로드 할 파일의 상위 디렉토리(폴더) 경로
         //    string filePath = string.Empty;                       // 웹서버로 업로드 할 파일 전체 경로 
@@ -5116,13 +5116,13 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
         //        IsCheckInWorking = true;   // 체크인 처리 중 시작 
         //        checkInPartVM = Container.Get<CheckInPartVM>().ToShowData();   // 체크인 팝업 화면 생성 및 결과 리턴
 
-        //        // TODO : await Task.Yield(); 사용법 제대로 확인 후 사용 예정 (2023.12.04 jbh)
+        //        // TODO : await Task.Yield(); 사용법 제대로 확인 후 사용 예정 (2023.12.04 minjae)
         //        // 참고 URL - https://www.sysnet.pe.kr/2/0/12241
         //        // 참고 2 URL - https://www.sysnet.pe.kr/2/0/12245
         //        // 참고 3 URL - https://stackoverflow.com/questions/22645024/when-would-i-use-task-yield
         //        await Task.Yield();
 
-        //        // TODO : 닫기("X") 버튼 클릭 시 컨테이너 체크인 + 업로드 메서드 "CheckInAsync" 종료 로직 구현 (2023.12.07 jbh)
+        //        // TODO : 닫기("X") 버튼 클릭 시 컨테이너 체크인 + 업로드 메서드 "CheckInAsync" 종료 로직 구현 (2023.12.07 minjae)
         //        if (true == checkInPartVM.IsExit) return;
 
         //        ContainerPack = new ContainerPack(checkInDatas[(int)EnumCheckIn.PROJECTID],
@@ -5139,18 +5139,18 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
         //                                                 string.Empty,
         //                                                 string.Empty));
 
-        //        // TODO : 다른 PC에서도 파일 업로드 기능이 실행될 수 있도록 웹서버로 업로드 할 파일 전체 경로 "dirPath"의 루트 디렉토리 값을 내문서 폴더 (Environment.SpecialFolder.MyDocuments)로 설정 (2023.12.05 jbh)
+        //        // TODO : 다른 PC에서도 파일 업로드 기능이 실행될 수 있도록 웹서버로 업로드 할 파일 전체 경로 "dirPath"의 루트 디렉토리 값을 내문서 폴더 (Environment.SpecialFolder.MyDocuments)로 설정 (2023.12.05 minjae)
         //        // 참고 URL - https://learn.microsoft.com/ko-kr/dotnet/api/system.environment.specialfolder?view=net-7.0
         //        // 웹서버로 업로드 할 파일의 상위 디렉토리 폴더 전체 경로 예시 - "C:\Users\bhjeon\Documents\CobimExplorer\bmcb\inc-001-bmcb-t005\bmcb-imbu-func_016-sptl_901-002"
         //        // SpecialFolder 시스템 디렉토리(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) 사용
-        //        // TODO : 아래 주석친 테스트 코드 필요시 참고 (2024.10.14 jbh)
+        //        // TODO : 아래 주석친 테스트 코드 필요시 참고 (2024.10.14 minjae)
         //        // dirPath = $"{Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)}" +
         //        //            $"\\{Assembly.GetEntryAssembly().GetName().Name}" +
         //        //            $"\\{ContainerPack.projectId}" +
         //        //            $"\\{ContainerPack.teamId}" +
         //        //            $"\\{ContainerPack.containerId}";
 
-        //        // TODO : StringBuilder 클래스 객체 sbDirPath 생성 -> string 클래스 객체 dirPath에 문자열 추가 (2024.10.15 jbh)
+        //        // TODO : StringBuilder 클래스 객체 sbDirPath 생성 -> string 클래스 객체 dirPath에 문자열 추가 (2024.10.15 minjae)
         //        // StringBuilder vs String 비교 
         //        // 참고 URL - https://afsdzvcx123.tistory.com/entry/C-%ED%99%9C%EC%9A%A9-String-StringBuilder-%EC%84%B1%EB%8A%A5-%EC%B0%A8%EC%9D%B4
         //        StringBuilder sbDirPath = new StringBuilder($"{Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)}");
@@ -5166,11 +5166,11 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
         //        fileId = checkInDatas[(int)EnumCheckIn.FILEID];
         //        revsnVal = checkInDatas[(int)EnumCheckIn.REVSNVAL];
 
-        //        // TODO : 웹서버로 업로드 할 파일 전체 경로 구현 (2023.12.04 jbh)
+        //        // TODO : 웹서버로 업로드 할 파일 전체 경로 구현 (2023.12.04 minjae)
         //        // 참고 URL - https://dlgnlfus.tistory.com/129
         //        filePath = dirPath + $"\\{fileName}";   // 웹서버로 업로드 할 파일 전체 경로 
 
-        //        // TODO : 웹서버로 업로드 할 파일 전체 경로에 있는 파일 정보 불러 오도록 구현 (2023.12.05 jbh)
+        //        // TODO : 웹서버로 업로드 할 파일 전체 경로에 있는 파일 정보 불러 오도록 구현 (2023.12.05 minjae)
         //        // 참고 URL   - https://chashtag.tistory.com/37
         //        // 참고 2 URL - https://www.delftstack.com/ko/howto/csharp/get-filesize-in-csharp/
         //        // 참고 3 URL - https://dlgnlfus.tistory.com/129
@@ -5180,15 +5180,15 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
         //            using (FileStream upLoadFileStream = File.OpenRead(filePath))
         //            {
         //                // TODO : 추후 체크인 구현시 업로드 하려는 파일명(uploadFiles)과 기존 체크인 된 파일명(fileName)이 다를 경우
-        //                //        enum 열거형 구조체 EnumCheckIn 멤버 변수 "FILENAME" 사용해서 로직 수정 예정 (2023.12.05 jbh)
+        //                //        enum 열거형 구조체 EnumCheckIn 멤버 변수 "FILENAME" 사용해서 로직 수정 예정 (2023.12.05 minjae)
         //                CheckInPack = new CheckInPack
         //                {
         //                    folderId = checkInDatas[(int)EnumCheckIn.FOLDERID],
         //                    uploadFiles = upLoadFileStream,
         //                    fileName = checkInDatas[(int)EnumCheckIn.UPLOAD_FILENAME],
-        //                    // TODO : 필요시 파일 아이디 프로퍼티 "fileId" 사용 예정 (2024.10.14 jbh)
+        //                    // TODO : 필요시 파일 아이디 프로퍼티 "fileId" 사용 예정 (2024.10.14 minjae)
         //                    // fileId = string.Empty,
-        //                    // TODO : pCheckInPack.fileSize의 파일 크기 단위가 바이트인지 아닌지 확인 필요 (2023.12.05 jbh)
+        //                    // TODO : pCheckInPack.fileSize의 파일 크기 단위가 바이트인지 아닌지 확인 필요 (2023.12.05 minjae)
         //                    fileSize = upLoadFileStream.Length.ToString(),
         //                    comment = checkInPartVM.InputParamData.exp_Comment
         //                };
@@ -5200,14 +5200,14 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
         //                // var resultCheckInData = await ExplorerRestServer.PostCheckInAsync(Client, ContainerPack, CheckInPack, filePath, LoginView.RequestHeaders);
         //                var resultCheckInData = await ExplorerRestServer.PostCheckInAsync(Client, ContainerPack, CheckInPack, LoginView.RequestHeaders);
 
-        //                // Dictionary 객체 resultCheckInData 특정 키(Key) "fileName", "fileId", "revsnVal"에 속하는 값(Value) 문자열로 변환 (2024.08.26 jbh)
+        //                // Dictionary 객체 resultCheckInData 특정 키(Key) "fileName", "fileId", "revsnVal"에 속하는 값(Value) 문자열로 변환 (2024.08.26 minjae)
         //                // 참고 URL - https://developer-talk.tistory.com/694
-        //                // TODO : 체크인 처리 완료 후 파일명 string 객체 checkInFileName 필요시 사용 예정 (2024.08.26 jbh)
+        //                // TODO : 체크인 처리 완료 후 파일명 string 객체 checkInFileName 필요시 사용 예정 (2024.08.26 minjae)
         //                // checkInFileName = resultCheckInData[ContainerHelper.fileNm].ToString();
         //                checkInFileId = resultCheckInData[ContainerHelper.fileId].ToString();
         //                checkInRevsnVal = resultCheckInData[ContainerHelper.revsnVal].ToString();
 
-        //                // TODO : 체크인 처리중 화면이 ShowDialog(Modal)가 아니라 Show(Modaless)로 출력되므로 해당 화면 종료시 메서드 "RequestClose" 호출할 때, 메서드 파라미터 "null"로 할당 (2024.01.04 jbh)
+        //                // TODO : 체크인 처리중 화면이 ShowDialog(Modal)가 아니라 Show(Modaless)로 출력되므로 해당 화면 종료시 메서드 "RequestClose" 호출할 때, 메서드 파라미터 "null"로 할당 (2024.01.04 minjae)
         //                // 참고 URL - https://cosmosproject.tistory.com/563
         //                // 체크인 처리 중 화면 종료 
         //                loadingWorkVM.RequestClose(null);
@@ -5286,7 +5286,7 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
         //            // TODO : 탐색기 화면 뷰(ExplorerV.xaml) -> 컨텍스트 메뉴 "체크인" 클릭시 탐색기 뷰모델(ExplorerVM.cs)
         //            //        체크인 비동기 메서드 "CheckInAsync" 호출 -> 컨테이너 리스트 생성 비동기 메서드 "ContainerListCreateAsync" 호출 
         //            //        실행 결과 데이터 정보가 변경되어 컨테이너 리스트 화면이 바뀌므로
-        //            //        컨테이너 리스트 생성 비동기 메서드 "ContainerListCreateAsync" 파라미터를 프로퍼티 "SelectedFolderId"로 전달함. (2023.12.13 jbh)
+        //            //        컨테이너 리스트 생성 비동기 메서드 "ContainerListCreateAsync" 파라미터를 프로퍼티 "SelectedFolderId"로 전달함. (2023.12.13 minjae)
         //            // 체크인 요청한 컨테이너 아이디를 가지고 Rest API 6.컨테이너 목록 조회 호출
         //            if (false == string.IsNullOrWhiteSpace(SelectedFolderId))
         //                await ContainerListCreateAsync(ContainerPack, SelectedFolderId);
@@ -5294,7 +5294,7 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
 
         //            //MessageBox.Show("체크인 완료!");
 
-        //            // TODO : 체크인 완료(+ 컨테이너에 속한 파일 웹서버로 업로드) 후 파일 삭제 기능이 실행될 수 있도록 삭제 할 파일의 상위 폴더 경로 "deleteDirPath"의 루트 디렉토리 값을 내문서 폴더 (Environment.SpecialFolder.MyDocuments)로 설정 (2024.08.30 jbh)
+        //            // TODO : 체크인 완료(+ 컨테이너에 속한 파일 웹서버로 업로드) 후 파일 삭제 기능이 실행될 수 있도록 삭제 할 파일의 상위 폴더 경로 "deleteDirPath"의 루트 디렉토리 값을 내문서 폴더 (Environment.SpecialFolder.MyDocuments)로 설정 (2024.08.30 minjae)
         //            // 참고 URL - https://learn.microsoft.com/ko-kr/dotnet/api/system.environment.specialfolder?view=net-7.0
         //            // 삭제할 파일의 상위 폴더 전체 경로 예시 - "C:\Users\bhjeon\Documents\CobimExplorer\bmcb\inc-001-bmcb-t005\bmcb-imbu-func_016-sptl_901-002"
         //            // SpecialFolder 시스템 디렉토리(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) 사용
@@ -5307,9 +5307,9 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
         //                //MessageBox.Show($"로컬에 존재하는 루트 컨테이너 폴더({deleteContainerId})\r\n다운로드 받은 파일 삭제 진행합니다.");
 
         //                // TODO : 체크인 완료 후(+ 파일 웹서버 업로드 완료) 로컬 PC에 다운로드 받은 기존 루트 컨테이너 폴더(deleteContainerId) 및 폴더에 속한 모든 파일 삭제 
-        //                // TODO : 폴더(디렉토리) 클래스 "Directory", "DirectoryInfo" 차이점 비교 후 static 클래스 "Directory" 사용 (2024.08.30 jbh)
+        //                // TODO : 폴더(디렉토리) 클래스 "Directory", "DirectoryInfo" 차이점 비교 후 static 클래스 "Directory" 사용 (2024.08.30 minjae)
         //                // 참고 URL - https://nomad-programmer.tistory.com/207
-        //                // TODO : Directory.Delete 메서드의 2번째 파라미터 값 설정 구현 (2024.08.30 jbh)
+        //                // TODO : Directory.Delete 메서드의 2번째 파라미터 값 설정 구현 (2024.08.30 minjae)
         //                //        deleteDirPath 경로의 폴더(디렉터리), 해당 폴더의 하위 폴더(디렉터리) 및 파일을 제거하려면 true, 제거하지 않으려면 false 설정
         //                //        true로 설정하면 해당 폴더의 하위 폴더(디렉터리) 및 파일을 제거할 때, 재귀적으로 (recursive) Directory.Delete 메서드 실행 
         //                // 참고 URL - https://learn.microsoft.com/ko-kr/dotnet/api/system.io.directory.delete?view=net-8.0
@@ -5347,7 +5347,7 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
         //    return;
         //}
 
-        // TODO : 필요시 컨테이너 작업 취소 비동기 메서드 "CancelWorkAsync" 참고 (2024.10.31 jbh)
+        // TODO : 필요시 컨테이너 작업 취소 비동기 메서드 "CancelWorkAsync" 참고 (2024.10.31 minjae)
         /// <summary>
         /// 컨테이너 작업 취소
         /// 체크아웃 상태의 컨테이너 ID 락 해제 (ReadYn = "Y" -> "N")
@@ -5360,18 +5360,18 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
 
         //    string cancelWorkContainerId = string.Empty;                        // 컨테이너 작업 취소 요청 루트 컨테이너 아이디
 
-        //    // TODO : Context Menu(컨텍스트 메뉴) "작업취소" 클릭시 MultiCommandParameter 데이터(obj)를 object 배열(object[])로 형변환 (2023.12.19 jbh)
+        //    // TODO : Context Menu(컨텍스트 메뉴) "작업취소" 클릭시 MultiCommandParameter 데이터(obj)를 object 배열(object[])로 형변환 (2023.12.19 minjae)
         //    // 참고 URL - https://www.melodiouscode.net/passing-multiple-parameters-to-an-icommand-in-wpf
         //    // var parameters = (object[])obj;
         //    object[] parameters = (object[])obj;
 
         //    // TODO : Context Menu(컨텍스트 메뉴) "작업취소" 클릭시 MultiCommandParameter 데이터(obj)를
-        //    //        (기존) object 배열 "(object[])obj" 형식 -> (변경) string 배열 "string[] cancelWorkDatas" 형식으로 형변환 구현 (2023.12.19 jbh)
+        //    //        (기존) object 배열 "(object[])obj" 형식 -> (변경) string 배열 "string[] cancelWorkDatas" 형식으로 형변환 구현 (2023.12.19 minjae)
         //    // 참고 URL - https://afsdzvcx123.tistory.com/entry/C-%EB%AC%B8%EB%B2%95-Object-%ED%98%95%EC%8B%9D-String-%ED%98%95%EC%8B%9D%EC%9C%BC%EB%A1%9C-%ED%98%95%EB%B3%80%ED%99%98Casting-%ED%95%98%EB%8A%94-%EB%B0%A9%EB%B2%95
         //    string[] cancelWorkDatas = Array.ConvertAll(parameters, param => (param ?? string.Empty).ToString());
         //    // var cancelWorkDatas = parameters.ToList();                       // parameters를 리스트로 변환할 때 사용하는 리스트 객체 "cancelWorkDatas"
 
-        //    // TODO : C# 문자열 보간 기능 사용해서 삭제 처리 할 파일 + 상위 디렉토리(폴더) 경로 문자열로 변환 (2023.12.20 jbh)
+        //    // TODO : C# 문자열 보간 기능 사용해서 삭제 처리 할 파일 + 상위 디렉토리(폴더) 경로 문자열로 변환 (2023.12.20 minjae)
         //    // 참고 URL - https://gaeunhan.tistory.com/61
         //    string dirPath = string.Empty;                                      // 삭제 처리 할 파일 + 상위 디렉토리(폴더) 경로
 
@@ -5382,7 +5382,7 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
         //    try
         //    {
         //        // TODO : 컨테이너 작업 취소 요청한 컨테이너 아이디 값(cancelWorkContainerId)이
-        //        //        현재 컨테이너 체크아웃, 체크인, 파일열기 중인 컨테이너 값과 동일한 경우 컨테이너 작업 취소 중지할 수 있도록 기능 구현 예정 (2024.10.11 jbh)
+        //        //        현재 컨테이너 체크아웃, 체크인, 파일열기 중인 컨테이너 값과 동일한 경우 컨테이너 작업 취소 중지할 수 있도록 기능 구현 예정 (2024.10.11 minjae)
         //        // (예) if(true == cancelWorkContainerId.Equals(InputParamData.GetContainerPack().GetContainerId())) 
         //        //      {
         //        //          MessageBox.Show("체크아웃/체크인/파일열기 작업 중인 해당 컨테이너는 작업 취소 요청 불가합니다.
@@ -5409,12 +5409,12 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
         //        // 1 단계 : Rest API 17. 컨테이너 작업 취소 호출 
         //        var resultData = await ExplorerRestServer.PostCancelWorkAsync(Client, ContainerPack, LoginView.RequestHeaders);
 
-        //        // TODO : 컨테이너 작업 취소 결과 확인 로직 오류 발생시 수정 예정 (2023.12.21 jbh)
+        //        // TODO : 컨테이너 작업 취소 결과 확인 로직 오류 발생시 수정 예정 (2023.12.21 minjae)
         //        // 2 단계 : 컨테이너 작업 취소 결과 확인
         //        // 조건 1 - resultData 값이 null 이 아님
         //        // 조건 2 - resultData[ContainerHelper.workUserId] 값이 null임.
         //        // 조건 3 - resultData[ContainerHelper.readYn] 문자열 변환시 'N'과 같아야 함.
-        //        // TODO : if 조건절에 != null 보다 빠른 is not null 연산자 사용 (2023.12.20 jbh)
+        //        // TODO : if 조건절에 != null 보다 빠른 is not null 연산자 사용 (2023.12.20 minjae)
         //        // 참고 URL - https://husk321.tistory.com/405
         //        bool bCancelWork = (resultData is not null)
         //                           && (resultData[ContainerHelper.workUserId] is null)
@@ -5427,14 +5427,14 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
         //            // TODO : 탐색기 화면 뷰(ExplorerV.xaml) -> 컨텍스트 메뉴 "작업취소" 클릭시 탐색기 뷰모델(ExplorerVM.cs)
         //            //        컨테이너 작업 취소 비동기 메서드 "CancelWorkAsync" 호출 -> 컨테이너 리스트 생성 비동기 메서드 "ContainerListCreateAsync" 호출 
         //            //        실행 결과 데이터 정보가 변경되어 컨테이너 리스트 화면이 바뀌므로
-        //            //        컨테이너 리스트 생성 비동기 메서드 "ContainerListCreateAsync" 파라미터를 프로퍼티 "SelectedFolderId"로 전달함. (2023.12.20 jbh)
+        //            //        컨테이너 리스트 생성 비동기 메서드 "ContainerListCreateAsync" 파라미터를 프로퍼티 "SelectedFolderId"로 전달함. (2023.12.20 minjae)
         //            if (false == string.IsNullOrWhiteSpace(SelectedFolderId))
         //                await ContainerListCreateAsync(ContainerPack, SelectedFolderId);
         //            else throw new Exception("선택(클릭)한 폴더 ID 정보가 존재하지 않습니다.\r\n담당자에게 문의하시기 바랍니다.");
 
         //            // MessageBox.Show("컨테이너 작업 취소 완료!");
 
-        //            // TODO : 다른 PC에서도 루트 컨테이너 폴더 및 폴더에 속한 모든 파일 삭제 기능이 실행될 수 있도록 업로드 할 파일 전체 경로 "dirPath"의 루트 디렉토리 값을 내문서 폴더 (Environment.SpecialFolder.MyDocuments)로 설정 (2023.12.20 jbh)
+        //            // TODO : 다른 PC에서도 루트 컨테이너 폴더 및 폴더에 속한 모든 파일 삭제 기능이 실행될 수 있도록 업로드 할 파일 전체 경로 "dirPath"의 루트 디렉토리 값을 내문서 폴더 (Environment.SpecialFolder.MyDocuments)로 설정 (2023.12.20 minjae)
         //            // 참고 URL - https://learn.microsoft.com/ko-kr/dotnet/api/system.environment.specialfolder?view=net-7.0
         //            // 파일 업로드 전체 경로 예시 - "C:\Users\bhjeon\Documents\CobimExplorer\bmcb\inc-001-bmcb-t005\bmcb-imbu-func_016-sptl_901-002" - (SpecialFolder 시스템 디렉토리(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)) 사용)
         //            dirPath = $"{Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)}\\{Assembly.GetEntryAssembly().GetName().Name}\\{ContainerPack.projectId}\\{ContainerPack.teamId}\\{ContainerPack.containerId}";
@@ -5449,9 +5449,9 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
         //                //MessageBox.Show($"로컬에 존재하는 루트 컨테이너 폴더({pCancelWorkContainerId})\r\n다운로드 받은 파일 삭제 진행합니다.");
 
         //                // 4 단계 : 컨테이너 작업 취소 완료 후 로컬 PC에 다운로드 받은 기존 루트 컨테이너 폴더(cancelWorkContainerId) 및 폴더에 속한 모든 파일 삭제 
-        //                // TODO : 폴더(디렉토리) 클래스 "Directory", "DirectoryInfo" 차이점 비교 후 static 클래스 "Directory" 사용 (2023.12.20 jbh)
+        //                // TODO : 폴더(디렉토리) 클래스 "Directory", "DirectoryInfo" 차이점 비교 후 static 클래스 "Directory" 사용 (2023.12.20 minjae)
         //                // 참고 URL - https://nomad-programmer.tistory.com/207
-        //                // TODO : Directory.Delete 메서드의 2번째 파라미터 값 설정 구현 (2023.12.20 jbh)
+        //                // TODO : Directory.Delete 메서드의 2번째 파라미터 값 설정 구현 (2023.12.20 minjae)
         //                //        dirPath 경로의 폴더(디렉터리), 해당 폴더의 하위 폴더(디렉터리) 및 파일을 제거하려면 true, 제거하지 않으려면 false 설정
         //                //        true로 설정하면 해당 폴더의 하위 폴더(디렉터리) 및 파일을 제거할 때, 재귀적으로 (recursive) Directory.Delete 메서드 실행 
         //                // 참고 URL - https://learn.microsoft.com/ko-kr/dotnet/api/system.io.directory.delete?view=net-8.0
@@ -5470,13 +5470,13 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
 
         //        //return;
 
-        //        // TODO : 아래 주석친 테스트 코드 필요시 참고 (2024.09.24 jbh)
+        //        // TODO : 아래 주석친 테스트 코드 필요시 참고 (2024.09.24 minjae)
         //        // 삼항 연산자 사용하여
         //        // 루트 컨테이너 폴더(cancelWorkContainerId)가 존재하는 경우 true
         //        // 루트 컨테이너 폴더(cancelWorkContainerId)가 존재하지 않는 경우 false
         //        //isExist = (true == Directory.Exists(dirPath)) ? true : false;
 
-        //        // TODO : ContainerHelper.cs -> ContainerPack 클래스 프로퍼티 "ContainerPack" 구현 (2023.12.20 jbh)
+        //        // TODO : ContainerHelper.cs -> ContainerPack 클래스 프로퍼티 "ContainerPack" 구현 (2023.12.20 minjae)
         //        //ContainerPack = new ContainerPack
         //        //{
         //        //    projectId         = cancelWorkDatas[(int)EnumCancelWork.PROJECTID],
@@ -5500,7 +5500,7 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
         //        // }
 
         //        // 루트 컨테이너 폴더(cancelWorkContainerId)가 존재하지 않는 경우
-        //        // TODO : 루트 컨테이너 폴더(cancelWorkContainerId)가 존재하지 않아도 컨테이너 작업 취소 처리하도록 구현 (2024.01.26 jbh)
+        //        // TODO : 루트 컨테이너 폴더(cancelWorkContainerId)가 존재하지 않아도 컨테이너 작업 취소 처리하도록 구현 (2024.01.26 minjae)
         //        // else
         //        // {
         //        //     isExist = false;
@@ -5520,11 +5520,11 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
         //    return;
         //}
 
-        // TODO : 필요시 아래 주석친 파일 다운로드 비동기 메서드 "DownLoadAsync" 참고 (2024.10.07 jbh)
-        // TODO : 체크아웃, 체크인, 파일 다운로드 중복 처리 시 컨텍스트 메뉴창 비활성화(Enabled = false;) 구현 예정 (2024.09.03 jbh)
+        // TODO : 필요시 아래 주석친 파일 다운로드 비동기 메서드 "DownLoadAsync" 참고 (2024.10.07 minjae)
+        // TODO : 체크아웃, 체크인, 파일 다운로드 중복 처리 시 컨텍스트 메뉴창 비활성화(Enabled = false;) 구현 예정 (2024.09.03 minjae)
         // 컨테스트 메뉴창 객체 이름 설정(예) x:Name="ExplorerContextMenu"
 
-        // TODO : 메서드 파라미터 "object obj" -> object 배열 "object[] obj"로 변환 및 지역변수 "var parameters" 사용 안하고 리스트 변환 가능한지 테스트 진행 예정 (2023.12.18 jbh)
+        // TODO : 메서드 파라미터 "object obj" -> object 배열 "object[] obj"로 변환 및 지역변수 "var parameters" 사용 안하고 리스트 변환 가능한지 테스트 진행 예정 (2023.12.18 minjae)
         /// <summary>
         /// 파일 다운로드
         /// </summary>
@@ -5535,18 +5535,18 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
         //    // string inputTenantId = LoginHelper.inputTenantId;                  // 테넌트 아이디
         //    // string tokenKey      = AppSetting.Default.Login.Token.resultData;  // 로그인 토큰 키 
 
-        //    // TODO : 아래 주석친 소스 코드 3줄(parameters, downLoadDatas, downLoadDataDic) 필요 없을 시 삭제 예정 (2023.12.05 jbh)
-        //    // TODO : Object 배열 객체 obj 리스트로 변환 (2023.09.19 jbh)
+        //    // TODO : 아래 주석친 소스 코드 3줄(parameters, downLoadDatas, downLoadDataDic) 필요 없을 시 삭제 예정 (2023.12.05 minjae)
+        //    // TODO : Object 배열 객체 obj 리스트로 변환 (2023.09.19 minjae)
         //    // 참고 URL - https://nonstop-antoine.tistory.com/36
         //    // var parameters      = obj as IEnumerable;                         // 다운로드 버튼으로 부터 받은 다운로드 받을 파일 정보(CommandParameter "exp_ProjectId", "exp_TeamId", "exp_ContainerId") (Object Array -> IEnumerable 형변환) 
         //    // var downLoadInfos   = new List<string>();                         // DownLoadDatas 를 리스트로 변환할 때 사용하는 리스트 객체 "DownLoadInfos"
         //    // var downLoadDataDic = new Dictionary<string, string>();           // 컨테이너에 속한 파일 정보 데이터를 담는 Dictionary 객체 DownLoadDataDic 생성
 
-        //    // TODO : 다운로드 버튼 클릭시 MultiCommandParameter 데이터(obj)를 object 배열(object[])로 형변환 (2023.12.05 jbh)
+        //    // TODO : 다운로드 버튼 클릭시 MultiCommandParameter 데이터(obj)를 object 배열(object[])로 형변환 (2023.12.05 minjae)
         //    // 참고 URL - https://www.melodiouscode.net/passing-multiple-parameters-to-an-icommand-in-wpf
         //    var parameters = (object[])obj;                                      // 다운로드 버튼으로 부터 받은 다운로드 받을 파일 정보(CommandParameter "exp_ProjectId", "exp_TeamId", "exp_ContainerId") (Object Array -> IEnumerable 형변환) 
 
-        //    // TODO : (기존) object 배열 "(object[])obj" 형식 -> (변경) string 배열 "string[] downLoadDatas" 형식으로 형변환 구현 (2023.12.19 jbh)
+        //    // TODO : (기존) object 배열 "(object[])obj" 형식 -> (변경) string 배열 "string[] downLoadDatas" 형식으로 형변환 구현 (2023.12.19 minjae)
         //    // 참고 URL - https://afsdzvcx123.tistory.com/entry/C-%EB%AC%B8%EB%B2%95-Object-%ED%98%95%EC%8B%9D-String-%ED%98%95%EC%8B%9D%EC%9C%BC%EB%A1%9C-%ED%98%95%EB%B3%80%ED%99%98Casting-%ED%95%98%EB%8A%94-%EB%B0%A9%EB%B2%95
         //    string[] downLoadDatas = Array.ConvertAll(parameters, param => (param ?? string.Empty).ToString());
 
@@ -5559,7 +5559,7 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
 
         //    try
         //    {
-        //        // TODO : 아래 주석친 코드 필요시 참고 (2024.09.04 jbh)
+        //        // TODO : 아래 주석친 코드 필요시 참고 (2024.09.04 minjae)
         //        // 파일 다운로드 처리 중인 상태에서 파일 다운로드를 중복 요청하는 경우 
         //        //if(true == IsDownLoadWorking)
         //        //    throw new Exception("현재 파일 다운로드 진행 중입니다.\r\n파일 다운로드 완료까지 잠시 기다려주세요.");
@@ -5567,22 +5567,22 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
 
         //        // MessageBox.Show("다운로드 테스트 중입니다.");
 
-        //        // TODO : 아래 foreach문 필요 없을 시 삭제 예정 (2023.12.05 jbh)
+        //        // TODO : 아래 foreach문 필요 없을 시 삭제 예정 (2023.12.05 minjae)
         //        // downLoadDatas 안에 존재하는 파일 정보 반복문으로 방문 -> List 객체 downLoadInfos에 파일 정보 데이터 추가 
         //        //foreach (var data in downLoadDatas)
         //        //{
         //        //    downLoadInfos.Add(data.ToString());
         //        //}
 
-        //        // TODO : 아래 주석친 소스코드 5줄(downLoadDataDic.Add) 필요 없을 시 삭제 예정 (2023.12.05 jbh)
+        //        // TODO : 아래 주석친 소스코드 5줄(downLoadDataDic.Add) 필요 없을 시 삭제 예정 (2023.12.05 minjae)
         //        //downLoadDataDic.Add(ProjectHelper.projectId, downLoadInfos[(int)EnumDownLoad.PROJECTID]);
         //        //downLoadDataDic.Add(TeamHelper.teamId, downLoadInfos[(int)EnumDownLoad.TEAMID]);
         //        //downLoadDataDic.Add(ContainerHelper.containerId, downLoadInfos[(int)EnumDownLoad.CONTAINERID]);
         //        //downLoadDataDic.Add(FileHelper.fileId, downLoadInfos[(int)EnumDownLoad.FILEID]);
         //        //downLoadDataDic.Add(FileHelper.fileNm, downLoadInfos[(int)EnumDownLoad.FILENAME]);
 
-        //        // TODO : 아래 소스코드 ContainerPack 클래스 프로퍼티 "ContainerPack" 구현 필요 없을시 삭제 예정 (2023.12.05 jbh)
-        //        // TODO : ProjectHelper.cs -> ProjectPack 클래스 프로퍼티 "ProjectPack" 구현 및 테스트 프로젝트 아이디(testProjectId), 테스트 팀 아이디(testTeamId) 값 할당 (2023.09.04 jbh)
+        //        // TODO : 아래 소스코드 ContainerPack 클래스 프로퍼티 "ContainerPack" 구현 필요 없을시 삭제 예정 (2023.12.05 minjae)
+        //        // TODO : ProjectHelper.cs -> ProjectPack 클래스 프로퍼티 "ProjectPack" 구현 및 테스트 프로젝트 아이디(testProjectId), 테스트 팀 아이디(testTeamId) 값 할당 (2023.09.04 minjae)
         //        //        추후 필요시 수정 예정
         //        // ContainerPack = new ContainerPack
         //        // {
@@ -5604,7 +5604,7 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
         //                                          downLoadDatas[(int)EnumDownLoad.CONTAINERID],
         //                                          string.Empty);
 
-        //        // TODO : 아래 소스코드 FilePack 클래스 프로퍼티 "FilePack" 구현 필요 없을시 삭제 예정 (2023.12.05 jbh)
+        //        // TODO : 아래 소스코드 FilePack 클래스 프로퍼티 "FilePack" 구현 필요 없을시 삭제 예정 (2023.12.05 minjae)
         //        // FilePack = new FilePack 
         //        // {
         //        //     fileId   = downLoadDataDic[FileHelper.fileId],       // 파일 아이디
@@ -5628,7 +5628,7 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
         //        // 파일 다운로드 진행
         //        await ExplorerRestServer.GetFileDownLoadAsync(Client, ContainerPack, FilePack, LoginView.RequestHeaders);
 
-        //        // TODO : 파일 다운로드 처리 중 화면이 ShowDialog(Modal)가 아니라 Show(Modaless)로 출력되므로 해당 화면 종료시 메서드 "RequestClose" 호출할 때, 메서드 파라미터 "null"로 할당 (2024.01.04 jbh)
+        //        // TODO : 파일 다운로드 처리 중 화면이 ShowDialog(Modal)가 아니라 Show(Modaless)로 출력되므로 해당 화면 종료시 메서드 "RequestClose" 호출할 때, 메서드 파라미터 "null"로 할당 (2024.01.04 minjae)
         //        // 참고 URL - https://cosmosproject.tistory.com/563
         //        // 파일 다운로드 처리 완료 
         //        IsDownLoadWorking = false;
@@ -5650,7 +5650,7 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
         //    return;
         //}
 
-        // TODO : 폴더 리스트 데이터 받아오기 메서드 "FolderListAsync" 필요 시 구현 예정 (2023.09.19 jbh)
+        // TODO : 폴더 리스트 데이터 받아오기 메서드 "FolderListAsync" 필요 시 구현 예정 (2023.09.19 minjae)
         //private async Task FolderListAsync(object obj)
         //{
         //    string projectId = ProjectHelper.testProjectId;   // 프로젝트 아이디 
@@ -5673,11 +5673,11 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
 
 
 
-        // TODO : 필요시 아래 주석친 컨테이너 체크아웃 + (참조/연관) 관계 컨테이너 파일 다운로드 비동기 메서드 "CheckOutAsync" 참고 (2024.10.08 jbh)
-        // TODO : 체크아웃, 체크인, 파일 다운로드 중복 처리 시 컨텍스트 메뉴창 비활성화(Enabled = false;) 구현 예정 (2024.09.03 jbh)
+        // TODO : 필요시 아래 주석친 컨테이너 체크아웃 + (참조/연관) 관계 컨테이너 파일 다운로드 비동기 메서드 "CheckOutAsync" 참고 (2024.10.08 minjae)
+        // TODO : 체크아웃, 체크인, 파일 다운로드 중복 처리 시 컨텍스트 메뉴창 비활성화(Enabled = false;) 구현 예정 (2024.09.03 minjae)
         // 컨테스트 메뉴창 객체 이름 설정(예) x:Name="ExplorerContextMenu"
 
-        // TODO : 메서드 파라미터 "object obj" -> object 배열 "object[] obj"로 변환 및 지역변수 "var parameters" 사용 안하고 리스트 변환 가능한지 테스트 진행 예정 (2023.12.18 jbh)
+        // TODO : 메서드 파라미터 "object obj" -> object 배열 "object[] obj"로 변환 및 지역변수 "var parameters" 사용 안하고 리스트 변환 가능한지 테스트 진행 예정 (2023.12.18 minjae)
         /// <summary>
         /// 컨테이너 체크아웃 + (참조/연관) 관계 컨테이너 파일 다운로드  
         /// </summary>
@@ -5690,11 +5690,11 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
 
         //    string checkOutContainerId = string.Empty;                             // 체크아웃 요청 컨테이너 아이디
 
-        //    // TODO : Context Menu(컨텍스트 메뉴) "체크아웃" 클릭시 MultiCommandParameter 데이터(obj)를 object 배열(object[])로 형변환 (2023.12.05 jbh)
+        //    // TODO : Context Menu(컨텍스트 메뉴) "체크아웃" 클릭시 MultiCommandParameter 데이터(obj)를 object 배열(object[])로 형변환 (2023.12.05 minjae)
         //    // 참고 URL - https://www.melodiouscode.net/passing-multiple-parameters-to-an-icommand-in-wpf
         //    var parameters = (object[])obj;                                  // Context Menu(컨텍스트 메뉴) "체크아웃" 클릭시 받은 체크아웃 시 필요한 정보(CommandParameter "exp_ProjectId", "exp_TeamId", "exp_ContainerId", "exp_FileId") (Object Array -> IEnumerable 형변환)
 
-        //    // TODO : (기존) object 배열 "(object[])obj" 형식 -> (변경) string 배열 "string[] checkOutDatas" 형식으로 형변환 구현 (2023.12.19 jbh)
+        //    // TODO : (기존) object 배열 "(object[])obj" 형식 -> (변경) string 배열 "string[] checkOutDatas" 형식으로 형변환 구현 (2023.12.19 minjae)
         //    // 참고 URL - https://afsdzvcx123.tistory.com/entry/C-%EB%AC%B8%EB%B2%95-Object-%ED%98%95%EC%8B%9D-String-%ED%98%95%EC%8B%9D%EC%9C%BC%EB%A1%9C-%ED%98%95%EB%B3%80%ED%99%98Casting-%ED%95%98%EB%8A%94-%EB%B0%A9%EB%B2%95
         //    string[] checkOutDatas = Array.ConvertAll(parameters, param => (param ?? string.Empty).ToString());
 
@@ -5704,15 +5704,15 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
 
         //    // TODO : 탐색기 화면 뷰(ExplorerV.xaml) -> 컨텍스트 메뉴 "체크아웃" 클릭시 멀티 바인딩 대상 중 "exp_FolderId" 제외함.
         //    //        제외한 사유는 "exp_FolderId" 설정시 탐색기 뷰모델(ExplorerVM.cs) -> 컨테이너 리스트 생성 비동기 메서드 "ContainerListCreateAsync"
-        //    //        실행 결과 데이터 정보가 변경되어 컨테이너 리스트 화면이 바뀌므로 해당 프로퍼티는 멀티 바인딩 대상에서 제외 처리함. (2023.12.13 jbh) 
-        //    //        하여 아래 string 클래스 객체 folderId 또한 사용 제외 (2023.12.13 jbh)
+        //    //        실행 결과 데이터 정보가 변경되어 컨테이너 리스트 화면이 바뀌므로 해당 프로퍼티는 멀티 바인딩 대상에서 제외 처리함. (2023.12.13 minjae) 
+        //    //        하여 아래 string 클래스 객체 folderId 또한 사용 제외 (2023.12.13 minjae)
         //    // string folderId = string.Empty;                               // 폴더 아이디 
 
         //    var currentMethod = MethodBase.GetCurrentMethod();   // 로그 기록시 현재 실행 중인 메서드 위치 기록
 
         //    try
         //    {
-        //        // TODO : 아래 주석친 코드 필요시 참고 (2024.09.04 jbh)
+        //        // TODO : 아래 주석친 코드 필요시 참고 (2024.09.04 minjae)
         //        // 체크아웃 처리 중인 상태에서 체크아웃을 중복 요청하는 경우 
         //        //if(true == IsCheckOutWorking)
         //        //    throw new Exception("현재 체크아웃 요청 중인 상태입니다.\r\n체크아웃 완료까지 잠시 기다려주세요.");
@@ -5723,7 +5723,7 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
         //            throw new Exception("현재 연관 컨테이너에 속한 파일 다운로드 중입니다.\r\n다운로드 완료까지 잠시 기다려주세요.");
 
 
-        //        // TODO : 화면 셋팅 "CheckOutAsync" 필요시 사용 예정 (2023.12.19 jbh)
+        //        // TODO : 화면 셋팅 "CheckOutAsync" 필요시 사용 예정 (2023.12.19 minjae)
         //        // DisplayType = CobimHelper.TypeOfCheckOut;
         //        // IsVisible = true;            // 화면에 필요한 컨트롤러 (DockPanel, Button 등등...) 화면에 보이도록 활성화
         //        // DisplaySetting(DisplayType);
@@ -5736,7 +5736,7 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
 
         //        // folderId = checkOutDatas[(int)EnumCheckOut.FOLDERID];
 
-        //        // TODO : ContainerHelper.cs -> ContainerPack 클래스 프로퍼티 "ContainerPack" 구현 (2023.12.05 jbh)
+        //        // TODO : ContainerHelper.cs -> ContainerPack 클래스 프로퍼티 "ContainerPack" 구현 (2023.12.05 minjae)
         //        //ContainerPack = new ContainerPack 
         //        //{ 
         //        //    projectId   = checkOutDatas[(int)EnumCheckOut.PROJECTID],
@@ -5745,7 +5745,7 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
         //        //};
         //        ContainerPack = new ContainerPack(checkOutDatas[(int)EnumCheckOut.PROJECTID], checkOutDatas[(int)EnumCheckOut.TEAMID], checkOutDatas[(int)EnumCheckOut.CHECKOUT_CONTAINERID]);
 
-        //        // TODO : 다운로드할 파일 정보 프로퍼티 "FilePack"에  "fileId", "fileName" 필요시 아래 소스코드 사용 예정 (2023.12.08 jbh)
+        //        // TODO : 다운로드할 파일 정보 프로퍼티 "FilePack"에  "fileId", "fileName" 필요시 아래 소스코드 사용 예정 (2023.12.08 minjae)
         //        //FilePack = new FilePack 
         //        //{ 
         //        //    fileId      = checkOutDatas[(int)EnumCheckOut.FILEID], 
@@ -5758,8 +5758,8 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
         //        //         (Rest API 8.연관 컨테이너 목록 조회 호출) 
         //        var linkedContainerList = await ExplorerRestServer.GetLinkedContainerListAsync(Client, ContainerPack, LoginView.RequestHeaders);
 
-        //        // TODO : 아래 주석친 테스트 코드 (연관 컨테이너가 존재하는 경우) 코드 필요시 참고 (2024.01.03 jbh)
-        //        // TODO : 아래 연관 컨테이너가 존재하는 경우 리스트 객체 "linkedContainerList" 컨테이너 아이디(containerId) 오름차순 정렬 (Sort 메서드) (2023.11.29 jbh)
+        //        // TODO : 아래 주석친 테스트 코드 (연관 컨테이너가 존재하는 경우) 코드 필요시 참고 (2024.01.03 minjae)
+        //        // TODO : 아래 연관 컨테이너가 존재하는 경우 리스트 객체 "linkedContainerList" 컨테이너 아이디(containerId) 오름차순 정렬 (Sort 메서드) (2023.11.29 minjae)
         //        // 참고 URL - https://www.techiedelight.com/ko/sort-list-in-descending-order-in-csharp/
         //        // 연관 컨테이너가 존재하는 경우 
         //        // if (linkedContainerList.Count >= (int)EnumLinkedRelation.EXISTENCE)
@@ -5782,7 +5782,7 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
         //            // 3) 검토 요청 중인 컨테이너가 아닐 때(statusCode != 'comstt20')
         //            await ExplorerRestServer.GetCheckOutAsync(Client, ContainerPack, FilePack, LoginView.RequestHeaders);
 
-        //            // TODO : 체크아웃 처리 중 화면이 ShowDialog(Modal)가 아니라 Show(Modaless)로 출력되므로 해당 화면 종료시 메서드 "RequestClose" 호출할 때, 메서드 파라미터 "null"로 할당 (2024.01.04 jbh)
+        //            // TODO : 체크아웃 처리 중 화면이 ShowDialog(Modal)가 아니라 Show(Modaless)로 출력되므로 해당 화면 종료시 메서드 "RequestClose" 호출할 때, 메서드 파라미터 "null"로 할당 (2024.01.04 minjae)
         //            // 참고 URL - https://cosmosproject.tistory.com/563
         //            // 체크아웃 처리 중 화면 종료 
         //            // IsCheckOutWorking = false;
@@ -5791,7 +5791,7 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
         //            // TODO : 탐색기 화면 뷰(ExplorerV.xaml) -> 컨텍스트 메뉴 "체크아웃" 클릭시 탐색기 뷰모델(ExplorerVM.cs)
         //            //        체크아웃 비동기 메서드 "CheckOutAsync" 호출 -> 컨테이너 리스트 생성 비동기 메서드 "ContainerListCreateAsync" 호출 
         //            //        실행 결과 데이터 정보가 변경되어 컨테이너 리스트 화면이 바뀌므로
-        //            //        컨테이너 리스트 생성 비동기 메서드 "ContainerListCreateAsync" 파라미터를 프로퍼티 "SelectedFolderId"로 전달함. (2023.12.13 jbh) 
+        //            //        컨테이너 리스트 생성 비동기 메서드 "ContainerListCreateAsync" 파라미터를 프로퍼티 "SelectedFolderId"로 전달함. (2023.12.13 minjae) 
         //            // 4 단계: 체크아웃 요청한 컨테이너 아이디를 가지고 Rest API 6.컨테이너 목록 조회 호출
         //            if (false == string.IsNullOrWhiteSpace(SelectedFolderId))
         //                await ContainerListCreateAsync(ContainerPack, SelectedFolderId);
@@ -5824,7 +5824,7 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
 
         //            foreach (var container in linkedContainerList)
         //            {
-        //                // TODO : 다운로드할 파일 정보 프로퍼티 "FilePack"에 속한 "fileId", "fileName"에 문자열 재할당 (2023.11.30 jbh)
+        //                // TODO : 다운로드할 파일 정보 프로퍼티 "FilePack"에 속한 "fileId", "fileName"에 문자열 재할당 (2023.11.30 minjae)
         //                // 파일 아이디
         //                FilePack.fileId = container[ContainerHelper.fileId].ToString();
 
@@ -5833,7 +5833,7 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
 
         //                // TODO : 연관 컨테이너 다운로드 하는 경우 다운로드 받은 파일의 상위 폴더명(컨테이너 아이디)을
         //                //        각각의 연관 컨테이너 아이디가 아니라 루트 컨테이너 아이디(체크아웃 요청한 컨테이너 아이디)
-        //                //        하나로만 상위 폴더명으로 설정 해야 하므로 아래 소스코드는 주석 처리 진행 (2023.12.14 jbh)
+        //                //        하나로만 상위 폴더명으로 설정 해야 하므로 아래 소스코드는 주석 처리 진행 (2023.12.14 minjae)
         //                // 체크아웃 요청한 컨테이너 아이디 
         //                // ContainerPack.containerId = container[ContainerHelper.containerId].ToString();
 
@@ -5841,7 +5841,7 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
         //                ContainerPack.linkedContainerId = container[ContainerHelper.containerId].ToString();
 
         //                // TODO : 체크아웃 요청한 컨테이너 아이디 문자열 값과 연관 컨테이너 아이디의 문자열이 동일한 경우 파일 다운로드 대상 제외
-        //                //        이미 체크아웃 + 파일 다운로드 처리 동시에 하였으므로 파일 중복 다운로드 안 하기 위해 continue 처리 구현 (2023.12.15 jbh)
+        //                //        이미 체크아웃 + 파일 다운로드 처리 동시에 하였으므로 파일 중복 다운로드 안 하기 위해 continue 처리 구현 (2023.12.15 minjae)
         //                if (ContainerPack.containerId.Equals(ContainerPack.linkedContainerId)) continue;
 
         //                // 연관 컨테이너에 속한 파일 다운로드 진행
@@ -5851,7 +5851,7 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
         //            MessageBox.Show($"컨테이너 아이디 {checkOutContainerId}\r\n체크아웃 완료!\r\n연관 컨테이너 파일 다운로드 완료!");
         //        }
 
-        //        // TODO : 연관 컨테이너 파일 다운로드 처리 중 화면이 ShowDialog(Modal)가 아니라 Show(Modaless)로 출력되므로 해당 화면 종료시 메서드 "RequestClose" 호출할 때, 메서드 파라미터 "null"로 할당 (2024.01.05 jbh)
+        //        // TODO : 연관 컨테이너 파일 다운로드 처리 중 화면이 ShowDialog(Modal)가 아니라 Show(Modaless)로 출력되므로 해당 화면 종료시 메서드 "RequestClose" 호출할 때, 메서드 파라미터 "null"로 할당 (2024.01.05 minjae)
         //        // 참고 URL - https://cosmosproject.tistory.com/563
         //        // 연관 컨테이너 파일 다운로드 처리 중 화면 종료 
         //        // IsLinkedContainerWorking = false;
@@ -5879,11 +5879,11 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
         //    // return;
         //}
 
-        // TODO : 필요시 아래 주석친 컨테이너 체크인 + (컨테이너에 속한 파일) 웹서버로 업로드 비동기 메서드 "CheckInAsync" 참고 (2024.10.11 jbh)
-        // TODO : 체크아웃, 체크인, 파일 다운로드 중복 처리 시 컨텍스트 메뉴창 비활성화(Enabled = false;) 구현 예정 (2024.09.03 jbh)
+        // TODO : 필요시 아래 주석친 컨테이너 체크인 + (컨테이너에 속한 파일) 웹서버로 업로드 비동기 메서드 "CheckInAsync" 참고 (2024.10.11 minjae)
+        // TODO : 체크아웃, 체크인, 파일 다운로드 중복 처리 시 컨텍스트 메뉴창 비활성화(Enabled = false;) 구현 예정 (2024.09.03 minjae)
         // 컨테스트 메뉴창 객체 이름 설정(예) x:Name="ExplorerContextMenu"
 
-        // TODO : 메서드 파라미터 "object obj" -> object 배열 "object[] obj"로 변환 및 지역변수 "var parameters" 사용 안하고 리스트 변환 가능한지 테스트 진행 예정 (2023.12.18 jbh)
+        // TODO : 메서드 파라미터 "object obj" -> object 배열 "object[] obj"로 변환 및 지역변수 "var parameters" 사용 안하고 리스트 변환 가능한지 테스트 진행 예정 (2023.12.18 minjae)
         /// <summary>
         /// 컨테이너 체크인 + (컨테이너에 속한 파일) 웹서버로 업로드  
         /// 컨테이너 체크인 + (컨테이너에 속한 파일) 웹서버로 업로드 성공하면 
@@ -5901,25 +5901,25 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
         //    // string inputTenantId = LoginHelper.inputTenantId;                   // 테넌트 아이디
         //    // string tokenKey      = AppSetting.Default.Login.Token.resultData;   // 로그인 토큰 키 
 
-        //    // TODO : 아래 주석친 소스 코드 3줄(parameters, checkInDatas, checkInDataDic) 필요 없을 시 삭제 예정 (2023.12.05 jbh)
-        //    // TODO : Object 배열 객체 obj 리스트로 변환 (2023.12.05 jbh)
+        //    // TODO : 아래 주석친 소스 코드 3줄(parameters, checkInDatas, checkInDataDic) 필요 없을 시 삭제 예정 (2023.12.05 minjae)
+        //    // TODO : Object 배열 객체 obj 리스트로 변환 (2023.12.05 minjae)
         //    // 참고 URL - https://nonstop-antoine.tistory.com/36
         //    // var parameters     = obj as IEnumerable;                          // Context Menu(컨텍스트 메뉴) "체크인" 클릭시 받은 체크인 시 필요한 정보(CommandParameter "exp_ProjectId", "exp_TeamId", "exp_ContainerId", "exp_FileId", "exp_FileName") (Object Array -> IEnumerable 형변환) 
         //    // var checkInDatas   = new List<string>();                          // parameters를 리스트로 변환할 때 사용하는 리스트 객체 "checkInDatas"
         //    // var checkInDataDic = new Dictionary<string, string>();            // 체크인시 필요한 정보 데이터를 담는 Dictionary 객체 "checkInDataDic" 생성
 
-        //    // TODO : Context Menu(컨텍스트 메뉴) "체크인" 클릭시 MultiCommandParameter 데이터(obj)를 object 배열(object[])로 형변환 (2023.12.05 jbh)
+        //    // TODO : Context Menu(컨텍스트 메뉴) "체크인" 클릭시 MultiCommandParameter 데이터(obj)를 object 배열(object[])로 형변환 (2023.12.05 minjae)
         //    // 참고 URL - https://www.melodiouscode.net/passing-multiple-parameters-to-an-icommand-in-wpf
         //    var parameters = (object[])obj;                                      // Context Menu(컨텍스트 메뉴) "체크인" 클릭시 받은 체크인 시 필요한 정보(CommandParameter "exp_ProjectId", "exp_TeamId", "exp_ContainerId", "exp_FileId", "exp_FileName") (Object Array -> IEnumerable 형변환) 
 
-        //    // TODO : (기존) object 배열 "(object[])obj" 형식 -> (변경) string 배열 "string[] checkInDatas" 형식으로 형변환 구현 (2023.12.19 jbh)
+        //    // TODO : (기존) object 배열 "(object[])obj" 형식 -> (변경) string 배열 "string[] checkInDatas" 형식으로 형변환 구현 (2023.12.19 minjae)
         //    // 참고 URL - https://afsdzvcx123.tistory.com/entry/C-%EB%AC%B8%EB%B2%95-Object-%ED%98%95%EC%8B%9D-String-%ED%98%95%EC%8B%9D%EC%9C%BC%EB%A1%9C-%ED%98%95%EB%B3%80%ED%99%98Casting-%ED%95%98%EB%8A%94-%EB%B0%A9%EB%B2%95
 
         //    // TODO : (기존) object 배열 "(object[])obj" 형식 -> (변경) string 배열
         //    //        단, 변경할 때, (기존) object 배열에 속하는 데이터 중 "제목"을
         //    //        갖고 있는 데이터를 제외하기 위해 Linq 조건절 확장 메서드 Where 사용해서
         //    //        특정 인덱스 "(int)EnumCheckIn.TITLE" 제외한 
-        //    //        데이터만 추출해서 string 배열 객체 "checkInDatas" 구현 (2024.08.26 jbh)
+        //    //        데이터만 추출해서 string 배열 객체 "checkInDatas" 구현 (2024.08.26 minjae)
         //    // 참고 URL - https://chatgpt.com/c/332ba391-669d-4e7b-8e5a-af86cbd6516e
         //    string[] checkInDatas = Array.ConvertAll(parameters, param => (param ?? string.Empty).ToString())
         //                                 .Where((checkInRequestData, index) => index != (int)EnumCheckIn.TITLE)
@@ -5951,12 +5951,12 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
         //    string fileId = string.Empty;                      // 체크인 처리하기 전 파일 아이디  
         //    string revsnVal = string.Empty;                      // 체크인 처리하기 전 파일 버전 
 
-        //    // TODO : 체크인 처리 완료 후 파일명 string 객체 checkInFileName 필요시 사용 예정 (2024.08.26 jbh)
+        //    // TODO : 체크인 처리 완료 후 파일명 string 객체 checkInFileName 필요시 사용 예정 (2024.08.26 minjae)
         //    //string checkInFileName = string.Empty;             // 체크인 처리 완료 후 파일명
         //    string checkInFileId = string.Empty;                 // 체크인 처리 완료 후 파일 아이디  
         //    string checkInRevsnVal = string.Empty;               // 체크인 처리 완료 후 파일 버전 
 
-        //    // TODO : C# 문자열 보간 기능 사용해서 웹서버로 업로드 할 상위 폴더 경로 문자열로 변환 (2024.09.02 jbh)
+        //    // TODO : C# 문자열 보간 기능 사용해서 웹서버로 업로드 할 상위 폴더 경로 문자열로 변환 (2024.09.02 minjae)
         //    // 참고 URL - https://gaeunhan.tistory.com/61
         //    string dirPath = string.Empty;                       // 웹서버로 업로드 할 파일의 상위 디렉토리(폴더) 경로
         //    string filePath = string.Empty;                       // 웹서버로 업로드 할 파일 전체 경로 
@@ -5969,7 +5969,7 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
 
         //    try
         //    {
-        //        // TODO : 아래 주석친 코드 필요시 참고 (2024.09.04 jbh)
+        //        // TODO : 아래 주석친 코드 필요시 참고 (2024.09.04 minjae)
         //        // 체크인 처리 중인 상태에서 체크인을 중복 요청하는 경우 
         //        // if(true == IsCheckInWorking)
         //        //     throw new Exception("현재 체크인 요청 중인 상태입니다.\r\n체크인 완료까지 잠시 기다려주세요.");
@@ -5977,19 +5977,19 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
 
         //        var partVM = Container.Get<CheckInPartVM>().ToShowData();   // 체크인 팝업 화면 생성 및 결과 리턴
 
-        //        // TODO : 아래 주석친 테스트용 체크인 팝업 화면 출력 소스코드 필요시 참고 (2024.01.03 jbh) 
+        //        // TODO : 아래 주석친 테스트용 체크인 팝업 화면 출력 소스코드 필요시 참고 (2024.01.03 minjae) 
         //        // OpenCheckIn(); // 체크인 화면 출력
         //        // 체크인 팝업 화면 출력
         //        // var con = Container.Get<CheckInPartVM>();
         //        // WindowManager.ShowDialog(con);
 
-        //        // TODO : await Task.Yield(); 사용법 제대로 확인 후 사용 예정 (2023.12.04 jbh)
+        //        // TODO : await Task.Yield(); 사용법 제대로 확인 후 사용 예정 (2023.12.04 minjae)
         //        // 참고 URL - https://www.sysnet.pe.kr/2/0/12241
         //        // 참고 2 URL - https://www.sysnet.pe.kr/2/0/12245
         //        // 참고 3 URL - https://stackoverflow.com/questions/22645024/when-would-i-use-task-yield
         //        await Task.Yield();
 
-        //        // TODO : 닫기("X") 버튼 클릭 시 컨테이너 체크인 + 업로드 메서드 "CheckInAsync" 종료 로직 구현 (2023.12.07 jbh)
+        //        // TODO : 닫기("X") 버튼 클릭 시 컨테이너 체크인 + 업로드 메서드 "CheckInAsync" 종료 로직 구현 (2023.12.07 minjae)
         //        if (true == partVM.IsExit) return;
 
         //        // DisplayType = CobimHelper.TypeOfCheckIn;
@@ -5999,7 +5999,7 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
         //        // checkInContainerId = checkInDatas[(int)EnumCheckIn.CONTAINERID];
         //        // folderId = checkInDatas[(int)EnumCheckIn.FOLDERID];
 
-        //        // TODO : ContainerHelper.cs -> ContainerPack 클래스 프로퍼티 "ContainerPack" 구현 (2023.12.05 jbh)
+        //        // TODO : ContainerHelper.cs -> ContainerPack 클래스 프로퍼티 "ContainerPack" 구현 (2023.12.05 minjae)
         //        //ContainerPack = new ContainerPack
         //        //{
         //        //    projectId   = checkInDatas[(int)EnumCheckIn.PROJECTID],
@@ -6012,7 +6012,7 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
         //                                          checkInDatas[(int)EnumCheckIn.CONTAINERID]);
 
 
-        //        // TODO : 다른 PC에서도 파일 업로드 기능이 실행될 수 있도록 웹서버로 업로드 할 파일 전체 경로 "dirPath"의 루트 디렉토리 값을 내문서 폴더 (Environment.SpecialFolder.MyDocuments)로 설정 (2023.12.05 jbh)
+        //        // TODO : 다른 PC에서도 파일 업로드 기능이 실행될 수 있도록 웹서버로 업로드 할 파일 전체 경로 "dirPath"의 루트 디렉토리 값을 내문서 폴더 (Environment.SpecialFolder.MyDocuments)로 설정 (2023.12.05 minjae)
         //        // 참고 URL - https://learn.microsoft.com/ko-kr/dotnet/api/system.environment.specialfolder?view=net-7.0
         //        // 웹서버로 업로드 할 파일의 상위 디렉토리 폴더 전체 경로 예시 - "C:\Users\bhjeon\Documents\CobimExplorer\bmcb\inc-001-bmcb-t005\bmcb-imbu-func_016-sptl_901-002"
         //        // SpecialFolder 시스템 디렉토리(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) 사용
@@ -6025,11 +6025,11 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
         //        revsnVal = checkInDatas[(int)EnumCheckIn.REVSNVAL];
 
 
-        //        // TODO : 웹서버로 업로드 할 파일 전체 경로 구현 (2023.12.04 jbh)
+        //        // TODO : 웹서버로 업로드 할 파일 전체 경로 구현 (2023.12.04 minjae)
         //        // 참고 URL - https://dlgnlfus.tistory.com/129
         //        filePath = dirPath + $"\\{fileName}";   // 웹서버로 업로드 할 파일 전체 경로 
 
-        //        // TODO : 웹서버로 업로드 할 파일 전체 경로에 있는 파일 정보 불러 오도록 구현 (2023.12.05 jbh)
+        //        // TODO : 웹서버로 업로드 할 파일 전체 경로에 있는 파일 정보 불러 오도록 구현 (2023.12.05 minjae)
         //        // 참고 URL   - https://chashtag.tistory.com/37
         //        // 참고 2 URL - https://www.delftstack.com/ko/howto/csharp/get-filesize-in-csharp/
         //        // 참고 2 URL - https://dlgnlfus.tistory.com/129
@@ -6047,16 +6047,16 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
         //            using (FileStream upLoadFileStream = File.OpenRead(filePath))
         //            {
         //                // TODO : 추후 체크인 구현시 업로드 하려는 파일명(uploadFiles)과 기존 체크인 된 파일명(fileName)이 다를 경우
-        //                //        enum 열거형 구조체 EnumCheckIn 멤버 변수 "FILENAME" 사용해서 로직 수정 예정 (2023.12.05 jbh)
+        //                //        enum 열거형 구조체 EnumCheckIn 멤버 변수 "FILENAME" 사용해서 로직 수정 예정 (2023.12.05 minjae)
         //                CheckInPack = new CheckInPack
         //                {
         //                    folderId = checkInDatas[(int)EnumCheckIn.FOLDERID],
         //                    uploadFiles = upLoadFileStream,
         //                    fileName = checkInDatas[(int)EnumCheckIn.UPLOAD_FILENAME],
         //                    fileId = string.Empty,
-        //                    // TODO : pCheckInPack.fileSize의 파일 크기 단위가 바이트인지 아닌지 확인 필요 (2023.12.05 jbh)
+        //                    // TODO : pCheckInPack.fileSize의 파일 크기 단위가 바이트인지 아닌지 확인 필요 (2023.12.05 minjae)
         //                    fileSize = upLoadFileStream.Length.ToString(),
-        //                    // TODO : 아래 주석친 코드 "comment = ExplorerView.RequestData.exp_Comment" 필요시 사용 예정 (2024.01.05 jbh)
+        //                    // TODO : 아래 주석친 코드 "comment = ExplorerView.RequestData.exp_Comment" 필요시 사용 예정 (2024.01.05 minjae)
         //                    // comment  = ExplorerView.RequestData.exp_Comment
         //                    comment = partVM.SelectedData.exp_Comment
         //                };
@@ -6071,14 +6071,14 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
         //                // 컨테이너 체크인 + 업로드 
         //                var resultCheckInData = await ExplorerRestServer.PostCheckInAsync(Client, ContainerPack, CheckInPack, filePath, LoginView.RequestHeaders);
 
-        //                // Dictionary 객체 resultCheckInData 특정 키(Key) "fileName", "fileId", "revsnVal"에 속하는 값(Value) 문자열로 변환 (2024.08.26 jbh)
+        //                // Dictionary 객체 resultCheckInData 특정 키(Key) "fileName", "fileId", "revsnVal"에 속하는 값(Value) 문자열로 변환 (2024.08.26 minjae)
         //                // 참고 URL - https://developer-talk.tistory.com/694
-        //                // TODO : 체크인 처리 완료 후 파일명 string 객체 checkInFileName 필요시 사용 예정 (2024.08.26 jbh)
+        //                // TODO : 체크인 처리 완료 후 파일명 string 객체 checkInFileName 필요시 사용 예정 (2024.08.26 minjae)
         //                // checkInFileName = resultCheckInData[ContainerHelper.fileNm].ToString();
         //                checkInFileId = resultCheckInData[ContainerHelper.fileId].ToString();
         //                checkInRevsnVal = resultCheckInData[ContainerHelper.revsnVal].ToString();
 
-        //                // TODO : 체크인 처리중 화면이 ShowDialog(Modal)가 아니라 Show(Modaless)로 출력되므로 해당 화면 종료시 메서드 "RequestClose" 호출할 때, 메서드 파라미터 "null"로 할당 (2024.01.04 jbh)
+        //                // TODO : 체크인 처리중 화면이 ShowDialog(Modal)가 아니라 Show(Modaless)로 출력되므로 해당 화면 종료시 메서드 "RequestClose" 호출할 때, 메서드 파라미터 "null"로 할당 (2024.01.04 minjae)
         //                // 참고 URL - https://cosmosproject.tistory.com/563
         //                // 체크인 처리 중 화면 종료 
         //                // IsCheckInWorking = false;
@@ -6162,7 +6162,7 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
         //            // TODO : 탐색기 화면 뷰(ExplorerV.xaml) -> 컨텍스트 메뉴 "체크인" 클릭시 탐색기 뷰모델(ExplorerVM.cs)
         //            //        체크인 비동기 메서드 "CheckInAsync" 호출 -> 컨테이너 리스트 생성 비동기 메서드 "ContainerListCreateAsync" 호출 
         //            //        실행 결과 데이터 정보가 변경되어 컨테이너 리스트 화면이 바뀌므로
-        //            //        컨테이너 리스트 생성 비동기 메서드 "ContainerListCreateAsync" 파라미터를 프로퍼티 "SelectedFolderId"로 전달함. (2023.12.13 jbh)
+        //            //        컨테이너 리스트 생성 비동기 메서드 "ContainerListCreateAsync" 파라미터를 프로퍼티 "SelectedFolderId"로 전달함. (2023.12.13 minjae)
         //            // 체크인 요청한 컨테이너 아이디를 가지고 Rest API 6.컨테이너 목록 조회 호출
         //            if (false == string.IsNullOrWhiteSpace(SelectedFolderId))
         //                await ContainerListCreateAsync(ContainerPack, SelectedFolderId);
@@ -6177,7 +6177,7 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
 
         //            deleteContainerId = checkInDatas[(int)EnumCheckIn.CONTAINERID];
 
-        //            // TODO : 체크인 완료(+ 컨테이너에 속한 파일 웹서버로 업로드) 후 파일 삭제 기능이 실행될 수 있도록 삭제 할 파일의 상위 폴더 경로 "deleteDirPath"의 루트 디렉토리 값을 내문서 폴더 (Environment.SpecialFolder.MyDocuments)로 설정 (2024.08.30 jbh)
+        //            // TODO : 체크인 완료(+ 컨테이너에 속한 파일 웹서버로 업로드) 후 파일 삭제 기능이 실행될 수 있도록 삭제 할 파일의 상위 폴더 경로 "deleteDirPath"의 루트 디렉토리 값을 내문서 폴더 (Environment.SpecialFolder.MyDocuments)로 설정 (2024.08.30 minjae)
         //            // 참고 URL - https://learn.microsoft.com/ko-kr/dotnet/api/system.environment.specialfolder?view=net-7.0
         //            // 삭제할 파일의 상위 폴더 전체 경로 예시 - "C:\Users\bhjeon\Documents\CobimExplorer\bmcb\inc-001-bmcb-t005\bmcb-imbu-func_016-sptl_901-002"
         //            // SpecialFolder 시스템 디렉토리(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) 사용
@@ -6189,9 +6189,9 @@ namespace CobimExplorer.ViewModels.Page.Project.CDE.Explorer
         //                //MessageBox.Show($"로컬에 존재하는 루트 컨테이너 폴더({deleteContainerId})\r\n다운로드 받은 파일 삭제 진행합니다.");
 
         //                // TODO : 체크인 완료 후(+ 파일 웹서버 업로드 완료) 로컬 PC에 다운로드 받은 기존 루트 컨테이너 폴더(deleteContainerId) 및 폴더에 속한 모든 파일 삭제 
-        //                // TODO : 폴더(디렉토리) 클래스 "Directory", "DirectoryInfo" 차이점 비교 후 static 클래스 "Directory" 사용 (2024.08.30 jbh)
+        //                // TODO : 폴더(디렉토리) 클래스 "Directory", "DirectoryInfo" 차이점 비교 후 static 클래스 "Directory" 사용 (2024.08.30 minjae)
         //                // 참고 URL - https://nomad-programmer.tistory.com/207
-        //                // TODO : Directory.Delete 메서드의 2번째 파라미터 값 설정 구현 (2024.08.30 jbh)
+        //                // TODO : Directory.Delete 메서드의 2번째 파라미터 값 설정 구현 (2024.08.30 minjae)
         //                //        deleteDirPath 경로의 폴더(디렉터리), 해당 폴더의 하위 폴더(디렉터리) 및 파일을 제거하려면 true, 제거하지 않으려면 false 설정
         //                //        true로 설정하면 해당 폴더의 하위 폴더(디렉터리) 및 파일을 제거할 때, 재귀적으로 (recursive) Directory.Delete 메서드 실행 
         //                // 참고 URL - https://learn.microsoft.com/ko-kr/dotnet/api/system.io.directory.delete?view=net-8.0

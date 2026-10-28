@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CobimExplorer.Models.Explorer
 {
-    // TODO : 추후 필요시 데이터 모델 클래스 "ExplorerView" 구현 예정 (2023.07.13 jbh)
+    // TODO : 추후 필요시 데이터 모델 클래스 "ExplorerView" 구현 예정 (2023.07.13 minjae)
     public class ExplorerView
     {
         public ExplorerView()

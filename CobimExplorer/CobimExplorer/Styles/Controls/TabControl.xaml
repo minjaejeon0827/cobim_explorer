@@ -6,20 +6,20 @@
     <!-- 구현된 Resources(자원)들을 가져오는 기능이고, {DynamicResource }는 컴파일 실행 후, 프로그램이 정상 실행되는 런타임 동안에  -->
     <!-- 실시간으로 데이터가 바뀌거나 화면이 새로 랜더링 되는(화면 변환) 동안에 동적으로 그때마다 필요한 Resource(자원)들을 가져오는 기능이다. -->
 
-    <!--  TODO : TabControl 스타일 필요시 구현 예정 (2023.11.10 jbh)  -->
+    <!--  TODO : TabControl 스타일 필요시 구현 예정 (2023.11.10 minjae)  -->
     <!--  참고 URL - https://wpf-tutorial.com/sl/70/the-tabcontrol/wpf-tabcontrol-styling-the-tabitems/  -->
     <Style x:Key="App.TabControl" TargetType="{x:Type TabControl}">
         
     </Style>
 
-    <!--  TODO : ExplorerV.xaml 전용 부모 TabControl 스타일 구현 (2023.11.10 jbh)  -->
+    <!--  TODO : ExplorerV.xaml 전용 부모 TabControl 스타일 구현 (2023.11.10 minjae)  -->
     <Style x:Key="App.TabControl.ExplorerV" TargetType="{x:Type TabControl}">
-        <!--  TODO : TabControl 스타일 속성 정의 (2023.11.10 jbh)  -->
+        <!--  TODO : TabControl 스타일 속성 정의 (2023.11.10 minjae)  -->
         <Setter Property="BorderBrush" Value="{DynamicResource App.Brush.Themes.Winter.Black.20}" />
         <Setter Property="BorderThickness" Value="2" />
 
         <Style.Resources>
-            <!--  TODO : 부모 TabControl 하위 자식 컨트롤 TabItem Trigger 스타일 구현 (2023.11.10 jbh)  -->
+            <!--  TODO : 부모 TabControl 하위 자식 컨트롤 TabItem Trigger 스타일 구현 (2023.11.10 minjae)  -->
             <Style TargetType="{x:Type TabItem}">
                 <Setter Property="Template">
                     <Setter.Value>
@@ -51,7 +51,7 @@
         </Style.Resources>
     </Style>
 
-    <!--  TODO : TabControl 하위 TabItem Trigger 스타일 구현 (필요시 사용 예정) (2023.11.10 jbh)  -->
+    <!--  TODO : TabControl 하위 TabItem Trigger 스타일 구현 (필요시 사용 예정) (2023.11.10 minjae)  -->
     <Style x:Key="App.TabItem.Trigger" TargetType="{x:Type TabItem}">
         <Setter Property="Template">
             <Setter.Value>
@@ -82,7 +82,7 @@
         </Setter>
     </Style>
 
-    <!--  TODO : TabControl 하위 TabItem NoTrigger 스타일 필요시 구현 예정 (2023.11.10 jbh)  -->
+    <!--  TODO : TabControl 하위 TabItem NoTrigger 스타일 필요시 구현 예정 (2023.11.10 minjae)  -->
     <Style x:Key="App.TabItem.NoTrigger" TargetType="{x:Type TabItem}">
 
     </Style>

@@ -45,7 +45,7 @@ namespace CobimExplorer.Behaviors
         {
             UIElement uie = d as UIElement;
 
-            // TODO : if 조건절에 != null 보다 빠른 is not null 연산자 사용 (2023.11.24 jbh)
+            // TODO : if 조건절에 != null 보다 빠른 is not null 연산자 사용 (2023.11.24 minjae)
             // 참고 URL - https://husk321.tistory.com/405
             if (uie is not null)
             {
@@ -53,13 +53,13 @@ namespace CobimExplorer.Behaviors
                 TBehavior existingBehavior = behColl.FirstOrDefault(b => b.GetType() ==
                       typeof(TBehavior)) as TBehavior;
 
-                // TODO : if 조건절에 != null 보다 빠른 is not null 연산자 사용 (2023.11.24 jbh)
+                // TODO : if 조건절에 != null 보다 빠른 is not null 연산자 사용 (2023.11.24 minjae)
                 // 참고 URL - https://husk321.tistory.com/405
                 if ((bool)e.NewValue == false && existingBehavior is not null)
                 {
                     behColl.Remove(existingBehavior);
                 }
-                // TODO : if 조건절에 == null 보다 빠른 is null 연산자 사용 (2023.11.24 jbh)
+                // TODO : if 조건절에 == null 보다 빠른 is null 연산자 사용 (2023.11.24 minjae)
                 // 참고 URL - https://husk321.tistory.com/405
                 else if ((bool)e.NewValue == true && existingBehavior is null)
                 {

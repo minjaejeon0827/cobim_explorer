@@ -24,12 +24,12 @@
         </Style>-->
     </UserControl.Resources>
 
-    <!--  TODO : CobimExplorer 응용 프로그램 화면 상단 타이틀 바 구현 (2023.11.09 jbh)  -->
+    <!--  TODO : CobimExplorer 응용 프로그램 화면 상단 타이틀 바 구현 (2023.11.09 minjae)  -->
     <!--  참고 URL - https://youtu.be/Q6VxSPlkcCg?si=dkC2ujAX3reUjQPk  -->
     <Border x:Name="mainTitle"
             Background="{StaticResource App.Brush.Themes.Winter.Black.30}">
         <Grid>
-            <!--  TODO : 탐색기 응용 프로그램 화면 상단 윈도우 타이틀 바 직접 구현 (2023.11.07 jbh)  -->
+            <!--  TODO : 탐색기 응용 프로그램 화면 상단 윈도우 타이틀 바 직접 구현 (2023.11.07 minjae)  -->
             <!--  참고 URL - https://gigong.tistory.com/99  -->
             <!--  참고 2 URL - https://itpro.tistory.com/88  -->
             <!--  타이틀 바 영역  -->
@@ -38,7 +38,7 @@
             <Label VerticalContentAlignment="Center" 
                    Margin="10,0,105,0"
                    x:Name="TitleLabel">
-                <!--  TODO : 아래 TextBlock에 바인딩 된 Title은 MainV.xaml 상단 <Window> 태그 안에 사용되는 속성 Title="{Binding CDE_Title}"을 의미함. (2023.11.09 jbh)  -->     
+                <!--  TODO : 아래 TextBlock에 바인딩 된 Title은 MainV.xaml 상단 <Window> 태그 안에 사용되는 속성 Title="{Binding CDE_Title}"을 의미함. (2023.11.09 minjae)  -->     
                 <TextBlock Text="{Binding Title, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}}" 
                            Foreground="{StaticResource App.Brush.Themes.Common.White}"
                            FontWeight="Bold" />
@@ -62,7 +62,7 @@
                         <!--<behavior:TitleBarButtonBehavior MinCommand="{Binding MinCommand}"/>-->
                     </i:Interaction.Behaviors>
 
-                    <!--  TODO : 최소화 버튼 Behavior 구현 (InvokeCommandAction 사용) (2023.11.16 jbh)  -->
+                    <!--  TODO : 최소화 버튼 Behavior 구현 (InvokeCommandAction 사용) (2023.11.16 minjae)  -->
                     <!--  참고 URL - https://velog.io/@yu_oolong/C-WPF-Behavior-InvokeCommandAction  -->
                     <!--  참고 2 URL - https://blog.naver.com/vactorman/221064433289  -->
                     <i:Interaction.Triggers>
@@ -88,7 +88,7 @@
                         <!--<behavior:TitleBarButtonBehavior MaxCommand="{Binding MaxCommand}"/>-->
                     </i:Interaction.Behaviors>
 
-                    <!--  TODO : 최대화 버튼 Behavior 구현 (InvokeCommandAction 사용) (2023.11.16 jbh)  -->
+                    <!--  TODO : 최대화 버튼 Behavior 구현 (InvokeCommandAction 사용) (2023.11.16 minjae)  -->
                     <!--  참고 URL - https://velog.io/@yu_oolong/C-WPF-Behavior-InvokeCommandAction  -->
                     <!--  참고 2 URL - https://blog.naver.com/vactorman/221064433289  -->
                     <i:Interaction.Triggers>
@@ -133,7 +133,7 @@
                         <!--<behavior:TitleBarButtonBehavior ExitCommand="{Binding ExitCommand}"/>-->
                     </i:Interaction.Behaviors>
 
-                    <!--  TODO : 종료 버튼 Behavior 구현 (InvokeCommandAction 사용) (2023.11.16 jbh)  -->
+                    <!--  TODO : 종료 버튼 Behavior 구현 (InvokeCommandAction 사용) (2023.11.16 minjae)  -->
                     <!--  참고 URL - https://velog.io/@yu_oolong/C-WPF-Behavior-InvokeCommandAction  -->
                     <!--  참고 2 URL - https://blog.naver.com/vactorman/221064433289  -->
                     <i:Interaction.Triggers>

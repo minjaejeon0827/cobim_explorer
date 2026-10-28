@@ -24,7 +24,7 @@ namespace CobimExplorer.ViewModels.Page.Start
 
         #region OnActivate
 
-        // TODO : 아래 프로퍼티 "Sender" 필요시 참고 (2024.08.07 jbh)
+        // TODO : 아래 프로퍼티 "Sender" 필요시 참고 (2024.08.07 minjae)
         /// <summary>
         /// 이벤트 OnActivate 실행시 
         /// OpenPageMsg 클래스 객체에 전달할 객체 Sender 
@@ -55,17 +55,17 @@ namespace CobimExplorer.ViewModels.Page.Start
 
         public ICommand CmdClick { get; set; }
 
-        // TODO : 필요시 프로퍼티 "Container" 사용 예정 (2024.01.04 jbh) 
+        // TODO : 필요시 프로퍼티 "Container" 사용 예정 (2024.01.04 minjae) 
         //public IContainer Container { get; set; }
 
-        // TODO : 필요시 프로퍼티 "EventAggregator" 사용 예정 (2024.01.04 jbh) 
+        // TODO : 필요시 프로퍼티 "EventAggregator" 사용 예정 (2024.01.04 minjae) 
         //[Inject]
         //public IEventAggregator EventAggregator { get; set; }
 
 
         //public ICommand MsgCommand { get; set; }
 
-        // TODO : RelayCommand 클래스 프로퍼티 구현 (2023.07.13 jbh)
+        // TODO : RelayCommand 클래스 프로퍼티 구현 (2023.07.13 minjae)
         // 참고 URL - https://youtu.be/s7pt3EkDyq4
         // public RelayCommand MsgCommand => new RelayCommand(execute => DoSomething());
 
@@ -75,7 +75,7 @@ namespace CobimExplorer.ViewModels.Page.Start
 
         //public StartViewModel() 
         //{
-        //    // TODO: Button 컨트롤 Command Binding RelayCommand 구현 (2023.07.03 jbh)
+        //    // TODO: Button 컨트롤 Command Binding RelayCommand 구현 (2023.07.03 minjae)
         //    // 참고 URL - https://itpro.tistory.com/90
         //    CmdClick = new RelayCommand(DoSomething, CanDoSomething);
         //}
@@ -91,7 +91,7 @@ namespace CobimExplorer.ViewModels.Page.Start
         {
             Container = container;
 
-            // TODO : EventAggregator = events; 코드 추가 (2023.07.24 jbh)
+            // TODO : EventAggregator = events; 코드 추가 (2023.07.24 minjae)
             // 참고 URL - https://github.com/canton7/Stylet/wiki/3.-The-Taskbar
             EventAggregator = events;
             // MsgCommand = new RelayCommand(execute => DoSomething()); 
@@ -111,13 +111,13 @@ namespace CobimExplorer.ViewModels.Page.Start
         {
             base.OnActivate();
 
-            // TODO : 아래 테스트 코드 필요시 참고 (2024.08.07 jbh)
+            // TODO : 아래 테스트 코드 필요시 참고 (2024.08.07 minjae)
             //Sender = this;
 
             //var vm = Container.Get<StartVM>();
             //string VMName = vm.GetViewModelName();
 
-            // TODO : 필요시 var msg = new ChangeViewModelMsg(this, VMName); 사용 예정 (2024.08.06 jbh)
+            // TODO : 필요시 var msg = new ChangeViewModelMsg(this, VMName); 사용 예정 (2024.08.06 minjae)
             //var msg = new ChangeViewModelMsg(this, VMName);
             //var msg = new OpenPageMsg((ICbVM)Sender, VMName);
             //EventAggregator.PublishOnUIThread(msg);

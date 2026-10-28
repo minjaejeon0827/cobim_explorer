@@ -32,7 +32,7 @@ namespace CobimExplorer.Views.Pages
         }
 
 
-        // TODO : 마우스 오른쪽 클릭 이벤트 메서드 "Btn_MouseRightButtonDown" 구현 (필요시 사용) (2023.11.02 jbh)
+        // TODO : 마우스 오른쪽 클릭 이벤트 메서드 "Btn_MouseRightButtonDown" 구현 (필요시 사용) (2023.11.02 minjae)
         // 참고 URL - https://yeko90.tistory.com/entry/c-wpf-%EB%A7%88%EC%9A%B0%EC%8A%A4-%EC%9D%B4%EB%B2%A4%ED%8A%B8%EB%8D%94%EB%B8%94%ED%81%B4%EB%A6%AD-%EC%98%A4%EB%A5%B8%EC%AA%BD%ED%81%B4%EB%A6%AD-%EC%99%BC%EC%AA%BD-%ED%81%B4%EB%A6%AD
         // 참고 2 URL - https://poorman.tistory.com/263
         //private void Btn_MouseRightButtonDown(object sender, MouseButtonEventArgs e)

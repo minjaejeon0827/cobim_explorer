@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CobimExplorer.Services.Messenger
 {
-    // TODO : Messenger 클래스 필요시 구현 예정 (2023.08.31 jbh)
+    // TODO : Messenger 클래스 필요시 구현 예정 (2023.08.31 minjae)
     // 유튜브 참고 URL - https://youtu.be/-6Td1iLBXGw?si=_Lq600jpriCve3dQ
     public class Messenger
     {
@@ -26,7 +26,7 @@ namespace CobimExplorer.Services.Messenger
         //    public void UnSubscribe<TMessage>(object subscriber)
         //    {
         //        var subscription = _Subscription.FirstOrDefault(x => x.Subscriber == subscriber);
-                  // TODO : if 조건절에 != null 보다 빠른 is not null 연산자 사용 (2023.11.24 jbh)
+                  // TODO : if 조건절에 != null 보다 빠른 is not null 연산자 사용 (2023.11.24 minjae)
                   // 참고 URL - https://husk321.tistory.com/405
         //        if (subscription is not null)
         //            _Subscription.Remove(subscription);

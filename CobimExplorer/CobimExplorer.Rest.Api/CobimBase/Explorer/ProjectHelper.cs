@@ -16,7 +16,7 @@ namespace CobimExplorer.Rest.Api.CobimBase.Explorer
         /// </summary>
         public const string requestProjectTeamURL = "https://cobim.io/api/explorer/project/my/list";
 
-        // TODO : 테스트 프로젝트 아이디 "bmcb" 변경 (2023.09.12 jbh)
+        // TODO : 테스트 프로젝트 아이디 "bmcb" 변경 (2023.09.12 minjae)
         /// <summary>
         /// 4. 폴더 목록 조회 
         /// 요청 파라미터 - 프로젝트 아이디
@@ -24,14 +24,14 @@ namespace CobimExplorer.Rest.Api.CobimBase.Explorer
         //public const string testProjectId = "jc-constrct";
         public const string testProjectId = "bmcb";
 
-        // TODO : 테스트 팀 아이디 "inc-001-bmcb-t005" 변경 (2023.09.12 jbh)
+        // TODO : 테스트 팀 아이디 "inc-001-bmcb-t005" 변경 (2023.09.12 minjae)
         /// <summary>
         /// 4. 폴더 목록 조회 
         /// 요청 파라미터 - 팀 아이디
         /// </summary>
         public const string testTeamId = "inc-001-bmcb-t005";
 
-        // TODO : 4. 폴더 목록 조회 const string 변수 "requestFolderURL" -> FolderHelper.cs 소스파일로 이동 (2023.09.20 jbh)
+        // TODO : 4. 폴더 목록 조회 const string 변수 "requestFolderURL" -> FolderHelper.cs 소스파일로 이동 (2023.09.20 minjae)
         /// <summary>
         /// 4. 폴더 목록 조회 
         /// 요청 URL

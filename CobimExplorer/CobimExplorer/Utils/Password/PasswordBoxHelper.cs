@@ -9,20 +9,20 @@ using System.Drawing;
 
 namespace CobimExplorer.Utils.Password
 {
-    // TODO : 로그인 뷰(LoginV.xaml) XAML 코드<PasswordBox> 영역 Hint(PlaceHolder와 같은 기능 - 반 투명 회색글자 "비밀번호를 입력하세요") 구현 (2023.08.23 jbh) 
-    // TODO : PasswordBoxHelper.cs 에 의존 프로퍼티 IsMonitoring, PasswordLength 구현 (2023.08.23 jbh) 
+    // TODO : 로그인 뷰(LoginV.xaml) XAML 코드<PasswordBox> 영역 Hint(PlaceHolder와 같은 기능 - 반 투명 회색글자 "비밀번호를 입력하세요") 구현 (2023.08.23 minjae) 
+    // TODO : PasswordBoxHelper.cs 에 의존 프로퍼티 IsMonitoring, PasswordLength 구현 (2023.08.23 minjae) 
     // 참고 URL - https://yimjang.tistory.com/entry/WPF-Textbox-Watermark-Passwordbox-%ED%8C%A8%EC%8A%A4%EC%9B%8C%EB%93%9C%EB%B0%95%EC%8A%A4%EC%97%90-%ED%9E%8C%ED%8A%B8-%EB%84%A3%EA%B8%B0 
     // 참고 2 URL - https://stackoverflow.com/questions/1607066/wpf-watermark-passwordbox-from-watermark-textbox 
 
 
-    // TODO : Attached Property 기능 "PasswordBoxHelper.cs" 구현 (2023.08.23 jbh)
+    // TODO : Attached Property 기능 "PasswordBoxHelper.cs" 구현 (2023.08.23 minjae)
     // 유튜브 참고 URL - https://youtu.be/An7kwDYt3OQ
     public class PasswordBoxHelper
     {
         private static void OnIsMonitoringChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             var passwordBox = d as PasswordBox;
-            // TODO : if 조건절에 == null 보다 빠른 is null 연산자 사용 (2023.11.24 jbh)
+            // TODO : if 조건절에 == null 보다 빠른 is null 연산자 사용 (2023.11.24 minjae)
             // 참고 URL - https://husk321.tistory.com/405
             if (passwordBox is null) return;
 
@@ -40,7 +40,7 @@ namespace CobimExplorer.Utils.Password
         private static void OnBoundPasswordChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             var passwordBox = d as PasswordBox;
-            // TODO : if 조건절에 == null 보다 빠른 is null 연산자 사용 (2023.11.24 jbh)
+            // TODO : if 조건절에 == null 보다 빠른 is null 연산자 사용 (2023.11.24 minjae)
             // 참고 URL - https://husk321.tistory.com/405
             if (passwordBox is null) return;
 
@@ -78,7 +78,7 @@ namespace CobimExplorer.Utils.Password
         private static void PasswordChanged(object sender, RoutedEventArgs e)
         {
             var passwordBox = sender as PasswordBox;
-            // TODO : if 조건절에 == null 보다 빠른 is null 연산자 사용 (2023.11.24 jbh)
+            // TODO : if 조건절에 == null 보다 빠른 is null 연산자 사용 (2023.11.24 minjae)
             // 참고 URL - https://husk321.tistory.com/405
             if (passwordBox is null) return;
 
@@ -151,7 +151,7 @@ namespace CobimExplorer.Utils.Password
     }
 
 
-    // TODO : Password (비밀번호) 바인딩 처리해주는 클래스 "PasswordHelper" 필요시 사용 예정 (2023.08.23 jbh)
+    // TODO : Password (비밀번호) 바인딩 처리해주는 클래스 "PasswordHelper" 필요시 사용 예정 (2023.08.23 minjae)
     // 참고 URL - https://opallios7.gitbooks.io/wpf-tutorials/content/wpf-passwordbox-control.html
     // 참고 2 URL - http://blog.functionalfun.net/2008/06/wpf-passwordbox-and-data-binding.html
     //public static class PasswordHelper
@@ -171,7 +171,7 @@ namespace CobimExplorer.Utils.Password
 
     //        // only handle this event when the property is attached to a PasswordBox
     //        // and when the BindPassword attached property has been set to true
-              // TODO : if 조건절에 == null 보다 빠른 is null 연산자 사용 (2023.11.24 jbh)
+              // TODO : if 조건절에 == null 보다 빠른 is null 연산자 사용 (2023.11.24 minjae)
               // 참고 URL - https://husk321.tistory.com/405
     //        if (d is null || !GetBindPassword(d))
     //        {
@@ -198,7 +198,7 @@ namespace CobimExplorer.Utils.Password
 
     //        PasswordBox box = dp as PasswordBox;
 
-              // TODO : if 조건절에 == null 보다 빠른 is null 연산자 사용 (2023.11.24 jbh)
+              // TODO : if 조건절에 == null 보다 빠른 is null 연산자 사용 (2023.11.24 minjae)
               // 참고 URL - https://husk321.tistory.com/405
     //        if (box is null)
     //        {
@@ -315,7 +315,7 @@ namespace CobimExplorer.Utils.Password
     //    {
     //        PasswordBox passwordBox = sender as PasswordBox;
 
-              // TODO : if 조건절에 == null 보다 빠른 is null 연산자 사용 (2023.11.24 jbh)
+              // TODO : if 조건절에 == null 보다 빠른 is null 연산자 사용 (2023.11.24 minjae)
               // 참고 URL - https://husk321.tistory.com/405
     //        if (passwordBox is null)
     //            return;

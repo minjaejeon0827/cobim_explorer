@@ -24,7 +24,7 @@ namespace CobimExplorer.Views.Windows.Login
             InitializeComponent();
         }
 
-        // TODO : 추후에 마우스 드래그 이벤트 메서드 "OnMouseLeftButtonDown"를 로그인 뷰모델 (LoginVM.cs)에 구현하기 (2023.12.07 jbh)
+        // TODO : 추후에 마우스 드래그 이벤트 메서드 "OnMouseLeftButtonDown"를 로그인 뷰모델 (LoginVM.cs)에 구현하기 (2023.12.07 minjae)
         /// <summary>
         /// 마우스 드래그 이벤트
         /// </summary>

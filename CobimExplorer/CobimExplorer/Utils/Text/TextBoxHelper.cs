@@ -9,7 +9,7 @@ using System.Collections.Generic;
 
 namespace CobimExplorer.Utils.Text
 {
-    // TODO : Attached Property 기능 "TextBoxHelper.cs" 구현 (2023.08.23 jbh)
+    // TODO : Attached Property 기능 "TextBoxHelper.cs" 구현 (2023.08.23 minjae)
     // 유튜브 참고 URL - https://youtu.be/An7kwDYt3OQ
     public class TextBoxHelper
     {
@@ -21,7 +21,7 @@ namespace CobimExplorer.Utils.Text
         private static void OnUseOnPropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             var textBox = d as TextBox;
-            // TODO : if 조건절에 == null 보다 빠른 is null 연산자 사용 (2023.11.24 jbh)
+            // TODO : if 조건절에 == null 보다 빠른 is null 연산자 사용 (2023.11.24 minjae)
             // 참고 URL - https://husk321.tistory.com/405
             if (textBox is null) return;
 

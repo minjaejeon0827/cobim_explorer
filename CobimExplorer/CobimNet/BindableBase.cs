@@ -17,7 +17,7 @@ namespace CobimNet
         public static void StaticChanged([CallerMemberName] string name = null)
         {
             PropertyChangedEventHandler staticPropertyChanged = BindableBase.StaticPropertyChanged;
-            // TODO : if 조건절에 == null 보다 빠른 is null 연산자 사용 (2024.08.14 jbh)
+            // TODO : if 조건절에 == null 보다 빠른 is null 연산자 사용 (2024.08.14 minjae)
             // 참고 URL - https://husk321.tistory.com/405
             if (staticPropertyChanged is null)
                 return;
@@ -76,7 +76,7 @@ namespace CobimNet
             if (false == this.EnablePropertyChanged)
                 return;
             // PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            // TODO : if 조건절에 != null 보다 빠른 is not null 연산자 사용 (2024.08.14 jbh)
+            // TODO : if 조건절에 != null 보다 빠른 is not null 연산자 사용 (2024.08.14 minjae)
             // 참고 URL - https://husk321.tistory.com/405
             //if(propertyChanged is not null)
             //   propertyChanged((object)this, new PropertyChangedEventArgs(name));
@@ -87,7 +87,7 @@ namespace CobimNet
             // 참고 3 URL - https://cafe.daum.net/aspdotnet/WJSu/65
             this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 
-            // TODO : 추후 필요시 프로퍼티 "IsPropertyChanged" 사용 예정 (2024.08.14 jbh)
+            // TODO : 추후 필요시 프로퍼티 "IsPropertyChanged" 사용 예정 (2024.08.14 minjae)
             // this.IsPropertyChanged = true;
         }
 

@@ -1,4 +1,4 @@
-﻿<!--  TODO : 리본 버튼 클릭시 출력되는 화면을 탭 페이지로 출력 + 버튼 "닫기" 클릭시 탭 페이지 화면 종료 되도록 구현 (2024.01.10 jbh)  -->
+﻿<!--  TODO : 리본 버튼 클릭시 출력되는 화면을 탭 페이지로 출력 + 버튼 "닫기" 클릭시 탭 페이지 화면 종료 되도록 구현 (2024.01.10 minjae)  -->
 <!--  참고 URL - https://youtu.be/rFhmTccRUpQ?si=dNYuEcN6487nTeYt  -->
 <UserControl x:Class="CobimExplorer.Views.Page.Parents.TabParentPageV"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
@@ -21,13 +21,13 @@
     <!--  TODO : 자료구조 후입선출(LIFO) 스택(Stack) 원리 활용하여  -->
     <!--  화면상에 보이는 탐색기 응용 프로그램은 2차원 처럼 보이지만 실제로는 3차원 좌표평면 상에  -->
     <!--  1. 내비게이션 바 영역 / 2. 시작 화면(StartV) + TabControl 영역 / 3. 위의 내비게이션 바 영역(c:NavigationBarControl)을 보임(Visible) 또는 사라짐(Collapsed) 처리 할 수 있는 버튼 영역  -->
-    <!--  순서대로 쌓아 올려서 가장 나중에 쌓아올린 3번 버튼 영역이 화면상에 출력될 수 있도록 구현 (2024.09.19 jbh)  -->
+    <!--  순서대로 쌓아 올려서 가장 나중에 쌓아올린 3번 버튼 영역이 화면상에 출력될 수 있도록 구현 (2024.09.19 minjae)  -->
     <!--  스택(Stack) 참고 URL - https://go-coding.tistory.com/5  -->
     <!--  스택(Stack) 참고 2 URL - https://jud00.tistory.com/entry/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0-%EC%8A%A4%ED%83%9DStack%EA%B3%BC-%ED%81%90Queue%EC%97%90-%EB%8C%80%ED%95%B4%EC%84%9C-%EC%95%8C%EC%95%84%EB%B3%B4%EC%9E%90  -->
     <!--  제네릭 문법 참고 URL - http://www.csharpstudy.com/CSharp/CSharp-generics.aspx  -->
     <Grid Background="{StaticResource App.Brush.Themes.Winter.Gray.10}">
         <DockPanel>
-            <!--  TODO : 아래 주석친 테스트용 XAML 코드 필요시 참고 (2024.08.02 jbh)  -->
+            <!--  TODO : 아래 주석친 테스트용 XAML 코드 필요시 참고 (2024.08.02 minjae)  -->
             <!--  <StackPanel DockPanel.Dock="Top" Orientation="Horizontal">
                 <Button Command="{Binding NewTabCommand}" CommandParameter="TestExplorerVM" Margin="0,0,12,0">New Tab</Button>  
             </StackPanel>  -->
@@ -44,7 +44,7 @@
                 <c:NavigationBarControl />
             </Border>  -->
 
-            <!--  TODO : 추후 필요시 내비게이션 바 영역(c:NavigationBarControl) 사용 예정 (2024.09.19 jbh)  -->
+            <!--  TODO : 추후 필요시 내비게이션 바 영역(c:NavigationBarControl) 사용 예정 (2024.09.19 minjae)  -->
             <!--  내비게이션 바 영역  -->
             <!--  <c:NavigationBarControl Visibility="{Binding visibleNavBar}"
                                           BorderThickness="1"
@@ -55,22 +55,22 @@
                 <!--  아래 TabControl(x:Name="tabControl")이 숨김 처리(Visibility.Collapsed) 되어야 시작 화면(StartV) 볼 수 있다. -->
                 <ContentControl s:View.Model="{Binding startVM}" />
 
-                <!--  TODO : <TabControl> 하위 TabItem Header의 최대 너비(MaxWidth) 설정하기 구현 (2024.07.19 jbh)  -->
+                <!--  TODO : <TabControl> 하위 TabItem Header의 최대 너비(MaxWidth) 설정하기 구현 (2024.07.19 minjae)  -->
                 <!--  참고 URL - https://stackoverflow.com/questions/28496809/wpf-flexible-tabcontrol-header  -->
 
                 <!--  TODO : <TabControl> 상위 Tab Item Header 여러 개가 연속적으로 화면에 출력시 Tab Item Header의 여백 배경색이 회색이 아니라 (Background="{StaticResource App.Brush.Themes.Winter.Gray.10}") 출력 되도록 
-                             <TabControl> 영역 안에 속성 HorizontalContentAlignment="Stretch" 추가 (2024.02.15 jbh)  -->
-                <!--  TODO : <TabControl> 속성 IsSynchronizedWithCurrentItem="True" 필요시 사용 예정 (2024.08.05 jbh)  -->
+                             <TabControl> 영역 안에 속성 HorizontalContentAlignment="Stretch" 추가 (2024.02.15 minjae)  -->
+                <!--  TODO : <TabControl> 속성 IsSynchronizedWithCurrentItem="True" 필요시 사용 예정 (2024.08.05 minjae)  -->
                 <!--  참고 URL - https://stackoverflow.com/questions/7499582/tabitem-headers-content-doesnt-stretch-if-the-actual-tab-header-does  -->
 
-                <!--  TODO : <TabControl> 속성 BorderBrush="{StaticResource App.Brush.Themes.Winter.Black.20}", BorderThickness="0" 필요시 사용 예정 (2024.09.11 jbh)  -->
+                <!--  TODO : <TabControl> 속성 BorderBrush="{StaticResource App.Brush.Themes.Winter.Black.20}", BorderThickness="0" 필요시 사용 예정 (2024.09.11 minjae)  -->
 
-                <!--  TODO : <TabControl> - <TabItem> 클릭시 TabControl (TabParentPageV.xaml) 화면 뷰 BorderBrush 색상이 Red로 바뀌는 원인 파악 및 해결하기 (2024.09.10 jbh)  -->
+                <!--  TODO : <TabControl> - <TabItem> 클릭시 TabControl (TabParentPageV.xaml) 화면 뷰 BorderBrush 색상이 Red로 바뀌는 원인 파악 및 해결하기 (2024.09.10 minjae)  -->
                 <!--  참고 URL - https://stackoverflow.com/questions/40866507/remove-border-bottom-from-focused-tabitem  -->
                 <!--  참고 2 URL - https://stackoverflow.com/questions/9740263/tab-item-and-tab-control-border-style     -->
                 <!--  참고 3 URL - https://stackoverflow.com/questions/400395/get-rid-of-the-line-under-that-tab-of-the-tab-control  -->
 
-                <!--  TODO : 주의사항 - TabControl (TabParentPageV.xaml) 화면 뷰 안에 존재하는 <TabControl> 영역에 속성 SelectedItem="{Binding ActiveItem}" 사용 안 함 (2024.09.12 jbh)  -->
+                <!--  TODO : 주의사항 - TabControl (TabParentPageV.xaml) 화면 뷰 안에 존재하는 <TabControl> 영역에 속성 SelectedItem="{Binding ActiveItem}" 사용 안 함 (2024.09.12 minjae)  -->
                 <!--         왜냐하면 Dynamic TabItem ("ExplorerVM", "HubBoxVM") 클릭시 TabControl (TabParentPageV.xaml) 화면 뷰 BorderBrush 색상이 Red로 바뀌는 오류가 발생하기 때문이다.  -->
                 <!--         SelectedItem="{Binding ActiveItem}" 사용 안 하는 대신 ChildTabV.xaml 에서 아래처럼 <ContentControl> 영역에서 ActiveItem 바인딩 처리 하고  -->
                 <!--         <ContentControl s:View.Model="{Binding ActiveItem}" />  ChildTabVM.cs 생성자 호출시 아래처럼 ActiveItem 값이 null일 때, 새로 값 할당 해줌  -->
@@ -83,7 +83,7 @@
                             Background="{StaticResource App.Brush.Themes.Winter.Black.20}"
                             Visibility="{Binding visibleTabControl}">
                     <TabControl.Resources>
-                        <!--  TODO : <TabControl> - <TabItem> 클릭시 TabControl (TabParentPageV.xaml) 화면 뷰 BorderBrush 색상이 Red로 바뀌는 원인 파악 및 해결하기 (2024.09.10 jbh)  -->
+                        <!--  TODO : <TabControl> - <TabItem> 클릭시 TabControl (TabParentPageV.xaml) 화면 뷰 BorderBrush 색상이 Red로 바뀌는 원인 파악 및 해결하기 (2024.09.10 minjae)  -->
                         <!--  참고 URL - https://stackoverflow.com/questions/40866507/remove-border-bottom-from-focused-tabitem  -->
                         <!--  참고 2 URL - https://stackoverflow.com/questions/9740263/tab-item-and-tab-control-border-style     -->
                         <!--  참고 3 URL - https://stackoverflow.com/questions/400395/get-rid-of-the-line-under-that-tab-of-the-tab-control  -->
@@ -97,7 +97,7 @@
                                          -> TabItem 마우스 Drop 이벤트(TabItem 끼리 위치 Swap 처리 가능) 메서드 TabItem_Drop 실행 되지만,
                                          -> TabItem 닫기 이벤트 메서드 OnTabCloseRequested 가 실행 되지 않는 오류가 발생하여,
                                          -> PreviewMouseMove 이벤트 메서드 "TabItem_PreviewMouseMove" 대신
-                                         MouseMove 이벤트 메서드 "TabItem_MouseMove" 사용하는 것으로 수정 (2024.08.02 jbh)  -->
+                                         MouseMove 이벤트 메서드 "TabItem_MouseMove" 사용하는 것으로 수정 (2024.08.02 minjae)  -->
                             <!--  참고 URL - https://stackoverflow.com/questions/20899810/previewmousemove-vs-mousemove  -->
                             <!--  참고 2 URL - https://web.archive.org/web/20140225041901/http://www.csharptutorial.in/2012/10/understanding-event-handling-in-wpf.html#.UwwZyXbP1qY  -->
                             <!--  <EventSetter Event="PreviewMouseMove" Handler="TabItem_PreviewMouseMove"/>  -->
@@ -105,7 +105,7 @@
                             <EventSetter Event="MouseMove" Handler="TabItem_MouseMove" />
                         </Style>
 
-                        <!--  TODO : TabControl - TabItem에 속해있는 TabHeader Margin, Padding, Width 속성 값 변경하는 Style XAML 코드 구현 (2024.02.28 jbh)  -->
+                        <!--  TODO : TabControl - TabItem에 속해있는 TabHeader Margin, Padding, Width 속성 값 변경하는 Style XAML 코드 구현 (2024.02.28 minjae)  -->
                         <!--  참고 URL - https://chat.openai.com/c/c8e97c83-bec1-45c4-97fa-30d30f983cdd  -->
                         <Style x:Key="TabItemHeaderStyle" TargetType="{x:Type TabItem}">
                             <Setter Property="Margin" Value="0" />
@@ -119,8 +119,8 @@
                             </Setter>  -->
                         </Style>
 
-                        <!--  TODO : 아래 주석친 테스트용 XAML 코드 필요시 참고 (2024.08.02 jbh)  -->
-                        <!--  TODO : TabControl에 속하는 TabItem Header의 width(너비) 고정하기 위해 스타일 "FixedWidthTabControl" 구현 (2024.02.22 jbh)  -->
+                        <!--  TODO : 아래 주석친 테스트용 XAML 코드 필요시 참고 (2024.08.02 minjae)  -->
+                        <!--  TODO : TabControl에 속하는 TabItem Header의 width(너비) 고정하기 위해 스타일 "FixedWidthTabControl" 구현 (2024.02.22 minjae)  -->
                         <!--  참고 URL - https://chat.openai.com/c/36141097-d645-4365-98d5-ecd95bdde212  -->
                         <!--<Style x:Name="FixedWidthTabControl" TargetType="{x:Type TabControl}">
                             <Setter Property="Template">
@@ -162,7 +162,7 @@
                     <TabControl.ItemTemplate>
                         <DataTemplate DataType="{x:Type interface:ITab}">
                             <!--  Background="{StaticResource App.Brush.Themes.Fall.Brown}"  Foreground="{StaticResource App.Brush.Themes.Common.NavajoWhite}"  -->
-                            <!--  TODO : Tab Item Header 영역에 속하는 Label를 가운데 정렬하기 위해 HorizontalContentAlignment="Center" 구현 (2024.02.22 jbh)  -->
+                            <!--  TODO : Tab Item Header 영역에 속하는 Label를 가운데 정렬하기 위해 HorizontalContentAlignment="Center" 구현 (2024.02.22 minjae)  -->
                             <!--  참고 URL - https://www.c-sharpcorner.com/UploadFile/mahesh/content-alignment-in-wpf/  -->
                             <Label Background="{StaticResource App.Brush.Themes.Winter.Black.20}"  
                                    BorderBrush="{StaticResource App.Brush.Themes.Winter.Gray.10}"
@@ -173,7 +173,7 @@
                                     <!--  TODO : TabItem Header 클릭 및 위치 이동시 출력되는 
                                                  오류 메시지 'System.Windows.Documents.Run'이(가) Visual 또는 Visual3D가 아닙니다.
                                                  원인 파악 결과 아래 주석친 <Run> 태그가 원인인 것으로 파악되어 
-                                                 아래처럼 <Run> 태그 주석 처리 후 <TextBlock> 태그로 구현 (2024.07.31 jbh)  -->
+                                                 아래처럼 <Run> 태그 주석 처리 후 <TextBlock> 태그로 구현 (2024.07.31 minjae)  -->
                                     <!--  참고 URL - https://stackoverflow.com/questions/38325162/why-click-tree-throws-system-windows-documents-run-is-not-a-visual-or-visual3d  -->
                                     <!--  <Run Text="{Binding TabItemName}" Foreground="{StaticResource App.Brush.Themes.Common.White}" FontWeight="Bold" Margin="0,0,5,0" VerticalAlignment="Center" AllowDrop="True" Drop="{s:Action TabItem_Drop}" />  -->
                                     <TextBlock Text="{Binding TabItemName}" 
@@ -186,15 +186,15 @@
 
                                     <!--  TODO : TabItem Header에 속한 닫기 버튼을 아래 주석친 XAML 코드 처럼 <Hyperlink> 태그로 구현시 
                                                  오류 메시지 "system.windows.documents.hyperlink' is not a visual or visual3d" 출력되므로, 
-                                                 <Hyperlink> 대신 아래 <Button> 태그로 구현 (2024.08.02 jbh)  -->
+                                                 <Hyperlink> 대신 아래 <Button> 태그로 구현 (2024.08.02 minjae)  -->
                                     <!--  <Hyperlink Command="{Binding DataContext.CloseCommand, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type UserControl}}}" 
                                                      Foreground="{StaticResource App.Brush.Themes.Common.White}" FontWeight="Bold">X</Hyperlink>  -->
                                     <!--  <Hyperlink Command="{Binding CloseCommand}" 
                                                      Foreground="{StaticResource App.Brush.Themes.Common.White}" FontWeight="Bold">X</Hyperlink>  -->
 
-                                    <!--  TODO : 추후 필요시 TabItem 닫기 버튼(x:Name="tabItemCloseBtn") 영역 사용 예정 (2024.09.19 jbh)  -->
+                                    <!--  TODO : 추후 필요시 TabItem 닫기 버튼(x:Name="tabItemCloseBtn") 영역 사용 예정 (2024.09.19 minjae)  -->
                                     <!--  TabItem 닫기 버튼(x:Name="tabItemCloseBtn") 영역  -->
-                                    <!--  TODO : 버튼 기본 스타일(테두리, 배경 등등...) 제거 구현 (2024.08.02 jbh)  -->
+                                    <!--  TODO : 버튼 기본 스타일(테두리, 배경 등등...) 제거 구현 (2024.08.02 minjae)  -->
                                     <!--  참고 URL - https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&blogId=skelentom&logNo=10166053623  -->
                                     <!--  <Button x:Name="tabItemCloseBtn"
                                                   Command="{Binding CloseCommand}" 
@@ -215,7 +215,7 @@
                     </TabControl.ContentTemplate>
                 </TabControl>
 
-                <!--  TODO : 추후 필요시 위의 내비게이션 바 영역(c:NavigationBarControl)을 보임(Visible) 또는 사라짐(Collapsed) 처리 할 수 있는 버튼(x:Name="NavBarVisibleButton") 사용 예정 (2024.09.19 jbh)  -->
+                <!--  TODO : 추후 필요시 위의 내비게이션 바 영역(c:NavigationBarControl)을 보임(Visible) 또는 사라짐(Collapsed) 처리 할 수 있는 버튼(x:Name="NavBarVisibleButton") 사용 예정 (2024.09.19 minjae)  -->
                 <!--  위의 내비게이션 바 영역(c:NavigationBarControl)을 보임(Visible) 또는 사라짐(Collapsed) 처리 할 수 있는 버튼(x:Name="NavBarVisibleButton") 영역  -->
                 <!--  <Canvas HorizontalAlignment="Left">
                     <Border BorderBrush="{StaticResource App.Brush.Themes.Winter.Black.20}"
@@ -225,7 +225,7 @@
                             Width="30">
                         <StackPanel Orientation="Horizontal"
                                     Background="{StaticResource App.Brush.Themes.Winter.Gray.10}">
-                            --><!--  TODO : 버튼 기본 스타일(테두리, 배경 등등...) 제거 구현 (2024.09.12 jbh)  -->
+                            --><!--  TODO : 버튼 기본 스타일(테두리, 배경 등등...) 제거 구현 (2024.09.12 minjae)  -->
                             <!--  참고 URL - https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&blogId=skelentom&logNo=10166053623  --><!--
                             <Button x:Name="NavBarVisibleButton"
                                     Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}"
@@ -248,11 +248,11 @@
                                 </Button.Content>
                             </Button>
 
-                            --><!--  TODO : 아래 주석친 테스트 코드 필요시 참고 (2024.09.19 jbh)  -->
+                            --><!--  TODO : 아래 주석친 테스트 코드 필요시 참고 (2024.09.19 minjae)  -->
 
                             <!--  TODO : <Canvas> 사용해서 <Canvas> 하위에 속한 <Image> 태그 - CobimLogo 이미지 객체(x:Name="CobimLogoImg") 마우스로 클릭하여  -->
                             <!--         CobimLogo 이미지 객체(x:Name="CobimLogoImg") 위치 이동할 수 있는 이벤트 메서드 (CobimLogo_MouseDown, CobimLogo_MouseMove, CobimLogo_MouseUp, CobimLogo_MouseLeave)  -->
-                            <!--         필요시 탭 화면 뷰모델(TabParentPageVM.cs)에 이벤트 메서드 구현 예정 (2024.09.13 jbh)  -->
+                            <!--         필요시 탭 화면 뷰모델(TabParentPageVM.cs)에 이벤트 메서드 구현 예정 (2024.09.13 minjae)  -->
                             <!--  참고 URL - https://chatgpt.com/c/66e3cdcc-cd34-8002-9c0a-a55ab4b06e94  -->
                             <!--  참고 2 URL - https://westahn.com/wpf-panel-canvas-%EC%82%AC%EC%9A%A9%EB%B2%95-%EB%B0%8F-%EC%98%88%EC%A0%9C/  -->
                             <!--  참고 3 URL - https://wpf-tutorial.com/ko/24/panels/canvas-%EC%BB%A8%ED%8A%B8%EB%A1%A4/  -->

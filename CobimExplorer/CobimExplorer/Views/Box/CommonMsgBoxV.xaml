@@ -7,6 +7,6 @@
         mc:Ignorable="d"
         Title="CommonMsgBoxV" Height="450" Width="800">
     <Grid>
-        <!-- TODO : MessageBox 필요시 구현 예정 (2023.07.26 jbh) -->
+        <!-- TODO : MessageBox 필요시 구현 예정 (2023.07.26 minjae) -->
     </Grid>
 </Window>

@@ -18,7 +18,7 @@ using CobimExplorer.Data.Models.CobimBase.Login;
 
 namespace CobimExplorer.Rest.Api.NetWork.Http
 {
-    // TODO : httpManager 클래스(http 통신 역할) 필요 시 사용 예정(2023.08.22 jbh) 
+    // TODO : httpManager 클래스(http 통신 역할) 필요 시 사용 예정(2023.08.22 minjae) 
     // 주의사항 - Http 통신 로직 구현시 "System.Text.json"의 경우 .Net Core에서는 잘 호환(사용)되지만 .Net Framework에서는 호환되지 않고 에러가 발생하는 경우가 존재함.
     public class httpManager
     {
@@ -28,7 +28,7 @@ namespace CobimExplorer.Rest.Api.NetWork.Http
         /// </summary>
         public static async Task<LoginResponseData> PostLoginConnect(HttpClient pClient, LoginPack pLoginPack)
         {
-            // TODO : 로그 기록시 현재 실행 중인 메서드 위치 기록하기 (2023.10.10 jbh)
+            // TODO : 로그 기록시 현재 실행 중인 메서드 위치 기록하기 (2023.10.10 minjae)
             // 참고 URL - https://slaner.tistory.com/73
             // 참고 2 URL - https://stackoverflow.com/questions/4132810/how-can-i-get-a-method-name-with-the-namespace-class-name
             // 참고 3 URL - https://stackoverflow.com/questions/44153/can-you-use-reflection-to-find-the-name-of-the-currently-executing-method
@@ -56,7 +56,7 @@ namespace CobimExplorer.Rest.Api.NetWork.Http
                 // data.Headers.ContentType = new MediaTypeHeaderValue("application/json");
                 // req.Content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
 
-                // TODO : HttpClient Post 방식으로 서버에 요청할 때, using 문 사용 (2023.12.06 jbh)
+                // TODO : HttpClient Post 방식으로 서버에 요청할 때, using 문 사용 (2023.12.06 minjae)
                 // 참고 URL - https://learn.microsoft.com/ko-kr/dotnet/fundamentals/networking/http/httpclient
                 HttpResponseMessage response = await Connect(pClient, req);
                 string json = response.Content.ReadAsStringAsync().Result;
@@ -67,7 +67,7 @@ namespace CobimExplorer.Rest.Api.NetWork.Http
             catch(Exception ex)
             {
                 Log.Logger.Error(Logger.GetMethodPath(currentMethod) + Logger.errorMessage + ex.Message);
-                // TODO : 오류 발생시 상위 호출자 예외처리 전달 throw 구현 (2023.10.6 jbh)
+                // TODO : 오류 발생시 상위 호출자 예외처리 전달 throw 구현 (2023.10.6 minjae)
                 // 참고 URL - https://devlog.jwgo.kr/2009/11/27/thrownthrowex/
                 throw;
             }
@@ -78,7 +78,7 @@ namespace CobimExplorer.Rest.Api.NetWork.Http
         /// </summary>
         public static async Task<HttpResponseMessage> Connect(HttpClient pClient, HttpRequestMessage pRequest)
         {
-            // TODO : 로그 기록시 현재 실행 중인 메서드 위치 기록하기 (2023.10.10 jbh)
+            // TODO : 로그 기록시 현재 실행 중인 메서드 위치 기록하기 (2023.10.10 minjae)
             // 참고 URL - https://slaner.tistory.com/73
             // 참고 2 URL - https://stackoverflow.com/questions/4132810/how-can-i-get-a-method-name-with-the-namespace-class-name
             // 참고 3 URL - https://stackoverflow.com/questions/44153/can-you-use-reflection-to-find-the-name-of-the-currently-executing-method
@@ -86,25 +86,25 @@ namespace CobimExplorer.Rest.Api.NetWork.Http
 
             try
             {
-                // TODO : HttpClient Post 방식으로 서버에 요청할 때, using 문 사용 (2023.12.06 jbh)
+                // TODO : HttpClient Post 방식으로 서버에 요청할 때, using 문 사용 (2023.12.06 minjae)
                 // 참고 URL - https://learn.microsoft.com/ko-kr/dotnet/fundamentals/networking/http/httpclient
                 using var jsonContent = new StringContent(
                     "\"id\":\"\",\"password\":\"\",\"inputTenantId\":\"inc001\""
                     , Encoding.UTF8, "application/json");
 
-                // TODO : HttpClient Post 방식으로 서버에 요청할 때, using 문 사용 (2023.12.06 jbh)
+                // TODO : HttpClient Post 방식으로 서버에 요청할 때, using 문 사용 (2023.12.06 minjae)
                 // 참고 URL - https://learn.microsoft.com/ko-kr/dotnet/fundamentals/networking/http/httpclient
                 using var res = await pClient.PostAsync("https://cobim.io/api/account/user/authorize", jsonContent);
 
-                // TODO : HttpResponseMessage response이 null로 리턴받아 Null Expcetion 발생하는 원인 파악하기 (2023.08.21 jbh)
+                // TODO : HttpResponseMessage response이 null로 리턴받아 Null Expcetion 발생하는 원인 파악하기 (2023.08.21 minjae)
                 //HttpRequestMessage req = request;
-                // TODO : HttpClient 방식으로 서버에 요청할 때, using 문 사용 (2023.12.06 jbh)
+                // TODO : HttpClient 방식으로 서버에 요청할 때, using 문 사용 (2023.12.06 minjae)
                 // 참고 URL - https://learn.microsoft.com/ko-kr/dotnet/fundamentals/networking/http/httpclient
                 using HttpResponseMessage response = await pClient.SendAsync(pRequest);//.Result;
                 string msg = "HTTP Client Connect:\n";
                 msg += "Request:\n" + pRequest.ToString() + "\n";
 
-                // TODO : if 조건절에 != null 보다 빠른 is not null 연산자 사용 (2023.11.24 jbh)
+                // TODO : if 조건절에 != null 보다 빠른 is not null 연산자 사용 (2023.11.24 minjae)
                 // 참고 URL - https://husk321.tistory.com/405
                 if(pRequest.Content is not null)
                 {
@@ -127,7 +127,7 @@ namespace CobimExplorer.Rest.Api.NetWork.Http
             catch(Exception ex)
             {
                 Log.Logger.Error(Logger.GetMethodPath(currentMethod) + Logger.errorMessage + ex.Message);
-                // TODO : 오류 발생시 상위 호출자 예외처리 전달 throw 구현 (2023.10.6 jbh)
+                // TODO : 오류 발생시 상위 호출자 예외처리 전달 throw 구현 (2023.10.6 minjae)
                 // 참고 URL - https://devlog.jwgo.kr/2009/11/27/thrownthrowex/
                 throw;
             }

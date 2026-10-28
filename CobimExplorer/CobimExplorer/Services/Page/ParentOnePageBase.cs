@@ -17,7 +17,7 @@ namespace CobimExplorer.Services.Page
     //        MainVM.cs -> 기본 메소드 "OnInitialActivate" -> 로그인 화면 출력 메서드 "OpenLogin"가 실행 안 되면서
     //        탐색기 응용 프로그램이 정상적으로 실행 안 되고 종료되는 오류 발생!!
     //        하여 해당 오류를 해결하기 위해서 클래스 ParentOnePageBase에 인터페이스 IPage를 직접 상속 안하고
-    //        CbConductorOne<IPage> 제네릭 타입 형식으로 클래스 상속 받도록 구현 (2024.08.07 jbh)
+    //        CbConductorOne<IPage> 제네릭 타입 형식으로 클래스 상속 받도록 구현 (2024.08.07 minjae)
     [HiddenVm]
     public class ParentOnePageBase : CbConductorOne<IPage>, IPageParent // IParentPage, IPage
     {

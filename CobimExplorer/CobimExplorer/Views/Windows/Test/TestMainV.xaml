@@ -1,4 +1,4 @@
-﻿<!--  TODO : TestMainV.xaml 윈도우 상단 타이틀 바 배경(Background color) 및 최소(MinBtn), 최대(MaxBtn), 축소(RestoreBtn), 종료(ExitBtn) 버튼 작동 오류 해결할 수 있도록 아래 참고 URL 보고 수정 예정 (2023.12.11 jbh)  -->
+﻿<!--  TODO : TestMainV.xaml 윈도우 상단 타이틀 바 배경(Background color) 및 최소(MinBtn), 최대(MaxBtn), 축소(RestoreBtn), 종료(ExitBtn) 버튼 작동 오류 해결할 수 있도록 아래 참고 URL 보고 수정 예정 (2023.12.11 minjae)  -->
 <!--  참고 URL - https://stackoverflow.com/questions/1283006/changing-wpf-title-bar-background-color  -->
 <!--  참고 2 URL - https://www.codeproject.com/Articles/5255192/Use-WindowChrome-to-Customize-the-Title-Bar-in-WPF  -->
 <Window x:Class="CobimExplorer.Views.Windows.Test.TestMainV"
@@ -23,7 +23,7 @@
         d:DesignHeight="450"
         d:DesignWidth="800">
 
-    <!--  TODO : 스크롤바 색상 변경 및 스타일 속성 구현 하기 (2023.12.11 jbh)  -->
+    <!--  TODO : 스크롤바 색상 변경 및 스타일 속성 구현 하기 (2023.12.11 minjae)  -->
     <!--  참고 URL - https://www.codeproject.com/Articles/37366/Styling-A-ScrollViewer-Scrollbar-In-WPF -->
     
     <!--  WindowStyle="None"
@@ -34,7 +34,7 @@
     <!--  StateChanged="Window_StateChanged"  -->
     <!--  ResizeMode="CanMinimize"  -->
     
-    <!--  TODO : 윈도우 타이틀 바(Window chrome) <WindowChrome.WindowChrome> 영역 구현 (2023.12.11 jbh)  -->
+    <!--  TODO : 윈도우 타이틀 바(Window chrome) <WindowChrome.WindowChrome> 영역 구현 (2023.12.11 minjae)  -->
     <!--  참고 URL - https://stackoverflow.com/questions/1283006/changing-wpf-title-bar-background-color  -->
     <!--  참고 2 URL - https://www.codeproject.com/Articles/5255192/Use-WindowChrome-to-Customize-the-Title-Bar-in-WPF  -->
     <WindowChrome.WindowChrome>
@@ -43,7 +43,7 @@
         <WindowChrome CaptionHeight="34" />
     </WindowChrome.WindowChrome>
 
-    <!--  TODO : 윈도우 타이틀 바(Window chrome) CommandBindings 구현 (2023.12.11 jbh)  -->
+    <!--  TODO : 윈도우 타이틀 바(Window chrome) CommandBindings 구현 (2023.12.11 minjae)  -->
     <!--  참고 URL - https://stackoverflow.com/questions/1283006/changing-wpf-title-bar-background-color  -->
     <!--  참고 2 URL - https://www.codeproject.com/Articles/5255192/Use-WindowChrome-to-Customize-the-Title-Bar-in-WPF  -->
     <Window.CommandBindings>
@@ -53,19 +53,19 @@
         <CommandBinding Command="{x:Static SystemCommands.CloseWindowCommand}"    CanExecute="CanExecute" Executed="CloseApp" />
     </Window.CommandBindings>
 
-    <!--  TODO : C# WPF 팁 - Xaml 안에서 ViewModel속성을 자동완성 되도록 만들기(d:DataContext="{d:DesignInstance Type=vm:MainVM}") (2023.07.17 jbh)  -->
+    <!--  TODO : C# WPF 팁 - Xaml 안에서 ViewModel속성을 자동완성 되도록 만들기(d:DataContext="{d:DesignInstance Type=vm:MainVM}") (2023.07.17 minjae)  -->
     <!--  유튜브 참고 URL - https://youtu.be/A8t5ktSAgdA  -->
           
-    <!--  TODO : BoolToVisibilityConverter 필요시 추후 사용 예정 (2023.07.17 jbh)  -->
+    <!--  TODO : BoolToVisibilityConverter 필요시 추후 사용 예정 (2023.07.17 minjae)  -->
     <!--  참고 URL - https://github.com/canton7/Stylet/wiki/BoolToVisibilityConverter  -->
     <Window.Resources>
         <s:BoolToVisibilityConverter x:Key="boolToVisConverter" TrueVisibility="Visible" FalseVisibility="Hidden"/>
         <!--  <TextBlock Visibility="{Binding SomeBoolProperty, Converter={StaticResource boolToVisConverter}}"/>  -->
     </Window.Resources>
     
-    <!--  TODO : Microsoft.Xaml.Behaviors.Wpf nuget package 추가 (2024.09.06 jbh)  -->
+    <!--  TODO : Microsoft.Xaml.Behaviors.Wpf nuget package 추가 (2024.09.06 minjae)  -->
     <!--  참고 URL - https://kaki104.tistory.com/870  -->
-    <!--  TODO : 테스트 메인 화면 뷰(TestMainV.xaml) XAML 코드에 Behavior 구현 (2024.09.06 jbh)  -->
+    <!--  TODO : 테스트 메인 화면 뷰(TestMainV.xaml) XAML 코드에 Behavior 구현 (2024.09.06 minjae)  -->
     <!--  참고 URL - https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&blogId=vactorman&logNo=221176866353  -->
     <!--  TODO : 추후 Button 컨트롤러 구현시 Behavior ButtonClickBehavior 구현하기  -->
     <i:Interaction.Behaviors>
@@ -73,8 +73,8 @@
         <!--  <c:ButtonClickBehavior />  -->
     </i:Interaction.Behaviors>
 
-    <!--  TODO : 아래 이벤트 처리를 위한 코드는 오류가 발생하므로 주석 처리 진행 (2023.11.08 jbh)  -->
-    <!--         아래 코드 대신 MainVM.cs -> 기본 메소드 "OnInitialActivate" 실행시 이벤트 메서드 "Window_StateChanged", "Window_LocationChanged" 등록 처리 로직 추가 (2023.11.08 jbh)  -->
+    <!--  TODO : 아래 이벤트 처리를 위한 코드는 오류가 발생하므로 주석 처리 진행 (2023.11.08 minjae)  -->
+    <!--         아래 코드 대신 MainVM.cs -> 기본 메소드 "OnInitialActivate" 실행시 이벤트 메서드 "Window_StateChanged", "Window_LocationChanged" 등록 처리 로직 추가 (2023.11.08 minjae)  -->
     <!--  이벤트 처리를 위한 코드  -->
     <!--  <i:Interaction.Triggers>
             <i:EventTrigger EventName="StateChanged">
@@ -94,11 +94,11 @@
                 <RowDefinition Height="*"    />
             </Grid.RowDefinitions>
 
-            <!--  TODO : 윈도우 타이틀 바(Window chrome) 영역 구현 (2023.12.11 jbh)  -->
+            <!--  TODO : 윈도우 타이틀 바(Window chrome) 영역 구현 (2023.12.11 minjae)  -->
             <!--  참고 URL - https://stackoverflow.com/questions/1283006/changing-wpf-title-bar-background-color  -->
             <!--  참고 2 URL - https://www.codeproject.com/Articles/5255192/Use-WindowChrome-to-Customize-the-Title-Bar-in-WPF  -->
             <!--  윈도우 타이틀 바 (Window chrome) 영역  -->
-            <!--  TODO : 아래 주석친 직접 구현한 타이틀 바 (c:TitleBarControl) 필요시 사용 예정 (2023.12.11 jbh)  -->
+            <!--  TODO : 아래 주석친 직접 구현한 타이틀 바 (c:TitleBarControl) 필요시 사용 예정 (2023.12.11 minjae)  -->
             <!--  <c:TitleBarControl Grid.Row="0" />  -->
             <Grid x:Name="TitleBar" Grid.Row="0" Height="30" Background="{StaticResource App.Brush.Themes.Fall.Brown}">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center">
@@ -146,17 +146,17 @@
 
             <!--  탐색기 화면 영역  -->
             <!--  TODO : ContentControl 사용해서 리본 탭의 버튼 클릭시 -->
-            <!--         해당 버튼과 연동된 화면(UserControl View - ExplorerV) 출력 및 뷰모델(ExplorerVM) 연동 구현 (2023.11.07 jbh)  -->
+            <!--         해당 버튼과 연동된 화면(UserControl View - ExplorerV) 출력 및 뷰모델(ExplorerVM) 연동 구현 (2023.11.07 minjae)  -->
             <!--  참고 URL - https://github.com/canton7/Stylet/wiki/ViewModel-First  -->
             <Grid x:Name="PageArea" Grid.Row="2">
-                <!--  TODO : 필요시 <ContentControl> 영역에 Content="{Binding Page.Content}" 추가 예정 (2023.12.22 jbh)  -->
+                <!--  TODO : 필요시 <ContentControl> 영역에 Content="{Binding Page.Content}" 추가 예정 (2023.12.22 minjae)  -->
                 <!--  <ContentControl Content="{Binding Page.Content}" s:View.Model="{Binding Page.DataContext}" />  -->
                 <ContentControl s:View.Model="{Binding Page.DataContext}" />
             </Grid>
         </Grid>
     </Border>
 
-    <!--  TODO : 아래 주석친 테스트 코드 필요시 참고 (2024.09.06 jbh)  -->
+    <!--  TODO : 아래 주석친 테스트 코드 필요시 참고 (2024.09.06 minjae)  -->
     <!--  <Border x:Name="mainBorder" BorderThickness="1" BorderBrush="{StaticResource App.Brush.Themes.Fall.Brown}" Margin="0">
         <DockPanel>
             <Border Background="{StaticResource App.Brush.Themes.Fall.Brown}"
@@ -170,7 +170,7 @@
                 <c:TitleBarControl x:Name="expTitleBar" />
 
                 <Grid>
-                      --><!--  TODO : 탐색기 응용 프로그램 화면 상단 윈도우 타이틀 바 직접 구현 (2023.11.07 jbh)  -->  
+                      --><!--  TODO : 탐색기 응용 프로그램 화면 상단 윈도우 타이틀 바 직접 구현 (2023.11.07 minjae)  -->  
                       <!--  참고 URL - https://gigong.tistory.com/99  -->  
                       <!--  참고 2 URL - https://itpro.tistory.com/88  -->  
                       <!--  타이틀 바 영역  -->  
@@ -180,7 +180,7 @@
                            Margin="10,0,105,0"
                            PreviewMouseMove="System_MouseMove"
                            PreviewMouseDown="System_MouseDown">
-                        --><!--  TODO : 아래 TextBlock에 바인딩 된 Title은 MainV.xaml 상단 <Window> 태그 안에 사용되는 속성 Title="{Binding CDE_Title}"을 의미함. (2023.11.09 jbh)  --><!--  
+                        --><!--  TODO : 아래 TextBlock에 바인딩 된 Title은 MainV.xaml 상단 <Window> 태그 안에 사용되는 속성 Title="{Binding CDE_Title}"을 의미함. (2023.11.09 minjae)  --><!--  
                         <TextBlock Text="{Binding Title, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}}" 
                                    Foreground="{StaticResource App.Brush.Themes.Common.NavajoWhite}"
                                    FontWeight="Bold" />
@@ -265,7 +265,7 @@
                     <ContentControl s:View.Model="{Binding TestLazyTreeVM}"/>
 
                     --><!--  TODO : ContentControl 사용해서 리본 탭의 버튼 클릭시  --> 
-                    <!--         해당 버튼과 연동된 화면(UserControl View - ExplorerV) 출력 및 뷰모델(ExplorerVM) 연동 구현 (2023.11.07 jbh)  -->  
+                    <!--         해당 버튼과 연동된 화면(UserControl View - ExplorerV) 출력 및 뷰모델(ExplorerVM) 연동 구현 (2023.11.07 minjae)  -->  
                     <!--  참고 URL - https://github.com/canton7/Stylet/wiki/ViewModel-First  --><!--  
                     <ContentControl Content="{Binding Page.Content}" s:View.Model="{Binding Page.DataContext}"/>
                 </Grid>

@@ -11,13 +11,13 @@
              d:DataContext="{d:DesignInstance Type=vm:TabParentPageVM}"
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-        <!--  TODO : 내비게이션 바 우측에 화살표 모양 버튼(->) 추가 및 버튼 클릭시 아래 <StackPanel> 영역 Width = 0 또는 80 으로 변경하는 Trigger 또한 구현하기 (2024.09.10 jbh)  -->
+        <!--  TODO : 내비게이션 바 우측에 화살표 모양 버튼(->) 추가 및 버튼 클릭시 아래 <StackPanel> 영역 Width = 0 또는 80 으로 변경하는 Trigger 또한 구현하기 (2024.09.10 minjae)  -->
         <StackPanel Background="{StaticResource App.Brush.Themes.Winter.Gray.10}"
                     Width="80"
                     Orientation="Vertical"
                     HorizontalAlignment="Left">
             <!--  성과품(CDE)  -->
-            <!--  TODO : 버튼 기본 스타일(테두리, 배경 등등...) 제거 구현 (2023.11.13 jbh)  -->
+            <!--  TODO : 버튼 기본 스타일(테두리, 배경 등등...) 제거 구현 (2023.11.13 minjae)  -->
             <!--  참고 URL - https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&blogId=skelentom&logNo=10166053623  -->
             <Button Margin="0,30,0,0"
                     Command="{Binding ExpVMCommand}" 
@@ -38,7 +38,7 @@
                        Foreground="{StaticResource App.Brush.Themes.Winter.Black.10}" />
 
             <!--  HubBox  -->
-            <!--  TODO : 버튼 기본 스타일(테두리, 배경 등등...) 제거 구현 (2024.08.07 jbh)  -->
+            <!--  TODO : 버튼 기본 스타일(테두리, 배경 등등...) 제거 구현 (2024.08.07 minjae)  -->
             <!--  참고 URL - https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&blogId=skelentom&logNo=10166053623  -->
             <Button Margin="0,30,0,0"
                     Command="{Binding HubBoxVMCommand}" 

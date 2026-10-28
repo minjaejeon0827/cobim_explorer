@@ -11,12 +11,12 @@ using System.Runtime.CompilerServices;
 
 namespace CobimExplorer.Common.LogManager
 {
-    // TODO : 로그 메시지 출력 관련 클래스 필요시 구현 및 사용 예정 (2023.07.14 jbh) 
+    // TODO : 로그 메시지 출력 관련 클래스 필요시 구현 및 사용 예정 (2023.07.14 minjae) 
     // 참고 URL - https://github.com/canton7/Stylet/wiki/Logging
     // 참고 2 URL - https://insurang.tistory.com/entry/WPF-C-%EB%A1%9C%EA%B7%B8%ED%8C%8C%EC%9D%BC-%EB%A7%8C%EB%93%A4%EA%B8%B0-LOG
     public class Logger
     {
-        // TODO : static 메서드 "GetMethodPath" 테스트 후 오류 발생시 수정 예정(2023.10.11 jbh)
+        // TODO : static 메서드 "GetMethodPath" 테스트 후 오류 발생시 수정 예정(2023.10.11 minjae)
         //public static string GetMethodPath(MethodBase currentMethod)
         //{
         //    var fullMethodPath = string.Empty;
@@ -37,7 +37,7 @@ namespace CobimExplorer.Common.LogManager
 
         #region 프로퍼티 
 
-        // TODO : 로그 타입 유형 문자열 (const string) 객체 다른 유형 필요시 추가 예정 (2023.10.11 jbh)
+        // TODO : 로그 타입 유형 문자열 (const string) 객체 다른 유형 필요시 추가 예정 (2023.10.11 minjae)
         public const string debugMessage = "디버그 - ";
 
         public const string infoMessage = "정보 - ";
@@ -61,7 +61,7 @@ namespace CobimExplorer.Common.LogManager
 
         #region ConfigureLogger
 
-        // TODO : C# Serilog 사용해서 로그 남기도록 static 메서드 "ConfigureLogger" 구현 (2024.08.14 jbh)
+        // TODO : C# Serilog 사용해서 로그 남기도록 static 메서드 "ConfigureLogger" 구현 (2024.08.14 minjae)
         // 참고 URL - https://afsdzvcx123.tistory.com/entry/C-%EB%AC%B8%EB%B2%95-C-Serilog-%EC%82%AC%EC%9A%A9%ED%95%98%EC%97%AC-%EB%A1%9C%EA%B7%B8-%EB%82%A8%EA%B8%B0%EA%B8%B0
 
         /// <summary>
@@ -84,14 +84,14 @@ namespace CobimExplorer.Common.LogManager
                 sbLogFilePath.Append($"\\{pAssemblyName}_.log");
                 logFilePath = sbLogFilePath.ToString();
 
-                // TODO : Stylet Logger 클래스 사용 안하고 Serilog 이용해서 로그 기록 및 로그 파일 생성 (2024.08.14 jbh)
+                // TODO : Stylet Logger 클래스 사용 안하고 Serilog 이용해서 로그 기록 및 로그 파일 생성 (2024.08.14 minjae)
                 // 참고 URL - https://m.blog.naver.com/wolfre/221713399852
                 // 참고 2 URL - https://afsdzvcx123.tistory.com/entry/C-%EB%AC%B8%EB%B2%95-C-Serilog-%EC%82%AC%EC%9A%A9%ED%95%98%EC%97%AC-%EB%A1%9C%EA%B7%B8-%EB%82%A8%EA%B8%B0%EA%B8%B0
                 // 참고 3 URL - https://blog.naver.com/PostView.naver?blogId=wolfre&logNo=221713399852&parentCategoryNo=&categoryNo=26&viewDate=&isShowPopularPosts=true&from=search
                 // 참고 4 URL - https://www.reddit.com/r/dotnet/comments/qhwa4i/serilog_remove_files_older_than_30_days/
                 // 참고 5 URL - https://github.com/serilog/serilog-sinks-file#rolling-policies
 
-                // TODO : 에러 로그를 메일로 보내는 로직(.WriteTo.Email) 필요시 추후 구현 예정 (2024.08.14 jbh)
+                // TODO : 에러 로그를 메일로 보내는 로직(.WriteTo.Email) 필요시 추후 구현 예정 (2024.08.14 minjae)
                 // 참고 URL - https://github.com/serilog/serilog-sinks-email
                 var log = new LoggerConfiguration()
                               .MinimumLevel.Verbose()   // 로그 남기는 기준 ex) Verbose 이상 다 남겨야 함.
@@ -104,12 +104,12 @@ namespace CobimExplorer.Common.LogManager
                                   path: logFilePath,
                                   Serilog.Events.LogEventLevel.Verbose,
                                   // TODO : 로그 파일에 날짜를 수동으로 지정할 필요 없이 rollingInterval: RollingInterval.Day, 사용해서 로그파일 이름 언더바(_)옆에 로그 생성된 날짜가 추가되도록 구현
-                                  //        (이렇게 구현해야 아래 프로퍼티 "retainedFileCountLimit" 사용해서 날짜가 지난 로그파일 삭제 처리 할 수 있음.) (2024.08.14 jbh) 
+                                  //        (이렇게 구현해야 아래 프로퍼티 "retainedFileCountLimit" 사용해서 날짜가 지난 로그파일 삭제 처리 할 수 있음.) (2024.08.14 minjae) 
                                   // 참고 URL - https://stackoverflow.com/questions/32108148/serilog-rollingfile
                                   rollingInterval: RollingInterval.Day,
                                   rollOnFileSizeLimit: true,   // 로그 파일 최대 사이즈 1GB  null 옵션 가능
                                                                // TODO : 테스트 용 로그 파일 갯수 2개(2일치 로그) 설정(2일 이상 지난 오래된 로그는 삭제 처리)
-                                                               //        2일 지난 로그 파일 정상적으로 삭제 처리시 아래 주석 처리된 소스코드 "retainedFileCountLimit: 62,"로 다시 구현해야 함. (2024.08.14 jbh)
+                                                               //        2일 지난 로그 파일 정상적으로 삭제 처리시 아래 주석 처리된 소스코드 "retainedFileCountLimit: 62,"로 다시 구현해야 함. (2024.08.14 minjae)
                                                                // 참고 URL - https://stackoverflow.com/questions/44577336/how-do-i-automatically-tail-delete-older-logs-using-serilog-in-a-net-wpf-appl
                                   retainedFileCountLimit: pLogFileCountLimit,
                                   // retainedFileCountLimit: 62,  // 로그 파일 갯수 62개(2달치 로그) 설정(2달 지난 오래된 로그는 삭제 처리) - 기본 31개 설정 가능, null 옵션 가능
@@ -139,7 +139,7 @@ namespace CobimExplorer.Common.LogManager
 
         #region DeleteOldLogFiles
 
-        // TODO : 기간 지난 로그 파일 삭제 ((new LoggerConfiguration() -> .WriteTo.File(retainedFileCountLimit)에 할당된 값(기간) 기준)) 처리 메서드 "" 구현 (2024.02.02 jbh)
+        // TODO : 기간 지난 로그 파일 삭제 ((new LoggerConfiguration() -> .WriteTo.File(retainedFileCountLimit)에 할당된 값(기간) 기준)) 처리 메서드 "" 구현 (2024.02.02 minjae)
         // 참고 URL - https://chat.openai.com/c/8791804a-55ca-4bf1-b54e-1a34a68f39b5
         /// <summary>
         /// 기간 지난 로그 파일 삭제
@@ -188,7 +188,7 @@ namespace CobimExplorer.Common.LogManager
                 // 로그 파일 생성 날짜가 금일 날짜 보다 2일 이전(DateTime.Now.AddDays(-2))이면 로그 파일 삭제
                 // 참고 URL - https://bigenergy.tistory.com/entry/C-%ED%83%80%EC%9D%B4%EB%A8%B8%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%9C-%EC%98%A4%EB%9E%98%EB%90%9C-%ED%8C%8C%EC%9D%BC-%EC%82%AD%EC%A0%9C-%EB%A1%9C%EA%B7%B8-%EC%82%AD%EC%A0%9C
                 // 참고 2 URL - https://medialink.tistory.com/44
-                // TODO : 아래 소스코드 실행시 당일 날짜(DateTime.Now) 30일 전일(-30 = daysToKeep) 이전 로그파일 찾아서 오래된 로그 파일 삭제 처리 구현 (2024.08.14 jbh)
+                // TODO : 아래 소스코드 실행시 당일 날짜(DateTime.Now) 30일 전일(-30 = daysToKeep) 이전 로그파일 찾아서 오래된 로그 파일 삭제 처리 구현 (2024.08.14 minjae)
                 fileList.FindAll(file => file.CreationTime.CompareTo(DateTime.Now.AddDays(daysToKeep)) < 0)
                         .ForEach(file => {
                             if (Path.GetExtension(file.FullName) == ".log") File.Delete(file.FullName);
@@ -214,7 +214,7 @@ namespace CobimExplorer.Common.LogManager
         {
             var fullMethodPath = string.Empty;
 
-            // TODO : 로그 기록시 현재 실행 중인 메서드 위치 기록하기 (2023.10.10 jbh)
+            // TODO : 로그 기록시 현재 실행 중인 메서드 위치 기록하기 (2023.10.10 minjae)
             // 참고 URL - https://slaner.tistory.com/73
             // 참고 2 URL - https://stackoverflow.com/questions/4132810/how-can-i-get-a-method-name-with-the-namespace-class-name
             // 참고 3 URL - https://stackoverflow.com/questions/44153/can-you-use-reflection-to-find-the-name-of-the-currently-executing-method
@@ -222,7 +222,7 @@ namespace CobimExplorer.Common.LogManager
 
             try
             {
-                // TODO : 로그 실행한 Namespace 및 메서드(비동기 메서드 포함) 경로 추출하여 문자열로 변환 (2023.10.11 jbh)
+                // TODO : 로그 실행한 Namespace 및 메서드(비동기 메서드 포함) 경로 추출하여 문자열로 변환 (2023.10.11 minjae)
                 // 참고 URL - https://stackoverflow.com/questions/2968352/using-system-reflection-to-get-a-methods-full-name
                 // var generatedType = currentMethod.DeclaringType;
                 // var originalType = generatedType.DeclaringType;
@@ -237,11 +237,11 @@ namespace CobimExplorer.Common.LogManager
                 // fullMethodPath = "[" + currentMethod.ReflectedType.ReflectedType.FullName.Replace("+", " | ").Replace("d__77", "") + "] : ";
                 // fullMethodPath = "[" + foundMethod.DeclaringType.FullName + " | " + foundMethod.Name + "] : ";
                 // fullMethodPath = "[" + foundMethod.DeclaringType.FullName + " | " + foundMethod.Name + "] : ";
-                // TODO : generatedType.Name에서 출력되는 특정 문자열 "d__0"을 Replace 메서드 사용해서 삭제 구현 (2023.10.20 jbh)
+                // TODO : generatedType.Name에서 출력되는 특정 문자열 "d__0"을 Replace 메서드 사용해서 삭제 구현 (2023.10.20 minjae)
                 // 참고 URL - https://miss-flower31.tistory.com/entry/C-%ED%8A%B9%EC%A0%95%EB%AC%B8%EC%9E%90%EC%97%B4-%EC%82%AD%EC%A0%9C
                 // string methodName = generatedType.Name.Replace("d__0", "");
 
-                // TODO : generatedType.Name에서 문자열 맨 뒤에 출력되는 특정 문자열 "d__0"을 Substring 메서드 사용해서 삭제 구현 (2023.11.06 jbh)
+                // TODO : generatedType.Name에서 문자열 맨 뒤에 출력되는 특정 문자열 "d__0"을 Substring 메서드 사용해서 삭제 구현 (2023.11.06 minjae)
                 // 참고 URL - https://gent.tistory.com/502
                 //string s = "d__0";
                 //int delLen = s.Length;
@@ -260,7 +260,7 @@ namespace CobimExplorer.Common.LogManager
             {
                 fullMethodPath = "[" + loggerMethod.DeclaringType.FullName + " | " + loggerMethod.Name + "] : ";
                 Log.Error(fullMethodPath + Logger.errorMessage + ex.Message);
-                // TODO : 오류 발생시 상위 호출자 예외처리 전달 throw 구현 (2023.12.6 jbh)
+                // TODO : 오류 발생시 상위 호출자 예외처리 전달 throw 구현 (2023.12.6 minjae)
                 // 참고 URL - https://devlog.jwgo.kr/2009/11/27/thrownthrowex/
                 throw;
 
@@ -292,7 +292,7 @@ namespace CobimExplorer.Common.LogManager
         //    {
         //        get
         //        {
-        // TODO : if 조건절에 == null 보다 빠른 is null 연산자 사용 (2023.11.24 jbh)
+        // TODO : if 조건절에 == null 보다 빠른 is null 연산자 사용 (2023.11.24 minjae)
         // 참고 URL - https://husk321.tistory.com/405
         //            // 싱글톤 패턴 
         //            if (_Log is null)
@@ -365,7 +365,7 @@ namespace CobimExplorer.Common.LogManager
         //    private void LogWrite(string logType, string message, string args = null)
         //    {
         //        // string DirPath = Environment.CurrentDirectory + @"\Log";
-        //        // TODO : 로그 파일 상위 디렉토리(폴더) 생성 위치("C:\\CobimExplorer\\Log") 문자열 string 객체 DirPath에 할당 (2023.10.6 jbh)
+        //        // TODO : 로그 파일 상위 디렉토리(폴더) 생성 위치("C:\\CobimExplorer\\Log") 문자열 string 객체 DirPath에 할당 (2023.10.6 minjae)
         //        // 참고 URL - https://lightgg.tistory.com/29
         //        string DirPath = "C:\\CobimExplorer\\Log";
         //        string FilePath = DirPath + "\\CobimExplorer_" + DateTime.Today.ToString("yyyyMMdd") + ".log";
@@ -382,7 +382,7 @@ namespace CobimExplorer.Common.LogManager
         //            // 로그 파일(fi)이 존재하지 않는 경우 
         //            if(false == fi.Exists)
         //            {
-        //                // TODO : StreamWriter 클래스 객체 sw 인코딩 방식 Encoding.UTF8 설정 (한글 인코딩 때문) (2023.10.6 jbh)
+        //                // TODO : StreamWriter 클래스 객체 sw 인코딩 방식 Encoding.UTF8 설정 (한글 인코딩 때문) (2023.10.6 minjae)
         //                // 참고 URL - https://cloudedi.tistory.com/29
         //                // 참고 2 URL - https://aspdotnet.tistory.com/1043
         //                // using문 사용해서 로그파일 새로 생성

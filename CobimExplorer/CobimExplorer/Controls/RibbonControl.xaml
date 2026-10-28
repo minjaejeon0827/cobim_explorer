@@ -11,7 +11,7 @@
              d:DataContext="{d:DesignInstance Type=vm:TabParentPageVM}"
              d:DesignHeight="450" 
              d:DesignWidth="800">
-    <!--  TODO : ApplicationMenu 비활성화(Visibility="Collapsed") 처리한 리본 구현 (2023.11.07 jbh)  -->
+    <!--  TODO : ApplicationMenu 비활성화(Visibility="Collapsed") 처리한 리본 구현 (2023.11.07 minjae)  -->
     <!--  참고 URL - https://www.nichesoftware.co.nz/2015/08/09/application-menu.html  -->
     <!--  참고 2 URL - https://stackoverflow.com/questions/1439036/is-it-possible-to-disable-the-application-menu-on-the-ribbon-control-wpf  -->
     <Ribbon x:Name="rbMenu" 
@@ -24,20 +24,20 @@
             <RibbonApplicationMenu Visibility="Collapsed"/>
         </Ribbon.ApplicationMenu>
 
-        <!--  TODO : 추후 RibbonTab, RibbonGroup 에 속하는 속성 Header의 글자 색상과 글자 굵기 변경하는 방법 찾아서 구현하기 (2023.11.13 jbh) -->
+        <!--  TODO : 추후 RibbonTab, RibbonGroup 에 속하는 속성 Header의 글자 색상과 글자 굵기 변경하는 방법 찾아서 구현하기 (2023.11.13 minjae) -->
         <RibbonTab KeyTip="E">
-            <!--  TODO : 리본 탭 컨트롤에 TextBlock.Foreground="{StaticResource App.Brush.Themes.Fall.Brown}" TextBlock.FontWeight="Bold" 적용 되도록 구현 (2023.11.14 jbh)  -->
+            <!--  TODO : 리본 탭 컨트롤에 TextBlock.Foreground="{StaticResource App.Brush.Themes.Fall.Brown}" TextBlock.FontWeight="Bold" 적용 되도록 구현 (2023.11.14 minjae)  -->
             <!--  참고 URL - https://stackoverflow.com/questions/21523633/ribbon-change-the-headers-text-color  -->
             <RibbonTab.Header>
                 <TextBlock Text="{Binding CDE_RibbonTab}"/>
             </RibbonTab.Header>
 
-            <!--  TODO : 리본 그룹 "TestGroupExpVM" 필요시 사용 예정 (2023.11.07 jbh)  -->
+            <!--  TODO : 리본 그룹 "TestGroupExpVM" 필요시 사용 예정 (2023.11.07 minjae)  -->
             <!--  <ribbon:RibbonGroup x:Name="TestGroupExpVM" Header="TestExplorerVM">
             <Button Width="100" Height="30" Command="{Binding TestExpVMCommand}" CommandParameter="TestExplorerVM">Test Explorer</Button>
             </ribbon:RibbonGroup>  -->
             <RibbonGroup x:Name="GroupCDE">
-                <!--  TODO : 리본 그룹 컨트롤에 TextBlock.Foreground="{StaticResource App.Brush.Themes.Fall.Brown}" TextBlock.FontWeight="Bold" 적용 되도록 구현 (2023.11.14 jbh)  -->
+                <!--  TODO : 리본 그룹 컨트롤에 TextBlock.Foreground="{StaticResource App.Brush.Themes.Fall.Brown}" TextBlock.FontWeight="Bold" 적용 되도록 구현 (2023.11.14 minjae)  -->
                 <!--  참고 URL - https://stackoverflow.com/questions/21523633/ribbon-change-the-headers-text-color  -->
                 <RibbonGroup.Header>
                     <TextBlock Text="{Binding CDE_RibbonGroup}"/>
@@ -47,7 +47,7 @@
                         Width="120" 
                         Height="30"
                         Background="{StaticResource App.Brush.Themes.Fall.Brown}">
-                    <!--  TODO : 버튼 기본 스타일(테두리, 배경 등등...) 제거 구현 (2023.11.13 jbh)  -->
+                    <!--  TODO : 버튼 기본 스타일(테두리, 배경 등등...) 제거 구현 (2023.11.13 minjae)  -->
                     <!--  참고 URL - https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&blogId=skelentom&logNo=10166053623  -->
                     <Button Command="{Binding ExpVMCommand}" 
                             CommandParameter="ExplorerVM"
@@ -70,7 +70,7 @@
                         Width="120" 
                         Height="30"
                         Background="{StaticResource App.Brush.Themes.Fall.Brown}">
-                    <!--  TODO : 버튼 기본 스타일(테두리, 배경 등등...) 제거 구현 (2024.08.07 jbh)  -->
+                    <!--  TODO : 버튼 기본 스타일(테두리, 배경 등등...) 제거 구현 (2024.08.07 minjae)  -->
                     <!--  참고 URL - https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&blogId=skelentom&logNo=10166053623  -->
                     <Button Command="{Binding HubBoxVMCommand}" 
                             CommandParameter="HubBoxVM"
@@ -84,10 +84,10 @@
                 </Border>
             </RibbonGroup>
 
-            <!--  TODO : 아래 리본 그룹 "TestGroupExpVM" 테스트 버튼 "UserControl Test" 필요시 사용 예정 (2024.01.26 jbh)  -->
-            <!--  TODO : 아래 리본 그룹 "TestGroupExpVM" 테스트 버튼 "UserControl Test" MainVM.cs -> 메서드 "DisplaySetting" 테스트 완료 시 삭제 예정 (2023.11.08 jbh)  -->
+            <!--  TODO : 아래 리본 그룹 "TestGroupExpVM" 테스트 버튼 "UserControl Test" 필요시 사용 예정 (2024.01.26 minjae)  -->
+            <!--  TODO : 아래 리본 그룹 "TestGroupExpVM" 테스트 버튼 "UserControl Test" MainVM.cs -> 메서드 "DisplaySetting" 테스트 완료 시 삭제 예정 (2023.11.08 minjae)  -->
             <!--<RibbonGroup x:Name="TestGroupExpVM">
-                --><!--  TODO : 리본 그룹 컨트롤에 TextBlock.Foreground="{StaticResource App.Brush.Themes.Fall.Brown}" TextBlock.FontWeight="Bold" 적용 되도록 구현 (2023.11.14 jbh)  -->
+                --><!--  TODO : 리본 그룹 컨트롤에 TextBlock.Foreground="{StaticResource App.Brush.Themes.Fall.Brown}" TextBlock.FontWeight="Bold" 적용 되도록 구현 (2023.11.14 minjae)  -->
                 <!--  참고 URL - https://stackoverflow.com/questions/21523633/ribbon-change-the-headers-text-color  --><!--
                 <RibbonGroup.Header>
                     <TextBlock Text="TestExplorerVM"/>
@@ -97,7 +97,7 @@
                         Width="110" 
                         Height="30"
                         Background="{StaticResource App.Brush.Themes.Fall.Brown}">
-                    --><!--  TODO : 버튼 기본 스타일(테두리, 배경 등등...) 제거 구현 (2023.11.13 jbh)  -->
+                    --><!--  TODO : 버튼 기본 스타일(테두리, 배경 등등...) 제거 구현 (2023.11.13 minjae)  -->
                     <!--  참고 URL - https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&blogId=skelentom&logNo=10166053623  --><!--
                     <Button Command="{Binding TestExpVMCommand}" 
                             CommandParameter="TestExplorerVM"
@@ -111,24 +111,24 @@
         </RibbonTab>
     </Ribbon>
 
-    <!--TODO: 테스트 코드 Ribbon 전용 dll "system.windows.controls.ribbon dll" 추가 후 Ribbon 구현 (필요시 사용 예정) (2023.07.12 jbh)
+    <!--TODO: 테스트 코드 Ribbon 전용 dll "system.windows.controls.ribbon dll" 추가 후 Ribbon 구현 (필요시 사용 예정) (2023.07.12 minjae)
               Ribbon 구현시 
               참고 URL - https://www.c-sharpcorner.com/UploadFile/0b73e1/ribbon-control-in-wpf-4-5/
               참고 2 URL - https://www.youtube.com/watch?v=04HJXx290g8  -->
     <!--<ribbon:Ribbon x:Name="rbMenu" SelectedIndex="0" BorderBrush="White" Background="Chocolate">
-        --><!--  TODO : 리본 탭 "테스트" 필요시 사용 예정 (2023.11.07 jbh)  -->
+        --><!--  TODO : 리본 탭 "테스트" 필요시 사용 예정 (2023.11.07 minjae)  -->
         <!--<ribbon:RibbonTab Header="테스트" KeyTip="T">
             <ribbon:RibbonGroup x:Name="GroupTestVM" Header="TestVM">
                 <Button Width="100" Height="30" Command="{Binding TestVMCommand}" CommandParameter="TestVM">TEST</Button>
 
-                --><!-- TODO : RibbonMenuButton 구현시 참고 URL - https://stackoverflow.com/questions/24202376/ribbonmenubutton-binding-item-clicked-to-command (2023.07.12 jbh) -->
+                --><!-- TODO : RibbonMenuButton 구현시 참고 URL - https://stackoverflow.com/questions/24202376/ribbonmenubutton-binding-item-clicked-to-command (2023.07.12 minjae) -->
                 <!--<ribbon:RibbonMenuButton Label="TestViewModel" PreviewMouseDown="RibbonMenuButton_PreviewMouseDown">--><!--
             </ribbon:RibbonGroup>
             <ribbon:RibbonGroup x:Name="GroupEditor" Header="TestEditor">
             </ribbon:RibbonGroup>
         </ribbon:RibbonTab>--><!--
         <ribbon:RibbonTab Header="{Binding CDE_RibbonTab}" KeyTip="E">
-            --><!--  TODO : 리본 그룹 "TestGroupExpVM" 필요시 사용 예정 (2023.11.07 jbh)  -->
+            --><!--  TODO : 리본 그룹 "TestGroupExpVM" 필요시 사용 예정 (2023.11.07 minjae)  -->
             <!--<ribbon:RibbonGroup x:Name="TestGroupExpVM" Header="TestExplorerVM">
                 <Button Width="100" Height="30" Command="{Binding TestExpVMCommand}" CommandParameter="TestExplorerVM">Test Explorer</Button>
             </ribbon:RibbonGroup>--><!--
@@ -141,7 +141,7 @@
                     <TextBlock Text="{Binding CDE_RibbonButton}" /> 
                 </Button>
             </ribbon:RibbonGroup>
-            --><!--  TODO : 리본 그룹 "GroupLazyTreeVM" 필요시 사용 예정 (2023.11.07 jbh)  -->
+            --><!--  TODO : 리본 그룹 "GroupLazyTreeVM" 필요시 사용 예정 (2023.11.07 minjae)  -->
             <!--<ribbon:RibbonGroup x:Name="GroupLazyTreeVM" Header="TestLazyTreeVM">
                 <Button Width="100" Height="30" Command="{Binding TestLazyTreeVMCommand}" CommandParameter="TestLazyTreeVM">Test LazyTree</Button>
             </ribbon:RibbonGroup>--><!--

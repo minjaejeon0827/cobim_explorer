@@ -8,7 +8,7 @@
              d:DesignHeight="450" 
              d:DesignWidth="800">
     <Grid>
-        <!--  TODO : 탐색기 응용 프로그램 화면 상단 윈도우 타이틀 바 직접 구현 (2023.11.07 jbh)  -->
+        <!--  TODO : 탐색기 응용 프로그램 화면 상단 윈도우 타이틀 바 직접 구현 (2023.11.07 minjae)  -->
         <!--  참고 URL - https://gigong.tistory.com/99  -->
         <!--  타이틀 바 영역  -->
         <!--  PreviewMouseDown="System_MouseDown" PreviewMouseMove="System_MouseMove"  -->

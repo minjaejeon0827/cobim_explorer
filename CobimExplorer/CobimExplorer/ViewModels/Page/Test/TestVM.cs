@@ -18,10 +18,10 @@ namespace CobimExplorer.ViewModels.Page.Test
 
         #region TEST
 
-        // TODO : 필요시 프로퍼티 "Container" 사용 예정 (2024.01.04 jbh) 
+        // TODO : 필요시 프로퍼티 "Container" 사용 예정 (2024.01.04 minjae) 
         // public IContainer Container { get; set; }
 
-        // TODO : 필요시 프로퍼티 "EventAggregator" 사용 예정 (2024.01.04 jbh)
+        // TODO : 필요시 프로퍼티 "EventAggregator" 사용 예정 (2024.01.04 minjae)
         //[Inject]
         //public IEventAggregator EventAggregator { get; set; }
 
@@ -29,7 +29,7 @@ namespace CobimExplorer.ViewModels.Page.Test
 
         #region OnActivate
 
-        // TODO : 아래 프로퍼티 "Sender" 필요시 참고 (2024.08.07 jbh)
+        // TODO : 아래 프로퍼티 "Sender" 필요시 참고 (2024.08.07 minjae)
         /// <summary>
         /// 이벤트 OnActivate 실행시 
         /// OpenPageMsg 클래스 객체에 전달할 객체 Sender 
@@ -47,7 +47,7 @@ namespace CobimExplorer.ViewModels.Page.Test
         {
             Container = container;
 
-            // TODO : EventAggregator = events; 코드 추가 (2023.07.24 jbh)
+            // TODO : EventAggregator = events; 코드 추가 (2023.07.24 minjae)
             // 참고 URL - https://github.com/canton7/Stylet/wiki/3.-The-Taskbar
             EventAggregator = events;
         }
@@ -65,13 +65,13 @@ namespace CobimExplorer.ViewModels.Page.Test
         {
             base.OnActivate();
 
-            // TODO : 아래 테스트 코드 필요시 참고 (2024.08.07 jbh)
+            // TODO : 아래 테스트 코드 필요시 참고 (2024.08.07 minjae)
             //Sender = this;
 
             //var vm = Container.Get<TestVM>();
             //string VMName = vm.GetViewModelName();
 
-            // TODO : 필요시 var msg = new ChangeViewModelMsg(this, VMName); 사용 예정 (2024.08.06 jbh)
+            // TODO : 필요시 var msg = new ChangeViewModelMsg(this, VMName); 사용 예정 (2024.08.06 minjae)
             //var msg = new ChangeViewModelMsg(this, VMName);
             //var msg = new OpenPageMsg((ICbVM)Sender, VMName);
             //EventAggregator.PublishOnUIThread(msg);
